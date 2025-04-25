@@ -12,7 +12,7 @@ namespace DVG
     /// </summary>
     [Serializable]
     [StructLayout(LayoutKind.Sequential)]
-    public struct uint2 : IEquatable<uint2>
+    public partial struct uint2 : IEquatable<uint2>
     {
 
         #region Fields

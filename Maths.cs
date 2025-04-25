@@ -2,7 +2,7 @@
 
 namespace DVG
 {
-    internal static class Maths
+    public static partial class Maths
     {
         public static float Lerp(float a, float b, float value) => a + ((b - a) * value);
         public static float SmoothStep(float v) => v * v * (3 - 2 * v);
