@@ -681,6 +681,11 @@ namespace DVG
         /// Returns the square length of this vector.
         /// </summary>
         public static float SqrLength(float4 v) => v.x * v.x + v.y * v.y + v.z * v.z + v.w * v.w;
+        
+        /// <summary>
+        /// Returns the square distance between the two vectors.
+        /// </summary>
+        public static float SqrDistance(float4 lhs, float4 rhs) => float4.SqrLength(lhs - rhs);
 
         #endregion
 

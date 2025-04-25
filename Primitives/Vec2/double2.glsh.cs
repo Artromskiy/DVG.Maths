@@ -205,6 +205,11 @@ namespace DVG
         /// Returns the square length of this vector.
         /// </summary>
         public static double SqrLength(double2 v) => double2.SqrLength(v);
+        
+        /// <summary>
+        /// Returns the square distance between the two vectors.
+        /// </summary>
+        public static double SqrDistance(double2 lhs, double2 rhs) => double2.SqrDistance(lhs, rhs);
 
     }
 }
