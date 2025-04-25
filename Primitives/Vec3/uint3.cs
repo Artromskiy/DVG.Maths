@@ -1,0 +1,565 @@
+#pragma warning disable IDE1006
+using System;
+using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
+
+
+namespace DVG
+{
+    
+    /// <summary>
+    /// A vector of type uint with 3 components.
+    /// </summary>
+    [Serializable]
+    [StructLayout(LayoutKind.Sequential)]
+    public struct uint3 : IEquatable<uint3>
+    {
+
+        #region Fields
+        
+        /// <summary>
+        /// x-component
+        /// </summary>
+        public uint x;
+        
+        /// <summary>
+        /// y-component
+        /// </summary>
+        public uint y;
+        
+        /// <summary>
+        /// z-component
+        /// </summary>
+        public uint z;
+        
+        /// <summary>
+        /// Returns the number of components (3).
+        /// </summary>
+        public const int Count = 3;
+
+        #endregion
+
+
+        #region Constructors
+        
+        /// <summary>
+        /// Component-wise constructor
+        /// </summary>
+        public uint3(uint x, uint y, uint z)
+        {
+            this.x = x;
+            this.y = y;
+            this.z = z;
+        }
+        
+        /// <summary>
+        /// all-same-value constructor
+        /// </summary>
+        public uint3(uint v)
+        {
+            this.x = v;
+            this.y = v;
+            this.z = v;
+        }
+        
+        /// <summary>
+        /// from-vector constructor (empty fields are zero/false)
+        /// </summary>
+        public uint3(uint2 v)
+        {
+            this.x = v.x;
+            this.y = v.y;
+            this.z = 0u;
+        }
+        
+        /// <summary>
+        /// from-vector-and-value constructor
+        /// </summary>
+        public uint3(uint2 v, uint z)
+        {
+            this.x = v.x;
+            this.y = v.y;
+            this.z = z;
+        }
+        
+        /// <summary>
+        /// from-vector constructor
+        /// </summary>
+        public uint3(uint3 v)
+        {
+            this.x = v.x;
+            this.y = v.y;
+            this.z = v.z;
+        }
+        
+        /// <summary>
+        /// from-vector constructor (additional fields are truncated)
+        /// </summary>
+        public uint3(uint4 v)
+        {
+            this.x = v.x;
+            this.y = v.y;
+            this.z = v.z;
+        }
+
+        #endregion
+
+
+        #region Implicit Operators
+        
+        /// <summary>
+        /// Implicitly converts this to a float3.
+        /// </summary>
+        public static implicit operator float3(uint3 v) => new float3((float)v.x, (float)v.y, (float)v.z);
+        
+        /// <summary>
+        /// Implicitly converts this to a double3.
+        /// </summary>
+        public static implicit operator double3(uint3 v) => new double3((double)v.x, (double)v.y, (double)v.z);
+
+        #endregion
+
+
+        #region Indexer
+        
+        /// <summary>
+        /// Gets/Sets a specific indexed component (a bit slower than direct access).
+        /// </summary>
+        public uint this[int index]
+        {
+            get
+            {
+                if ((uint)index >= Count)
+                    throw new ArgumentOutOfRangeException(nameof(index));
+                return Unsafe.Add(ref x, index);
+            }
+            set
+            {
+                if ((uint)index >= Count)
+                    throw new ArgumentOutOfRangeException(nameof(index));
+                Unsafe.Add(ref x, index) = value;
+            }
+        }
+
+        #endregion
+
+
+        #region Properties
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public uint2 xy
+        {
+            get
+            {
+                return new uint2(x, y);
+            }
+            set
+            {
+                x = value.x;
+                y = value.y;
+            }
+        }
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public uint2 xz
+        {
+            get
+            {
+                return new uint2(x, z);
+            }
+            set
+            {
+                x = value.x;
+                z = value.y;
+            }
+        }
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public uint2 yz
+        {
+            get
+            {
+                return new uint2(y, z);
+            }
+            set
+            {
+                y = value.x;
+                z = value.y;
+            }
+        }
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public uint3 xyz
+        {
+            get
+            {
+                return new uint3(x, y, z);
+            }
+            set
+            {
+                x = value.x;
+                y = value.y;
+                z = value.z;
+            }
+        }
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public uint2 rg
+        {
+            get
+            {
+                return new uint2(x, y);
+            }
+            set
+            {
+                x = value.x;
+                y = value.y;
+            }
+        }
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public uint2 rb
+        {
+            get
+            {
+                return new uint2(x, z);
+            }
+            set
+            {
+                x = value.x;
+                z = value.y;
+            }
+        }
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public uint2 gb
+        {
+            get
+            {
+                return new uint2(y, z);
+            }
+            set
+            {
+                y = value.x;
+                z = value.y;
+            }
+        }
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public uint3 rgb
+        {
+            get
+            {
+                return new uint3(x, y, z);
+            }
+            set
+            {
+                x = value.x;
+                y = value.y;
+                z = value.z;
+            }
+        }
+        
+        /// <summary>
+        /// Gets or sets the specified RGBA component.
+        /// </summary>
+        public uint r
+        {
+            get
+            {
+                return x;
+            }
+            set
+            {
+                x = value;
+            }
+        }
+        
+        /// <summary>
+        /// Gets or sets the specified RGBA component.
+        /// </summary>
+        public uint g
+        {
+            get
+            {
+                return y;
+            }
+            set
+            {
+                y = value;
+            }
+        }
+        
+        /// <summary>
+        /// Gets or sets the specified RGBA component.
+        /// </summary>
+        public uint b
+        {
+            get
+            {
+                return z;
+            }
+            set
+            {
+                z = value;
+            }
+        }
+
+        #endregion
+
+
+        #region Operators
+        
+        public static bool operator==(uint3 lhs, uint3 rhs) => lhs.x == rhs.x&&lhs.y == rhs.y&&lhs.z == rhs.z;
+        
+        public static bool operator!=(uint3 lhs, uint3 rhs) => lhs.x != rhs.x||lhs.y != rhs.y||lhs.z != rhs.z;
+
+        #endregion
+
+
+        #region Functions
+        
+        /// <summary>
+        /// Returns HashCode
+        /// </summary>
+        public override readonly int GetHashCode() => HashCode.Combine(x, y, z);
+        
+        /// <summary>
+        /// Returns a string representation of this vector.
+        /// </summary>
+        public override readonly string ToString() => x + ", " + y + ", " + z;
+        
+        public readonly bool Equals(uint3 other) => other == this;
+        
+        public override readonly bool Equals(object? obj) => obj is uint3 other && Equals(other);
+
+        #endregion
+
+
+        #region Static Functions
+        
+        /// <summary>
+        /// Returns a uint3 from component-wise application of Clamp (Maths.Clamp(v, min, max)).
+        /// </summary>
+        public static uint3 Clamp(uint3 v, uint min, uint max) => new uint3(Maths.Clamp(v.x, min, max), Maths.Clamp(v.y, min, max), Maths.Clamp(v.z, min, max));
+
+        #endregion
+
+
+        #region Component-Wise Static Functions
+        
+        /// <summary>
+        /// Returns a bool3 from component-wise application of LesserThan (lhs &lt; rhs).
+        /// </summary>
+        public static bool3 LesserThan(uint3 lhs, uint3 rhs) => new bool3(lhs.x < rhs.x, lhs.y < rhs.y, lhs.z < rhs.z);
+        
+        /// <summary>
+        /// Returns a bool3 from component-wise application of LesserThanEqual (lhs &lt;= rhs).
+        /// </summary>
+        public static bool3 LesserThanEqual(uint3 lhs, uint3 rhs) => new bool3(lhs.x <= rhs.x, lhs.y <= rhs.y, lhs.z <= rhs.z);
+        
+        /// <summary>
+        /// Returns a bool3 from component-wise application of GreaterThan (lhs &gt; rhs).
+        /// </summary>
+        public static bool3 GreaterThan(uint3 lhs, uint3 rhs) => new bool3(lhs.x > rhs.x, lhs.y > rhs.y, lhs.z > rhs.z);
+        
+        /// <summary>
+        /// Returns a bool3 from component-wise application of GreaterThanEqual (lhs &gt;= rhs).
+        /// </summary>
+        public static bool3 GreaterThanEqual(uint3 lhs, uint3 rhs) => new bool3(lhs.x >= rhs.x, lhs.y >= rhs.y, lhs.z >= rhs.z);
+        
+        /// <summary>
+        /// Returns a bool3 from component-wise application of Equal (lhs == rhs).
+        /// </summary>
+        public static bool3 Equal(uint3 lhs, uint3 rhs) => new bool3(lhs.x == rhs.x, lhs.y == rhs.y, lhs.z == rhs.z);
+        
+        /// <summary>
+        /// Returns a bool3 from component-wise application of NotEqual (lhs != rhs).
+        /// </summary>
+        public static bool3 NotEqual(uint3 lhs, uint3 rhs) => new bool3(lhs.x != rhs.x, lhs.y != rhs.y, lhs.z != rhs.z);
+        
+        /// <summary>
+        /// Returns a uint3 from component-wise application of Min (Maths.Min(lhs, rhs)).
+        /// </summary>
+        public static uint3 Min(uint3 lhs, uint3 rhs) => new uint3(Maths.Min(lhs.x, rhs.x), Maths.Min(lhs.y, rhs.y), Maths.Min(lhs.z, rhs.z));
+        
+        /// <summary>
+        /// Returns a uint3 from component-wise application of Min (Maths.Min(lhs, rhs)).
+        /// </summary>
+        public static uint3 Min(uint3 lhs, uint rhs) => new uint3(Maths.Min(lhs.x, rhs), Maths.Min(lhs.y, rhs), Maths.Min(lhs.z, rhs));
+        
+        /// <summary>
+        /// Returns a uint3 from component-wise application of Max (Maths.Max(lhs, rhs)).
+        /// </summary>
+        public static uint3 Max(uint3 lhs, uint3 rhs) => new uint3(Maths.Max(lhs.x, rhs.x), Maths.Max(lhs.y, rhs.y), Maths.Max(lhs.z, rhs.z));
+        
+        /// <summary>
+        /// Returns a uint3 from component-wise application of Max (Maths.Max(lhs, rhs)).
+        /// </summary>
+        public static uint3 Max(uint3 lhs, uint rhs) => new uint3(Maths.Max(lhs.x, rhs), Maths.Max(lhs.y, rhs), Maths.Max(lhs.z, rhs));
+        
+        /// <summary>
+        /// Returns a uint3 from component-wise application of Clamp (Maths.Clamp(v, min, max)).
+        /// </summary>
+        public static uint3 Clamp(uint3 v, uint3 min, uint3 max) => new uint3(Maths.Clamp(v.x, min.x, max.x), Maths.Clamp(v.y, min.y, max.y), Maths.Clamp(v.z, min.z, max.z));
+        
+        /// <summary>
+        /// Returns a uint3 from component-wise application of Mix (a ? y : x).
+        /// </summary>
+        public static uint3 Mix(uint3 x, uint3 y, bool3 a) => new uint3(a.x ? y.x : x.x, a.y ? y.y : x.y, a.z ? y.z : x.z);
+        
+        /// <summary>
+        /// Returns a float3 from component-wise application of UIntBitsToFloat (Unsafe.As&lt;uint, float&gt;(ref v)).
+        /// </summary>
+        public static float3 UIntBitsToFloat(uint3 v) => new float3(Unsafe.As<uint, float>(ref v.x), Unsafe.As<uint, float>(ref v.y), Unsafe.As<uint, float>(ref v.z));
+
+        #endregion
+
+
+        #region Component-Wise Operator Overloads
+        
+        /// <summary>
+        /// Returns a uint3 from component-wise application of operator+ (lhs + rhs).
+        /// </summary>
+        public static uint3 operator+(uint3 lhs, uint3 rhs) => new uint3(lhs.x + rhs.x, lhs.y + rhs.y, lhs.z + rhs.z);
+        
+        /// <summary>
+        /// Returns a uint3 from component-wise application of operator+ (lhs + rhs).
+        /// </summary>
+        public static uint3 operator+(uint3 lhs, uint rhs) => new uint3(lhs.x + rhs, lhs.y + rhs, lhs.z + rhs);
+        
+        /// <summary>
+        /// Returns a uint3 from component-wise application of operator+ (lhs + rhs).
+        /// </summary>
+        public static uint3 operator+(uint lhs, uint3 rhs) => new uint3(lhs + rhs.x, lhs + rhs.y, lhs + rhs.z);
+        
+        /// <summary>
+        /// Returns a uint3 from component-wise application of operator- (lhs - rhs).
+        /// </summary>
+        public static uint3 operator-(uint3 lhs, uint3 rhs) => new uint3(lhs.x - rhs.x, lhs.y - rhs.y, lhs.z - rhs.z);
+        
+        /// <summary>
+        /// Returns a uint3 from component-wise application of operator- (lhs - rhs).
+        /// </summary>
+        public static uint3 operator-(uint3 lhs, uint rhs) => new uint3(lhs.x - rhs, lhs.y - rhs, lhs.z - rhs);
+        
+        /// <summary>
+        /// Returns a uint3 from component-wise application of operator- (lhs - rhs).
+        /// </summary>
+        public static uint3 operator-(uint lhs, uint3 rhs) => new uint3(lhs - rhs.x, lhs - rhs.y, lhs - rhs.z);
+        
+        /// <summary>
+        /// Returns a uint3 from component-wise application of operator* (lhs * rhs).
+        /// </summary>
+        public static uint3 operator*(uint3 lhs, uint3 rhs) => new uint3(lhs.x * rhs.x, lhs.y * rhs.y, lhs.z * rhs.z);
+        
+        /// <summary>
+        /// Returns a uint3 from component-wise application of operator* (lhs * rhs).
+        /// </summary>
+        public static uint3 operator*(uint3 lhs, uint rhs) => new uint3(lhs.x * rhs, lhs.y * rhs, lhs.z * rhs);
+        
+        /// <summary>
+        /// Returns a uint3 from component-wise application of operator* (lhs * rhs).
+        /// </summary>
+        public static uint3 operator*(uint lhs, uint3 rhs) => new uint3(lhs * rhs.x, lhs * rhs.y, lhs * rhs.z);
+        
+        /// <summary>
+        /// Returns a uint3 from component-wise application of operator/ (lhs / rhs).
+        /// </summary>
+        public static uint3 operator/(uint3 lhs, uint3 rhs) => new uint3(lhs.x / rhs.x, lhs.y / rhs.y, lhs.z / rhs.z);
+        
+        /// <summary>
+        /// Returns a uint3 from component-wise application of operator/ (lhs / rhs).
+        /// </summary>
+        public static uint3 operator/(uint3 lhs, uint rhs) => new uint3(lhs.x / rhs, lhs.y / rhs, lhs.z / rhs);
+        
+        /// <summary>
+        /// Returns a uint3 from component-wise application of operator/ (lhs / rhs).
+        /// </summary>
+        public static uint3 operator/(uint lhs, uint3 rhs) => new uint3(lhs / rhs.x, lhs / rhs.y, lhs / rhs.z);
+        
+        /// <summary>
+        /// Returns a uint3 from component-wise application of operator~ (~v).
+        /// </summary>
+        public static uint3 operator~(uint3 v) => new uint3(~v.x, ~v.y, ~v.z);
+        
+        /// <summary>
+        /// Returns a uint3 from component-wise application of operator% (lhs % rhs).
+        /// </summary>
+        public static uint3 operator%(uint3 lhs, uint3 rhs) => new uint3(lhs.x % rhs.x, lhs.y % rhs.y, lhs.z % rhs.z);
+        
+        /// <summary>
+        /// Returns a uint3 from component-wise application of operator% (lhs % rhs).
+        /// </summary>
+        public static uint3 operator%(uint3 lhs, uint rhs) => new uint3(lhs.x % rhs, lhs.y % rhs, lhs.z % rhs);
+        
+        /// <summary>
+        /// Returns a uint3 from component-wise application of operator% (lhs % rhs).
+        /// </summary>
+        public static uint3 operator%(uint lhs, uint3 rhs) => new uint3(lhs % rhs.x, lhs % rhs.y, lhs % rhs.z);
+        
+        /// <summary>
+        /// Returns a uint3 from component-wise application of operator^ (lhs ^ rhs).
+        /// </summary>
+        public static uint3 operator^(uint3 lhs, uint3 rhs) => new uint3(lhs.x ^ rhs.x, lhs.y ^ rhs.y, lhs.z ^ rhs.z);
+        
+        /// <summary>
+        /// Returns a uint3 from component-wise application of operator^ (lhs ^ rhs).
+        /// </summary>
+        public static uint3 operator^(uint3 lhs, uint rhs) => new uint3(lhs.x ^ rhs, lhs.y ^ rhs, lhs.z ^ rhs);
+        
+        /// <summary>
+        /// Returns a uint3 from component-wise application of operator^ (lhs ^ rhs).
+        /// </summary>
+        public static uint3 operator^(uint lhs, uint3 rhs) => new uint3(lhs ^ rhs.x, lhs ^ rhs.y, lhs ^ rhs.z);
+        
+        /// <summary>
+        /// Returns a uint3 from component-wise application of operator| (lhs | rhs).
+        /// </summary>
+        public static uint3 operator|(uint3 lhs, uint3 rhs) => new uint3(lhs.x | rhs.x, lhs.y | rhs.y, lhs.z | rhs.z);
+        
+        /// <summary>
+        /// Returns a uint3 from component-wise application of operator| (lhs | rhs).
+        /// </summary>
+        public static uint3 operator|(uint3 lhs, uint rhs) => new uint3(lhs.x | rhs, lhs.y | rhs, lhs.z | rhs);
+        
+        /// <summary>
+        /// Returns a uint3 from component-wise application of operator| (lhs | rhs).
+        /// </summary>
+        public static uint3 operator|(uint lhs, uint3 rhs) => new uint3(lhs | rhs.x, lhs | rhs.y, lhs | rhs.z);
+        
+        /// <summary>
+        /// Returns a uint3 from component-wise application of operator&amp; (lhs &amp; rhs).
+        /// </summary>
+        public static uint3 operator&(uint3 lhs, uint3 rhs) => new uint3(lhs.x & rhs.x, lhs.y & rhs.y, lhs.z & rhs.z);
+        
+        /// <summary>
+        /// Returns a uint3 from component-wise application of operator&amp; (lhs &amp; rhs).
+        /// </summary>
+        public static uint3 operator&(uint3 lhs, uint rhs) => new uint3(lhs.x & rhs, lhs.y & rhs, lhs.z & rhs);
+        
+        /// <summary>
+        /// Returns a uint3 from component-wise application of operator&amp; (lhs &amp; rhs).
+        /// </summary>
+        public static uint3 operator&(uint lhs, uint3 rhs) => new uint3(lhs & rhs.x, lhs & rhs.y, lhs & rhs.z);
+
+        #endregion
+
+    }
+}
