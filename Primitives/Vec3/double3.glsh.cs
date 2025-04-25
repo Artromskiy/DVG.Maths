@@ -205,6 +205,8 @@ namespace DVG
         public static bool Equals(double3 v, double3 other) => v.Equals(other);
         
         public static bool Equals(double3 v, object? obj) => v.Equals(obj);
+        
+        public static double SqrLength(double3 v) => v.SqrLength();
 
     }
 }

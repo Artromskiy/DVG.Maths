@@ -625,6 +625,8 @@ namespace DVG
         public readonly bool Equals(float4 other) => other == this;
         
         public override readonly bool Equals(object? obj) => obj is float4 other && Equals(other);
+        
+        public readonly float SqrLength() => x * x + y * y + z * z + w * w;
 
         #endregion
 
@@ -634,7 +636,7 @@ namespace DVG
         /// <summary>
         /// Returns the euclidean length of this vector.
         /// </summary>
-        public static float Length(float4 v) => Maths.Sqrt(((v.x*v.x + v.y*v.y) + (v.z*v.z + v.w*v.w)));
+        public static float Length(float4 v) => Maths.Sqrt(v.x * v.x + v.y * v.y + v.z * v.z + v.w * v.w);
         
         /// <summary>
         /// Returns the euclidean distance between the two vectors.

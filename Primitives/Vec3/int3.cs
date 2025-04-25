@@ -353,6 +353,8 @@ namespace DVG
         public readonly bool Equals(int3 other) => other == this;
         
         public override readonly bool Equals(object? obj) => obj is int3 other && Equals(other);
+        
+        public readonly int SqrLength() => x * x + y * y + z * z;
 
         #endregion
 

@@ -310,6 +310,8 @@ namespace DVG
         public static bool Equals(float2 v, float2 other) => v.Equals(other);
         
         public static bool Equals(float2 v, object? obj) => v.Equals(obj);
+        
+        public static float SqrLength(float2 v) => v.SqrLength();
 
     }
 }

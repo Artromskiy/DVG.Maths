@@ -615,6 +615,8 @@ namespace DVG
         public readonly bool Equals(double4 other) => other == this;
         
         public override readonly bool Equals(object? obj) => obj is double4 other && Equals(other);
+        
+        public readonly double SqrLength() => x * x + y * y + z * z + w * w;
 
         #endregion
 
@@ -624,7 +626,7 @@ namespace DVG
         /// <summary>
         /// Returns the euclidean length of this vector.
         /// </summary>
-        public static double Length(double4 v) => Maths.Sqrt(((v.x*v.x + v.y*v.y) + (v.z*v.z + v.w*v.w)));
+        public static double Length(double4 v) => Maths.Sqrt(v.x * v.x + v.y * v.y + v.z * v.z + v.w * v.w);
         
         /// <summary>
         /// Returns the euclidean distance between the two vectors.

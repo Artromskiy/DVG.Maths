@@ -200,6 +200,8 @@ namespace DVG
         public readonly bool Equals(double2 other) => other == this;
         
         public override readonly bool Equals(object? obj) => obj is double2 other && Equals(other);
+        
+        public readonly double SqrLength() => x * x + y * y;
 
         #endregion
 
@@ -209,7 +211,7 @@ namespace DVG
         /// <summary>
         /// Returns the euclidean length of this vector.
         /// </summary>
-        public static double Length(double2 v) => Maths.Sqrt((v.x*v.x + v.y*v.y));
+        public static double Length(double2 v) => Maths.Sqrt(v.x * v.x + v.y * v.y);
         
         /// <summary>
         /// Returns the euclidean distance between the two vectors.
