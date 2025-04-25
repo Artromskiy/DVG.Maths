@@ -206,7 +206,10 @@ namespace DVG
         
         public static bool Equals(double3 v, object? obj) => v.Equals(obj);
         
-        public static double SqrLength(double3 v) => v.SqrLength();
+        /// <summary>
+        /// Returns the square length of this vector.
+        /// </summary>
+        public static double SqrLength(double3 v) => double3.SqrLength(v);
 
     }
 }

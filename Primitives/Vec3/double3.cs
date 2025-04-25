@@ -333,8 +333,6 @@ namespace DVG
         public readonly bool Equals(double3 other) => other == this;
         
         public override readonly bool Equals(object? obj) => obj is double3 other && Equals(other);
-        
-        public readonly double SqrLength() => x * x + y * y + z * z;
 
         #endregion
 
@@ -391,6 +389,11 @@ namespace DVG
         /// Returns a double3 from component-wise application of Clamp (Maths.Clamp(v, min, max)).
         /// </summary>
         public static double3 Clamp(double3 v, double min, double max) => new double3(Maths.Clamp(v.x, min, max), Maths.Clamp(v.y, min, max), Maths.Clamp(v.z, min, max));
+        
+        /// <summary>
+        /// Returns the square length of this vector.
+        /// </summary>
+        public static double SqrLength(double3 v) => v.x * v.x + v.y * v.y + v.z * v.z;
 
         #endregion
 

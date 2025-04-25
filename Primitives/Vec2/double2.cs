@@ -200,8 +200,6 @@ namespace DVG
         public readonly bool Equals(double2 other) => other == this;
         
         public override readonly bool Equals(object? obj) => obj is double2 other && Equals(other);
-        
-        public readonly double SqrLength() => x * x + y * y;
 
         #endregion
 
@@ -253,6 +251,11 @@ namespace DVG
         /// Returns a double2 from component-wise application of Clamp (Maths.Clamp(v, min, max)).
         /// </summary>
         public static double2 Clamp(double2 v, double min, double max) => new double2(Maths.Clamp(v.x, min, max), Maths.Clamp(v.y, min, max));
+        
+        /// <summary>
+        /// Returns the square length of this vector.
+        /// </summary>
+        public static double SqrLength(double2 v) => v.x * v.x + v.y * v.y;
 
         #endregion
 

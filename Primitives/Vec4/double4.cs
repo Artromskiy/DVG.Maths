@@ -615,8 +615,6 @@ namespace DVG
         public readonly bool Equals(double4 other) => other == this;
         
         public override readonly bool Equals(object? obj) => obj is double4 other && Equals(other);
-        
-        public readonly double SqrLength() => x * x + y * y + z * z + w * w;
 
         #endregion
 
@@ -668,6 +666,11 @@ namespace DVG
         /// Returns a double4 from component-wise application of Clamp (Maths.Clamp(v, min, max)).
         /// </summary>
         public static double4 Clamp(double4 v, double min, double max) => new double4(Maths.Clamp(v.x, min, max), Maths.Clamp(v.y, min, max), Maths.Clamp(v.z, min, max), Maths.Clamp(v.w, min, max));
+        
+        /// <summary>
+        /// Returns the square length of this vector.
+        /// </summary>
+        public static double SqrLength(double4 v) => v.x * v.x + v.y * v.y + v.z * v.z + v.w * v.w;
 
         #endregion
 

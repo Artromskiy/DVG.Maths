@@ -333,8 +333,6 @@ namespace DVG
         public readonly bool Equals(bool3 other) => other == this;
         
         public override readonly bool Equals(object? obj) => obj is bool3 other && Equals(other);
-        
-        public readonly bool SqrLength() => x * x + y * y + z * z;
 
         #endregion
 

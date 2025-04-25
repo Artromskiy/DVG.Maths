@@ -311,7 +311,10 @@ namespace DVG
         
         public static bool Equals(float2 v, object? obj) => v.Equals(obj);
         
-        public static float SqrLength(float2 v) => v.SqrLength();
+        /// <summary>
+        /// Returns the square length of this vector.
+        /// </summary>
+        public static float SqrLength(float2 v) => float2.SqrLength(v);
 
     }
 }

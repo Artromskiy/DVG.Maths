@@ -625,8 +625,6 @@ namespace DVG
         public readonly bool Equals(float4 other) => other == this;
         
         public override readonly bool Equals(object? obj) => obj is float4 other && Equals(other);
-        
-        public readonly float SqrLength() => x * x + y * y + z * z + w * w;
 
         #endregion
 
@@ -678,6 +676,11 @@ namespace DVG
         /// Returns a float4 from component-wise application of Clamp (Maths.Clamp(v, min, max)).
         /// </summary>
         public static float4 Clamp(float4 v, float min, float max) => new float4(Maths.Clamp(v.x, min, max), Maths.Clamp(v.y, min, max), Maths.Clamp(v.z, min, max), Maths.Clamp(v.w, min, max));
+        
+        /// <summary>
+        /// Returns the square length of this vector.
+        /// </summary>
+        public static float SqrLength(float4 v) => v.x * v.x + v.y * v.y + v.z * v.z + v.w * v.w;
 
         #endregion
 

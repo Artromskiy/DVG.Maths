@@ -95,8 +95,6 @@ namespace DVG
         public static bool Equals(int2 v, int2 other) => v.Equals(other);
         
         public static bool Equals(int2 v, object? obj) => v.Equals(obj);
-        
-        public static int SqrLength(int2 v) => v.SqrLength();
 
     }
 }
