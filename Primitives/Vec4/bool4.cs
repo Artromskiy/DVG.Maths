@@ -50,6 +50,7 @@ namespace DVG
         /// <summary>
         /// Component-wise constructor
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public bool4(bool x, bool y, bool z, bool w)
         {
             this.x = x;
@@ -61,6 +62,7 @@ namespace DVG
         /// <summary>
         /// all-same-value constructor
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public bool4(bool v)
         {
             this.x = v;
@@ -72,6 +74,7 @@ namespace DVG
         /// <summary>
         /// from-vector constructor (empty fields are zero/false)
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public bool4(bool2 v)
         {
             this.x = v.x;
@@ -83,6 +86,7 @@ namespace DVG
         /// <summary>
         /// from-vector-and-value constructor (empty fields are zero/false)
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public bool4(bool2 v, bool z)
         {
             this.x = v.x;
@@ -94,6 +98,7 @@ namespace DVG
         /// <summary>
         /// from-vector-and-value constructor
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public bool4(bool2 v, bool z, bool w)
         {
             this.x = v.x;
@@ -105,6 +110,7 @@ namespace DVG
         /// <summary>
         /// from-vector constructor (empty fields are zero/false)
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public bool4(bool3 v)
         {
             this.x = v.x;
@@ -116,6 +122,7 @@ namespace DVG
         /// <summary>
         /// from-vector-and-value constructor
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public bool4(bool3 v, bool w)
         {
             this.x = v.x;
@@ -127,6 +134,7 @@ namespace DVG
         /// <summary>
         /// from-vector constructor
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public bool4(bool4 v)
         {
             this.x = v.x;
@@ -593,8 +601,10 @@ namespace DVG
 
         #region Operators
         
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool operator==(bool4 lhs, bool4 rhs) => lhs.x == rhs.x&&lhs.y == rhs.y&&lhs.z == rhs.z&&lhs.w == rhs.w;
         
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool operator!=(bool4 lhs, bool4 rhs) => lhs.x != rhs.x||lhs.y != rhs.y||lhs.z != rhs.z||lhs.w != rhs.w;
 
         #endregion
@@ -605,15 +615,19 @@ namespace DVG
         /// <summary>
         /// Returns HashCode
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public override readonly int GetHashCode() => HashCode.Combine(x, y, z, w);
         
         /// <summary>
         /// Returns a string representation of this vector.
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public override readonly string ToString() => x + ", " + y + ", " + z + ", " + w;
         
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public readonly bool Equals(bool4 other) => other == this;
         
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public override readonly bool Equals(object? obj) => obj is bool4 other && Equals(other);
 
         #endregion
@@ -621,8 +635,10 @@ namespace DVG
 
         #region Static Functions
         
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool Any(bool4 v) => v.x||v.y||v.z||v.w;
         
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool All(bool4 v) => v.x&&v.y&&v.z&&v.w;
 
         #endregion
@@ -633,21 +649,25 @@ namespace DVG
         /// <summary>
         /// Returns a bool4 from component-wise application of Equal (lhs == rhs).
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool4 Equal(bool4 lhs, bool4 rhs) => new bool4(lhs.x == rhs.x, lhs.y == rhs.y, lhs.z == rhs.z, lhs.w == rhs.w);
         
         /// <summary>
         /// Returns a bool4 from component-wise application of NotEqual (lhs != rhs).
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool4 NotEqual(bool4 lhs, bool4 rhs) => new bool4(lhs.x != rhs.x, lhs.y != rhs.y, lhs.z != rhs.z, lhs.w != rhs.w);
         
         /// <summary>
         /// Returns a bool4 from component-wise application of Not (!v).
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool4 Not(bool4 v) => new bool4(!v.x, !v.y, !v.z, !v.w);
         
         /// <summary>
         /// Returns a bool4 from component-wise application of Mix (a ? y : x).
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool4 Mix(bool4 x, bool4 y, bool4 a) => new bool4(a.x ? y.x : x.x, a.y ? y.y : x.y, a.z ? y.z : x.z, a.w ? y.w : x.w);
 
         #endregion

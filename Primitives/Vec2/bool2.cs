@@ -40,6 +40,7 @@ namespace DVG
         /// <summary>
         /// Component-wise constructor
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public bool2(bool x, bool y)
         {
             this.x = x;
@@ -49,6 +50,7 @@ namespace DVG
         /// <summary>
         /// all-same-value constructor
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public bool2(bool v)
         {
             this.x = v;
@@ -58,6 +60,7 @@ namespace DVG
         /// <summary>
         /// from-vector constructor
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public bool2(bool2 v)
         {
             this.x = v.x;
@@ -67,6 +70,7 @@ namespace DVG
         /// <summary>
         /// from-vector constructor (additional fields are truncated)
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public bool2(bool3 v)
         {
             this.x = v.x;
@@ -76,6 +80,7 @@ namespace DVG
         /// <summary>
         /// from-vector constructor (additional fields are truncated)
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public bool2(bool4 v)
         {
             this.x = v.x;
@@ -178,8 +183,10 @@ namespace DVG
 
         #region Operators
         
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool operator==(bool2 lhs, bool2 rhs) => lhs.x == rhs.x&&lhs.y == rhs.y;
         
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool operator!=(bool2 lhs, bool2 rhs) => lhs.x != rhs.x||lhs.y != rhs.y;
 
         #endregion
@@ -190,15 +197,19 @@ namespace DVG
         /// <summary>
         /// Returns HashCode
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public override readonly int GetHashCode() => HashCode.Combine(x, y);
         
         /// <summary>
         /// Returns a string representation of this vector.
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public override readonly string ToString() => x + ", " + y;
         
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public readonly bool Equals(bool2 other) => other == this;
         
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public override readonly bool Equals(object? obj) => obj is bool2 other && Equals(other);
 
         #endregion
@@ -206,8 +217,10 @@ namespace DVG
 
         #region Static Functions
         
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool Any(bool2 v) => v.x||v.y;
         
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool All(bool2 v) => v.x&&v.y;
 
         #endregion
@@ -218,21 +231,25 @@ namespace DVG
         /// <summary>
         /// Returns a bool2 from component-wise application of Equal (lhs == rhs).
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool2 Equal(bool2 lhs, bool2 rhs) => new bool2(lhs.x == rhs.x, lhs.y == rhs.y);
         
         /// <summary>
         /// Returns a bool2 from component-wise application of NotEqual (lhs != rhs).
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool2 NotEqual(bool2 lhs, bool2 rhs) => new bool2(lhs.x != rhs.x, lhs.y != rhs.y);
         
         /// <summary>
         /// Returns a bool2 from component-wise application of Not (!v).
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool2 Not(bool2 v) => new bool2(!v.x, !v.y);
         
         /// <summary>
         /// Returns a bool2 from component-wise application of Mix (a ? y : x).
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool2 Mix(bool2 x, bool2 y, bool2 a) => new bool2(a.x ? y.x : x.x, a.y ? y.y : x.y);
 
         #endregion

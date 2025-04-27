@@ -45,6 +45,7 @@ namespace DVG
         /// <summary>
         /// Component-wise constructor
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public bool3(bool x, bool y, bool z)
         {
             this.x = x;
@@ -55,6 +56,7 @@ namespace DVG
         /// <summary>
         /// all-same-value constructor
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public bool3(bool v)
         {
             this.x = v;
@@ -65,6 +67,7 @@ namespace DVG
         /// <summary>
         /// from-vector constructor (empty fields are zero/false)
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public bool3(bool2 v)
         {
             this.x = v.x;
@@ -75,6 +78,7 @@ namespace DVG
         /// <summary>
         /// from-vector-and-value constructor
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public bool3(bool2 v, bool z)
         {
             this.x = v.x;
@@ -85,6 +89,7 @@ namespace DVG
         /// <summary>
         /// from-vector constructor
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public bool3(bool3 v)
         {
             this.x = v.x;
@@ -95,6 +100,7 @@ namespace DVG
         /// <summary>
         /// from-vector constructor (additional fields are truncated)
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public bool3(bool4 v)
         {
             this.x = v.x;
@@ -311,8 +317,10 @@ namespace DVG
 
         #region Operators
         
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool operator==(bool3 lhs, bool3 rhs) => lhs.x == rhs.x&&lhs.y == rhs.y&&lhs.z == rhs.z;
         
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool operator!=(bool3 lhs, bool3 rhs) => lhs.x != rhs.x||lhs.y != rhs.y||lhs.z != rhs.z;
 
         #endregion
@@ -323,15 +331,19 @@ namespace DVG
         /// <summary>
         /// Returns HashCode
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public override readonly int GetHashCode() => HashCode.Combine(x, y, z);
         
         /// <summary>
         /// Returns a string representation of this vector.
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public override readonly string ToString() => x + ", " + y + ", " + z;
         
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public readonly bool Equals(bool3 other) => other == this;
         
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public override readonly bool Equals(object? obj) => obj is bool3 other && Equals(other);
 
         #endregion
@@ -339,8 +351,10 @@ namespace DVG
 
         #region Static Functions
         
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool Any(bool3 v) => v.x||v.y||v.z;
         
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool All(bool3 v) => v.x&&v.y&&v.z;
 
         #endregion
@@ -351,21 +365,25 @@ namespace DVG
         /// <summary>
         /// Returns a bool3 from component-wise application of Equal (lhs == rhs).
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool3 Equal(bool3 lhs, bool3 rhs) => new bool3(lhs.x == rhs.x, lhs.y == rhs.y, lhs.z == rhs.z);
         
         /// <summary>
         /// Returns a bool3 from component-wise application of NotEqual (lhs != rhs).
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool3 NotEqual(bool3 lhs, bool3 rhs) => new bool3(lhs.x != rhs.x, lhs.y != rhs.y, lhs.z != rhs.z);
         
         /// <summary>
         /// Returns a bool3 from component-wise application of Not (!v).
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool3 Not(bool3 v) => new bool3(!v.x, !v.y, !v.z);
         
         /// <summary>
         /// Returns a bool3 from component-wise application of Mix (a ? y : x).
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool3 Mix(bool3 x, bool3 y, bool3 a) => new bool3(a.x ? y.x : x.x, a.y ? y.y : x.y, a.z ? y.z : x.z);
 
         #endregion

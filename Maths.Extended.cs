@@ -16,5 +16,12 @@
             vel = finalized ? 0 : vel;
             return final;
         }
+
+        public static float InvLerp(float a, float b, float value) => (value - a) / (b - a);
+        public static double InvLerp(double a, double b, double value) => (value - a) / (b - a);
+
+        public static float Remap(float source, float sourceFrom, float sourceTo, float targetFrom, float targetTo) => targetFrom + ((source - sourceFrom) * (targetTo - targetFrom) / (sourceTo - sourceFrom));
+        public static double Remap(double source, double sourceFrom, double sourceTo, double targetFrom, double targetTo) => targetFrom + ((source - sourceFrom) * (targetTo - targetFrom) / (sourceTo - sourceFrom));
+
     }
 }

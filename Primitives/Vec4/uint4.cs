@@ -50,6 +50,7 @@ namespace DVG
         /// <summary>
         /// Component-wise constructor
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public uint4(uint x, uint y, uint z, uint w)
         {
             this.x = x;
@@ -61,6 +62,7 @@ namespace DVG
         /// <summary>
         /// all-same-value constructor
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public uint4(uint v)
         {
             this.x = v;
@@ -72,6 +74,7 @@ namespace DVG
         /// <summary>
         /// from-vector constructor (empty fields are zero/false)
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public uint4(uint2 v)
         {
             this.x = v.x;
@@ -83,6 +86,7 @@ namespace DVG
         /// <summary>
         /// from-vector-and-value constructor (empty fields are zero/false)
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public uint4(uint2 v, uint z)
         {
             this.x = v.x;
@@ -94,6 +98,7 @@ namespace DVG
         /// <summary>
         /// from-vector-and-value constructor
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public uint4(uint2 v, uint z, uint w)
         {
             this.x = v.x;
@@ -105,6 +110,7 @@ namespace DVG
         /// <summary>
         /// from-vector constructor (empty fields are zero/false)
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public uint4(uint3 v)
         {
             this.x = v.x;
@@ -116,6 +122,7 @@ namespace DVG
         /// <summary>
         /// from-vector-and-value constructor
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public uint4(uint3 v, uint w)
         {
             this.x = v.x;
@@ -127,6 +134,7 @@ namespace DVG
         /// <summary>
         /// from-vector constructor
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public uint4(uint4 v)
         {
             this.x = v.x;
@@ -143,11 +151,13 @@ namespace DVG
         /// <summary>
         /// Implicitly converts this to a float4.
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static implicit operator float4(uint4 v) => new float4((float)v.x, (float)v.y, (float)v.z, (float)v.w);
         
         /// <summary>
         /// Implicitly converts this to a double4.
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static implicit operator double4(uint4 v) => new double4((double)v.x, (double)v.y, (double)v.z, (double)v.w);
 
         #endregion
@@ -608,8 +618,10 @@ namespace DVG
 
         #region Operators
         
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool operator==(uint4 lhs, uint4 rhs) => lhs.x == rhs.x&&lhs.y == rhs.y&&lhs.z == rhs.z&&lhs.w == rhs.w;
         
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool operator!=(uint4 lhs, uint4 rhs) => lhs.x != rhs.x||lhs.y != rhs.y||lhs.z != rhs.z||lhs.w != rhs.w;
 
         #endregion
@@ -620,15 +632,19 @@ namespace DVG
         /// <summary>
         /// Returns HashCode
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public override readonly int GetHashCode() => HashCode.Combine(x, y, z, w);
         
         /// <summary>
         /// Returns a string representation of this vector.
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public override readonly string ToString() => x + ", " + y + ", " + z + ", " + w;
         
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public readonly bool Equals(uint4 other) => other == this;
         
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public override readonly bool Equals(object? obj) => obj is uint4 other && Equals(other);
 
         #endregion
@@ -639,6 +655,7 @@ namespace DVG
         /// <summary>
         /// Returns a uint4 from component-wise application of Clamp (Maths.Clamp(v, min, max)).
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint4 Clamp(uint4 v, uint min, uint max) => new uint4(Maths.Clamp(v.x, min, max), Maths.Clamp(v.y, min, max), Maths.Clamp(v.z, min, max), Maths.Clamp(v.w, min, max));
 
         #endregion
@@ -649,66 +666,79 @@ namespace DVG
         /// <summary>
         /// Returns a bool4 from component-wise application of LesserThan (lhs &lt; rhs).
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool4 LesserThan(uint4 lhs, uint4 rhs) => new bool4(lhs.x < rhs.x, lhs.y < rhs.y, lhs.z < rhs.z, lhs.w < rhs.w);
         
         /// <summary>
         /// Returns a bool4 from component-wise application of LesserThanEqual (lhs &lt;= rhs).
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool4 LesserThanEqual(uint4 lhs, uint4 rhs) => new bool4(lhs.x <= rhs.x, lhs.y <= rhs.y, lhs.z <= rhs.z, lhs.w <= rhs.w);
         
         /// <summary>
         /// Returns a bool4 from component-wise application of GreaterThan (lhs &gt; rhs).
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool4 GreaterThan(uint4 lhs, uint4 rhs) => new bool4(lhs.x > rhs.x, lhs.y > rhs.y, lhs.z > rhs.z, lhs.w > rhs.w);
         
         /// <summary>
         /// Returns a bool4 from component-wise application of GreaterThanEqual (lhs &gt;= rhs).
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool4 GreaterThanEqual(uint4 lhs, uint4 rhs) => new bool4(lhs.x >= rhs.x, lhs.y >= rhs.y, lhs.z >= rhs.z, lhs.w >= rhs.w);
         
         /// <summary>
         /// Returns a bool4 from component-wise application of Equal (lhs == rhs).
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool4 Equal(uint4 lhs, uint4 rhs) => new bool4(lhs.x == rhs.x, lhs.y == rhs.y, lhs.z == rhs.z, lhs.w == rhs.w);
         
         /// <summary>
         /// Returns a bool4 from component-wise application of NotEqual (lhs != rhs).
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool4 NotEqual(uint4 lhs, uint4 rhs) => new bool4(lhs.x != rhs.x, lhs.y != rhs.y, lhs.z != rhs.z, lhs.w != rhs.w);
         
         /// <summary>
         /// Returns a uint4 from component-wise application of Min (Maths.Min(lhs, rhs)).
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint4 Min(uint4 lhs, uint4 rhs) => new uint4(Maths.Min(lhs.x, rhs.x), Maths.Min(lhs.y, rhs.y), Maths.Min(lhs.z, rhs.z), Maths.Min(lhs.w, rhs.w));
         
         /// <summary>
         /// Returns a uint4 from component-wise application of Min (Maths.Min(lhs, rhs)).
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint4 Min(uint4 lhs, uint rhs) => new uint4(Maths.Min(lhs.x, rhs), Maths.Min(lhs.y, rhs), Maths.Min(lhs.z, rhs), Maths.Min(lhs.w, rhs));
         
         /// <summary>
         /// Returns a uint4 from component-wise application of Max (Maths.Max(lhs, rhs)).
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint4 Max(uint4 lhs, uint4 rhs) => new uint4(Maths.Max(lhs.x, rhs.x), Maths.Max(lhs.y, rhs.y), Maths.Max(lhs.z, rhs.z), Maths.Max(lhs.w, rhs.w));
         
         /// <summary>
         /// Returns a uint4 from component-wise application of Max (Maths.Max(lhs, rhs)).
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint4 Max(uint4 lhs, uint rhs) => new uint4(Maths.Max(lhs.x, rhs), Maths.Max(lhs.y, rhs), Maths.Max(lhs.z, rhs), Maths.Max(lhs.w, rhs));
         
         /// <summary>
         /// Returns a uint4 from component-wise application of Clamp (Maths.Clamp(v, min, max)).
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint4 Clamp(uint4 v, uint4 min, uint4 max) => new uint4(Maths.Clamp(v.x, min.x, max.x), Maths.Clamp(v.y, min.y, max.y), Maths.Clamp(v.z, min.z, max.z), Maths.Clamp(v.w, min.w, max.w));
         
         /// <summary>
         /// Returns a uint4 from component-wise application of Mix (a ? y : x).
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint4 Mix(uint4 x, uint4 y, bool4 a) => new uint4(a.x ? y.x : x.x, a.y ? y.y : x.y, a.z ? y.z : x.z, a.w ? y.w : x.w);
         
         /// <summary>
         /// Returns a float4 from component-wise application of UIntBitsToFloat (Unsafe.As&lt;uint, float&gt;(ref v)).
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float4 UIntBitsToFloat(uint4 v) => new float4(Unsafe.As<uint, float>(ref v.x), Unsafe.As<uint, float>(ref v.y), Unsafe.As<uint, float>(ref v.z), Unsafe.As<uint, float>(ref v.w));
 
         #endregion
@@ -719,126 +749,151 @@ namespace DVG
         /// <summary>
         /// Returns a uint4 from component-wise application of operator+ (lhs + rhs).
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint4 operator+(uint4 lhs, uint4 rhs) => new uint4(lhs.x + rhs.x, lhs.y + rhs.y, lhs.z + rhs.z, lhs.w + rhs.w);
         
         /// <summary>
         /// Returns a uint4 from component-wise application of operator+ (lhs + rhs).
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint4 operator+(uint4 lhs, uint rhs) => new uint4(lhs.x + rhs, lhs.y + rhs, lhs.z + rhs, lhs.w + rhs);
         
         /// <summary>
         /// Returns a uint4 from component-wise application of operator+ (lhs + rhs).
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint4 operator+(uint lhs, uint4 rhs) => new uint4(lhs + rhs.x, lhs + rhs.y, lhs + rhs.z, lhs + rhs.w);
         
         /// <summary>
         /// Returns a uint4 from component-wise application of operator- (lhs - rhs).
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint4 operator-(uint4 lhs, uint4 rhs) => new uint4(lhs.x - rhs.x, lhs.y - rhs.y, lhs.z - rhs.z, lhs.w - rhs.w);
         
         /// <summary>
         /// Returns a uint4 from component-wise application of operator- (lhs - rhs).
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint4 operator-(uint4 lhs, uint rhs) => new uint4(lhs.x - rhs, lhs.y - rhs, lhs.z - rhs, lhs.w - rhs);
         
         /// <summary>
         /// Returns a uint4 from component-wise application of operator- (lhs - rhs).
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint4 operator-(uint lhs, uint4 rhs) => new uint4(lhs - rhs.x, lhs - rhs.y, lhs - rhs.z, lhs - rhs.w);
         
         /// <summary>
         /// Returns a uint4 from component-wise application of operator* (lhs * rhs).
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint4 operator*(uint4 lhs, uint4 rhs) => new uint4(lhs.x * rhs.x, lhs.y * rhs.y, lhs.z * rhs.z, lhs.w * rhs.w);
         
         /// <summary>
         /// Returns a uint4 from component-wise application of operator* (lhs * rhs).
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint4 operator*(uint4 lhs, uint rhs) => new uint4(lhs.x * rhs, lhs.y * rhs, lhs.z * rhs, lhs.w * rhs);
         
         /// <summary>
         /// Returns a uint4 from component-wise application of operator* (lhs * rhs).
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint4 operator*(uint lhs, uint4 rhs) => new uint4(lhs * rhs.x, lhs * rhs.y, lhs * rhs.z, lhs * rhs.w);
         
         /// <summary>
         /// Returns a uint4 from component-wise application of operator/ (lhs / rhs).
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint4 operator/(uint4 lhs, uint4 rhs) => new uint4(lhs.x / rhs.x, lhs.y / rhs.y, lhs.z / rhs.z, lhs.w / rhs.w);
         
         /// <summary>
         /// Returns a uint4 from component-wise application of operator/ (lhs / rhs).
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint4 operator/(uint4 lhs, uint rhs) => new uint4(lhs.x / rhs, lhs.y / rhs, lhs.z / rhs, lhs.w / rhs);
         
         /// <summary>
         /// Returns a uint4 from component-wise application of operator/ (lhs / rhs).
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint4 operator/(uint lhs, uint4 rhs) => new uint4(lhs / rhs.x, lhs / rhs.y, lhs / rhs.z, lhs / rhs.w);
         
         /// <summary>
         /// Returns a uint4 from component-wise application of operator~ (~v).
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint4 operator~(uint4 v) => new uint4(~v.x, ~v.y, ~v.z, ~v.w);
         
         /// <summary>
         /// Returns a uint4 from component-wise application of operator% (lhs % rhs).
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint4 operator%(uint4 lhs, uint4 rhs) => new uint4(lhs.x % rhs.x, lhs.y % rhs.y, lhs.z % rhs.z, lhs.w % rhs.w);
         
         /// <summary>
         /// Returns a uint4 from component-wise application of operator% (lhs % rhs).
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint4 operator%(uint4 lhs, uint rhs) => new uint4(lhs.x % rhs, lhs.y % rhs, lhs.z % rhs, lhs.w % rhs);
         
         /// <summary>
         /// Returns a uint4 from component-wise application of operator% (lhs % rhs).
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint4 operator%(uint lhs, uint4 rhs) => new uint4(lhs % rhs.x, lhs % rhs.y, lhs % rhs.z, lhs % rhs.w);
         
         /// <summary>
         /// Returns a uint4 from component-wise application of operator^ (lhs ^ rhs).
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint4 operator^(uint4 lhs, uint4 rhs) => new uint4(lhs.x ^ rhs.x, lhs.y ^ rhs.y, lhs.z ^ rhs.z, lhs.w ^ rhs.w);
         
         /// <summary>
         /// Returns a uint4 from component-wise application of operator^ (lhs ^ rhs).
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint4 operator^(uint4 lhs, uint rhs) => new uint4(lhs.x ^ rhs, lhs.y ^ rhs, lhs.z ^ rhs, lhs.w ^ rhs);
         
         /// <summary>
         /// Returns a uint4 from component-wise application of operator^ (lhs ^ rhs).
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint4 operator^(uint lhs, uint4 rhs) => new uint4(lhs ^ rhs.x, lhs ^ rhs.y, lhs ^ rhs.z, lhs ^ rhs.w);
         
         /// <summary>
         /// Returns a uint4 from component-wise application of operator| (lhs | rhs).
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint4 operator|(uint4 lhs, uint4 rhs) => new uint4(lhs.x | rhs.x, lhs.y | rhs.y, lhs.z | rhs.z, lhs.w | rhs.w);
         
         /// <summary>
         /// Returns a uint4 from component-wise application of operator| (lhs | rhs).
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint4 operator|(uint4 lhs, uint rhs) => new uint4(lhs.x | rhs, lhs.y | rhs, lhs.z | rhs, lhs.w | rhs);
         
         /// <summary>
         /// Returns a uint4 from component-wise application of operator| (lhs | rhs).
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint4 operator|(uint lhs, uint4 rhs) => new uint4(lhs | rhs.x, lhs | rhs.y, lhs | rhs.z, lhs | rhs.w);
         
         /// <summary>
         /// Returns a uint4 from component-wise application of operator&amp; (lhs &amp; rhs).
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint4 operator&(uint4 lhs, uint4 rhs) => new uint4(lhs.x & rhs.x, lhs.y & rhs.y, lhs.z & rhs.z, lhs.w & rhs.w);
         
         /// <summary>
         /// Returns a uint4 from component-wise application of operator&amp; (lhs &amp; rhs).
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint4 operator&(uint4 lhs, uint rhs) => new uint4(lhs.x & rhs, lhs.y & rhs, lhs.z & rhs, lhs.w & rhs);
         
         /// <summary>
         /// Returns a uint4 from component-wise application of operator&amp; (lhs &amp; rhs).
         /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint4 operator&(uint lhs, uint4 rhs) => new uint4(lhs & rhs.x, lhs & rhs.y, lhs & rhs.z, lhs & rhs.w);
 
         #endregion
