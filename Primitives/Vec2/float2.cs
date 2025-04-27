@@ -130,15 +130,1710 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float2 xy
+        public float r
         {
-            get
-            {
-                return new float2(x, y);
-            }
+            get => x;
             set
             {
-                x = value.x;
+                x = value;
+            }
+        }
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public float s
+        {
+            get => x;
+            set
+            {
+                x = value;
+            }
+        }
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public float g
+        {
+            get => y;
+            set
+            {
+                y = value;
+            }
+        }
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public float t
+        {
+            get => y;
+            set
+            {
+                y = value;
+            }
+        }
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 ___x => new float4(0f, 0f, 0f, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 ___r => new float4(0f, 0f, 0f, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 ___s => new float4(0f, 0f, 0f, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 ___y => new float4(0f, 0f, 0f, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 ___g => new float4(0f, 0f, 0f, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 ___t => new float4(0f, 0f, 0f, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 __x_ => new float4(0f, 0f, x, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 __r_ => new float4(0f, 0f, x, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 __s_ => new float4(0f, 0f, x, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 __xx => new float4(0f, 0f, x, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 __rr => new float4(0f, 0f, x, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 __ss => new float4(0f, 0f, x, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 __xy => new float4(0f, 0f, x, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 __rg => new float4(0f, 0f, x, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 __st => new float4(0f, 0f, x, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 __y_ => new float4(0f, 0f, y, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 __g_ => new float4(0f, 0f, y, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 __t_ => new float4(0f, 0f, y, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 __yx => new float4(0f, 0f, y, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 __gr => new float4(0f, 0f, y, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 __ts => new float4(0f, 0f, y, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 __yy => new float4(0f, 0f, y, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 __gg => new float4(0f, 0f, y, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 __tt => new float4(0f, 0f, y, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 _x__ => new float4(0f, x, 0f, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 _r__ => new float4(0f, x, 0f, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 _s__ => new float4(0f, x, 0f, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 _x_x => new float4(0f, x, 0f, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 _r_r => new float4(0f, x, 0f, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 _s_s => new float4(0f, x, 0f, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 _x_y => new float4(0f, x, 0f, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 _r_g => new float4(0f, x, 0f, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 _s_t => new float4(0f, x, 0f, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 _xx_ => new float4(0f, x, x, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 _rr_ => new float4(0f, x, x, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 _ss_ => new float4(0f, x, x, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 _xxx => new float4(0f, x, x, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 _rrr => new float4(0f, x, x, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 _sss => new float4(0f, x, x, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 _xxy => new float4(0f, x, x, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 _rrg => new float4(0f, x, x, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 _sst => new float4(0f, x, x, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 _xy_ => new float4(0f, x, y, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 _rg_ => new float4(0f, x, y, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 _st_ => new float4(0f, x, y, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 _xyx => new float4(0f, x, y, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 _rgr => new float4(0f, x, y, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 _sts => new float4(0f, x, y, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 _xyy => new float4(0f, x, y, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 _rgg => new float4(0f, x, y, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 _stt => new float4(0f, x, y, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 _y__ => new float4(0f, y, 0f, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 _g__ => new float4(0f, y, 0f, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 _t__ => new float4(0f, y, 0f, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 _y_x => new float4(0f, y, 0f, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 _g_r => new float4(0f, y, 0f, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 _t_s => new float4(0f, y, 0f, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 _y_y => new float4(0f, y, 0f, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 _g_g => new float4(0f, y, 0f, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 _t_t => new float4(0f, y, 0f, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 _yx_ => new float4(0f, y, x, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 _gr_ => new float4(0f, y, x, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 _ts_ => new float4(0f, y, x, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 _yxx => new float4(0f, y, x, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 _grr => new float4(0f, y, x, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 _tss => new float4(0f, y, x, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 _yxy => new float4(0f, y, x, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 _grg => new float4(0f, y, x, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 _tst => new float4(0f, y, x, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 _yy_ => new float4(0f, y, y, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 _gg_ => new float4(0f, y, y, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 _tt_ => new float4(0f, y, y, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 _yyx => new float4(0f, y, y, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 _ggr => new float4(0f, y, y, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 _tts => new float4(0f, y, y, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 _yyy => new float4(0f, y, y, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 _ggg => new float4(0f, y, y, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 _ttt => new float4(0f, y, y, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 x___ => new float4(x, 0f, 0f, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 r___ => new float4(x, 0f, 0f, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 s___ => new float4(x, 0f, 0f, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 x__x => new float4(x, 0f, 0f, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 r__r => new float4(x, 0f, 0f, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 s__s => new float4(x, 0f, 0f, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 x__y => new float4(x, 0f, 0f, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 r__g => new float4(x, 0f, 0f, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 s__t => new float4(x, 0f, 0f, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 x_x_ => new float4(x, 0f, x, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 r_r_ => new float4(x, 0f, x, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 s_s_ => new float4(x, 0f, x, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 x_xx => new float4(x, 0f, x, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 r_rr => new float4(x, 0f, x, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 s_ss => new float4(x, 0f, x, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 x_xy => new float4(x, 0f, x, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 r_rg => new float4(x, 0f, x, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 s_st => new float4(x, 0f, x, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 x_y_ => new float4(x, 0f, y, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 r_g_ => new float4(x, 0f, y, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 s_t_ => new float4(x, 0f, y, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 x_yx => new float4(x, 0f, y, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 r_gr => new float4(x, 0f, y, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 s_ts => new float4(x, 0f, y, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 x_yy => new float4(x, 0f, y, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 r_gg => new float4(x, 0f, y, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 s_tt => new float4(x, 0f, y, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 xx__ => new float4(x, x, 0f, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 rr__ => new float4(x, x, 0f, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 ss__ => new float4(x, x, 0f, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 xx_x => new float4(x, x, 0f, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 rr_r => new float4(x, x, 0f, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 ss_s => new float4(x, x, 0f, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 xx_y => new float4(x, x, 0f, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 rr_g => new float4(x, x, 0f, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 ss_t => new float4(x, x, 0f, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 xxx_ => new float4(x, x, x, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 rrr_ => new float4(x, x, x, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 sss_ => new float4(x, x, x, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 xxxx => new float4(x, x, x, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 rrrr => new float4(x, x, x, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 ssss => new float4(x, x, x, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 xxxy => new float4(x, x, x, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 rrrg => new float4(x, x, x, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 ssst => new float4(x, x, x, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 xxy_ => new float4(x, x, y, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 rrg_ => new float4(x, x, y, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 sst_ => new float4(x, x, y, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 xxyx => new float4(x, x, y, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 rrgr => new float4(x, x, y, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 ssts => new float4(x, x, y, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 xxyy => new float4(x, x, y, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 rrgg => new float4(x, x, y, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 sstt => new float4(x, x, y, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 xy__ => new float4(x, y, 0f, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 rg__ => new float4(x, y, 0f, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 st__ => new float4(x, y, 0f, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 xy_x => new float4(x, y, 0f, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 rg_r => new float4(x, y, 0f, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 st_s => new float4(x, y, 0f, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 xy_y => new float4(x, y, 0f, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 rg_g => new float4(x, y, 0f, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 st_t => new float4(x, y, 0f, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 xyx_ => new float4(x, y, x, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 rgr_ => new float4(x, y, x, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 sts_ => new float4(x, y, x, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 xyxx => new float4(x, y, x, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 rgrr => new float4(x, y, x, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 stss => new float4(x, y, x, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 xyxy => new float4(x, y, x, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 rgrg => new float4(x, y, x, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 stst => new float4(x, y, x, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 xyy_ => new float4(x, y, y, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 rgg_ => new float4(x, y, y, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 stt_ => new float4(x, y, y, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 xyyx => new float4(x, y, y, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 rggr => new float4(x, y, y, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 stts => new float4(x, y, y, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 xyyy => new float4(x, y, y, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 rggg => new float4(x, y, y, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 sttt => new float4(x, y, y, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 y___ => new float4(y, 0f, 0f, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 g___ => new float4(y, 0f, 0f, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 t___ => new float4(y, 0f, 0f, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 y__x => new float4(y, 0f, 0f, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 g__r => new float4(y, 0f, 0f, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 t__s => new float4(y, 0f, 0f, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 y__y => new float4(y, 0f, 0f, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 g__g => new float4(y, 0f, 0f, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 t__t => new float4(y, 0f, 0f, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 y_x_ => new float4(y, 0f, x, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 g_r_ => new float4(y, 0f, x, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 t_s_ => new float4(y, 0f, x, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 y_xx => new float4(y, 0f, x, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 g_rr => new float4(y, 0f, x, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 t_ss => new float4(y, 0f, x, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 y_xy => new float4(y, 0f, x, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 g_rg => new float4(y, 0f, x, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 t_st => new float4(y, 0f, x, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 y_y_ => new float4(y, 0f, y, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 g_g_ => new float4(y, 0f, y, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 t_t_ => new float4(y, 0f, y, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 y_yx => new float4(y, 0f, y, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 g_gr => new float4(y, 0f, y, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 t_ts => new float4(y, 0f, y, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 y_yy => new float4(y, 0f, y, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 g_gg => new float4(y, 0f, y, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 t_tt => new float4(y, 0f, y, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 yx__ => new float4(y, x, 0f, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 gr__ => new float4(y, x, 0f, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 ts__ => new float4(y, x, 0f, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 yx_x => new float4(y, x, 0f, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 gr_r => new float4(y, x, 0f, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 ts_s => new float4(y, x, 0f, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 yx_y => new float4(y, x, 0f, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 gr_g => new float4(y, x, 0f, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 ts_t => new float4(y, x, 0f, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 yxx_ => new float4(y, x, x, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 grr_ => new float4(y, x, x, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 tss_ => new float4(y, x, x, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 yxxx => new float4(y, x, x, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 grrr => new float4(y, x, x, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 tsss => new float4(y, x, x, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 yxxy => new float4(y, x, x, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 grrg => new float4(y, x, x, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 tsst => new float4(y, x, x, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 yxy_ => new float4(y, x, y, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 grg_ => new float4(y, x, y, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 tst_ => new float4(y, x, y, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 yxyx => new float4(y, x, y, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 grgr => new float4(y, x, y, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 tsts => new float4(y, x, y, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 yxyy => new float4(y, x, y, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 grgg => new float4(y, x, y, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 tstt => new float4(y, x, y, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 yy__ => new float4(y, y, 0f, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 gg__ => new float4(y, y, 0f, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 tt__ => new float4(y, y, 0f, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 yy_x => new float4(y, y, 0f, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 gg_r => new float4(y, y, 0f, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 tt_s => new float4(y, y, 0f, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 yy_y => new float4(y, y, 0f, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 gg_g => new float4(y, y, 0f, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 tt_t => new float4(y, y, 0f, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 yyx_ => new float4(y, y, x, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 ggr_ => new float4(y, y, x, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 tts_ => new float4(y, y, x, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 yyxx => new float4(y, y, x, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 ggrr => new float4(y, y, x, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 ttss => new float4(y, y, x, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 yyxy => new float4(y, y, x, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 ggrg => new float4(y, y, x, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 ttst => new float4(y, y, x, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 yyy_ => new float4(y, y, y, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 ggg_ => new float4(y, y, y, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 ttt_ => new float4(y, y, y, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 yyyx => new float4(y, y, y, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 gggr => new float4(y, y, y, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 ttts => new float4(y, y, y, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 yyyy => new float4(y, y, y, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 gggg => new float4(y, y, y, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float4 tttt => new float4(y, y, y, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float3 __x => new float3(0f, 0f, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float3 __r => new float3(0f, 0f, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float3 __s => new float3(0f, 0f, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float3 __y => new float3(0f, 0f, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float3 __g => new float3(0f, 0f, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float3 __t => new float3(0f, 0f, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float3 _x_ => new float3(0f, x, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float3 _r_ => new float3(0f, x, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float3 _s_ => new float3(0f, x, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float3 _xx => new float3(0f, x, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float3 _rr => new float3(0f, x, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float3 _ss => new float3(0f, x, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float3 _xy => new float3(0f, x, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float3 _rg => new float3(0f, x, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float3 _st => new float3(0f, x, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float3 _y_ => new float3(0f, y, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float3 _g_ => new float3(0f, y, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float3 _t_ => new float3(0f, y, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float3 _yx => new float3(0f, y, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float3 _gr => new float3(0f, y, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float3 _ts => new float3(0f, y, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float3 _yy => new float3(0f, y, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float3 _gg => new float3(0f, y, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float3 _tt => new float3(0f, y, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float3 x__ => new float3(x, 0f, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float3 r__ => new float3(x, 0f, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float3 s__ => new float3(x, 0f, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float3 x_x => new float3(x, 0f, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float3 r_r => new float3(x, 0f, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float3 s_s => new float3(x, 0f, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float3 x_y => new float3(x, 0f, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float3 r_g => new float3(x, 0f, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float3 s_t => new float3(x, 0f, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float3 xx_ => new float3(x, x, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float3 rr_ => new float3(x, x, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float3 ss_ => new float3(x, x, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float3 xxx => new float3(x, x, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float3 rrr => new float3(x, x, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float3 sss => new float3(x, x, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float3 xxy => new float3(x, x, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float3 rrg => new float3(x, x, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float3 sst => new float3(x, x, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float3 xy_ => new float3(x, y, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float3 rg_ => new float3(x, y, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float3 st_ => new float3(x, y, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float3 xyx => new float3(x, y, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float3 rgr => new float3(x, y, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float3 sts => new float3(x, y, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float3 xyy => new float3(x, y, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float3 rgg => new float3(x, y, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float3 stt => new float3(x, y, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float3 y__ => new float3(y, 0f, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float3 g__ => new float3(y, 0f, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float3 t__ => new float3(y, 0f, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float3 y_x => new float3(y, 0f, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float3 g_r => new float3(y, 0f, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float3 t_s => new float3(y, 0f, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float3 y_y => new float3(y, 0f, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float3 g_g => new float3(y, 0f, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float3 t_t => new float3(y, 0f, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float3 yx_ => new float3(y, x, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float3 gr_ => new float3(y, x, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float3 ts_ => new float3(y, x, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float3 yxx => new float3(y, x, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float3 grr => new float3(y, x, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float3 tss => new float3(y, x, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float3 yxy => new float3(y, x, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float3 grg => new float3(y, x, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float3 tst => new float3(y, x, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float3 yy_ => new float3(y, y, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float3 gg_ => new float3(y, y, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float3 tt_ => new float3(y, y, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float3 yyx => new float3(y, y, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float3 ggr => new float3(y, y, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float3 tts => new float3(y, y, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float3 yyy => new float3(y, y, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float3 ggg => new float3(y, y, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float3 ttt => new float3(y, y, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float2 _x => new float2(0f, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float2 _r => new float2(0f, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float2 _s => new float2(0f, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float2 _y => new float2(0f, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float2 _g => new float2(0f, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float2 _t => new float2(0f, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float2 x_ => new float2(x, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float2 r_ => new float2(x, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float2 s_ => new float2(x, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float2 xx => new float2(x, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float2 rr => new float2(x, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float2 ss => new float2(x, x);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public float2 xy
+        {
+            get => new float2(x, y);
+            set
+            {
+                y = value.x;
                 y = value.y;
             }
         }
@@ -148,46 +1843,95 @@ namespace DVG
         /// </summary>
         public float2 rg
         {
-            get
-            {
-                return new float2(x, y);
-            }
+            get => new float2(x, y);
             set
             {
-                x = value.x;
+                y = value.x;
                 y = value.y;
             }
         }
         
         /// <summary>
-        /// Gets or sets the specified RGBA component.
+        /// Gets or sets the specified subset of components.
         /// </summary>
-        public float r
+        public float2 st
         {
-            get
-            {
-                return x;
-            }
+            get => new float2(x, y);
             set
             {
-                x = value;
+                y = value.x;
+                y = value.y;
             }
         }
         
         /// <summary>
-        /// Gets or sets the specified RGBA component.
+        /// Gets or sets the specified subset of components.
         /// </summary>
-        public float g
+        public readonly float2 y_ => new float2(y, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float2 g_ => new float2(y, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float2 t_ => new float2(y, 0f);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public float2 yx
         {
-            get
-            {
-                return y;
-            }
+            get => new float2(y, x);
             set
             {
-                y = value;
+                y = value.x;
+                y = value.y;
             }
         }
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public float2 gr
+        {
+            get => new float2(y, x);
+            set
+            {
+                y = value.x;
+                y = value.y;
+            }
+        }
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public float2 ts
+        {
+            get => new float2(y, x);
+            set
+            {
+                y = value.x;
+                y = value.y;
+            }
+        }
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float2 yy => new float2(y, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float2 gg => new float2(y, y);
+        
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public readonly float2 tt => new float2(y, y);
 
         #endregion
 
