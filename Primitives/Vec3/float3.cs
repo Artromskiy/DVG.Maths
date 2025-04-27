@@ -692,16 +692,16 @@ namespace DVG
         public static float3 Step(float edge, float3 x) => new float3(x.x < edge ? 0 : 1, x.y < edge ? 0 : 1, x.z < edge ? 0 : 1);
         
         /// <summary>
-        /// Returns a float3 from component-wise application of Smoothstep (Maths.SmoothStep(Maths.Clamp((v - edge0) / (edge1 - edge0), 0, 1))).
+        /// Returns a float3 from component-wise application of Smoothstep (Maths.Smoothstep(edge0, edge1, x)).
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float3 Smoothstep(float3 edge0, float3 edge1, float3 v) => new float3(Maths.SmoothStep(Maths.Clamp((v.x - edge0.x) / (edge1.x - edge0.x), 0, 1)), Maths.SmoothStep(Maths.Clamp((v.y - edge0.y) / (edge1.y - edge0.y), 0, 1)), Maths.SmoothStep(Maths.Clamp((v.z - edge0.z) / (edge1.z - edge0.z), 0, 1)));
+        public static float3 Smoothstep(float3 edge0, float3 edge1, float3 x) => new float3(Maths.Smoothstep(edge0.x, edge1.x, x.x), Maths.Smoothstep(edge0.y, edge1.y, x.y), Maths.Smoothstep(edge0.z, edge1.z, x.z));
         
         /// <summary>
-        /// Returns a float3 from component-wise application of Smoothstep (Maths.SmoothStep(Maths.Clamp((v - edge0) / (edge1 - edge0), 0, 1))).
+        /// Returns a float3 from component-wise application of Smoothstep (Maths.Smoothstep(edge0, edge1, x)).
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float3 Smoothstep(float3 edge0, float3 edge1, float v) => new float3(Maths.SmoothStep(Maths.Clamp((v - edge0.x) / (edge1.x - edge0.x), 0, 1)), Maths.SmoothStep(Maths.Clamp((v - edge0.y) / (edge1.y - edge0.y), 0, 1)), Maths.SmoothStep(Maths.Clamp((v - edge0.z) / (edge1.z - edge0.z), 0, 1)));
+        public static float3 Smoothstep(float3 edge0, float3 edge1, float x) => new float3(Maths.Smoothstep(edge0.x, edge1.x, x), Maths.Smoothstep(edge0.y, edge1.y, x), Maths.Smoothstep(edge0.z, edge1.z, x));
         
         /// <summary>
         /// Returns a bool3 from component-wise application of IsNaN (float.IsNaN(v)).

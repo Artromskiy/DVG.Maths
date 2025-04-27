@@ -421,16 +421,16 @@ namespace DVG
         public static double2 Step(double edge, double2 x) => new double2(x.x < edge ? 0 : 1, x.y < edge ? 0 : 1);
         
         /// <summary>
-        /// Returns a double2 from component-wise application of Smoothstep (Maths.SmoothStep(Maths.Clamp((v - edge0) / (edge1 - edge0), 0, 1))).
+        /// Returns a double2 from component-wise application of Smoothstep (Maths.Smoothstep(edge0, edge1, x)).
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static double2 Smoothstep(double2 edge0, double2 edge1, double2 v) => new double2(Maths.SmoothStep(Maths.Clamp((v.x - edge0.x) / (edge1.x - edge0.x), 0, 1)), Maths.SmoothStep(Maths.Clamp((v.y - edge0.y) / (edge1.y - edge0.y), 0, 1)));
+        public static double2 Smoothstep(double2 edge0, double2 edge1, double2 x) => new double2(Maths.Smoothstep(edge0.x, edge1.x, x.x), Maths.Smoothstep(edge0.y, edge1.y, x.y));
         
         /// <summary>
-        /// Returns a double2 from component-wise application of Smoothstep (Maths.SmoothStep(Maths.Clamp((v - edge0) / (edge1 - edge0), 0, 1))).
+        /// Returns a double2 from component-wise application of Smoothstep (Maths.Smoothstep(edge0, edge1, x)).
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static double2 Smoothstep(double2 edge0, double2 edge1, double v) => new double2(Maths.SmoothStep(Maths.Clamp((v - edge0.x) / (edge1.x - edge0.x), 0, 1)), Maths.SmoothStep(Maths.Clamp((v - edge0.y) / (edge1.y - edge0.y), 0, 1)));
+        public static double2 Smoothstep(double2 edge0, double2 edge1, double x) => new double2(Maths.Smoothstep(edge0.x, edge1.x, x), Maths.Smoothstep(edge0.y, edge1.y, x));
         
         /// <summary>
         /// Returns a bool2 from component-wise application of IsNaN (double.IsNaN(v)).

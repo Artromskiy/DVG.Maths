@@ -970,16 +970,16 @@ namespace DVG
         public static float4 Step(float edge, float4 x) => new float4(x.x < edge ? 0 : 1, x.y < edge ? 0 : 1, x.z < edge ? 0 : 1, x.w < edge ? 0 : 1);
         
         /// <summary>
-        /// Returns a float4 from component-wise application of Smoothstep (Maths.SmoothStep(Maths.Clamp((v - edge0) / (edge1 - edge0), 0, 1))).
+        /// Returns a float4 from component-wise application of Smoothstep (Maths.Smoothstep(edge0, edge1, x)).
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float4 Smoothstep(float4 edge0, float4 edge1, float4 v) => new float4(Maths.SmoothStep(Maths.Clamp((v.x - edge0.x) / (edge1.x - edge0.x), 0, 1)), Maths.SmoothStep(Maths.Clamp((v.y - edge0.y) / (edge1.y - edge0.y), 0, 1)), Maths.SmoothStep(Maths.Clamp((v.z - edge0.z) / (edge1.z - edge0.z), 0, 1)), Maths.SmoothStep(Maths.Clamp((v.w - edge0.w) / (edge1.w - edge0.w), 0, 1)));
+        public static float4 Smoothstep(float4 edge0, float4 edge1, float4 x) => new float4(Maths.Smoothstep(edge0.x, edge1.x, x.x), Maths.Smoothstep(edge0.y, edge1.y, x.y), Maths.Smoothstep(edge0.z, edge1.z, x.z), Maths.Smoothstep(edge0.w, edge1.w, x.w));
         
         /// <summary>
-        /// Returns a float4 from component-wise application of Smoothstep (Maths.SmoothStep(Maths.Clamp((v - edge0) / (edge1 - edge0), 0, 1))).
+        /// Returns a float4 from component-wise application of Smoothstep (Maths.Smoothstep(edge0, edge1, x)).
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float4 Smoothstep(float4 edge0, float4 edge1, float v) => new float4(Maths.SmoothStep(Maths.Clamp((v - edge0.x) / (edge1.x - edge0.x), 0, 1)), Maths.SmoothStep(Maths.Clamp((v - edge0.y) / (edge1.y - edge0.y), 0, 1)), Maths.SmoothStep(Maths.Clamp((v - edge0.z) / (edge1.z - edge0.z), 0, 1)), Maths.SmoothStep(Maths.Clamp((v - edge0.w) / (edge1.w - edge0.w), 0, 1)));
+        public static float4 Smoothstep(float4 edge0, float4 edge1, float x) => new float4(Maths.Smoothstep(edge0.x, edge1.x, x), Maths.Smoothstep(edge0.y, edge1.y, x), Maths.Smoothstep(edge0.z, edge1.z, x), Maths.Smoothstep(edge0.w, edge1.w, x));
         
         /// <summary>
         /// Returns a bool4 from component-wise application of IsNaN (float.IsNaN(v)).

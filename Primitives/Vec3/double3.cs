@@ -561,16 +561,16 @@ namespace DVG
         public static double3 Step(double edge, double3 x) => new double3(x.x < edge ? 0 : 1, x.y < edge ? 0 : 1, x.z < edge ? 0 : 1);
         
         /// <summary>
-        /// Returns a double3 from component-wise application of Smoothstep (Maths.SmoothStep(Maths.Clamp((v - edge0) / (edge1 - edge0), 0, 1))).
+        /// Returns a double3 from component-wise application of Smoothstep (Maths.Smoothstep(edge0, edge1, x)).
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static double3 Smoothstep(double3 edge0, double3 edge1, double3 v) => new double3(Maths.SmoothStep(Maths.Clamp((v.x - edge0.x) / (edge1.x - edge0.x), 0, 1)), Maths.SmoothStep(Maths.Clamp((v.y - edge0.y) / (edge1.y - edge0.y), 0, 1)), Maths.SmoothStep(Maths.Clamp((v.z - edge0.z) / (edge1.z - edge0.z), 0, 1)));
+        public static double3 Smoothstep(double3 edge0, double3 edge1, double3 x) => new double3(Maths.Smoothstep(edge0.x, edge1.x, x.x), Maths.Smoothstep(edge0.y, edge1.y, x.y), Maths.Smoothstep(edge0.z, edge1.z, x.z));
         
         /// <summary>
-        /// Returns a double3 from component-wise application of Smoothstep (Maths.SmoothStep(Maths.Clamp((v - edge0) / (edge1 - edge0), 0, 1))).
+        /// Returns a double3 from component-wise application of Smoothstep (Maths.Smoothstep(edge0, edge1, x)).
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static double3 Smoothstep(double3 edge0, double3 edge1, double v) => new double3(Maths.SmoothStep(Maths.Clamp((v - edge0.x) / (edge1.x - edge0.x), 0, 1)), Maths.SmoothStep(Maths.Clamp((v - edge0.y) / (edge1.y - edge0.y), 0, 1)), Maths.SmoothStep(Maths.Clamp((v - edge0.z) / (edge1.z - edge0.z), 0, 1)));
+        public static double3 Smoothstep(double3 edge0, double3 edge1, double x) => new double3(Maths.Smoothstep(edge0.x, edge1.x, x), Maths.Smoothstep(edge0.y, edge1.y, x), Maths.Smoothstep(edge0.z, edge1.z, x));
         
         /// <summary>
         /// Returns a bool3 from component-wise application of IsNaN (double.IsNaN(v)).

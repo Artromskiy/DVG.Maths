@@ -552,16 +552,16 @@ namespace DVG
         public static float2 Step(float edge, float2 x) => new float2(x.x < edge ? 0 : 1, x.y < edge ? 0 : 1);
         
         /// <summary>
-        /// Returns a float2 from component-wise application of Smoothstep (Maths.SmoothStep(Maths.Clamp((v - edge0) / (edge1 - edge0), 0, 1))).
+        /// Returns a float2 from component-wise application of Smoothstep (Maths.Smoothstep(edge0, edge1, x)).
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float2 Smoothstep(float2 edge0, float2 edge1, float2 v) => new float2(Maths.SmoothStep(Maths.Clamp((v.x - edge0.x) / (edge1.x - edge0.x), 0, 1)), Maths.SmoothStep(Maths.Clamp((v.y - edge0.y) / (edge1.y - edge0.y), 0, 1)));
+        public static float2 Smoothstep(float2 edge0, float2 edge1, float2 x) => new float2(Maths.Smoothstep(edge0.x, edge1.x, x.x), Maths.Smoothstep(edge0.y, edge1.y, x.y));
         
         /// <summary>
-        /// Returns a float2 from component-wise application of Smoothstep (Maths.SmoothStep(Maths.Clamp((v - edge0) / (edge1 - edge0), 0, 1))).
+        /// Returns a float2 from component-wise application of Smoothstep (Maths.Smoothstep(edge0, edge1, x)).
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float2 Smoothstep(float2 edge0, float2 edge1, float v) => new float2(Maths.SmoothStep(Maths.Clamp((v - edge0.x) / (edge1.x - edge0.x), 0, 1)), Maths.SmoothStep(Maths.Clamp((v - edge0.y) / (edge1.y - edge0.y), 0, 1)));
+        public static float2 Smoothstep(float2 edge0, float2 edge1, float x) => new float2(Maths.Smoothstep(edge0.x, edge1.x, x), Maths.Smoothstep(edge0.y, edge1.y, x));
         
         /// <summary>
         /// Returns a bool2 from component-wise application of IsNaN (float.IsNaN(v)).

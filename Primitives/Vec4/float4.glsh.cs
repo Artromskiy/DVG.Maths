@@ -243,9 +243,9 @@ namespace DVG
         public static float4 Step(float4 edge, float4 x) => float4.Step(edge, x);
         
         /// <summary>
-        /// Returns a float4 from component-wise application of Smoothstep (Maths.SmoothStep(Maths.Clamp((v - edge0) / (edge1 - edge0), 0, 1))).
+        /// Returns a float4 from component-wise application of Smoothstep (Maths.Smoothstep(edge0, edge1, x)).
         /// </summary>
-        public static float4 Smoothstep(float4 edge0, float4 edge1, float4 v) => float4.Smoothstep(edge0, edge1, v);
+        public static float4 Smoothstep(float4 edge0, float4 edge1, float4 x) => float4.Smoothstep(edge0, edge1, x);
         
         /// <summary>
         /// Returns a bool4 from component-wise application of IsNaN (float.IsNaN(v)).
