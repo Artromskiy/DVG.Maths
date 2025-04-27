@@ -36,6 +36,11 @@ namespace DVG
         /// Returns the number of components (3).
         /// </summary>
         public const int Count = 3;
+        
+        /// <summary>
+        /// Returns new vector with every component set to default.
+        /// </summary>
+        public static readonly float3 zero = new float3(0f, 0f, 0f);
 
         #endregion
 
@@ -5576,7 +5581,7 @@ namespace DVG
         /// Returns the inner product (dot product, scalar product) of the two vectors.
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float Dot(float3 lhs, float3 rhs) => ((lhs.x * rhs.x + lhs.y * rhs.y) + lhs.z * rhs.z);
+        public static float Dot(float3 lhs, float3 rhs) => lhs.x * rhs.x + lhs.y * rhs.y + lhs.z * rhs.z;
         
         /// <summary>
         /// Returns the outer product (cross product, vector product) of the two vectors.

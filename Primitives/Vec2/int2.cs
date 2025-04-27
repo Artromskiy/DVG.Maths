@@ -31,6 +31,11 @@ namespace DVG
         /// Returns the number of components (2).
         /// </summary>
         public const int Count = 2;
+        
+        /// <summary>
+        /// Returns new vector with every component set to default.
+        /// </summary>
+        public static readonly int2 zero = new int2(0, 0);
 
         #endregion
 

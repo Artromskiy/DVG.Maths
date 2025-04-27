@@ -41,6 +41,11 @@ namespace DVG
         /// Returns the number of components (4).
         /// </summary>
         public const int Count = 4;
+        
+        /// <summary>
+        /// Returns new vector with every component set to default.
+        /// </summary>
+        public static readonly uint4 zero = new uint4(0u, 0u, 0u, 0u);
 
         #endregion
 

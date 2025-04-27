@@ -36,6 +36,11 @@ namespace DVG
         /// Returns the number of components (3).
         /// </summary>
         public const int Count = 3;
+        
+        /// <summary>
+        /// Returns new vector with every component set to default.
+        /// </summary>
+        public static readonly uint3 zero = new uint3(0u, 0u, 0u);
 
         #endregion
 

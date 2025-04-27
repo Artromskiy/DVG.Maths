@@ -36,6 +36,11 @@ namespace DVG
         /// Returns the number of components (3).
         /// </summary>
         public const int Count = 3;
+        
+        /// <summary>
+        /// Returns new vector with every component set to default.
+        /// </summary>
+        public static readonly double3 zero = new double3(0.0, 0.0, 0.0);
 
         #endregion
 
@@ -5565,7 +5570,7 @@ namespace DVG
         /// Returns the inner product (dot product, scalar product) of the two vectors.
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static double Dot(double3 lhs, double3 rhs) => ((lhs.x * rhs.x + lhs.y * rhs.y) + lhs.z * rhs.z);
+        public static double Dot(double3 lhs, double3 rhs) => lhs.x * rhs.x + lhs.y * rhs.y + lhs.z * rhs.z;
         
         /// <summary>
         /// Returns the outer product (cross product, vector product) of the two vectors.

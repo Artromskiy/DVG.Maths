@@ -41,6 +41,11 @@ namespace DVG
         /// Returns the number of components (4).
         /// </summary>
         public const int Count = 4;
+        
+        /// <summary>
+        /// Returns new vector with every component set to default.
+        /// </summary>
+        public static readonly double4 zero = new double4(0.0, 0.0, 0.0, 0.0);
 
         #endregion
 
@@ -13559,7 +13564,7 @@ namespace DVG
         /// Returns the inner product (dot product, scalar product) of the two vectors.
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static double Dot(double4 lhs, double4 rhs) => ((lhs.x * rhs.x + lhs.y * rhs.y) + (lhs.z * rhs.z + lhs.w * rhs.w));
+        public static double Dot(double4 lhs, double4 rhs) => lhs.x * rhs.x + lhs.y * rhs.y + lhs.z * rhs.z + lhs.w * rhs.w;
         
         /// <summary>
         /// Returns a copy of this vector with length one (undefined if this has zero length).
