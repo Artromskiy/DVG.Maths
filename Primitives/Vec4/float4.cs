@@ -188,7 +188,7 @@ namespace DVG
         /// </summary>
         public float r
         {
-            get => x;
+            readonly get => x;
             set
             {
                 x = value;
@@ -200,7 +200,7 @@ namespace DVG
         /// </summary>
         public float s
         {
-            get => x;
+            readonly get => x;
             set
             {
                 x = value;
@@ -212,7 +212,7 @@ namespace DVG
         /// </summary>
         public float g
         {
-            get => y;
+            readonly get => y;
             set
             {
                 y = value;
@@ -224,7 +224,7 @@ namespace DVG
         /// </summary>
         public float t
         {
-            get => y;
+            readonly get => y;
             set
             {
                 y = value;
@@ -236,7 +236,7 @@ namespace DVG
         /// </summary>
         public float b
         {
-            get => z;
+            readonly get => z;
             set
             {
                 z = value;
@@ -248,7 +248,7 @@ namespace DVG
         /// </summary>
         public float p
         {
-            get => z;
+            readonly get => z;
             set
             {
                 z = value;
@@ -260,7 +260,7 @@ namespace DVG
         /// </summary>
         public float a
         {
-            get => w;
+            readonly get => w;
             set
             {
                 w = value;
@@ -272,7 +272,7 @@ namespace DVG
         /// </summary>
         public float q
         {
-            get => w;
+            readonly get => w;
             set
             {
                 w = value;
@@ -3179,7 +3179,7 @@ namespace DVG
         /// </summary>
         public float4 xyzw
         {
-            get => new float4(x, y, z, w);
+            readonly get => new float4(x, y, z, w);
             set
             {
                 w = value.x;
@@ -3194,7 +3194,7 @@ namespace DVG
         /// </summary>
         public float4 rgba
         {
-            get => new float4(x, y, z, w);
+            readonly get => new float4(x, y, z, w);
             set
             {
                 w = value.x;
@@ -3209,7 +3209,7 @@ namespace DVG
         /// </summary>
         public float4 stpq
         {
-            get => new float4(x, y, z, w);
+            readonly get => new float4(x, y, z, w);
             set
             {
                 w = value.x;
@@ -3269,7 +3269,7 @@ namespace DVG
         /// </summary>
         public float4 xywz
         {
-            get => new float4(x, y, w, z);
+            readonly get => new float4(x, y, w, z);
             set
             {
                 w = value.x;
@@ -3284,7 +3284,7 @@ namespace DVG
         /// </summary>
         public float4 rgab
         {
-            get => new float4(x, y, w, z);
+            readonly get => new float4(x, y, w, z);
             set
             {
                 w = value.x;
@@ -3299,7 +3299,7 @@ namespace DVG
         /// </summary>
         public float4 stqp
         {
-            get => new float4(x, y, w, z);
+            readonly get => new float4(x, y, w, z);
             set
             {
                 w = value.x;
@@ -3539,7 +3539,7 @@ namespace DVG
         /// </summary>
         public float4 xzyw
         {
-            get => new float4(x, z, y, w);
+            readonly get => new float4(x, z, y, w);
             set
             {
                 w = value.x;
@@ -3554,7 +3554,7 @@ namespace DVG
         /// </summary>
         public float4 rbga
         {
-            get => new float4(x, z, y, w);
+            readonly get => new float4(x, z, y, w);
             set
             {
                 w = value.x;
@@ -3569,7 +3569,7 @@ namespace DVG
         /// </summary>
         public float4 sptq
         {
-            get => new float4(x, z, y, w);
+            readonly get => new float4(x, z, y, w);
             set
             {
                 w = value.x;
@@ -3689,7 +3689,7 @@ namespace DVG
         /// </summary>
         public float4 xzwy
         {
-            get => new float4(x, z, w, y);
+            readonly get => new float4(x, z, w, y);
             set
             {
                 w = value.x;
@@ -3704,7 +3704,7 @@ namespace DVG
         /// </summary>
         public float4 rbag
         {
-            get => new float4(x, z, w, y);
+            readonly get => new float4(x, z, w, y);
             set
             {
                 w = value.x;
@@ -3719,7 +3719,7 @@ namespace DVG
         /// </summary>
         public float4 spqt
         {
-            get => new float4(x, z, w, y);
+            readonly get => new float4(x, z, w, y);
             set
             {
                 w = value.x;
@@ -3959,7 +3959,7 @@ namespace DVG
         /// </summary>
         public float4 xwyz
         {
-            get => new float4(x, w, y, z);
+            readonly get => new float4(x, w, y, z);
             set
             {
                 w = value.x;
@@ -3974,7 +3974,7 @@ namespace DVG
         /// </summary>
         public float4 ragb
         {
-            get => new float4(x, w, y, z);
+            readonly get => new float4(x, w, y, z);
             set
             {
                 w = value.x;
@@ -3989,7 +3989,7 @@ namespace DVG
         /// </summary>
         public float4 sqtp
         {
-            get => new float4(x, w, y, z);
+            readonly get => new float4(x, w, y, z);
             set
             {
                 w = value.x;
@@ -4049,7 +4049,7 @@ namespace DVG
         /// </summary>
         public float4 xwzy
         {
-            get => new float4(x, w, z, y);
+            readonly get => new float4(x, w, z, y);
             set
             {
                 w = value.x;
@@ -4064,7 +4064,7 @@ namespace DVG
         /// </summary>
         public float4 rabg
         {
-            get => new float4(x, w, z, y);
+            readonly get => new float4(x, w, z, y);
             set
             {
                 w = value.x;
@@ -4079,7 +4079,7 @@ namespace DVG
         /// </summary>
         public float4 sqpt
         {
-            get => new float4(x, w, z, y);
+            readonly get => new float4(x, w, z, y);
             set
             {
                 w = value.x;
@@ -4859,7 +4859,7 @@ namespace DVG
         /// </summary>
         public float4 yxzw
         {
-            get => new float4(y, x, z, w);
+            readonly get => new float4(y, x, z, w);
             set
             {
                 w = value.x;
@@ -4874,7 +4874,7 @@ namespace DVG
         /// </summary>
         public float4 grba
         {
-            get => new float4(y, x, z, w);
+            readonly get => new float4(y, x, z, w);
             set
             {
                 w = value.x;
@@ -4889,7 +4889,7 @@ namespace DVG
         /// </summary>
         public float4 tspq
         {
-            get => new float4(y, x, z, w);
+            readonly get => new float4(y, x, z, w);
             set
             {
                 w = value.x;
@@ -4949,7 +4949,7 @@ namespace DVG
         /// </summary>
         public float4 yxwz
         {
-            get => new float4(y, x, w, z);
+            readonly get => new float4(y, x, w, z);
             set
             {
                 w = value.x;
@@ -4964,7 +4964,7 @@ namespace DVG
         /// </summary>
         public float4 grab
         {
-            get => new float4(y, x, w, z);
+            readonly get => new float4(y, x, w, z);
             set
             {
                 w = value.x;
@@ -4979,7 +4979,7 @@ namespace DVG
         /// </summary>
         public float4 tsqp
         {
-            get => new float4(y, x, w, z);
+            readonly get => new float4(y, x, w, z);
             set
             {
                 w = value.x;
@@ -5519,7 +5519,7 @@ namespace DVG
         /// </summary>
         public float4 yzxw
         {
-            get => new float4(y, z, x, w);
+            readonly get => new float4(y, z, x, w);
             set
             {
                 w = value.x;
@@ -5534,7 +5534,7 @@ namespace DVG
         /// </summary>
         public float4 gbra
         {
-            get => new float4(y, z, x, w);
+            readonly get => new float4(y, z, x, w);
             set
             {
                 w = value.x;
@@ -5549,7 +5549,7 @@ namespace DVG
         /// </summary>
         public float4 tpsq
         {
-            get => new float4(y, z, x, w);
+            readonly get => new float4(y, z, x, w);
             set
             {
                 w = value.x;
@@ -5729,7 +5729,7 @@ namespace DVG
         /// </summary>
         public float4 yzwx
         {
-            get => new float4(y, z, w, x);
+            readonly get => new float4(y, z, w, x);
             set
             {
                 w = value.x;
@@ -5744,7 +5744,7 @@ namespace DVG
         /// </summary>
         public float4 gbar
         {
-            get => new float4(y, z, w, x);
+            readonly get => new float4(y, z, w, x);
             set
             {
                 w = value.x;
@@ -5759,7 +5759,7 @@ namespace DVG
         /// </summary>
         public float4 tpqs
         {
-            get => new float4(y, z, w, x);
+            readonly get => new float4(y, z, w, x);
             set
             {
                 w = value.x;
@@ -5939,7 +5939,7 @@ namespace DVG
         /// </summary>
         public float4 ywxz
         {
-            get => new float4(y, w, x, z);
+            readonly get => new float4(y, w, x, z);
             set
             {
                 w = value.x;
@@ -5954,7 +5954,7 @@ namespace DVG
         /// </summary>
         public float4 garb
         {
-            get => new float4(y, w, x, z);
+            readonly get => new float4(y, w, x, z);
             set
             {
                 w = value.x;
@@ -5969,7 +5969,7 @@ namespace DVG
         /// </summary>
         public float4 tqsp
         {
-            get => new float4(y, w, x, z);
+            readonly get => new float4(y, w, x, z);
             set
             {
                 w = value.x;
@@ -6089,7 +6089,7 @@ namespace DVG
         /// </summary>
         public float4 ywzx
         {
-            get => new float4(y, w, z, x);
+            readonly get => new float4(y, w, z, x);
             set
             {
                 w = value.x;
@@ -6104,7 +6104,7 @@ namespace DVG
         /// </summary>
         public float4 gabr
         {
-            get => new float4(y, w, z, x);
+            readonly get => new float4(y, w, z, x);
             set
             {
                 w = value.x;
@@ -6119,7 +6119,7 @@ namespace DVG
         /// </summary>
         public float4 tqps
         {
-            get => new float4(y, w, z, x);
+            readonly get => new float4(y, w, z, x);
             set
             {
                 w = value.x;
@@ -6839,7 +6839,7 @@ namespace DVG
         /// </summary>
         public float4 zxyw
         {
-            get => new float4(z, x, y, w);
+            readonly get => new float4(z, x, y, w);
             set
             {
                 w = value.x;
@@ -6854,7 +6854,7 @@ namespace DVG
         /// </summary>
         public float4 brga
         {
-            get => new float4(z, x, y, w);
+            readonly get => new float4(z, x, y, w);
             set
             {
                 w = value.x;
@@ -6869,7 +6869,7 @@ namespace DVG
         /// </summary>
         public float4 pstq
         {
-            get => new float4(z, x, y, w);
+            readonly get => new float4(z, x, y, w);
             set
             {
                 w = value.x;
@@ -6989,7 +6989,7 @@ namespace DVG
         /// </summary>
         public float4 zxwy
         {
-            get => new float4(z, x, w, y);
+            readonly get => new float4(z, x, w, y);
             set
             {
                 w = value.x;
@@ -7004,7 +7004,7 @@ namespace DVG
         /// </summary>
         public float4 brag
         {
-            get => new float4(z, x, w, y);
+            readonly get => new float4(z, x, w, y);
             set
             {
                 w = value.x;
@@ -7019,7 +7019,7 @@ namespace DVG
         /// </summary>
         public float4 psqt
         {
-            get => new float4(z, x, w, y);
+            readonly get => new float4(z, x, w, y);
             set
             {
                 w = value.x;
@@ -7199,7 +7199,7 @@ namespace DVG
         /// </summary>
         public float4 zyxw
         {
-            get => new float4(z, y, x, w);
+            readonly get => new float4(z, y, x, w);
             set
             {
                 w = value.x;
@@ -7214,7 +7214,7 @@ namespace DVG
         /// </summary>
         public float4 bgra
         {
-            get => new float4(z, y, x, w);
+            readonly get => new float4(z, y, x, w);
             set
             {
                 w = value.x;
@@ -7229,7 +7229,7 @@ namespace DVG
         /// </summary>
         public float4 ptsq
         {
-            get => new float4(z, y, x, w);
+            readonly get => new float4(z, y, x, w);
             set
             {
                 w = value.x;
@@ -7409,7 +7409,7 @@ namespace DVG
         /// </summary>
         public float4 zywx
         {
-            get => new float4(z, y, w, x);
+            readonly get => new float4(z, y, w, x);
             set
             {
                 w = value.x;
@@ -7424,7 +7424,7 @@ namespace DVG
         /// </summary>
         public float4 bgar
         {
-            get => new float4(z, y, w, x);
+            readonly get => new float4(z, y, w, x);
             set
             {
                 w = value.x;
@@ -7439,7 +7439,7 @@ namespace DVG
         /// </summary>
         public float4 ptqs
         {
-            get => new float4(z, y, w, x);
+            readonly get => new float4(z, y, w, x);
             set
             {
                 w = value.x;
@@ -7979,7 +7979,7 @@ namespace DVG
         /// </summary>
         public float4 zwxy
         {
-            get => new float4(z, w, x, y);
+            readonly get => new float4(z, w, x, y);
             set
             {
                 w = value.x;
@@ -7994,7 +7994,7 @@ namespace DVG
         /// </summary>
         public float4 barg
         {
-            get => new float4(z, w, x, y);
+            readonly get => new float4(z, w, x, y);
             set
             {
                 w = value.x;
@@ -8009,7 +8009,7 @@ namespace DVG
         /// </summary>
         public float4 pqst
         {
-            get => new float4(z, w, x, y);
+            readonly get => new float4(z, w, x, y);
             set
             {
                 w = value.x;
@@ -8069,7 +8069,7 @@ namespace DVG
         /// </summary>
         public float4 zwyx
         {
-            get => new float4(z, w, y, x);
+            readonly get => new float4(z, w, y, x);
             set
             {
                 w = value.x;
@@ -8084,7 +8084,7 @@ namespace DVG
         /// </summary>
         public float4 bagr
         {
-            get => new float4(z, w, y, x);
+            readonly get => new float4(z, w, y, x);
             set
             {
                 w = value.x;
@@ -8099,7 +8099,7 @@ namespace DVG
         /// </summary>
         public float4 pqts
         {
-            get => new float4(z, w, y, x);
+            readonly get => new float4(z, w, y, x);
             set
             {
                 w = value.x;
@@ -8879,7 +8879,7 @@ namespace DVG
         /// </summary>
         public float4 wxyz
         {
-            get => new float4(w, x, y, z);
+            readonly get => new float4(w, x, y, z);
             set
             {
                 w = value.x;
@@ -8894,7 +8894,7 @@ namespace DVG
         /// </summary>
         public float4 argb
         {
-            get => new float4(w, x, y, z);
+            readonly get => new float4(w, x, y, z);
             set
             {
                 w = value.x;
@@ -8909,7 +8909,7 @@ namespace DVG
         /// </summary>
         public float4 qstp
         {
-            get => new float4(w, x, y, z);
+            readonly get => new float4(w, x, y, z);
             set
             {
                 w = value.x;
@@ -8969,7 +8969,7 @@ namespace DVG
         /// </summary>
         public float4 wxzy
         {
-            get => new float4(w, x, z, y);
+            readonly get => new float4(w, x, z, y);
             set
             {
                 w = value.x;
@@ -8984,7 +8984,7 @@ namespace DVG
         /// </summary>
         public float4 arbg
         {
-            get => new float4(w, x, z, y);
+            readonly get => new float4(w, x, z, y);
             set
             {
                 w = value.x;
@@ -8999,7 +8999,7 @@ namespace DVG
         /// </summary>
         public float4 qspt
         {
-            get => new float4(w, x, z, y);
+            readonly get => new float4(w, x, z, y);
             set
             {
                 w = value.x;
@@ -9239,7 +9239,7 @@ namespace DVG
         /// </summary>
         public float4 wyxz
         {
-            get => new float4(w, y, x, z);
+            readonly get => new float4(w, y, x, z);
             set
             {
                 w = value.x;
@@ -9254,7 +9254,7 @@ namespace DVG
         /// </summary>
         public float4 agrb
         {
-            get => new float4(w, y, x, z);
+            readonly get => new float4(w, y, x, z);
             set
             {
                 w = value.x;
@@ -9269,7 +9269,7 @@ namespace DVG
         /// </summary>
         public float4 qtsp
         {
-            get => new float4(w, y, x, z);
+            readonly get => new float4(w, y, x, z);
             set
             {
                 w = value.x;
@@ -9389,7 +9389,7 @@ namespace DVG
         /// </summary>
         public float4 wyzx
         {
-            get => new float4(w, y, z, x);
+            readonly get => new float4(w, y, z, x);
             set
             {
                 w = value.x;
@@ -9404,7 +9404,7 @@ namespace DVG
         /// </summary>
         public float4 agbr
         {
-            get => new float4(w, y, z, x);
+            readonly get => new float4(w, y, z, x);
             set
             {
                 w = value.x;
@@ -9419,7 +9419,7 @@ namespace DVG
         /// </summary>
         public float4 qtps
         {
-            get => new float4(w, y, z, x);
+            readonly get => new float4(w, y, z, x);
             set
             {
                 w = value.x;
@@ -9659,7 +9659,7 @@ namespace DVG
         /// </summary>
         public float4 wzxy
         {
-            get => new float4(w, z, x, y);
+            readonly get => new float4(w, z, x, y);
             set
             {
                 w = value.x;
@@ -9674,7 +9674,7 @@ namespace DVG
         /// </summary>
         public float4 abrg
         {
-            get => new float4(w, z, x, y);
+            readonly get => new float4(w, z, x, y);
             set
             {
                 w = value.x;
@@ -9689,7 +9689,7 @@ namespace DVG
         /// </summary>
         public float4 qpst
         {
-            get => new float4(w, z, x, y);
+            readonly get => new float4(w, z, x, y);
             set
             {
                 w = value.x;
@@ -9749,7 +9749,7 @@ namespace DVG
         /// </summary>
         public float4 wzyx
         {
-            get => new float4(w, z, y, x);
+            readonly get => new float4(w, z, y, x);
             set
             {
                 w = value.x;
@@ -9764,7 +9764,7 @@ namespace DVG
         /// </summary>
         public float4 abgr
         {
-            get => new float4(w, z, y, x);
+            readonly get => new float4(w, z, y, x);
             set
             {
                 w = value.x;
@@ -9779,7 +9779,7 @@ namespace DVG
         /// </summary>
         public float4 qpts
         {
-            get => new float4(w, z, y, x);
+            readonly get => new float4(w, z, y, x);
             set
             {
                 w = value.x;
@@ -10919,7 +10919,7 @@ namespace DVG
         /// </summary>
         public float3 xyz
         {
-            get => new float3(x, y, z);
+            readonly get => new float3(x, y, z);
             set
             {
                 w = value.x;
@@ -10933,7 +10933,7 @@ namespace DVG
         /// </summary>
         public float3 rgb
         {
-            get => new float3(x, y, z);
+            readonly get => new float3(x, y, z);
             set
             {
                 w = value.x;
@@ -10947,7 +10947,7 @@ namespace DVG
         /// </summary>
         public float3 stp
         {
-            get => new float3(x, y, z);
+            readonly get => new float3(x, y, z);
             set
             {
                 w = value.x;
@@ -10961,7 +10961,7 @@ namespace DVG
         /// </summary>
         public float3 xyw
         {
-            get => new float3(x, y, w);
+            readonly get => new float3(x, y, w);
             set
             {
                 w = value.x;
@@ -10975,7 +10975,7 @@ namespace DVG
         /// </summary>
         public float3 rga
         {
-            get => new float3(x, y, w);
+            readonly get => new float3(x, y, w);
             set
             {
                 w = value.x;
@@ -10989,7 +10989,7 @@ namespace DVG
         /// </summary>
         public float3 stq
         {
-            get => new float3(x, y, w);
+            readonly get => new float3(x, y, w);
             set
             {
                 w = value.x;
@@ -11033,7 +11033,7 @@ namespace DVG
         /// </summary>
         public float3 xzy
         {
-            get => new float3(x, z, y);
+            readonly get => new float3(x, z, y);
             set
             {
                 w = value.x;
@@ -11047,7 +11047,7 @@ namespace DVG
         /// </summary>
         public float3 rbg
         {
-            get => new float3(x, z, y);
+            readonly get => new float3(x, z, y);
             set
             {
                 w = value.x;
@@ -11061,7 +11061,7 @@ namespace DVG
         /// </summary>
         public float3 spt
         {
-            get => new float3(x, z, y);
+            readonly get => new float3(x, z, y);
             set
             {
                 w = value.x;
@@ -11090,7 +11090,7 @@ namespace DVG
         /// </summary>
         public float3 xzw
         {
-            get => new float3(x, z, w);
+            readonly get => new float3(x, z, w);
             set
             {
                 w = value.x;
@@ -11104,7 +11104,7 @@ namespace DVG
         /// </summary>
         public float3 rba
         {
-            get => new float3(x, z, w);
+            readonly get => new float3(x, z, w);
             set
             {
                 w = value.x;
@@ -11118,7 +11118,7 @@ namespace DVG
         /// </summary>
         public float3 spq
         {
-            get => new float3(x, z, w);
+            readonly get => new float3(x, z, w);
             set
             {
                 w = value.x;
@@ -11162,7 +11162,7 @@ namespace DVG
         /// </summary>
         public float3 xwy
         {
-            get => new float3(x, w, y);
+            readonly get => new float3(x, w, y);
             set
             {
                 w = value.x;
@@ -11176,7 +11176,7 @@ namespace DVG
         /// </summary>
         public float3 rag
         {
-            get => new float3(x, w, y);
+            readonly get => new float3(x, w, y);
             set
             {
                 w = value.x;
@@ -11190,7 +11190,7 @@ namespace DVG
         /// </summary>
         public float3 sqt
         {
-            get => new float3(x, w, y);
+            readonly get => new float3(x, w, y);
             set
             {
                 w = value.x;
@@ -11204,7 +11204,7 @@ namespace DVG
         /// </summary>
         public float3 xwz
         {
-            get => new float3(x, w, z);
+            readonly get => new float3(x, w, z);
             set
             {
                 w = value.x;
@@ -11218,7 +11218,7 @@ namespace DVG
         /// </summary>
         public float3 rab
         {
-            get => new float3(x, w, z);
+            readonly get => new float3(x, w, z);
             set
             {
                 w = value.x;
@@ -11232,7 +11232,7 @@ namespace DVG
         /// </summary>
         public float3 sqp
         {
-            get => new float3(x, w, z);
+            readonly get => new float3(x, w, z);
             set
             {
                 w = value.x;
@@ -11381,7 +11381,7 @@ namespace DVG
         /// </summary>
         public float3 yxz
         {
-            get => new float3(y, x, z);
+            readonly get => new float3(y, x, z);
             set
             {
                 w = value.x;
@@ -11395,7 +11395,7 @@ namespace DVG
         /// </summary>
         public float3 grb
         {
-            get => new float3(y, x, z);
+            readonly get => new float3(y, x, z);
             set
             {
                 w = value.x;
@@ -11409,7 +11409,7 @@ namespace DVG
         /// </summary>
         public float3 tsp
         {
-            get => new float3(y, x, z);
+            readonly get => new float3(y, x, z);
             set
             {
                 w = value.x;
@@ -11423,7 +11423,7 @@ namespace DVG
         /// </summary>
         public float3 yxw
         {
-            get => new float3(y, x, w);
+            readonly get => new float3(y, x, w);
             set
             {
                 w = value.x;
@@ -11437,7 +11437,7 @@ namespace DVG
         /// </summary>
         public float3 gra
         {
-            get => new float3(y, x, w);
+            readonly get => new float3(y, x, w);
             set
             {
                 w = value.x;
@@ -11451,7 +11451,7 @@ namespace DVG
         /// </summary>
         public float3 tsq
         {
-            get => new float3(y, x, w);
+            readonly get => new float3(y, x, w);
             set
             {
                 w = value.x;
@@ -11555,7 +11555,7 @@ namespace DVG
         /// </summary>
         public float3 yzx
         {
-            get => new float3(y, z, x);
+            readonly get => new float3(y, z, x);
             set
             {
                 w = value.x;
@@ -11569,7 +11569,7 @@ namespace DVG
         /// </summary>
         public float3 gbr
         {
-            get => new float3(y, z, x);
+            readonly get => new float3(y, z, x);
             set
             {
                 w = value.x;
@@ -11583,7 +11583,7 @@ namespace DVG
         /// </summary>
         public float3 tps
         {
-            get => new float3(y, z, x);
+            readonly get => new float3(y, z, x);
             set
             {
                 w = value.x;
@@ -11627,7 +11627,7 @@ namespace DVG
         /// </summary>
         public float3 yzw
         {
-            get => new float3(y, z, w);
+            readonly get => new float3(y, z, w);
             set
             {
                 w = value.x;
@@ -11641,7 +11641,7 @@ namespace DVG
         /// </summary>
         public float3 gba
         {
-            get => new float3(y, z, w);
+            readonly get => new float3(y, z, w);
             set
             {
                 w = value.x;
@@ -11655,7 +11655,7 @@ namespace DVG
         /// </summary>
         public float3 tpq
         {
-            get => new float3(y, z, w);
+            readonly get => new float3(y, z, w);
             set
             {
                 w = value.x;
@@ -11684,7 +11684,7 @@ namespace DVG
         /// </summary>
         public float3 ywx
         {
-            get => new float3(y, w, x);
+            readonly get => new float3(y, w, x);
             set
             {
                 w = value.x;
@@ -11698,7 +11698,7 @@ namespace DVG
         /// </summary>
         public float3 gar
         {
-            get => new float3(y, w, x);
+            readonly get => new float3(y, w, x);
             set
             {
                 w = value.x;
@@ -11712,7 +11712,7 @@ namespace DVG
         /// </summary>
         public float3 tqs
         {
-            get => new float3(y, w, x);
+            readonly get => new float3(y, w, x);
             set
             {
                 w = value.x;
@@ -11741,7 +11741,7 @@ namespace DVG
         /// </summary>
         public float3 ywz
         {
-            get => new float3(y, w, z);
+            readonly get => new float3(y, w, z);
             set
             {
                 w = value.x;
@@ -11755,7 +11755,7 @@ namespace DVG
         /// </summary>
         public float3 gab
         {
-            get => new float3(y, w, z);
+            readonly get => new float3(y, w, z);
             set
             {
                 w = value.x;
@@ -11769,7 +11769,7 @@ namespace DVG
         /// </summary>
         public float3 tqp
         {
-            get => new float3(y, w, z);
+            readonly get => new float3(y, w, z);
             set
             {
                 w = value.x;
@@ -11903,7 +11903,7 @@ namespace DVG
         /// </summary>
         public float3 zxy
         {
-            get => new float3(z, x, y);
+            readonly get => new float3(z, x, y);
             set
             {
                 w = value.x;
@@ -11917,7 +11917,7 @@ namespace DVG
         /// </summary>
         public float3 brg
         {
-            get => new float3(z, x, y);
+            readonly get => new float3(z, x, y);
             set
             {
                 w = value.x;
@@ -11931,7 +11931,7 @@ namespace DVG
         /// </summary>
         public float3 pst
         {
-            get => new float3(z, x, y);
+            readonly get => new float3(z, x, y);
             set
             {
                 w = value.x;
@@ -11960,7 +11960,7 @@ namespace DVG
         /// </summary>
         public float3 zxw
         {
-            get => new float3(z, x, w);
+            readonly get => new float3(z, x, w);
             set
             {
                 w = value.x;
@@ -11974,7 +11974,7 @@ namespace DVG
         /// </summary>
         public float3 bra
         {
-            get => new float3(z, x, w);
+            readonly get => new float3(z, x, w);
             set
             {
                 w = value.x;
@@ -11988,7 +11988,7 @@ namespace DVG
         /// </summary>
         public float3 psq
         {
-            get => new float3(z, x, w);
+            readonly get => new float3(z, x, w);
             set
             {
                 w = value.x;
@@ -12017,7 +12017,7 @@ namespace DVG
         /// </summary>
         public float3 zyx
         {
-            get => new float3(z, y, x);
+            readonly get => new float3(z, y, x);
             set
             {
                 w = value.x;
@@ -12031,7 +12031,7 @@ namespace DVG
         /// </summary>
         public float3 bgr
         {
-            get => new float3(z, y, x);
+            readonly get => new float3(z, y, x);
             set
             {
                 w = value.x;
@@ -12045,7 +12045,7 @@ namespace DVG
         /// </summary>
         public float3 pts
         {
-            get => new float3(z, y, x);
+            readonly get => new float3(z, y, x);
             set
             {
                 w = value.x;
@@ -12089,7 +12089,7 @@ namespace DVG
         /// </summary>
         public float3 zyw
         {
-            get => new float3(z, y, w);
+            readonly get => new float3(z, y, w);
             set
             {
                 w = value.x;
@@ -12103,7 +12103,7 @@ namespace DVG
         /// </summary>
         public float3 bga
         {
-            get => new float3(z, y, w);
+            readonly get => new float3(z, y, w);
             set
             {
                 w = value.x;
@@ -12117,7 +12117,7 @@ namespace DVG
         /// </summary>
         public float3 ptq
         {
-            get => new float3(z, y, w);
+            readonly get => new float3(z, y, w);
             set
             {
                 w = value.x;
@@ -12221,7 +12221,7 @@ namespace DVG
         /// </summary>
         public float3 zwx
         {
-            get => new float3(z, w, x);
+            readonly get => new float3(z, w, x);
             set
             {
                 w = value.x;
@@ -12235,7 +12235,7 @@ namespace DVG
         /// </summary>
         public float3 bar
         {
-            get => new float3(z, w, x);
+            readonly get => new float3(z, w, x);
             set
             {
                 w = value.x;
@@ -12249,7 +12249,7 @@ namespace DVG
         /// </summary>
         public float3 pqs
         {
-            get => new float3(z, w, x);
+            readonly get => new float3(z, w, x);
             set
             {
                 w = value.x;
@@ -12263,7 +12263,7 @@ namespace DVG
         /// </summary>
         public float3 zwy
         {
-            get => new float3(z, w, y);
+            readonly get => new float3(z, w, y);
             set
             {
                 w = value.x;
@@ -12277,7 +12277,7 @@ namespace DVG
         /// </summary>
         public float3 bag
         {
-            get => new float3(z, w, y);
+            readonly get => new float3(z, w, y);
             set
             {
                 w = value.x;
@@ -12291,7 +12291,7 @@ namespace DVG
         /// </summary>
         public float3 pqt
         {
-            get => new float3(z, w, y);
+            readonly get => new float3(z, w, y);
             set
             {
                 w = value.x;
@@ -12440,7 +12440,7 @@ namespace DVG
         /// </summary>
         public float3 wxy
         {
-            get => new float3(w, x, y);
+            readonly get => new float3(w, x, y);
             set
             {
                 w = value.x;
@@ -12454,7 +12454,7 @@ namespace DVG
         /// </summary>
         public float3 arg
         {
-            get => new float3(w, x, y);
+            readonly get => new float3(w, x, y);
             set
             {
                 w = value.x;
@@ -12468,7 +12468,7 @@ namespace DVG
         /// </summary>
         public float3 qst
         {
-            get => new float3(w, x, y);
+            readonly get => new float3(w, x, y);
             set
             {
                 w = value.x;
@@ -12482,7 +12482,7 @@ namespace DVG
         /// </summary>
         public float3 wxz
         {
-            get => new float3(w, x, z);
+            readonly get => new float3(w, x, z);
             set
             {
                 w = value.x;
@@ -12496,7 +12496,7 @@ namespace DVG
         /// </summary>
         public float3 arb
         {
-            get => new float3(w, x, z);
+            readonly get => new float3(w, x, z);
             set
             {
                 w = value.x;
@@ -12510,7 +12510,7 @@ namespace DVG
         /// </summary>
         public float3 qsp
         {
-            get => new float3(w, x, z);
+            readonly get => new float3(w, x, z);
             set
             {
                 w = value.x;
@@ -12554,7 +12554,7 @@ namespace DVG
         /// </summary>
         public float3 wyx
         {
-            get => new float3(w, y, x);
+            readonly get => new float3(w, y, x);
             set
             {
                 w = value.x;
@@ -12568,7 +12568,7 @@ namespace DVG
         /// </summary>
         public float3 agr
         {
-            get => new float3(w, y, x);
+            readonly get => new float3(w, y, x);
             set
             {
                 w = value.x;
@@ -12582,7 +12582,7 @@ namespace DVG
         /// </summary>
         public float3 qts
         {
-            get => new float3(w, y, x);
+            readonly get => new float3(w, y, x);
             set
             {
                 w = value.x;
@@ -12611,7 +12611,7 @@ namespace DVG
         /// </summary>
         public float3 wyz
         {
-            get => new float3(w, y, z);
+            readonly get => new float3(w, y, z);
             set
             {
                 w = value.x;
@@ -12625,7 +12625,7 @@ namespace DVG
         /// </summary>
         public float3 agb
         {
-            get => new float3(w, y, z);
+            readonly get => new float3(w, y, z);
             set
             {
                 w = value.x;
@@ -12639,7 +12639,7 @@ namespace DVG
         /// </summary>
         public float3 qtp
         {
-            get => new float3(w, y, z);
+            readonly get => new float3(w, y, z);
             set
             {
                 w = value.x;
@@ -12683,7 +12683,7 @@ namespace DVG
         /// </summary>
         public float3 wzx
         {
-            get => new float3(w, z, x);
+            readonly get => new float3(w, z, x);
             set
             {
                 w = value.x;
@@ -12697,7 +12697,7 @@ namespace DVG
         /// </summary>
         public float3 abr
         {
-            get => new float3(w, z, x);
+            readonly get => new float3(w, z, x);
             set
             {
                 w = value.x;
@@ -12711,7 +12711,7 @@ namespace DVG
         /// </summary>
         public float3 qps
         {
-            get => new float3(w, z, x);
+            readonly get => new float3(w, z, x);
             set
             {
                 w = value.x;
@@ -12725,7 +12725,7 @@ namespace DVG
         /// </summary>
         public float3 wzy
         {
-            get => new float3(w, z, y);
+            readonly get => new float3(w, z, y);
             set
             {
                 w = value.x;
@@ -12739,7 +12739,7 @@ namespace DVG
         /// </summary>
         public float3 abg
         {
-            get => new float3(w, z, y);
+            readonly get => new float3(w, z, y);
             set
             {
                 w = value.x;
@@ -12753,7 +12753,7 @@ namespace DVG
         /// </summary>
         public float3 qpt
         {
-            get => new float3(w, z, y);
+            readonly get => new float3(w, z, y);
             set
             {
                 w = value.x;
@@ -12962,7 +12962,7 @@ namespace DVG
         /// </summary>
         public float2 xy
         {
-            get => new float2(x, y);
+            readonly get => new float2(x, y);
             set
             {
                 w = value.x;
@@ -12975,7 +12975,7 @@ namespace DVG
         /// </summary>
         public float2 rg
         {
-            get => new float2(x, y);
+            readonly get => new float2(x, y);
             set
             {
                 w = value.x;
@@ -12988,7 +12988,7 @@ namespace DVG
         /// </summary>
         public float2 st
         {
-            get => new float2(x, y);
+            readonly get => new float2(x, y);
             set
             {
                 w = value.x;
@@ -13001,7 +13001,7 @@ namespace DVG
         /// </summary>
         public float2 xz
         {
-            get => new float2(x, z);
+            readonly get => new float2(x, z);
             set
             {
                 w = value.x;
@@ -13014,7 +13014,7 @@ namespace DVG
         /// </summary>
         public float2 rb
         {
-            get => new float2(x, z);
+            readonly get => new float2(x, z);
             set
             {
                 w = value.x;
@@ -13027,7 +13027,7 @@ namespace DVG
         /// </summary>
         public float2 sp
         {
-            get => new float2(x, z);
+            readonly get => new float2(x, z);
             set
             {
                 w = value.x;
@@ -13040,7 +13040,7 @@ namespace DVG
         /// </summary>
         public float2 xw
         {
-            get => new float2(x, w);
+            readonly get => new float2(x, w);
             set
             {
                 w = value.x;
@@ -13053,7 +13053,7 @@ namespace DVG
         /// </summary>
         public float2 ra
         {
-            get => new float2(x, w);
+            readonly get => new float2(x, w);
             set
             {
                 w = value.x;
@@ -13066,7 +13066,7 @@ namespace DVG
         /// </summary>
         public float2 sq
         {
-            get => new float2(x, w);
+            readonly get => new float2(x, w);
             set
             {
                 w = value.x;
@@ -13094,7 +13094,7 @@ namespace DVG
         /// </summary>
         public float2 yx
         {
-            get => new float2(y, x);
+            readonly get => new float2(y, x);
             set
             {
                 w = value.x;
@@ -13107,7 +13107,7 @@ namespace DVG
         /// </summary>
         public float2 gr
         {
-            get => new float2(y, x);
+            readonly get => new float2(y, x);
             set
             {
                 w = value.x;
@@ -13120,7 +13120,7 @@ namespace DVG
         /// </summary>
         public float2 ts
         {
-            get => new float2(y, x);
+            readonly get => new float2(y, x);
             set
             {
                 w = value.x;
@@ -13148,7 +13148,7 @@ namespace DVG
         /// </summary>
         public float2 yz
         {
-            get => new float2(y, z);
+            readonly get => new float2(y, z);
             set
             {
                 w = value.x;
@@ -13161,7 +13161,7 @@ namespace DVG
         /// </summary>
         public float2 gb
         {
-            get => new float2(y, z);
+            readonly get => new float2(y, z);
             set
             {
                 w = value.x;
@@ -13174,7 +13174,7 @@ namespace DVG
         /// </summary>
         public float2 tp
         {
-            get => new float2(y, z);
+            readonly get => new float2(y, z);
             set
             {
                 w = value.x;
@@ -13187,7 +13187,7 @@ namespace DVG
         /// </summary>
         public float2 yw
         {
-            get => new float2(y, w);
+            readonly get => new float2(y, w);
             set
             {
                 w = value.x;
@@ -13200,7 +13200,7 @@ namespace DVG
         /// </summary>
         public float2 ga
         {
-            get => new float2(y, w);
+            readonly get => new float2(y, w);
             set
             {
                 w = value.x;
@@ -13213,7 +13213,7 @@ namespace DVG
         /// </summary>
         public float2 tq
         {
-            get => new float2(y, w);
+            readonly get => new float2(y, w);
             set
             {
                 w = value.x;
@@ -13241,7 +13241,7 @@ namespace DVG
         /// </summary>
         public float2 zx
         {
-            get => new float2(z, x);
+            readonly get => new float2(z, x);
             set
             {
                 w = value.x;
@@ -13254,7 +13254,7 @@ namespace DVG
         /// </summary>
         public float2 br
         {
-            get => new float2(z, x);
+            readonly get => new float2(z, x);
             set
             {
                 w = value.x;
@@ -13267,7 +13267,7 @@ namespace DVG
         /// </summary>
         public float2 ps
         {
-            get => new float2(z, x);
+            readonly get => new float2(z, x);
             set
             {
                 w = value.x;
@@ -13280,7 +13280,7 @@ namespace DVG
         /// </summary>
         public float2 zy
         {
-            get => new float2(z, y);
+            readonly get => new float2(z, y);
             set
             {
                 w = value.x;
@@ -13293,7 +13293,7 @@ namespace DVG
         /// </summary>
         public float2 bg
         {
-            get => new float2(z, y);
+            readonly get => new float2(z, y);
             set
             {
                 w = value.x;
@@ -13306,7 +13306,7 @@ namespace DVG
         /// </summary>
         public float2 pt
         {
-            get => new float2(z, y);
+            readonly get => new float2(z, y);
             set
             {
                 w = value.x;
@@ -13334,7 +13334,7 @@ namespace DVG
         /// </summary>
         public float2 zw
         {
-            get => new float2(z, w);
+            readonly get => new float2(z, w);
             set
             {
                 w = value.x;
@@ -13347,7 +13347,7 @@ namespace DVG
         /// </summary>
         public float2 ba
         {
-            get => new float2(z, w);
+            readonly get => new float2(z, w);
             set
             {
                 w = value.x;
@@ -13360,7 +13360,7 @@ namespace DVG
         /// </summary>
         public float2 pq
         {
-            get => new float2(z, w);
+            readonly get => new float2(z, w);
             set
             {
                 w = value.x;
@@ -13388,7 +13388,7 @@ namespace DVG
         /// </summary>
         public float2 wx
         {
-            get => new float2(w, x);
+            readonly get => new float2(w, x);
             set
             {
                 w = value.x;
@@ -13401,7 +13401,7 @@ namespace DVG
         /// </summary>
         public float2 ar
         {
-            get => new float2(w, x);
+            readonly get => new float2(w, x);
             set
             {
                 w = value.x;
@@ -13414,7 +13414,7 @@ namespace DVG
         /// </summary>
         public float2 qs
         {
-            get => new float2(w, x);
+            readonly get => new float2(w, x);
             set
             {
                 w = value.x;
@@ -13427,7 +13427,7 @@ namespace DVG
         /// </summary>
         public float2 wy
         {
-            get => new float2(w, y);
+            readonly get => new float2(w, y);
             set
             {
                 w = value.x;
@@ -13440,7 +13440,7 @@ namespace DVG
         /// </summary>
         public float2 ag
         {
-            get => new float2(w, y);
+            readonly get => new float2(w, y);
             set
             {
                 w = value.x;
@@ -13453,7 +13453,7 @@ namespace DVG
         /// </summary>
         public float2 qt
         {
-            get => new float2(w, y);
+            readonly get => new float2(w, y);
             set
             {
                 w = value.x;
@@ -13466,7 +13466,7 @@ namespace DVG
         /// </summary>
         public float2 wz
         {
-            get => new float2(w, z);
+            readonly get => new float2(w, z);
             set
             {
                 w = value.x;
@@ -13479,7 +13479,7 @@ namespace DVG
         /// </summary>
         public float2 ab
         {
-            get => new float2(w, z);
+            readonly get => new float2(w, z);
             set
             {
                 w = value.x;
@@ -13492,7 +13492,7 @@ namespace DVG
         /// </summary>
         public float2 qp
         {
-            get => new float2(w, z);
+            readonly get => new float2(w, z);
             set
             {
                 w = value.x;
@@ -13619,6 +13619,9 @@ namespace DVG
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float SqrDistance(float4 lhs, float4 rhs) => float4.SqrLength(lhs - rhs);
+        
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float4 SmoothDamp(float4 source, float4 target, ref float4 velocity, float smoothTime, float deltaTime) => new float4(Maths.SmoothDamp(source.x, target.x, ref velocity.x, smoothTime, deltaTime), Maths.SmoothDamp(source.y, target.y, ref velocity.y, smoothTime, deltaTime), Maths.SmoothDamp(source.z, target.z, ref velocity.z, smoothTime, deltaTime), Maths.SmoothDamp(source.w, target.w, ref velocity.w, smoothTime, deltaTime));
 
         #endregion
 
@@ -13878,16 +13881,16 @@ namespace DVG
         public static float4 Step(float edge, float4 x) => new float4(x.x < edge ? 0 : 1, x.y < edge ? 0 : 1, x.z < edge ? 0 : 1, x.w < edge ? 0 : 1);
         
         /// <summary>
-        /// Returns a float4 from component-wise application of Smoothstep (Maths.Smoothstep(edge0, edge1, x)).
+        /// Returns a float4 from component-wise application of SmoothStep (Maths.SmoothStep(edge0, edge1, x)).
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float4 Smoothstep(float4 edge0, float4 edge1, float4 x) => new float4(Maths.Smoothstep(edge0.x, edge1.x, x.x), Maths.Smoothstep(edge0.y, edge1.y, x.y), Maths.Smoothstep(edge0.z, edge1.z, x.z), Maths.Smoothstep(edge0.w, edge1.w, x.w));
+        public static float4 SmoothStep(float4 edge0, float4 edge1, float4 x) => new float4(Maths.SmoothStep(edge0.x, edge1.x, x.x), Maths.SmoothStep(edge0.y, edge1.y, x.y), Maths.SmoothStep(edge0.z, edge1.z, x.z), Maths.SmoothStep(edge0.w, edge1.w, x.w));
         
         /// <summary>
-        /// Returns a float4 from component-wise application of Smoothstep (Maths.Smoothstep(edge0, edge1, x)).
+        /// Returns a float4 from component-wise application of SmoothStep (Maths.SmoothStep(edge0, edge1, x)).
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float4 Smoothstep(float4 edge0, float4 edge1, float x) => new float4(Maths.Smoothstep(edge0.x, edge1.x, x), Maths.Smoothstep(edge0.y, edge1.y, x), Maths.Smoothstep(edge0.z, edge1.z, x), Maths.Smoothstep(edge0.w, edge1.w, x));
+        public static float4 SmoothStep(float4 edge0, float4 edge1, float x) => new float4(Maths.SmoothStep(edge0.x, edge1.x, x), Maths.SmoothStep(edge0.y, edge1.y, x), Maths.SmoothStep(edge0.z, edge1.z, x), Maths.SmoothStep(edge0.w, edge1.w, x));
         
         /// <summary>
         /// Returns a bool4 from component-wise application of IsNaN (float.IsNaN(v)).

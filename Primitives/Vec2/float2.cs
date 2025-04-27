@@ -132,7 +132,7 @@ namespace DVG
         /// </summary>
         public float r
         {
-            get => x;
+            readonly get => x;
             set
             {
                 x = value;
@@ -144,7 +144,7 @@ namespace DVG
         /// </summary>
         public float s
         {
-            get => x;
+            readonly get => x;
             set
             {
                 x = value;
@@ -156,7 +156,7 @@ namespace DVG
         /// </summary>
         public float g
         {
-            get => y;
+            readonly get => y;
             set
             {
                 y = value;
@@ -168,7 +168,7 @@ namespace DVG
         /// </summary>
         public float t
         {
-            get => y;
+            readonly get => y;
             set
             {
                 y = value;
@@ -1830,7 +1830,7 @@ namespace DVG
         /// </summary>
         public float2 xy
         {
-            get => new float2(x, y);
+            readonly get => new float2(x, y);
             set
             {
                 y = value.x;
@@ -1843,7 +1843,7 @@ namespace DVG
         /// </summary>
         public float2 rg
         {
-            get => new float2(x, y);
+            readonly get => new float2(x, y);
             set
             {
                 y = value.x;
@@ -1856,7 +1856,7 @@ namespace DVG
         /// </summary>
         public float2 st
         {
-            get => new float2(x, y);
+            readonly get => new float2(x, y);
             set
             {
                 y = value.x;
@@ -1884,7 +1884,7 @@ namespace DVG
         /// </summary>
         public float2 yx
         {
-            get => new float2(y, x);
+            readonly get => new float2(y, x);
             set
             {
                 y = value.x;
@@ -1897,7 +1897,7 @@ namespace DVG
         /// </summary>
         public float2 gr
         {
-            get => new float2(y, x);
+            readonly get => new float2(y, x);
             set
             {
                 y = value.x;
@@ -1910,7 +1910,7 @@ namespace DVG
         /// </summary>
         public float2 ts
         {
-            get => new float2(y, x);
+            readonly get => new float2(y, x);
             set
             {
                 y = value.x;
@@ -2037,6 +2037,9 @@ namespace DVG
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float SqrDistance(float2 lhs, float2 rhs) => float2.SqrLength(lhs - rhs);
+        
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float2 SmoothDamp(float2 source, float2 target, ref float2 velocity, float smoothTime, float deltaTime) => new float2(Maths.SmoothDamp(source.x, target.x, ref velocity.x, smoothTime, deltaTime), Maths.SmoothDamp(source.y, target.y, ref velocity.y, smoothTime, deltaTime));
 
         #endregion
 
@@ -2296,16 +2299,16 @@ namespace DVG
         public static float2 Step(float edge, float2 x) => new float2(x.x < edge ? 0 : 1, x.y < edge ? 0 : 1);
         
         /// <summary>
-        /// Returns a float2 from component-wise application of Smoothstep (Maths.Smoothstep(edge0, edge1, x)).
+        /// Returns a float2 from component-wise application of SmoothStep (Maths.SmoothStep(edge0, edge1, x)).
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float2 Smoothstep(float2 edge0, float2 edge1, float2 x) => new float2(Maths.Smoothstep(edge0.x, edge1.x, x.x), Maths.Smoothstep(edge0.y, edge1.y, x.y));
+        public static float2 SmoothStep(float2 edge0, float2 edge1, float2 x) => new float2(Maths.SmoothStep(edge0.x, edge1.x, x.x), Maths.SmoothStep(edge0.y, edge1.y, x.y));
         
         /// <summary>
-        /// Returns a float2 from component-wise application of Smoothstep (Maths.Smoothstep(edge0, edge1, x)).
+        /// Returns a float2 from component-wise application of SmoothStep (Maths.SmoothStep(edge0, edge1, x)).
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float2 Smoothstep(float2 edge0, float2 edge1, float x) => new float2(Maths.Smoothstep(edge0.x, edge1.x, x), Maths.Smoothstep(edge0.y, edge1.y, x));
+        public static float2 SmoothStep(float2 edge0, float2 edge1, float x) => new float2(Maths.SmoothStep(edge0.x, edge1.x, x), Maths.SmoothStep(edge0.y, edge1.y, x));
         
         /// <summary>
         /// Returns a bool2 from component-wise application of IsNaN (float.IsNaN(v)).

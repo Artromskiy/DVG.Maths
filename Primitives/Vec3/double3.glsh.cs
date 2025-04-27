@@ -148,9 +148,9 @@ namespace DVG
         public static double3 Step(double3 edge, double3 x) => double3.Step(edge, x);
         
         /// <summary>
-        /// Returns a double3 from component-wise application of Smoothstep (Maths.Smoothstep(edge0, edge1, x)).
+        /// Returns a double3 from component-wise application of SmoothStep (Maths.SmoothStep(edge0, edge1, x)).
         /// </summary>
-        public static double3 Smoothstep(double3 edge0, double3 edge1, double3 x) => double3.Smoothstep(edge0, edge1, x);
+        public static double3 SmoothStep(double3 edge0, double3 edge1, double3 x) => double3.SmoothStep(edge0, edge1, x);
         
         /// <summary>
         /// Returns a bool3 from component-wise application of IsNaN (double.IsNaN(v)).

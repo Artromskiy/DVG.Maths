@@ -153,7 +153,7 @@ namespace DVG
         /// </summary>
         public float r
         {
-            get => x;
+            readonly get => x;
             set
             {
                 x = value;
@@ -165,7 +165,7 @@ namespace DVG
         /// </summary>
         public float s
         {
-            get => x;
+            readonly get => x;
             set
             {
                 x = value;
@@ -177,7 +177,7 @@ namespace DVG
         /// </summary>
         public float g
         {
-            get => y;
+            readonly get => y;
             set
             {
                 y = value;
@@ -189,7 +189,7 @@ namespace DVG
         /// </summary>
         public float t
         {
-            get => y;
+            readonly get => y;
             set
             {
                 y = value;
@@ -201,7 +201,7 @@ namespace DVG
         /// </summary>
         public float b
         {
-            get => z;
+            readonly get => z;
             set
             {
                 z = value;
@@ -213,7 +213,7 @@ namespace DVG
         /// </summary>
         public float p
         {
-            get => z;
+            readonly get => z;
             set
             {
                 z = value;
@@ -4440,7 +4440,7 @@ namespace DVG
         /// </summary>
         public float3 xyz
         {
-            get => new float3(x, y, z);
+            readonly get => new float3(x, y, z);
             set
             {
                 z = value.x;
@@ -4454,7 +4454,7 @@ namespace DVG
         /// </summary>
         public float3 rgb
         {
-            get => new float3(x, y, z);
+            readonly get => new float3(x, y, z);
             set
             {
                 z = value.x;
@@ -4468,7 +4468,7 @@ namespace DVG
         /// </summary>
         public float3 stp
         {
-            get => new float3(x, y, z);
+            readonly get => new float3(x, y, z);
             set
             {
                 z = value.x;
@@ -4512,7 +4512,7 @@ namespace DVG
         /// </summary>
         public float3 xzy
         {
-            get => new float3(x, z, y);
+            readonly get => new float3(x, z, y);
             set
             {
                 z = value.x;
@@ -4526,7 +4526,7 @@ namespace DVG
         /// </summary>
         public float3 rbg
         {
-            get => new float3(x, z, y);
+            readonly get => new float3(x, z, y);
             set
             {
                 z = value.x;
@@ -4540,7 +4540,7 @@ namespace DVG
         /// </summary>
         public float3 spt
         {
-            get => new float3(x, z, y);
+            readonly get => new float3(x, z, y);
             set
             {
                 z = value.x;
@@ -4674,7 +4674,7 @@ namespace DVG
         /// </summary>
         public float3 yxz
         {
-            get => new float3(y, x, z);
+            readonly get => new float3(y, x, z);
             set
             {
                 z = value.x;
@@ -4688,7 +4688,7 @@ namespace DVG
         /// </summary>
         public float3 grb
         {
-            get => new float3(y, x, z);
+            readonly get => new float3(y, x, z);
             set
             {
                 z = value.x;
@@ -4702,7 +4702,7 @@ namespace DVG
         /// </summary>
         public float3 tsp
         {
-            get => new float3(y, x, z);
+            readonly get => new float3(y, x, z);
             set
             {
                 z = value.x;
@@ -4791,7 +4791,7 @@ namespace DVG
         /// </summary>
         public float3 yzx
         {
-            get => new float3(y, z, x);
+            readonly get => new float3(y, z, x);
             set
             {
                 z = value.x;
@@ -4805,7 +4805,7 @@ namespace DVG
         /// </summary>
         public float3 gbr
         {
-            get => new float3(y, z, x);
+            readonly get => new float3(y, z, x);
             set
             {
                 z = value.x;
@@ -4819,7 +4819,7 @@ namespace DVG
         /// </summary>
         public float3 tps
         {
-            get => new float3(y, z, x);
+            readonly get => new float3(y, z, x);
             set
             {
                 z = value.x;
@@ -4953,7 +4953,7 @@ namespace DVG
         /// </summary>
         public float3 zxy
         {
-            get => new float3(z, x, y);
+            readonly get => new float3(z, x, y);
             set
             {
                 z = value.x;
@@ -4967,7 +4967,7 @@ namespace DVG
         /// </summary>
         public float3 brg
         {
-            get => new float3(z, x, y);
+            readonly get => new float3(z, x, y);
             set
             {
                 z = value.x;
@@ -4981,7 +4981,7 @@ namespace DVG
         /// </summary>
         public float3 pst
         {
-            get => new float3(z, x, y);
+            readonly get => new float3(z, x, y);
             set
             {
                 z = value.x;
@@ -5025,7 +5025,7 @@ namespace DVG
         /// </summary>
         public float3 zyx
         {
-            get => new float3(z, y, x);
+            readonly get => new float3(z, y, x);
             set
             {
                 z = value.x;
@@ -5039,7 +5039,7 @@ namespace DVG
         /// </summary>
         public float3 bgr
         {
-            get => new float3(z, y, x);
+            readonly get => new float3(z, y, x);
             set
             {
                 z = value.x;
@@ -5053,7 +5053,7 @@ namespace DVG
         /// </summary>
         public float3 pts
         {
-            get => new float3(z, y, x);
+            readonly get => new float3(z, y, x);
             set
             {
                 z = value.x;
@@ -5232,7 +5232,7 @@ namespace DVG
         /// </summary>
         public float2 xy
         {
-            get => new float2(x, y);
+            readonly get => new float2(x, y);
             set
             {
                 z = value.x;
@@ -5245,7 +5245,7 @@ namespace DVG
         /// </summary>
         public float2 rg
         {
-            get => new float2(x, y);
+            readonly get => new float2(x, y);
             set
             {
                 z = value.x;
@@ -5258,7 +5258,7 @@ namespace DVG
         /// </summary>
         public float2 st
         {
-            get => new float2(x, y);
+            readonly get => new float2(x, y);
             set
             {
                 z = value.x;
@@ -5271,7 +5271,7 @@ namespace DVG
         /// </summary>
         public float2 xz
         {
-            get => new float2(x, z);
+            readonly get => new float2(x, z);
             set
             {
                 z = value.x;
@@ -5284,7 +5284,7 @@ namespace DVG
         /// </summary>
         public float2 rb
         {
-            get => new float2(x, z);
+            readonly get => new float2(x, z);
             set
             {
                 z = value.x;
@@ -5297,7 +5297,7 @@ namespace DVG
         /// </summary>
         public float2 sp
         {
-            get => new float2(x, z);
+            readonly get => new float2(x, z);
             set
             {
                 z = value.x;
@@ -5325,7 +5325,7 @@ namespace DVG
         /// </summary>
         public float2 yx
         {
-            get => new float2(y, x);
+            readonly get => new float2(y, x);
             set
             {
                 z = value.x;
@@ -5338,7 +5338,7 @@ namespace DVG
         /// </summary>
         public float2 gr
         {
-            get => new float2(y, x);
+            readonly get => new float2(y, x);
             set
             {
                 z = value.x;
@@ -5351,7 +5351,7 @@ namespace DVG
         /// </summary>
         public float2 ts
         {
-            get => new float2(y, x);
+            readonly get => new float2(y, x);
             set
             {
                 z = value.x;
@@ -5379,7 +5379,7 @@ namespace DVG
         /// </summary>
         public float2 yz
         {
-            get => new float2(y, z);
+            readonly get => new float2(y, z);
             set
             {
                 z = value.x;
@@ -5392,7 +5392,7 @@ namespace DVG
         /// </summary>
         public float2 gb
         {
-            get => new float2(y, z);
+            readonly get => new float2(y, z);
             set
             {
                 z = value.x;
@@ -5405,7 +5405,7 @@ namespace DVG
         /// </summary>
         public float2 tp
         {
-            get => new float2(y, z);
+            readonly get => new float2(y, z);
             set
             {
                 z = value.x;
@@ -5433,7 +5433,7 @@ namespace DVG
         /// </summary>
         public float2 zx
         {
-            get => new float2(z, x);
+            readonly get => new float2(z, x);
             set
             {
                 z = value.x;
@@ -5446,7 +5446,7 @@ namespace DVG
         /// </summary>
         public float2 br
         {
-            get => new float2(z, x);
+            readonly get => new float2(z, x);
             set
             {
                 z = value.x;
@@ -5459,7 +5459,7 @@ namespace DVG
         /// </summary>
         public float2 ps
         {
-            get => new float2(z, x);
+            readonly get => new float2(z, x);
             set
             {
                 z = value.x;
@@ -5472,7 +5472,7 @@ namespace DVG
         /// </summary>
         public float2 zy
         {
-            get => new float2(z, y);
+            readonly get => new float2(z, y);
             set
             {
                 z = value.x;
@@ -5485,7 +5485,7 @@ namespace DVG
         /// </summary>
         public float2 bg
         {
-            get => new float2(z, y);
+            readonly get => new float2(z, y);
             set
             {
                 z = value.x;
@@ -5498,7 +5498,7 @@ namespace DVG
         /// </summary>
         public float2 pt
         {
-            get => new float2(z, y);
+            readonly get => new float2(z, y);
             set
             {
                 z = value.x;
@@ -5631,6 +5631,9 @@ namespace DVG
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float SqrDistance(float3 lhs, float3 rhs) => float3.SqrLength(lhs - rhs);
+        
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float3 SmoothDamp(float3 source, float3 target, ref float3 velocity, float smoothTime, float deltaTime) => new float3(Maths.SmoothDamp(source.x, target.x, ref velocity.x, smoothTime, deltaTime), Maths.SmoothDamp(source.y, target.y, ref velocity.y, smoothTime, deltaTime), Maths.SmoothDamp(source.z, target.z, ref velocity.z, smoothTime, deltaTime));
 
         #endregion
 
@@ -5890,16 +5893,16 @@ namespace DVG
         public static float3 Step(float edge, float3 x) => new float3(x.x < edge ? 0 : 1, x.y < edge ? 0 : 1, x.z < edge ? 0 : 1);
         
         /// <summary>
-        /// Returns a float3 from component-wise application of Smoothstep (Maths.Smoothstep(edge0, edge1, x)).
+        /// Returns a float3 from component-wise application of SmoothStep (Maths.SmoothStep(edge0, edge1, x)).
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float3 Smoothstep(float3 edge0, float3 edge1, float3 x) => new float3(Maths.Smoothstep(edge0.x, edge1.x, x.x), Maths.Smoothstep(edge0.y, edge1.y, x.y), Maths.Smoothstep(edge0.z, edge1.z, x.z));
+        public static float3 SmoothStep(float3 edge0, float3 edge1, float3 x) => new float3(Maths.SmoothStep(edge0.x, edge1.x, x.x), Maths.SmoothStep(edge0.y, edge1.y, x.y), Maths.SmoothStep(edge0.z, edge1.z, x.z));
         
         /// <summary>
-        /// Returns a float3 from component-wise application of Smoothstep (Maths.Smoothstep(edge0, edge1, x)).
+        /// Returns a float3 from component-wise application of SmoothStep (Maths.SmoothStep(edge0, edge1, x)).
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float3 Smoothstep(float3 edge0, float3 edge1, float x) => new float3(Maths.Smoothstep(edge0.x, edge1.x, x), Maths.Smoothstep(edge0.y, edge1.y, x), Maths.Smoothstep(edge0.z, edge1.z, x));
+        public static float3 SmoothStep(float3 edge0, float3 edge1, float x) => new float3(Maths.SmoothStep(edge0.x, edge1.x, x), Maths.SmoothStep(edge0.y, edge1.y, x), Maths.SmoothStep(edge0.z, edge1.z, x));
         
         /// <summary>
         /// Returns a bool3 from component-wise application of IsNaN (float.IsNaN(v)).

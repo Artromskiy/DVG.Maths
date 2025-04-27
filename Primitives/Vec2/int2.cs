@@ -144,7 +144,7 @@ namespace DVG
         /// </summary>
         public int r
         {
-            get => x;
+            readonly get => x;
             set
             {
                 x = value;
@@ -156,7 +156,7 @@ namespace DVG
         /// </summary>
         public int s
         {
-            get => x;
+            readonly get => x;
             set
             {
                 x = value;
@@ -168,7 +168,7 @@ namespace DVG
         /// </summary>
         public int g
         {
-            get => y;
+            readonly get => y;
             set
             {
                 y = value;
@@ -180,7 +180,7 @@ namespace DVG
         /// </summary>
         public int t
         {
-            get => y;
+            readonly get => y;
             set
             {
                 y = value;
@@ -1842,7 +1842,7 @@ namespace DVG
         /// </summary>
         public int2 xy
         {
-            get => new int2(x, y);
+            readonly get => new int2(x, y);
             set
             {
                 y = value.x;
@@ -1855,7 +1855,7 @@ namespace DVG
         /// </summary>
         public int2 rg
         {
-            get => new int2(x, y);
+            readonly get => new int2(x, y);
             set
             {
                 y = value.x;
@@ -1868,7 +1868,7 @@ namespace DVG
         /// </summary>
         public int2 st
         {
-            get => new int2(x, y);
+            readonly get => new int2(x, y);
             set
             {
                 y = value.x;
@@ -1896,7 +1896,7 @@ namespace DVG
         /// </summary>
         public int2 yx
         {
-            get => new int2(y, x);
+            readonly get => new int2(y, x);
             set
             {
                 y = value.x;
@@ -1909,7 +1909,7 @@ namespace DVG
         /// </summary>
         public int2 gr
         {
-            get => new int2(y, x);
+            readonly get => new int2(y, x);
             set
             {
                 y = value.x;
@@ -1922,7 +1922,7 @@ namespace DVG
         /// </summary>
         public int2 ts
         {
-            get => new int2(y, x);
+            readonly get => new int2(y, x);
             set
             {
                 y = value.x;

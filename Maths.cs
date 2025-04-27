@@ -5,7 +5,7 @@ namespace DVG
     public static partial class Maths
     {
         public static float Lerp(float a, float b, float value) => a + ((b - a) * value);
-        public static float Smoothstep(float edge0, float edge1, float v)
+        public static float SmoothStep(float edge0, float edge1, float v)
         {
             float x = Clamp((v - edge0) / (edge1 - edge0), 0, 1);
             return x * x * (3.0f - 2.0f * x);
@@ -20,7 +20,7 @@ namespace DVG
 
 
         public static double Lerp(double a, double b, double value) => a + ((b - a) * value);
-        public static double Smoothstep(double edge0, double edge1, double v)
+        public static double SmoothStep(double edge0, double edge1, double v)
         {
             double x = Clamp((v - edge0) / (edge1 - edge0), 0, 1);
             return x * x * (3.0f - 2.0f * x);

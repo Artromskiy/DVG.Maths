@@ -121,7 +121,7 @@ namespace DVG
         /// </summary>
         public bool r
         {
-            get => x;
+            readonly get => x;
             set
             {
                 x = value;
@@ -133,7 +133,7 @@ namespace DVG
         /// </summary>
         public bool s
         {
-            get => x;
+            readonly get => x;
             set
             {
                 x = value;
@@ -145,7 +145,7 @@ namespace DVG
         /// </summary>
         public bool g
         {
-            get => y;
+            readonly get => y;
             set
             {
                 y = value;
@@ -157,7 +157,7 @@ namespace DVG
         /// </summary>
         public bool t
         {
-            get => y;
+            readonly get => y;
             set
             {
                 y = value;
@@ -1819,7 +1819,7 @@ namespace DVG
         /// </summary>
         public bool2 xy
         {
-            get => new bool2(x, y);
+            readonly get => new bool2(x, y);
             set
             {
                 y = value.x;
@@ -1832,7 +1832,7 @@ namespace DVG
         /// </summary>
         public bool2 rg
         {
-            get => new bool2(x, y);
+            readonly get => new bool2(x, y);
             set
             {
                 y = value.x;
@@ -1845,7 +1845,7 @@ namespace DVG
         /// </summary>
         public bool2 st
         {
-            get => new bool2(x, y);
+            readonly get => new bool2(x, y);
             set
             {
                 y = value.x;
@@ -1873,7 +1873,7 @@ namespace DVG
         /// </summary>
         public bool2 yx
         {
-            get => new bool2(y, x);
+            readonly get => new bool2(y, x);
             set
             {
                 y = value.x;
@@ -1886,7 +1886,7 @@ namespace DVG
         /// </summary>
         public bool2 gr
         {
-            get => new bool2(y, x);
+            readonly get => new bool2(y, x);
             set
             {
                 y = value.x;
@@ -1899,7 +1899,7 @@ namespace DVG
         /// </summary>
         public bool2 ts
         {
-            get => new bool2(y, x);
+            readonly get => new bool2(y, x);
             set
             {
                 y = value.x;

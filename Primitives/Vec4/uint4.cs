@@ -194,7 +194,7 @@ namespace DVG
         /// </summary>
         public uint r
         {
-            get => x;
+            readonly get => x;
             set
             {
                 x = value;
@@ -206,7 +206,7 @@ namespace DVG
         /// </summary>
         public uint s
         {
-            get => x;
+            readonly get => x;
             set
             {
                 x = value;
@@ -218,7 +218,7 @@ namespace DVG
         /// </summary>
         public uint g
         {
-            get => y;
+            readonly get => y;
             set
             {
                 y = value;
@@ -230,7 +230,7 @@ namespace DVG
         /// </summary>
         public uint t
         {
-            get => y;
+            readonly get => y;
             set
             {
                 y = value;
@@ -242,7 +242,7 @@ namespace DVG
         /// </summary>
         public uint b
         {
-            get => z;
+            readonly get => z;
             set
             {
                 z = value;
@@ -254,7 +254,7 @@ namespace DVG
         /// </summary>
         public uint p
         {
-            get => z;
+            readonly get => z;
             set
             {
                 z = value;
@@ -266,7 +266,7 @@ namespace DVG
         /// </summary>
         public uint a
         {
-            get => w;
+            readonly get => w;
             set
             {
                 w = value;
@@ -278,7 +278,7 @@ namespace DVG
         /// </summary>
         public uint q
         {
-            get => w;
+            readonly get => w;
             set
             {
                 w = value;
@@ -3185,7 +3185,7 @@ namespace DVG
         /// </summary>
         public uint4 xyzw
         {
-            get => new uint4(x, y, z, w);
+            readonly get => new uint4(x, y, z, w);
             set
             {
                 w = value.x;
@@ -3200,7 +3200,7 @@ namespace DVG
         /// </summary>
         public uint4 rgba
         {
-            get => new uint4(x, y, z, w);
+            readonly get => new uint4(x, y, z, w);
             set
             {
                 w = value.x;
@@ -3215,7 +3215,7 @@ namespace DVG
         /// </summary>
         public uint4 stpq
         {
-            get => new uint4(x, y, z, w);
+            readonly get => new uint4(x, y, z, w);
             set
             {
                 w = value.x;
@@ -3275,7 +3275,7 @@ namespace DVG
         /// </summary>
         public uint4 xywz
         {
-            get => new uint4(x, y, w, z);
+            readonly get => new uint4(x, y, w, z);
             set
             {
                 w = value.x;
@@ -3290,7 +3290,7 @@ namespace DVG
         /// </summary>
         public uint4 rgab
         {
-            get => new uint4(x, y, w, z);
+            readonly get => new uint4(x, y, w, z);
             set
             {
                 w = value.x;
@@ -3305,7 +3305,7 @@ namespace DVG
         /// </summary>
         public uint4 stqp
         {
-            get => new uint4(x, y, w, z);
+            readonly get => new uint4(x, y, w, z);
             set
             {
                 w = value.x;
@@ -3545,7 +3545,7 @@ namespace DVG
         /// </summary>
         public uint4 xzyw
         {
-            get => new uint4(x, z, y, w);
+            readonly get => new uint4(x, z, y, w);
             set
             {
                 w = value.x;
@@ -3560,7 +3560,7 @@ namespace DVG
         /// </summary>
         public uint4 rbga
         {
-            get => new uint4(x, z, y, w);
+            readonly get => new uint4(x, z, y, w);
             set
             {
                 w = value.x;
@@ -3575,7 +3575,7 @@ namespace DVG
         /// </summary>
         public uint4 sptq
         {
-            get => new uint4(x, z, y, w);
+            readonly get => new uint4(x, z, y, w);
             set
             {
                 w = value.x;
@@ -3695,7 +3695,7 @@ namespace DVG
         /// </summary>
         public uint4 xzwy
         {
-            get => new uint4(x, z, w, y);
+            readonly get => new uint4(x, z, w, y);
             set
             {
                 w = value.x;
@@ -3710,7 +3710,7 @@ namespace DVG
         /// </summary>
         public uint4 rbag
         {
-            get => new uint4(x, z, w, y);
+            readonly get => new uint4(x, z, w, y);
             set
             {
                 w = value.x;
@@ -3725,7 +3725,7 @@ namespace DVG
         /// </summary>
         public uint4 spqt
         {
-            get => new uint4(x, z, w, y);
+            readonly get => new uint4(x, z, w, y);
             set
             {
                 w = value.x;
@@ -3965,7 +3965,7 @@ namespace DVG
         /// </summary>
         public uint4 xwyz
         {
-            get => new uint4(x, w, y, z);
+            readonly get => new uint4(x, w, y, z);
             set
             {
                 w = value.x;
@@ -3980,7 +3980,7 @@ namespace DVG
         /// </summary>
         public uint4 ragb
         {
-            get => new uint4(x, w, y, z);
+            readonly get => new uint4(x, w, y, z);
             set
             {
                 w = value.x;
@@ -3995,7 +3995,7 @@ namespace DVG
         /// </summary>
         public uint4 sqtp
         {
-            get => new uint4(x, w, y, z);
+            readonly get => new uint4(x, w, y, z);
             set
             {
                 w = value.x;
@@ -4055,7 +4055,7 @@ namespace DVG
         /// </summary>
         public uint4 xwzy
         {
-            get => new uint4(x, w, z, y);
+            readonly get => new uint4(x, w, z, y);
             set
             {
                 w = value.x;
@@ -4070,7 +4070,7 @@ namespace DVG
         /// </summary>
         public uint4 rabg
         {
-            get => new uint4(x, w, z, y);
+            readonly get => new uint4(x, w, z, y);
             set
             {
                 w = value.x;
@@ -4085,7 +4085,7 @@ namespace DVG
         /// </summary>
         public uint4 sqpt
         {
-            get => new uint4(x, w, z, y);
+            readonly get => new uint4(x, w, z, y);
             set
             {
                 w = value.x;
@@ -4865,7 +4865,7 @@ namespace DVG
         /// </summary>
         public uint4 yxzw
         {
-            get => new uint4(y, x, z, w);
+            readonly get => new uint4(y, x, z, w);
             set
             {
                 w = value.x;
@@ -4880,7 +4880,7 @@ namespace DVG
         /// </summary>
         public uint4 grba
         {
-            get => new uint4(y, x, z, w);
+            readonly get => new uint4(y, x, z, w);
             set
             {
                 w = value.x;
@@ -4895,7 +4895,7 @@ namespace DVG
         /// </summary>
         public uint4 tspq
         {
-            get => new uint4(y, x, z, w);
+            readonly get => new uint4(y, x, z, w);
             set
             {
                 w = value.x;
@@ -4955,7 +4955,7 @@ namespace DVG
         /// </summary>
         public uint4 yxwz
         {
-            get => new uint4(y, x, w, z);
+            readonly get => new uint4(y, x, w, z);
             set
             {
                 w = value.x;
@@ -4970,7 +4970,7 @@ namespace DVG
         /// </summary>
         public uint4 grab
         {
-            get => new uint4(y, x, w, z);
+            readonly get => new uint4(y, x, w, z);
             set
             {
                 w = value.x;
@@ -4985,7 +4985,7 @@ namespace DVG
         /// </summary>
         public uint4 tsqp
         {
-            get => new uint4(y, x, w, z);
+            readonly get => new uint4(y, x, w, z);
             set
             {
                 w = value.x;
@@ -5525,7 +5525,7 @@ namespace DVG
         /// </summary>
         public uint4 yzxw
         {
-            get => new uint4(y, z, x, w);
+            readonly get => new uint4(y, z, x, w);
             set
             {
                 w = value.x;
@@ -5540,7 +5540,7 @@ namespace DVG
         /// </summary>
         public uint4 gbra
         {
-            get => new uint4(y, z, x, w);
+            readonly get => new uint4(y, z, x, w);
             set
             {
                 w = value.x;
@@ -5555,7 +5555,7 @@ namespace DVG
         /// </summary>
         public uint4 tpsq
         {
-            get => new uint4(y, z, x, w);
+            readonly get => new uint4(y, z, x, w);
             set
             {
                 w = value.x;
@@ -5735,7 +5735,7 @@ namespace DVG
         /// </summary>
         public uint4 yzwx
         {
-            get => new uint4(y, z, w, x);
+            readonly get => new uint4(y, z, w, x);
             set
             {
                 w = value.x;
@@ -5750,7 +5750,7 @@ namespace DVG
         /// </summary>
         public uint4 gbar
         {
-            get => new uint4(y, z, w, x);
+            readonly get => new uint4(y, z, w, x);
             set
             {
                 w = value.x;
@@ -5765,7 +5765,7 @@ namespace DVG
         /// </summary>
         public uint4 tpqs
         {
-            get => new uint4(y, z, w, x);
+            readonly get => new uint4(y, z, w, x);
             set
             {
                 w = value.x;
@@ -5945,7 +5945,7 @@ namespace DVG
         /// </summary>
         public uint4 ywxz
         {
-            get => new uint4(y, w, x, z);
+            readonly get => new uint4(y, w, x, z);
             set
             {
                 w = value.x;
@@ -5960,7 +5960,7 @@ namespace DVG
         /// </summary>
         public uint4 garb
         {
-            get => new uint4(y, w, x, z);
+            readonly get => new uint4(y, w, x, z);
             set
             {
                 w = value.x;
@@ -5975,7 +5975,7 @@ namespace DVG
         /// </summary>
         public uint4 tqsp
         {
-            get => new uint4(y, w, x, z);
+            readonly get => new uint4(y, w, x, z);
             set
             {
                 w = value.x;
@@ -6095,7 +6095,7 @@ namespace DVG
         /// </summary>
         public uint4 ywzx
         {
-            get => new uint4(y, w, z, x);
+            readonly get => new uint4(y, w, z, x);
             set
             {
                 w = value.x;
@@ -6110,7 +6110,7 @@ namespace DVG
         /// </summary>
         public uint4 gabr
         {
-            get => new uint4(y, w, z, x);
+            readonly get => new uint4(y, w, z, x);
             set
             {
                 w = value.x;
@@ -6125,7 +6125,7 @@ namespace DVG
         /// </summary>
         public uint4 tqps
         {
-            get => new uint4(y, w, z, x);
+            readonly get => new uint4(y, w, z, x);
             set
             {
                 w = value.x;
@@ -6845,7 +6845,7 @@ namespace DVG
         /// </summary>
         public uint4 zxyw
         {
-            get => new uint4(z, x, y, w);
+            readonly get => new uint4(z, x, y, w);
             set
             {
                 w = value.x;
@@ -6860,7 +6860,7 @@ namespace DVG
         /// </summary>
         public uint4 brga
         {
-            get => new uint4(z, x, y, w);
+            readonly get => new uint4(z, x, y, w);
             set
             {
                 w = value.x;
@@ -6875,7 +6875,7 @@ namespace DVG
         /// </summary>
         public uint4 pstq
         {
-            get => new uint4(z, x, y, w);
+            readonly get => new uint4(z, x, y, w);
             set
             {
                 w = value.x;
@@ -6995,7 +6995,7 @@ namespace DVG
         /// </summary>
         public uint4 zxwy
         {
-            get => new uint4(z, x, w, y);
+            readonly get => new uint4(z, x, w, y);
             set
             {
                 w = value.x;
@@ -7010,7 +7010,7 @@ namespace DVG
         /// </summary>
         public uint4 brag
         {
-            get => new uint4(z, x, w, y);
+            readonly get => new uint4(z, x, w, y);
             set
             {
                 w = value.x;
@@ -7025,7 +7025,7 @@ namespace DVG
         /// </summary>
         public uint4 psqt
         {
-            get => new uint4(z, x, w, y);
+            readonly get => new uint4(z, x, w, y);
             set
             {
                 w = value.x;
@@ -7205,7 +7205,7 @@ namespace DVG
         /// </summary>
         public uint4 zyxw
         {
-            get => new uint4(z, y, x, w);
+            readonly get => new uint4(z, y, x, w);
             set
             {
                 w = value.x;
@@ -7220,7 +7220,7 @@ namespace DVG
         /// </summary>
         public uint4 bgra
         {
-            get => new uint4(z, y, x, w);
+            readonly get => new uint4(z, y, x, w);
             set
             {
                 w = value.x;
@@ -7235,7 +7235,7 @@ namespace DVG
         /// </summary>
         public uint4 ptsq
         {
-            get => new uint4(z, y, x, w);
+            readonly get => new uint4(z, y, x, w);
             set
             {
                 w = value.x;
@@ -7415,7 +7415,7 @@ namespace DVG
         /// </summary>
         public uint4 zywx
         {
-            get => new uint4(z, y, w, x);
+            readonly get => new uint4(z, y, w, x);
             set
             {
                 w = value.x;
@@ -7430,7 +7430,7 @@ namespace DVG
         /// </summary>
         public uint4 bgar
         {
-            get => new uint4(z, y, w, x);
+            readonly get => new uint4(z, y, w, x);
             set
             {
                 w = value.x;
@@ -7445,7 +7445,7 @@ namespace DVG
         /// </summary>
         public uint4 ptqs
         {
-            get => new uint4(z, y, w, x);
+            readonly get => new uint4(z, y, w, x);
             set
             {
                 w = value.x;
@@ -7985,7 +7985,7 @@ namespace DVG
         /// </summary>
         public uint4 zwxy
         {
-            get => new uint4(z, w, x, y);
+            readonly get => new uint4(z, w, x, y);
             set
             {
                 w = value.x;
@@ -8000,7 +8000,7 @@ namespace DVG
         /// </summary>
         public uint4 barg
         {
-            get => new uint4(z, w, x, y);
+            readonly get => new uint4(z, w, x, y);
             set
             {
                 w = value.x;
@@ -8015,7 +8015,7 @@ namespace DVG
         /// </summary>
         public uint4 pqst
         {
-            get => new uint4(z, w, x, y);
+            readonly get => new uint4(z, w, x, y);
             set
             {
                 w = value.x;
@@ -8075,7 +8075,7 @@ namespace DVG
         /// </summary>
         public uint4 zwyx
         {
-            get => new uint4(z, w, y, x);
+            readonly get => new uint4(z, w, y, x);
             set
             {
                 w = value.x;
@@ -8090,7 +8090,7 @@ namespace DVG
         /// </summary>
         public uint4 bagr
         {
-            get => new uint4(z, w, y, x);
+            readonly get => new uint4(z, w, y, x);
             set
             {
                 w = value.x;
@@ -8105,7 +8105,7 @@ namespace DVG
         /// </summary>
         public uint4 pqts
         {
-            get => new uint4(z, w, y, x);
+            readonly get => new uint4(z, w, y, x);
             set
             {
                 w = value.x;
@@ -8885,7 +8885,7 @@ namespace DVG
         /// </summary>
         public uint4 wxyz
         {
-            get => new uint4(w, x, y, z);
+            readonly get => new uint4(w, x, y, z);
             set
             {
                 w = value.x;
@@ -8900,7 +8900,7 @@ namespace DVG
         /// </summary>
         public uint4 argb
         {
-            get => new uint4(w, x, y, z);
+            readonly get => new uint4(w, x, y, z);
             set
             {
                 w = value.x;
@@ -8915,7 +8915,7 @@ namespace DVG
         /// </summary>
         public uint4 qstp
         {
-            get => new uint4(w, x, y, z);
+            readonly get => new uint4(w, x, y, z);
             set
             {
                 w = value.x;
@@ -8975,7 +8975,7 @@ namespace DVG
         /// </summary>
         public uint4 wxzy
         {
-            get => new uint4(w, x, z, y);
+            readonly get => new uint4(w, x, z, y);
             set
             {
                 w = value.x;
@@ -8990,7 +8990,7 @@ namespace DVG
         /// </summary>
         public uint4 arbg
         {
-            get => new uint4(w, x, z, y);
+            readonly get => new uint4(w, x, z, y);
             set
             {
                 w = value.x;
@@ -9005,7 +9005,7 @@ namespace DVG
         /// </summary>
         public uint4 qspt
         {
-            get => new uint4(w, x, z, y);
+            readonly get => new uint4(w, x, z, y);
             set
             {
                 w = value.x;
@@ -9245,7 +9245,7 @@ namespace DVG
         /// </summary>
         public uint4 wyxz
         {
-            get => new uint4(w, y, x, z);
+            readonly get => new uint4(w, y, x, z);
             set
             {
                 w = value.x;
@@ -9260,7 +9260,7 @@ namespace DVG
         /// </summary>
         public uint4 agrb
         {
-            get => new uint4(w, y, x, z);
+            readonly get => new uint4(w, y, x, z);
             set
             {
                 w = value.x;
@@ -9275,7 +9275,7 @@ namespace DVG
         /// </summary>
         public uint4 qtsp
         {
-            get => new uint4(w, y, x, z);
+            readonly get => new uint4(w, y, x, z);
             set
             {
                 w = value.x;
@@ -9395,7 +9395,7 @@ namespace DVG
         /// </summary>
         public uint4 wyzx
         {
-            get => new uint4(w, y, z, x);
+            readonly get => new uint4(w, y, z, x);
             set
             {
                 w = value.x;
@@ -9410,7 +9410,7 @@ namespace DVG
         /// </summary>
         public uint4 agbr
         {
-            get => new uint4(w, y, z, x);
+            readonly get => new uint4(w, y, z, x);
             set
             {
                 w = value.x;
@@ -9425,7 +9425,7 @@ namespace DVG
         /// </summary>
         public uint4 qtps
         {
-            get => new uint4(w, y, z, x);
+            readonly get => new uint4(w, y, z, x);
             set
             {
                 w = value.x;
@@ -9665,7 +9665,7 @@ namespace DVG
         /// </summary>
         public uint4 wzxy
         {
-            get => new uint4(w, z, x, y);
+            readonly get => new uint4(w, z, x, y);
             set
             {
                 w = value.x;
@@ -9680,7 +9680,7 @@ namespace DVG
         /// </summary>
         public uint4 abrg
         {
-            get => new uint4(w, z, x, y);
+            readonly get => new uint4(w, z, x, y);
             set
             {
                 w = value.x;
@@ -9695,7 +9695,7 @@ namespace DVG
         /// </summary>
         public uint4 qpst
         {
-            get => new uint4(w, z, x, y);
+            readonly get => new uint4(w, z, x, y);
             set
             {
                 w = value.x;
@@ -9755,7 +9755,7 @@ namespace DVG
         /// </summary>
         public uint4 wzyx
         {
-            get => new uint4(w, z, y, x);
+            readonly get => new uint4(w, z, y, x);
             set
             {
                 w = value.x;
@@ -9770,7 +9770,7 @@ namespace DVG
         /// </summary>
         public uint4 abgr
         {
-            get => new uint4(w, z, y, x);
+            readonly get => new uint4(w, z, y, x);
             set
             {
                 w = value.x;
@@ -9785,7 +9785,7 @@ namespace DVG
         /// </summary>
         public uint4 qpts
         {
-            get => new uint4(w, z, y, x);
+            readonly get => new uint4(w, z, y, x);
             set
             {
                 w = value.x;
@@ -10925,7 +10925,7 @@ namespace DVG
         /// </summary>
         public uint3 xyz
         {
-            get => new uint3(x, y, z);
+            readonly get => new uint3(x, y, z);
             set
             {
                 w = value.x;
@@ -10939,7 +10939,7 @@ namespace DVG
         /// </summary>
         public uint3 rgb
         {
-            get => new uint3(x, y, z);
+            readonly get => new uint3(x, y, z);
             set
             {
                 w = value.x;
@@ -10953,7 +10953,7 @@ namespace DVG
         /// </summary>
         public uint3 stp
         {
-            get => new uint3(x, y, z);
+            readonly get => new uint3(x, y, z);
             set
             {
                 w = value.x;
@@ -10967,7 +10967,7 @@ namespace DVG
         /// </summary>
         public uint3 xyw
         {
-            get => new uint3(x, y, w);
+            readonly get => new uint3(x, y, w);
             set
             {
                 w = value.x;
@@ -10981,7 +10981,7 @@ namespace DVG
         /// </summary>
         public uint3 rga
         {
-            get => new uint3(x, y, w);
+            readonly get => new uint3(x, y, w);
             set
             {
                 w = value.x;
@@ -10995,7 +10995,7 @@ namespace DVG
         /// </summary>
         public uint3 stq
         {
-            get => new uint3(x, y, w);
+            readonly get => new uint3(x, y, w);
             set
             {
                 w = value.x;
@@ -11039,7 +11039,7 @@ namespace DVG
         /// </summary>
         public uint3 xzy
         {
-            get => new uint3(x, z, y);
+            readonly get => new uint3(x, z, y);
             set
             {
                 w = value.x;
@@ -11053,7 +11053,7 @@ namespace DVG
         /// </summary>
         public uint3 rbg
         {
-            get => new uint3(x, z, y);
+            readonly get => new uint3(x, z, y);
             set
             {
                 w = value.x;
@@ -11067,7 +11067,7 @@ namespace DVG
         /// </summary>
         public uint3 spt
         {
-            get => new uint3(x, z, y);
+            readonly get => new uint3(x, z, y);
             set
             {
                 w = value.x;
@@ -11096,7 +11096,7 @@ namespace DVG
         /// </summary>
         public uint3 xzw
         {
-            get => new uint3(x, z, w);
+            readonly get => new uint3(x, z, w);
             set
             {
                 w = value.x;
@@ -11110,7 +11110,7 @@ namespace DVG
         /// </summary>
         public uint3 rba
         {
-            get => new uint3(x, z, w);
+            readonly get => new uint3(x, z, w);
             set
             {
                 w = value.x;
@@ -11124,7 +11124,7 @@ namespace DVG
         /// </summary>
         public uint3 spq
         {
-            get => new uint3(x, z, w);
+            readonly get => new uint3(x, z, w);
             set
             {
                 w = value.x;
@@ -11168,7 +11168,7 @@ namespace DVG
         /// </summary>
         public uint3 xwy
         {
-            get => new uint3(x, w, y);
+            readonly get => new uint3(x, w, y);
             set
             {
                 w = value.x;
@@ -11182,7 +11182,7 @@ namespace DVG
         /// </summary>
         public uint3 rag
         {
-            get => new uint3(x, w, y);
+            readonly get => new uint3(x, w, y);
             set
             {
                 w = value.x;
@@ -11196,7 +11196,7 @@ namespace DVG
         /// </summary>
         public uint3 sqt
         {
-            get => new uint3(x, w, y);
+            readonly get => new uint3(x, w, y);
             set
             {
                 w = value.x;
@@ -11210,7 +11210,7 @@ namespace DVG
         /// </summary>
         public uint3 xwz
         {
-            get => new uint3(x, w, z);
+            readonly get => new uint3(x, w, z);
             set
             {
                 w = value.x;
@@ -11224,7 +11224,7 @@ namespace DVG
         /// </summary>
         public uint3 rab
         {
-            get => new uint3(x, w, z);
+            readonly get => new uint3(x, w, z);
             set
             {
                 w = value.x;
@@ -11238,7 +11238,7 @@ namespace DVG
         /// </summary>
         public uint3 sqp
         {
-            get => new uint3(x, w, z);
+            readonly get => new uint3(x, w, z);
             set
             {
                 w = value.x;
@@ -11387,7 +11387,7 @@ namespace DVG
         /// </summary>
         public uint3 yxz
         {
-            get => new uint3(y, x, z);
+            readonly get => new uint3(y, x, z);
             set
             {
                 w = value.x;
@@ -11401,7 +11401,7 @@ namespace DVG
         /// </summary>
         public uint3 grb
         {
-            get => new uint3(y, x, z);
+            readonly get => new uint3(y, x, z);
             set
             {
                 w = value.x;
@@ -11415,7 +11415,7 @@ namespace DVG
         /// </summary>
         public uint3 tsp
         {
-            get => new uint3(y, x, z);
+            readonly get => new uint3(y, x, z);
             set
             {
                 w = value.x;
@@ -11429,7 +11429,7 @@ namespace DVG
         /// </summary>
         public uint3 yxw
         {
-            get => new uint3(y, x, w);
+            readonly get => new uint3(y, x, w);
             set
             {
                 w = value.x;
@@ -11443,7 +11443,7 @@ namespace DVG
         /// </summary>
         public uint3 gra
         {
-            get => new uint3(y, x, w);
+            readonly get => new uint3(y, x, w);
             set
             {
                 w = value.x;
@@ -11457,7 +11457,7 @@ namespace DVG
         /// </summary>
         public uint3 tsq
         {
-            get => new uint3(y, x, w);
+            readonly get => new uint3(y, x, w);
             set
             {
                 w = value.x;
@@ -11561,7 +11561,7 @@ namespace DVG
         /// </summary>
         public uint3 yzx
         {
-            get => new uint3(y, z, x);
+            readonly get => new uint3(y, z, x);
             set
             {
                 w = value.x;
@@ -11575,7 +11575,7 @@ namespace DVG
         /// </summary>
         public uint3 gbr
         {
-            get => new uint3(y, z, x);
+            readonly get => new uint3(y, z, x);
             set
             {
                 w = value.x;
@@ -11589,7 +11589,7 @@ namespace DVG
         /// </summary>
         public uint3 tps
         {
-            get => new uint3(y, z, x);
+            readonly get => new uint3(y, z, x);
             set
             {
                 w = value.x;
@@ -11633,7 +11633,7 @@ namespace DVG
         /// </summary>
         public uint3 yzw
         {
-            get => new uint3(y, z, w);
+            readonly get => new uint3(y, z, w);
             set
             {
                 w = value.x;
@@ -11647,7 +11647,7 @@ namespace DVG
         /// </summary>
         public uint3 gba
         {
-            get => new uint3(y, z, w);
+            readonly get => new uint3(y, z, w);
             set
             {
                 w = value.x;
@@ -11661,7 +11661,7 @@ namespace DVG
         /// </summary>
         public uint3 tpq
         {
-            get => new uint3(y, z, w);
+            readonly get => new uint3(y, z, w);
             set
             {
                 w = value.x;
@@ -11690,7 +11690,7 @@ namespace DVG
         /// </summary>
         public uint3 ywx
         {
-            get => new uint3(y, w, x);
+            readonly get => new uint3(y, w, x);
             set
             {
                 w = value.x;
@@ -11704,7 +11704,7 @@ namespace DVG
         /// </summary>
         public uint3 gar
         {
-            get => new uint3(y, w, x);
+            readonly get => new uint3(y, w, x);
             set
             {
                 w = value.x;
@@ -11718,7 +11718,7 @@ namespace DVG
         /// </summary>
         public uint3 tqs
         {
-            get => new uint3(y, w, x);
+            readonly get => new uint3(y, w, x);
             set
             {
                 w = value.x;
@@ -11747,7 +11747,7 @@ namespace DVG
         /// </summary>
         public uint3 ywz
         {
-            get => new uint3(y, w, z);
+            readonly get => new uint3(y, w, z);
             set
             {
                 w = value.x;
@@ -11761,7 +11761,7 @@ namespace DVG
         /// </summary>
         public uint3 gab
         {
-            get => new uint3(y, w, z);
+            readonly get => new uint3(y, w, z);
             set
             {
                 w = value.x;
@@ -11775,7 +11775,7 @@ namespace DVG
         /// </summary>
         public uint3 tqp
         {
-            get => new uint3(y, w, z);
+            readonly get => new uint3(y, w, z);
             set
             {
                 w = value.x;
@@ -11909,7 +11909,7 @@ namespace DVG
         /// </summary>
         public uint3 zxy
         {
-            get => new uint3(z, x, y);
+            readonly get => new uint3(z, x, y);
             set
             {
                 w = value.x;
@@ -11923,7 +11923,7 @@ namespace DVG
         /// </summary>
         public uint3 brg
         {
-            get => new uint3(z, x, y);
+            readonly get => new uint3(z, x, y);
             set
             {
                 w = value.x;
@@ -11937,7 +11937,7 @@ namespace DVG
         /// </summary>
         public uint3 pst
         {
-            get => new uint3(z, x, y);
+            readonly get => new uint3(z, x, y);
             set
             {
                 w = value.x;
@@ -11966,7 +11966,7 @@ namespace DVG
         /// </summary>
         public uint3 zxw
         {
-            get => new uint3(z, x, w);
+            readonly get => new uint3(z, x, w);
             set
             {
                 w = value.x;
@@ -11980,7 +11980,7 @@ namespace DVG
         /// </summary>
         public uint3 bra
         {
-            get => new uint3(z, x, w);
+            readonly get => new uint3(z, x, w);
             set
             {
                 w = value.x;
@@ -11994,7 +11994,7 @@ namespace DVG
         /// </summary>
         public uint3 psq
         {
-            get => new uint3(z, x, w);
+            readonly get => new uint3(z, x, w);
             set
             {
                 w = value.x;
@@ -12023,7 +12023,7 @@ namespace DVG
         /// </summary>
         public uint3 zyx
         {
-            get => new uint3(z, y, x);
+            readonly get => new uint3(z, y, x);
             set
             {
                 w = value.x;
@@ -12037,7 +12037,7 @@ namespace DVG
         /// </summary>
         public uint3 bgr
         {
-            get => new uint3(z, y, x);
+            readonly get => new uint3(z, y, x);
             set
             {
                 w = value.x;
@@ -12051,7 +12051,7 @@ namespace DVG
         /// </summary>
         public uint3 pts
         {
-            get => new uint3(z, y, x);
+            readonly get => new uint3(z, y, x);
             set
             {
                 w = value.x;
@@ -12095,7 +12095,7 @@ namespace DVG
         /// </summary>
         public uint3 zyw
         {
-            get => new uint3(z, y, w);
+            readonly get => new uint3(z, y, w);
             set
             {
                 w = value.x;
@@ -12109,7 +12109,7 @@ namespace DVG
         /// </summary>
         public uint3 bga
         {
-            get => new uint3(z, y, w);
+            readonly get => new uint3(z, y, w);
             set
             {
                 w = value.x;
@@ -12123,7 +12123,7 @@ namespace DVG
         /// </summary>
         public uint3 ptq
         {
-            get => new uint3(z, y, w);
+            readonly get => new uint3(z, y, w);
             set
             {
                 w = value.x;
@@ -12227,7 +12227,7 @@ namespace DVG
         /// </summary>
         public uint3 zwx
         {
-            get => new uint3(z, w, x);
+            readonly get => new uint3(z, w, x);
             set
             {
                 w = value.x;
@@ -12241,7 +12241,7 @@ namespace DVG
         /// </summary>
         public uint3 bar
         {
-            get => new uint3(z, w, x);
+            readonly get => new uint3(z, w, x);
             set
             {
                 w = value.x;
@@ -12255,7 +12255,7 @@ namespace DVG
         /// </summary>
         public uint3 pqs
         {
-            get => new uint3(z, w, x);
+            readonly get => new uint3(z, w, x);
             set
             {
                 w = value.x;
@@ -12269,7 +12269,7 @@ namespace DVG
         /// </summary>
         public uint3 zwy
         {
-            get => new uint3(z, w, y);
+            readonly get => new uint3(z, w, y);
             set
             {
                 w = value.x;
@@ -12283,7 +12283,7 @@ namespace DVG
         /// </summary>
         public uint3 bag
         {
-            get => new uint3(z, w, y);
+            readonly get => new uint3(z, w, y);
             set
             {
                 w = value.x;
@@ -12297,7 +12297,7 @@ namespace DVG
         /// </summary>
         public uint3 pqt
         {
-            get => new uint3(z, w, y);
+            readonly get => new uint3(z, w, y);
             set
             {
                 w = value.x;
@@ -12446,7 +12446,7 @@ namespace DVG
         /// </summary>
         public uint3 wxy
         {
-            get => new uint3(w, x, y);
+            readonly get => new uint3(w, x, y);
             set
             {
                 w = value.x;
@@ -12460,7 +12460,7 @@ namespace DVG
         /// </summary>
         public uint3 arg
         {
-            get => new uint3(w, x, y);
+            readonly get => new uint3(w, x, y);
             set
             {
                 w = value.x;
@@ -12474,7 +12474,7 @@ namespace DVG
         /// </summary>
         public uint3 qst
         {
-            get => new uint3(w, x, y);
+            readonly get => new uint3(w, x, y);
             set
             {
                 w = value.x;
@@ -12488,7 +12488,7 @@ namespace DVG
         /// </summary>
         public uint3 wxz
         {
-            get => new uint3(w, x, z);
+            readonly get => new uint3(w, x, z);
             set
             {
                 w = value.x;
@@ -12502,7 +12502,7 @@ namespace DVG
         /// </summary>
         public uint3 arb
         {
-            get => new uint3(w, x, z);
+            readonly get => new uint3(w, x, z);
             set
             {
                 w = value.x;
@@ -12516,7 +12516,7 @@ namespace DVG
         /// </summary>
         public uint3 qsp
         {
-            get => new uint3(w, x, z);
+            readonly get => new uint3(w, x, z);
             set
             {
                 w = value.x;
@@ -12560,7 +12560,7 @@ namespace DVG
         /// </summary>
         public uint3 wyx
         {
-            get => new uint3(w, y, x);
+            readonly get => new uint3(w, y, x);
             set
             {
                 w = value.x;
@@ -12574,7 +12574,7 @@ namespace DVG
         /// </summary>
         public uint3 agr
         {
-            get => new uint3(w, y, x);
+            readonly get => new uint3(w, y, x);
             set
             {
                 w = value.x;
@@ -12588,7 +12588,7 @@ namespace DVG
         /// </summary>
         public uint3 qts
         {
-            get => new uint3(w, y, x);
+            readonly get => new uint3(w, y, x);
             set
             {
                 w = value.x;
@@ -12617,7 +12617,7 @@ namespace DVG
         /// </summary>
         public uint3 wyz
         {
-            get => new uint3(w, y, z);
+            readonly get => new uint3(w, y, z);
             set
             {
                 w = value.x;
@@ -12631,7 +12631,7 @@ namespace DVG
         /// </summary>
         public uint3 agb
         {
-            get => new uint3(w, y, z);
+            readonly get => new uint3(w, y, z);
             set
             {
                 w = value.x;
@@ -12645,7 +12645,7 @@ namespace DVG
         /// </summary>
         public uint3 qtp
         {
-            get => new uint3(w, y, z);
+            readonly get => new uint3(w, y, z);
             set
             {
                 w = value.x;
@@ -12689,7 +12689,7 @@ namespace DVG
         /// </summary>
         public uint3 wzx
         {
-            get => new uint3(w, z, x);
+            readonly get => new uint3(w, z, x);
             set
             {
                 w = value.x;
@@ -12703,7 +12703,7 @@ namespace DVG
         /// </summary>
         public uint3 abr
         {
-            get => new uint3(w, z, x);
+            readonly get => new uint3(w, z, x);
             set
             {
                 w = value.x;
@@ -12717,7 +12717,7 @@ namespace DVG
         /// </summary>
         public uint3 qps
         {
-            get => new uint3(w, z, x);
+            readonly get => new uint3(w, z, x);
             set
             {
                 w = value.x;
@@ -12731,7 +12731,7 @@ namespace DVG
         /// </summary>
         public uint3 wzy
         {
-            get => new uint3(w, z, y);
+            readonly get => new uint3(w, z, y);
             set
             {
                 w = value.x;
@@ -12745,7 +12745,7 @@ namespace DVG
         /// </summary>
         public uint3 abg
         {
-            get => new uint3(w, z, y);
+            readonly get => new uint3(w, z, y);
             set
             {
                 w = value.x;
@@ -12759,7 +12759,7 @@ namespace DVG
         /// </summary>
         public uint3 qpt
         {
-            get => new uint3(w, z, y);
+            readonly get => new uint3(w, z, y);
             set
             {
                 w = value.x;
@@ -12968,7 +12968,7 @@ namespace DVG
         /// </summary>
         public uint2 xy
         {
-            get => new uint2(x, y);
+            readonly get => new uint2(x, y);
             set
             {
                 w = value.x;
@@ -12981,7 +12981,7 @@ namespace DVG
         /// </summary>
         public uint2 rg
         {
-            get => new uint2(x, y);
+            readonly get => new uint2(x, y);
             set
             {
                 w = value.x;
@@ -12994,7 +12994,7 @@ namespace DVG
         /// </summary>
         public uint2 st
         {
-            get => new uint2(x, y);
+            readonly get => new uint2(x, y);
             set
             {
                 w = value.x;
@@ -13007,7 +13007,7 @@ namespace DVG
         /// </summary>
         public uint2 xz
         {
-            get => new uint2(x, z);
+            readonly get => new uint2(x, z);
             set
             {
                 w = value.x;
@@ -13020,7 +13020,7 @@ namespace DVG
         /// </summary>
         public uint2 rb
         {
-            get => new uint2(x, z);
+            readonly get => new uint2(x, z);
             set
             {
                 w = value.x;
@@ -13033,7 +13033,7 @@ namespace DVG
         /// </summary>
         public uint2 sp
         {
-            get => new uint2(x, z);
+            readonly get => new uint2(x, z);
             set
             {
                 w = value.x;
@@ -13046,7 +13046,7 @@ namespace DVG
         /// </summary>
         public uint2 xw
         {
-            get => new uint2(x, w);
+            readonly get => new uint2(x, w);
             set
             {
                 w = value.x;
@@ -13059,7 +13059,7 @@ namespace DVG
         /// </summary>
         public uint2 ra
         {
-            get => new uint2(x, w);
+            readonly get => new uint2(x, w);
             set
             {
                 w = value.x;
@@ -13072,7 +13072,7 @@ namespace DVG
         /// </summary>
         public uint2 sq
         {
-            get => new uint2(x, w);
+            readonly get => new uint2(x, w);
             set
             {
                 w = value.x;
@@ -13100,7 +13100,7 @@ namespace DVG
         /// </summary>
         public uint2 yx
         {
-            get => new uint2(y, x);
+            readonly get => new uint2(y, x);
             set
             {
                 w = value.x;
@@ -13113,7 +13113,7 @@ namespace DVG
         /// </summary>
         public uint2 gr
         {
-            get => new uint2(y, x);
+            readonly get => new uint2(y, x);
             set
             {
                 w = value.x;
@@ -13126,7 +13126,7 @@ namespace DVG
         /// </summary>
         public uint2 ts
         {
-            get => new uint2(y, x);
+            readonly get => new uint2(y, x);
             set
             {
                 w = value.x;
@@ -13154,7 +13154,7 @@ namespace DVG
         /// </summary>
         public uint2 yz
         {
-            get => new uint2(y, z);
+            readonly get => new uint2(y, z);
             set
             {
                 w = value.x;
@@ -13167,7 +13167,7 @@ namespace DVG
         /// </summary>
         public uint2 gb
         {
-            get => new uint2(y, z);
+            readonly get => new uint2(y, z);
             set
             {
                 w = value.x;
@@ -13180,7 +13180,7 @@ namespace DVG
         /// </summary>
         public uint2 tp
         {
-            get => new uint2(y, z);
+            readonly get => new uint2(y, z);
             set
             {
                 w = value.x;
@@ -13193,7 +13193,7 @@ namespace DVG
         /// </summary>
         public uint2 yw
         {
-            get => new uint2(y, w);
+            readonly get => new uint2(y, w);
             set
             {
                 w = value.x;
@@ -13206,7 +13206,7 @@ namespace DVG
         /// </summary>
         public uint2 ga
         {
-            get => new uint2(y, w);
+            readonly get => new uint2(y, w);
             set
             {
                 w = value.x;
@@ -13219,7 +13219,7 @@ namespace DVG
         /// </summary>
         public uint2 tq
         {
-            get => new uint2(y, w);
+            readonly get => new uint2(y, w);
             set
             {
                 w = value.x;
@@ -13247,7 +13247,7 @@ namespace DVG
         /// </summary>
         public uint2 zx
         {
-            get => new uint2(z, x);
+            readonly get => new uint2(z, x);
             set
             {
                 w = value.x;
@@ -13260,7 +13260,7 @@ namespace DVG
         /// </summary>
         public uint2 br
         {
-            get => new uint2(z, x);
+            readonly get => new uint2(z, x);
             set
             {
                 w = value.x;
@@ -13273,7 +13273,7 @@ namespace DVG
         /// </summary>
         public uint2 ps
         {
-            get => new uint2(z, x);
+            readonly get => new uint2(z, x);
             set
             {
                 w = value.x;
@@ -13286,7 +13286,7 @@ namespace DVG
         /// </summary>
         public uint2 zy
         {
-            get => new uint2(z, y);
+            readonly get => new uint2(z, y);
             set
             {
                 w = value.x;
@@ -13299,7 +13299,7 @@ namespace DVG
         /// </summary>
         public uint2 bg
         {
-            get => new uint2(z, y);
+            readonly get => new uint2(z, y);
             set
             {
                 w = value.x;
@@ -13312,7 +13312,7 @@ namespace DVG
         /// </summary>
         public uint2 pt
         {
-            get => new uint2(z, y);
+            readonly get => new uint2(z, y);
             set
             {
                 w = value.x;
@@ -13340,7 +13340,7 @@ namespace DVG
         /// </summary>
         public uint2 zw
         {
-            get => new uint2(z, w);
+            readonly get => new uint2(z, w);
             set
             {
                 w = value.x;
@@ -13353,7 +13353,7 @@ namespace DVG
         /// </summary>
         public uint2 ba
         {
-            get => new uint2(z, w);
+            readonly get => new uint2(z, w);
             set
             {
                 w = value.x;
@@ -13366,7 +13366,7 @@ namespace DVG
         /// </summary>
         public uint2 pq
         {
-            get => new uint2(z, w);
+            readonly get => new uint2(z, w);
             set
             {
                 w = value.x;
@@ -13394,7 +13394,7 @@ namespace DVG
         /// </summary>
         public uint2 wx
         {
-            get => new uint2(w, x);
+            readonly get => new uint2(w, x);
             set
             {
                 w = value.x;
@@ -13407,7 +13407,7 @@ namespace DVG
         /// </summary>
         public uint2 ar
         {
-            get => new uint2(w, x);
+            readonly get => new uint2(w, x);
             set
             {
                 w = value.x;
@@ -13420,7 +13420,7 @@ namespace DVG
         /// </summary>
         public uint2 qs
         {
-            get => new uint2(w, x);
+            readonly get => new uint2(w, x);
             set
             {
                 w = value.x;
@@ -13433,7 +13433,7 @@ namespace DVG
         /// </summary>
         public uint2 wy
         {
-            get => new uint2(w, y);
+            readonly get => new uint2(w, y);
             set
             {
                 w = value.x;
@@ -13446,7 +13446,7 @@ namespace DVG
         /// </summary>
         public uint2 ag
         {
-            get => new uint2(w, y);
+            readonly get => new uint2(w, y);
             set
             {
                 w = value.x;
@@ -13459,7 +13459,7 @@ namespace DVG
         /// </summary>
         public uint2 qt
         {
-            get => new uint2(w, y);
+            readonly get => new uint2(w, y);
             set
             {
                 w = value.x;
@@ -13472,7 +13472,7 @@ namespace DVG
         /// </summary>
         public uint2 wz
         {
-            get => new uint2(w, z);
+            readonly get => new uint2(w, z);
             set
             {
                 w = value.x;
@@ -13485,7 +13485,7 @@ namespace DVG
         /// </summary>
         public uint2 ab
         {
-            get => new uint2(w, z);
+            readonly get => new uint2(w, z);
             set
             {
                 w = value.x;
@@ -13498,7 +13498,7 @@ namespace DVG
         /// </summary>
         public uint2 qp
         {
-            get => new uint2(w, z);
+            readonly get => new uint2(w, z);
             set
             {
                 w = value.x;

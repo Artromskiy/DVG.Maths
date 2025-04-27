@@ -142,7 +142,7 @@ namespace DVG
         /// </summary>
         public bool r
         {
-            get => x;
+            readonly get => x;
             set
             {
                 x = value;
@@ -154,7 +154,7 @@ namespace DVG
         /// </summary>
         public bool s
         {
-            get => x;
+            readonly get => x;
             set
             {
                 x = value;
@@ -166,7 +166,7 @@ namespace DVG
         /// </summary>
         public bool g
         {
-            get => y;
+            readonly get => y;
             set
             {
                 y = value;
@@ -178,7 +178,7 @@ namespace DVG
         /// </summary>
         public bool t
         {
-            get => y;
+            readonly get => y;
             set
             {
                 y = value;
@@ -190,7 +190,7 @@ namespace DVG
         /// </summary>
         public bool b
         {
-            get => z;
+            readonly get => z;
             set
             {
                 z = value;
@@ -202,7 +202,7 @@ namespace DVG
         /// </summary>
         public bool p
         {
-            get => z;
+            readonly get => z;
             set
             {
                 z = value;
@@ -4429,7 +4429,7 @@ namespace DVG
         /// </summary>
         public bool3 xyz
         {
-            get => new bool3(x, y, z);
+            readonly get => new bool3(x, y, z);
             set
             {
                 z = value.x;
@@ -4443,7 +4443,7 @@ namespace DVG
         /// </summary>
         public bool3 rgb
         {
-            get => new bool3(x, y, z);
+            readonly get => new bool3(x, y, z);
             set
             {
                 z = value.x;
@@ -4457,7 +4457,7 @@ namespace DVG
         /// </summary>
         public bool3 stp
         {
-            get => new bool3(x, y, z);
+            readonly get => new bool3(x, y, z);
             set
             {
                 z = value.x;
@@ -4501,7 +4501,7 @@ namespace DVG
         /// </summary>
         public bool3 xzy
         {
-            get => new bool3(x, z, y);
+            readonly get => new bool3(x, z, y);
             set
             {
                 z = value.x;
@@ -4515,7 +4515,7 @@ namespace DVG
         /// </summary>
         public bool3 rbg
         {
-            get => new bool3(x, z, y);
+            readonly get => new bool3(x, z, y);
             set
             {
                 z = value.x;
@@ -4529,7 +4529,7 @@ namespace DVG
         /// </summary>
         public bool3 spt
         {
-            get => new bool3(x, z, y);
+            readonly get => new bool3(x, z, y);
             set
             {
                 z = value.x;
@@ -4663,7 +4663,7 @@ namespace DVG
         /// </summary>
         public bool3 yxz
         {
-            get => new bool3(y, x, z);
+            readonly get => new bool3(y, x, z);
             set
             {
                 z = value.x;
@@ -4677,7 +4677,7 @@ namespace DVG
         /// </summary>
         public bool3 grb
         {
-            get => new bool3(y, x, z);
+            readonly get => new bool3(y, x, z);
             set
             {
                 z = value.x;
@@ -4691,7 +4691,7 @@ namespace DVG
         /// </summary>
         public bool3 tsp
         {
-            get => new bool3(y, x, z);
+            readonly get => new bool3(y, x, z);
             set
             {
                 z = value.x;
@@ -4780,7 +4780,7 @@ namespace DVG
         /// </summary>
         public bool3 yzx
         {
-            get => new bool3(y, z, x);
+            readonly get => new bool3(y, z, x);
             set
             {
                 z = value.x;
@@ -4794,7 +4794,7 @@ namespace DVG
         /// </summary>
         public bool3 gbr
         {
-            get => new bool3(y, z, x);
+            readonly get => new bool3(y, z, x);
             set
             {
                 z = value.x;
@@ -4808,7 +4808,7 @@ namespace DVG
         /// </summary>
         public bool3 tps
         {
-            get => new bool3(y, z, x);
+            readonly get => new bool3(y, z, x);
             set
             {
                 z = value.x;
@@ -4942,7 +4942,7 @@ namespace DVG
         /// </summary>
         public bool3 zxy
         {
-            get => new bool3(z, x, y);
+            readonly get => new bool3(z, x, y);
             set
             {
                 z = value.x;
@@ -4956,7 +4956,7 @@ namespace DVG
         /// </summary>
         public bool3 brg
         {
-            get => new bool3(z, x, y);
+            readonly get => new bool3(z, x, y);
             set
             {
                 z = value.x;
@@ -4970,7 +4970,7 @@ namespace DVG
         /// </summary>
         public bool3 pst
         {
-            get => new bool3(z, x, y);
+            readonly get => new bool3(z, x, y);
             set
             {
                 z = value.x;
@@ -5014,7 +5014,7 @@ namespace DVG
         /// </summary>
         public bool3 zyx
         {
-            get => new bool3(z, y, x);
+            readonly get => new bool3(z, y, x);
             set
             {
                 z = value.x;
@@ -5028,7 +5028,7 @@ namespace DVG
         /// </summary>
         public bool3 bgr
         {
-            get => new bool3(z, y, x);
+            readonly get => new bool3(z, y, x);
             set
             {
                 z = value.x;
@@ -5042,7 +5042,7 @@ namespace DVG
         /// </summary>
         public bool3 pts
         {
-            get => new bool3(z, y, x);
+            readonly get => new bool3(z, y, x);
             set
             {
                 z = value.x;
@@ -5221,7 +5221,7 @@ namespace DVG
         /// </summary>
         public bool2 xy
         {
-            get => new bool2(x, y);
+            readonly get => new bool2(x, y);
             set
             {
                 z = value.x;
@@ -5234,7 +5234,7 @@ namespace DVG
         /// </summary>
         public bool2 rg
         {
-            get => new bool2(x, y);
+            readonly get => new bool2(x, y);
             set
             {
                 z = value.x;
@@ -5247,7 +5247,7 @@ namespace DVG
         /// </summary>
         public bool2 st
         {
-            get => new bool2(x, y);
+            readonly get => new bool2(x, y);
             set
             {
                 z = value.x;
@@ -5260,7 +5260,7 @@ namespace DVG
         /// </summary>
         public bool2 xz
         {
-            get => new bool2(x, z);
+            readonly get => new bool2(x, z);
             set
             {
                 z = value.x;
@@ -5273,7 +5273,7 @@ namespace DVG
         /// </summary>
         public bool2 rb
         {
-            get => new bool2(x, z);
+            readonly get => new bool2(x, z);
             set
             {
                 z = value.x;
@@ -5286,7 +5286,7 @@ namespace DVG
         /// </summary>
         public bool2 sp
         {
-            get => new bool2(x, z);
+            readonly get => new bool2(x, z);
             set
             {
                 z = value.x;
@@ -5314,7 +5314,7 @@ namespace DVG
         /// </summary>
         public bool2 yx
         {
-            get => new bool2(y, x);
+            readonly get => new bool2(y, x);
             set
             {
                 z = value.x;
@@ -5327,7 +5327,7 @@ namespace DVG
         /// </summary>
         public bool2 gr
         {
-            get => new bool2(y, x);
+            readonly get => new bool2(y, x);
             set
             {
                 z = value.x;
@@ -5340,7 +5340,7 @@ namespace DVG
         /// </summary>
         public bool2 ts
         {
-            get => new bool2(y, x);
+            readonly get => new bool2(y, x);
             set
             {
                 z = value.x;
@@ -5368,7 +5368,7 @@ namespace DVG
         /// </summary>
         public bool2 yz
         {
-            get => new bool2(y, z);
+            readonly get => new bool2(y, z);
             set
             {
                 z = value.x;
@@ -5381,7 +5381,7 @@ namespace DVG
         /// </summary>
         public bool2 gb
         {
-            get => new bool2(y, z);
+            readonly get => new bool2(y, z);
             set
             {
                 z = value.x;
@@ -5394,7 +5394,7 @@ namespace DVG
         /// </summary>
         public bool2 tp
         {
-            get => new bool2(y, z);
+            readonly get => new bool2(y, z);
             set
             {
                 z = value.x;
@@ -5422,7 +5422,7 @@ namespace DVG
         /// </summary>
         public bool2 zx
         {
-            get => new bool2(z, x);
+            readonly get => new bool2(z, x);
             set
             {
                 z = value.x;
@@ -5435,7 +5435,7 @@ namespace DVG
         /// </summary>
         public bool2 br
         {
-            get => new bool2(z, x);
+            readonly get => new bool2(z, x);
             set
             {
                 z = value.x;
@@ -5448,7 +5448,7 @@ namespace DVG
         /// </summary>
         public bool2 ps
         {
-            get => new bool2(z, x);
+            readonly get => new bool2(z, x);
             set
             {
                 z = value.x;
@@ -5461,7 +5461,7 @@ namespace DVG
         /// </summary>
         public bool2 zy
         {
-            get => new bool2(z, y);
+            readonly get => new bool2(z, y);
             set
             {
                 z = value.x;
@@ -5474,7 +5474,7 @@ namespace DVG
         /// </summary>
         public bool2 bg
         {
-            get => new bool2(z, y);
+            readonly get => new bool2(z, y);
             set
             {
                 z = value.x;
@@ -5487,7 +5487,7 @@ namespace DVG
         /// </summary>
         public bool2 pt
         {
-            get => new bool2(z, y);
+            readonly get => new bool2(z, y);
             set
             {
                 z = value.x;

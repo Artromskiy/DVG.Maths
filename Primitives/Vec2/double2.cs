@@ -121,7 +121,7 @@ namespace DVG
         /// </summary>
         public double r
         {
-            get => x;
+            readonly get => x;
             set
             {
                 x = value;
@@ -133,7 +133,7 @@ namespace DVG
         /// </summary>
         public double s
         {
-            get => x;
+            readonly get => x;
             set
             {
                 x = value;
@@ -145,7 +145,7 @@ namespace DVG
         /// </summary>
         public double g
         {
-            get => y;
+            readonly get => y;
             set
             {
                 y = value;
@@ -157,7 +157,7 @@ namespace DVG
         /// </summary>
         public double t
         {
-            get => y;
+            readonly get => y;
             set
             {
                 y = value;
@@ -1819,7 +1819,7 @@ namespace DVG
         /// </summary>
         public double2 xy
         {
-            get => new double2(x, y);
+            readonly get => new double2(x, y);
             set
             {
                 y = value.x;
@@ -1832,7 +1832,7 @@ namespace DVG
         /// </summary>
         public double2 rg
         {
-            get => new double2(x, y);
+            readonly get => new double2(x, y);
             set
             {
                 y = value.x;
@@ -1845,7 +1845,7 @@ namespace DVG
         /// </summary>
         public double2 st
         {
-            get => new double2(x, y);
+            readonly get => new double2(x, y);
             set
             {
                 y = value.x;
@@ -1873,7 +1873,7 @@ namespace DVG
         /// </summary>
         public double2 yx
         {
-            get => new double2(y, x);
+            readonly get => new double2(y, x);
             set
             {
                 y = value.x;
@@ -1886,7 +1886,7 @@ namespace DVG
         /// </summary>
         public double2 gr
         {
-            get => new double2(y, x);
+            readonly get => new double2(y, x);
             set
             {
                 y = value.x;
@@ -1899,7 +1899,7 @@ namespace DVG
         /// </summary>
         public double2 ts
         {
-            get => new double2(y, x);
+            readonly get => new double2(y, x);
             set
             {
                 y = value.x;
@@ -2026,6 +2026,9 @@ namespace DVG
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double SqrDistance(double2 lhs, double2 rhs) => double2.SqrLength(lhs - rhs);
+        
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double2 SmoothDamp(double2 source, double2 target, ref double2 velocity, double smoothTime, double deltaTime) => new double2(Maths.SmoothDamp(source.x, target.x, ref velocity.x, smoothTime, deltaTime), Maths.SmoothDamp(source.y, target.y, ref velocity.y, smoothTime, deltaTime));
 
         #endregion
 
@@ -2165,16 +2168,16 @@ namespace DVG
         public static double2 Step(double edge, double2 x) => new double2(x.x < edge ? 0 : 1, x.y < edge ? 0 : 1);
         
         /// <summary>
-        /// Returns a double2 from component-wise application of Smoothstep (Maths.Smoothstep(edge0, edge1, x)).
+        /// Returns a double2 from component-wise application of SmoothStep (Maths.SmoothStep(edge0, edge1, x)).
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static double2 Smoothstep(double2 edge0, double2 edge1, double2 x) => new double2(Maths.Smoothstep(edge0.x, edge1.x, x.x), Maths.Smoothstep(edge0.y, edge1.y, x.y));
+        public static double2 SmoothStep(double2 edge0, double2 edge1, double2 x) => new double2(Maths.SmoothStep(edge0.x, edge1.x, x.x), Maths.SmoothStep(edge0.y, edge1.y, x.y));
         
         /// <summary>
-        /// Returns a double2 from component-wise application of Smoothstep (Maths.Smoothstep(edge0, edge1, x)).
+        /// Returns a double2 from component-wise application of SmoothStep (Maths.SmoothStep(edge0, edge1, x)).
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static double2 Smoothstep(double2 edge0, double2 edge1, double x) => new double2(Maths.Smoothstep(edge0.x, edge1.x, x), Maths.Smoothstep(edge0.y, edge1.y, x));
+        public static double2 SmoothStep(double2 edge0, double2 edge1, double x) => new double2(Maths.SmoothStep(edge0.x, edge1.x, x), Maths.SmoothStep(edge0.y, edge1.y, x));
         
         /// <summary>
         /// Returns a bool2 from component-wise application of IsNaN (double.IsNaN(v)).

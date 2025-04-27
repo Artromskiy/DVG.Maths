@@ -138,7 +138,7 @@ namespace DVG
         /// </summary>
         public uint r
         {
-            get => x;
+            readonly get => x;
             set
             {
                 x = value;
@@ -150,7 +150,7 @@ namespace DVG
         /// </summary>
         public uint s
         {
-            get => x;
+            readonly get => x;
             set
             {
                 x = value;
@@ -162,7 +162,7 @@ namespace DVG
         /// </summary>
         public uint g
         {
-            get => y;
+            readonly get => y;
             set
             {
                 y = value;
@@ -174,7 +174,7 @@ namespace DVG
         /// </summary>
         public uint t
         {
-            get => y;
+            readonly get => y;
             set
             {
                 y = value;
@@ -1836,7 +1836,7 @@ namespace DVG
         /// </summary>
         public uint2 xy
         {
-            get => new uint2(x, y);
+            readonly get => new uint2(x, y);
             set
             {
                 y = value.x;
@@ -1849,7 +1849,7 @@ namespace DVG
         /// </summary>
         public uint2 rg
         {
-            get => new uint2(x, y);
+            readonly get => new uint2(x, y);
             set
             {
                 y = value.x;
@@ -1862,7 +1862,7 @@ namespace DVG
         /// </summary>
         public uint2 st
         {
-            get => new uint2(x, y);
+            readonly get => new uint2(x, y);
             set
             {
                 y = value.x;
@@ -1890,7 +1890,7 @@ namespace DVG
         /// </summary>
         public uint2 yx
         {
-            get => new uint2(y, x);
+            readonly get => new uint2(y, x);
             set
             {
                 y = value.x;
@@ -1903,7 +1903,7 @@ namespace DVG
         /// </summary>
         public uint2 gr
         {
-            get => new uint2(y, x);
+            readonly get => new uint2(y, x);
             set
             {
                 y = value.x;
@@ -1916,7 +1916,7 @@ namespace DVG
         /// </summary>
         public uint2 ts
         {
-            get => new uint2(y, x);
+            readonly get => new uint2(y, x);
             set
             {
                 y = value.x;

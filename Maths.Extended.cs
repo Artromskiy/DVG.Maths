@@ -2,18 +2,33 @@
 {
     partial class Maths
     {
-        public static float SmoothDamp(float src, float trg, ref float vel, float smoothTime, float deltaTime)
+        public static float SmoothDamp(float source, float target, ref float velocity, float smoothTime, float deltaTime)
         {
             float omega = 2f / smoothTime;
-            float delta = src - trg;
+            float delta = source - target;
             float x = deltaTime * omega;
             float exp = 1f / (1f + x + (x * x * ((x * 0.235f) + 0.48f)));
-            float temp = (vel * deltaTime) + (x * delta);
-            vel = (vel - (omega * temp)) * exp;
+            float temp = (velocity * deltaTime) + (x * delta);
+            velocity = (velocity - (omega * temp)) * exp;
             float move = (delta + temp) * exp;
             bool finalized = Sign(-delta) == Sign(move);
-            float final = finalized ? trg : trg + move;
-            vel = finalized ? 0 : vel;
+            float final = finalized ? target : target + move;
+            velocity = finalized ? 0 : velocity;
+            return final;
+        }
+
+        public static double SmoothDamp(double source, double target, ref double velocity, double smoothTime, double deltaTime)
+        {
+            double omega = 2.0 / smoothTime;
+            double delta = source - target;
+            double x = deltaTime * omega;
+            double exp = 1.0 / (1.0 + x + (x * x * ((x * 0.235) + 0.48)));
+            double temp = (velocity * deltaTime) + (x * delta);
+            velocity = (velocity - (omega * temp)) * exp;
+            double move = (delta + temp) * exp;
+            bool finalized = Sign(-delta) == Sign(move);
+            double final = finalized ? target : target + move;
+            velocity = finalized ? 0 : velocity;
             return final;
         }
 

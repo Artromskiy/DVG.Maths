@@ -177,7 +177,7 @@ namespace DVG
         /// </summary>
         public double r
         {
-            get => x;
+            readonly get => x;
             set
             {
                 x = value;
@@ -189,7 +189,7 @@ namespace DVG
         /// </summary>
         public double s
         {
-            get => x;
+            readonly get => x;
             set
             {
                 x = value;
@@ -201,7 +201,7 @@ namespace DVG
         /// </summary>
         public double g
         {
-            get => y;
+            readonly get => y;
             set
             {
                 y = value;
@@ -213,7 +213,7 @@ namespace DVG
         /// </summary>
         public double t
         {
-            get => y;
+            readonly get => y;
             set
             {
                 y = value;
@@ -225,7 +225,7 @@ namespace DVG
         /// </summary>
         public double b
         {
-            get => z;
+            readonly get => z;
             set
             {
                 z = value;
@@ -237,7 +237,7 @@ namespace DVG
         /// </summary>
         public double p
         {
-            get => z;
+            readonly get => z;
             set
             {
                 z = value;
@@ -249,7 +249,7 @@ namespace DVG
         /// </summary>
         public double a
         {
-            get => w;
+            readonly get => w;
             set
             {
                 w = value;
@@ -261,7 +261,7 @@ namespace DVG
         /// </summary>
         public double q
         {
-            get => w;
+            readonly get => w;
             set
             {
                 w = value;
@@ -3168,7 +3168,7 @@ namespace DVG
         /// </summary>
         public double4 xyzw
         {
-            get => new double4(x, y, z, w);
+            readonly get => new double4(x, y, z, w);
             set
             {
                 w = value.x;
@@ -3183,7 +3183,7 @@ namespace DVG
         /// </summary>
         public double4 rgba
         {
-            get => new double4(x, y, z, w);
+            readonly get => new double4(x, y, z, w);
             set
             {
                 w = value.x;
@@ -3198,7 +3198,7 @@ namespace DVG
         /// </summary>
         public double4 stpq
         {
-            get => new double4(x, y, z, w);
+            readonly get => new double4(x, y, z, w);
             set
             {
                 w = value.x;
@@ -3258,7 +3258,7 @@ namespace DVG
         /// </summary>
         public double4 xywz
         {
-            get => new double4(x, y, w, z);
+            readonly get => new double4(x, y, w, z);
             set
             {
                 w = value.x;
@@ -3273,7 +3273,7 @@ namespace DVG
         /// </summary>
         public double4 rgab
         {
-            get => new double4(x, y, w, z);
+            readonly get => new double4(x, y, w, z);
             set
             {
                 w = value.x;
@@ -3288,7 +3288,7 @@ namespace DVG
         /// </summary>
         public double4 stqp
         {
-            get => new double4(x, y, w, z);
+            readonly get => new double4(x, y, w, z);
             set
             {
                 w = value.x;
@@ -3528,7 +3528,7 @@ namespace DVG
         /// </summary>
         public double4 xzyw
         {
-            get => new double4(x, z, y, w);
+            readonly get => new double4(x, z, y, w);
             set
             {
                 w = value.x;
@@ -3543,7 +3543,7 @@ namespace DVG
         /// </summary>
         public double4 rbga
         {
-            get => new double4(x, z, y, w);
+            readonly get => new double4(x, z, y, w);
             set
             {
                 w = value.x;
@@ -3558,7 +3558,7 @@ namespace DVG
         /// </summary>
         public double4 sptq
         {
-            get => new double4(x, z, y, w);
+            readonly get => new double4(x, z, y, w);
             set
             {
                 w = value.x;
@@ -3678,7 +3678,7 @@ namespace DVG
         /// </summary>
         public double4 xzwy
         {
-            get => new double4(x, z, w, y);
+            readonly get => new double4(x, z, w, y);
             set
             {
                 w = value.x;
@@ -3693,7 +3693,7 @@ namespace DVG
         /// </summary>
         public double4 rbag
         {
-            get => new double4(x, z, w, y);
+            readonly get => new double4(x, z, w, y);
             set
             {
                 w = value.x;
@@ -3708,7 +3708,7 @@ namespace DVG
         /// </summary>
         public double4 spqt
         {
-            get => new double4(x, z, w, y);
+            readonly get => new double4(x, z, w, y);
             set
             {
                 w = value.x;
@@ -3948,7 +3948,7 @@ namespace DVG
         /// </summary>
         public double4 xwyz
         {
-            get => new double4(x, w, y, z);
+            readonly get => new double4(x, w, y, z);
             set
             {
                 w = value.x;
@@ -3963,7 +3963,7 @@ namespace DVG
         /// </summary>
         public double4 ragb
         {
-            get => new double4(x, w, y, z);
+            readonly get => new double4(x, w, y, z);
             set
             {
                 w = value.x;
@@ -3978,7 +3978,7 @@ namespace DVG
         /// </summary>
         public double4 sqtp
         {
-            get => new double4(x, w, y, z);
+            readonly get => new double4(x, w, y, z);
             set
             {
                 w = value.x;
@@ -4038,7 +4038,7 @@ namespace DVG
         /// </summary>
         public double4 xwzy
         {
-            get => new double4(x, w, z, y);
+            readonly get => new double4(x, w, z, y);
             set
             {
                 w = value.x;
@@ -4053,7 +4053,7 @@ namespace DVG
         /// </summary>
         public double4 rabg
         {
-            get => new double4(x, w, z, y);
+            readonly get => new double4(x, w, z, y);
             set
             {
                 w = value.x;
@@ -4068,7 +4068,7 @@ namespace DVG
         /// </summary>
         public double4 sqpt
         {
-            get => new double4(x, w, z, y);
+            readonly get => new double4(x, w, z, y);
             set
             {
                 w = value.x;
@@ -4848,7 +4848,7 @@ namespace DVG
         /// </summary>
         public double4 yxzw
         {
-            get => new double4(y, x, z, w);
+            readonly get => new double4(y, x, z, w);
             set
             {
                 w = value.x;
@@ -4863,7 +4863,7 @@ namespace DVG
         /// </summary>
         public double4 grba
         {
-            get => new double4(y, x, z, w);
+            readonly get => new double4(y, x, z, w);
             set
             {
                 w = value.x;
@@ -4878,7 +4878,7 @@ namespace DVG
         /// </summary>
         public double4 tspq
         {
-            get => new double4(y, x, z, w);
+            readonly get => new double4(y, x, z, w);
             set
             {
                 w = value.x;
@@ -4938,7 +4938,7 @@ namespace DVG
         /// </summary>
         public double4 yxwz
         {
-            get => new double4(y, x, w, z);
+            readonly get => new double4(y, x, w, z);
             set
             {
                 w = value.x;
@@ -4953,7 +4953,7 @@ namespace DVG
         /// </summary>
         public double4 grab
         {
-            get => new double4(y, x, w, z);
+            readonly get => new double4(y, x, w, z);
             set
             {
                 w = value.x;
@@ -4968,7 +4968,7 @@ namespace DVG
         /// </summary>
         public double4 tsqp
         {
-            get => new double4(y, x, w, z);
+            readonly get => new double4(y, x, w, z);
             set
             {
                 w = value.x;
@@ -5508,7 +5508,7 @@ namespace DVG
         /// </summary>
         public double4 yzxw
         {
-            get => new double4(y, z, x, w);
+            readonly get => new double4(y, z, x, w);
             set
             {
                 w = value.x;
@@ -5523,7 +5523,7 @@ namespace DVG
         /// </summary>
         public double4 gbra
         {
-            get => new double4(y, z, x, w);
+            readonly get => new double4(y, z, x, w);
             set
             {
                 w = value.x;
@@ -5538,7 +5538,7 @@ namespace DVG
         /// </summary>
         public double4 tpsq
         {
-            get => new double4(y, z, x, w);
+            readonly get => new double4(y, z, x, w);
             set
             {
                 w = value.x;
@@ -5718,7 +5718,7 @@ namespace DVG
         /// </summary>
         public double4 yzwx
         {
-            get => new double4(y, z, w, x);
+            readonly get => new double4(y, z, w, x);
             set
             {
                 w = value.x;
@@ -5733,7 +5733,7 @@ namespace DVG
         /// </summary>
         public double4 gbar
         {
-            get => new double4(y, z, w, x);
+            readonly get => new double4(y, z, w, x);
             set
             {
                 w = value.x;
@@ -5748,7 +5748,7 @@ namespace DVG
         /// </summary>
         public double4 tpqs
         {
-            get => new double4(y, z, w, x);
+            readonly get => new double4(y, z, w, x);
             set
             {
                 w = value.x;
@@ -5928,7 +5928,7 @@ namespace DVG
         /// </summary>
         public double4 ywxz
         {
-            get => new double4(y, w, x, z);
+            readonly get => new double4(y, w, x, z);
             set
             {
                 w = value.x;
@@ -5943,7 +5943,7 @@ namespace DVG
         /// </summary>
         public double4 garb
         {
-            get => new double4(y, w, x, z);
+            readonly get => new double4(y, w, x, z);
             set
             {
                 w = value.x;
@@ -5958,7 +5958,7 @@ namespace DVG
         /// </summary>
         public double4 tqsp
         {
-            get => new double4(y, w, x, z);
+            readonly get => new double4(y, w, x, z);
             set
             {
                 w = value.x;
@@ -6078,7 +6078,7 @@ namespace DVG
         /// </summary>
         public double4 ywzx
         {
-            get => new double4(y, w, z, x);
+            readonly get => new double4(y, w, z, x);
             set
             {
                 w = value.x;
@@ -6093,7 +6093,7 @@ namespace DVG
         /// </summary>
         public double4 gabr
         {
-            get => new double4(y, w, z, x);
+            readonly get => new double4(y, w, z, x);
             set
             {
                 w = value.x;
@@ -6108,7 +6108,7 @@ namespace DVG
         /// </summary>
         public double4 tqps
         {
-            get => new double4(y, w, z, x);
+            readonly get => new double4(y, w, z, x);
             set
             {
                 w = value.x;
@@ -6828,7 +6828,7 @@ namespace DVG
         /// </summary>
         public double4 zxyw
         {
-            get => new double4(z, x, y, w);
+            readonly get => new double4(z, x, y, w);
             set
             {
                 w = value.x;
@@ -6843,7 +6843,7 @@ namespace DVG
         /// </summary>
         public double4 brga
         {
-            get => new double4(z, x, y, w);
+            readonly get => new double4(z, x, y, w);
             set
             {
                 w = value.x;
@@ -6858,7 +6858,7 @@ namespace DVG
         /// </summary>
         public double4 pstq
         {
-            get => new double4(z, x, y, w);
+            readonly get => new double4(z, x, y, w);
             set
             {
                 w = value.x;
@@ -6978,7 +6978,7 @@ namespace DVG
         /// </summary>
         public double4 zxwy
         {
-            get => new double4(z, x, w, y);
+            readonly get => new double4(z, x, w, y);
             set
             {
                 w = value.x;
@@ -6993,7 +6993,7 @@ namespace DVG
         /// </summary>
         public double4 brag
         {
-            get => new double4(z, x, w, y);
+            readonly get => new double4(z, x, w, y);
             set
             {
                 w = value.x;
@@ -7008,7 +7008,7 @@ namespace DVG
         /// </summary>
         public double4 psqt
         {
-            get => new double4(z, x, w, y);
+            readonly get => new double4(z, x, w, y);
             set
             {
                 w = value.x;
@@ -7188,7 +7188,7 @@ namespace DVG
         /// </summary>
         public double4 zyxw
         {
-            get => new double4(z, y, x, w);
+            readonly get => new double4(z, y, x, w);
             set
             {
                 w = value.x;
@@ -7203,7 +7203,7 @@ namespace DVG
         /// </summary>
         public double4 bgra
         {
-            get => new double4(z, y, x, w);
+            readonly get => new double4(z, y, x, w);
             set
             {
                 w = value.x;
@@ -7218,7 +7218,7 @@ namespace DVG
         /// </summary>
         public double4 ptsq
         {
-            get => new double4(z, y, x, w);
+            readonly get => new double4(z, y, x, w);
             set
             {
                 w = value.x;
@@ -7398,7 +7398,7 @@ namespace DVG
         /// </summary>
         public double4 zywx
         {
-            get => new double4(z, y, w, x);
+            readonly get => new double4(z, y, w, x);
             set
             {
                 w = value.x;
@@ -7413,7 +7413,7 @@ namespace DVG
         /// </summary>
         public double4 bgar
         {
-            get => new double4(z, y, w, x);
+            readonly get => new double4(z, y, w, x);
             set
             {
                 w = value.x;
@@ -7428,7 +7428,7 @@ namespace DVG
         /// </summary>
         public double4 ptqs
         {
-            get => new double4(z, y, w, x);
+            readonly get => new double4(z, y, w, x);
             set
             {
                 w = value.x;
@@ -7968,7 +7968,7 @@ namespace DVG
         /// </summary>
         public double4 zwxy
         {
-            get => new double4(z, w, x, y);
+            readonly get => new double4(z, w, x, y);
             set
             {
                 w = value.x;
@@ -7983,7 +7983,7 @@ namespace DVG
         /// </summary>
         public double4 barg
         {
-            get => new double4(z, w, x, y);
+            readonly get => new double4(z, w, x, y);
             set
             {
                 w = value.x;
@@ -7998,7 +7998,7 @@ namespace DVG
         /// </summary>
         public double4 pqst
         {
-            get => new double4(z, w, x, y);
+            readonly get => new double4(z, w, x, y);
             set
             {
                 w = value.x;
@@ -8058,7 +8058,7 @@ namespace DVG
         /// </summary>
         public double4 zwyx
         {
-            get => new double4(z, w, y, x);
+            readonly get => new double4(z, w, y, x);
             set
             {
                 w = value.x;
@@ -8073,7 +8073,7 @@ namespace DVG
         /// </summary>
         public double4 bagr
         {
-            get => new double4(z, w, y, x);
+            readonly get => new double4(z, w, y, x);
             set
             {
                 w = value.x;
@@ -8088,7 +8088,7 @@ namespace DVG
         /// </summary>
         public double4 pqts
         {
-            get => new double4(z, w, y, x);
+            readonly get => new double4(z, w, y, x);
             set
             {
                 w = value.x;
@@ -8868,7 +8868,7 @@ namespace DVG
         /// </summary>
         public double4 wxyz
         {
-            get => new double4(w, x, y, z);
+            readonly get => new double4(w, x, y, z);
             set
             {
                 w = value.x;
@@ -8883,7 +8883,7 @@ namespace DVG
         /// </summary>
         public double4 argb
         {
-            get => new double4(w, x, y, z);
+            readonly get => new double4(w, x, y, z);
             set
             {
                 w = value.x;
@@ -8898,7 +8898,7 @@ namespace DVG
         /// </summary>
         public double4 qstp
         {
-            get => new double4(w, x, y, z);
+            readonly get => new double4(w, x, y, z);
             set
             {
                 w = value.x;
@@ -8958,7 +8958,7 @@ namespace DVG
         /// </summary>
         public double4 wxzy
         {
-            get => new double4(w, x, z, y);
+            readonly get => new double4(w, x, z, y);
             set
             {
                 w = value.x;
@@ -8973,7 +8973,7 @@ namespace DVG
         /// </summary>
         public double4 arbg
         {
-            get => new double4(w, x, z, y);
+            readonly get => new double4(w, x, z, y);
             set
             {
                 w = value.x;
@@ -8988,7 +8988,7 @@ namespace DVG
         /// </summary>
         public double4 qspt
         {
-            get => new double4(w, x, z, y);
+            readonly get => new double4(w, x, z, y);
             set
             {
                 w = value.x;
@@ -9228,7 +9228,7 @@ namespace DVG
         /// </summary>
         public double4 wyxz
         {
-            get => new double4(w, y, x, z);
+            readonly get => new double4(w, y, x, z);
             set
             {
                 w = value.x;
@@ -9243,7 +9243,7 @@ namespace DVG
         /// </summary>
         public double4 agrb
         {
-            get => new double4(w, y, x, z);
+            readonly get => new double4(w, y, x, z);
             set
             {
                 w = value.x;
@@ -9258,7 +9258,7 @@ namespace DVG
         /// </summary>
         public double4 qtsp
         {
-            get => new double4(w, y, x, z);
+            readonly get => new double4(w, y, x, z);
             set
             {
                 w = value.x;
@@ -9378,7 +9378,7 @@ namespace DVG
         /// </summary>
         public double4 wyzx
         {
-            get => new double4(w, y, z, x);
+            readonly get => new double4(w, y, z, x);
             set
             {
                 w = value.x;
@@ -9393,7 +9393,7 @@ namespace DVG
         /// </summary>
         public double4 agbr
         {
-            get => new double4(w, y, z, x);
+            readonly get => new double4(w, y, z, x);
             set
             {
                 w = value.x;
@@ -9408,7 +9408,7 @@ namespace DVG
         /// </summary>
         public double4 qtps
         {
-            get => new double4(w, y, z, x);
+            readonly get => new double4(w, y, z, x);
             set
             {
                 w = value.x;
@@ -9648,7 +9648,7 @@ namespace DVG
         /// </summary>
         public double4 wzxy
         {
-            get => new double4(w, z, x, y);
+            readonly get => new double4(w, z, x, y);
             set
             {
                 w = value.x;
@@ -9663,7 +9663,7 @@ namespace DVG
         /// </summary>
         public double4 abrg
         {
-            get => new double4(w, z, x, y);
+            readonly get => new double4(w, z, x, y);
             set
             {
                 w = value.x;
@@ -9678,7 +9678,7 @@ namespace DVG
         /// </summary>
         public double4 qpst
         {
-            get => new double4(w, z, x, y);
+            readonly get => new double4(w, z, x, y);
             set
             {
                 w = value.x;
@@ -9738,7 +9738,7 @@ namespace DVG
         /// </summary>
         public double4 wzyx
         {
-            get => new double4(w, z, y, x);
+            readonly get => new double4(w, z, y, x);
             set
             {
                 w = value.x;
@@ -9753,7 +9753,7 @@ namespace DVG
         /// </summary>
         public double4 abgr
         {
-            get => new double4(w, z, y, x);
+            readonly get => new double4(w, z, y, x);
             set
             {
                 w = value.x;
@@ -9768,7 +9768,7 @@ namespace DVG
         /// </summary>
         public double4 qpts
         {
-            get => new double4(w, z, y, x);
+            readonly get => new double4(w, z, y, x);
             set
             {
                 w = value.x;
@@ -10908,7 +10908,7 @@ namespace DVG
         /// </summary>
         public double3 xyz
         {
-            get => new double3(x, y, z);
+            readonly get => new double3(x, y, z);
             set
             {
                 w = value.x;
@@ -10922,7 +10922,7 @@ namespace DVG
         /// </summary>
         public double3 rgb
         {
-            get => new double3(x, y, z);
+            readonly get => new double3(x, y, z);
             set
             {
                 w = value.x;
@@ -10936,7 +10936,7 @@ namespace DVG
         /// </summary>
         public double3 stp
         {
-            get => new double3(x, y, z);
+            readonly get => new double3(x, y, z);
             set
             {
                 w = value.x;
@@ -10950,7 +10950,7 @@ namespace DVG
         /// </summary>
         public double3 xyw
         {
-            get => new double3(x, y, w);
+            readonly get => new double3(x, y, w);
             set
             {
                 w = value.x;
@@ -10964,7 +10964,7 @@ namespace DVG
         /// </summary>
         public double3 rga
         {
-            get => new double3(x, y, w);
+            readonly get => new double3(x, y, w);
             set
             {
                 w = value.x;
@@ -10978,7 +10978,7 @@ namespace DVG
         /// </summary>
         public double3 stq
         {
-            get => new double3(x, y, w);
+            readonly get => new double3(x, y, w);
             set
             {
                 w = value.x;
@@ -11022,7 +11022,7 @@ namespace DVG
         /// </summary>
         public double3 xzy
         {
-            get => new double3(x, z, y);
+            readonly get => new double3(x, z, y);
             set
             {
                 w = value.x;
@@ -11036,7 +11036,7 @@ namespace DVG
         /// </summary>
         public double3 rbg
         {
-            get => new double3(x, z, y);
+            readonly get => new double3(x, z, y);
             set
             {
                 w = value.x;
@@ -11050,7 +11050,7 @@ namespace DVG
         /// </summary>
         public double3 spt
         {
-            get => new double3(x, z, y);
+            readonly get => new double3(x, z, y);
             set
             {
                 w = value.x;
@@ -11079,7 +11079,7 @@ namespace DVG
         /// </summary>
         public double3 xzw
         {
-            get => new double3(x, z, w);
+            readonly get => new double3(x, z, w);
             set
             {
                 w = value.x;
@@ -11093,7 +11093,7 @@ namespace DVG
         /// </summary>
         public double3 rba
         {
-            get => new double3(x, z, w);
+            readonly get => new double3(x, z, w);
             set
             {
                 w = value.x;
@@ -11107,7 +11107,7 @@ namespace DVG
         /// </summary>
         public double3 spq
         {
-            get => new double3(x, z, w);
+            readonly get => new double3(x, z, w);
             set
             {
                 w = value.x;
@@ -11151,7 +11151,7 @@ namespace DVG
         /// </summary>
         public double3 xwy
         {
-            get => new double3(x, w, y);
+            readonly get => new double3(x, w, y);
             set
             {
                 w = value.x;
@@ -11165,7 +11165,7 @@ namespace DVG
         /// </summary>
         public double3 rag
         {
-            get => new double3(x, w, y);
+            readonly get => new double3(x, w, y);
             set
             {
                 w = value.x;
@@ -11179,7 +11179,7 @@ namespace DVG
         /// </summary>
         public double3 sqt
         {
-            get => new double3(x, w, y);
+            readonly get => new double3(x, w, y);
             set
             {
                 w = value.x;
@@ -11193,7 +11193,7 @@ namespace DVG
         /// </summary>
         public double3 xwz
         {
-            get => new double3(x, w, z);
+            readonly get => new double3(x, w, z);
             set
             {
                 w = value.x;
@@ -11207,7 +11207,7 @@ namespace DVG
         /// </summary>
         public double3 rab
         {
-            get => new double3(x, w, z);
+            readonly get => new double3(x, w, z);
             set
             {
                 w = value.x;
@@ -11221,7 +11221,7 @@ namespace DVG
         /// </summary>
         public double3 sqp
         {
-            get => new double3(x, w, z);
+            readonly get => new double3(x, w, z);
             set
             {
                 w = value.x;
@@ -11370,7 +11370,7 @@ namespace DVG
         /// </summary>
         public double3 yxz
         {
-            get => new double3(y, x, z);
+            readonly get => new double3(y, x, z);
             set
             {
                 w = value.x;
@@ -11384,7 +11384,7 @@ namespace DVG
         /// </summary>
         public double3 grb
         {
-            get => new double3(y, x, z);
+            readonly get => new double3(y, x, z);
             set
             {
                 w = value.x;
@@ -11398,7 +11398,7 @@ namespace DVG
         /// </summary>
         public double3 tsp
         {
-            get => new double3(y, x, z);
+            readonly get => new double3(y, x, z);
             set
             {
                 w = value.x;
@@ -11412,7 +11412,7 @@ namespace DVG
         /// </summary>
         public double3 yxw
         {
-            get => new double3(y, x, w);
+            readonly get => new double3(y, x, w);
             set
             {
                 w = value.x;
@@ -11426,7 +11426,7 @@ namespace DVG
         /// </summary>
         public double3 gra
         {
-            get => new double3(y, x, w);
+            readonly get => new double3(y, x, w);
             set
             {
                 w = value.x;
@@ -11440,7 +11440,7 @@ namespace DVG
         /// </summary>
         public double3 tsq
         {
-            get => new double3(y, x, w);
+            readonly get => new double3(y, x, w);
             set
             {
                 w = value.x;
@@ -11544,7 +11544,7 @@ namespace DVG
         /// </summary>
         public double3 yzx
         {
-            get => new double3(y, z, x);
+            readonly get => new double3(y, z, x);
             set
             {
                 w = value.x;
@@ -11558,7 +11558,7 @@ namespace DVG
         /// </summary>
         public double3 gbr
         {
-            get => new double3(y, z, x);
+            readonly get => new double3(y, z, x);
             set
             {
                 w = value.x;
@@ -11572,7 +11572,7 @@ namespace DVG
         /// </summary>
         public double3 tps
         {
-            get => new double3(y, z, x);
+            readonly get => new double3(y, z, x);
             set
             {
                 w = value.x;
@@ -11616,7 +11616,7 @@ namespace DVG
         /// </summary>
         public double3 yzw
         {
-            get => new double3(y, z, w);
+            readonly get => new double3(y, z, w);
             set
             {
                 w = value.x;
@@ -11630,7 +11630,7 @@ namespace DVG
         /// </summary>
         public double3 gba
         {
-            get => new double3(y, z, w);
+            readonly get => new double3(y, z, w);
             set
             {
                 w = value.x;
@@ -11644,7 +11644,7 @@ namespace DVG
         /// </summary>
         public double3 tpq
         {
-            get => new double3(y, z, w);
+            readonly get => new double3(y, z, w);
             set
             {
                 w = value.x;
@@ -11673,7 +11673,7 @@ namespace DVG
         /// </summary>
         public double3 ywx
         {
-            get => new double3(y, w, x);
+            readonly get => new double3(y, w, x);
             set
             {
                 w = value.x;
@@ -11687,7 +11687,7 @@ namespace DVG
         /// </summary>
         public double3 gar
         {
-            get => new double3(y, w, x);
+            readonly get => new double3(y, w, x);
             set
             {
                 w = value.x;
@@ -11701,7 +11701,7 @@ namespace DVG
         /// </summary>
         public double3 tqs
         {
-            get => new double3(y, w, x);
+            readonly get => new double3(y, w, x);
             set
             {
                 w = value.x;
@@ -11730,7 +11730,7 @@ namespace DVG
         /// </summary>
         public double3 ywz
         {
-            get => new double3(y, w, z);
+            readonly get => new double3(y, w, z);
             set
             {
                 w = value.x;
@@ -11744,7 +11744,7 @@ namespace DVG
         /// </summary>
         public double3 gab
         {
-            get => new double3(y, w, z);
+            readonly get => new double3(y, w, z);
             set
             {
                 w = value.x;
@@ -11758,7 +11758,7 @@ namespace DVG
         /// </summary>
         public double3 tqp
         {
-            get => new double3(y, w, z);
+            readonly get => new double3(y, w, z);
             set
             {
                 w = value.x;
@@ -11892,7 +11892,7 @@ namespace DVG
         /// </summary>
         public double3 zxy
         {
-            get => new double3(z, x, y);
+            readonly get => new double3(z, x, y);
             set
             {
                 w = value.x;
@@ -11906,7 +11906,7 @@ namespace DVG
         /// </summary>
         public double3 brg
         {
-            get => new double3(z, x, y);
+            readonly get => new double3(z, x, y);
             set
             {
                 w = value.x;
@@ -11920,7 +11920,7 @@ namespace DVG
         /// </summary>
         public double3 pst
         {
-            get => new double3(z, x, y);
+            readonly get => new double3(z, x, y);
             set
             {
                 w = value.x;
@@ -11949,7 +11949,7 @@ namespace DVG
         /// </summary>
         public double3 zxw
         {
-            get => new double3(z, x, w);
+            readonly get => new double3(z, x, w);
             set
             {
                 w = value.x;
@@ -11963,7 +11963,7 @@ namespace DVG
         /// </summary>
         public double3 bra
         {
-            get => new double3(z, x, w);
+            readonly get => new double3(z, x, w);
             set
             {
                 w = value.x;
@@ -11977,7 +11977,7 @@ namespace DVG
         /// </summary>
         public double3 psq
         {
-            get => new double3(z, x, w);
+            readonly get => new double3(z, x, w);
             set
             {
                 w = value.x;
@@ -12006,7 +12006,7 @@ namespace DVG
         /// </summary>
         public double3 zyx
         {
-            get => new double3(z, y, x);
+            readonly get => new double3(z, y, x);
             set
             {
                 w = value.x;
@@ -12020,7 +12020,7 @@ namespace DVG
         /// </summary>
         public double3 bgr
         {
-            get => new double3(z, y, x);
+            readonly get => new double3(z, y, x);
             set
             {
                 w = value.x;
@@ -12034,7 +12034,7 @@ namespace DVG
         /// </summary>
         public double3 pts
         {
-            get => new double3(z, y, x);
+            readonly get => new double3(z, y, x);
             set
             {
                 w = value.x;
@@ -12078,7 +12078,7 @@ namespace DVG
         /// </summary>
         public double3 zyw
         {
-            get => new double3(z, y, w);
+            readonly get => new double3(z, y, w);
             set
             {
                 w = value.x;
@@ -12092,7 +12092,7 @@ namespace DVG
         /// </summary>
         public double3 bga
         {
-            get => new double3(z, y, w);
+            readonly get => new double3(z, y, w);
             set
             {
                 w = value.x;
@@ -12106,7 +12106,7 @@ namespace DVG
         /// </summary>
         public double3 ptq
         {
-            get => new double3(z, y, w);
+            readonly get => new double3(z, y, w);
             set
             {
                 w = value.x;
@@ -12210,7 +12210,7 @@ namespace DVG
         /// </summary>
         public double3 zwx
         {
-            get => new double3(z, w, x);
+            readonly get => new double3(z, w, x);
             set
             {
                 w = value.x;
@@ -12224,7 +12224,7 @@ namespace DVG
         /// </summary>
         public double3 bar
         {
-            get => new double3(z, w, x);
+            readonly get => new double3(z, w, x);
             set
             {
                 w = value.x;
@@ -12238,7 +12238,7 @@ namespace DVG
         /// </summary>
         public double3 pqs
         {
-            get => new double3(z, w, x);
+            readonly get => new double3(z, w, x);
             set
             {
                 w = value.x;
@@ -12252,7 +12252,7 @@ namespace DVG
         /// </summary>
         public double3 zwy
         {
-            get => new double3(z, w, y);
+            readonly get => new double3(z, w, y);
             set
             {
                 w = value.x;
@@ -12266,7 +12266,7 @@ namespace DVG
         /// </summary>
         public double3 bag
         {
-            get => new double3(z, w, y);
+            readonly get => new double3(z, w, y);
             set
             {
                 w = value.x;
@@ -12280,7 +12280,7 @@ namespace DVG
         /// </summary>
         public double3 pqt
         {
-            get => new double3(z, w, y);
+            readonly get => new double3(z, w, y);
             set
             {
                 w = value.x;
@@ -12429,7 +12429,7 @@ namespace DVG
         /// </summary>
         public double3 wxy
         {
-            get => new double3(w, x, y);
+            readonly get => new double3(w, x, y);
             set
             {
                 w = value.x;
@@ -12443,7 +12443,7 @@ namespace DVG
         /// </summary>
         public double3 arg
         {
-            get => new double3(w, x, y);
+            readonly get => new double3(w, x, y);
             set
             {
                 w = value.x;
@@ -12457,7 +12457,7 @@ namespace DVG
         /// </summary>
         public double3 qst
         {
-            get => new double3(w, x, y);
+            readonly get => new double3(w, x, y);
             set
             {
                 w = value.x;
@@ -12471,7 +12471,7 @@ namespace DVG
         /// </summary>
         public double3 wxz
         {
-            get => new double3(w, x, z);
+            readonly get => new double3(w, x, z);
             set
             {
                 w = value.x;
@@ -12485,7 +12485,7 @@ namespace DVG
         /// </summary>
         public double3 arb
         {
-            get => new double3(w, x, z);
+            readonly get => new double3(w, x, z);
             set
             {
                 w = value.x;
@@ -12499,7 +12499,7 @@ namespace DVG
         /// </summary>
         public double3 qsp
         {
-            get => new double3(w, x, z);
+            readonly get => new double3(w, x, z);
             set
             {
                 w = value.x;
@@ -12543,7 +12543,7 @@ namespace DVG
         /// </summary>
         public double3 wyx
         {
-            get => new double3(w, y, x);
+            readonly get => new double3(w, y, x);
             set
             {
                 w = value.x;
@@ -12557,7 +12557,7 @@ namespace DVG
         /// </summary>
         public double3 agr
         {
-            get => new double3(w, y, x);
+            readonly get => new double3(w, y, x);
             set
             {
                 w = value.x;
@@ -12571,7 +12571,7 @@ namespace DVG
         /// </summary>
         public double3 qts
         {
-            get => new double3(w, y, x);
+            readonly get => new double3(w, y, x);
             set
             {
                 w = value.x;
@@ -12600,7 +12600,7 @@ namespace DVG
         /// </summary>
         public double3 wyz
         {
-            get => new double3(w, y, z);
+            readonly get => new double3(w, y, z);
             set
             {
                 w = value.x;
@@ -12614,7 +12614,7 @@ namespace DVG
         /// </summary>
         public double3 agb
         {
-            get => new double3(w, y, z);
+            readonly get => new double3(w, y, z);
             set
             {
                 w = value.x;
@@ -12628,7 +12628,7 @@ namespace DVG
         /// </summary>
         public double3 qtp
         {
-            get => new double3(w, y, z);
+            readonly get => new double3(w, y, z);
             set
             {
                 w = value.x;
@@ -12672,7 +12672,7 @@ namespace DVG
         /// </summary>
         public double3 wzx
         {
-            get => new double3(w, z, x);
+            readonly get => new double3(w, z, x);
             set
             {
                 w = value.x;
@@ -12686,7 +12686,7 @@ namespace DVG
         /// </summary>
         public double3 abr
         {
-            get => new double3(w, z, x);
+            readonly get => new double3(w, z, x);
             set
             {
                 w = value.x;
@@ -12700,7 +12700,7 @@ namespace DVG
         /// </summary>
         public double3 qps
         {
-            get => new double3(w, z, x);
+            readonly get => new double3(w, z, x);
             set
             {
                 w = value.x;
@@ -12714,7 +12714,7 @@ namespace DVG
         /// </summary>
         public double3 wzy
         {
-            get => new double3(w, z, y);
+            readonly get => new double3(w, z, y);
             set
             {
                 w = value.x;
@@ -12728,7 +12728,7 @@ namespace DVG
         /// </summary>
         public double3 abg
         {
-            get => new double3(w, z, y);
+            readonly get => new double3(w, z, y);
             set
             {
                 w = value.x;
@@ -12742,7 +12742,7 @@ namespace DVG
         /// </summary>
         public double3 qpt
         {
-            get => new double3(w, z, y);
+            readonly get => new double3(w, z, y);
             set
             {
                 w = value.x;
@@ -12951,7 +12951,7 @@ namespace DVG
         /// </summary>
         public double2 xy
         {
-            get => new double2(x, y);
+            readonly get => new double2(x, y);
             set
             {
                 w = value.x;
@@ -12964,7 +12964,7 @@ namespace DVG
         /// </summary>
         public double2 rg
         {
-            get => new double2(x, y);
+            readonly get => new double2(x, y);
             set
             {
                 w = value.x;
@@ -12977,7 +12977,7 @@ namespace DVG
         /// </summary>
         public double2 st
         {
-            get => new double2(x, y);
+            readonly get => new double2(x, y);
             set
             {
                 w = value.x;
@@ -12990,7 +12990,7 @@ namespace DVG
         /// </summary>
         public double2 xz
         {
-            get => new double2(x, z);
+            readonly get => new double2(x, z);
             set
             {
                 w = value.x;
@@ -13003,7 +13003,7 @@ namespace DVG
         /// </summary>
         public double2 rb
         {
-            get => new double2(x, z);
+            readonly get => new double2(x, z);
             set
             {
                 w = value.x;
@@ -13016,7 +13016,7 @@ namespace DVG
         /// </summary>
         public double2 sp
         {
-            get => new double2(x, z);
+            readonly get => new double2(x, z);
             set
             {
                 w = value.x;
@@ -13029,7 +13029,7 @@ namespace DVG
         /// </summary>
         public double2 xw
         {
-            get => new double2(x, w);
+            readonly get => new double2(x, w);
             set
             {
                 w = value.x;
@@ -13042,7 +13042,7 @@ namespace DVG
         /// </summary>
         public double2 ra
         {
-            get => new double2(x, w);
+            readonly get => new double2(x, w);
             set
             {
                 w = value.x;
@@ -13055,7 +13055,7 @@ namespace DVG
         /// </summary>
         public double2 sq
         {
-            get => new double2(x, w);
+            readonly get => new double2(x, w);
             set
             {
                 w = value.x;
@@ -13083,7 +13083,7 @@ namespace DVG
         /// </summary>
         public double2 yx
         {
-            get => new double2(y, x);
+            readonly get => new double2(y, x);
             set
             {
                 w = value.x;
@@ -13096,7 +13096,7 @@ namespace DVG
         /// </summary>
         public double2 gr
         {
-            get => new double2(y, x);
+            readonly get => new double2(y, x);
             set
             {
                 w = value.x;
@@ -13109,7 +13109,7 @@ namespace DVG
         /// </summary>
         public double2 ts
         {
-            get => new double2(y, x);
+            readonly get => new double2(y, x);
             set
             {
                 w = value.x;
@@ -13137,7 +13137,7 @@ namespace DVG
         /// </summary>
         public double2 yz
         {
-            get => new double2(y, z);
+            readonly get => new double2(y, z);
             set
             {
                 w = value.x;
@@ -13150,7 +13150,7 @@ namespace DVG
         /// </summary>
         public double2 gb
         {
-            get => new double2(y, z);
+            readonly get => new double2(y, z);
             set
             {
                 w = value.x;
@@ -13163,7 +13163,7 @@ namespace DVG
         /// </summary>
         public double2 tp
         {
-            get => new double2(y, z);
+            readonly get => new double2(y, z);
             set
             {
                 w = value.x;
@@ -13176,7 +13176,7 @@ namespace DVG
         /// </summary>
         public double2 yw
         {
-            get => new double2(y, w);
+            readonly get => new double2(y, w);
             set
             {
                 w = value.x;
@@ -13189,7 +13189,7 @@ namespace DVG
         /// </summary>
         public double2 ga
         {
-            get => new double2(y, w);
+            readonly get => new double2(y, w);
             set
             {
                 w = value.x;
@@ -13202,7 +13202,7 @@ namespace DVG
         /// </summary>
         public double2 tq
         {
-            get => new double2(y, w);
+            readonly get => new double2(y, w);
             set
             {
                 w = value.x;
@@ -13230,7 +13230,7 @@ namespace DVG
         /// </summary>
         public double2 zx
         {
-            get => new double2(z, x);
+            readonly get => new double2(z, x);
             set
             {
                 w = value.x;
@@ -13243,7 +13243,7 @@ namespace DVG
         /// </summary>
         public double2 br
         {
-            get => new double2(z, x);
+            readonly get => new double2(z, x);
             set
             {
                 w = value.x;
@@ -13256,7 +13256,7 @@ namespace DVG
         /// </summary>
         public double2 ps
         {
-            get => new double2(z, x);
+            readonly get => new double2(z, x);
             set
             {
                 w = value.x;
@@ -13269,7 +13269,7 @@ namespace DVG
         /// </summary>
         public double2 zy
         {
-            get => new double2(z, y);
+            readonly get => new double2(z, y);
             set
             {
                 w = value.x;
@@ -13282,7 +13282,7 @@ namespace DVG
         /// </summary>
         public double2 bg
         {
-            get => new double2(z, y);
+            readonly get => new double2(z, y);
             set
             {
                 w = value.x;
@@ -13295,7 +13295,7 @@ namespace DVG
         /// </summary>
         public double2 pt
         {
-            get => new double2(z, y);
+            readonly get => new double2(z, y);
             set
             {
                 w = value.x;
@@ -13323,7 +13323,7 @@ namespace DVG
         /// </summary>
         public double2 zw
         {
-            get => new double2(z, w);
+            readonly get => new double2(z, w);
             set
             {
                 w = value.x;
@@ -13336,7 +13336,7 @@ namespace DVG
         /// </summary>
         public double2 ba
         {
-            get => new double2(z, w);
+            readonly get => new double2(z, w);
             set
             {
                 w = value.x;
@@ -13349,7 +13349,7 @@ namespace DVG
         /// </summary>
         public double2 pq
         {
-            get => new double2(z, w);
+            readonly get => new double2(z, w);
             set
             {
                 w = value.x;
@@ -13377,7 +13377,7 @@ namespace DVG
         /// </summary>
         public double2 wx
         {
-            get => new double2(w, x);
+            readonly get => new double2(w, x);
             set
             {
                 w = value.x;
@@ -13390,7 +13390,7 @@ namespace DVG
         /// </summary>
         public double2 ar
         {
-            get => new double2(w, x);
+            readonly get => new double2(w, x);
             set
             {
                 w = value.x;
@@ -13403,7 +13403,7 @@ namespace DVG
         /// </summary>
         public double2 qs
         {
-            get => new double2(w, x);
+            readonly get => new double2(w, x);
             set
             {
                 w = value.x;
@@ -13416,7 +13416,7 @@ namespace DVG
         /// </summary>
         public double2 wy
         {
-            get => new double2(w, y);
+            readonly get => new double2(w, y);
             set
             {
                 w = value.x;
@@ -13429,7 +13429,7 @@ namespace DVG
         /// </summary>
         public double2 ag
         {
-            get => new double2(w, y);
+            readonly get => new double2(w, y);
             set
             {
                 w = value.x;
@@ -13442,7 +13442,7 @@ namespace DVG
         /// </summary>
         public double2 qt
         {
-            get => new double2(w, y);
+            readonly get => new double2(w, y);
             set
             {
                 w = value.x;
@@ -13455,7 +13455,7 @@ namespace DVG
         /// </summary>
         public double2 wz
         {
-            get => new double2(w, z);
+            readonly get => new double2(w, z);
             set
             {
                 w = value.x;
@@ -13468,7 +13468,7 @@ namespace DVG
         /// </summary>
         public double2 ab
         {
-            get => new double2(w, z);
+            readonly get => new double2(w, z);
             set
             {
                 w = value.x;
@@ -13481,7 +13481,7 @@ namespace DVG
         /// </summary>
         public double2 qp
         {
-            get => new double2(w, z);
+            readonly get => new double2(w, z);
             set
             {
                 w = value.x;
@@ -13608,6 +13608,9 @@ namespace DVG
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double SqrDistance(double4 lhs, double4 rhs) => double4.SqrLength(lhs - rhs);
+        
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double4 SmoothDamp(double4 source, double4 target, ref double4 velocity, double smoothTime, double deltaTime) => new double4(Maths.SmoothDamp(source.x, target.x, ref velocity.x, smoothTime, deltaTime), Maths.SmoothDamp(source.y, target.y, ref velocity.y, smoothTime, deltaTime), Maths.SmoothDamp(source.z, target.z, ref velocity.z, smoothTime, deltaTime), Maths.SmoothDamp(source.w, target.w, ref velocity.w, smoothTime, deltaTime));
 
         #endregion
 
@@ -13747,16 +13750,16 @@ namespace DVG
         public static double4 Step(double edge, double4 x) => new double4(x.x < edge ? 0 : 1, x.y < edge ? 0 : 1, x.z < edge ? 0 : 1, x.w < edge ? 0 : 1);
         
         /// <summary>
-        /// Returns a double4 from component-wise application of Smoothstep (Maths.Smoothstep(edge0, edge1, x)).
+        /// Returns a double4 from component-wise application of SmoothStep (Maths.SmoothStep(edge0, edge1, x)).
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static double4 Smoothstep(double4 edge0, double4 edge1, double4 x) => new double4(Maths.Smoothstep(edge0.x, edge1.x, x.x), Maths.Smoothstep(edge0.y, edge1.y, x.y), Maths.Smoothstep(edge0.z, edge1.z, x.z), Maths.Smoothstep(edge0.w, edge1.w, x.w));
+        public static double4 SmoothStep(double4 edge0, double4 edge1, double4 x) => new double4(Maths.SmoothStep(edge0.x, edge1.x, x.x), Maths.SmoothStep(edge0.y, edge1.y, x.y), Maths.SmoothStep(edge0.z, edge1.z, x.z), Maths.SmoothStep(edge0.w, edge1.w, x.w));
         
         /// <summary>
-        /// Returns a double4 from component-wise application of Smoothstep (Maths.Smoothstep(edge0, edge1, x)).
+        /// Returns a double4 from component-wise application of SmoothStep (Maths.SmoothStep(edge0, edge1, x)).
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static double4 Smoothstep(double4 edge0, double4 edge1, double x) => new double4(Maths.Smoothstep(edge0.x, edge1.x, x), Maths.Smoothstep(edge0.y, edge1.y, x), Maths.Smoothstep(edge0.z, edge1.z, x), Maths.Smoothstep(edge0.w, edge1.w, x));
+        public static double4 SmoothStep(double4 edge0, double4 edge1, double x) => new double4(Maths.SmoothStep(edge0.x, edge1.x, x), Maths.SmoothStep(edge0.y, edge1.y, x), Maths.SmoothStep(edge0.z, edge1.z, x), Maths.SmoothStep(edge0.w, edge1.w, x));
         
         /// <summary>
         /// Returns a bool4 from component-wise application of IsNaN (double.IsNaN(v)).

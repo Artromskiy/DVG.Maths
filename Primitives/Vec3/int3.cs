@@ -165,7 +165,7 @@ namespace DVG
         /// </summary>
         public int r
         {
-            get => x;
+            readonly get => x;
             set
             {
                 x = value;
@@ -177,7 +177,7 @@ namespace DVG
         /// </summary>
         public int s
         {
-            get => x;
+            readonly get => x;
             set
             {
                 x = value;
@@ -189,7 +189,7 @@ namespace DVG
         /// </summary>
         public int g
         {
-            get => y;
+            readonly get => y;
             set
             {
                 y = value;
@@ -201,7 +201,7 @@ namespace DVG
         /// </summary>
         public int t
         {
-            get => y;
+            readonly get => y;
             set
             {
                 y = value;
@@ -213,7 +213,7 @@ namespace DVG
         /// </summary>
         public int b
         {
-            get => z;
+            readonly get => z;
             set
             {
                 z = value;
@@ -225,7 +225,7 @@ namespace DVG
         /// </summary>
         public int p
         {
-            get => z;
+            readonly get => z;
             set
             {
                 z = value;
@@ -4452,7 +4452,7 @@ namespace DVG
         /// </summary>
         public int3 xyz
         {
-            get => new int3(x, y, z);
+            readonly get => new int3(x, y, z);
             set
             {
                 z = value.x;
@@ -4466,7 +4466,7 @@ namespace DVG
         /// </summary>
         public int3 rgb
         {
-            get => new int3(x, y, z);
+            readonly get => new int3(x, y, z);
             set
             {
                 z = value.x;
@@ -4480,7 +4480,7 @@ namespace DVG
         /// </summary>
         public int3 stp
         {
-            get => new int3(x, y, z);
+            readonly get => new int3(x, y, z);
             set
             {
                 z = value.x;
@@ -4524,7 +4524,7 @@ namespace DVG
         /// </summary>
         public int3 xzy
         {
-            get => new int3(x, z, y);
+            readonly get => new int3(x, z, y);
             set
             {
                 z = value.x;
@@ -4538,7 +4538,7 @@ namespace DVG
         /// </summary>
         public int3 rbg
         {
-            get => new int3(x, z, y);
+            readonly get => new int3(x, z, y);
             set
             {
                 z = value.x;
@@ -4552,7 +4552,7 @@ namespace DVG
         /// </summary>
         public int3 spt
         {
-            get => new int3(x, z, y);
+            readonly get => new int3(x, z, y);
             set
             {
                 z = value.x;
@@ -4686,7 +4686,7 @@ namespace DVG
         /// </summary>
         public int3 yxz
         {
-            get => new int3(y, x, z);
+            readonly get => new int3(y, x, z);
             set
             {
                 z = value.x;
@@ -4700,7 +4700,7 @@ namespace DVG
         /// </summary>
         public int3 grb
         {
-            get => new int3(y, x, z);
+            readonly get => new int3(y, x, z);
             set
             {
                 z = value.x;
@@ -4714,7 +4714,7 @@ namespace DVG
         /// </summary>
         public int3 tsp
         {
-            get => new int3(y, x, z);
+            readonly get => new int3(y, x, z);
             set
             {
                 z = value.x;
@@ -4803,7 +4803,7 @@ namespace DVG
         /// </summary>
         public int3 yzx
         {
-            get => new int3(y, z, x);
+            readonly get => new int3(y, z, x);
             set
             {
                 z = value.x;
@@ -4817,7 +4817,7 @@ namespace DVG
         /// </summary>
         public int3 gbr
         {
-            get => new int3(y, z, x);
+            readonly get => new int3(y, z, x);
             set
             {
                 z = value.x;
@@ -4831,7 +4831,7 @@ namespace DVG
         /// </summary>
         public int3 tps
         {
-            get => new int3(y, z, x);
+            readonly get => new int3(y, z, x);
             set
             {
                 z = value.x;
@@ -4965,7 +4965,7 @@ namespace DVG
         /// </summary>
         public int3 zxy
         {
-            get => new int3(z, x, y);
+            readonly get => new int3(z, x, y);
             set
             {
                 z = value.x;
@@ -4979,7 +4979,7 @@ namespace DVG
         /// </summary>
         public int3 brg
         {
-            get => new int3(z, x, y);
+            readonly get => new int3(z, x, y);
             set
             {
                 z = value.x;
@@ -4993,7 +4993,7 @@ namespace DVG
         /// </summary>
         public int3 pst
         {
-            get => new int3(z, x, y);
+            readonly get => new int3(z, x, y);
             set
             {
                 z = value.x;
@@ -5037,7 +5037,7 @@ namespace DVG
         /// </summary>
         public int3 zyx
         {
-            get => new int3(z, y, x);
+            readonly get => new int3(z, y, x);
             set
             {
                 z = value.x;
@@ -5051,7 +5051,7 @@ namespace DVG
         /// </summary>
         public int3 bgr
         {
-            get => new int3(z, y, x);
+            readonly get => new int3(z, y, x);
             set
             {
                 z = value.x;
@@ -5065,7 +5065,7 @@ namespace DVG
         /// </summary>
         public int3 pts
         {
-            get => new int3(z, y, x);
+            readonly get => new int3(z, y, x);
             set
             {
                 z = value.x;
@@ -5244,7 +5244,7 @@ namespace DVG
         /// </summary>
         public int2 xy
         {
-            get => new int2(x, y);
+            readonly get => new int2(x, y);
             set
             {
                 z = value.x;
@@ -5257,7 +5257,7 @@ namespace DVG
         /// </summary>
         public int2 rg
         {
-            get => new int2(x, y);
+            readonly get => new int2(x, y);
             set
             {
                 z = value.x;
@@ -5270,7 +5270,7 @@ namespace DVG
         /// </summary>
         public int2 st
         {
-            get => new int2(x, y);
+            readonly get => new int2(x, y);
             set
             {
                 z = value.x;
@@ -5283,7 +5283,7 @@ namespace DVG
         /// </summary>
         public int2 xz
         {
-            get => new int2(x, z);
+            readonly get => new int2(x, z);
             set
             {
                 z = value.x;
@@ -5296,7 +5296,7 @@ namespace DVG
         /// </summary>
         public int2 rb
         {
-            get => new int2(x, z);
+            readonly get => new int2(x, z);
             set
             {
                 z = value.x;
@@ -5309,7 +5309,7 @@ namespace DVG
         /// </summary>
         public int2 sp
         {
-            get => new int2(x, z);
+            readonly get => new int2(x, z);
             set
             {
                 z = value.x;
@@ -5337,7 +5337,7 @@ namespace DVG
         /// </summary>
         public int2 yx
         {
-            get => new int2(y, x);
+            readonly get => new int2(y, x);
             set
             {
                 z = value.x;
@@ -5350,7 +5350,7 @@ namespace DVG
         /// </summary>
         public int2 gr
         {
-            get => new int2(y, x);
+            readonly get => new int2(y, x);
             set
             {
                 z = value.x;
@@ -5363,7 +5363,7 @@ namespace DVG
         /// </summary>
         public int2 ts
         {
-            get => new int2(y, x);
+            readonly get => new int2(y, x);
             set
             {
                 z = value.x;
@@ -5391,7 +5391,7 @@ namespace DVG
         /// </summary>
         public int2 yz
         {
-            get => new int2(y, z);
+            readonly get => new int2(y, z);
             set
             {
                 z = value.x;
@@ -5404,7 +5404,7 @@ namespace DVG
         /// </summary>
         public int2 gb
         {
-            get => new int2(y, z);
+            readonly get => new int2(y, z);
             set
             {
                 z = value.x;
@@ -5417,7 +5417,7 @@ namespace DVG
         /// </summary>
         public int2 tp
         {
-            get => new int2(y, z);
+            readonly get => new int2(y, z);
             set
             {
                 z = value.x;
@@ -5445,7 +5445,7 @@ namespace DVG
         /// </summary>
         public int2 zx
         {
-            get => new int2(z, x);
+            readonly get => new int2(z, x);
             set
             {
                 z = value.x;
@@ -5458,7 +5458,7 @@ namespace DVG
         /// </summary>
         public int2 br
         {
-            get => new int2(z, x);
+            readonly get => new int2(z, x);
             set
             {
                 z = value.x;
@@ -5471,7 +5471,7 @@ namespace DVG
         /// </summary>
         public int2 ps
         {
-            get => new int2(z, x);
+            readonly get => new int2(z, x);
             set
             {
                 z = value.x;
@@ -5484,7 +5484,7 @@ namespace DVG
         /// </summary>
         public int2 zy
         {
-            get => new int2(z, y);
+            readonly get => new int2(z, y);
             set
             {
                 z = value.x;
@@ -5497,7 +5497,7 @@ namespace DVG
         /// </summary>
         public int2 bg
         {
-            get => new int2(z, y);
+            readonly get => new int2(z, y);
             set
             {
                 z = value.x;
@@ -5510,7 +5510,7 @@ namespace DVG
         /// </summary>
         public int2 pt
         {
-            get => new int2(z, y);
+            readonly get => new int2(z, y);
             set
             {
                 z = value.x;
