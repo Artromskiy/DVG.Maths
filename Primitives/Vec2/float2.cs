@@ -628,6 +628,18 @@ namespace DVG
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint2 FloatBitsToUInt(float2 v) => new uint2(Unsafe.As<float, uint>(ref v.x), Unsafe.As<float, uint>(ref v.y));
+        
+        /// <summary>
+        /// Returns a float2 from component-wise application of InvLerp (Maths.InvLerp(edge0, edge1, v)).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float2 InvLerp(float2 edge0, float2 edge1, float2 v) => new float2(Maths.InvLerp(edge0.x, edge1.x, v.x), Maths.InvLerp(edge0.y, edge1.y, v.y));
+        
+        /// <summary>
+        /// Returns a float2 from component-wise application of InvLerp (Maths.InvLerp(edge0, edge1, v)).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float2 InvLerp(float2 edge0, float2 edge1, float v) => new float2(Maths.InvLerp(edge0.x, edge1.x, v), Maths.InvLerp(edge0.y, edge1.y, v));
 
         #endregion
 

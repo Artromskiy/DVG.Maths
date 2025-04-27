@@ -210,6 +210,11 @@ namespace DVG
         /// Returns the square distance between the two vectors.
         /// </summary>
         public static double SqrDistance(double2 lhs, double2 rhs) => double2.SqrDistance(lhs, rhs);
+        
+        /// <summary>
+        /// Returns a double2 from component-wise application of InvLerp (Maths.InvLerp(edge0, edge1, v)).
+        /// </summary>
+        public static double2 InvLerp(double2 edge0, double2 edge1, double2 v) => double2.InvLerp(edge0, edge1, v);
 
     }
 }

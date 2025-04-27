@@ -320,6 +320,11 @@ namespace DVG
         /// Returns the square distance between the two vectors.
         /// </summary>
         public static float SqrDistance(float4 lhs, float4 rhs) => float4.SqrDistance(lhs, rhs);
+        
+        /// <summary>
+        /// Returns a float4 from component-wise application of InvLerp (Maths.InvLerp(edge0, edge1, v)).
+        /// </summary>
+        public static float4 InvLerp(float4 edge0, float4 edge1, float4 v) => float4.InvLerp(edge0, edge1, v);
 
     }
 }

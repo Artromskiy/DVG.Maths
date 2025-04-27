@@ -768,6 +768,18 @@ namespace DVG
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint3 FloatBitsToUInt(float3 v) => new uint3(Unsafe.As<float, uint>(ref v.x), Unsafe.As<float, uint>(ref v.y), Unsafe.As<float, uint>(ref v.z));
+        
+        /// <summary>
+        /// Returns a float3 from component-wise application of InvLerp (Maths.InvLerp(edge0, edge1, v)).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float3 InvLerp(float3 edge0, float3 edge1, float3 v) => new float3(Maths.InvLerp(edge0.x, edge1.x, v.x), Maths.InvLerp(edge0.y, edge1.y, v.y), Maths.InvLerp(edge0.z, edge1.z, v.z));
+        
+        /// <summary>
+        /// Returns a float3 from component-wise application of InvLerp (Maths.InvLerp(edge0, edge1, v)).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float3 InvLerp(float3 edge0, float3 edge1, float v) => new float3(Maths.InvLerp(edge0.x, edge1.x, v), Maths.InvLerp(edge0.y, edge1.y, v), Maths.InvLerp(edge0.z, edge1.z, v));
 
         #endregion
 

@@ -1046,6 +1046,18 @@ namespace DVG
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint4 FloatBitsToUInt(float4 v) => new uint4(Unsafe.As<float, uint>(ref v.x), Unsafe.As<float, uint>(ref v.y), Unsafe.As<float, uint>(ref v.z), Unsafe.As<float, uint>(ref v.w));
+        
+        /// <summary>
+        /// Returns a float4 from component-wise application of InvLerp (Maths.InvLerp(edge0, edge1, v)).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float4 InvLerp(float4 edge0, float4 edge1, float4 v) => new float4(Maths.InvLerp(edge0.x, edge1.x, v.x), Maths.InvLerp(edge0.y, edge1.y, v.y), Maths.InvLerp(edge0.z, edge1.z, v.z), Maths.InvLerp(edge0.w, edge1.w, v.w));
+        
+        /// <summary>
+        /// Returns a float4 from component-wise application of InvLerp (Maths.InvLerp(edge0, edge1, v)).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float4 InvLerp(float4 edge0, float4 edge1, float v) => new float4(Maths.InvLerp(edge0.x, edge1.x, v), Maths.InvLerp(edge0.y, edge1.y, v), Maths.InvLerp(edge0.z, edge1.z, v), Maths.InvLerp(edge0.w, edge1.w, v));
 
         #endregion
 

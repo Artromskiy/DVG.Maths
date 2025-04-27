@@ -625,6 +625,18 @@ namespace DVG
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double3 Mix(double3 x, double3 y, bool3 a) => new double3(a.x ? y.x : x.x, a.y ? y.y : x.y, a.z ? y.z : x.z);
+        
+        /// <summary>
+        /// Returns a double3 from component-wise application of InvLerp (Maths.InvLerp(edge0, edge1, v)).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double3 InvLerp(double3 edge0, double3 edge1, double3 v) => new double3(Maths.InvLerp(edge0.x, edge1.x, v.x), Maths.InvLerp(edge0.y, edge1.y, v.y), Maths.InvLerp(edge0.z, edge1.z, v.z));
+        
+        /// <summary>
+        /// Returns a double3 from component-wise application of InvLerp (Maths.InvLerp(edge0, edge1, v)).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double3 InvLerp(double3 edge0, double3 edge1, double v) => new double3(Maths.InvLerp(edge0.x, edge1.x, v), Maths.InvLerp(edge0.y, edge1.y, v), Maths.InvLerp(edge0.z, edge1.z, v));
 
         #endregion
 
