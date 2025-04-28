@@ -13618,7 +13618,7 @@ namespace DVG
         public static double4 SmoothDamp(double4 source, double4 target, ref double4 velocity, double smoothTime, double deltaTime) => new double4(Maths.SmoothDamp(source.x, target.x, ref velocity.x, smoothTime, deltaTime), Maths.SmoothDamp(source.y, target.y, ref velocity.y, smoothTime, deltaTime), Maths.SmoothDamp(source.z, target.z, ref velocity.z, smoothTime, deltaTime), Maths.SmoothDamp(source.w, target.w, ref velocity.w, smoothTime, deltaTime));
         
         /// <summary>
-        /// Returns the square length of this vector.
+        /// Returns this vector with length clamped to maxLength.
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double4 ClampLength(double4 value, double maxLength)
@@ -13631,6 +13631,12 @@ namespace DVG
             }
             return value;
         }
+        
+        /// <summary>
+        /// Moves vector towards target.
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double4 MoveTowards(double4 current, double4 target, double maxDelta) => new double4(Maths.MoveTowards(current.x, target.x, maxDelta), Maths.MoveTowards(current.y, target.y, maxDelta), Maths.MoveTowards(current.z, target.z, maxDelta), Maths.MoveTowards(current.w, target.w, maxDelta));
 
         #endregion
 

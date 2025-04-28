@@ -327,9 +327,14 @@ namespace DVG
         public static float4 InvLerp(float4 edge0, float4 edge1, float4 v) => float4.InvLerp(edge0, edge1, v);
         
         /// <summary>
-        /// Returns the square length of this vector.
+        /// Returns this vector with length clamped to maxLength.
         /// </summary>
         public static float4 ClampLength(float4 value, float maxLength) => float4.ClampLength(value, maxLength);
+        
+        /// <summary>
+        /// Moves vector towards target.
+        /// </summary>
+        public static float4 MoveTowards(float4 current, float4 target, float maxDelta) => float4.MoveTowards(current, target, maxDelta);
 
     }
 }

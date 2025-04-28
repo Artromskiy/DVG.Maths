@@ -2036,7 +2036,7 @@ namespace DVG
         public static double2 SmoothDamp(double2 source, double2 target, ref double2 velocity, double smoothTime, double deltaTime) => new double2(Maths.SmoothDamp(source.x, target.x, ref velocity.x, smoothTime, deltaTime), Maths.SmoothDamp(source.y, target.y, ref velocity.y, smoothTime, deltaTime));
         
         /// <summary>
-        /// Returns the square length of this vector.
+        /// Returns this vector with length clamped to maxLength.
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double2 ClampLength(double2 value, double maxLength)
@@ -2049,6 +2049,12 @@ namespace DVG
             }
             return value;
         }
+        
+        /// <summary>
+        /// Moves vector towards target.
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double2 MoveTowards(double2 current, double2 target, double maxDelta) => new double2(Maths.MoveTowards(current.x, target.x, maxDelta), Maths.MoveTowards(current.y, target.y, maxDelta));
 
         #endregion
 

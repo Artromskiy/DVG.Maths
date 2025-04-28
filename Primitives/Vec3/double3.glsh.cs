@@ -222,9 +222,14 @@ namespace DVG
         public static double3 InvLerp(double3 edge0, double3 edge1, double3 v) => double3.InvLerp(edge0, edge1, v);
         
         /// <summary>
-        /// Returns the square length of this vector.
+        /// Returns this vector with length clamped to maxLength.
         /// </summary>
         public static double3 ClampLength(double3 value, double maxLength) => double3.ClampLength(value, maxLength);
+        
+        /// <summary>
+        /// Moves vector towards target.
+        /// </summary>
+        public static double3 MoveTowards(double3 current, double3 target, double maxDelta) => double3.MoveTowards(current, target, maxDelta);
 
     }
 }

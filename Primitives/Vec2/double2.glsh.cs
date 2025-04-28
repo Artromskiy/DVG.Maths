@@ -217,9 +217,14 @@ namespace DVG
         public static double2 InvLerp(double2 edge0, double2 edge1, double2 v) => double2.InvLerp(edge0, edge1, v);
         
         /// <summary>
-        /// Returns the square length of this vector.
+        /// Returns this vector with length clamped to maxLength.
         /// </summary>
         public static double2 ClampLength(double2 value, double maxLength) => double2.ClampLength(value, maxLength);
+        
+        /// <summary>
+        /// Moves vector towards target.
+        /// </summary>
+        public static double2 MoveTowards(double2 current, double2 target, double maxDelta) => double2.MoveTowards(current, target, maxDelta);
 
     }
 }

@@ -38,5 +38,19 @@
         public static float Remap(float source, float sourceFrom, float sourceTo, float targetFrom, float targetTo) => targetFrom + ((source - sourceFrom) * (targetTo - targetFrom) / (sourceTo - sourceFrom));
         public static double Remap(double source, double sourceFrom, double sourceTo, double targetFrom, double targetTo) => targetFrom + ((source - sourceFrom) * (targetTo - targetFrom) / (sourceTo - sourceFrom));
 
+
+        public static float MoveTowards(float current, float target, float maxDelta)
+        {
+            float delta = target - current;
+            float min = Min(maxDelta, Abs(delta));
+            return delta > 0 ? current + min : current - min;
+        }
+
+        public static double MoveTowards(double current, double target, double maxDelta)
+        {
+            double delta = target - current;
+            double min = Min(maxDelta, Abs(delta));
+            return delta > 0 ? current + min : current - min;
+        }
     }
 }
