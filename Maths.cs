@@ -4,7 +4,7 @@ namespace DVG
 {
     public static partial class Maths
     {
-        public static float Lerp(float a, float b, float value) => a + ((b - a) * value);
+        public static float Lerp(float edge0, float edge1, float value) => edge0 + ((edge1 - edge0) * value);
         public static float SmoothStep(float edge0, float edge1, float v)
         {
             float x = Clamp((v - edge0) / (edge1 - edge0), 0, 1);
@@ -19,7 +19,7 @@ namespace DVG
         public static float Exp2(float value) => MathF.Pow(2, value);
 
 
-        public static double Lerp(double a, double b, double value) => a + ((b - a) * value);
+        public static double Lerp(double edge0, double edge1, double value) => edge0 + ((edge1 - edge0) * value);
         public static double SmoothStep(double edge0, double edge1, double v)
         {
             double x = Clamp((v - edge0) / (edge1 - edge0), 0, 1);
