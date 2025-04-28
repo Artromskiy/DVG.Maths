@@ -2045,6 +2045,21 @@ namespace DVG
         
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float2 SmoothDamp(float2 source, float2 target, ref float2 velocity, float smoothTime, float deltaTime) => new float2(Maths.SmoothDamp(source.x, target.x, ref velocity.x, smoothTime, deltaTime), Maths.SmoothDamp(source.y, target.y, ref velocity.y, smoothTime, deltaTime));
+        
+        /// <summary>
+        /// Returns the square length of this vector.
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float2 ClampLength(float2 value, float maxLength)
+        {
+            var sqrLength = SqrLength(value);
+            if (sqrLength > maxLength * maxLength)
+            {
+                float ratio = maxLength / Maths.Sqrt(sqrLength);
+                return new float2(value.x * ratio, value.y * ratio);
+            }
+            return value;
+        }
 
         #endregion
 

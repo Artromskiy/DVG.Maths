@@ -325,6 +325,11 @@ namespace DVG
         /// Returns a float2 from component-wise application of InvLerp (Maths.InvLerp(edge0, edge1, v)).
         /// </summary>
         public static float2 InvLerp(float2 edge0, float2 edge1, float2 v) => float2.InvLerp(edge0, edge1, v);
+        
+        /// <summary>
+        /// Returns the square length of this vector.
+        /// </summary>
+        public static float2 ClampLength(float2 value, float maxLength) => float2.ClampLength(value, maxLength);
 
     }
 }
