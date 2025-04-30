@@ -1,6 +1,6 @@
 ﻿namespace DVG
 {
-    partial class Maths
+    public partial class Maths
     {
         public static float SmoothDamp(float source, float target, ref float velocity, float smoothTime, float deltaTime)
         {
