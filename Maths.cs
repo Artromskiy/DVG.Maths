@@ -14,9 +14,9 @@ namespace DVG
             return x * x * (3.0f - 2.0f * x);
         }
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float Radians(float degrees) => degrees / 180 / MathF.PI;
+        public static float Radians(float degrees) => degrees * MathF.PI / 180;
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float Degrees(float radians) => radians * 180 * MathF.PI;
+        public static float Degrees(float radians) => radians * 180 / MathF.PI;
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float Fma(float a, float b, float c) => a * b + c;
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
