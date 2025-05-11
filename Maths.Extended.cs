@@ -60,8 +60,8 @@ namespace DVG
             current = WrapAngle(current);
             target = WrapAngle(target);
             var delta = ((target - current + 540) % 360) - 180;
-            var rotation = Clamp(delta, -maxStep, maxStep);
-            return WrapAngle(current + rotation);
+            delta = Clamp(delta, -maxStep, maxStep);
+            return WrapAngle(current + delta);
         }
 
         public static double RotateTowards(double current, double target, double maxStep)
@@ -69,26 +69,24 @@ namespace DVG
             current = WrapAngle(current);
             target = WrapAngle(target);
             var delta = ((target - current + 540) % 360) - 180;
-            var rotation = Clamp(delta, -maxStep, maxStep);
-            return WrapAngle(current + rotation);
+            delta = Clamp(delta, -maxStep, maxStep);
+            return WrapAngle(current + delta);
         }
 
         public static float SmoothDampAngle(float current, float target, ref float velocity, float smoothTime, float deltaTime)
         {
             current = WrapAngle(current);
             target = WrapAngle(target);
-            var delta = 180 - Abs(Abs(current - target) - 180);
-            target = current + delta;
-            return SmoothDamp(current, target, ref velocity, smoothTime, deltaTime);
+            var delta = ((target - current + 540) % 360) - 180;
+            return WrapAngle(SmoothDamp(current, current + delta, ref velocity, smoothTime, deltaTime));
         }
 
         public static double SmoothDampAngle(double current, double target, ref double velocity, double smoothTime, double deltaTime)
         {
             current = WrapAngle(current);
             target = WrapAngle(target);
-            var delta = 180 - Abs(Abs(current - target) - 180);
-            target = current + delta;
-            return SmoothDamp(current, target, ref velocity, smoothTime, deltaTime);
+            var delta = ((target - current + 540) % 360) - 180;
+            return WrapAngle(SmoothDamp(current, current + delta, ref velocity, smoothTime, deltaTime));
         }
 
         private static float WrapAngle(float angle) => ((angle % 360) + 360) % 360;
