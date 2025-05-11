@@ -57,20 +57,20 @@ namespace DVG
 
         public static float RotateTowards(float current, float target, float maxStep)
         {
-            current = ((current % 360) + 360) % 360;
-            target = ((target % 360) + 360) % 360;
-            var delta = ((target - current + 180) % 360 - 180);
-            var step = Clamp(delta, -maxStep, maxStep);
-            return current + step;
+            current = WrapAngle(current);
+            target = WrapAngle(target);
+            var delta = ((target - current + 540) % 360) - 180;
+            var rotation = Clamp(delta, -maxStep, maxStep);
+            return WrapAngle(current + rotation);
         }
 
         public static double RotateTowards(double current, double target, double maxStep)
         {
-            current = ((current % 360) + 360) % 360;
-            target = ((target % 360) + 360) % 360;
-            var delta = ((target - current + 180) % 360 - 180);
-            var step = Clamp(delta, -maxStep, maxStep);
-            return current + step;
+            current = WrapAngle(current);
+            target = WrapAngle(target);
+            var delta = ((target - current + 540) % 360) - 180;
+            var rotation = Clamp(delta, -maxStep, maxStep);
+            return WrapAngle(current + rotation);
         }
 
         public static float SmoothDampAngle(float current, float target, ref float velocity, float smoothTime, float deltaTime)
