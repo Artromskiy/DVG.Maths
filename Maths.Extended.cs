@@ -2,6 +2,13 @@
 {
     public partial class Maths
     {
+        public static float SmoothDampAngle(float source, float target, ref float velocity, float smoothTime, float deltaTime)
+        {
+            var delta = 180 - Maths.Abs(Maths.Abs(source - target) - 180);
+            target = source + delta;
+            return SmoothDamp(source, target, ref velocity, smoothTime, deltaTime);
+        }
+
         public static float SmoothDamp(float source, float target, ref float velocity, float smoothTime, float deltaTime)
         {
             float omega = 2f / smoothTime;
@@ -30,6 +37,13 @@
             double final = finalized ? target : target + move;
             velocity = finalized ? 0 : velocity;
             return final;
+        }
+
+        public static double SmoothDampAngle(double source, double target, ref double velocity, double smoothTime, double deltaTime)
+        {
+            var delta = 180 - Maths.Abs(Maths.Abs(source - target) - 180);
+            target = source + delta;
+            return SmoothDamp(source, target, ref velocity, smoothTime, deltaTime);
         }
 
         public static float InvLerp(float edge0, float edge1, float value) => (value - edge0) / (edge1 - edge0);
