@@ -2,6 +2,7 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Runtime.CompilerServices;
+using System.Runtime.Serialization;
 
 
 namespace DVG
@@ -12,6 +13,7 @@ namespace DVG
     /// </summary>
     [Serializable]
     [StructLayout(LayoutKind.Sequential)]
+    [DataContract]
     public partial struct int3 : IEquatable<int3>
     {
 
@@ -20,16 +22,19 @@ namespace DVG
         /// <summary>
         /// x-component
         /// </summary>
+        [DataMember(Order = 0)]
         public int x;
         
         /// <summary>
         /// y-component
         /// </summary>
+        [DataMember(Order = 1)]
         public int y;
         
         /// <summary>
         /// z-component
         /// </summary>
+        [DataMember(Order = 2)]
         public int z;
         
         /// <summary>
