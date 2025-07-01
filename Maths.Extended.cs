@@ -1,5 +1,4 @@
-﻿using System;
-
+﻿
 namespace DVG
 {
     public partial class Maths
@@ -13,9 +12,9 @@ namespace DVG
             float temp = (velocity * deltaTime) + (x * delta);
             velocity = (velocity - (omega * temp)) * exp;
             float move = (delta + temp) * exp;
-            bool finalized = Sign(-delta) == Sign(move);
-            float final = finalized ? target : target + move;
-            velocity = finalized ? 0 : velocity;
+            bool stillMoving = Sign(delta) == Sign(move);
+            float final = stillMoving ? target + move: target;
+            velocity = stillMoving ? velocity : 0;
             return final;
         }
 
@@ -28,9 +27,9 @@ namespace DVG
             double temp = (velocity * deltaTime) + (x * delta);
             velocity = (velocity - (omega * temp)) * exp;
             double move = (delta + temp) * exp;
-            bool finalized = Sign(-delta) == Sign(move);
-            double final = finalized ? target : target + move;
-            velocity = finalized ? 0 : velocity;
+            bool stillMoving = Sign(delta) == Sign(move);
+            double final = stillMoving ? target + move : target;
+            velocity = stillMoving ? velocity : 0;
             return final;
         }
 
