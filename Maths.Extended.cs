@@ -1,5 +1,4 @@
-﻿using System;
-using System.Runtime.CompilerServices;
+﻿using System.Runtime.CompilerServices;
 
 namespace DVG
 {
@@ -93,11 +92,6 @@ namespace DVG
             target = current + delta;
             return SmoothDamp(current, target, ref velocity, smoothTime, deltaTime);
         }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        private static float WrapAngle(float angle) => ((angle % 360) + 360) % 360;
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        private static double WrapAngle(double angle) => ((angle % 360) + 360) % 360;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float DeltaAngle(float current, float target)
