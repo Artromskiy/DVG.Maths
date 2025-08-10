@@ -4,27 +4,27 @@ using System.Globalization;
 
 namespace DVG
 {
-    public readonly partial struct fix : IEquatable<fix>, IComparable<fix>
+    public readonly struct fix : IEquatable<fix>, IComparable<fix>
     {
         internal readonly int _raw;
 
-        public static readonly fix MaxValue = new fix(int.MaxValue);
+        public static readonly fix One = new fix(0x00010000);
+        public static readonly fix Zero = new fix(0);
         public static readonly fix MinValue = new fix(int.MinValue);
+        public static readonly fix MaxValue = new fix(int.MaxValue);
 
         public static readonly fix Pi = new fix(205887);
         public static readonly fix E = new fix(178145);
-        public static readonly fix One = new fix(0x00010000);
-        public static readonly fix Zero = new fix(0);
 
         public static implicit operator fix(int a)
         {
             return new fix(a * One._raw);
         }
 
-        //public static implicit operator float(fix a)
-        //{
-        //    return (float)a._raw / One._raw;
-        //}
+        public static explicit operator float(fix a)
+        {
+            return (float)a._raw / One._raw;
+        }
 
         public static explicit operator double(fix a)
         {
@@ -51,7 +51,14 @@ namespace DVG
         public static explicit operator fix(double a)
         {
             var temp = a * One._raw;
-            temp += (temp >= 0) ? 0.5f : -0.5f;
+            temp += (temp >= 0) ? 0.5 : -0.5;
+            return new fix((int)temp);
+        }
+
+        public static explicit operator fix(decimal a)
+        {
+            var temp = a * One._raw;
+            temp += (temp >= 0) ? 0.5m : -0.5m;
             return new fix((int)temp);
         }
 
@@ -79,7 +86,6 @@ namespace DVG
 
         public static fix operator *(fix x, fix y)
         {
-
             var product = (long)x._raw * y._raw;
 
             // The upper 17 bits should all be the same (the sign).
@@ -92,10 +98,9 @@ namespace DVG
 
                 product--;
             }
-            else
+            else if (upper != 0)
             {
-                if (upper != 0)
-                    throw new OverflowException();
+                throw new OverflowException();
             }
 
             var result = product >> 16;
@@ -263,6 +268,7 @@ namespace DVG
         {
             return new fix((int)i);
         }
+        public int GetRaw() => _raw;
 
         private fix(int rawValue)
         {

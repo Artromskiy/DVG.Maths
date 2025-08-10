@@ -111,7 +111,6 @@ namespace DVG
         public static float Truncate(float x) => MathF.Truncate(x);
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static int Sign(float x) => MathF.Sign(x);
-
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double Abs(double value) => Math.Abs(value);
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

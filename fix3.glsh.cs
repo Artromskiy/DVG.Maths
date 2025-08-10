@@ -115,6 +115,31 @@ namespace DVG
         public static bool Equals(fix3 v, fix3 other) => v.Equals(other);
         
         public static bool Equals(fix3 v, object? obj) => v.Equals(obj);
+        
+        /// <summary>
+        /// Returns the square length of this vector.
+        /// </summary>
+        public static fix SqrLength(fix3 v) => fix3.SqrLength(v);
+        
+        /// <summary>
+        /// Returns the square distance between the two vectors.
+        /// </summary>
+        public static fix SqrDistance(fix3 lhs, fix3 rhs) => fix3.SqrDistance(lhs, rhs);
+        
+        /// <summary>
+        /// Returns a fix3 from component-wise application of InvLerp (Maths.InvLerp(edge0, edge1, v)).
+        /// </summary>
+        public static fix3 InvLerp(fix3 edge0, fix3 edge1, fix3 v) => fix3.InvLerp(edge0, edge1, v);
+        
+        /// <summary>
+        /// Returns this vector with length clamped to maxLength.
+        /// </summary>
+        public static fix3 ClampLength(fix3 value, fix maxLength) => fix3.ClampLength(value, maxLength);
+        
+        /// <summary>
+        /// Moves vector towards target.
+        /// </summary>
+        public static fix3 MoveTowards(fix3 current, fix3 target, fix maxDelta) => fix3.MoveTowards(current, target, maxDelta);
 
     }
 }

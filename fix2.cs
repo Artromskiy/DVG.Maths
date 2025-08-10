@@ -2023,6 +2023,42 @@ namespace DVG
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static fix2 Clamp(fix2 v, fix min, fix max) => new fix2(Maths.Clamp(v.x, min, max), Maths.Clamp(v.y, min, max));
+        
+        /// <summary>
+        /// Returns the square length of this vector.
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static fix SqrLength(fix2 v) => v.x * v.x + v.y * v.y;
+        
+        /// <summary>
+        /// Returns the square distance between the two vectors.
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static fix SqrDistance(fix2 lhs, fix2 rhs) => fix2.SqrLength(lhs - rhs);
+        
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static fix2 SmoothDamp(fix2 source, fix2 target, ref fix2 velocity, fix smoothTime, fix deltaTime) => new fix2(Maths.SmoothDamp(source.x, target.x, ref velocity.x, smoothTime, deltaTime), Maths.SmoothDamp(source.y, target.y, ref velocity.y, smoothTime, deltaTime));
+        
+        /// <summary>
+        /// Returns this vector with length clamped to maxLength.
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static fix2 ClampLength(fix2 value, fix maxLength)
+        {
+            var sqrLength = SqrLength(value);
+            if (sqrLength > maxLength * maxLength)
+            {
+                fix ratio = maxLength / Maths.Sqrt(sqrLength);
+                return new fix2(value.x * ratio, value.y * ratio);
+            }
+            return value;
+        }
+        
+        /// <summary>
+        /// Moves vector towards target.
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static fix2 MoveTowards(fix2 current, fix2 target, fix maxDelta) => new fix2(Maths.MoveTowards(current.x, target.x, maxDelta), Maths.MoveTowards(current.y, target.y, maxDelta));
 
         #endregion
 
@@ -2112,6 +2148,18 @@ namespace DVG
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static fix2 Mix(fix2 x, fix2 y, bool2 a) => new fix2(a.x ? y.x : x.x, a.y ? y.y : x.y);
+        
+        /// <summary>
+        /// Returns a fix2 from component-wise application of InvLerp (Maths.InvLerp(edge0, edge1, v)).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static fix2 InvLerp(fix2 edge0, fix2 edge1, fix2 v) => new fix2(Maths.InvLerp(edge0.x, edge1.x, v.x), Maths.InvLerp(edge0.y, edge1.y, v.y));
+        
+        /// <summary>
+        /// Returns a fix2 from component-wise application of InvLerp (Maths.InvLerp(edge0, edge1, v)).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static fix2 InvLerp(fix2 edge0, fix2 edge1, fix v) => new fix2(Maths.InvLerp(edge0.x, edge1.x, v), Maths.InvLerp(edge0.y, edge1.y, v));
 
         #endregion
 

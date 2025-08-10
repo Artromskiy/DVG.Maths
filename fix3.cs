@@ -5618,6 +5618,42 @@ namespace DVG
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static fix3 Clamp(fix3 v, fix min, fix max) => new fix3(Maths.Clamp(v.x, min, max), Maths.Clamp(v.y, min, max), Maths.Clamp(v.z, min, max));
+        
+        /// <summary>
+        /// Returns the square length of this vector.
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static fix SqrLength(fix3 v) => v.x * v.x + v.y * v.y + v.z * v.z;
+        
+        /// <summary>
+        /// Returns the square distance between the two vectors.
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static fix SqrDistance(fix3 lhs, fix3 rhs) => fix3.SqrLength(lhs - rhs);
+        
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static fix3 SmoothDamp(fix3 source, fix3 target, ref fix3 velocity, fix smoothTime, fix deltaTime) => new fix3(Maths.SmoothDamp(source.x, target.x, ref velocity.x, smoothTime, deltaTime), Maths.SmoothDamp(source.y, target.y, ref velocity.y, smoothTime, deltaTime), Maths.SmoothDamp(source.z, target.z, ref velocity.z, smoothTime, deltaTime));
+        
+        /// <summary>
+        /// Returns this vector with length clamped to maxLength.
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static fix3 ClampLength(fix3 value, fix maxLength)
+        {
+            var sqrLength = SqrLength(value);
+            if (sqrLength > maxLength * maxLength)
+            {
+                fix ratio = maxLength / Maths.Sqrt(sqrLength);
+                return new fix3(value.x * ratio, value.y * ratio, value.z * ratio);
+            }
+            return value;
+        }
+        
+        /// <summary>
+        /// Moves vector towards target.
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static fix3 MoveTowards(fix3 current, fix3 target, fix maxDelta) => new fix3(Maths.MoveTowards(current.x, target.x, maxDelta), Maths.MoveTowards(current.y, target.y, maxDelta), Maths.MoveTowards(current.z, target.z, maxDelta));
 
         #endregion
 
@@ -5707,6 +5743,18 @@ namespace DVG
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static fix3 Mix(fix3 x, fix3 y, bool3 a) => new fix3(a.x ? y.x : x.x, a.y ? y.y : x.y, a.z ? y.z : x.z);
+        
+        /// <summary>
+        /// Returns a fix3 from component-wise application of InvLerp (Maths.InvLerp(edge0, edge1, v)).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static fix3 InvLerp(fix3 edge0, fix3 edge1, fix3 v) => new fix3(Maths.InvLerp(edge0.x, edge1.x, v.x), Maths.InvLerp(edge0.y, edge1.y, v.y), Maths.InvLerp(edge0.z, edge1.z, v.z));
+        
+        /// <summary>
+        /// Returns a fix3 from component-wise application of InvLerp (Maths.InvLerp(edge0, edge1, v)).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static fix3 InvLerp(fix3 edge0, fix3 edge1, fix v) => new fix3(Maths.InvLerp(edge0.x, edge1.x, v), Maths.InvLerp(edge0.y, edge1.y, v), Maths.InvLerp(edge0.z, edge1.z, v));
 
         #endregion
 

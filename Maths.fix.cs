@@ -1,6 +1,4 @@
-﻿using System.Runtime.CompilerServices;
-
-namespace DVG
+﻿namespace DVG
 {
     public static partial class Maths
     {
@@ -11,6 +9,7 @@ namespace DVG
         {
             return x < 0 ? -1 : x > 0 ? 1 : 0;
         }
+
         public static fix Abs(fix x)
         {
             // branchless implementation, see http://www.strchr.com/optimized_abs_function
