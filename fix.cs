@@ -21,10 +21,10 @@ namespace DVG
             return new fix(a * One._raw);
         }
 
-        public static implicit operator float(fix a)
-        {
-            return (float)a._raw / One._raw;
-        }
+        //public static implicit operator float(fix a)
+        //{
+        //    return (float)a._raw / One._raw;
+        //}
 
         public static explicit operator double(fix a)
         {

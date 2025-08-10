@@ -13734,10 +13734,10 @@ namespace DVG
         public static double4 RoundEven(double4 v) => new double4(Maths.RoundEven(v.x), Maths.RoundEven(v.y), Maths.RoundEven(v.z), Maths.RoundEven(v.w));
         
         /// <summary>
-        /// Returns a double4 from component-wise application of Ceiling (Maths.Ceiling(v)).
+        /// Returns a double4 from component-wise application of Ceil (Maths.Ceil(v)).
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static double4 Ceiling(double4 v) => new double4(Maths.Ceiling(v.x), Maths.Ceiling(v.y), Maths.Ceiling(v.z), Maths.Ceiling(v.w));
+        public static double4 Ceil(double4 v) => new double4(Maths.Ceil(v.x), Maths.Ceil(v.y), Maths.Ceil(v.z), Maths.Ceil(v.w));
         
         /// <summary>
         /// Returns a double4 from component-wise application of Fract (v - Maths.Floor(v)).

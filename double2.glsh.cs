@@ -118,9 +118,9 @@ namespace DVG
         public static double2 RoundEven(double2 v) => double2.RoundEven(v);
         
         /// <summary>
-        /// Returns a double2 from component-wise application of Ceiling (Maths.Ceiling(v)).
+        /// Returns a double2 from component-wise application of Ceil (Maths.Ceil(v)).
         /// </summary>
-        public static double2 Ceiling(double2 v) => double2.Ceiling(v);
+        public static double2 Ceil(double2 v) => double2.Ceil(v);
         
         /// <summary>
         /// Returns a double2 from component-wise application of Fract (v - Maths.Floor(v)).

@@ -223,9 +223,9 @@ namespace DVG
         public static float3 RoundEven(float3 v) => float3.RoundEven(v);
         
         /// <summary>
-        /// Returns a float3 from component-wise application of Ceiling (Maths.Ceiling(v)).
+        /// Returns a float3 from component-wise application of Ceil (Maths.Ceil(v)).
         /// </summary>
-        public static float3 Ceiling(float3 v) => float3.Ceiling(v);
+        public static float3 Ceil(float3 v) => float3.Ceil(v);
         
         /// <summary>
         /// Returns a float3 from component-wise application of Fract (v - Maths.Floor(v)).

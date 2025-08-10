@@ -5876,10 +5876,10 @@ namespace DVG
         public static float3 RoundEven(float3 v) => new float3(Maths.RoundEven(v.x), Maths.RoundEven(v.y), Maths.RoundEven(v.z));
         
         /// <summary>
-        /// Returns a float3 from component-wise application of Ceiling (Maths.Ceiling(v)).
+        /// Returns a float3 from component-wise application of Ceil (Maths.Ceil(v)).
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float3 Ceiling(float3 v) => new float3(Maths.Ceiling(v.x), Maths.Ceiling(v.y), Maths.Ceiling(v.z));
+        public static float3 Ceil(float3 v) => new float3(Maths.Ceil(v.x), Maths.Ceil(v.y), Maths.Ceil(v.z));
         
         /// <summary>
         /// Returns a float3 from component-wise application of Fract (v - Maths.Floor(v)).

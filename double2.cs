@@ -2150,10 +2150,10 @@ namespace DVG
         public static double2 RoundEven(double2 v) => new double2(Maths.RoundEven(v.x), Maths.RoundEven(v.y));
         
         /// <summary>
-        /// Returns a double2 from component-wise application of Ceiling (Maths.Ceiling(v)).
+        /// Returns a double2 from component-wise application of Ceil (Maths.Ceil(v)).
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static double2 Ceiling(double2 v) => new double2(Maths.Ceiling(v.x), Maths.Ceiling(v.y));
+        public static double2 Ceil(double2 v) => new double2(Maths.Ceil(v.x), Maths.Ceil(v.y));
         
         /// <summary>
         /// Returns a double2 from component-wise application of Fract (v - Maths.Floor(v)).

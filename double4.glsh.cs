@@ -118,9 +118,9 @@ namespace DVG
         public static double4 RoundEven(double4 v) => double4.RoundEven(v);
         
         /// <summary>
-        /// Returns a double4 from component-wise application of Ceiling (Maths.Ceiling(v)).
+        /// Returns a double4 from component-wise application of Ceil (Maths.Ceil(v)).
         /// </summary>
-        public static double4 Ceiling(double4 v) => double4.Ceiling(v);
+        public static double4 Ceil(double4 v) => double4.Ceil(v);
         
         /// <summary>
         /// Returns a double4 from component-wise application of Fract (v - Maths.Floor(v)).

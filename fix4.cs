@@ -9,12 +9,12 @@ namespace DVG
 {
     
     /// <summary>
-    /// A vector of type float with 4 components.
+    /// A vector of type fix with 4 components.
     /// </summary>
     [Serializable]
     [StructLayout(LayoutKind.Sequential)]
     [DataContract]
-    public partial struct float4 : IEquatable<float4>
+    public partial struct fix4 : IEquatable<fix4>
     {
 
         #region Fields
@@ -23,25 +23,25 @@ namespace DVG
         /// x-component
         /// </summary>
         [DataMember(Order = 0)]
-        public float x;
+        public fix x;
         
         /// <summary>
         /// y-component
         /// </summary>
         [DataMember(Order = 1)]
-        public float y;
+        public fix y;
         
         /// <summary>
         /// z-component
         /// </summary>
         [DataMember(Order = 2)]
-        public float z;
+        public fix z;
         
         /// <summary>
         /// w-component
         /// </summary>
         [DataMember(Order = 3)]
-        public float w;
+        public fix w;
         
         /// <summary>
         /// Returns the number of components (4).
@@ -51,7 +51,7 @@ namespace DVG
         /// <summary>
         /// Returns new vector with every component set to default.
         /// </summary>
-        public static readonly float4 zero = new float4(0f, 0f, 0f, 0f);
+        public static readonly fix4 zero = new fix4(fix.Zero, fix.Zero, fix.Zero, fix.Zero);
 
         #endregion
 
@@ -62,7 +62,7 @@ namespace DVG
         /// Component-wise constructor
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public float4(float x, float y, float z, float w)
+        public fix4(fix x, fix y, fix z, fix w)
         {
             this.x = x;
             this.y = y;
@@ -74,7 +74,7 @@ namespace DVG
         /// all-same-value constructor
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public float4(float v)
+        public fix4(fix v)
         {
             this.x = v;
             this.y = v;
@@ -86,31 +86,31 @@ namespace DVG
         /// from-vector constructor (empty fields are zero/false)
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public float4(float2 v)
+        public fix4(fix2 v)
         {
             this.x = v.x;
             this.y = v.y;
-            this.z = 0f;
-            this.w = 0f;
+            this.z = fix.Zero;
+            this.w = fix.Zero;
         }
         
         /// <summary>
         /// from-vector-and-value constructor (empty fields are zero/false)
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public float4(float2 v, float z)
+        public fix4(fix2 v, fix z)
         {
             this.x = v.x;
             this.y = v.y;
             this.z = z;
-            this.w = 0f;
+            this.w = fix.Zero;
         }
         
         /// <summary>
         /// from-vector-and-value constructor
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public float4(float2 v, float z, float w)
+        public fix4(fix2 v, fix z, fix w)
         {
             this.x = v.x;
             this.y = v.y;
@@ -122,19 +122,19 @@ namespace DVG
         /// from-vector constructor (empty fields are zero/false)
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public float4(float3 v)
+        public fix4(fix3 v)
         {
             this.x = v.x;
             this.y = v.y;
             this.z = v.z;
-            this.w = 0f;
+            this.w = fix.Zero;
         }
         
         /// <summary>
         /// from-vector-and-value constructor
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public float4(float3 v, float w)
+        public fix4(fix3 v, fix w)
         {
             this.x = v.x;
             this.y = v.y;
@@ -146,7 +146,7 @@ namespace DVG
         /// from-vector constructor
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public float4(float4 v)
+        public fix4(fix4 v)
         {
             this.x = v.x;
             this.y = v.y;
@@ -157,23 +157,12 @@ namespace DVG
         #endregion
 
 
-        #region Implicit Operators
-        
-        /// <summary>
-        /// Implicitly converts this to a double4.
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static implicit operator double4(float4 v) => new double4((double)v.x, (double)v.y, (double)v.z, (double)v.w);
-
-        #endregion
-
-
         #region Indexer
         
         /// <summary>
         /// Gets/Sets a specific indexed component (a bit slower than direct access).
         /// </summary>
-        public float this[int index]
+        public fix this[int index]
         {
             get
             {
@@ -197,7 +186,7 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float r
+        public fix r
         {
             readonly get => x;
             set
@@ -209,7 +198,7 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float s
+        public fix s
         {
             readonly get => x;
             set
@@ -221,7 +210,7 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float g
+        public fix g
         {
             readonly get => y;
             set
@@ -233,7 +222,7 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float t
+        public fix t
         {
             readonly get => y;
             set
@@ -245,7 +234,7 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float b
+        public fix b
         {
             readonly get => z;
             set
@@ -257,7 +246,7 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float p
+        public fix p
         {
             readonly get => z;
             set
@@ -269,7 +258,7 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float a
+        public fix a
         {
             readonly get => w;
             set
@@ -281,7 +270,7 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float q
+        public fix q
         {
             readonly get => w;
             set
@@ -293,2904 +282,2904 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ___x => new float4(0f, 0f, 0f, x);
+        public readonly fix4 ___x => new fix4(fix.Zero, fix.Zero, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ___r => new float4(0f, 0f, 0f, x);
+        public readonly fix4 ___r => new fix4(fix.Zero, fix.Zero, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ___s => new float4(0f, 0f, 0f, x);
+        public readonly fix4 ___s => new fix4(fix.Zero, fix.Zero, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ___y => new float4(0f, 0f, 0f, y);
+        public readonly fix4 ___y => new fix4(fix.Zero, fix.Zero, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ___g => new float4(0f, 0f, 0f, y);
+        public readonly fix4 ___g => new fix4(fix.Zero, fix.Zero, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ___t => new float4(0f, 0f, 0f, y);
+        public readonly fix4 ___t => new fix4(fix.Zero, fix.Zero, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ___z => new float4(0f, 0f, 0f, z);
+        public readonly fix4 ___z => new fix4(fix.Zero, fix.Zero, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ___b => new float4(0f, 0f, 0f, z);
+        public readonly fix4 ___b => new fix4(fix.Zero, fix.Zero, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ___p => new float4(0f, 0f, 0f, z);
+        public readonly fix4 ___p => new fix4(fix.Zero, fix.Zero, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ___w => new float4(0f, 0f, 0f, w);
+        public readonly fix4 ___w => new fix4(fix.Zero, fix.Zero, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ___a => new float4(0f, 0f, 0f, w);
+        public readonly fix4 ___a => new fix4(fix.Zero, fix.Zero, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ___q => new float4(0f, 0f, 0f, w);
+        public readonly fix4 ___q => new fix4(fix.Zero, fix.Zero, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 __x_ => new float4(0f, 0f, x, 0f);
+        public readonly fix4 __x_ => new fix4(fix.Zero, fix.Zero, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 __r_ => new float4(0f, 0f, x, 0f);
+        public readonly fix4 __r_ => new fix4(fix.Zero, fix.Zero, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 __s_ => new float4(0f, 0f, x, 0f);
+        public readonly fix4 __s_ => new fix4(fix.Zero, fix.Zero, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 __xx => new float4(0f, 0f, x, x);
+        public readonly fix4 __xx => new fix4(fix.Zero, fix.Zero, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 __rr => new float4(0f, 0f, x, x);
+        public readonly fix4 __rr => new fix4(fix.Zero, fix.Zero, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 __ss => new float4(0f, 0f, x, x);
+        public readonly fix4 __ss => new fix4(fix.Zero, fix.Zero, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 __xy => new float4(0f, 0f, x, y);
+        public readonly fix4 __xy => new fix4(fix.Zero, fix.Zero, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 __rg => new float4(0f, 0f, x, y);
+        public readonly fix4 __rg => new fix4(fix.Zero, fix.Zero, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 __st => new float4(0f, 0f, x, y);
+        public readonly fix4 __st => new fix4(fix.Zero, fix.Zero, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 __xz => new float4(0f, 0f, x, z);
+        public readonly fix4 __xz => new fix4(fix.Zero, fix.Zero, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 __rb => new float4(0f, 0f, x, z);
+        public readonly fix4 __rb => new fix4(fix.Zero, fix.Zero, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 __sp => new float4(0f, 0f, x, z);
+        public readonly fix4 __sp => new fix4(fix.Zero, fix.Zero, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 __xw => new float4(0f, 0f, x, w);
+        public readonly fix4 __xw => new fix4(fix.Zero, fix.Zero, x, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 __ra => new float4(0f, 0f, x, w);
+        public readonly fix4 __ra => new fix4(fix.Zero, fix.Zero, x, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 __sq => new float4(0f, 0f, x, w);
+        public readonly fix4 __sq => new fix4(fix.Zero, fix.Zero, x, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 __y_ => new float4(0f, 0f, y, 0f);
+        public readonly fix4 __y_ => new fix4(fix.Zero, fix.Zero, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 __g_ => new float4(0f, 0f, y, 0f);
+        public readonly fix4 __g_ => new fix4(fix.Zero, fix.Zero, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 __t_ => new float4(0f, 0f, y, 0f);
+        public readonly fix4 __t_ => new fix4(fix.Zero, fix.Zero, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 __yx => new float4(0f, 0f, y, x);
+        public readonly fix4 __yx => new fix4(fix.Zero, fix.Zero, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 __gr => new float4(0f, 0f, y, x);
+        public readonly fix4 __gr => new fix4(fix.Zero, fix.Zero, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 __ts => new float4(0f, 0f, y, x);
+        public readonly fix4 __ts => new fix4(fix.Zero, fix.Zero, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 __yy => new float4(0f, 0f, y, y);
+        public readonly fix4 __yy => new fix4(fix.Zero, fix.Zero, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 __gg => new float4(0f, 0f, y, y);
+        public readonly fix4 __gg => new fix4(fix.Zero, fix.Zero, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 __tt => new float4(0f, 0f, y, y);
+        public readonly fix4 __tt => new fix4(fix.Zero, fix.Zero, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 __yz => new float4(0f, 0f, y, z);
+        public readonly fix4 __yz => new fix4(fix.Zero, fix.Zero, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 __gb => new float4(0f, 0f, y, z);
+        public readonly fix4 __gb => new fix4(fix.Zero, fix.Zero, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 __tp => new float4(0f, 0f, y, z);
+        public readonly fix4 __tp => new fix4(fix.Zero, fix.Zero, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 __yw => new float4(0f, 0f, y, w);
+        public readonly fix4 __yw => new fix4(fix.Zero, fix.Zero, y, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 __ga => new float4(0f, 0f, y, w);
+        public readonly fix4 __ga => new fix4(fix.Zero, fix.Zero, y, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 __tq => new float4(0f, 0f, y, w);
+        public readonly fix4 __tq => new fix4(fix.Zero, fix.Zero, y, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 __z_ => new float4(0f, 0f, z, 0f);
+        public readonly fix4 __z_ => new fix4(fix.Zero, fix.Zero, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 __b_ => new float4(0f, 0f, z, 0f);
+        public readonly fix4 __b_ => new fix4(fix.Zero, fix.Zero, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 __p_ => new float4(0f, 0f, z, 0f);
+        public readonly fix4 __p_ => new fix4(fix.Zero, fix.Zero, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 __zx => new float4(0f, 0f, z, x);
+        public readonly fix4 __zx => new fix4(fix.Zero, fix.Zero, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 __br => new float4(0f, 0f, z, x);
+        public readonly fix4 __br => new fix4(fix.Zero, fix.Zero, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 __ps => new float4(0f, 0f, z, x);
+        public readonly fix4 __ps => new fix4(fix.Zero, fix.Zero, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 __zy => new float4(0f, 0f, z, y);
+        public readonly fix4 __zy => new fix4(fix.Zero, fix.Zero, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 __bg => new float4(0f, 0f, z, y);
+        public readonly fix4 __bg => new fix4(fix.Zero, fix.Zero, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 __pt => new float4(0f, 0f, z, y);
+        public readonly fix4 __pt => new fix4(fix.Zero, fix.Zero, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 __zz => new float4(0f, 0f, z, z);
+        public readonly fix4 __zz => new fix4(fix.Zero, fix.Zero, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 __bb => new float4(0f, 0f, z, z);
+        public readonly fix4 __bb => new fix4(fix.Zero, fix.Zero, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 __pp => new float4(0f, 0f, z, z);
+        public readonly fix4 __pp => new fix4(fix.Zero, fix.Zero, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 __zw => new float4(0f, 0f, z, w);
+        public readonly fix4 __zw => new fix4(fix.Zero, fix.Zero, z, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 __ba => new float4(0f, 0f, z, w);
+        public readonly fix4 __ba => new fix4(fix.Zero, fix.Zero, z, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 __pq => new float4(0f, 0f, z, w);
+        public readonly fix4 __pq => new fix4(fix.Zero, fix.Zero, z, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 __w_ => new float4(0f, 0f, w, 0f);
+        public readonly fix4 __w_ => new fix4(fix.Zero, fix.Zero, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 __a_ => new float4(0f, 0f, w, 0f);
+        public readonly fix4 __a_ => new fix4(fix.Zero, fix.Zero, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 __q_ => new float4(0f, 0f, w, 0f);
+        public readonly fix4 __q_ => new fix4(fix.Zero, fix.Zero, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 __wx => new float4(0f, 0f, w, x);
+        public readonly fix4 __wx => new fix4(fix.Zero, fix.Zero, w, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 __ar => new float4(0f, 0f, w, x);
+        public readonly fix4 __ar => new fix4(fix.Zero, fix.Zero, w, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 __qs => new float4(0f, 0f, w, x);
+        public readonly fix4 __qs => new fix4(fix.Zero, fix.Zero, w, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 __wy => new float4(0f, 0f, w, y);
+        public readonly fix4 __wy => new fix4(fix.Zero, fix.Zero, w, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 __ag => new float4(0f, 0f, w, y);
+        public readonly fix4 __ag => new fix4(fix.Zero, fix.Zero, w, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 __qt => new float4(0f, 0f, w, y);
+        public readonly fix4 __qt => new fix4(fix.Zero, fix.Zero, w, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 __wz => new float4(0f, 0f, w, z);
+        public readonly fix4 __wz => new fix4(fix.Zero, fix.Zero, w, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 __ab => new float4(0f, 0f, w, z);
+        public readonly fix4 __ab => new fix4(fix.Zero, fix.Zero, w, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 __qp => new float4(0f, 0f, w, z);
+        public readonly fix4 __qp => new fix4(fix.Zero, fix.Zero, w, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 __ww => new float4(0f, 0f, w, w);
+        public readonly fix4 __ww => new fix4(fix.Zero, fix.Zero, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 __aa => new float4(0f, 0f, w, w);
+        public readonly fix4 __aa => new fix4(fix.Zero, fix.Zero, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 __qq => new float4(0f, 0f, w, w);
+        public readonly fix4 __qq => new fix4(fix.Zero, fix.Zero, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _x__ => new float4(0f, x, 0f, 0f);
+        public readonly fix4 _x__ => new fix4(fix.Zero, x, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _r__ => new float4(0f, x, 0f, 0f);
+        public readonly fix4 _r__ => new fix4(fix.Zero, x, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _s__ => new float4(0f, x, 0f, 0f);
+        public readonly fix4 _s__ => new fix4(fix.Zero, x, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _x_x => new float4(0f, x, 0f, x);
+        public readonly fix4 _x_x => new fix4(fix.Zero, x, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _r_r => new float4(0f, x, 0f, x);
+        public readonly fix4 _r_r => new fix4(fix.Zero, x, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _s_s => new float4(0f, x, 0f, x);
+        public readonly fix4 _s_s => new fix4(fix.Zero, x, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _x_y => new float4(0f, x, 0f, y);
+        public readonly fix4 _x_y => new fix4(fix.Zero, x, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _r_g => new float4(0f, x, 0f, y);
+        public readonly fix4 _r_g => new fix4(fix.Zero, x, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _s_t => new float4(0f, x, 0f, y);
+        public readonly fix4 _s_t => new fix4(fix.Zero, x, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _x_z => new float4(0f, x, 0f, z);
+        public readonly fix4 _x_z => new fix4(fix.Zero, x, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _r_b => new float4(0f, x, 0f, z);
+        public readonly fix4 _r_b => new fix4(fix.Zero, x, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _s_p => new float4(0f, x, 0f, z);
+        public readonly fix4 _s_p => new fix4(fix.Zero, x, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _x_w => new float4(0f, x, 0f, w);
+        public readonly fix4 _x_w => new fix4(fix.Zero, x, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _r_a => new float4(0f, x, 0f, w);
+        public readonly fix4 _r_a => new fix4(fix.Zero, x, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _s_q => new float4(0f, x, 0f, w);
+        public readonly fix4 _s_q => new fix4(fix.Zero, x, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _xx_ => new float4(0f, x, x, 0f);
+        public readonly fix4 _xx_ => new fix4(fix.Zero, x, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _rr_ => new float4(0f, x, x, 0f);
+        public readonly fix4 _rr_ => new fix4(fix.Zero, x, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _ss_ => new float4(0f, x, x, 0f);
+        public readonly fix4 _ss_ => new fix4(fix.Zero, x, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _xxx => new float4(0f, x, x, x);
+        public readonly fix4 _xxx => new fix4(fix.Zero, x, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _rrr => new float4(0f, x, x, x);
+        public readonly fix4 _rrr => new fix4(fix.Zero, x, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _sss => new float4(0f, x, x, x);
+        public readonly fix4 _sss => new fix4(fix.Zero, x, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _xxy => new float4(0f, x, x, y);
+        public readonly fix4 _xxy => new fix4(fix.Zero, x, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _rrg => new float4(0f, x, x, y);
+        public readonly fix4 _rrg => new fix4(fix.Zero, x, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _sst => new float4(0f, x, x, y);
+        public readonly fix4 _sst => new fix4(fix.Zero, x, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _xxz => new float4(0f, x, x, z);
+        public readonly fix4 _xxz => new fix4(fix.Zero, x, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _rrb => new float4(0f, x, x, z);
+        public readonly fix4 _rrb => new fix4(fix.Zero, x, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _ssp => new float4(0f, x, x, z);
+        public readonly fix4 _ssp => new fix4(fix.Zero, x, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _xxw => new float4(0f, x, x, w);
+        public readonly fix4 _xxw => new fix4(fix.Zero, x, x, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _rra => new float4(0f, x, x, w);
+        public readonly fix4 _rra => new fix4(fix.Zero, x, x, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _ssq => new float4(0f, x, x, w);
+        public readonly fix4 _ssq => new fix4(fix.Zero, x, x, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _xy_ => new float4(0f, x, y, 0f);
+        public readonly fix4 _xy_ => new fix4(fix.Zero, x, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _rg_ => new float4(0f, x, y, 0f);
+        public readonly fix4 _rg_ => new fix4(fix.Zero, x, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _st_ => new float4(0f, x, y, 0f);
+        public readonly fix4 _st_ => new fix4(fix.Zero, x, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _xyx => new float4(0f, x, y, x);
+        public readonly fix4 _xyx => new fix4(fix.Zero, x, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _rgr => new float4(0f, x, y, x);
+        public readonly fix4 _rgr => new fix4(fix.Zero, x, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _sts => new float4(0f, x, y, x);
+        public readonly fix4 _sts => new fix4(fix.Zero, x, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _xyy => new float4(0f, x, y, y);
+        public readonly fix4 _xyy => new fix4(fix.Zero, x, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _rgg => new float4(0f, x, y, y);
+        public readonly fix4 _rgg => new fix4(fix.Zero, x, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _stt => new float4(0f, x, y, y);
+        public readonly fix4 _stt => new fix4(fix.Zero, x, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _xyz => new float4(0f, x, y, z);
+        public readonly fix4 _xyz => new fix4(fix.Zero, x, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _rgb => new float4(0f, x, y, z);
+        public readonly fix4 _rgb => new fix4(fix.Zero, x, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _stp => new float4(0f, x, y, z);
+        public readonly fix4 _stp => new fix4(fix.Zero, x, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _xyw => new float4(0f, x, y, w);
+        public readonly fix4 _xyw => new fix4(fix.Zero, x, y, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _rga => new float4(0f, x, y, w);
+        public readonly fix4 _rga => new fix4(fix.Zero, x, y, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _stq => new float4(0f, x, y, w);
+        public readonly fix4 _stq => new fix4(fix.Zero, x, y, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _xz_ => new float4(0f, x, z, 0f);
+        public readonly fix4 _xz_ => new fix4(fix.Zero, x, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _rb_ => new float4(0f, x, z, 0f);
+        public readonly fix4 _rb_ => new fix4(fix.Zero, x, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _sp_ => new float4(0f, x, z, 0f);
+        public readonly fix4 _sp_ => new fix4(fix.Zero, x, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _xzx => new float4(0f, x, z, x);
+        public readonly fix4 _xzx => new fix4(fix.Zero, x, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _rbr => new float4(0f, x, z, x);
+        public readonly fix4 _rbr => new fix4(fix.Zero, x, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _sps => new float4(0f, x, z, x);
+        public readonly fix4 _sps => new fix4(fix.Zero, x, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _xzy => new float4(0f, x, z, y);
+        public readonly fix4 _xzy => new fix4(fix.Zero, x, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _rbg => new float4(0f, x, z, y);
+        public readonly fix4 _rbg => new fix4(fix.Zero, x, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _spt => new float4(0f, x, z, y);
+        public readonly fix4 _spt => new fix4(fix.Zero, x, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _xzz => new float4(0f, x, z, z);
+        public readonly fix4 _xzz => new fix4(fix.Zero, x, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _rbb => new float4(0f, x, z, z);
+        public readonly fix4 _rbb => new fix4(fix.Zero, x, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _spp => new float4(0f, x, z, z);
+        public readonly fix4 _spp => new fix4(fix.Zero, x, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _xzw => new float4(0f, x, z, w);
+        public readonly fix4 _xzw => new fix4(fix.Zero, x, z, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _rba => new float4(0f, x, z, w);
+        public readonly fix4 _rba => new fix4(fix.Zero, x, z, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _spq => new float4(0f, x, z, w);
+        public readonly fix4 _spq => new fix4(fix.Zero, x, z, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _xw_ => new float4(0f, x, w, 0f);
+        public readonly fix4 _xw_ => new fix4(fix.Zero, x, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _ra_ => new float4(0f, x, w, 0f);
+        public readonly fix4 _ra_ => new fix4(fix.Zero, x, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _sq_ => new float4(0f, x, w, 0f);
+        public readonly fix4 _sq_ => new fix4(fix.Zero, x, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _xwx => new float4(0f, x, w, x);
+        public readonly fix4 _xwx => new fix4(fix.Zero, x, w, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _rar => new float4(0f, x, w, x);
+        public readonly fix4 _rar => new fix4(fix.Zero, x, w, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _sqs => new float4(0f, x, w, x);
+        public readonly fix4 _sqs => new fix4(fix.Zero, x, w, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _xwy => new float4(0f, x, w, y);
+        public readonly fix4 _xwy => new fix4(fix.Zero, x, w, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _rag => new float4(0f, x, w, y);
+        public readonly fix4 _rag => new fix4(fix.Zero, x, w, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _sqt => new float4(0f, x, w, y);
+        public readonly fix4 _sqt => new fix4(fix.Zero, x, w, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _xwz => new float4(0f, x, w, z);
+        public readonly fix4 _xwz => new fix4(fix.Zero, x, w, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _rab => new float4(0f, x, w, z);
+        public readonly fix4 _rab => new fix4(fix.Zero, x, w, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _sqp => new float4(0f, x, w, z);
+        public readonly fix4 _sqp => new fix4(fix.Zero, x, w, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _xww => new float4(0f, x, w, w);
+        public readonly fix4 _xww => new fix4(fix.Zero, x, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _raa => new float4(0f, x, w, w);
+        public readonly fix4 _raa => new fix4(fix.Zero, x, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _sqq => new float4(0f, x, w, w);
+        public readonly fix4 _sqq => new fix4(fix.Zero, x, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _y__ => new float4(0f, y, 0f, 0f);
+        public readonly fix4 _y__ => new fix4(fix.Zero, y, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _g__ => new float4(0f, y, 0f, 0f);
+        public readonly fix4 _g__ => new fix4(fix.Zero, y, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _t__ => new float4(0f, y, 0f, 0f);
+        public readonly fix4 _t__ => new fix4(fix.Zero, y, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _y_x => new float4(0f, y, 0f, x);
+        public readonly fix4 _y_x => new fix4(fix.Zero, y, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _g_r => new float4(0f, y, 0f, x);
+        public readonly fix4 _g_r => new fix4(fix.Zero, y, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _t_s => new float4(0f, y, 0f, x);
+        public readonly fix4 _t_s => new fix4(fix.Zero, y, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _y_y => new float4(0f, y, 0f, y);
+        public readonly fix4 _y_y => new fix4(fix.Zero, y, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _g_g => new float4(0f, y, 0f, y);
+        public readonly fix4 _g_g => new fix4(fix.Zero, y, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _t_t => new float4(0f, y, 0f, y);
+        public readonly fix4 _t_t => new fix4(fix.Zero, y, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _y_z => new float4(0f, y, 0f, z);
+        public readonly fix4 _y_z => new fix4(fix.Zero, y, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _g_b => new float4(0f, y, 0f, z);
+        public readonly fix4 _g_b => new fix4(fix.Zero, y, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _t_p => new float4(0f, y, 0f, z);
+        public readonly fix4 _t_p => new fix4(fix.Zero, y, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _y_w => new float4(0f, y, 0f, w);
+        public readonly fix4 _y_w => new fix4(fix.Zero, y, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _g_a => new float4(0f, y, 0f, w);
+        public readonly fix4 _g_a => new fix4(fix.Zero, y, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _t_q => new float4(0f, y, 0f, w);
+        public readonly fix4 _t_q => new fix4(fix.Zero, y, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _yx_ => new float4(0f, y, x, 0f);
+        public readonly fix4 _yx_ => new fix4(fix.Zero, y, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _gr_ => new float4(0f, y, x, 0f);
+        public readonly fix4 _gr_ => new fix4(fix.Zero, y, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _ts_ => new float4(0f, y, x, 0f);
+        public readonly fix4 _ts_ => new fix4(fix.Zero, y, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _yxx => new float4(0f, y, x, x);
+        public readonly fix4 _yxx => new fix4(fix.Zero, y, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _grr => new float4(0f, y, x, x);
+        public readonly fix4 _grr => new fix4(fix.Zero, y, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _tss => new float4(0f, y, x, x);
+        public readonly fix4 _tss => new fix4(fix.Zero, y, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _yxy => new float4(0f, y, x, y);
+        public readonly fix4 _yxy => new fix4(fix.Zero, y, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _grg => new float4(0f, y, x, y);
+        public readonly fix4 _grg => new fix4(fix.Zero, y, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _tst => new float4(0f, y, x, y);
+        public readonly fix4 _tst => new fix4(fix.Zero, y, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _yxz => new float4(0f, y, x, z);
+        public readonly fix4 _yxz => new fix4(fix.Zero, y, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _grb => new float4(0f, y, x, z);
+        public readonly fix4 _grb => new fix4(fix.Zero, y, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _tsp => new float4(0f, y, x, z);
+        public readonly fix4 _tsp => new fix4(fix.Zero, y, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _yxw => new float4(0f, y, x, w);
+        public readonly fix4 _yxw => new fix4(fix.Zero, y, x, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _gra => new float4(0f, y, x, w);
+        public readonly fix4 _gra => new fix4(fix.Zero, y, x, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _tsq => new float4(0f, y, x, w);
+        public readonly fix4 _tsq => new fix4(fix.Zero, y, x, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _yy_ => new float4(0f, y, y, 0f);
+        public readonly fix4 _yy_ => new fix4(fix.Zero, y, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _gg_ => new float4(0f, y, y, 0f);
+        public readonly fix4 _gg_ => new fix4(fix.Zero, y, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _tt_ => new float4(0f, y, y, 0f);
+        public readonly fix4 _tt_ => new fix4(fix.Zero, y, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _yyx => new float4(0f, y, y, x);
+        public readonly fix4 _yyx => new fix4(fix.Zero, y, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _ggr => new float4(0f, y, y, x);
+        public readonly fix4 _ggr => new fix4(fix.Zero, y, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _tts => new float4(0f, y, y, x);
+        public readonly fix4 _tts => new fix4(fix.Zero, y, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _yyy => new float4(0f, y, y, y);
+        public readonly fix4 _yyy => new fix4(fix.Zero, y, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _ggg => new float4(0f, y, y, y);
+        public readonly fix4 _ggg => new fix4(fix.Zero, y, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _ttt => new float4(0f, y, y, y);
+        public readonly fix4 _ttt => new fix4(fix.Zero, y, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _yyz => new float4(0f, y, y, z);
+        public readonly fix4 _yyz => new fix4(fix.Zero, y, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _ggb => new float4(0f, y, y, z);
+        public readonly fix4 _ggb => new fix4(fix.Zero, y, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _ttp => new float4(0f, y, y, z);
+        public readonly fix4 _ttp => new fix4(fix.Zero, y, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _yyw => new float4(0f, y, y, w);
+        public readonly fix4 _yyw => new fix4(fix.Zero, y, y, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _gga => new float4(0f, y, y, w);
+        public readonly fix4 _gga => new fix4(fix.Zero, y, y, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _ttq => new float4(0f, y, y, w);
+        public readonly fix4 _ttq => new fix4(fix.Zero, y, y, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _yz_ => new float4(0f, y, z, 0f);
+        public readonly fix4 _yz_ => new fix4(fix.Zero, y, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _gb_ => new float4(0f, y, z, 0f);
+        public readonly fix4 _gb_ => new fix4(fix.Zero, y, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _tp_ => new float4(0f, y, z, 0f);
+        public readonly fix4 _tp_ => new fix4(fix.Zero, y, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _yzx => new float4(0f, y, z, x);
+        public readonly fix4 _yzx => new fix4(fix.Zero, y, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _gbr => new float4(0f, y, z, x);
+        public readonly fix4 _gbr => new fix4(fix.Zero, y, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _tps => new float4(0f, y, z, x);
+        public readonly fix4 _tps => new fix4(fix.Zero, y, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _yzy => new float4(0f, y, z, y);
+        public readonly fix4 _yzy => new fix4(fix.Zero, y, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _gbg => new float4(0f, y, z, y);
+        public readonly fix4 _gbg => new fix4(fix.Zero, y, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _tpt => new float4(0f, y, z, y);
+        public readonly fix4 _tpt => new fix4(fix.Zero, y, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _yzz => new float4(0f, y, z, z);
+        public readonly fix4 _yzz => new fix4(fix.Zero, y, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _gbb => new float4(0f, y, z, z);
+        public readonly fix4 _gbb => new fix4(fix.Zero, y, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _tpp => new float4(0f, y, z, z);
+        public readonly fix4 _tpp => new fix4(fix.Zero, y, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _yzw => new float4(0f, y, z, w);
+        public readonly fix4 _yzw => new fix4(fix.Zero, y, z, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _gba => new float4(0f, y, z, w);
+        public readonly fix4 _gba => new fix4(fix.Zero, y, z, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _tpq => new float4(0f, y, z, w);
+        public readonly fix4 _tpq => new fix4(fix.Zero, y, z, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _yw_ => new float4(0f, y, w, 0f);
+        public readonly fix4 _yw_ => new fix4(fix.Zero, y, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _ga_ => new float4(0f, y, w, 0f);
+        public readonly fix4 _ga_ => new fix4(fix.Zero, y, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _tq_ => new float4(0f, y, w, 0f);
+        public readonly fix4 _tq_ => new fix4(fix.Zero, y, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _ywx => new float4(0f, y, w, x);
+        public readonly fix4 _ywx => new fix4(fix.Zero, y, w, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _gar => new float4(0f, y, w, x);
+        public readonly fix4 _gar => new fix4(fix.Zero, y, w, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _tqs => new float4(0f, y, w, x);
+        public readonly fix4 _tqs => new fix4(fix.Zero, y, w, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _ywy => new float4(0f, y, w, y);
+        public readonly fix4 _ywy => new fix4(fix.Zero, y, w, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _gag => new float4(0f, y, w, y);
+        public readonly fix4 _gag => new fix4(fix.Zero, y, w, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _tqt => new float4(0f, y, w, y);
+        public readonly fix4 _tqt => new fix4(fix.Zero, y, w, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _ywz => new float4(0f, y, w, z);
+        public readonly fix4 _ywz => new fix4(fix.Zero, y, w, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _gab => new float4(0f, y, w, z);
+        public readonly fix4 _gab => new fix4(fix.Zero, y, w, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _tqp => new float4(0f, y, w, z);
+        public readonly fix4 _tqp => new fix4(fix.Zero, y, w, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _yww => new float4(0f, y, w, w);
+        public readonly fix4 _yww => new fix4(fix.Zero, y, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _gaa => new float4(0f, y, w, w);
+        public readonly fix4 _gaa => new fix4(fix.Zero, y, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _tqq => new float4(0f, y, w, w);
+        public readonly fix4 _tqq => new fix4(fix.Zero, y, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _z__ => new float4(0f, z, 0f, 0f);
+        public readonly fix4 _z__ => new fix4(fix.Zero, z, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _b__ => new float4(0f, z, 0f, 0f);
+        public readonly fix4 _b__ => new fix4(fix.Zero, z, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _p__ => new float4(0f, z, 0f, 0f);
+        public readonly fix4 _p__ => new fix4(fix.Zero, z, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _z_x => new float4(0f, z, 0f, x);
+        public readonly fix4 _z_x => new fix4(fix.Zero, z, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _b_r => new float4(0f, z, 0f, x);
+        public readonly fix4 _b_r => new fix4(fix.Zero, z, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _p_s => new float4(0f, z, 0f, x);
+        public readonly fix4 _p_s => new fix4(fix.Zero, z, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _z_y => new float4(0f, z, 0f, y);
+        public readonly fix4 _z_y => new fix4(fix.Zero, z, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _b_g => new float4(0f, z, 0f, y);
+        public readonly fix4 _b_g => new fix4(fix.Zero, z, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _p_t => new float4(0f, z, 0f, y);
+        public readonly fix4 _p_t => new fix4(fix.Zero, z, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _z_z => new float4(0f, z, 0f, z);
+        public readonly fix4 _z_z => new fix4(fix.Zero, z, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _b_b => new float4(0f, z, 0f, z);
+        public readonly fix4 _b_b => new fix4(fix.Zero, z, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _p_p => new float4(0f, z, 0f, z);
+        public readonly fix4 _p_p => new fix4(fix.Zero, z, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _z_w => new float4(0f, z, 0f, w);
+        public readonly fix4 _z_w => new fix4(fix.Zero, z, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _b_a => new float4(0f, z, 0f, w);
+        public readonly fix4 _b_a => new fix4(fix.Zero, z, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _p_q => new float4(0f, z, 0f, w);
+        public readonly fix4 _p_q => new fix4(fix.Zero, z, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _zx_ => new float4(0f, z, x, 0f);
+        public readonly fix4 _zx_ => new fix4(fix.Zero, z, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _br_ => new float4(0f, z, x, 0f);
+        public readonly fix4 _br_ => new fix4(fix.Zero, z, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _ps_ => new float4(0f, z, x, 0f);
+        public readonly fix4 _ps_ => new fix4(fix.Zero, z, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _zxx => new float4(0f, z, x, x);
+        public readonly fix4 _zxx => new fix4(fix.Zero, z, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _brr => new float4(0f, z, x, x);
+        public readonly fix4 _brr => new fix4(fix.Zero, z, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _pss => new float4(0f, z, x, x);
+        public readonly fix4 _pss => new fix4(fix.Zero, z, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _zxy => new float4(0f, z, x, y);
+        public readonly fix4 _zxy => new fix4(fix.Zero, z, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _brg => new float4(0f, z, x, y);
+        public readonly fix4 _brg => new fix4(fix.Zero, z, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _pst => new float4(0f, z, x, y);
+        public readonly fix4 _pst => new fix4(fix.Zero, z, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _zxz => new float4(0f, z, x, z);
+        public readonly fix4 _zxz => new fix4(fix.Zero, z, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _brb => new float4(0f, z, x, z);
+        public readonly fix4 _brb => new fix4(fix.Zero, z, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _psp => new float4(0f, z, x, z);
+        public readonly fix4 _psp => new fix4(fix.Zero, z, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _zxw => new float4(0f, z, x, w);
+        public readonly fix4 _zxw => new fix4(fix.Zero, z, x, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _bra => new float4(0f, z, x, w);
+        public readonly fix4 _bra => new fix4(fix.Zero, z, x, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _psq => new float4(0f, z, x, w);
+        public readonly fix4 _psq => new fix4(fix.Zero, z, x, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _zy_ => new float4(0f, z, y, 0f);
+        public readonly fix4 _zy_ => new fix4(fix.Zero, z, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _bg_ => new float4(0f, z, y, 0f);
+        public readonly fix4 _bg_ => new fix4(fix.Zero, z, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _pt_ => new float4(0f, z, y, 0f);
+        public readonly fix4 _pt_ => new fix4(fix.Zero, z, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _zyx => new float4(0f, z, y, x);
+        public readonly fix4 _zyx => new fix4(fix.Zero, z, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _bgr => new float4(0f, z, y, x);
+        public readonly fix4 _bgr => new fix4(fix.Zero, z, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _pts => new float4(0f, z, y, x);
+        public readonly fix4 _pts => new fix4(fix.Zero, z, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _zyy => new float4(0f, z, y, y);
+        public readonly fix4 _zyy => new fix4(fix.Zero, z, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _bgg => new float4(0f, z, y, y);
+        public readonly fix4 _bgg => new fix4(fix.Zero, z, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _ptt => new float4(0f, z, y, y);
+        public readonly fix4 _ptt => new fix4(fix.Zero, z, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _zyz => new float4(0f, z, y, z);
+        public readonly fix4 _zyz => new fix4(fix.Zero, z, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _bgb => new float4(0f, z, y, z);
+        public readonly fix4 _bgb => new fix4(fix.Zero, z, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _ptp => new float4(0f, z, y, z);
+        public readonly fix4 _ptp => new fix4(fix.Zero, z, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _zyw => new float4(0f, z, y, w);
+        public readonly fix4 _zyw => new fix4(fix.Zero, z, y, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _bga => new float4(0f, z, y, w);
+        public readonly fix4 _bga => new fix4(fix.Zero, z, y, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _ptq => new float4(0f, z, y, w);
+        public readonly fix4 _ptq => new fix4(fix.Zero, z, y, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _zz_ => new float4(0f, z, z, 0f);
+        public readonly fix4 _zz_ => new fix4(fix.Zero, z, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _bb_ => new float4(0f, z, z, 0f);
+        public readonly fix4 _bb_ => new fix4(fix.Zero, z, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _pp_ => new float4(0f, z, z, 0f);
+        public readonly fix4 _pp_ => new fix4(fix.Zero, z, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _zzx => new float4(0f, z, z, x);
+        public readonly fix4 _zzx => new fix4(fix.Zero, z, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _bbr => new float4(0f, z, z, x);
+        public readonly fix4 _bbr => new fix4(fix.Zero, z, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _pps => new float4(0f, z, z, x);
+        public readonly fix4 _pps => new fix4(fix.Zero, z, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _zzy => new float4(0f, z, z, y);
+        public readonly fix4 _zzy => new fix4(fix.Zero, z, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _bbg => new float4(0f, z, z, y);
+        public readonly fix4 _bbg => new fix4(fix.Zero, z, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _ppt => new float4(0f, z, z, y);
+        public readonly fix4 _ppt => new fix4(fix.Zero, z, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _zzz => new float4(0f, z, z, z);
+        public readonly fix4 _zzz => new fix4(fix.Zero, z, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _bbb => new float4(0f, z, z, z);
+        public readonly fix4 _bbb => new fix4(fix.Zero, z, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _ppp => new float4(0f, z, z, z);
+        public readonly fix4 _ppp => new fix4(fix.Zero, z, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _zzw => new float4(0f, z, z, w);
+        public readonly fix4 _zzw => new fix4(fix.Zero, z, z, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _bba => new float4(0f, z, z, w);
+        public readonly fix4 _bba => new fix4(fix.Zero, z, z, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _ppq => new float4(0f, z, z, w);
+        public readonly fix4 _ppq => new fix4(fix.Zero, z, z, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _zw_ => new float4(0f, z, w, 0f);
+        public readonly fix4 _zw_ => new fix4(fix.Zero, z, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _ba_ => new float4(0f, z, w, 0f);
+        public readonly fix4 _ba_ => new fix4(fix.Zero, z, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _pq_ => new float4(0f, z, w, 0f);
+        public readonly fix4 _pq_ => new fix4(fix.Zero, z, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _zwx => new float4(0f, z, w, x);
+        public readonly fix4 _zwx => new fix4(fix.Zero, z, w, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _bar => new float4(0f, z, w, x);
+        public readonly fix4 _bar => new fix4(fix.Zero, z, w, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _pqs => new float4(0f, z, w, x);
+        public readonly fix4 _pqs => new fix4(fix.Zero, z, w, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _zwy => new float4(0f, z, w, y);
+        public readonly fix4 _zwy => new fix4(fix.Zero, z, w, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _bag => new float4(0f, z, w, y);
+        public readonly fix4 _bag => new fix4(fix.Zero, z, w, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _pqt => new float4(0f, z, w, y);
+        public readonly fix4 _pqt => new fix4(fix.Zero, z, w, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _zwz => new float4(0f, z, w, z);
+        public readonly fix4 _zwz => new fix4(fix.Zero, z, w, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _bab => new float4(0f, z, w, z);
+        public readonly fix4 _bab => new fix4(fix.Zero, z, w, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _pqp => new float4(0f, z, w, z);
+        public readonly fix4 _pqp => new fix4(fix.Zero, z, w, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _zww => new float4(0f, z, w, w);
+        public readonly fix4 _zww => new fix4(fix.Zero, z, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _baa => new float4(0f, z, w, w);
+        public readonly fix4 _baa => new fix4(fix.Zero, z, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _pqq => new float4(0f, z, w, w);
+        public readonly fix4 _pqq => new fix4(fix.Zero, z, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _w__ => new float4(0f, w, 0f, 0f);
+        public readonly fix4 _w__ => new fix4(fix.Zero, w, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _a__ => new float4(0f, w, 0f, 0f);
+        public readonly fix4 _a__ => new fix4(fix.Zero, w, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _q__ => new float4(0f, w, 0f, 0f);
+        public readonly fix4 _q__ => new fix4(fix.Zero, w, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _w_x => new float4(0f, w, 0f, x);
+        public readonly fix4 _w_x => new fix4(fix.Zero, w, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _a_r => new float4(0f, w, 0f, x);
+        public readonly fix4 _a_r => new fix4(fix.Zero, w, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _q_s => new float4(0f, w, 0f, x);
+        public readonly fix4 _q_s => new fix4(fix.Zero, w, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _w_y => new float4(0f, w, 0f, y);
+        public readonly fix4 _w_y => new fix4(fix.Zero, w, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _a_g => new float4(0f, w, 0f, y);
+        public readonly fix4 _a_g => new fix4(fix.Zero, w, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _q_t => new float4(0f, w, 0f, y);
+        public readonly fix4 _q_t => new fix4(fix.Zero, w, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _w_z => new float4(0f, w, 0f, z);
+        public readonly fix4 _w_z => new fix4(fix.Zero, w, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _a_b => new float4(0f, w, 0f, z);
+        public readonly fix4 _a_b => new fix4(fix.Zero, w, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _q_p => new float4(0f, w, 0f, z);
+        public readonly fix4 _q_p => new fix4(fix.Zero, w, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _w_w => new float4(0f, w, 0f, w);
+        public readonly fix4 _w_w => new fix4(fix.Zero, w, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _a_a => new float4(0f, w, 0f, w);
+        public readonly fix4 _a_a => new fix4(fix.Zero, w, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _q_q => new float4(0f, w, 0f, w);
+        public readonly fix4 _q_q => new fix4(fix.Zero, w, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _wx_ => new float4(0f, w, x, 0f);
+        public readonly fix4 _wx_ => new fix4(fix.Zero, w, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _ar_ => new float4(0f, w, x, 0f);
+        public readonly fix4 _ar_ => new fix4(fix.Zero, w, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _qs_ => new float4(0f, w, x, 0f);
+        public readonly fix4 _qs_ => new fix4(fix.Zero, w, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _wxx => new float4(0f, w, x, x);
+        public readonly fix4 _wxx => new fix4(fix.Zero, w, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _arr => new float4(0f, w, x, x);
+        public readonly fix4 _arr => new fix4(fix.Zero, w, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _qss => new float4(0f, w, x, x);
+        public readonly fix4 _qss => new fix4(fix.Zero, w, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _wxy => new float4(0f, w, x, y);
+        public readonly fix4 _wxy => new fix4(fix.Zero, w, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _arg => new float4(0f, w, x, y);
+        public readonly fix4 _arg => new fix4(fix.Zero, w, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _qst => new float4(0f, w, x, y);
+        public readonly fix4 _qst => new fix4(fix.Zero, w, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _wxz => new float4(0f, w, x, z);
+        public readonly fix4 _wxz => new fix4(fix.Zero, w, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _arb => new float4(0f, w, x, z);
+        public readonly fix4 _arb => new fix4(fix.Zero, w, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _qsp => new float4(0f, w, x, z);
+        public readonly fix4 _qsp => new fix4(fix.Zero, w, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _wxw => new float4(0f, w, x, w);
+        public readonly fix4 _wxw => new fix4(fix.Zero, w, x, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _ara => new float4(0f, w, x, w);
+        public readonly fix4 _ara => new fix4(fix.Zero, w, x, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _qsq => new float4(0f, w, x, w);
+        public readonly fix4 _qsq => new fix4(fix.Zero, w, x, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _wy_ => new float4(0f, w, y, 0f);
+        public readonly fix4 _wy_ => new fix4(fix.Zero, w, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _ag_ => new float4(0f, w, y, 0f);
+        public readonly fix4 _ag_ => new fix4(fix.Zero, w, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _qt_ => new float4(0f, w, y, 0f);
+        public readonly fix4 _qt_ => new fix4(fix.Zero, w, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _wyx => new float4(0f, w, y, x);
+        public readonly fix4 _wyx => new fix4(fix.Zero, w, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _agr => new float4(0f, w, y, x);
+        public readonly fix4 _agr => new fix4(fix.Zero, w, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _qts => new float4(0f, w, y, x);
+        public readonly fix4 _qts => new fix4(fix.Zero, w, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _wyy => new float4(0f, w, y, y);
+        public readonly fix4 _wyy => new fix4(fix.Zero, w, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _agg => new float4(0f, w, y, y);
+        public readonly fix4 _agg => new fix4(fix.Zero, w, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _qtt => new float4(0f, w, y, y);
+        public readonly fix4 _qtt => new fix4(fix.Zero, w, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _wyz => new float4(0f, w, y, z);
+        public readonly fix4 _wyz => new fix4(fix.Zero, w, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _agb => new float4(0f, w, y, z);
+        public readonly fix4 _agb => new fix4(fix.Zero, w, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _qtp => new float4(0f, w, y, z);
+        public readonly fix4 _qtp => new fix4(fix.Zero, w, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _wyw => new float4(0f, w, y, w);
+        public readonly fix4 _wyw => new fix4(fix.Zero, w, y, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _aga => new float4(0f, w, y, w);
+        public readonly fix4 _aga => new fix4(fix.Zero, w, y, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _qtq => new float4(0f, w, y, w);
+        public readonly fix4 _qtq => new fix4(fix.Zero, w, y, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _wz_ => new float4(0f, w, z, 0f);
+        public readonly fix4 _wz_ => new fix4(fix.Zero, w, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _ab_ => new float4(0f, w, z, 0f);
+        public readonly fix4 _ab_ => new fix4(fix.Zero, w, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _qp_ => new float4(0f, w, z, 0f);
+        public readonly fix4 _qp_ => new fix4(fix.Zero, w, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _wzx => new float4(0f, w, z, x);
+        public readonly fix4 _wzx => new fix4(fix.Zero, w, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _abr => new float4(0f, w, z, x);
+        public readonly fix4 _abr => new fix4(fix.Zero, w, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _qps => new float4(0f, w, z, x);
+        public readonly fix4 _qps => new fix4(fix.Zero, w, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _wzy => new float4(0f, w, z, y);
+        public readonly fix4 _wzy => new fix4(fix.Zero, w, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _abg => new float4(0f, w, z, y);
+        public readonly fix4 _abg => new fix4(fix.Zero, w, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _qpt => new float4(0f, w, z, y);
+        public readonly fix4 _qpt => new fix4(fix.Zero, w, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _wzz => new float4(0f, w, z, z);
+        public readonly fix4 _wzz => new fix4(fix.Zero, w, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _abb => new float4(0f, w, z, z);
+        public readonly fix4 _abb => new fix4(fix.Zero, w, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _qpp => new float4(0f, w, z, z);
+        public readonly fix4 _qpp => new fix4(fix.Zero, w, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _wzw => new float4(0f, w, z, w);
+        public readonly fix4 _wzw => new fix4(fix.Zero, w, z, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _aba => new float4(0f, w, z, w);
+        public readonly fix4 _aba => new fix4(fix.Zero, w, z, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _qpq => new float4(0f, w, z, w);
+        public readonly fix4 _qpq => new fix4(fix.Zero, w, z, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _ww_ => new float4(0f, w, w, 0f);
+        public readonly fix4 _ww_ => new fix4(fix.Zero, w, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _aa_ => new float4(0f, w, w, 0f);
+        public readonly fix4 _aa_ => new fix4(fix.Zero, w, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _qq_ => new float4(0f, w, w, 0f);
+        public readonly fix4 _qq_ => new fix4(fix.Zero, w, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _wwx => new float4(0f, w, w, x);
+        public readonly fix4 _wwx => new fix4(fix.Zero, w, w, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _aar => new float4(0f, w, w, x);
+        public readonly fix4 _aar => new fix4(fix.Zero, w, w, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _qqs => new float4(0f, w, w, x);
+        public readonly fix4 _qqs => new fix4(fix.Zero, w, w, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _wwy => new float4(0f, w, w, y);
+        public readonly fix4 _wwy => new fix4(fix.Zero, w, w, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _aag => new float4(0f, w, w, y);
+        public readonly fix4 _aag => new fix4(fix.Zero, w, w, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _qqt => new float4(0f, w, w, y);
+        public readonly fix4 _qqt => new fix4(fix.Zero, w, w, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _wwz => new float4(0f, w, w, z);
+        public readonly fix4 _wwz => new fix4(fix.Zero, w, w, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _aab => new float4(0f, w, w, z);
+        public readonly fix4 _aab => new fix4(fix.Zero, w, w, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _qqp => new float4(0f, w, w, z);
+        public readonly fix4 _qqp => new fix4(fix.Zero, w, w, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _www => new float4(0f, w, w, w);
+        public readonly fix4 _www => new fix4(fix.Zero, w, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _aaa => new float4(0f, w, w, w);
+        public readonly fix4 _aaa => new fix4(fix.Zero, w, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 _qqq => new float4(0f, w, w, w);
+        public readonly fix4 _qqq => new fix4(fix.Zero, w, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 x___ => new float4(x, 0f, 0f, 0f);
+        public readonly fix4 x___ => new fix4(x, fix.Zero, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 r___ => new float4(x, 0f, 0f, 0f);
+        public readonly fix4 r___ => new fix4(x, fix.Zero, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 s___ => new float4(x, 0f, 0f, 0f);
+        public readonly fix4 s___ => new fix4(x, fix.Zero, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 x__x => new float4(x, 0f, 0f, x);
+        public readonly fix4 x__x => new fix4(x, fix.Zero, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 r__r => new float4(x, 0f, 0f, x);
+        public readonly fix4 r__r => new fix4(x, fix.Zero, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 s__s => new float4(x, 0f, 0f, x);
+        public readonly fix4 s__s => new fix4(x, fix.Zero, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 x__y => new float4(x, 0f, 0f, y);
+        public readonly fix4 x__y => new fix4(x, fix.Zero, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 r__g => new float4(x, 0f, 0f, y);
+        public readonly fix4 r__g => new fix4(x, fix.Zero, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 s__t => new float4(x, 0f, 0f, y);
+        public readonly fix4 s__t => new fix4(x, fix.Zero, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 x__z => new float4(x, 0f, 0f, z);
+        public readonly fix4 x__z => new fix4(x, fix.Zero, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 r__b => new float4(x, 0f, 0f, z);
+        public readonly fix4 r__b => new fix4(x, fix.Zero, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 s__p => new float4(x, 0f, 0f, z);
+        public readonly fix4 s__p => new fix4(x, fix.Zero, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 x__w => new float4(x, 0f, 0f, w);
+        public readonly fix4 x__w => new fix4(x, fix.Zero, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 r__a => new float4(x, 0f, 0f, w);
+        public readonly fix4 r__a => new fix4(x, fix.Zero, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 s__q => new float4(x, 0f, 0f, w);
+        public readonly fix4 s__q => new fix4(x, fix.Zero, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 x_x_ => new float4(x, 0f, x, 0f);
+        public readonly fix4 x_x_ => new fix4(x, fix.Zero, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 r_r_ => new float4(x, 0f, x, 0f);
+        public readonly fix4 r_r_ => new fix4(x, fix.Zero, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 s_s_ => new float4(x, 0f, x, 0f);
+        public readonly fix4 s_s_ => new fix4(x, fix.Zero, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 x_xx => new float4(x, 0f, x, x);
+        public readonly fix4 x_xx => new fix4(x, fix.Zero, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 r_rr => new float4(x, 0f, x, x);
+        public readonly fix4 r_rr => new fix4(x, fix.Zero, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 s_ss => new float4(x, 0f, x, x);
+        public readonly fix4 s_ss => new fix4(x, fix.Zero, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 x_xy => new float4(x, 0f, x, y);
+        public readonly fix4 x_xy => new fix4(x, fix.Zero, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 r_rg => new float4(x, 0f, x, y);
+        public readonly fix4 r_rg => new fix4(x, fix.Zero, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 s_st => new float4(x, 0f, x, y);
+        public readonly fix4 s_st => new fix4(x, fix.Zero, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 x_xz => new float4(x, 0f, x, z);
+        public readonly fix4 x_xz => new fix4(x, fix.Zero, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 r_rb => new float4(x, 0f, x, z);
+        public readonly fix4 r_rb => new fix4(x, fix.Zero, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 s_sp => new float4(x, 0f, x, z);
+        public readonly fix4 s_sp => new fix4(x, fix.Zero, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 x_xw => new float4(x, 0f, x, w);
+        public readonly fix4 x_xw => new fix4(x, fix.Zero, x, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 r_ra => new float4(x, 0f, x, w);
+        public readonly fix4 r_ra => new fix4(x, fix.Zero, x, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 s_sq => new float4(x, 0f, x, w);
+        public readonly fix4 s_sq => new fix4(x, fix.Zero, x, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 x_y_ => new float4(x, 0f, y, 0f);
+        public readonly fix4 x_y_ => new fix4(x, fix.Zero, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 r_g_ => new float4(x, 0f, y, 0f);
+        public readonly fix4 r_g_ => new fix4(x, fix.Zero, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 s_t_ => new float4(x, 0f, y, 0f);
+        public readonly fix4 s_t_ => new fix4(x, fix.Zero, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 x_yx => new float4(x, 0f, y, x);
+        public readonly fix4 x_yx => new fix4(x, fix.Zero, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 r_gr => new float4(x, 0f, y, x);
+        public readonly fix4 r_gr => new fix4(x, fix.Zero, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 s_ts => new float4(x, 0f, y, x);
+        public readonly fix4 s_ts => new fix4(x, fix.Zero, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 x_yy => new float4(x, 0f, y, y);
+        public readonly fix4 x_yy => new fix4(x, fix.Zero, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 r_gg => new float4(x, 0f, y, y);
+        public readonly fix4 r_gg => new fix4(x, fix.Zero, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 s_tt => new float4(x, 0f, y, y);
+        public readonly fix4 s_tt => new fix4(x, fix.Zero, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 x_yz => new float4(x, 0f, y, z);
+        public readonly fix4 x_yz => new fix4(x, fix.Zero, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 r_gb => new float4(x, 0f, y, z);
+        public readonly fix4 r_gb => new fix4(x, fix.Zero, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 s_tp => new float4(x, 0f, y, z);
+        public readonly fix4 s_tp => new fix4(x, fix.Zero, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 x_yw => new float4(x, 0f, y, w);
+        public readonly fix4 x_yw => new fix4(x, fix.Zero, y, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 r_ga => new float4(x, 0f, y, w);
+        public readonly fix4 r_ga => new fix4(x, fix.Zero, y, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 s_tq => new float4(x, 0f, y, w);
+        public readonly fix4 s_tq => new fix4(x, fix.Zero, y, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 x_z_ => new float4(x, 0f, z, 0f);
+        public readonly fix4 x_z_ => new fix4(x, fix.Zero, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 r_b_ => new float4(x, 0f, z, 0f);
+        public readonly fix4 r_b_ => new fix4(x, fix.Zero, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 s_p_ => new float4(x, 0f, z, 0f);
+        public readonly fix4 s_p_ => new fix4(x, fix.Zero, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 x_zx => new float4(x, 0f, z, x);
+        public readonly fix4 x_zx => new fix4(x, fix.Zero, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 r_br => new float4(x, 0f, z, x);
+        public readonly fix4 r_br => new fix4(x, fix.Zero, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 s_ps => new float4(x, 0f, z, x);
+        public readonly fix4 s_ps => new fix4(x, fix.Zero, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 x_zy => new float4(x, 0f, z, y);
+        public readonly fix4 x_zy => new fix4(x, fix.Zero, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 r_bg => new float4(x, 0f, z, y);
+        public readonly fix4 r_bg => new fix4(x, fix.Zero, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 s_pt => new float4(x, 0f, z, y);
+        public readonly fix4 s_pt => new fix4(x, fix.Zero, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 x_zz => new float4(x, 0f, z, z);
+        public readonly fix4 x_zz => new fix4(x, fix.Zero, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 r_bb => new float4(x, 0f, z, z);
+        public readonly fix4 r_bb => new fix4(x, fix.Zero, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 s_pp => new float4(x, 0f, z, z);
+        public readonly fix4 s_pp => new fix4(x, fix.Zero, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 x_zw => new float4(x, 0f, z, w);
+        public readonly fix4 x_zw => new fix4(x, fix.Zero, z, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 r_ba => new float4(x, 0f, z, w);
+        public readonly fix4 r_ba => new fix4(x, fix.Zero, z, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 s_pq => new float4(x, 0f, z, w);
+        public readonly fix4 s_pq => new fix4(x, fix.Zero, z, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 x_w_ => new float4(x, 0f, w, 0f);
+        public readonly fix4 x_w_ => new fix4(x, fix.Zero, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 r_a_ => new float4(x, 0f, w, 0f);
+        public readonly fix4 r_a_ => new fix4(x, fix.Zero, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 s_q_ => new float4(x, 0f, w, 0f);
+        public readonly fix4 s_q_ => new fix4(x, fix.Zero, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 x_wx => new float4(x, 0f, w, x);
+        public readonly fix4 x_wx => new fix4(x, fix.Zero, w, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 r_ar => new float4(x, 0f, w, x);
+        public readonly fix4 r_ar => new fix4(x, fix.Zero, w, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 s_qs => new float4(x, 0f, w, x);
+        public readonly fix4 s_qs => new fix4(x, fix.Zero, w, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 x_wy => new float4(x, 0f, w, y);
+        public readonly fix4 x_wy => new fix4(x, fix.Zero, w, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 r_ag => new float4(x, 0f, w, y);
+        public readonly fix4 r_ag => new fix4(x, fix.Zero, w, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 s_qt => new float4(x, 0f, w, y);
+        public readonly fix4 s_qt => new fix4(x, fix.Zero, w, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 x_wz => new float4(x, 0f, w, z);
+        public readonly fix4 x_wz => new fix4(x, fix.Zero, w, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 r_ab => new float4(x, 0f, w, z);
+        public readonly fix4 r_ab => new fix4(x, fix.Zero, w, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 s_qp => new float4(x, 0f, w, z);
+        public readonly fix4 s_qp => new fix4(x, fix.Zero, w, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 x_ww => new float4(x, 0f, w, w);
+        public readonly fix4 x_ww => new fix4(x, fix.Zero, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 r_aa => new float4(x, 0f, w, w);
+        public readonly fix4 r_aa => new fix4(x, fix.Zero, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 s_qq => new float4(x, 0f, w, w);
+        public readonly fix4 s_qq => new fix4(x, fix.Zero, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xx__ => new float4(x, x, 0f, 0f);
+        public readonly fix4 xx__ => new fix4(x, x, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 rr__ => new float4(x, x, 0f, 0f);
+        public readonly fix4 rr__ => new fix4(x, x, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ss__ => new float4(x, x, 0f, 0f);
+        public readonly fix4 ss__ => new fix4(x, x, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xx_x => new float4(x, x, 0f, x);
+        public readonly fix4 xx_x => new fix4(x, x, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 rr_r => new float4(x, x, 0f, x);
+        public readonly fix4 rr_r => new fix4(x, x, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ss_s => new float4(x, x, 0f, x);
+        public readonly fix4 ss_s => new fix4(x, x, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xx_y => new float4(x, x, 0f, y);
+        public readonly fix4 xx_y => new fix4(x, x, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 rr_g => new float4(x, x, 0f, y);
+        public readonly fix4 rr_g => new fix4(x, x, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ss_t => new float4(x, x, 0f, y);
+        public readonly fix4 ss_t => new fix4(x, x, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xx_z => new float4(x, x, 0f, z);
+        public readonly fix4 xx_z => new fix4(x, x, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 rr_b => new float4(x, x, 0f, z);
+        public readonly fix4 rr_b => new fix4(x, x, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ss_p => new float4(x, x, 0f, z);
+        public readonly fix4 ss_p => new fix4(x, x, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xx_w => new float4(x, x, 0f, w);
+        public readonly fix4 xx_w => new fix4(x, x, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 rr_a => new float4(x, x, 0f, w);
+        public readonly fix4 rr_a => new fix4(x, x, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ss_q => new float4(x, x, 0f, w);
+        public readonly fix4 ss_q => new fix4(x, x, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xxx_ => new float4(x, x, x, 0f);
+        public readonly fix4 xxx_ => new fix4(x, x, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 rrr_ => new float4(x, x, x, 0f);
+        public readonly fix4 rrr_ => new fix4(x, x, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 sss_ => new float4(x, x, x, 0f);
+        public readonly fix4 sss_ => new fix4(x, x, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xxxx => new float4(x, x, x, x);
+        public readonly fix4 xxxx => new fix4(x, x, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 rrrr => new float4(x, x, x, x);
+        public readonly fix4 rrrr => new fix4(x, x, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ssss => new float4(x, x, x, x);
+        public readonly fix4 ssss => new fix4(x, x, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xxxy => new float4(x, x, x, y);
+        public readonly fix4 xxxy => new fix4(x, x, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 rrrg => new float4(x, x, x, y);
+        public readonly fix4 rrrg => new fix4(x, x, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ssst => new float4(x, x, x, y);
+        public readonly fix4 ssst => new fix4(x, x, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xxxz => new float4(x, x, x, z);
+        public readonly fix4 xxxz => new fix4(x, x, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 rrrb => new float4(x, x, x, z);
+        public readonly fix4 rrrb => new fix4(x, x, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 sssp => new float4(x, x, x, z);
+        public readonly fix4 sssp => new fix4(x, x, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xxxw => new float4(x, x, x, w);
+        public readonly fix4 xxxw => new fix4(x, x, x, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 rrra => new float4(x, x, x, w);
+        public readonly fix4 rrra => new fix4(x, x, x, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 sssq => new float4(x, x, x, w);
+        public readonly fix4 sssq => new fix4(x, x, x, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xxy_ => new float4(x, x, y, 0f);
+        public readonly fix4 xxy_ => new fix4(x, x, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 rrg_ => new float4(x, x, y, 0f);
+        public readonly fix4 rrg_ => new fix4(x, x, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 sst_ => new float4(x, x, y, 0f);
+        public readonly fix4 sst_ => new fix4(x, x, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xxyx => new float4(x, x, y, x);
+        public readonly fix4 xxyx => new fix4(x, x, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 rrgr => new float4(x, x, y, x);
+        public readonly fix4 rrgr => new fix4(x, x, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ssts => new float4(x, x, y, x);
+        public readonly fix4 ssts => new fix4(x, x, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xxyy => new float4(x, x, y, y);
+        public readonly fix4 xxyy => new fix4(x, x, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 rrgg => new float4(x, x, y, y);
+        public readonly fix4 rrgg => new fix4(x, x, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 sstt => new float4(x, x, y, y);
+        public readonly fix4 sstt => new fix4(x, x, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xxyz => new float4(x, x, y, z);
+        public readonly fix4 xxyz => new fix4(x, x, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 rrgb => new float4(x, x, y, z);
+        public readonly fix4 rrgb => new fix4(x, x, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 sstp => new float4(x, x, y, z);
+        public readonly fix4 sstp => new fix4(x, x, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xxyw => new float4(x, x, y, w);
+        public readonly fix4 xxyw => new fix4(x, x, y, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 rrga => new float4(x, x, y, w);
+        public readonly fix4 rrga => new fix4(x, x, y, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 sstq => new float4(x, x, y, w);
+        public readonly fix4 sstq => new fix4(x, x, y, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xxz_ => new float4(x, x, z, 0f);
+        public readonly fix4 xxz_ => new fix4(x, x, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 rrb_ => new float4(x, x, z, 0f);
+        public readonly fix4 rrb_ => new fix4(x, x, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ssp_ => new float4(x, x, z, 0f);
+        public readonly fix4 ssp_ => new fix4(x, x, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xxzx => new float4(x, x, z, x);
+        public readonly fix4 xxzx => new fix4(x, x, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 rrbr => new float4(x, x, z, x);
+        public readonly fix4 rrbr => new fix4(x, x, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ssps => new float4(x, x, z, x);
+        public readonly fix4 ssps => new fix4(x, x, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xxzy => new float4(x, x, z, y);
+        public readonly fix4 xxzy => new fix4(x, x, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 rrbg => new float4(x, x, z, y);
+        public readonly fix4 rrbg => new fix4(x, x, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 sspt => new float4(x, x, z, y);
+        public readonly fix4 sspt => new fix4(x, x, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xxzz => new float4(x, x, z, z);
+        public readonly fix4 xxzz => new fix4(x, x, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 rrbb => new float4(x, x, z, z);
+        public readonly fix4 rrbb => new fix4(x, x, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 sspp => new float4(x, x, z, z);
+        public readonly fix4 sspp => new fix4(x, x, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xxzw => new float4(x, x, z, w);
+        public readonly fix4 xxzw => new fix4(x, x, z, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 rrba => new float4(x, x, z, w);
+        public readonly fix4 rrba => new fix4(x, x, z, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 sspq => new float4(x, x, z, w);
+        public readonly fix4 sspq => new fix4(x, x, z, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xxw_ => new float4(x, x, w, 0f);
+        public readonly fix4 xxw_ => new fix4(x, x, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 rra_ => new float4(x, x, w, 0f);
+        public readonly fix4 rra_ => new fix4(x, x, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ssq_ => new float4(x, x, w, 0f);
+        public readonly fix4 ssq_ => new fix4(x, x, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xxwx => new float4(x, x, w, x);
+        public readonly fix4 xxwx => new fix4(x, x, w, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 rrar => new float4(x, x, w, x);
+        public readonly fix4 rrar => new fix4(x, x, w, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ssqs => new float4(x, x, w, x);
+        public readonly fix4 ssqs => new fix4(x, x, w, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xxwy => new float4(x, x, w, y);
+        public readonly fix4 xxwy => new fix4(x, x, w, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 rrag => new float4(x, x, w, y);
+        public readonly fix4 rrag => new fix4(x, x, w, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ssqt => new float4(x, x, w, y);
+        public readonly fix4 ssqt => new fix4(x, x, w, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xxwz => new float4(x, x, w, z);
+        public readonly fix4 xxwz => new fix4(x, x, w, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 rrab => new float4(x, x, w, z);
+        public readonly fix4 rrab => new fix4(x, x, w, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ssqp => new float4(x, x, w, z);
+        public readonly fix4 ssqp => new fix4(x, x, w, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xxww => new float4(x, x, w, w);
+        public readonly fix4 xxww => new fix4(x, x, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 rraa => new float4(x, x, w, w);
+        public readonly fix4 rraa => new fix4(x, x, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ssqq => new float4(x, x, w, w);
+        public readonly fix4 ssqq => new fix4(x, x, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xy__ => new float4(x, y, 0f, 0f);
+        public readonly fix4 xy__ => new fix4(x, y, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 rg__ => new float4(x, y, 0f, 0f);
+        public readonly fix4 rg__ => new fix4(x, y, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 st__ => new float4(x, y, 0f, 0f);
+        public readonly fix4 st__ => new fix4(x, y, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xy_x => new float4(x, y, 0f, x);
+        public readonly fix4 xy_x => new fix4(x, y, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 rg_r => new float4(x, y, 0f, x);
+        public readonly fix4 rg_r => new fix4(x, y, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 st_s => new float4(x, y, 0f, x);
+        public readonly fix4 st_s => new fix4(x, y, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xy_y => new float4(x, y, 0f, y);
+        public readonly fix4 xy_y => new fix4(x, y, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 rg_g => new float4(x, y, 0f, y);
+        public readonly fix4 rg_g => new fix4(x, y, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 st_t => new float4(x, y, 0f, y);
+        public readonly fix4 st_t => new fix4(x, y, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xy_z => new float4(x, y, 0f, z);
+        public readonly fix4 xy_z => new fix4(x, y, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 rg_b => new float4(x, y, 0f, z);
+        public readonly fix4 rg_b => new fix4(x, y, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 st_p => new float4(x, y, 0f, z);
+        public readonly fix4 st_p => new fix4(x, y, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xy_w => new float4(x, y, 0f, w);
+        public readonly fix4 xy_w => new fix4(x, y, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 rg_a => new float4(x, y, 0f, w);
+        public readonly fix4 rg_a => new fix4(x, y, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 st_q => new float4(x, y, 0f, w);
+        public readonly fix4 st_q => new fix4(x, y, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xyx_ => new float4(x, y, x, 0f);
+        public readonly fix4 xyx_ => new fix4(x, y, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 rgr_ => new float4(x, y, x, 0f);
+        public readonly fix4 rgr_ => new fix4(x, y, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 sts_ => new float4(x, y, x, 0f);
+        public readonly fix4 sts_ => new fix4(x, y, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xyxx => new float4(x, y, x, x);
+        public readonly fix4 xyxx => new fix4(x, y, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 rgrr => new float4(x, y, x, x);
+        public readonly fix4 rgrr => new fix4(x, y, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 stss => new float4(x, y, x, x);
+        public readonly fix4 stss => new fix4(x, y, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xyxy => new float4(x, y, x, y);
+        public readonly fix4 xyxy => new fix4(x, y, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 rgrg => new float4(x, y, x, y);
+        public readonly fix4 rgrg => new fix4(x, y, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 stst => new float4(x, y, x, y);
+        public readonly fix4 stst => new fix4(x, y, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xyxz => new float4(x, y, x, z);
+        public readonly fix4 xyxz => new fix4(x, y, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 rgrb => new float4(x, y, x, z);
+        public readonly fix4 rgrb => new fix4(x, y, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 stsp => new float4(x, y, x, z);
+        public readonly fix4 stsp => new fix4(x, y, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xyxw => new float4(x, y, x, w);
+        public readonly fix4 xyxw => new fix4(x, y, x, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 rgra => new float4(x, y, x, w);
+        public readonly fix4 rgra => new fix4(x, y, x, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 stsq => new float4(x, y, x, w);
+        public readonly fix4 stsq => new fix4(x, y, x, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xyy_ => new float4(x, y, y, 0f);
+        public readonly fix4 xyy_ => new fix4(x, y, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 rgg_ => new float4(x, y, y, 0f);
+        public readonly fix4 rgg_ => new fix4(x, y, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 stt_ => new float4(x, y, y, 0f);
+        public readonly fix4 stt_ => new fix4(x, y, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xyyx => new float4(x, y, y, x);
+        public readonly fix4 xyyx => new fix4(x, y, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 rggr => new float4(x, y, y, x);
+        public readonly fix4 rggr => new fix4(x, y, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 stts => new float4(x, y, y, x);
+        public readonly fix4 stts => new fix4(x, y, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xyyy => new float4(x, y, y, y);
+        public readonly fix4 xyyy => new fix4(x, y, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 rggg => new float4(x, y, y, y);
+        public readonly fix4 rggg => new fix4(x, y, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 sttt => new float4(x, y, y, y);
+        public readonly fix4 sttt => new fix4(x, y, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xyyz => new float4(x, y, y, z);
+        public readonly fix4 xyyz => new fix4(x, y, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 rggb => new float4(x, y, y, z);
+        public readonly fix4 rggb => new fix4(x, y, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 sttp => new float4(x, y, y, z);
+        public readonly fix4 sttp => new fix4(x, y, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xyyw => new float4(x, y, y, w);
+        public readonly fix4 xyyw => new fix4(x, y, y, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 rgga => new float4(x, y, y, w);
+        public readonly fix4 rgga => new fix4(x, y, y, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 sttq => new float4(x, y, y, w);
+        public readonly fix4 sttq => new fix4(x, y, y, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xyz_ => new float4(x, y, z, 0f);
+        public readonly fix4 xyz_ => new fix4(x, y, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 rgb_ => new float4(x, y, z, 0f);
+        public readonly fix4 rgb_ => new fix4(x, y, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 stp_ => new float4(x, y, z, 0f);
+        public readonly fix4 stp_ => new fix4(x, y, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xyzx => new float4(x, y, z, x);
+        public readonly fix4 xyzx => new fix4(x, y, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 rgbr => new float4(x, y, z, x);
+        public readonly fix4 rgbr => new fix4(x, y, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 stps => new float4(x, y, z, x);
+        public readonly fix4 stps => new fix4(x, y, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xyzy => new float4(x, y, z, y);
+        public readonly fix4 xyzy => new fix4(x, y, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 rgbg => new float4(x, y, z, y);
+        public readonly fix4 rgbg => new fix4(x, y, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 stpt => new float4(x, y, z, y);
+        public readonly fix4 stpt => new fix4(x, y, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xyzz => new float4(x, y, z, z);
+        public readonly fix4 xyzz => new fix4(x, y, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 rgbb => new float4(x, y, z, z);
+        public readonly fix4 rgbb => new fix4(x, y, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 stpp => new float4(x, y, z, z);
+        public readonly fix4 stpp => new fix4(x, y, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float4 xyzw
+        public fix4 xyzw
         {
-            readonly get => new float4(x, y, z, w);
+            readonly get => new fix4(x, y, z, w);
             set
             {
                 w = value.x;
@@ -3203,9 +3192,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float4 rgba
+        public fix4 rgba
         {
-            readonly get => new float4(x, y, z, w);
+            readonly get => new fix4(x, y, z, w);
             set
             {
                 w = value.x;
@@ -3218,9 +3207,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float4 stpq
+        public fix4 stpq
         {
-            readonly get => new float4(x, y, z, w);
+            readonly get => new fix4(x, y, z, w);
             set
             {
                 w = value.x;
@@ -3233,54 +3222,54 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xyw_ => new float4(x, y, w, 0f);
+        public readonly fix4 xyw_ => new fix4(x, y, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 rga_ => new float4(x, y, w, 0f);
+        public readonly fix4 rga_ => new fix4(x, y, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 stq_ => new float4(x, y, w, 0f);
+        public readonly fix4 stq_ => new fix4(x, y, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xywx => new float4(x, y, w, x);
+        public readonly fix4 xywx => new fix4(x, y, w, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 rgar => new float4(x, y, w, x);
+        public readonly fix4 rgar => new fix4(x, y, w, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 stqs => new float4(x, y, w, x);
+        public readonly fix4 stqs => new fix4(x, y, w, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xywy => new float4(x, y, w, y);
+        public readonly fix4 xywy => new fix4(x, y, w, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 rgag => new float4(x, y, w, y);
+        public readonly fix4 rgag => new fix4(x, y, w, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 stqt => new float4(x, y, w, y);
+        public readonly fix4 stqt => new fix4(x, y, w, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float4 xywz
+        public fix4 xywz
         {
-            readonly get => new float4(x, y, w, z);
+            readonly get => new fix4(x, y, w, z);
             set
             {
                 w = value.x;
@@ -3293,9 +3282,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float4 rgab
+        public fix4 rgab
         {
-            readonly get => new float4(x, y, w, z);
+            readonly get => new fix4(x, y, w, z);
             set
             {
                 w = value.x;
@@ -3308,9 +3297,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float4 stqp
+        public fix4 stqp
         {
-            readonly get => new float4(x, y, w, z);
+            readonly get => new fix4(x, y, w, z);
             set
             {
                 w = value.x;
@@ -3323,234 +3312,234 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xyww => new float4(x, y, w, w);
+        public readonly fix4 xyww => new fix4(x, y, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 rgaa => new float4(x, y, w, w);
+        public readonly fix4 rgaa => new fix4(x, y, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 stqq => new float4(x, y, w, w);
+        public readonly fix4 stqq => new fix4(x, y, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xz__ => new float4(x, z, 0f, 0f);
+        public readonly fix4 xz__ => new fix4(x, z, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 rb__ => new float4(x, z, 0f, 0f);
+        public readonly fix4 rb__ => new fix4(x, z, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 sp__ => new float4(x, z, 0f, 0f);
+        public readonly fix4 sp__ => new fix4(x, z, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xz_x => new float4(x, z, 0f, x);
+        public readonly fix4 xz_x => new fix4(x, z, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 rb_r => new float4(x, z, 0f, x);
+        public readonly fix4 rb_r => new fix4(x, z, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 sp_s => new float4(x, z, 0f, x);
+        public readonly fix4 sp_s => new fix4(x, z, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xz_y => new float4(x, z, 0f, y);
+        public readonly fix4 xz_y => new fix4(x, z, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 rb_g => new float4(x, z, 0f, y);
+        public readonly fix4 rb_g => new fix4(x, z, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 sp_t => new float4(x, z, 0f, y);
+        public readonly fix4 sp_t => new fix4(x, z, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xz_z => new float4(x, z, 0f, z);
+        public readonly fix4 xz_z => new fix4(x, z, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 rb_b => new float4(x, z, 0f, z);
+        public readonly fix4 rb_b => new fix4(x, z, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 sp_p => new float4(x, z, 0f, z);
+        public readonly fix4 sp_p => new fix4(x, z, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xz_w => new float4(x, z, 0f, w);
+        public readonly fix4 xz_w => new fix4(x, z, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 rb_a => new float4(x, z, 0f, w);
+        public readonly fix4 rb_a => new fix4(x, z, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 sp_q => new float4(x, z, 0f, w);
+        public readonly fix4 sp_q => new fix4(x, z, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xzx_ => new float4(x, z, x, 0f);
+        public readonly fix4 xzx_ => new fix4(x, z, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 rbr_ => new float4(x, z, x, 0f);
+        public readonly fix4 rbr_ => new fix4(x, z, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 sps_ => new float4(x, z, x, 0f);
+        public readonly fix4 sps_ => new fix4(x, z, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xzxx => new float4(x, z, x, x);
+        public readonly fix4 xzxx => new fix4(x, z, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 rbrr => new float4(x, z, x, x);
+        public readonly fix4 rbrr => new fix4(x, z, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 spss => new float4(x, z, x, x);
+        public readonly fix4 spss => new fix4(x, z, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xzxy => new float4(x, z, x, y);
+        public readonly fix4 xzxy => new fix4(x, z, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 rbrg => new float4(x, z, x, y);
+        public readonly fix4 rbrg => new fix4(x, z, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 spst => new float4(x, z, x, y);
+        public readonly fix4 spst => new fix4(x, z, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xzxz => new float4(x, z, x, z);
+        public readonly fix4 xzxz => new fix4(x, z, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 rbrb => new float4(x, z, x, z);
+        public readonly fix4 rbrb => new fix4(x, z, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 spsp => new float4(x, z, x, z);
+        public readonly fix4 spsp => new fix4(x, z, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xzxw => new float4(x, z, x, w);
+        public readonly fix4 xzxw => new fix4(x, z, x, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 rbra => new float4(x, z, x, w);
+        public readonly fix4 rbra => new fix4(x, z, x, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 spsq => new float4(x, z, x, w);
+        public readonly fix4 spsq => new fix4(x, z, x, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xzy_ => new float4(x, z, y, 0f);
+        public readonly fix4 xzy_ => new fix4(x, z, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 rbg_ => new float4(x, z, y, 0f);
+        public readonly fix4 rbg_ => new fix4(x, z, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 spt_ => new float4(x, z, y, 0f);
+        public readonly fix4 spt_ => new fix4(x, z, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xzyx => new float4(x, z, y, x);
+        public readonly fix4 xzyx => new fix4(x, z, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 rbgr => new float4(x, z, y, x);
+        public readonly fix4 rbgr => new fix4(x, z, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 spts => new float4(x, z, y, x);
+        public readonly fix4 spts => new fix4(x, z, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xzyy => new float4(x, z, y, y);
+        public readonly fix4 xzyy => new fix4(x, z, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 rbgg => new float4(x, z, y, y);
+        public readonly fix4 rbgg => new fix4(x, z, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 sptt => new float4(x, z, y, y);
+        public readonly fix4 sptt => new fix4(x, z, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xzyz => new float4(x, z, y, z);
+        public readonly fix4 xzyz => new fix4(x, z, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 rbgb => new float4(x, z, y, z);
+        public readonly fix4 rbgb => new fix4(x, z, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 sptp => new float4(x, z, y, z);
+        public readonly fix4 sptp => new fix4(x, z, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float4 xzyw
+        public fix4 xzyw
         {
-            readonly get => new float4(x, z, y, w);
+            readonly get => new fix4(x, z, y, w);
             set
             {
                 w = value.x;
@@ -3563,9 +3552,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float4 rbga
+        public fix4 rbga
         {
-            readonly get => new float4(x, z, y, w);
+            readonly get => new fix4(x, z, y, w);
             set
             {
                 w = value.x;
@@ -3578,9 +3567,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float4 sptq
+        public fix4 sptq
         {
-            readonly get => new float4(x, z, y, w);
+            readonly get => new fix4(x, z, y, w);
             set
             {
                 w = value.x;
@@ -3593,114 +3582,114 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xzz_ => new float4(x, z, z, 0f);
+        public readonly fix4 xzz_ => new fix4(x, z, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 rbb_ => new float4(x, z, z, 0f);
+        public readonly fix4 rbb_ => new fix4(x, z, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 spp_ => new float4(x, z, z, 0f);
+        public readonly fix4 spp_ => new fix4(x, z, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xzzx => new float4(x, z, z, x);
+        public readonly fix4 xzzx => new fix4(x, z, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 rbbr => new float4(x, z, z, x);
+        public readonly fix4 rbbr => new fix4(x, z, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 spps => new float4(x, z, z, x);
+        public readonly fix4 spps => new fix4(x, z, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xzzy => new float4(x, z, z, y);
+        public readonly fix4 xzzy => new fix4(x, z, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 rbbg => new float4(x, z, z, y);
+        public readonly fix4 rbbg => new fix4(x, z, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 sppt => new float4(x, z, z, y);
+        public readonly fix4 sppt => new fix4(x, z, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xzzz => new float4(x, z, z, z);
+        public readonly fix4 xzzz => new fix4(x, z, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 rbbb => new float4(x, z, z, z);
+        public readonly fix4 rbbb => new fix4(x, z, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 sppp => new float4(x, z, z, z);
+        public readonly fix4 sppp => new fix4(x, z, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xzzw => new float4(x, z, z, w);
+        public readonly fix4 xzzw => new fix4(x, z, z, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 rbba => new float4(x, z, z, w);
+        public readonly fix4 rbba => new fix4(x, z, z, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 sppq => new float4(x, z, z, w);
+        public readonly fix4 sppq => new fix4(x, z, z, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xzw_ => new float4(x, z, w, 0f);
+        public readonly fix4 xzw_ => new fix4(x, z, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 rba_ => new float4(x, z, w, 0f);
+        public readonly fix4 rba_ => new fix4(x, z, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 spq_ => new float4(x, z, w, 0f);
+        public readonly fix4 spq_ => new fix4(x, z, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xzwx => new float4(x, z, w, x);
+        public readonly fix4 xzwx => new fix4(x, z, w, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 rbar => new float4(x, z, w, x);
+        public readonly fix4 rbar => new fix4(x, z, w, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 spqs => new float4(x, z, w, x);
+        public readonly fix4 spqs => new fix4(x, z, w, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float4 xzwy
+        public fix4 xzwy
         {
-            readonly get => new float4(x, z, w, y);
+            readonly get => new fix4(x, z, w, y);
             set
             {
                 w = value.x;
@@ -3713,9 +3702,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float4 rbag
+        public fix4 rbag
         {
-            readonly get => new float4(x, z, w, y);
+            readonly get => new fix4(x, z, w, y);
             set
             {
                 w = value.x;
@@ -3728,9 +3717,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float4 spqt
+        public fix4 spqt
         {
-            readonly get => new float4(x, z, w, y);
+            readonly get => new fix4(x, z, w, y);
             set
             {
                 w = value.x;
@@ -3743,234 +3732,234 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xzwz => new float4(x, z, w, z);
+        public readonly fix4 xzwz => new fix4(x, z, w, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 rbab => new float4(x, z, w, z);
+        public readonly fix4 rbab => new fix4(x, z, w, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 spqp => new float4(x, z, w, z);
+        public readonly fix4 spqp => new fix4(x, z, w, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xzww => new float4(x, z, w, w);
+        public readonly fix4 xzww => new fix4(x, z, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 rbaa => new float4(x, z, w, w);
+        public readonly fix4 rbaa => new fix4(x, z, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 spqq => new float4(x, z, w, w);
+        public readonly fix4 spqq => new fix4(x, z, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xw__ => new float4(x, w, 0f, 0f);
+        public readonly fix4 xw__ => new fix4(x, w, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ra__ => new float4(x, w, 0f, 0f);
+        public readonly fix4 ra__ => new fix4(x, w, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 sq__ => new float4(x, w, 0f, 0f);
+        public readonly fix4 sq__ => new fix4(x, w, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xw_x => new float4(x, w, 0f, x);
+        public readonly fix4 xw_x => new fix4(x, w, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ra_r => new float4(x, w, 0f, x);
+        public readonly fix4 ra_r => new fix4(x, w, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 sq_s => new float4(x, w, 0f, x);
+        public readonly fix4 sq_s => new fix4(x, w, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xw_y => new float4(x, w, 0f, y);
+        public readonly fix4 xw_y => new fix4(x, w, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ra_g => new float4(x, w, 0f, y);
+        public readonly fix4 ra_g => new fix4(x, w, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 sq_t => new float4(x, w, 0f, y);
+        public readonly fix4 sq_t => new fix4(x, w, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xw_z => new float4(x, w, 0f, z);
+        public readonly fix4 xw_z => new fix4(x, w, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ra_b => new float4(x, w, 0f, z);
+        public readonly fix4 ra_b => new fix4(x, w, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 sq_p => new float4(x, w, 0f, z);
+        public readonly fix4 sq_p => new fix4(x, w, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xw_w => new float4(x, w, 0f, w);
+        public readonly fix4 xw_w => new fix4(x, w, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ra_a => new float4(x, w, 0f, w);
+        public readonly fix4 ra_a => new fix4(x, w, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 sq_q => new float4(x, w, 0f, w);
+        public readonly fix4 sq_q => new fix4(x, w, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xwx_ => new float4(x, w, x, 0f);
+        public readonly fix4 xwx_ => new fix4(x, w, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 rar_ => new float4(x, w, x, 0f);
+        public readonly fix4 rar_ => new fix4(x, w, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 sqs_ => new float4(x, w, x, 0f);
+        public readonly fix4 sqs_ => new fix4(x, w, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xwxx => new float4(x, w, x, x);
+        public readonly fix4 xwxx => new fix4(x, w, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 rarr => new float4(x, w, x, x);
+        public readonly fix4 rarr => new fix4(x, w, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 sqss => new float4(x, w, x, x);
+        public readonly fix4 sqss => new fix4(x, w, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xwxy => new float4(x, w, x, y);
+        public readonly fix4 xwxy => new fix4(x, w, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 rarg => new float4(x, w, x, y);
+        public readonly fix4 rarg => new fix4(x, w, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 sqst => new float4(x, w, x, y);
+        public readonly fix4 sqst => new fix4(x, w, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xwxz => new float4(x, w, x, z);
+        public readonly fix4 xwxz => new fix4(x, w, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 rarb => new float4(x, w, x, z);
+        public readonly fix4 rarb => new fix4(x, w, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 sqsp => new float4(x, w, x, z);
+        public readonly fix4 sqsp => new fix4(x, w, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xwxw => new float4(x, w, x, w);
+        public readonly fix4 xwxw => new fix4(x, w, x, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 rara => new float4(x, w, x, w);
+        public readonly fix4 rara => new fix4(x, w, x, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 sqsq => new float4(x, w, x, w);
+        public readonly fix4 sqsq => new fix4(x, w, x, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xwy_ => new float4(x, w, y, 0f);
+        public readonly fix4 xwy_ => new fix4(x, w, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 rag_ => new float4(x, w, y, 0f);
+        public readonly fix4 rag_ => new fix4(x, w, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 sqt_ => new float4(x, w, y, 0f);
+        public readonly fix4 sqt_ => new fix4(x, w, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xwyx => new float4(x, w, y, x);
+        public readonly fix4 xwyx => new fix4(x, w, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ragr => new float4(x, w, y, x);
+        public readonly fix4 ragr => new fix4(x, w, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 sqts => new float4(x, w, y, x);
+        public readonly fix4 sqts => new fix4(x, w, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xwyy => new float4(x, w, y, y);
+        public readonly fix4 xwyy => new fix4(x, w, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ragg => new float4(x, w, y, y);
+        public readonly fix4 ragg => new fix4(x, w, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 sqtt => new float4(x, w, y, y);
+        public readonly fix4 sqtt => new fix4(x, w, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float4 xwyz
+        public fix4 xwyz
         {
-            readonly get => new float4(x, w, y, z);
+            readonly get => new fix4(x, w, y, z);
             set
             {
                 w = value.x;
@@ -3983,9 +3972,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float4 ragb
+        public fix4 ragb
         {
-            readonly get => new float4(x, w, y, z);
+            readonly get => new fix4(x, w, y, z);
             set
             {
                 w = value.x;
@@ -3998,9 +3987,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float4 sqtp
+        public fix4 sqtp
         {
-            readonly get => new float4(x, w, y, z);
+            readonly get => new fix4(x, w, y, z);
             set
             {
                 w = value.x;
@@ -4013,54 +4002,54 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xwyw => new float4(x, w, y, w);
+        public readonly fix4 xwyw => new fix4(x, w, y, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 raga => new float4(x, w, y, w);
+        public readonly fix4 raga => new fix4(x, w, y, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 sqtq => new float4(x, w, y, w);
+        public readonly fix4 sqtq => new fix4(x, w, y, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xwz_ => new float4(x, w, z, 0f);
+        public readonly fix4 xwz_ => new fix4(x, w, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 rab_ => new float4(x, w, z, 0f);
+        public readonly fix4 rab_ => new fix4(x, w, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 sqp_ => new float4(x, w, z, 0f);
+        public readonly fix4 sqp_ => new fix4(x, w, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xwzx => new float4(x, w, z, x);
+        public readonly fix4 xwzx => new fix4(x, w, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 rabr => new float4(x, w, z, x);
+        public readonly fix4 rabr => new fix4(x, w, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 sqps => new float4(x, w, z, x);
+        public readonly fix4 sqps => new fix4(x, w, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float4 xwzy
+        public fix4 xwzy
         {
-            readonly get => new float4(x, w, z, y);
+            readonly get => new fix4(x, w, z, y);
             set
             {
                 w = value.x;
@@ -4073,9 +4062,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float4 rabg
+        public fix4 rabg
         {
-            readonly get => new float4(x, w, z, y);
+            readonly get => new fix4(x, w, z, y);
             set
             {
                 w = value.x;
@@ -4088,9 +4077,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float4 sqpt
+        public fix4 sqpt
         {
-            readonly get => new float4(x, w, z, y);
+            readonly get => new fix4(x, w, z, y);
             set
             {
                 w = value.x;
@@ -4103,774 +4092,774 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xwzz => new float4(x, w, z, z);
+        public readonly fix4 xwzz => new fix4(x, w, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 rabb => new float4(x, w, z, z);
+        public readonly fix4 rabb => new fix4(x, w, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 sqpp => new float4(x, w, z, z);
+        public readonly fix4 sqpp => new fix4(x, w, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xwzw => new float4(x, w, z, w);
+        public readonly fix4 xwzw => new fix4(x, w, z, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 raba => new float4(x, w, z, w);
+        public readonly fix4 raba => new fix4(x, w, z, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 sqpq => new float4(x, w, z, w);
+        public readonly fix4 sqpq => new fix4(x, w, z, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xww_ => new float4(x, w, w, 0f);
+        public readonly fix4 xww_ => new fix4(x, w, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 raa_ => new float4(x, w, w, 0f);
+        public readonly fix4 raa_ => new fix4(x, w, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 sqq_ => new float4(x, w, w, 0f);
+        public readonly fix4 sqq_ => new fix4(x, w, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xwwx => new float4(x, w, w, x);
+        public readonly fix4 xwwx => new fix4(x, w, w, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 raar => new float4(x, w, w, x);
+        public readonly fix4 raar => new fix4(x, w, w, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 sqqs => new float4(x, w, w, x);
+        public readonly fix4 sqqs => new fix4(x, w, w, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xwwy => new float4(x, w, w, y);
+        public readonly fix4 xwwy => new fix4(x, w, w, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 raag => new float4(x, w, w, y);
+        public readonly fix4 raag => new fix4(x, w, w, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 sqqt => new float4(x, w, w, y);
+        public readonly fix4 sqqt => new fix4(x, w, w, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xwwz => new float4(x, w, w, z);
+        public readonly fix4 xwwz => new fix4(x, w, w, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 raab => new float4(x, w, w, z);
+        public readonly fix4 raab => new fix4(x, w, w, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 sqqp => new float4(x, w, w, z);
+        public readonly fix4 sqqp => new fix4(x, w, w, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 xwww => new float4(x, w, w, w);
+        public readonly fix4 xwww => new fix4(x, w, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 raaa => new float4(x, w, w, w);
+        public readonly fix4 raaa => new fix4(x, w, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 sqqq => new float4(x, w, w, w);
+        public readonly fix4 sqqq => new fix4(x, w, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 y___ => new float4(y, 0f, 0f, 0f);
+        public readonly fix4 y___ => new fix4(y, fix.Zero, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 g___ => new float4(y, 0f, 0f, 0f);
+        public readonly fix4 g___ => new fix4(y, fix.Zero, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 t___ => new float4(y, 0f, 0f, 0f);
+        public readonly fix4 t___ => new fix4(y, fix.Zero, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 y__x => new float4(y, 0f, 0f, x);
+        public readonly fix4 y__x => new fix4(y, fix.Zero, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 g__r => new float4(y, 0f, 0f, x);
+        public readonly fix4 g__r => new fix4(y, fix.Zero, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 t__s => new float4(y, 0f, 0f, x);
+        public readonly fix4 t__s => new fix4(y, fix.Zero, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 y__y => new float4(y, 0f, 0f, y);
+        public readonly fix4 y__y => new fix4(y, fix.Zero, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 g__g => new float4(y, 0f, 0f, y);
+        public readonly fix4 g__g => new fix4(y, fix.Zero, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 t__t => new float4(y, 0f, 0f, y);
+        public readonly fix4 t__t => new fix4(y, fix.Zero, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 y__z => new float4(y, 0f, 0f, z);
+        public readonly fix4 y__z => new fix4(y, fix.Zero, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 g__b => new float4(y, 0f, 0f, z);
+        public readonly fix4 g__b => new fix4(y, fix.Zero, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 t__p => new float4(y, 0f, 0f, z);
+        public readonly fix4 t__p => new fix4(y, fix.Zero, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 y__w => new float4(y, 0f, 0f, w);
+        public readonly fix4 y__w => new fix4(y, fix.Zero, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 g__a => new float4(y, 0f, 0f, w);
+        public readonly fix4 g__a => new fix4(y, fix.Zero, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 t__q => new float4(y, 0f, 0f, w);
+        public readonly fix4 t__q => new fix4(y, fix.Zero, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 y_x_ => new float4(y, 0f, x, 0f);
+        public readonly fix4 y_x_ => new fix4(y, fix.Zero, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 g_r_ => new float4(y, 0f, x, 0f);
+        public readonly fix4 g_r_ => new fix4(y, fix.Zero, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 t_s_ => new float4(y, 0f, x, 0f);
+        public readonly fix4 t_s_ => new fix4(y, fix.Zero, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 y_xx => new float4(y, 0f, x, x);
+        public readonly fix4 y_xx => new fix4(y, fix.Zero, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 g_rr => new float4(y, 0f, x, x);
+        public readonly fix4 g_rr => new fix4(y, fix.Zero, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 t_ss => new float4(y, 0f, x, x);
+        public readonly fix4 t_ss => new fix4(y, fix.Zero, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 y_xy => new float4(y, 0f, x, y);
+        public readonly fix4 y_xy => new fix4(y, fix.Zero, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 g_rg => new float4(y, 0f, x, y);
+        public readonly fix4 g_rg => new fix4(y, fix.Zero, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 t_st => new float4(y, 0f, x, y);
+        public readonly fix4 t_st => new fix4(y, fix.Zero, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 y_xz => new float4(y, 0f, x, z);
+        public readonly fix4 y_xz => new fix4(y, fix.Zero, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 g_rb => new float4(y, 0f, x, z);
+        public readonly fix4 g_rb => new fix4(y, fix.Zero, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 t_sp => new float4(y, 0f, x, z);
+        public readonly fix4 t_sp => new fix4(y, fix.Zero, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 y_xw => new float4(y, 0f, x, w);
+        public readonly fix4 y_xw => new fix4(y, fix.Zero, x, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 g_ra => new float4(y, 0f, x, w);
+        public readonly fix4 g_ra => new fix4(y, fix.Zero, x, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 t_sq => new float4(y, 0f, x, w);
+        public readonly fix4 t_sq => new fix4(y, fix.Zero, x, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 y_y_ => new float4(y, 0f, y, 0f);
+        public readonly fix4 y_y_ => new fix4(y, fix.Zero, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 g_g_ => new float4(y, 0f, y, 0f);
+        public readonly fix4 g_g_ => new fix4(y, fix.Zero, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 t_t_ => new float4(y, 0f, y, 0f);
+        public readonly fix4 t_t_ => new fix4(y, fix.Zero, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 y_yx => new float4(y, 0f, y, x);
+        public readonly fix4 y_yx => new fix4(y, fix.Zero, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 g_gr => new float4(y, 0f, y, x);
+        public readonly fix4 g_gr => new fix4(y, fix.Zero, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 t_ts => new float4(y, 0f, y, x);
+        public readonly fix4 t_ts => new fix4(y, fix.Zero, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 y_yy => new float4(y, 0f, y, y);
+        public readonly fix4 y_yy => new fix4(y, fix.Zero, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 g_gg => new float4(y, 0f, y, y);
+        public readonly fix4 g_gg => new fix4(y, fix.Zero, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 t_tt => new float4(y, 0f, y, y);
+        public readonly fix4 t_tt => new fix4(y, fix.Zero, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 y_yz => new float4(y, 0f, y, z);
+        public readonly fix4 y_yz => new fix4(y, fix.Zero, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 g_gb => new float4(y, 0f, y, z);
+        public readonly fix4 g_gb => new fix4(y, fix.Zero, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 t_tp => new float4(y, 0f, y, z);
+        public readonly fix4 t_tp => new fix4(y, fix.Zero, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 y_yw => new float4(y, 0f, y, w);
+        public readonly fix4 y_yw => new fix4(y, fix.Zero, y, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 g_ga => new float4(y, 0f, y, w);
+        public readonly fix4 g_ga => new fix4(y, fix.Zero, y, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 t_tq => new float4(y, 0f, y, w);
+        public readonly fix4 t_tq => new fix4(y, fix.Zero, y, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 y_z_ => new float4(y, 0f, z, 0f);
+        public readonly fix4 y_z_ => new fix4(y, fix.Zero, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 g_b_ => new float4(y, 0f, z, 0f);
+        public readonly fix4 g_b_ => new fix4(y, fix.Zero, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 t_p_ => new float4(y, 0f, z, 0f);
+        public readonly fix4 t_p_ => new fix4(y, fix.Zero, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 y_zx => new float4(y, 0f, z, x);
+        public readonly fix4 y_zx => new fix4(y, fix.Zero, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 g_br => new float4(y, 0f, z, x);
+        public readonly fix4 g_br => new fix4(y, fix.Zero, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 t_ps => new float4(y, 0f, z, x);
+        public readonly fix4 t_ps => new fix4(y, fix.Zero, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 y_zy => new float4(y, 0f, z, y);
+        public readonly fix4 y_zy => new fix4(y, fix.Zero, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 g_bg => new float4(y, 0f, z, y);
+        public readonly fix4 g_bg => new fix4(y, fix.Zero, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 t_pt => new float4(y, 0f, z, y);
+        public readonly fix4 t_pt => new fix4(y, fix.Zero, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 y_zz => new float4(y, 0f, z, z);
+        public readonly fix4 y_zz => new fix4(y, fix.Zero, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 g_bb => new float4(y, 0f, z, z);
+        public readonly fix4 g_bb => new fix4(y, fix.Zero, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 t_pp => new float4(y, 0f, z, z);
+        public readonly fix4 t_pp => new fix4(y, fix.Zero, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 y_zw => new float4(y, 0f, z, w);
+        public readonly fix4 y_zw => new fix4(y, fix.Zero, z, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 g_ba => new float4(y, 0f, z, w);
+        public readonly fix4 g_ba => new fix4(y, fix.Zero, z, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 t_pq => new float4(y, 0f, z, w);
+        public readonly fix4 t_pq => new fix4(y, fix.Zero, z, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 y_w_ => new float4(y, 0f, w, 0f);
+        public readonly fix4 y_w_ => new fix4(y, fix.Zero, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 g_a_ => new float4(y, 0f, w, 0f);
+        public readonly fix4 g_a_ => new fix4(y, fix.Zero, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 t_q_ => new float4(y, 0f, w, 0f);
+        public readonly fix4 t_q_ => new fix4(y, fix.Zero, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 y_wx => new float4(y, 0f, w, x);
+        public readonly fix4 y_wx => new fix4(y, fix.Zero, w, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 g_ar => new float4(y, 0f, w, x);
+        public readonly fix4 g_ar => new fix4(y, fix.Zero, w, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 t_qs => new float4(y, 0f, w, x);
+        public readonly fix4 t_qs => new fix4(y, fix.Zero, w, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 y_wy => new float4(y, 0f, w, y);
+        public readonly fix4 y_wy => new fix4(y, fix.Zero, w, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 g_ag => new float4(y, 0f, w, y);
+        public readonly fix4 g_ag => new fix4(y, fix.Zero, w, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 t_qt => new float4(y, 0f, w, y);
+        public readonly fix4 t_qt => new fix4(y, fix.Zero, w, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 y_wz => new float4(y, 0f, w, z);
+        public readonly fix4 y_wz => new fix4(y, fix.Zero, w, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 g_ab => new float4(y, 0f, w, z);
+        public readonly fix4 g_ab => new fix4(y, fix.Zero, w, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 t_qp => new float4(y, 0f, w, z);
+        public readonly fix4 t_qp => new fix4(y, fix.Zero, w, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 y_ww => new float4(y, 0f, w, w);
+        public readonly fix4 y_ww => new fix4(y, fix.Zero, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 g_aa => new float4(y, 0f, w, w);
+        public readonly fix4 g_aa => new fix4(y, fix.Zero, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 t_qq => new float4(y, 0f, w, w);
+        public readonly fix4 t_qq => new fix4(y, fix.Zero, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 yx__ => new float4(y, x, 0f, 0f);
+        public readonly fix4 yx__ => new fix4(y, x, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 gr__ => new float4(y, x, 0f, 0f);
+        public readonly fix4 gr__ => new fix4(y, x, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ts__ => new float4(y, x, 0f, 0f);
+        public readonly fix4 ts__ => new fix4(y, x, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 yx_x => new float4(y, x, 0f, x);
+        public readonly fix4 yx_x => new fix4(y, x, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 gr_r => new float4(y, x, 0f, x);
+        public readonly fix4 gr_r => new fix4(y, x, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ts_s => new float4(y, x, 0f, x);
+        public readonly fix4 ts_s => new fix4(y, x, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 yx_y => new float4(y, x, 0f, y);
+        public readonly fix4 yx_y => new fix4(y, x, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 gr_g => new float4(y, x, 0f, y);
+        public readonly fix4 gr_g => new fix4(y, x, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ts_t => new float4(y, x, 0f, y);
+        public readonly fix4 ts_t => new fix4(y, x, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 yx_z => new float4(y, x, 0f, z);
+        public readonly fix4 yx_z => new fix4(y, x, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 gr_b => new float4(y, x, 0f, z);
+        public readonly fix4 gr_b => new fix4(y, x, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ts_p => new float4(y, x, 0f, z);
+        public readonly fix4 ts_p => new fix4(y, x, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 yx_w => new float4(y, x, 0f, w);
+        public readonly fix4 yx_w => new fix4(y, x, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 gr_a => new float4(y, x, 0f, w);
+        public readonly fix4 gr_a => new fix4(y, x, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ts_q => new float4(y, x, 0f, w);
+        public readonly fix4 ts_q => new fix4(y, x, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 yxx_ => new float4(y, x, x, 0f);
+        public readonly fix4 yxx_ => new fix4(y, x, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 grr_ => new float4(y, x, x, 0f);
+        public readonly fix4 grr_ => new fix4(y, x, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 tss_ => new float4(y, x, x, 0f);
+        public readonly fix4 tss_ => new fix4(y, x, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 yxxx => new float4(y, x, x, x);
+        public readonly fix4 yxxx => new fix4(y, x, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 grrr => new float4(y, x, x, x);
+        public readonly fix4 grrr => new fix4(y, x, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 tsss => new float4(y, x, x, x);
+        public readonly fix4 tsss => new fix4(y, x, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 yxxy => new float4(y, x, x, y);
+        public readonly fix4 yxxy => new fix4(y, x, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 grrg => new float4(y, x, x, y);
+        public readonly fix4 grrg => new fix4(y, x, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 tsst => new float4(y, x, x, y);
+        public readonly fix4 tsst => new fix4(y, x, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 yxxz => new float4(y, x, x, z);
+        public readonly fix4 yxxz => new fix4(y, x, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 grrb => new float4(y, x, x, z);
+        public readonly fix4 grrb => new fix4(y, x, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 tssp => new float4(y, x, x, z);
+        public readonly fix4 tssp => new fix4(y, x, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 yxxw => new float4(y, x, x, w);
+        public readonly fix4 yxxw => new fix4(y, x, x, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 grra => new float4(y, x, x, w);
+        public readonly fix4 grra => new fix4(y, x, x, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 tssq => new float4(y, x, x, w);
+        public readonly fix4 tssq => new fix4(y, x, x, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 yxy_ => new float4(y, x, y, 0f);
+        public readonly fix4 yxy_ => new fix4(y, x, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 grg_ => new float4(y, x, y, 0f);
+        public readonly fix4 grg_ => new fix4(y, x, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 tst_ => new float4(y, x, y, 0f);
+        public readonly fix4 tst_ => new fix4(y, x, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 yxyx => new float4(y, x, y, x);
+        public readonly fix4 yxyx => new fix4(y, x, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 grgr => new float4(y, x, y, x);
+        public readonly fix4 grgr => new fix4(y, x, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 tsts => new float4(y, x, y, x);
+        public readonly fix4 tsts => new fix4(y, x, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 yxyy => new float4(y, x, y, y);
+        public readonly fix4 yxyy => new fix4(y, x, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 grgg => new float4(y, x, y, y);
+        public readonly fix4 grgg => new fix4(y, x, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 tstt => new float4(y, x, y, y);
+        public readonly fix4 tstt => new fix4(y, x, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 yxyz => new float4(y, x, y, z);
+        public readonly fix4 yxyz => new fix4(y, x, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 grgb => new float4(y, x, y, z);
+        public readonly fix4 grgb => new fix4(y, x, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 tstp => new float4(y, x, y, z);
+        public readonly fix4 tstp => new fix4(y, x, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 yxyw => new float4(y, x, y, w);
+        public readonly fix4 yxyw => new fix4(y, x, y, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 grga => new float4(y, x, y, w);
+        public readonly fix4 grga => new fix4(y, x, y, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 tstq => new float4(y, x, y, w);
+        public readonly fix4 tstq => new fix4(y, x, y, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 yxz_ => new float4(y, x, z, 0f);
+        public readonly fix4 yxz_ => new fix4(y, x, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 grb_ => new float4(y, x, z, 0f);
+        public readonly fix4 grb_ => new fix4(y, x, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 tsp_ => new float4(y, x, z, 0f);
+        public readonly fix4 tsp_ => new fix4(y, x, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 yxzx => new float4(y, x, z, x);
+        public readonly fix4 yxzx => new fix4(y, x, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 grbr => new float4(y, x, z, x);
+        public readonly fix4 grbr => new fix4(y, x, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 tsps => new float4(y, x, z, x);
+        public readonly fix4 tsps => new fix4(y, x, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 yxzy => new float4(y, x, z, y);
+        public readonly fix4 yxzy => new fix4(y, x, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 grbg => new float4(y, x, z, y);
+        public readonly fix4 grbg => new fix4(y, x, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 tspt => new float4(y, x, z, y);
+        public readonly fix4 tspt => new fix4(y, x, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 yxzz => new float4(y, x, z, z);
+        public readonly fix4 yxzz => new fix4(y, x, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 grbb => new float4(y, x, z, z);
+        public readonly fix4 grbb => new fix4(y, x, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 tspp => new float4(y, x, z, z);
+        public readonly fix4 tspp => new fix4(y, x, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float4 yxzw
+        public fix4 yxzw
         {
-            readonly get => new float4(y, x, z, w);
+            readonly get => new fix4(y, x, z, w);
             set
             {
                 w = value.x;
@@ -4883,9 +4872,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float4 grba
+        public fix4 grba
         {
-            readonly get => new float4(y, x, z, w);
+            readonly get => new fix4(y, x, z, w);
             set
             {
                 w = value.x;
@@ -4898,9 +4887,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float4 tspq
+        public fix4 tspq
         {
-            readonly get => new float4(y, x, z, w);
+            readonly get => new fix4(y, x, z, w);
             set
             {
                 w = value.x;
@@ -4913,54 +4902,54 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 yxw_ => new float4(y, x, w, 0f);
+        public readonly fix4 yxw_ => new fix4(y, x, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 gra_ => new float4(y, x, w, 0f);
+        public readonly fix4 gra_ => new fix4(y, x, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 tsq_ => new float4(y, x, w, 0f);
+        public readonly fix4 tsq_ => new fix4(y, x, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 yxwx => new float4(y, x, w, x);
+        public readonly fix4 yxwx => new fix4(y, x, w, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 grar => new float4(y, x, w, x);
+        public readonly fix4 grar => new fix4(y, x, w, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 tsqs => new float4(y, x, w, x);
+        public readonly fix4 tsqs => new fix4(y, x, w, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 yxwy => new float4(y, x, w, y);
+        public readonly fix4 yxwy => new fix4(y, x, w, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 grag => new float4(y, x, w, y);
+        public readonly fix4 grag => new fix4(y, x, w, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 tsqt => new float4(y, x, w, y);
+        public readonly fix4 tsqt => new fix4(y, x, w, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float4 yxwz
+        public fix4 yxwz
         {
-            readonly get => new float4(y, x, w, z);
+            readonly get => new fix4(y, x, w, z);
             set
             {
                 w = value.x;
@@ -4973,9 +4962,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float4 grab
+        public fix4 grab
         {
-            readonly get => new float4(y, x, w, z);
+            readonly get => new fix4(y, x, w, z);
             set
             {
                 w = value.x;
@@ -4988,9 +4977,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float4 tsqp
+        public fix4 tsqp
         {
-            readonly get => new float4(y, x, w, z);
+            readonly get => new fix4(y, x, w, z);
             set
             {
                 w = value.x;
@@ -5003,534 +4992,534 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 yxww => new float4(y, x, w, w);
+        public readonly fix4 yxww => new fix4(y, x, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 graa => new float4(y, x, w, w);
+        public readonly fix4 graa => new fix4(y, x, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 tsqq => new float4(y, x, w, w);
+        public readonly fix4 tsqq => new fix4(y, x, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 yy__ => new float4(y, y, 0f, 0f);
+        public readonly fix4 yy__ => new fix4(y, y, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 gg__ => new float4(y, y, 0f, 0f);
+        public readonly fix4 gg__ => new fix4(y, y, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 tt__ => new float4(y, y, 0f, 0f);
+        public readonly fix4 tt__ => new fix4(y, y, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 yy_x => new float4(y, y, 0f, x);
+        public readonly fix4 yy_x => new fix4(y, y, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 gg_r => new float4(y, y, 0f, x);
+        public readonly fix4 gg_r => new fix4(y, y, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 tt_s => new float4(y, y, 0f, x);
+        public readonly fix4 tt_s => new fix4(y, y, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 yy_y => new float4(y, y, 0f, y);
+        public readonly fix4 yy_y => new fix4(y, y, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 gg_g => new float4(y, y, 0f, y);
+        public readonly fix4 gg_g => new fix4(y, y, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 tt_t => new float4(y, y, 0f, y);
+        public readonly fix4 tt_t => new fix4(y, y, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 yy_z => new float4(y, y, 0f, z);
+        public readonly fix4 yy_z => new fix4(y, y, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 gg_b => new float4(y, y, 0f, z);
+        public readonly fix4 gg_b => new fix4(y, y, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 tt_p => new float4(y, y, 0f, z);
+        public readonly fix4 tt_p => new fix4(y, y, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 yy_w => new float4(y, y, 0f, w);
+        public readonly fix4 yy_w => new fix4(y, y, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 gg_a => new float4(y, y, 0f, w);
+        public readonly fix4 gg_a => new fix4(y, y, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 tt_q => new float4(y, y, 0f, w);
+        public readonly fix4 tt_q => new fix4(y, y, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 yyx_ => new float4(y, y, x, 0f);
+        public readonly fix4 yyx_ => new fix4(y, y, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ggr_ => new float4(y, y, x, 0f);
+        public readonly fix4 ggr_ => new fix4(y, y, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 tts_ => new float4(y, y, x, 0f);
+        public readonly fix4 tts_ => new fix4(y, y, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 yyxx => new float4(y, y, x, x);
+        public readonly fix4 yyxx => new fix4(y, y, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ggrr => new float4(y, y, x, x);
+        public readonly fix4 ggrr => new fix4(y, y, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ttss => new float4(y, y, x, x);
+        public readonly fix4 ttss => new fix4(y, y, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 yyxy => new float4(y, y, x, y);
+        public readonly fix4 yyxy => new fix4(y, y, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ggrg => new float4(y, y, x, y);
+        public readonly fix4 ggrg => new fix4(y, y, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ttst => new float4(y, y, x, y);
+        public readonly fix4 ttst => new fix4(y, y, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 yyxz => new float4(y, y, x, z);
+        public readonly fix4 yyxz => new fix4(y, y, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ggrb => new float4(y, y, x, z);
+        public readonly fix4 ggrb => new fix4(y, y, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ttsp => new float4(y, y, x, z);
+        public readonly fix4 ttsp => new fix4(y, y, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 yyxw => new float4(y, y, x, w);
+        public readonly fix4 yyxw => new fix4(y, y, x, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ggra => new float4(y, y, x, w);
+        public readonly fix4 ggra => new fix4(y, y, x, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ttsq => new float4(y, y, x, w);
+        public readonly fix4 ttsq => new fix4(y, y, x, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 yyy_ => new float4(y, y, y, 0f);
+        public readonly fix4 yyy_ => new fix4(y, y, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ggg_ => new float4(y, y, y, 0f);
+        public readonly fix4 ggg_ => new fix4(y, y, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ttt_ => new float4(y, y, y, 0f);
+        public readonly fix4 ttt_ => new fix4(y, y, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 yyyx => new float4(y, y, y, x);
+        public readonly fix4 yyyx => new fix4(y, y, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 gggr => new float4(y, y, y, x);
+        public readonly fix4 gggr => new fix4(y, y, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ttts => new float4(y, y, y, x);
+        public readonly fix4 ttts => new fix4(y, y, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 yyyy => new float4(y, y, y, y);
+        public readonly fix4 yyyy => new fix4(y, y, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 gggg => new float4(y, y, y, y);
+        public readonly fix4 gggg => new fix4(y, y, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 tttt => new float4(y, y, y, y);
+        public readonly fix4 tttt => new fix4(y, y, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 yyyz => new float4(y, y, y, z);
+        public readonly fix4 yyyz => new fix4(y, y, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 gggb => new float4(y, y, y, z);
+        public readonly fix4 gggb => new fix4(y, y, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 tttp => new float4(y, y, y, z);
+        public readonly fix4 tttp => new fix4(y, y, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 yyyw => new float4(y, y, y, w);
+        public readonly fix4 yyyw => new fix4(y, y, y, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ggga => new float4(y, y, y, w);
+        public readonly fix4 ggga => new fix4(y, y, y, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 tttq => new float4(y, y, y, w);
+        public readonly fix4 tttq => new fix4(y, y, y, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 yyz_ => new float4(y, y, z, 0f);
+        public readonly fix4 yyz_ => new fix4(y, y, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ggb_ => new float4(y, y, z, 0f);
+        public readonly fix4 ggb_ => new fix4(y, y, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ttp_ => new float4(y, y, z, 0f);
+        public readonly fix4 ttp_ => new fix4(y, y, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 yyzx => new float4(y, y, z, x);
+        public readonly fix4 yyzx => new fix4(y, y, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ggbr => new float4(y, y, z, x);
+        public readonly fix4 ggbr => new fix4(y, y, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ttps => new float4(y, y, z, x);
+        public readonly fix4 ttps => new fix4(y, y, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 yyzy => new float4(y, y, z, y);
+        public readonly fix4 yyzy => new fix4(y, y, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ggbg => new float4(y, y, z, y);
+        public readonly fix4 ggbg => new fix4(y, y, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ttpt => new float4(y, y, z, y);
+        public readonly fix4 ttpt => new fix4(y, y, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 yyzz => new float4(y, y, z, z);
+        public readonly fix4 yyzz => new fix4(y, y, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ggbb => new float4(y, y, z, z);
+        public readonly fix4 ggbb => new fix4(y, y, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ttpp => new float4(y, y, z, z);
+        public readonly fix4 ttpp => new fix4(y, y, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 yyzw => new float4(y, y, z, w);
+        public readonly fix4 yyzw => new fix4(y, y, z, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ggba => new float4(y, y, z, w);
+        public readonly fix4 ggba => new fix4(y, y, z, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ttpq => new float4(y, y, z, w);
+        public readonly fix4 ttpq => new fix4(y, y, z, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 yyw_ => new float4(y, y, w, 0f);
+        public readonly fix4 yyw_ => new fix4(y, y, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 gga_ => new float4(y, y, w, 0f);
+        public readonly fix4 gga_ => new fix4(y, y, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ttq_ => new float4(y, y, w, 0f);
+        public readonly fix4 ttq_ => new fix4(y, y, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 yywx => new float4(y, y, w, x);
+        public readonly fix4 yywx => new fix4(y, y, w, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ggar => new float4(y, y, w, x);
+        public readonly fix4 ggar => new fix4(y, y, w, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ttqs => new float4(y, y, w, x);
+        public readonly fix4 ttqs => new fix4(y, y, w, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 yywy => new float4(y, y, w, y);
+        public readonly fix4 yywy => new fix4(y, y, w, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ggag => new float4(y, y, w, y);
+        public readonly fix4 ggag => new fix4(y, y, w, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ttqt => new float4(y, y, w, y);
+        public readonly fix4 ttqt => new fix4(y, y, w, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 yywz => new float4(y, y, w, z);
+        public readonly fix4 yywz => new fix4(y, y, w, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ggab => new float4(y, y, w, z);
+        public readonly fix4 ggab => new fix4(y, y, w, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ttqp => new float4(y, y, w, z);
+        public readonly fix4 ttqp => new fix4(y, y, w, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 yyww => new float4(y, y, w, w);
+        public readonly fix4 yyww => new fix4(y, y, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ggaa => new float4(y, y, w, w);
+        public readonly fix4 ggaa => new fix4(y, y, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ttqq => new float4(y, y, w, w);
+        public readonly fix4 ttqq => new fix4(y, y, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 yz__ => new float4(y, z, 0f, 0f);
+        public readonly fix4 yz__ => new fix4(y, z, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 gb__ => new float4(y, z, 0f, 0f);
+        public readonly fix4 gb__ => new fix4(y, z, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 tp__ => new float4(y, z, 0f, 0f);
+        public readonly fix4 tp__ => new fix4(y, z, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 yz_x => new float4(y, z, 0f, x);
+        public readonly fix4 yz_x => new fix4(y, z, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 gb_r => new float4(y, z, 0f, x);
+        public readonly fix4 gb_r => new fix4(y, z, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 tp_s => new float4(y, z, 0f, x);
+        public readonly fix4 tp_s => new fix4(y, z, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 yz_y => new float4(y, z, 0f, y);
+        public readonly fix4 yz_y => new fix4(y, z, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 gb_g => new float4(y, z, 0f, y);
+        public readonly fix4 gb_g => new fix4(y, z, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 tp_t => new float4(y, z, 0f, y);
+        public readonly fix4 tp_t => new fix4(y, z, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 yz_z => new float4(y, z, 0f, z);
+        public readonly fix4 yz_z => new fix4(y, z, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 gb_b => new float4(y, z, 0f, z);
+        public readonly fix4 gb_b => new fix4(y, z, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 tp_p => new float4(y, z, 0f, z);
+        public readonly fix4 tp_p => new fix4(y, z, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 yz_w => new float4(y, z, 0f, w);
+        public readonly fix4 yz_w => new fix4(y, z, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 gb_a => new float4(y, z, 0f, w);
+        public readonly fix4 gb_a => new fix4(y, z, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 tp_q => new float4(y, z, 0f, w);
+        public readonly fix4 tp_q => new fix4(y, z, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 yzx_ => new float4(y, z, x, 0f);
+        public readonly fix4 yzx_ => new fix4(y, z, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 gbr_ => new float4(y, z, x, 0f);
+        public readonly fix4 gbr_ => new fix4(y, z, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 tps_ => new float4(y, z, x, 0f);
+        public readonly fix4 tps_ => new fix4(y, z, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 yzxx => new float4(y, z, x, x);
+        public readonly fix4 yzxx => new fix4(y, z, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 gbrr => new float4(y, z, x, x);
+        public readonly fix4 gbrr => new fix4(y, z, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 tpss => new float4(y, z, x, x);
+        public readonly fix4 tpss => new fix4(y, z, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 yzxy => new float4(y, z, x, y);
+        public readonly fix4 yzxy => new fix4(y, z, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 gbrg => new float4(y, z, x, y);
+        public readonly fix4 gbrg => new fix4(y, z, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 tpst => new float4(y, z, x, y);
+        public readonly fix4 tpst => new fix4(y, z, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 yzxz => new float4(y, z, x, z);
+        public readonly fix4 yzxz => new fix4(y, z, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 gbrb => new float4(y, z, x, z);
+        public readonly fix4 gbrb => new fix4(y, z, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 tpsp => new float4(y, z, x, z);
+        public readonly fix4 tpsp => new fix4(y, z, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float4 yzxw
+        public fix4 yzxw
         {
-            readonly get => new float4(y, z, x, w);
+            readonly get => new fix4(y, z, x, w);
             set
             {
                 w = value.x;
@@ -5543,9 +5532,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float4 gbra
+        public fix4 gbra
         {
-            readonly get => new float4(y, z, x, w);
+            readonly get => new fix4(y, z, x, w);
             set
             {
                 w = value.x;
@@ -5558,9 +5547,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float4 tpsq
+        public fix4 tpsq
         {
-            readonly get => new float4(y, z, x, w);
+            readonly get => new fix4(y, z, x, w);
             set
             {
                 w = value.x;
@@ -5573,174 +5562,174 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 yzy_ => new float4(y, z, y, 0f);
+        public readonly fix4 yzy_ => new fix4(y, z, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 gbg_ => new float4(y, z, y, 0f);
+        public readonly fix4 gbg_ => new fix4(y, z, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 tpt_ => new float4(y, z, y, 0f);
+        public readonly fix4 tpt_ => new fix4(y, z, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 yzyx => new float4(y, z, y, x);
+        public readonly fix4 yzyx => new fix4(y, z, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 gbgr => new float4(y, z, y, x);
+        public readonly fix4 gbgr => new fix4(y, z, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 tpts => new float4(y, z, y, x);
+        public readonly fix4 tpts => new fix4(y, z, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 yzyy => new float4(y, z, y, y);
+        public readonly fix4 yzyy => new fix4(y, z, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 gbgg => new float4(y, z, y, y);
+        public readonly fix4 gbgg => new fix4(y, z, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 tptt => new float4(y, z, y, y);
+        public readonly fix4 tptt => new fix4(y, z, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 yzyz => new float4(y, z, y, z);
+        public readonly fix4 yzyz => new fix4(y, z, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 gbgb => new float4(y, z, y, z);
+        public readonly fix4 gbgb => new fix4(y, z, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 tptp => new float4(y, z, y, z);
+        public readonly fix4 tptp => new fix4(y, z, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 yzyw => new float4(y, z, y, w);
+        public readonly fix4 yzyw => new fix4(y, z, y, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 gbga => new float4(y, z, y, w);
+        public readonly fix4 gbga => new fix4(y, z, y, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 tptq => new float4(y, z, y, w);
+        public readonly fix4 tptq => new fix4(y, z, y, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 yzz_ => new float4(y, z, z, 0f);
+        public readonly fix4 yzz_ => new fix4(y, z, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 gbb_ => new float4(y, z, z, 0f);
+        public readonly fix4 gbb_ => new fix4(y, z, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 tpp_ => new float4(y, z, z, 0f);
+        public readonly fix4 tpp_ => new fix4(y, z, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 yzzx => new float4(y, z, z, x);
+        public readonly fix4 yzzx => new fix4(y, z, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 gbbr => new float4(y, z, z, x);
+        public readonly fix4 gbbr => new fix4(y, z, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 tpps => new float4(y, z, z, x);
+        public readonly fix4 tpps => new fix4(y, z, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 yzzy => new float4(y, z, z, y);
+        public readonly fix4 yzzy => new fix4(y, z, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 gbbg => new float4(y, z, z, y);
+        public readonly fix4 gbbg => new fix4(y, z, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 tppt => new float4(y, z, z, y);
+        public readonly fix4 tppt => new fix4(y, z, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 yzzz => new float4(y, z, z, z);
+        public readonly fix4 yzzz => new fix4(y, z, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 gbbb => new float4(y, z, z, z);
+        public readonly fix4 gbbb => new fix4(y, z, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 tppp => new float4(y, z, z, z);
+        public readonly fix4 tppp => new fix4(y, z, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 yzzw => new float4(y, z, z, w);
+        public readonly fix4 yzzw => new fix4(y, z, z, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 gbba => new float4(y, z, z, w);
+        public readonly fix4 gbba => new fix4(y, z, z, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 tppq => new float4(y, z, z, w);
+        public readonly fix4 tppq => new fix4(y, z, z, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 yzw_ => new float4(y, z, w, 0f);
+        public readonly fix4 yzw_ => new fix4(y, z, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 gba_ => new float4(y, z, w, 0f);
+        public readonly fix4 gba_ => new fix4(y, z, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 tpq_ => new float4(y, z, w, 0f);
+        public readonly fix4 tpq_ => new fix4(y, z, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float4 yzwx
+        public fix4 yzwx
         {
-            readonly get => new float4(y, z, w, x);
+            readonly get => new fix4(y, z, w, x);
             set
             {
                 w = value.x;
@@ -5753,9 +5742,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float4 gbar
+        public fix4 gbar
         {
-            readonly get => new float4(y, z, w, x);
+            readonly get => new fix4(y, z, w, x);
             set
             {
                 w = value.x;
@@ -5768,9 +5757,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float4 tpqs
+        public fix4 tpqs
         {
-            readonly get => new float4(y, z, w, x);
+            readonly get => new fix4(y, z, w, x);
             set
             {
                 w = value.x;
@@ -5783,174 +5772,174 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 yzwy => new float4(y, z, w, y);
+        public readonly fix4 yzwy => new fix4(y, z, w, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 gbag => new float4(y, z, w, y);
+        public readonly fix4 gbag => new fix4(y, z, w, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 tpqt => new float4(y, z, w, y);
+        public readonly fix4 tpqt => new fix4(y, z, w, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 yzwz => new float4(y, z, w, z);
+        public readonly fix4 yzwz => new fix4(y, z, w, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 gbab => new float4(y, z, w, z);
+        public readonly fix4 gbab => new fix4(y, z, w, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 tpqp => new float4(y, z, w, z);
+        public readonly fix4 tpqp => new fix4(y, z, w, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 yzww => new float4(y, z, w, w);
+        public readonly fix4 yzww => new fix4(y, z, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 gbaa => new float4(y, z, w, w);
+        public readonly fix4 gbaa => new fix4(y, z, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 tpqq => new float4(y, z, w, w);
+        public readonly fix4 tpqq => new fix4(y, z, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 yw__ => new float4(y, w, 0f, 0f);
+        public readonly fix4 yw__ => new fix4(y, w, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ga__ => new float4(y, w, 0f, 0f);
+        public readonly fix4 ga__ => new fix4(y, w, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 tq__ => new float4(y, w, 0f, 0f);
+        public readonly fix4 tq__ => new fix4(y, w, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 yw_x => new float4(y, w, 0f, x);
+        public readonly fix4 yw_x => new fix4(y, w, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ga_r => new float4(y, w, 0f, x);
+        public readonly fix4 ga_r => new fix4(y, w, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 tq_s => new float4(y, w, 0f, x);
+        public readonly fix4 tq_s => new fix4(y, w, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 yw_y => new float4(y, w, 0f, y);
+        public readonly fix4 yw_y => new fix4(y, w, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ga_g => new float4(y, w, 0f, y);
+        public readonly fix4 ga_g => new fix4(y, w, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 tq_t => new float4(y, w, 0f, y);
+        public readonly fix4 tq_t => new fix4(y, w, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 yw_z => new float4(y, w, 0f, z);
+        public readonly fix4 yw_z => new fix4(y, w, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ga_b => new float4(y, w, 0f, z);
+        public readonly fix4 ga_b => new fix4(y, w, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 tq_p => new float4(y, w, 0f, z);
+        public readonly fix4 tq_p => new fix4(y, w, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 yw_w => new float4(y, w, 0f, w);
+        public readonly fix4 yw_w => new fix4(y, w, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ga_a => new float4(y, w, 0f, w);
+        public readonly fix4 ga_a => new fix4(y, w, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 tq_q => new float4(y, w, 0f, w);
+        public readonly fix4 tq_q => new fix4(y, w, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ywx_ => new float4(y, w, x, 0f);
+        public readonly fix4 ywx_ => new fix4(y, w, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 gar_ => new float4(y, w, x, 0f);
+        public readonly fix4 gar_ => new fix4(y, w, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 tqs_ => new float4(y, w, x, 0f);
+        public readonly fix4 tqs_ => new fix4(y, w, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ywxx => new float4(y, w, x, x);
+        public readonly fix4 ywxx => new fix4(y, w, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 garr => new float4(y, w, x, x);
+        public readonly fix4 garr => new fix4(y, w, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 tqss => new float4(y, w, x, x);
+        public readonly fix4 tqss => new fix4(y, w, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ywxy => new float4(y, w, x, y);
+        public readonly fix4 ywxy => new fix4(y, w, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 garg => new float4(y, w, x, y);
+        public readonly fix4 garg => new fix4(y, w, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 tqst => new float4(y, w, x, y);
+        public readonly fix4 tqst => new fix4(y, w, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float4 ywxz
+        public fix4 ywxz
         {
-            readonly get => new float4(y, w, x, z);
+            readonly get => new fix4(y, w, x, z);
             set
             {
                 w = value.x;
@@ -5963,9 +5952,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float4 garb
+        public fix4 garb
         {
-            readonly get => new float4(y, w, x, z);
+            readonly get => new fix4(y, w, x, z);
             set
             {
                 w = value.x;
@@ -5978,9 +5967,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float4 tqsp
+        public fix4 tqsp
         {
-            readonly get => new float4(y, w, x, z);
+            readonly get => new fix4(y, w, x, z);
             set
             {
                 w = value.x;
@@ -5993,114 +5982,114 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ywxw => new float4(y, w, x, w);
+        public readonly fix4 ywxw => new fix4(y, w, x, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 gara => new float4(y, w, x, w);
+        public readonly fix4 gara => new fix4(y, w, x, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 tqsq => new float4(y, w, x, w);
+        public readonly fix4 tqsq => new fix4(y, w, x, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ywy_ => new float4(y, w, y, 0f);
+        public readonly fix4 ywy_ => new fix4(y, w, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 gag_ => new float4(y, w, y, 0f);
+        public readonly fix4 gag_ => new fix4(y, w, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 tqt_ => new float4(y, w, y, 0f);
+        public readonly fix4 tqt_ => new fix4(y, w, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ywyx => new float4(y, w, y, x);
+        public readonly fix4 ywyx => new fix4(y, w, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 gagr => new float4(y, w, y, x);
+        public readonly fix4 gagr => new fix4(y, w, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 tqts => new float4(y, w, y, x);
+        public readonly fix4 tqts => new fix4(y, w, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ywyy => new float4(y, w, y, y);
+        public readonly fix4 ywyy => new fix4(y, w, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 gagg => new float4(y, w, y, y);
+        public readonly fix4 gagg => new fix4(y, w, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 tqtt => new float4(y, w, y, y);
+        public readonly fix4 tqtt => new fix4(y, w, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ywyz => new float4(y, w, y, z);
+        public readonly fix4 ywyz => new fix4(y, w, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 gagb => new float4(y, w, y, z);
+        public readonly fix4 gagb => new fix4(y, w, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 tqtp => new float4(y, w, y, z);
+        public readonly fix4 tqtp => new fix4(y, w, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ywyw => new float4(y, w, y, w);
+        public readonly fix4 ywyw => new fix4(y, w, y, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 gaga => new float4(y, w, y, w);
+        public readonly fix4 gaga => new fix4(y, w, y, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 tqtq => new float4(y, w, y, w);
+        public readonly fix4 tqtq => new fix4(y, w, y, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ywz_ => new float4(y, w, z, 0f);
+        public readonly fix4 ywz_ => new fix4(y, w, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 gab_ => new float4(y, w, z, 0f);
+        public readonly fix4 gab_ => new fix4(y, w, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 tqp_ => new float4(y, w, z, 0f);
+        public readonly fix4 tqp_ => new fix4(y, w, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float4 ywzx
+        public fix4 ywzx
         {
-            readonly get => new float4(y, w, z, x);
+            readonly get => new fix4(y, w, z, x);
             set
             {
                 w = value.x;
@@ -6113,9 +6102,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float4 gabr
+        public fix4 gabr
         {
-            readonly get => new float4(y, w, z, x);
+            readonly get => new fix4(y, w, z, x);
             set
             {
                 w = value.x;
@@ -6128,9 +6117,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float4 tqps
+        public fix4 tqps
         {
-            readonly get => new float4(y, w, z, x);
+            readonly get => new fix4(y, w, z, x);
             set
             {
                 w = value.x;
@@ -6143,714 +6132,714 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ywzy => new float4(y, w, z, y);
+        public readonly fix4 ywzy => new fix4(y, w, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 gabg => new float4(y, w, z, y);
+        public readonly fix4 gabg => new fix4(y, w, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 tqpt => new float4(y, w, z, y);
+        public readonly fix4 tqpt => new fix4(y, w, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ywzz => new float4(y, w, z, z);
+        public readonly fix4 ywzz => new fix4(y, w, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 gabb => new float4(y, w, z, z);
+        public readonly fix4 gabb => new fix4(y, w, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 tqpp => new float4(y, w, z, z);
+        public readonly fix4 tqpp => new fix4(y, w, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ywzw => new float4(y, w, z, w);
+        public readonly fix4 ywzw => new fix4(y, w, z, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 gaba => new float4(y, w, z, w);
+        public readonly fix4 gaba => new fix4(y, w, z, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 tqpq => new float4(y, w, z, w);
+        public readonly fix4 tqpq => new fix4(y, w, z, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 yww_ => new float4(y, w, w, 0f);
+        public readonly fix4 yww_ => new fix4(y, w, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 gaa_ => new float4(y, w, w, 0f);
+        public readonly fix4 gaa_ => new fix4(y, w, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 tqq_ => new float4(y, w, w, 0f);
+        public readonly fix4 tqq_ => new fix4(y, w, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ywwx => new float4(y, w, w, x);
+        public readonly fix4 ywwx => new fix4(y, w, w, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 gaar => new float4(y, w, w, x);
+        public readonly fix4 gaar => new fix4(y, w, w, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 tqqs => new float4(y, w, w, x);
+        public readonly fix4 tqqs => new fix4(y, w, w, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ywwy => new float4(y, w, w, y);
+        public readonly fix4 ywwy => new fix4(y, w, w, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 gaag => new float4(y, w, w, y);
+        public readonly fix4 gaag => new fix4(y, w, w, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 tqqt => new float4(y, w, w, y);
+        public readonly fix4 tqqt => new fix4(y, w, w, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ywwz => new float4(y, w, w, z);
+        public readonly fix4 ywwz => new fix4(y, w, w, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 gaab => new float4(y, w, w, z);
+        public readonly fix4 gaab => new fix4(y, w, w, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 tqqp => new float4(y, w, w, z);
+        public readonly fix4 tqqp => new fix4(y, w, w, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ywww => new float4(y, w, w, w);
+        public readonly fix4 ywww => new fix4(y, w, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 gaaa => new float4(y, w, w, w);
+        public readonly fix4 gaaa => new fix4(y, w, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 tqqq => new float4(y, w, w, w);
+        public readonly fix4 tqqq => new fix4(y, w, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 z___ => new float4(z, 0f, 0f, 0f);
+        public readonly fix4 z___ => new fix4(z, fix.Zero, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 b___ => new float4(z, 0f, 0f, 0f);
+        public readonly fix4 b___ => new fix4(z, fix.Zero, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 p___ => new float4(z, 0f, 0f, 0f);
+        public readonly fix4 p___ => new fix4(z, fix.Zero, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 z__x => new float4(z, 0f, 0f, x);
+        public readonly fix4 z__x => new fix4(z, fix.Zero, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 b__r => new float4(z, 0f, 0f, x);
+        public readonly fix4 b__r => new fix4(z, fix.Zero, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 p__s => new float4(z, 0f, 0f, x);
+        public readonly fix4 p__s => new fix4(z, fix.Zero, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 z__y => new float4(z, 0f, 0f, y);
+        public readonly fix4 z__y => new fix4(z, fix.Zero, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 b__g => new float4(z, 0f, 0f, y);
+        public readonly fix4 b__g => new fix4(z, fix.Zero, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 p__t => new float4(z, 0f, 0f, y);
+        public readonly fix4 p__t => new fix4(z, fix.Zero, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 z__z => new float4(z, 0f, 0f, z);
+        public readonly fix4 z__z => new fix4(z, fix.Zero, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 b__b => new float4(z, 0f, 0f, z);
+        public readonly fix4 b__b => new fix4(z, fix.Zero, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 p__p => new float4(z, 0f, 0f, z);
+        public readonly fix4 p__p => new fix4(z, fix.Zero, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 z__w => new float4(z, 0f, 0f, w);
+        public readonly fix4 z__w => new fix4(z, fix.Zero, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 b__a => new float4(z, 0f, 0f, w);
+        public readonly fix4 b__a => new fix4(z, fix.Zero, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 p__q => new float4(z, 0f, 0f, w);
+        public readonly fix4 p__q => new fix4(z, fix.Zero, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 z_x_ => new float4(z, 0f, x, 0f);
+        public readonly fix4 z_x_ => new fix4(z, fix.Zero, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 b_r_ => new float4(z, 0f, x, 0f);
+        public readonly fix4 b_r_ => new fix4(z, fix.Zero, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 p_s_ => new float4(z, 0f, x, 0f);
+        public readonly fix4 p_s_ => new fix4(z, fix.Zero, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 z_xx => new float4(z, 0f, x, x);
+        public readonly fix4 z_xx => new fix4(z, fix.Zero, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 b_rr => new float4(z, 0f, x, x);
+        public readonly fix4 b_rr => new fix4(z, fix.Zero, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 p_ss => new float4(z, 0f, x, x);
+        public readonly fix4 p_ss => new fix4(z, fix.Zero, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 z_xy => new float4(z, 0f, x, y);
+        public readonly fix4 z_xy => new fix4(z, fix.Zero, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 b_rg => new float4(z, 0f, x, y);
+        public readonly fix4 b_rg => new fix4(z, fix.Zero, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 p_st => new float4(z, 0f, x, y);
+        public readonly fix4 p_st => new fix4(z, fix.Zero, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 z_xz => new float4(z, 0f, x, z);
+        public readonly fix4 z_xz => new fix4(z, fix.Zero, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 b_rb => new float4(z, 0f, x, z);
+        public readonly fix4 b_rb => new fix4(z, fix.Zero, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 p_sp => new float4(z, 0f, x, z);
+        public readonly fix4 p_sp => new fix4(z, fix.Zero, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 z_xw => new float4(z, 0f, x, w);
+        public readonly fix4 z_xw => new fix4(z, fix.Zero, x, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 b_ra => new float4(z, 0f, x, w);
+        public readonly fix4 b_ra => new fix4(z, fix.Zero, x, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 p_sq => new float4(z, 0f, x, w);
+        public readonly fix4 p_sq => new fix4(z, fix.Zero, x, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 z_y_ => new float4(z, 0f, y, 0f);
+        public readonly fix4 z_y_ => new fix4(z, fix.Zero, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 b_g_ => new float4(z, 0f, y, 0f);
+        public readonly fix4 b_g_ => new fix4(z, fix.Zero, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 p_t_ => new float4(z, 0f, y, 0f);
+        public readonly fix4 p_t_ => new fix4(z, fix.Zero, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 z_yx => new float4(z, 0f, y, x);
+        public readonly fix4 z_yx => new fix4(z, fix.Zero, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 b_gr => new float4(z, 0f, y, x);
+        public readonly fix4 b_gr => new fix4(z, fix.Zero, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 p_ts => new float4(z, 0f, y, x);
+        public readonly fix4 p_ts => new fix4(z, fix.Zero, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 z_yy => new float4(z, 0f, y, y);
+        public readonly fix4 z_yy => new fix4(z, fix.Zero, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 b_gg => new float4(z, 0f, y, y);
+        public readonly fix4 b_gg => new fix4(z, fix.Zero, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 p_tt => new float4(z, 0f, y, y);
+        public readonly fix4 p_tt => new fix4(z, fix.Zero, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 z_yz => new float4(z, 0f, y, z);
+        public readonly fix4 z_yz => new fix4(z, fix.Zero, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 b_gb => new float4(z, 0f, y, z);
+        public readonly fix4 b_gb => new fix4(z, fix.Zero, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 p_tp => new float4(z, 0f, y, z);
+        public readonly fix4 p_tp => new fix4(z, fix.Zero, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 z_yw => new float4(z, 0f, y, w);
+        public readonly fix4 z_yw => new fix4(z, fix.Zero, y, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 b_ga => new float4(z, 0f, y, w);
+        public readonly fix4 b_ga => new fix4(z, fix.Zero, y, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 p_tq => new float4(z, 0f, y, w);
+        public readonly fix4 p_tq => new fix4(z, fix.Zero, y, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 z_z_ => new float4(z, 0f, z, 0f);
+        public readonly fix4 z_z_ => new fix4(z, fix.Zero, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 b_b_ => new float4(z, 0f, z, 0f);
+        public readonly fix4 b_b_ => new fix4(z, fix.Zero, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 p_p_ => new float4(z, 0f, z, 0f);
+        public readonly fix4 p_p_ => new fix4(z, fix.Zero, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 z_zx => new float4(z, 0f, z, x);
+        public readonly fix4 z_zx => new fix4(z, fix.Zero, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 b_br => new float4(z, 0f, z, x);
+        public readonly fix4 b_br => new fix4(z, fix.Zero, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 p_ps => new float4(z, 0f, z, x);
+        public readonly fix4 p_ps => new fix4(z, fix.Zero, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 z_zy => new float4(z, 0f, z, y);
+        public readonly fix4 z_zy => new fix4(z, fix.Zero, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 b_bg => new float4(z, 0f, z, y);
+        public readonly fix4 b_bg => new fix4(z, fix.Zero, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 p_pt => new float4(z, 0f, z, y);
+        public readonly fix4 p_pt => new fix4(z, fix.Zero, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 z_zz => new float4(z, 0f, z, z);
+        public readonly fix4 z_zz => new fix4(z, fix.Zero, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 b_bb => new float4(z, 0f, z, z);
+        public readonly fix4 b_bb => new fix4(z, fix.Zero, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 p_pp => new float4(z, 0f, z, z);
+        public readonly fix4 p_pp => new fix4(z, fix.Zero, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 z_zw => new float4(z, 0f, z, w);
+        public readonly fix4 z_zw => new fix4(z, fix.Zero, z, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 b_ba => new float4(z, 0f, z, w);
+        public readonly fix4 b_ba => new fix4(z, fix.Zero, z, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 p_pq => new float4(z, 0f, z, w);
+        public readonly fix4 p_pq => new fix4(z, fix.Zero, z, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 z_w_ => new float4(z, 0f, w, 0f);
+        public readonly fix4 z_w_ => new fix4(z, fix.Zero, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 b_a_ => new float4(z, 0f, w, 0f);
+        public readonly fix4 b_a_ => new fix4(z, fix.Zero, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 p_q_ => new float4(z, 0f, w, 0f);
+        public readonly fix4 p_q_ => new fix4(z, fix.Zero, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 z_wx => new float4(z, 0f, w, x);
+        public readonly fix4 z_wx => new fix4(z, fix.Zero, w, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 b_ar => new float4(z, 0f, w, x);
+        public readonly fix4 b_ar => new fix4(z, fix.Zero, w, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 p_qs => new float4(z, 0f, w, x);
+        public readonly fix4 p_qs => new fix4(z, fix.Zero, w, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 z_wy => new float4(z, 0f, w, y);
+        public readonly fix4 z_wy => new fix4(z, fix.Zero, w, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 b_ag => new float4(z, 0f, w, y);
+        public readonly fix4 b_ag => new fix4(z, fix.Zero, w, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 p_qt => new float4(z, 0f, w, y);
+        public readonly fix4 p_qt => new fix4(z, fix.Zero, w, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 z_wz => new float4(z, 0f, w, z);
+        public readonly fix4 z_wz => new fix4(z, fix.Zero, w, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 b_ab => new float4(z, 0f, w, z);
+        public readonly fix4 b_ab => new fix4(z, fix.Zero, w, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 p_qp => new float4(z, 0f, w, z);
+        public readonly fix4 p_qp => new fix4(z, fix.Zero, w, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 z_ww => new float4(z, 0f, w, w);
+        public readonly fix4 z_ww => new fix4(z, fix.Zero, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 b_aa => new float4(z, 0f, w, w);
+        public readonly fix4 b_aa => new fix4(z, fix.Zero, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 p_qq => new float4(z, 0f, w, w);
+        public readonly fix4 p_qq => new fix4(z, fix.Zero, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zx__ => new float4(z, x, 0f, 0f);
+        public readonly fix4 zx__ => new fix4(z, x, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 br__ => new float4(z, x, 0f, 0f);
+        public readonly fix4 br__ => new fix4(z, x, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ps__ => new float4(z, x, 0f, 0f);
+        public readonly fix4 ps__ => new fix4(z, x, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zx_x => new float4(z, x, 0f, x);
+        public readonly fix4 zx_x => new fix4(z, x, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 br_r => new float4(z, x, 0f, x);
+        public readonly fix4 br_r => new fix4(z, x, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ps_s => new float4(z, x, 0f, x);
+        public readonly fix4 ps_s => new fix4(z, x, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zx_y => new float4(z, x, 0f, y);
+        public readonly fix4 zx_y => new fix4(z, x, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 br_g => new float4(z, x, 0f, y);
+        public readonly fix4 br_g => new fix4(z, x, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ps_t => new float4(z, x, 0f, y);
+        public readonly fix4 ps_t => new fix4(z, x, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zx_z => new float4(z, x, 0f, z);
+        public readonly fix4 zx_z => new fix4(z, x, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 br_b => new float4(z, x, 0f, z);
+        public readonly fix4 br_b => new fix4(z, x, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ps_p => new float4(z, x, 0f, z);
+        public readonly fix4 ps_p => new fix4(z, x, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zx_w => new float4(z, x, 0f, w);
+        public readonly fix4 zx_w => new fix4(z, x, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 br_a => new float4(z, x, 0f, w);
+        public readonly fix4 br_a => new fix4(z, x, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ps_q => new float4(z, x, 0f, w);
+        public readonly fix4 ps_q => new fix4(z, x, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zxx_ => new float4(z, x, x, 0f);
+        public readonly fix4 zxx_ => new fix4(z, x, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 brr_ => new float4(z, x, x, 0f);
+        public readonly fix4 brr_ => new fix4(z, x, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 pss_ => new float4(z, x, x, 0f);
+        public readonly fix4 pss_ => new fix4(z, x, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zxxx => new float4(z, x, x, x);
+        public readonly fix4 zxxx => new fix4(z, x, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 brrr => new float4(z, x, x, x);
+        public readonly fix4 brrr => new fix4(z, x, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 psss => new float4(z, x, x, x);
+        public readonly fix4 psss => new fix4(z, x, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zxxy => new float4(z, x, x, y);
+        public readonly fix4 zxxy => new fix4(z, x, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 brrg => new float4(z, x, x, y);
+        public readonly fix4 brrg => new fix4(z, x, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 psst => new float4(z, x, x, y);
+        public readonly fix4 psst => new fix4(z, x, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zxxz => new float4(z, x, x, z);
+        public readonly fix4 zxxz => new fix4(z, x, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 brrb => new float4(z, x, x, z);
+        public readonly fix4 brrb => new fix4(z, x, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 pssp => new float4(z, x, x, z);
+        public readonly fix4 pssp => new fix4(z, x, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zxxw => new float4(z, x, x, w);
+        public readonly fix4 zxxw => new fix4(z, x, x, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 brra => new float4(z, x, x, w);
+        public readonly fix4 brra => new fix4(z, x, x, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 pssq => new float4(z, x, x, w);
+        public readonly fix4 pssq => new fix4(z, x, x, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zxy_ => new float4(z, x, y, 0f);
+        public readonly fix4 zxy_ => new fix4(z, x, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 brg_ => new float4(z, x, y, 0f);
+        public readonly fix4 brg_ => new fix4(z, x, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 pst_ => new float4(z, x, y, 0f);
+        public readonly fix4 pst_ => new fix4(z, x, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zxyx => new float4(z, x, y, x);
+        public readonly fix4 zxyx => new fix4(z, x, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 brgr => new float4(z, x, y, x);
+        public readonly fix4 brgr => new fix4(z, x, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 psts => new float4(z, x, y, x);
+        public readonly fix4 psts => new fix4(z, x, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zxyy => new float4(z, x, y, y);
+        public readonly fix4 zxyy => new fix4(z, x, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 brgg => new float4(z, x, y, y);
+        public readonly fix4 brgg => new fix4(z, x, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 pstt => new float4(z, x, y, y);
+        public readonly fix4 pstt => new fix4(z, x, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zxyz => new float4(z, x, y, z);
+        public readonly fix4 zxyz => new fix4(z, x, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 brgb => new float4(z, x, y, z);
+        public readonly fix4 brgb => new fix4(z, x, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 pstp => new float4(z, x, y, z);
+        public readonly fix4 pstp => new fix4(z, x, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float4 zxyw
+        public fix4 zxyw
         {
-            readonly get => new float4(z, x, y, w);
+            readonly get => new fix4(z, x, y, w);
             set
             {
                 w = value.x;
@@ -6863,9 +6852,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float4 brga
+        public fix4 brga
         {
-            readonly get => new float4(z, x, y, w);
+            readonly get => new fix4(z, x, y, w);
             set
             {
                 w = value.x;
@@ -6878,9 +6867,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float4 pstq
+        public fix4 pstq
         {
-            readonly get => new float4(z, x, y, w);
+            readonly get => new fix4(z, x, y, w);
             set
             {
                 w = value.x;
@@ -6893,114 +6882,114 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zxz_ => new float4(z, x, z, 0f);
+        public readonly fix4 zxz_ => new fix4(z, x, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 brb_ => new float4(z, x, z, 0f);
+        public readonly fix4 brb_ => new fix4(z, x, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 psp_ => new float4(z, x, z, 0f);
+        public readonly fix4 psp_ => new fix4(z, x, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zxzx => new float4(z, x, z, x);
+        public readonly fix4 zxzx => new fix4(z, x, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 brbr => new float4(z, x, z, x);
+        public readonly fix4 brbr => new fix4(z, x, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 psps => new float4(z, x, z, x);
+        public readonly fix4 psps => new fix4(z, x, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zxzy => new float4(z, x, z, y);
+        public readonly fix4 zxzy => new fix4(z, x, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 brbg => new float4(z, x, z, y);
+        public readonly fix4 brbg => new fix4(z, x, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 pspt => new float4(z, x, z, y);
+        public readonly fix4 pspt => new fix4(z, x, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zxzz => new float4(z, x, z, z);
+        public readonly fix4 zxzz => new fix4(z, x, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 brbb => new float4(z, x, z, z);
+        public readonly fix4 brbb => new fix4(z, x, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 pspp => new float4(z, x, z, z);
+        public readonly fix4 pspp => new fix4(z, x, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zxzw => new float4(z, x, z, w);
+        public readonly fix4 zxzw => new fix4(z, x, z, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 brba => new float4(z, x, z, w);
+        public readonly fix4 brba => new fix4(z, x, z, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 pspq => new float4(z, x, z, w);
+        public readonly fix4 pspq => new fix4(z, x, z, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zxw_ => new float4(z, x, w, 0f);
+        public readonly fix4 zxw_ => new fix4(z, x, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 bra_ => new float4(z, x, w, 0f);
+        public readonly fix4 bra_ => new fix4(z, x, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 psq_ => new float4(z, x, w, 0f);
+        public readonly fix4 psq_ => new fix4(z, x, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zxwx => new float4(z, x, w, x);
+        public readonly fix4 zxwx => new fix4(z, x, w, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 brar => new float4(z, x, w, x);
+        public readonly fix4 brar => new fix4(z, x, w, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 psqs => new float4(z, x, w, x);
+        public readonly fix4 psqs => new fix4(z, x, w, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float4 zxwy
+        public fix4 zxwy
         {
-            readonly get => new float4(z, x, w, y);
+            readonly get => new fix4(z, x, w, y);
             set
             {
                 w = value.x;
@@ -7013,9 +7002,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float4 brag
+        public fix4 brag
         {
-            readonly get => new float4(z, x, w, y);
+            readonly get => new fix4(z, x, w, y);
             set
             {
                 w = value.x;
@@ -7028,9 +7017,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float4 psqt
+        public fix4 psqt
         {
-            readonly get => new float4(z, x, w, y);
+            readonly get => new fix4(z, x, w, y);
             set
             {
                 w = value.x;
@@ -7043,174 +7032,174 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zxwz => new float4(z, x, w, z);
+        public readonly fix4 zxwz => new fix4(z, x, w, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 brab => new float4(z, x, w, z);
+        public readonly fix4 brab => new fix4(z, x, w, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 psqp => new float4(z, x, w, z);
+        public readonly fix4 psqp => new fix4(z, x, w, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zxww => new float4(z, x, w, w);
+        public readonly fix4 zxww => new fix4(z, x, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 braa => new float4(z, x, w, w);
+        public readonly fix4 braa => new fix4(z, x, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 psqq => new float4(z, x, w, w);
+        public readonly fix4 psqq => new fix4(z, x, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zy__ => new float4(z, y, 0f, 0f);
+        public readonly fix4 zy__ => new fix4(z, y, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 bg__ => new float4(z, y, 0f, 0f);
+        public readonly fix4 bg__ => new fix4(z, y, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 pt__ => new float4(z, y, 0f, 0f);
+        public readonly fix4 pt__ => new fix4(z, y, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zy_x => new float4(z, y, 0f, x);
+        public readonly fix4 zy_x => new fix4(z, y, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 bg_r => new float4(z, y, 0f, x);
+        public readonly fix4 bg_r => new fix4(z, y, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 pt_s => new float4(z, y, 0f, x);
+        public readonly fix4 pt_s => new fix4(z, y, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zy_y => new float4(z, y, 0f, y);
+        public readonly fix4 zy_y => new fix4(z, y, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 bg_g => new float4(z, y, 0f, y);
+        public readonly fix4 bg_g => new fix4(z, y, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 pt_t => new float4(z, y, 0f, y);
+        public readonly fix4 pt_t => new fix4(z, y, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zy_z => new float4(z, y, 0f, z);
+        public readonly fix4 zy_z => new fix4(z, y, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 bg_b => new float4(z, y, 0f, z);
+        public readonly fix4 bg_b => new fix4(z, y, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 pt_p => new float4(z, y, 0f, z);
+        public readonly fix4 pt_p => new fix4(z, y, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zy_w => new float4(z, y, 0f, w);
+        public readonly fix4 zy_w => new fix4(z, y, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 bg_a => new float4(z, y, 0f, w);
+        public readonly fix4 bg_a => new fix4(z, y, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 pt_q => new float4(z, y, 0f, w);
+        public readonly fix4 pt_q => new fix4(z, y, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zyx_ => new float4(z, y, x, 0f);
+        public readonly fix4 zyx_ => new fix4(z, y, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 bgr_ => new float4(z, y, x, 0f);
+        public readonly fix4 bgr_ => new fix4(z, y, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 pts_ => new float4(z, y, x, 0f);
+        public readonly fix4 pts_ => new fix4(z, y, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zyxx => new float4(z, y, x, x);
+        public readonly fix4 zyxx => new fix4(z, y, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 bgrr => new float4(z, y, x, x);
+        public readonly fix4 bgrr => new fix4(z, y, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ptss => new float4(z, y, x, x);
+        public readonly fix4 ptss => new fix4(z, y, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zyxy => new float4(z, y, x, y);
+        public readonly fix4 zyxy => new fix4(z, y, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 bgrg => new float4(z, y, x, y);
+        public readonly fix4 bgrg => new fix4(z, y, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ptst => new float4(z, y, x, y);
+        public readonly fix4 ptst => new fix4(z, y, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zyxz => new float4(z, y, x, z);
+        public readonly fix4 zyxz => new fix4(z, y, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 bgrb => new float4(z, y, x, z);
+        public readonly fix4 bgrb => new fix4(z, y, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ptsp => new float4(z, y, x, z);
+        public readonly fix4 ptsp => new fix4(z, y, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float4 zyxw
+        public fix4 zyxw
         {
-            readonly get => new float4(z, y, x, w);
+            readonly get => new fix4(z, y, x, w);
             set
             {
                 w = value.x;
@@ -7223,9 +7212,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float4 bgra
+        public fix4 bgra
         {
-            readonly get => new float4(z, y, x, w);
+            readonly get => new fix4(z, y, x, w);
             set
             {
                 w = value.x;
@@ -7238,9 +7227,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float4 ptsq
+        public fix4 ptsq
         {
-            readonly get => new float4(z, y, x, w);
+            readonly get => new fix4(z, y, x, w);
             set
             {
                 w = value.x;
@@ -7253,174 +7242,174 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zyy_ => new float4(z, y, y, 0f);
+        public readonly fix4 zyy_ => new fix4(z, y, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 bgg_ => new float4(z, y, y, 0f);
+        public readonly fix4 bgg_ => new fix4(z, y, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ptt_ => new float4(z, y, y, 0f);
+        public readonly fix4 ptt_ => new fix4(z, y, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zyyx => new float4(z, y, y, x);
+        public readonly fix4 zyyx => new fix4(z, y, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 bggr => new float4(z, y, y, x);
+        public readonly fix4 bggr => new fix4(z, y, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ptts => new float4(z, y, y, x);
+        public readonly fix4 ptts => new fix4(z, y, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zyyy => new float4(z, y, y, y);
+        public readonly fix4 zyyy => new fix4(z, y, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 bggg => new float4(z, y, y, y);
+        public readonly fix4 bggg => new fix4(z, y, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 pttt => new float4(z, y, y, y);
+        public readonly fix4 pttt => new fix4(z, y, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zyyz => new float4(z, y, y, z);
+        public readonly fix4 zyyz => new fix4(z, y, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 bggb => new float4(z, y, y, z);
+        public readonly fix4 bggb => new fix4(z, y, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 pttp => new float4(z, y, y, z);
+        public readonly fix4 pttp => new fix4(z, y, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zyyw => new float4(z, y, y, w);
+        public readonly fix4 zyyw => new fix4(z, y, y, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 bgga => new float4(z, y, y, w);
+        public readonly fix4 bgga => new fix4(z, y, y, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 pttq => new float4(z, y, y, w);
+        public readonly fix4 pttq => new fix4(z, y, y, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zyz_ => new float4(z, y, z, 0f);
+        public readonly fix4 zyz_ => new fix4(z, y, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 bgb_ => new float4(z, y, z, 0f);
+        public readonly fix4 bgb_ => new fix4(z, y, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ptp_ => new float4(z, y, z, 0f);
+        public readonly fix4 ptp_ => new fix4(z, y, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zyzx => new float4(z, y, z, x);
+        public readonly fix4 zyzx => new fix4(z, y, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 bgbr => new float4(z, y, z, x);
+        public readonly fix4 bgbr => new fix4(z, y, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ptps => new float4(z, y, z, x);
+        public readonly fix4 ptps => new fix4(z, y, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zyzy => new float4(z, y, z, y);
+        public readonly fix4 zyzy => new fix4(z, y, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 bgbg => new float4(z, y, z, y);
+        public readonly fix4 bgbg => new fix4(z, y, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ptpt => new float4(z, y, z, y);
+        public readonly fix4 ptpt => new fix4(z, y, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zyzz => new float4(z, y, z, z);
+        public readonly fix4 zyzz => new fix4(z, y, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 bgbb => new float4(z, y, z, z);
+        public readonly fix4 bgbb => new fix4(z, y, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ptpp => new float4(z, y, z, z);
+        public readonly fix4 ptpp => new fix4(z, y, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zyzw => new float4(z, y, z, w);
+        public readonly fix4 zyzw => new fix4(z, y, z, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 bgba => new float4(z, y, z, w);
+        public readonly fix4 bgba => new fix4(z, y, z, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ptpq => new float4(z, y, z, w);
+        public readonly fix4 ptpq => new fix4(z, y, z, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zyw_ => new float4(z, y, w, 0f);
+        public readonly fix4 zyw_ => new fix4(z, y, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 bga_ => new float4(z, y, w, 0f);
+        public readonly fix4 bga_ => new fix4(z, y, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ptq_ => new float4(z, y, w, 0f);
+        public readonly fix4 ptq_ => new fix4(z, y, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float4 zywx
+        public fix4 zywx
         {
-            readonly get => new float4(z, y, w, x);
+            readonly get => new fix4(z, y, w, x);
             set
             {
                 w = value.x;
@@ -7433,9 +7422,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float4 bgar
+        public fix4 bgar
         {
-            readonly get => new float4(z, y, w, x);
+            readonly get => new fix4(z, y, w, x);
             set
             {
                 w = value.x;
@@ -7448,9 +7437,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float4 ptqs
+        public fix4 ptqs
         {
-            readonly get => new float4(z, y, w, x);
+            readonly get => new fix4(z, y, w, x);
             set
             {
                 w = value.x;
@@ -7463,534 +7452,534 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zywy => new float4(z, y, w, y);
+        public readonly fix4 zywy => new fix4(z, y, w, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 bgag => new float4(z, y, w, y);
+        public readonly fix4 bgag => new fix4(z, y, w, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ptqt => new float4(z, y, w, y);
+        public readonly fix4 ptqt => new fix4(z, y, w, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zywz => new float4(z, y, w, z);
+        public readonly fix4 zywz => new fix4(z, y, w, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 bgab => new float4(z, y, w, z);
+        public readonly fix4 bgab => new fix4(z, y, w, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ptqp => new float4(z, y, w, z);
+        public readonly fix4 ptqp => new fix4(z, y, w, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zyww => new float4(z, y, w, w);
+        public readonly fix4 zyww => new fix4(z, y, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 bgaa => new float4(z, y, w, w);
+        public readonly fix4 bgaa => new fix4(z, y, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ptqq => new float4(z, y, w, w);
+        public readonly fix4 ptqq => new fix4(z, y, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zz__ => new float4(z, z, 0f, 0f);
+        public readonly fix4 zz__ => new fix4(z, z, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 bb__ => new float4(z, z, 0f, 0f);
+        public readonly fix4 bb__ => new fix4(z, z, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 pp__ => new float4(z, z, 0f, 0f);
+        public readonly fix4 pp__ => new fix4(z, z, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zz_x => new float4(z, z, 0f, x);
+        public readonly fix4 zz_x => new fix4(z, z, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 bb_r => new float4(z, z, 0f, x);
+        public readonly fix4 bb_r => new fix4(z, z, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 pp_s => new float4(z, z, 0f, x);
+        public readonly fix4 pp_s => new fix4(z, z, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zz_y => new float4(z, z, 0f, y);
+        public readonly fix4 zz_y => new fix4(z, z, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 bb_g => new float4(z, z, 0f, y);
+        public readonly fix4 bb_g => new fix4(z, z, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 pp_t => new float4(z, z, 0f, y);
+        public readonly fix4 pp_t => new fix4(z, z, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zz_z => new float4(z, z, 0f, z);
+        public readonly fix4 zz_z => new fix4(z, z, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 bb_b => new float4(z, z, 0f, z);
+        public readonly fix4 bb_b => new fix4(z, z, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 pp_p => new float4(z, z, 0f, z);
+        public readonly fix4 pp_p => new fix4(z, z, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zz_w => new float4(z, z, 0f, w);
+        public readonly fix4 zz_w => new fix4(z, z, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 bb_a => new float4(z, z, 0f, w);
+        public readonly fix4 bb_a => new fix4(z, z, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 pp_q => new float4(z, z, 0f, w);
+        public readonly fix4 pp_q => new fix4(z, z, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zzx_ => new float4(z, z, x, 0f);
+        public readonly fix4 zzx_ => new fix4(z, z, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 bbr_ => new float4(z, z, x, 0f);
+        public readonly fix4 bbr_ => new fix4(z, z, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 pps_ => new float4(z, z, x, 0f);
+        public readonly fix4 pps_ => new fix4(z, z, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zzxx => new float4(z, z, x, x);
+        public readonly fix4 zzxx => new fix4(z, z, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 bbrr => new float4(z, z, x, x);
+        public readonly fix4 bbrr => new fix4(z, z, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ppss => new float4(z, z, x, x);
+        public readonly fix4 ppss => new fix4(z, z, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zzxy => new float4(z, z, x, y);
+        public readonly fix4 zzxy => new fix4(z, z, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 bbrg => new float4(z, z, x, y);
+        public readonly fix4 bbrg => new fix4(z, z, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ppst => new float4(z, z, x, y);
+        public readonly fix4 ppst => new fix4(z, z, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zzxz => new float4(z, z, x, z);
+        public readonly fix4 zzxz => new fix4(z, z, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 bbrb => new float4(z, z, x, z);
+        public readonly fix4 bbrb => new fix4(z, z, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ppsp => new float4(z, z, x, z);
+        public readonly fix4 ppsp => new fix4(z, z, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zzxw => new float4(z, z, x, w);
+        public readonly fix4 zzxw => new fix4(z, z, x, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 bbra => new float4(z, z, x, w);
+        public readonly fix4 bbra => new fix4(z, z, x, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ppsq => new float4(z, z, x, w);
+        public readonly fix4 ppsq => new fix4(z, z, x, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zzy_ => new float4(z, z, y, 0f);
+        public readonly fix4 zzy_ => new fix4(z, z, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 bbg_ => new float4(z, z, y, 0f);
+        public readonly fix4 bbg_ => new fix4(z, z, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ppt_ => new float4(z, z, y, 0f);
+        public readonly fix4 ppt_ => new fix4(z, z, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zzyx => new float4(z, z, y, x);
+        public readonly fix4 zzyx => new fix4(z, z, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 bbgr => new float4(z, z, y, x);
+        public readonly fix4 bbgr => new fix4(z, z, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ppts => new float4(z, z, y, x);
+        public readonly fix4 ppts => new fix4(z, z, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zzyy => new float4(z, z, y, y);
+        public readonly fix4 zzyy => new fix4(z, z, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 bbgg => new float4(z, z, y, y);
+        public readonly fix4 bbgg => new fix4(z, z, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 pptt => new float4(z, z, y, y);
+        public readonly fix4 pptt => new fix4(z, z, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zzyz => new float4(z, z, y, z);
+        public readonly fix4 zzyz => new fix4(z, z, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 bbgb => new float4(z, z, y, z);
+        public readonly fix4 bbgb => new fix4(z, z, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 pptp => new float4(z, z, y, z);
+        public readonly fix4 pptp => new fix4(z, z, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zzyw => new float4(z, z, y, w);
+        public readonly fix4 zzyw => new fix4(z, z, y, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 bbga => new float4(z, z, y, w);
+        public readonly fix4 bbga => new fix4(z, z, y, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 pptq => new float4(z, z, y, w);
+        public readonly fix4 pptq => new fix4(z, z, y, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zzz_ => new float4(z, z, z, 0f);
+        public readonly fix4 zzz_ => new fix4(z, z, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 bbb_ => new float4(z, z, z, 0f);
+        public readonly fix4 bbb_ => new fix4(z, z, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ppp_ => new float4(z, z, z, 0f);
+        public readonly fix4 ppp_ => new fix4(z, z, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zzzx => new float4(z, z, z, x);
+        public readonly fix4 zzzx => new fix4(z, z, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 bbbr => new float4(z, z, z, x);
+        public readonly fix4 bbbr => new fix4(z, z, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ppps => new float4(z, z, z, x);
+        public readonly fix4 ppps => new fix4(z, z, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zzzy => new float4(z, z, z, y);
+        public readonly fix4 zzzy => new fix4(z, z, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 bbbg => new float4(z, z, z, y);
+        public readonly fix4 bbbg => new fix4(z, z, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 pppt => new float4(z, z, z, y);
+        public readonly fix4 pppt => new fix4(z, z, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zzzz => new float4(z, z, z, z);
+        public readonly fix4 zzzz => new fix4(z, z, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 bbbb => new float4(z, z, z, z);
+        public readonly fix4 bbbb => new fix4(z, z, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 pppp => new float4(z, z, z, z);
+        public readonly fix4 pppp => new fix4(z, z, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zzzw => new float4(z, z, z, w);
+        public readonly fix4 zzzw => new fix4(z, z, z, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 bbba => new float4(z, z, z, w);
+        public readonly fix4 bbba => new fix4(z, z, z, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 pppq => new float4(z, z, z, w);
+        public readonly fix4 pppq => new fix4(z, z, z, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zzw_ => new float4(z, z, w, 0f);
+        public readonly fix4 zzw_ => new fix4(z, z, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 bba_ => new float4(z, z, w, 0f);
+        public readonly fix4 bba_ => new fix4(z, z, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ppq_ => new float4(z, z, w, 0f);
+        public readonly fix4 ppq_ => new fix4(z, z, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zzwx => new float4(z, z, w, x);
+        public readonly fix4 zzwx => new fix4(z, z, w, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 bbar => new float4(z, z, w, x);
+        public readonly fix4 bbar => new fix4(z, z, w, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ppqs => new float4(z, z, w, x);
+        public readonly fix4 ppqs => new fix4(z, z, w, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zzwy => new float4(z, z, w, y);
+        public readonly fix4 zzwy => new fix4(z, z, w, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 bbag => new float4(z, z, w, y);
+        public readonly fix4 bbag => new fix4(z, z, w, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ppqt => new float4(z, z, w, y);
+        public readonly fix4 ppqt => new fix4(z, z, w, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zzwz => new float4(z, z, w, z);
+        public readonly fix4 zzwz => new fix4(z, z, w, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 bbab => new float4(z, z, w, z);
+        public readonly fix4 bbab => new fix4(z, z, w, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ppqp => new float4(z, z, w, z);
+        public readonly fix4 ppqp => new fix4(z, z, w, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zzww => new float4(z, z, w, w);
+        public readonly fix4 zzww => new fix4(z, z, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 bbaa => new float4(z, z, w, w);
+        public readonly fix4 bbaa => new fix4(z, z, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ppqq => new float4(z, z, w, w);
+        public readonly fix4 ppqq => new fix4(z, z, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zw__ => new float4(z, w, 0f, 0f);
+        public readonly fix4 zw__ => new fix4(z, w, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ba__ => new float4(z, w, 0f, 0f);
+        public readonly fix4 ba__ => new fix4(z, w, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 pq__ => new float4(z, w, 0f, 0f);
+        public readonly fix4 pq__ => new fix4(z, w, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zw_x => new float4(z, w, 0f, x);
+        public readonly fix4 zw_x => new fix4(z, w, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ba_r => new float4(z, w, 0f, x);
+        public readonly fix4 ba_r => new fix4(z, w, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 pq_s => new float4(z, w, 0f, x);
+        public readonly fix4 pq_s => new fix4(z, w, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zw_y => new float4(z, w, 0f, y);
+        public readonly fix4 zw_y => new fix4(z, w, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ba_g => new float4(z, w, 0f, y);
+        public readonly fix4 ba_g => new fix4(z, w, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 pq_t => new float4(z, w, 0f, y);
+        public readonly fix4 pq_t => new fix4(z, w, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zw_z => new float4(z, w, 0f, z);
+        public readonly fix4 zw_z => new fix4(z, w, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ba_b => new float4(z, w, 0f, z);
+        public readonly fix4 ba_b => new fix4(z, w, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 pq_p => new float4(z, w, 0f, z);
+        public readonly fix4 pq_p => new fix4(z, w, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zw_w => new float4(z, w, 0f, w);
+        public readonly fix4 zw_w => new fix4(z, w, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ba_a => new float4(z, w, 0f, w);
+        public readonly fix4 ba_a => new fix4(z, w, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 pq_q => new float4(z, w, 0f, w);
+        public readonly fix4 pq_q => new fix4(z, w, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zwx_ => new float4(z, w, x, 0f);
+        public readonly fix4 zwx_ => new fix4(z, w, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 bar_ => new float4(z, w, x, 0f);
+        public readonly fix4 bar_ => new fix4(z, w, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 pqs_ => new float4(z, w, x, 0f);
+        public readonly fix4 pqs_ => new fix4(z, w, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zwxx => new float4(z, w, x, x);
+        public readonly fix4 zwxx => new fix4(z, w, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 barr => new float4(z, w, x, x);
+        public readonly fix4 barr => new fix4(z, w, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 pqss => new float4(z, w, x, x);
+        public readonly fix4 pqss => new fix4(z, w, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float4 zwxy
+        public fix4 zwxy
         {
-            readonly get => new float4(z, w, x, y);
+            readonly get => new fix4(z, w, x, y);
             set
             {
                 w = value.x;
@@ -8003,9 +7992,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float4 barg
+        public fix4 barg
         {
-            readonly get => new float4(z, w, x, y);
+            readonly get => new fix4(z, w, x, y);
             set
             {
                 w = value.x;
@@ -8018,9 +8007,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float4 pqst
+        public fix4 pqst
         {
-            readonly get => new float4(z, w, x, y);
+            readonly get => new fix4(z, w, x, y);
             set
             {
                 w = value.x;
@@ -8033,54 +8022,54 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zwxz => new float4(z, w, x, z);
+        public readonly fix4 zwxz => new fix4(z, w, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 barb => new float4(z, w, x, z);
+        public readonly fix4 barb => new fix4(z, w, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 pqsp => new float4(z, w, x, z);
+        public readonly fix4 pqsp => new fix4(z, w, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zwxw => new float4(z, w, x, w);
+        public readonly fix4 zwxw => new fix4(z, w, x, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 bara => new float4(z, w, x, w);
+        public readonly fix4 bara => new fix4(z, w, x, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 pqsq => new float4(z, w, x, w);
+        public readonly fix4 pqsq => new fix4(z, w, x, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zwy_ => new float4(z, w, y, 0f);
+        public readonly fix4 zwy_ => new fix4(z, w, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 bag_ => new float4(z, w, y, 0f);
+        public readonly fix4 bag_ => new fix4(z, w, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 pqt_ => new float4(z, w, y, 0f);
+        public readonly fix4 pqt_ => new fix4(z, w, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float4 zwyx
+        public fix4 zwyx
         {
-            readonly get => new float4(z, w, y, x);
+            readonly get => new fix4(z, w, y, x);
             set
             {
                 w = value.x;
@@ -8093,9 +8082,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float4 bagr
+        public fix4 bagr
         {
-            readonly get => new float4(z, w, y, x);
+            readonly get => new fix4(z, w, y, x);
             set
             {
                 w = value.x;
@@ -8108,9 +8097,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float4 pqts
+        public fix4 pqts
         {
-            readonly get => new float4(z, w, y, x);
+            readonly get => new fix4(z, w, y, x);
             set
             {
                 w = value.x;
@@ -8123,774 +8112,774 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zwyy => new float4(z, w, y, y);
+        public readonly fix4 zwyy => new fix4(z, w, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 bagg => new float4(z, w, y, y);
+        public readonly fix4 bagg => new fix4(z, w, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 pqtt => new float4(z, w, y, y);
+        public readonly fix4 pqtt => new fix4(z, w, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zwyz => new float4(z, w, y, z);
+        public readonly fix4 zwyz => new fix4(z, w, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 bagb => new float4(z, w, y, z);
+        public readonly fix4 bagb => new fix4(z, w, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 pqtp => new float4(z, w, y, z);
+        public readonly fix4 pqtp => new fix4(z, w, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zwyw => new float4(z, w, y, w);
+        public readonly fix4 zwyw => new fix4(z, w, y, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 baga => new float4(z, w, y, w);
+        public readonly fix4 baga => new fix4(z, w, y, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 pqtq => new float4(z, w, y, w);
+        public readonly fix4 pqtq => new fix4(z, w, y, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zwz_ => new float4(z, w, z, 0f);
+        public readonly fix4 zwz_ => new fix4(z, w, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 bab_ => new float4(z, w, z, 0f);
+        public readonly fix4 bab_ => new fix4(z, w, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 pqp_ => new float4(z, w, z, 0f);
+        public readonly fix4 pqp_ => new fix4(z, w, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zwzx => new float4(z, w, z, x);
+        public readonly fix4 zwzx => new fix4(z, w, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 babr => new float4(z, w, z, x);
+        public readonly fix4 babr => new fix4(z, w, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 pqps => new float4(z, w, z, x);
+        public readonly fix4 pqps => new fix4(z, w, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zwzy => new float4(z, w, z, y);
+        public readonly fix4 zwzy => new fix4(z, w, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 babg => new float4(z, w, z, y);
+        public readonly fix4 babg => new fix4(z, w, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 pqpt => new float4(z, w, z, y);
+        public readonly fix4 pqpt => new fix4(z, w, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zwzz => new float4(z, w, z, z);
+        public readonly fix4 zwzz => new fix4(z, w, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 babb => new float4(z, w, z, z);
+        public readonly fix4 babb => new fix4(z, w, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 pqpp => new float4(z, w, z, z);
+        public readonly fix4 pqpp => new fix4(z, w, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zwzw => new float4(z, w, z, w);
+        public readonly fix4 zwzw => new fix4(z, w, z, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 baba => new float4(z, w, z, w);
+        public readonly fix4 baba => new fix4(z, w, z, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 pqpq => new float4(z, w, z, w);
+        public readonly fix4 pqpq => new fix4(z, w, z, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zww_ => new float4(z, w, w, 0f);
+        public readonly fix4 zww_ => new fix4(z, w, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 baa_ => new float4(z, w, w, 0f);
+        public readonly fix4 baa_ => new fix4(z, w, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 pqq_ => new float4(z, w, w, 0f);
+        public readonly fix4 pqq_ => new fix4(z, w, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zwwx => new float4(z, w, w, x);
+        public readonly fix4 zwwx => new fix4(z, w, w, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 baar => new float4(z, w, w, x);
+        public readonly fix4 baar => new fix4(z, w, w, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 pqqs => new float4(z, w, w, x);
+        public readonly fix4 pqqs => new fix4(z, w, w, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zwwy => new float4(z, w, w, y);
+        public readonly fix4 zwwy => new fix4(z, w, w, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 baag => new float4(z, w, w, y);
+        public readonly fix4 baag => new fix4(z, w, w, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 pqqt => new float4(z, w, w, y);
+        public readonly fix4 pqqt => new fix4(z, w, w, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zwwz => new float4(z, w, w, z);
+        public readonly fix4 zwwz => new fix4(z, w, w, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 baab => new float4(z, w, w, z);
+        public readonly fix4 baab => new fix4(z, w, w, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 pqqp => new float4(z, w, w, z);
+        public readonly fix4 pqqp => new fix4(z, w, w, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 zwww => new float4(z, w, w, w);
+        public readonly fix4 zwww => new fix4(z, w, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 baaa => new float4(z, w, w, w);
+        public readonly fix4 baaa => new fix4(z, w, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 pqqq => new float4(z, w, w, w);
+        public readonly fix4 pqqq => new fix4(z, w, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 w___ => new float4(w, 0f, 0f, 0f);
+        public readonly fix4 w___ => new fix4(w, fix.Zero, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 a___ => new float4(w, 0f, 0f, 0f);
+        public readonly fix4 a___ => new fix4(w, fix.Zero, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 q___ => new float4(w, 0f, 0f, 0f);
+        public readonly fix4 q___ => new fix4(w, fix.Zero, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 w__x => new float4(w, 0f, 0f, x);
+        public readonly fix4 w__x => new fix4(w, fix.Zero, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 a__r => new float4(w, 0f, 0f, x);
+        public readonly fix4 a__r => new fix4(w, fix.Zero, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 q__s => new float4(w, 0f, 0f, x);
+        public readonly fix4 q__s => new fix4(w, fix.Zero, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 w__y => new float4(w, 0f, 0f, y);
+        public readonly fix4 w__y => new fix4(w, fix.Zero, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 a__g => new float4(w, 0f, 0f, y);
+        public readonly fix4 a__g => new fix4(w, fix.Zero, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 q__t => new float4(w, 0f, 0f, y);
+        public readonly fix4 q__t => new fix4(w, fix.Zero, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 w__z => new float4(w, 0f, 0f, z);
+        public readonly fix4 w__z => new fix4(w, fix.Zero, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 a__b => new float4(w, 0f, 0f, z);
+        public readonly fix4 a__b => new fix4(w, fix.Zero, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 q__p => new float4(w, 0f, 0f, z);
+        public readonly fix4 q__p => new fix4(w, fix.Zero, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 w__w => new float4(w, 0f, 0f, w);
+        public readonly fix4 w__w => new fix4(w, fix.Zero, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 a__a => new float4(w, 0f, 0f, w);
+        public readonly fix4 a__a => new fix4(w, fix.Zero, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 q__q => new float4(w, 0f, 0f, w);
+        public readonly fix4 q__q => new fix4(w, fix.Zero, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 w_x_ => new float4(w, 0f, x, 0f);
+        public readonly fix4 w_x_ => new fix4(w, fix.Zero, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 a_r_ => new float4(w, 0f, x, 0f);
+        public readonly fix4 a_r_ => new fix4(w, fix.Zero, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 q_s_ => new float4(w, 0f, x, 0f);
+        public readonly fix4 q_s_ => new fix4(w, fix.Zero, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 w_xx => new float4(w, 0f, x, x);
+        public readonly fix4 w_xx => new fix4(w, fix.Zero, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 a_rr => new float4(w, 0f, x, x);
+        public readonly fix4 a_rr => new fix4(w, fix.Zero, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 q_ss => new float4(w, 0f, x, x);
+        public readonly fix4 q_ss => new fix4(w, fix.Zero, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 w_xy => new float4(w, 0f, x, y);
+        public readonly fix4 w_xy => new fix4(w, fix.Zero, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 a_rg => new float4(w, 0f, x, y);
+        public readonly fix4 a_rg => new fix4(w, fix.Zero, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 q_st => new float4(w, 0f, x, y);
+        public readonly fix4 q_st => new fix4(w, fix.Zero, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 w_xz => new float4(w, 0f, x, z);
+        public readonly fix4 w_xz => new fix4(w, fix.Zero, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 a_rb => new float4(w, 0f, x, z);
+        public readonly fix4 a_rb => new fix4(w, fix.Zero, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 q_sp => new float4(w, 0f, x, z);
+        public readonly fix4 q_sp => new fix4(w, fix.Zero, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 w_xw => new float4(w, 0f, x, w);
+        public readonly fix4 w_xw => new fix4(w, fix.Zero, x, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 a_ra => new float4(w, 0f, x, w);
+        public readonly fix4 a_ra => new fix4(w, fix.Zero, x, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 q_sq => new float4(w, 0f, x, w);
+        public readonly fix4 q_sq => new fix4(w, fix.Zero, x, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 w_y_ => new float4(w, 0f, y, 0f);
+        public readonly fix4 w_y_ => new fix4(w, fix.Zero, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 a_g_ => new float4(w, 0f, y, 0f);
+        public readonly fix4 a_g_ => new fix4(w, fix.Zero, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 q_t_ => new float4(w, 0f, y, 0f);
+        public readonly fix4 q_t_ => new fix4(w, fix.Zero, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 w_yx => new float4(w, 0f, y, x);
+        public readonly fix4 w_yx => new fix4(w, fix.Zero, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 a_gr => new float4(w, 0f, y, x);
+        public readonly fix4 a_gr => new fix4(w, fix.Zero, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 q_ts => new float4(w, 0f, y, x);
+        public readonly fix4 q_ts => new fix4(w, fix.Zero, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 w_yy => new float4(w, 0f, y, y);
+        public readonly fix4 w_yy => new fix4(w, fix.Zero, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 a_gg => new float4(w, 0f, y, y);
+        public readonly fix4 a_gg => new fix4(w, fix.Zero, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 q_tt => new float4(w, 0f, y, y);
+        public readonly fix4 q_tt => new fix4(w, fix.Zero, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 w_yz => new float4(w, 0f, y, z);
+        public readonly fix4 w_yz => new fix4(w, fix.Zero, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 a_gb => new float4(w, 0f, y, z);
+        public readonly fix4 a_gb => new fix4(w, fix.Zero, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 q_tp => new float4(w, 0f, y, z);
+        public readonly fix4 q_tp => new fix4(w, fix.Zero, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 w_yw => new float4(w, 0f, y, w);
+        public readonly fix4 w_yw => new fix4(w, fix.Zero, y, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 a_ga => new float4(w, 0f, y, w);
+        public readonly fix4 a_ga => new fix4(w, fix.Zero, y, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 q_tq => new float4(w, 0f, y, w);
+        public readonly fix4 q_tq => new fix4(w, fix.Zero, y, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 w_z_ => new float4(w, 0f, z, 0f);
+        public readonly fix4 w_z_ => new fix4(w, fix.Zero, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 a_b_ => new float4(w, 0f, z, 0f);
+        public readonly fix4 a_b_ => new fix4(w, fix.Zero, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 q_p_ => new float4(w, 0f, z, 0f);
+        public readonly fix4 q_p_ => new fix4(w, fix.Zero, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 w_zx => new float4(w, 0f, z, x);
+        public readonly fix4 w_zx => new fix4(w, fix.Zero, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 a_br => new float4(w, 0f, z, x);
+        public readonly fix4 a_br => new fix4(w, fix.Zero, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 q_ps => new float4(w, 0f, z, x);
+        public readonly fix4 q_ps => new fix4(w, fix.Zero, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 w_zy => new float4(w, 0f, z, y);
+        public readonly fix4 w_zy => new fix4(w, fix.Zero, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 a_bg => new float4(w, 0f, z, y);
+        public readonly fix4 a_bg => new fix4(w, fix.Zero, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 q_pt => new float4(w, 0f, z, y);
+        public readonly fix4 q_pt => new fix4(w, fix.Zero, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 w_zz => new float4(w, 0f, z, z);
+        public readonly fix4 w_zz => new fix4(w, fix.Zero, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 a_bb => new float4(w, 0f, z, z);
+        public readonly fix4 a_bb => new fix4(w, fix.Zero, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 q_pp => new float4(w, 0f, z, z);
+        public readonly fix4 q_pp => new fix4(w, fix.Zero, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 w_zw => new float4(w, 0f, z, w);
+        public readonly fix4 w_zw => new fix4(w, fix.Zero, z, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 a_ba => new float4(w, 0f, z, w);
+        public readonly fix4 a_ba => new fix4(w, fix.Zero, z, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 q_pq => new float4(w, 0f, z, w);
+        public readonly fix4 q_pq => new fix4(w, fix.Zero, z, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 w_w_ => new float4(w, 0f, w, 0f);
+        public readonly fix4 w_w_ => new fix4(w, fix.Zero, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 a_a_ => new float4(w, 0f, w, 0f);
+        public readonly fix4 a_a_ => new fix4(w, fix.Zero, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 q_q_ => new float4(w, 0f, w, 0f);
+        public readonly fix4 q_q_ => new fix4(w, fix.Zero, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 w_wx => new float4(w, 0f, w, x);
+        public readonly fix4 w_wx => new fix4(w, fix.Zero, w, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 a_ar => new float4(w, 0f, w, x);
+        public readonly fix4 a_ar => new fix4(w, fix.Zero, w, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 q_qs => new float4(w, 0f, w, x);
+        public readonly fix4 q_qs => new fix4(w, fix.Zero, w, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 w_wy => new float4(w, 0f, w, y);
+        public readonly fix4 w_wy => new fix4(w, fix.Zero, w, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 a_ag => new float4(w, 0f, w, y);
+        public readonly fix4 a_ag => new fix4(w, fix.Zero, w, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 q_qt => new float4(w, 0f, w, y);
+        public readonly fix4 q_qt => new fix4(w, fix.Zero, w, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 w_wz => new float4(w, 0f, w, z);
+        public readonly fix4 w_wz => new fix4(w, fix.Zero, w, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 a_ab => new float4(w, 0f, w, z);
+        public readonly fix4 a_ab => new fix4(w, fix.Zero, w, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 q_qp => new float4(w, 0f, w, z);
+        public readonly fix4 q_qp => new fix4(w, fix.Zero, w, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 w_ww => new float4(w, 0f, w, w);
+        public readonly fix4 w_ww => new fix4(w, fix.Zero, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 a_aa => new float4(w, 0f, w, w);
+        public readonly fix4 a_aa => new fix4(w, fix.Zero, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 q_qq => new float4(w, 0f, w, w);
+        public readonly fix4 q_qq => new fix4(w, fix.Zero, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wx__ => new float4(w, x, 0f, 0f);
+        public readonly fix4 wx__ => new fix4(w, x, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ar__ => new float4(w, x, 0f, 0f);
+        public readonly fix4 ar__ => new fix4(w, x, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qs__ => new float4(w, x, 0f, 0f);
+        public readonly fix4 qs__ => new fix4(w, x, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wx_x => new float4(w, x, 0f, x);
+        public readonly fix4 wx_x => new fix4(w, x, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ar_r => new float4(w, x, 0f, x);
+        public readonly fix4 ar_r => new fix4(w, x, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qs_s => new float4(w, x, 0f, x);
+        public readonly fix4 qs_s => new fix4(w, x, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wx_y => new float4(w, x, 0f, y);
+        public readonly fix4 wx_y => new fix4(w, x, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ar_g => new float4(w, x, 0f, y);
+        public readonly fix4 ar_g => new fix4(w, x, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qs_t => new float4(w, x, 0f, y);
+        public readonly fix4 qs_t => new fix4(w, x, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wx_z => new float4(w, x, 0f, z);
+        public readonly fix4 wx_z => new fix4(w, x, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ar_b => new float4(w, x, 0f, z);
+        public readonly fix4 ar_b => new fix4(w, x, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qs_p => new float4(w, x, 0f, z);
+        public readonly fix4 qs_p => new fix4(w, x, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wx_w => new float4(w, x, 0f, w);
+        public readonly fix4 wx_w => new fix4(w, x, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ar_a => new float4(w, x, 0f, w);
+        public readonly fix4 ar_a => new fix4(w, x, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qs_q => new float4(w, x, 0f, w);
+        public readonly fix4 qs_q => new fix4(w, x, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wxx_ => new float4(w, x, x, 0f);
+        public readonly fix4 wxx_ => new fix4(w, x, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 arr_ => new float4(w, x, x, 0f);
+        public readonly fix4 arr_ => new fix4(w, x, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qss_ => new float4(w, x, x, 0f);
+        public readonly fix4 qss_ => new fix4(w, x, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wxxx => new float4(w, x, x, x);
+        public readonly fix4 wxxx => new fix4(w, x, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 arrr => new float4(w, x, x, x);
+        public readonly fix4 arrr => new fix4(w, x, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qsss => new float4(w, x, x, x);
+        public readonly fix4 qsss => new fix4(w, x, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wxxy => new float4(w, x, x, y);
+        public readonly fix4 wxxy => new fix4(w, x, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 arrg => new float4(w, x, x, y);
+        public readonly fix4 arrg => new fix4(w, x, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qsst => new float4(w, x, x, y);
+        public readonly fix4 qsst => new fix4(w, x, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wxxz => new float4(w, x, x, z);
+        public readonly fix4 wxxz => new fix4(w, x, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 arrb => new float4(w, x, x, z);
+        public readonly fix4 arrb => new fix4(w, x, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qssp => new float4(w, x, x, z);
+        public readonly fix4 qssp => new fix4(w, x, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wxxw => new float4(w, x, x, w);
+        public readonly fix4 wxxw => new fix4(w, x, x, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 arra => new float4(w, x, x, w);
+        public readonly fix4 arra => new fix4(w, x, x, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qssq => new float4(w, x, x, w);
+        public readonly fix4 qssq => new fix4(w, x, x, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wxy_ => new float4(w, x, y, 0f);
+        public readonly fix4 wxy_ => new fix4(w, x, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 arg_ => new float4(w, x, y, 0f);
+        public readonly fix4 arg_ => new fix4(w, x, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qst_ => new float4(w, x, y, 0f);
+        public readonly fix4 qst_ => new fix4(w, x, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wxyx => new float4(w, x, y, x);
+        public readonly fix4 wxyx => new fix4(w, x, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 argr => new float4(w, x, y, x);
+        public readonly fix4 argr => new fix4(w, x, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qsts => new float4(w, x, y, x);
+        public readonly fix4 qsts => new fix4(w, x, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wxyy => new float4(w, x, y, y);
+        public readonly fix4 wxyy => new fix4(w, x, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 argg => new float4(w, x, y, y);
+        public readonly fix4 argg => new fix4(w, x, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qstt => new float4(w, x, y, y);
+        public readonly fix4 qstt => new fix4(w, x, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float4 wxyz
+        public fix4 wxyz
         {
-            readonly get => new float4(w, x, y, z);
+            readonly get => new fix4(w, x, y, z);
             set
             {
                 w = value.x;
@@ -8903,9 +8892,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float4 argb
+        public fix4 argb
         {
-            readonly get => new float4(w, x, y, z);
+            readonly get => new fix4(w, x, y, z);
             set
             {
                 w = value.x;
@@ -8918,9 +8907,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float4 qstp
+        public fix4 qstp
         {
-            readonly get => new float4(w, x, y, z);
+            readonly get => new fix4(w, x, y, z);
             set
             {
                 w = value.x;
@@ -8933,54 +8922,54 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wxyw => new float4(w, x, y, w);
+        public readonly fix4 wxyw => new fix4(w, x, y, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 arga => new float4(w, x, y, w);
+        public readonly fix4 arga => new fix4(w, x, y, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qstq => new float4(w, x, y, w);
+        public readonly fix4 qstq => new fix4(w, x, y, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wxz_ => new float4(w, x, z, 0f);
+        public readonly fix4 wxz_ => new fix4(w, x, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 arb_ => new float4(w, x, z, 0f);
+        public readonly fix4 arb_ => new fix4(w, x, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qsp_ => new float4(w, x, z, 0f);
+        public readonly fix4 qsp_ => new fix4(w, x, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wxzx => new float4(w, x, z, x);
+        public readonly fix4 wxzx => new fix4(w, x, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 arbr => new float4(w, x, z, x);
+        public readonly fix4 arbr => new fix4(w, x, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qsps => new float4(w, x, z, x);
+        public readonly fix4 qsps => new fix4(w, x, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float4 wxzy
+        public fix4 wxzy
         {
-            readonly get => new float4(w, x, z, y);
+            readonly get => new fix4(w, x, z, y);
             set
             {
                 w = value.x;
@@ -8993,9 +8982,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float4 arbg
+        public fix4 arbg
         {
-            readonly get => new float4(w, x, z, y);
+            readonly get => new fix4(w, x, z, y);
             set
             {
                 w = value.x;
@@ -9008,9 +8997,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float4 qspt
+        public fix4 qspt
         {
-            readonly get => new float4(w, x, z, y);
+            readonly get => new fix4(w, x, z, y);
             set
             {
                 w = value.x;
@@ -9023,234 +9012,234 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wxzz => new float4(w, x, z, z);
+        public readonly fix4 wxzz => new fix4(w, x, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 arbb => new float4(w, x, z, z);
+        public readonly fix4 arbb => new fix4(w, x, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qspp => new float4(w, x, z, z);
+        public readonly fix4 qspp => new fix4(w, x, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wxzw => new float4(w, x, z, w);
+        public readonly fix4 wxzw => new fix4(w, x, z, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 arba => new float4(w, x, z, w);
+        public readonly fix4 arba => new fix4(w, x, z, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qspq => new float4(w, x, z, w);
+        public readonly fix4 qspq => new fix4(w, x, z, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wxw_ => new float4(w, x, w, 0f);
+        public readonly fix4 wxw_ => new fix4(w, x, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ara_ => new float4(w, x, w, 0f);
+        public readonly fix4 ara_ => new fix4(w, x, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qsq_ => new float4(w, x, w, 0f);
+        public readonly fix4 qsq_ => new fix4(w, x, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wxwx => new float4(w, x, w, x);
+        public readonly fix4 wxwx => new fix4(w, x, w, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 arar => new float4(w, x, w, x);
+        public readonly fix4 arar => new fix4(w, x, w, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qsqs => new float4(w, x, w, x);
+        public readonly fix4 qsqs => new fix4(w, x, w, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wxwy => new float4(w, x, w, y);
+        public readonly fix4 wxwy => new fix4(w, x, w, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 arag => new float4(w, x, w, y);
+        public readonly fix4 arag => new fix4(w, x, w, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qsqt => new float4(w, x, w, y);
+        public readonly fix4 qsqt => new fix4(w, x, w, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wxwz => new float4(w, x, w, z);
+        public readonly fix4 wxwz => new fix4(w, x, w, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 arab => new float4(w, x, w, z);
+        public readonly fix4 arab => new fix4(w, x, w, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qsqp => new float4(w, x, w, z);
+        public readonly fix4 qsqp => new fix4(w, x, w, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wxww => new float4(w, x, w, w);
+        public readonly fix4 wxww => new fix4(w, x, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 araa => new float4(w, x, w, w);
+        public readonly fix4 araa => new fix4(w, x, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qsqq => new float4(w, x, w, w);
+        public readonly fix4 qsqq => new fix4(w, x, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wy__ => new float4(w, y, 0f, 0f);
+        public readonly fix4 wy__ => new fix4(w, y, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ag__ => new float4(w, y, 0f, 0f);
+        public readonly fix4 ag__ => new fix4(w, y, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qt__ => new float4(w, y, 0f, 0f);
+        public readonly fix4 qt__ => new fix4(w, y, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wy_x => new float4(w, y, 0f, x);
+        public readonly fix4 wy_x => new fix4(w, y, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ag_r => new float4(w, y, 0f, x);
+        public readonly fix4 ag_r => new fix4(w, y, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qt_s => new float4(w, y, 0f, x);
+        public readonly fix4 qt_s => new fix4(w, y, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wy_y => new float4(w, y, 0f, y);
+        public readonly fix4 wy_y => new fix4(w, y, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ag_g => new float4(w, y, 0f, y);
+        public readonly fix4 ag_g => new fix4(w, y, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qt_t => new float4(w, y, 0f, y);
+        public readonly fix4 qt_t => new fix4(w, y, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wy_z => new float4(w, y, 0f, z);
+        public readonly fix4 wy_z => new fix4(w, y, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ag_b => new float4(w, y, 0f, z);
+        public readonly fix4 ag_b => new fix4(w, y, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qt_p => new float4(w, y, 0f, z);
+        public readonly fix4 qt_p => new fix4(w, y, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wy_w => new float4(w, y, 0f, w);
+        public readonly fix4 wy_w => new fix4(w, y, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ag_a => new float4(w, y, 0f, w);
+        public readonly fix4 ag_a => new fix4(w, y, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qt_q => new float4(w, y, 0f, w);
+        public readonly fix4 qt_q => new fix4(w, y, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wyx_ => new float4(w, y, x, 0f);
+        public readonly fix4 wyx_ => new fix4(w, y, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 agr_ => new float4(w, y, x, 0f);
+        public readonly fix4 agr_ => new fix4(w, y, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qts_ => new float4(w, y, x, 0f);
+        public readonly fix4 qts_ => new fix4(w, y, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wyxx => new float4(w, y, x, x);
+        public readonly fix4 wyxx => new fix4(w, y, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 agrr => new float4(w, y, x, x);
+        public readonly fix4 agrr => new fix4(w, y, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qtss => new float4(w, y, x, x);
+        public readonly fix4 qtss => new fix4(w, y, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wyxy => new float4(w, y, x, y);
+        public readonly fix4 wyxy => new fix4(w, y, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 agrg => new float4(w, y, x, y);
+        public readonly fix4 agrg => new fix4(w, y, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qtst => new float4(w, y, x, y);
+        public readonly fix4 qtst => new fix4(w, y, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float4 wyxz
+        public fix4 wyxz
         {
-            readonly get => new float4(w, y, x, z);
+            readonly get => new fix4(w, y, x, z);
             set
             {
                 w = value.x;
@@ -9263,9 +9252,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float4 agrb
+        public fix4 agrb
         {
-            readonly get => new float4(w, y, x, z);
+            readonly get => new fix4(w, y, x, z);
             set
             {
                 w = value.x;
@@ -9278,9 +9267,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float4 qtsp
+        public fix4 qtsp
         {
-            readonly get => new float4(w, y, x, z);
+            readonly get => new fix4(w, y, x, z);
             set
             {
                 w = value.x;
@@ -9293,114 +9282,114 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wyxw => new float4(w, y, x, w);
+        public readonly fix4 wyxw => new fix4(w, y, x, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 agra => new float4(w, y, x, w);
+        public readonly fix4 agra => new fix4(w, y, x, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qtsq => new float4(w, y, x, w);
+        public readonly fix4 qtsq => new fix4(w, y, x, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wyy_ => new float4(w, y, y, 0f);
+        public readonly fix4 wyy_ => new fix4(w, y, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 agg_ => new float4(w, y, y, 0f);
+        public readonly fix4 agg_ => new fix4(w, y, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qtt_ => new float4(w, y, y, 0f);
+        public readonly fix4 qtt_ => new fix4(w, y, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wyyx => new float4(w, y, y, x);
+        public readonly fix4 wyyx => new fix4(w, y, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 aggr => new float4(w, y, y, x);
+        public readonly fix4 aggr => new fix4(w, y, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qtts => new float4(w, y, y, x);
+        public readonly fix4 qtts => new fix4(w, y, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wyyy => new float4(w, y, y, y);
+        public readonly fix4 wyyy => new fix4(w, y, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 aggg => new float4(w, y, y, y);
+        public readonly fix4 aggg => new fix4(w, y, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qttt => new float4(w, y, y, y);
+        public readonly fix4 qttt => new fix4(w, y, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wyyz => new float4(w, y, y, z);
+        public readonly fix4 wyyz => new fix4(w, y, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 aggb => new float4(w, y, y, z);
+        public readonly fix4 aggb => new fix4(w, y, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qttp => new float4(w, y, y, z);
+        public readonly fix4 qttp => new fix4(w, y, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wyyw => new float4(w, y, y, w);
+        public readonly fix4 wyyw => new fix4(w, y, y, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 agga => new float4(w, y, y, w);
+        public readonly fix4 agga => new fix4(w, y, y, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qttq => new float4(w, y, y, w);
+        public readonly fix4 qttq => new fix4(w, y, y, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wyz_ => new float4(w, y, z, 0f);
+        public readonly fix4 wyz_ => new fix4(w, y, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 agb_ => new float4(w, y, z, 0f);
+        public readonly fix4 agb_ => new fix4(w, y, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qtp_ => new float4(w, y, z, 0f);
+        public readonly fix4 qtp_ => new fix4(w, y, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float4 wyzx
+        public fix4 wyzx
         {
-            readonly get => new float4(w, y, z, x);
+            readonly get => new fix4(w, y, z, x);
             set
             {
                 w = value.x;
@@ -9413,9 +9402,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float4 agbr
+        public fix4 agbr
         {
-            readonly get => new float4(w, y, z, x);
+            readonly get => new fix4(w, y, z, x);
             set
             {
                 w = value.x;
@@ -9428,9 +9417,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float4 qtps
+        public fix4 qtps
         {
-            readonly get => new float4(w, y, z, x);
+            readonly get => new fix4(w, y, z, x);
             set
             {
                 w = value.x;
@@ -9443,234 +9432,234 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wyzy => new float4(w, y, z, y);
+        public readonly fix4 wyzy => new fix4(w, y, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 agbg => new float4(w, y, z, y);
+        public readonly fix4 agbg => new fix4(w, y, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qtpt => new float4(w, y, z, y);
+        public readonly fix4 qtpt => new fix4(w, y, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wyzz => new float4(w, y, z, z);
+        public readonly fix4 wyzz => new fix4(w, y, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 agbb => new float4(w, y, z, z);
+        public readonly fix4 agbb => new fix4(w, y, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qtpp => new float4(w, y, z, z);
+        public readonly fix4 qtpp => new fix4(w, y, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wyzw => new float4(w, y, z, w);
+        public readonly fix4 wyzw => new fix4(w, y, z, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 agba => new float4(w, y, z, w);
+        public readonly fix4 agba => new fix4(w, y, z, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qtpq => new float4(w, y, z, w);
+        public readonly fix4 qtpq => new fix4(w, y, z, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wyw_ => new float4(w, y, w, 0f);
+        public readonly fix4 wyw_ => new fix4(w, y, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 aga_ => new float4(w, y, w, 0f);
+        public readonly fix4 aga_ => new fix4(w, y, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qtq_ => new float4(w, y, w, 0f);
+        public readonly fix4 qtq_ => new fix4(w, y, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wywx => new float4(w, y, w, x);
+        public readonly fix4 wywx => new fix4(w, y, w, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 agar => new float4(w, y, w, x);
+        public readonly fix4 agar => new fix4(w, y, w, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qtqs => new float4(w, y, w, x);
+        public readonly fix4 qtqs => new fix4(w, y, w, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wywy => new float4(w, y, w, y);
+        public readonly fix4 wywy => new fix4(w, y, w, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 agag => new float4(w, y, w, y);
+        public readonly fix4 agag => new fix4(w, y, w, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qtqt => new float4(w, y, w, y);
+        public readonly fix4 qtqt => new fix4(w, y, w, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wywz => new float4(w, y, w, z);
+        public readonly fix4 wywz => new fix4(w, y, w, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 agab => new float4(w, y, w, z);
+        public readonly fix4 agab => new fix4(w, y, w, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qtqp => new float4(w, y, w, z);
+        public readonly fix4 qtqp => new fix4(w, y, w, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wyww => new float4(w, y, w, w);
+        public readonly fix4 wyww => new fix4(w, y, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 agaa => new float4(w, y, w, w);
+        public readonly fix4 agaa => new fix4(w, y, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qtqq => new float4(w, y, w, w);
+        public readonly fix4 qtqq => new fix4(w, y, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wz__ => new float4(w, z, 0f, 0f);
+        public readonly fix4 wz__ => new fix4(w, z, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ab__ => new float4(w, z, 0f, 0f);
+        public readonly fix4 ab__ => new fix4(w, z, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qp__ => new float4(w, z, 0f, 0f);
+        public readonly fix4 qp__ => new fix4(w, z, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wz_x => new float4(w, z, 0f, x);
+        public readonly fix4 wz_x => new fix4(w, z, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ab_r => new float4(w, z, 0f, x);
+        public readonly fix4 ab_r => new fix4(w, z, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qp_s => new float4(w, z, 0f, x);
+        public readonly fix4 qp_s => new fix4(w, z, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wz_y => new float4(w, z, 0f, y);
+        public readonly fix4 wz_y => new fix4(w, z, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ab_g => new float4(w, z, 0f, y);
+        public readonly fix4 ab_g => new fix4(w, z, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qp_t => new float4(w, z, 0f, y);
+        public readonly fix4 qp_t => new fix4(w, z, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wz_z => new float4(w, z, 0f, z);
+        public readonly fix4 wz_z => new fix4(w, z, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ab_b => new float4(w, z, 0f, z);
+        public readonly fix4 ab_b => new fix4(w, z, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qp_p => new float4(w, z, 0f, z);
+        public readonly fix4 qp_p => new fix4(w, z, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wz_w => new float4(w, z, 0f, w);
+        public readonly fix4 wz_w => new fix4(w, z, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ab_a => new float4(w, z, 0f, w);
+        public readonly fix4 ab_a => new fix4(w, z, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qp_q => new float4(w, z, 0f, w);
+        public readonly fix4 qp_q => new fix4(w, z, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wzx_ => new float4(w, z, x, 0f);
+        public readonly fix4 wzx_ => new fix4(w, z, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 abr_ => new float4(w, z, x, 0f);
+        public readonly fix4 abr_ => new fix4(w, z, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qps_ => new float4(w, z, x, 0f);
+        public readonly fix4 qps_ => new fix4(w, z, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wzxx => new float4(w, z, x, x);
+        public readonly fix4 wzxx => new fix4(w, z, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 abrr => new float4(w, z, x, x);
+        public readonly fix4 abrr => new fix4(w, z, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qpss => new float4(w, z, x, x);
+        public readonly fix4 qpss => new fix4(w, z, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float4 wzxy
+        public fix4 wzxy
         {
-            readonly get => new float4(w, z, x, y);
+            readonly get => new fix4(w, z, x, y);
             set
             {
                 w = value.x;
@@ -9683,9 +9672,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float4 abrg
+        public fix4 abrg
         {
-            readonly get => new float4(w, z, x, y);
+            readonly get => new fix4(w, z, x, y);
             set
             {
                 w = value.x;
@@ -9698,9 +9687,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float4 qpst
+        public fix4 qpst
         {
-            readonly get => new float4(w, z, x, y);
+            readonly get => new fix4(w, z, x, y);
             set
             {
                 w = value.x;
@@ -9713,54 +9702,54 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wzxz => new float4(w, z, x, z);
+        public readonly fix4 wzxz => new fix4(w, z, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 abrb => new float4(w, z, x, z);
+        public readonly fix4 abrb => new fix4(w, z, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qpsp => new float4(w, z, x, z);
+        public readonly fix4 qpsp => new fix4(w, z, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wzxw => new float4(w, z, x, w);
+        public readonly fix4 wzxw => new fix4(w, z, x, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 abra => new float4(w, z, x, w);
+        public readonly fix4 abra => new fix4(w, z, x, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qpsq => new float4(w, z, x, w);
+        public readonly fix4 qpsq => new fix4(w, z, x, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wzy_ => new float4(w, z, y, 0f);
+        public readonly fix4 wzy_ => new fix4(w, z, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 abg_ => new float4(w, z, y, 0f);
+        public readonly fix4 abg_ => new fix4(w, z, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qpt_ => new float4(w, z, y, 0f);
+        public readonly fix4 qpt_ => new fix4(w, z, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float4 wzyx
+        public fix4 wzyx
         {
-            readonly get => new float4(w, z, y, x);
+            readonly get => new fix4(w, z, y, x);
             set
             {
                 w = value.x;
@@ -9773,9 +9762,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float4 abgr
+        public fix4 abgr
         {
-            readonly get => new float4(w, z, y, x);
+            readonly get => new fix4(w, z, y, x);
             set
             {
                 w = value.x;
@@ -9788,9 +9777,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float4 qpts
+        public fix4 qpts
         {
-            readonly get => new float4(w, z, y, x);
+            readonly get => new fix4(w, z, y, x);
             set
             {
                 w = value.x;
@@ -9803,1134 +9792,1134 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wzyy => new float4(w, z, y, y);
+        public readonly fix4 wzyy => new fix4(w, z, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 abgg => new float4(w, z, y, y);
+        public readonly fix4 abgg => new fix4(w, z, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qptt => new float4(w, z, y, y);
+        public readonly fix4 qptt => new fix4(w, z, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wzyz => new float4(w, z, y, z);
+        public readonly fix4 wzyz => new fix4(w, z, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 abgb => new float4(w, z, y, z);
+        public readonly fix4 abgb => new fix4(w, z, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qptp => new float4(w, z, y, z);
+        public readonly fix4 qptp => new fix4(w, z, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wzyw => new float4(w, z, y, w);
+        public readonly fix4 wzyw => new fix4(w, z, y, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 abga => new float4(w, z, y, w);
+        public readonly fix4 abga => new fix4(w, z, y, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qptq => new float4(w, z, y, w);
+        public readonly fix4 qptq => new fix4(w, z, y, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wzz_ => new float4(w, z, z, 0f);
+        public readonly fix4 wzz_ => new fix4(w, z, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 abb_ => new float4(w, z, z, 0f);
+        public readonly fix4 abb_ => new fix4(w, z, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qpp_ => new float4(w, z, z, 0f);
+        public readonly fix4 qpp_ => new fix4(w, z, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wzzx => new float4(w, z, z, x);
+        public readonly fix4 wzzx => new fix4(w, z, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 abbr => new float4(w, z, z, x);
+        public readonly fix4 abbr => new fix4(w, z, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qpps => new float4(w, z, z, x);
+        public readonly fix4 qpps => new fix4(w, z, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wzzy => new float4(w, z, z, y);
+        public readonly fix4 wzzy => new fix4(w, z, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 abbg => new float4(w, z, z, y);
+        public readonly fix4 abbg => new fix4(w, z, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qppt => new float4(w, z, z, y);
+        public readonly fix4 qppt => new fix4(w, z, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wzzz => new float4(w, z, z, z);
+        public readonly fix4 wzzz => new fix4(w, z, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 abbb => new float4(w, z, z, z);
+        public readonly fix4 abbb => new fix4(w, z, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qppp => new float4(w, z, z, z);
+        public readonly fix4 qppp => new fix4(w, z, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wzzw => new float4(w, z, z, w);
+        public readonly fix4 wzzw => new fix4(w, z, z, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 abba => new float4(w, z, z, w);
+        public readonly fix4 abba => new fix4(w, z, z, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qppq => new float4(w, z, z, w);
+        public readonly fix4 qppq => new fix4(w, z, z, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wzw_ => new float4(w, z, w, 0f);
+        public readonly fix4 wzw_ => new fix4(w, z, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 aba_ => new float4(w, z, w, 0f);
+        public readonly fix4 aba_ => new fix4(w, z, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qpq_ => new float4(w, z, w, 0f);
+        public readonly fix4 qpq_ => new fix4(w, z, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wzwx => new float4(w, z, w, x);
+        public readonly fix4 wzwx => new fix4(w, z, w, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 abar => new float4(w, z, w, x);
+        public readonly fix4 abar => new fix4(w, z, w, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qpqs => new float4(w, z, w, x);
+        public readonly fix4 qpqs => new fix4(w, z, w, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wzwy => new float4(w, z, w, y);
+        public readonly fix4 wzwy => new fix4(w, z, w, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 abag => new float4(w, z, w, y);
+        public readonly fix4 abag => new fix4(w, z, w, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qpqt => new float4(w, z, w, y);
+        public readonly fix4 qpqt => new fix4(w, z, w, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wzwz => new float4(w, z, w, z);
+        public readonly fix4 wzwz => new fix4(w, z, w, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 abab => new float4(w, z, w, z);
+        public readonly fix4 abab => new fix4(w, z, w, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qpqp => new float4(w, z, w, z);
+        public readonly fix4 qpqp => new fix4(w, z, w, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wzww => new float4(w, z, w, w);
+        public readonly fix4 wzww => new fix4(w, z, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 abaa => new float4(w, z, w, w);
+        public readonly fix4 abaa => new fix4(w, z, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qpqq => new float4(w, z, w, w);
+        public readonly fix4 qpqq => new fix4(w, z, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ww__ => new float4(w, w, 0f, 0f);
+        public readonly fix4 ww__ => new fix4(w, w, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 aa__ => new float4(w, w, 0f, 0f);
+        public readonly fix4 aa__ => new fix4(w, w, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qq__ => new float4(w, w, 0f, 0f);
+        public readonly fix4 qq__ => new fix4(w, w, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ww_x => new float4(w, w, 0f, x);
+        public readonly fix4 ww_x => new fix4(w, w, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 aa_r => new float4(w, w, 0f, x);
+        public readonly fix4 aa_r => new fix4(w, w, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qq_s => new float4(w, w, 0f, x);
+        public readonly fix4 qq_s => new fix4(w, w, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ww_y => new float4(w, w, 0f, y);
+        public readonly fix4 ww_y => new fix4(w, w, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 aa_g => new float4(w, w, 0f, y);
+        public readonly fix4 aa_g => new fix4(w, w, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qq_t => new float4(w, w, 0f, y);
+        public readonly fix4 qq_t => new fix4(w, w, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ww_z => new float4(w, w, 0f, z);
+        public readonly fix4 ww_z => new fix4(w, w, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 aa_b => new float4(w, w, 0f, z);
+        public readonly fix4 aa_b => new fix4(w, w, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qq_p => new float4(w, w, 0f, z);
+        public readonly fix4 qq_p => new fix4(w, w, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 ww_w => new float4(w, w, 0f, w);
+        public readonly fix4 ww_w => new fix4(w, w, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 aa_a => new float4(w, w, 0f, w);
+        public readonly fix4 aa_a => new fix4(w, w, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qq_q => new float4(w, w, 0f, w);
+        public readonly fix4 qq_q => new fix4(w, w, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wwx_ => new float4(w, w, x, 0f);
+        public readonly fix4 wwx_ => new fix4(w, w, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 aar_ => new float4(w, w, x, 0f);
+        public readonly fix4 aar_ => new fix4(w, w, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qqs_ => new float4(w, w, x, 0f);
+        public readonly fix4 qqs_ => new fix4(w, w, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wwxx => new float4(w, w, x, x);
+        public readonly fix4 wwxx => new fix4(w, w, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 aarr => new float4(w, w, x, x);
+        public readonly fix4 aarr => new fix4(w, w, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qqss => new float4(w, w, x, x);
+        public readonly fix4 qqss => new fix4(w, w, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wwxy => new float4(w, w, x, y);
+        public readonly fix4 wwxy => new fix4(w, w, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 aarg => new float4(w, w, x, y);
+        public readonly fix4 aarg => new fix4(w, w, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qqst => new float4(w, w, x, y);
+        public readonly fix4 qqst => new fix4(w, w, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wwxz => new float4(w, w, x, z);
+        public readonly fix4 wwxz => new fix4(w, w, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 aarb => new float4(w, w, x, z);
+        public readonly fix4 aarb => new fix4(w, w, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qqsp => new float4(w, w, x, z);
+        public readonly fix4 qqsp => new fix4(w, w, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wwxw => new float4(w, w, x, w);
+        public readonly fix4 wwxw => new fix4(w, w, x, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 aara => new float4(w, w, x, w);
+        public readonly fix4 aara => new fix4(w, w, x, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qqsq => new float4(w, w, x, w);
+        public readonly fix4 qqsq => new fix4(w, w, x, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wwy_ => new float4(w, w, y, 0f);
+        public readonly fix4 wwy_ => new fix4(w, w, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 aag_ => new float4(w, w, y, 0f);
+        public readonly fix4 aag_ => new fix4(w, w, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qqt_ => new float4(w, w, y, 0f);
+        public readonly fix4 qqt_ => new fix4(w, w, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wwyx => new float4(w, w, y, x);
+        public readonly fix4 wwyx => new fix4(w, w, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 aagr => new float4(w, w, y, x);
+        public readonly fix4 aagr => new fix4(w, w, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qqts => new float4(w, w, y, x);
+        public readonly fix4 qqts => new fix4(w, w, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wwyy => new float4(w, w, y, y);
+        public readonly fix4 wwyy => new fix4(w, w, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 aagg => new float4(w, w, y, y);
+        public readonly fix4 aagg => new fix4(w, w, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qqtt => new float4(w, w, y, y);
+        public readonly fix4 qqtt => new fix4(w, w, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wwyz => new float4(w, w, y, z);
+        public readonly fix4 wwyz => new fix4(w, w, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 aagb => new float4(w, w, y, z);
+        public readonly fix4 aagb => new fix4(w, w, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qqtp => new float4(w, w, y, z);
+        public readonly fix4 qqtp => new fix4(w, w, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wwyw => new float4(w, w, y, w);
+        public readonly fix4 wwyw => new fix4(w, w, y, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 aaga => new float4(w, w, y, w);
+        public readonly fix4 aaga => new fix4(w, w, y, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qqtq => new float4(w, w, y, w);
+        public readonly fix4 qqtq => new fix4(w, w, y, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wwz_ => new float4(w, w, z, 0f);
+        public readonly fix4 wwz_ => new fix4(w, w, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 aab_ => new float4(w, w, z, 0f);
+        public readonly fix4 aab_ => new fix4(w, w, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qqp_ => new float4(w, w, z, 0f);
+        public readonly fix4 qqp_ => new fix4(w, w, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wwzx => new float4(w, w, z, x);
+        public readonly fix4 wwzx => new fix4(w, w, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 aabr => new float4(w, w, z, x);
+        public readonly fix4 aabr => new fix4(w, w, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qqps => new float4(w, w, z, x);
+        public readonly fix4 qqps => new fix4(w, w, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wwzy => new float4(w, w, z, y);
+        public readonly fix4 wwzy => new fix4(w, w, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 aabg => new float4(w, w, z, y);
+        public readonly fix4 aabg => new fix4(w, w, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qqpt => new float4(w, w, z, y);
+        public readonly fix4 qqpt => new fix4(w, w, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wwzz => new float4(w, w, z, z);
+        public readonly fix4 wwzz => new fix4(w, w, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 aabb => new float4(w, w, z, z);
+        public readonly fix4 aabb => new fix4(w, w, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qqpp => new float4(w, w, z, z);
+        public readonly fix4 qqpp => new fix4(w, w, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wwzw => new float4(w, w, z, w);
+        public readonly fix4 wwzw => new fix4(w, w, z, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 aaba => new float4(w, w, z, w);
+        public readonly fix4 aaba => new fix4(w, w, z, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qqpq => new float4(w, w, z, w);
+        public readonly fix4 qqpq => new fix4(w, w, z, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 www_ => new float4(w, w, w, 0f);
+        public readonly fix4 www_ => new fix4(w, w, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 aaa_ => new float4(w, w, w, 0f);
+        public readonly fix4 aaa_ => new fix4(w, w, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qqq_ => new float4(w, w, w, 0f);
+        public readonly fix4 qqq_ => new fix4(w, w, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wwwx => new float4(w, w, w, x);
+        public readonly fix4 wwwx => new fix4(w, w, w, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 aaar => new float4(w, w, w, x);
+        public readonly fix4 aaar => new fix4(w, w, w, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qqqs => new float4(w, w, w, x);
+        public readonly fix4 qqqs => new fix4(w, w, w, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wwwy => new float4(w, w, w, y);
+        public readonly fix4 wwwy => new fix4(w, w, w, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 aaag => new float4(w, w, w, y);
+        public readonly fix4 aaag => new fix4(w, w, w, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qqqt => new float4(w, w, w, y);
+        public readonly fix4 qqqt => new fix4(w, w, w, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wwwz => new float4(w, w, w, z);
+        public readonly fix4 wwwz => new fix4(w, w, w, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 aaab => new float4(w, w, w, z);
+        public readonly fix4 aaab => new fix4(w, w, w, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qqqp => new float4(w, w, w, z);
+        public readonly fix4 qqqp => new fix4(w, w, w, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 wwww => new float4(w, w, w, w);
+        public readonly fix4 wwww => new fix4(w, w, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 aaaa => new float4(w, w, w, w);
+        public readonly fix4 aaaa => new fix4(w, w, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float4 qqqq => new float4(w, w, w, w);
+        public readonly fix4 qqqq => new fix4(w, w, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 __x => new float3(0f, 0f, x);
+        public readonly fix3 __x => new fix3(fix.Zero, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 __r => new float3(0f, 0f, x);
+        public readonly fix3 __r => new fix3(fix.Zero, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 __s => new float3(0f, 0f, x);
+        public readonly fix3 __s => new fix3(fix.Zero, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 __y => new float3(0f, 0f, y);
+        public readonly fix3 __y => new fix3(fix.Zero, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 __g => new float3(0f, 0f, y);
+        public readonly fix3 __g => new fix3(fix.Zero, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 __t => new float3(0f, 0f, y);
+        public readonly fix3 __t => new fix3(fix.Zero, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 __z => new float3(0f, 0f, z);
+        public readonly fix3 __z => new fix3(fix.Zero, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 __b => new float3(0f, 0f, z);
+        public readonly fix3 __b => new fix3(fix.Zero, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 __p => new float3(0f, 0f, z);
+        public readonly fix3 __p => new fix3(fix.Zero, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 __w => new float3(0f, 0f, w);
+        public readonly fix3 __w => new fix3(fix.Zero, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 __a => new float3(0f, 0f, w);
+        public readonly fix3 __a => new fix3(fix.Zero, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 __q => new float3(0f, 0f, w);
+        public readonly fix3 __q => new fix3(fix.Zero, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 _x_ => new float3(0f, x, 0f);
+        public readonly fix3 _x_ => new fix3(fix.Zero, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 _r_ => new float3(0f, x, 0f);
+        public readonly fix3 _r_ => new fix3(fix.Zero, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 _s_ => new float3(0f, x, 0f);
+        public readonly fix3 _s_ => new fix3(fix.Zero, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 _xx => new float3(0f, x, x);
+        public readonly fix3 _xx => new fix3(fix.Zero, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 _rr => new float3(0f, x, x);
+        public readonly fix3 _rr => new fix3(fix.Zero, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 _ss => new float3(0f, x, x);
+        public readonly fix3 _ss => new fix3(fix.Zero, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 _xy => new float3(0f, x, y);
+        public readonly fix3 _xy => new fix3(fix.Zero, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 _rg => new float3(0f, x, y);
+        public readonly fix3 _rg => new fix3(fix.Zero, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 _st => new float3(0f, x, y);
+        public readonly fix3 _st => new fix3(fix.Zero, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 _xz => new float3(0f, x, z);
+        public readonly fix3 _xz => new fix3(fix.Zero, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 _rb => new float3(0f, x, z);
+        public readonly fix3 _rb => new fix3(fix.Zero, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 _sp => new float3(0f, x, z);
+        public readonly fix3 _sp => new fix3(fix.Zero, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 _xw => new float3(0f, x, w);
+        public readonly fix3 _xw => new fix3(fix.Zero, x, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 _ra => new float3(0f, x, w);
+        public readonly fix3 _ra => new fix3(fix.Zero, x, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 _sq => new float3(0f, x, w);
+        public readonly fix3 _sq => new fix3(fix.Zero, x, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 _y_ => new float3(0f, y, 0f);
+        public readonly fix3 _y_ => new fix3(fix.Zero, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 _g_ => new float3(0f, y, 0f);
+        public readonly fix3 _g_ => new fix3(fix.Zero, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 _t_ => new float3(0f, y, 0f);
+        public readonly fix3 _t_ => new fix3(fix.Zero, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 _yx => new float3(0f, y, x);
+        public readonly fix3 _yx => new fix3(fix.Zero, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 _gr => new float3(0f, y, x);
+        public readonly fix3 _gr => new fix3(fix.Zero, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 _ts => new float3(0f, y, x);
+        public readonly fix3 _ts => new fix3(fix.Zero, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 _yy => new float3(0f, y, y);
+        public readonly fix3 _yy => new fix3(fix.Zero, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 _gg => new float3(0f, y, y);
+        public readonly fix3 _gg => new fix3(fix.Zero, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 _tt => new float3(0f, y, y);
+        public readonly fix3 _tt => new fix3(fix.Zero, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 _yz => new float3(0f, y, z);
+        public readonly fix3 _yz => new fix3(fix.Zero, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 _gb => new float3(0f, y, z);
+        public readonly fix3 _gb => new fix3(fix.Zero, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 _tp => new float3(0f, y, z);
+        public readonly fix3 _tp => new fix3(fix.Zero, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 _yw => new float3(0f, y, w);
+        public readonly fix3 _yw => new fix3(fix.Zero, y, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 _ga => new float3(0f, y, w);
+        public readonly fix3 _ga => new fix3(fix.Zero, y, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 _tq => new float3(0f, y, w);
+        public readonly fix3 _tq => new fix3(fix.Zero, y, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 _z_ => new float3(0f, z, 0f);
+        public readonly fix3 _z_ => new fix3(fix.Zero, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 _b_ => new float3(0f, z, 0f);
+        public readonly fix3 _b_ => new fix3(fix.Zero, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 _p_ => new float3(0f, z, 0f);
+        public readonly fix3 _p_ => new fix3(fix.Zero, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 _zx => new float3(0f, z, x);
+        public readonly fix3 _zx => new fix3(fix.Zero, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 _br => new float3(0f, z, x);
+        public readonly fix3 _br => new fix3(fix.Zero, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 _ps => new float3(0f, z, x);
+        public readonly fix3 _ps => new fix3(fix.Zero, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 _zy => new float3(0f, z, y);
+        public readonly fix3 _zy => new fix3(fix.Zero, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 _bg => new float3(0f, z, y);
+        public readonly fix3 _bg => new fix3(fix.Zero, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 _pt => new float3(0f, z, y);
+        public readonly fix3 _pt => new fix3(fix.Zero, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 _zz => new float3(0f, z, z);
+        public readonly fix3 _zz => new fix3(fix.Zero, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 _bb => new float3(0f, z, z);
+        public readonly fix3 _bb => new fix3(fix.Zero, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 _pp => new float3(0f, z, z);
+        public readonly fix3 _pp => new fix3(fix.Zero, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 _zw => new float3(0f, z, w);
+        public readonly fix3 _zw => new fix3(fix.Zero, z, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 _ba => new float3(0f, z, w);
+        public readonly fix3 _ba => new fix3(fix.Zero, z, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 _pq => new float3(0f, z, w);
+        public readonly fix3 _pq => new fix3(fix.Zero, z, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 _w_ => new float3(0f, w, 0f);
+        public readonly fix3 _w_ => new fix3(fix.Zero, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 _a_ => new float3(0f, w, 0f);
+        public readonly fix3 _a_ => new fix3(fix.Zero, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 _q_ => new float3(0f, w, 0f);
+        public readonly fix3 _q_ => new fix3(fix.Zero, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 _wx => new float3(0f, w, x);
+        public readonly fix3 _wx => new fix3(fix.Zero, w, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 _ar => new float3(0f, w, x);
+        public readonly fix3 _ar => new fix3(fix.Zero, w, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 _qs => new float3(0f, w, x);
+        public readonly fix3 _qs => new fix3(fix.Zero, w, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 _wy => new float3(0f, w, y);
+        public readonly fix3 _wy => new fix3(fix.Zero, w, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 _ag => new float3(0f, w, y);
+        public readonly fix3 _ag => new fix3(fix.Zero, w, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 _qt => new float3(0f, w, y);
+        public readonly fix3 _qt => new fix3(fix.Zero, w, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 _wz => new float3(0f, w, z);
+        public readonly fix3 _wz => new fix3(fix.Zero, w, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 _ab => new float3(0f, w, z);
+        public readonly fix3 _ab => new fix3(fix.Zero, w, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 _qp => new float3(0f, w, z);
+        public readonly fix3 _qp => new fix3(fix.Zero, w, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 _ww => new float3(0f, w, w);
+        public readonly fix3 _ww => new fix3(fix.Zero, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 _aa => new float3(0f, w, w);
+        public readonly fix3 _aa => new fix3(fix.Zero, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 _qq => new float3(0f, w, w);
+        public readonly fix3 _qq => new fix3(fix.Zero, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 x__ => new float3(x, 0f, 0f);
+        public readonly fix3 x__ => new fix3(x, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 r__ => new float3(x, 0f, 0f);
+        public readonly fix3 r__ => new fix3(x, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 s__ => new float3(x, 0f, 0f);
+        public readonly fix3 s__ => new fix3(x, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 x_x => new float3(x, 0f, x);
+        public readonly fix3 x_x => new fix3(x, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 r_r => new float3(x, 0f, x);
+        public readonly fix3 r_r => new fix3(x, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 s_s => new float3(x, 0f, x);
+        public readonly fix3 s_s => new fix3(x, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 x_y => new float3(x, 0f, y);
+        public readonly fix3 x_y => new fix3(x, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 r_g => new float3(x, 0f, y);
+        public readonly fix3 r_g => new fix3(x, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 s_t => new float3(x, 0f, y);
+        public readonly fix3 s_t => new fix3(x, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 x_z => new float3(x, 0f, z);
+        public readonly fix3 x_z => new fix3(x, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 r_b => new float3(x, 0f, z);
+        public readonly fix3 r_b => new fix3(x, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 s_p => new float3(x, 0f, z);
+        public readonly fix3 s_p => new fix3(x, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 x_w => new float3(x, 0f, w);
+        public readonly fix3 x_w => new fix3(x, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 r_a => new float3(x, 0f, w);
+        public readonly fix3 r_a => new fix3(x, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 s_q => new float3(x, 0f, w);
+        public readonly fix3 s_q => new fix3(x, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 xx_ => new float3(x, x, 0f);
+        public readonly fix3 xx_ => new fix3(x, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 rr_ => new float3(x, x, 0f);
+        public readonly fix3 rr_ => new fix3(x, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 ss_ => new float3(x, x, 0f);
+        public readonly fix3 ss_ => new fix3(x, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 xxx => new float3(x, x, x);
+        public readonly fix3 xxx => new fix3(x, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 rrr => new float3(x, x, x);
+        public readonly fix3 rrr => new fix3(x, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 sss => new float3(x, x, x);
+        public readonly fix3 sss => new fix3(x, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 xxy => new float3(x, x, y);
+        public readonly fix3 xxy => new fix3(x, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 rrg => new float3(x, x, y);
+        public readonly fix3 rrg => new fix3(x, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 sst => new float3(x, x, y);
+        public readonly fix3 sst => new fix3(x, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 xxz => new float3(x, x, z);
+        public readonly fix3 xxz => new fix3(x, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 rrb => new float3(x, x, z);
+        public readonly fix3 rrb => new fix3(x, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 ssp => new float3(x, x, z);
+        public readonly fix3 ssp => new fix3(x, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 xxw => new float3(x, x, w);
+        public readonly fix3 xxw => new fix3(x, x, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 rra => new float3(x, x, w);
+        public readonly fix3 rra => new fix3(x, x, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 ssq => new float3(x, x, w);
+        public readonly fix3 ssq => new fix3(x, x, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 xy_ => new float3(x, y, 0f);
+        public readonly fix3 xy_ => new fix3(x, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 rg_ => new float3(x, y, 0f);
+        public readonly fix3 rg_ => new fix3(x, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 st_ => new float3(x, y, 0f);
+        public readonly fix3 st_ => new fix3(x, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 xyx => new float3(x, y, x);
+        public readonly fix3 xyx => new fix3(x, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 rgr => new float3(x, y, x);
+        public readonly fix3 rgr => new fix3(x, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 sts => new float3(x, y, x);
+        public readonly fix3 sts => new fix3(x, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 xyy => new float3(x, y, y);
+        public readonly fix3 xyy => new fix3(x, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 rgg => new float3(x, y, y);
+        public readonly fix3 rgg => new fix3(x, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 stt => new float3(x, y, y);
+        public readonly fix3 stt => new fix3(x, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float3 xyz
+        public fix3 xyz
         {
-            readonly get => new float3(x, y, z);
+            readonly get => new fix3(x, y, z);
             set
             {
                 w = value.x;
@@ -10942,9 +10931,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float3 rgb
+        public fix3 rgb
         {
-            readonly get => new float3(x, y, z);
+            readonly get => new fix3(x, y, z);
             set
             {
                 w = value.x;
@@ -10956,9 +10945,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float3 stp
+        public fix3 stp
         {
-            readonly get => new float3(x, y, z);
+            readonly get => new fix3(x, y, z);
             set
             {
                 w = value.x;
@@ -10970,9 +10959,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float3 xyw
+        public fix3 xyw
         {
-            readonly get => new float3(x, y, w);
+            readonly get => new fix3(x, y, w);
             set
             {
                 w = value.x;
@@ -10984,9 +10973,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float3 rga
+        public fix3 rga
         {
-            readonly get => new float3(x, y, w);
+            readonly get => new fix3(x, y, w);
             set
             {
                 w = value.x;
@@ -10998,9 +10987,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float3 stq
+        public fix3 stq
         {
-            readonly get => new float3(x, y, w);
+            readonly get => new fix3(x, y, w);
             set
             {
                 w = value.x;
@@ -11012,39 +11001,39 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 xz_ => new float3(x, z, 0f);
+        public readonly fix3 xz_ => new fix3(x, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 rb_ => new float3(x, z, 0f);
+        public readonly fix3 rb_ => new fix3(x, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 sp_ => new float3(x, z, 0f);
+        public readonly fix3 sp_ => new fix3(x, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 xzx => new float3(x, z, x);
+        public readonly fix3 xzx => new fix3(x, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 rbr => new float3(x, z, x);
+        public readonly fix3 rbr => new fix3(x, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 sps => new float3(x, z, x);
+        public readonly fix3 sps => new fix3(x, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float3 xzy
+        public fix3 xzy
         {
-            readonly get => new float3(x, z, y);
+            readonly get => new fix3(x, z, y);
             set
             {
                 w = value.x;
@@ -11056,9 +11045,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float3 rbg
+        public fix3 rbg
         {
-            readonly get => new float3(x, z, y);
+            readonly get => new fix3(x, z, y);
             set
             {
                 w = value.x;
@@ -11070,9 +11059,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float3 spt
+        public fix3 spt
         {
-            readonly get => new float3(x, z, y);
+            readonly get => new fix3(x, z, y);
             set
             {
                 w = value.x;
@@ -11084,24 +11073,24 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 xzz => new float3(x, z, z);
+        public readonly fix3 xzz => new fix3(x, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 rbb => new float3(x, z, z);
+        public readonly fix3 rbb => new fix3(x, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 spp => new float3(x, z, z);
+        public readonly fix3 spp => new fix3(x, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float3 xzw
+        public fix3 xzw
         {
-            readonly get => new float3(x, z, w);
+            readonly get => new fix3(x, z, w);
             set
             {
                 w = value.x;
@@ -11113,9 +11102,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float3 rba
+        public fix3 rba
         {
-            readonly get => new float3(x, z, w);
+            readonly get => new fix3(x, z, w);
             set
             {
                 w = value.x;
@@ -11127,9 +11116,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float3 spq
+        public fix3 spq
         {
-            readonly get => new float3(x, z, w);
+            readonly get => new fix3(x, z, w);
             set
             {
                 w = value.x;
@@ -11141,39 +11130,39 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 xw_ => new float3(x, w, 0f);
+        public readonly fix3 xw_ => new fix3(x, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 ra_ => new float3(x, w, 0f);
+        public readonly fix3 ra_ => new fix3(x, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 sq_ => new float3(x, w, 0f);
+        public readonly fix3 sq_ => new fix3(x, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 xwx => new float3(x, w, x);
+        public readonly fix3 xwx => new fix3(x, w, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 rar => new float3(x, w, x);
+        public readonly fix3 rar => new fix3(x, w, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 sqs => new float3(x, w, x);
+        public readonly fix3 sqs => new fix3(x, w, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float3 xwy
+        public fix3 xwy
         {
-            readonly get => new float3(x, w, y);
+            readonly get => new fix3(x, w, y);
             set
             {
                 w = value.x;
@@ -11185,9 +11174,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float3 rag
+        public fix3 rag
         {
-            readonly get => new float3(x, w, y);
+            readonly get => new fix3(x, w, y);
             set
             {
                 w = value.x;
@@ -11199,9 +11188,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float3 sqt
+        public fix3 sqt
         {
-            readonly get => new float3(x, w, y);
+            readonly get => new fix3(x, w, y);
             set
             {
                 w = value.x;
@@ -11213,9 +11202,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float3 xwz
+        public fix3 xwz
         {
-            readonly get => new float3(x, w, z);
+            readonly get => new fix3(x, w, z);
             set
             {
                 w = value.x;
@@ -11227,9 +11216,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float3 rab
+        public fix3 rab
         {
-            readonly get => new float3(x, w, z);
+            readonly get => new fix3(x, w, z);
             set
             {
                 w = value.x;
@@ -11241,9 +11230,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float3 sqp
+        public fix3 sqp
         {
-            readonly get => new float3(x, w, z);
+            readonly get => new fix3(x, w, z);
             set
             {
                 w = value.x;
@@ -11255,144 +11244,144 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 xww => new float3(x, w, w);
+        public readonly fix3 xww => new fix3(x, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 raa => new float3(x, w, w);
+        public readonly fix3 raa => new fix3(x, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 sqq => new float3(x, w, w);
+        public readonly fix3 sqq => new fix3(x, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 y__ => new float3(y, 0f, 0f);
+        public readonly fix3 y__ => new fix3(y, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 g__ => new float3(y, 0f, 0f);
+        public readonly fix3 g__ => new fix3(y, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 t__ => new float3(y, 0f, 0f);
+        public readonly fix3 t__ => new fix3(y, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 y_x => new float3(y, 0f, x);
+        public readonly fix3 y_x => new fix3(y, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 g_r => new float3(y, 0f, x);
+        public readonly fix3 g_r => new fix3(y, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 t_s => new float3(y, 0f, x);
+        public readonly fix3 t_s => new fix3(y, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 y_y => new float3(y, 0f, y);
+        public readonly fix3 y_y => new fix3(y, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 g_g => new float3(y, 0f, y);
+        public readonly fix3 g_g => new fix3(y, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 t_t => new float3(y, 0f, y);
+        public readonly fix3 t_t => new fix3(y, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 y_z => new float3(y, 0f, z);
+        public readonly fix3 y_z => new fix3(y, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 g_b => new float3(y, 0f, z);
+        public readonly fix3 g_b => new fix3(y, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 t_p => new float3(y, 0f, z);
+        public readonly fix3 t_p => new fix3(y, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 y_w => new float3(y, 0f, w);
+        public readonly fix3 y_w => new fix3(y, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 g_a => new float3(y, 0f, w);
+        public readonly fix3 g_a => new fix3(y, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 t_q => new float3(y, 0f, w);
+        public readonly fix3 t_q => new fix3(y, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 yx_ => new float3(y, x, 0f);
+        public readonly fix3 yx_ => new fix3(y, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 gr_ => new float3(y, x, 0f);
+        public readonly fix3 gr_ => new fix3(y, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 ts_ => new float3(y, x, 0f);
+        public readonly fix3 ts_ => new fix3(y, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 yxx => new float3(y, x, x);
+        public readonly fix3 yxx => new fix3(y, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 grr => new float3(y, x, x);
+        public readonly fix3 grr => new fix3(y, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 tss => new float3(y, x, x);
+        public readonly fix3 tss => new fix3(y, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 yxy => new float3(y, x, y);
+        public readonly fix3 yxy => new fix3(y, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 grg => new float3(y, x, y);
+        public readonly fix3 grg => new fix3(y, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 tst => new float3(y, x, y);
+        public readonly fix3 tst => new fix3(y, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float3 yxz
+        public fix3 yxz
         {
-            readonly get => new float3(y, x, z);
+            readonly get => new fix3(y, x, z);
             set
             {
                 w = value.x;
@@ -11404,9 +11393,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float3 grb
+        public fix3 grb
         {
-            readonly get => new float3(y, x, z);
+            readonly get => new fix3(y, x, z);
             set
             {
                 w = value.x;
@@ -11418,9 +11407,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float3 tsp
+        public fix3 tsp
         {
-            readonly get => new float3(y, x, z);
+            readonly get => new fix3(y, x, z);
             set
             {
                 w = value.x;
@@ -11432,9 +11421,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float3 yxw
+        public fix3 yxw
         {
-            readonly get => new float3(y, x, w);
+            readonly get => new fix3(y, x, w);
             set
             {
                 w = value.x;
@@ -11446,9 +11435,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float3 gra
+        public fix3 gra
         {
-            readonly get => new float3(y, x, w);
+            readonly get => new fix3(y, x, w);
             set
             {
                 w = value.x;
@@ -11460,9 +11449,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float3 tsq
+        public fix3 tsq
         {
-            readonly get => new float3(y, x, w);
+            readonly get => new fix3(y, x, w);
             set
             {
                 w = value.x;
@@ -11474,99 +11463,99 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 yy_ => new float3(y, y, 0f);
+        public readonly fix3 yy_ => new fix3(y, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 gg_ => new float3(y, y, 0f);
+        public readonly fix3 gg_ => new fix3(y, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 tt_ => new float3(y, y, 0f);
+        public readonly fix3 tt_ => new fix3(y, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 yyx => new float3(y, y, x);
+        public readonly fix3 yyx => new fix3(y, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 ggr => new float3(y, y, x);
+        public readonly fix3 ggr => new fix3(y, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 tts => new float3(y, y, x);
+        public readonly fix3 tts => new fix3(y, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 yyy => new float3(y, y, y);
+        public readonly fix3 yyy => new fix3(y, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 ggg => new float3(y, y, y);
+        public readonly fix3 ggg => new fix3(y, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 ttt => new float3(y, y, y);
+        public readonly fix3 ttt => new fix3(y, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 yyz => new float3(y, y, z);
+        public readonly fix3 yyz => new fix3(y, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 ggb => new float3(y, y, z);
+        public readonly fix3 ggb => new fix3(y, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 ttp => new float3(y, y, z);
+        public readonly fix3 ttp => new fix3(y, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 yyw => new float3(y, y, w);
+        public readonly fix3 yyw => new fix3(y, y, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 gga => new float3(y, y, w);
+        public readonly fix3 gga => new fix3(y, y, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 ttq => new float3(y, y, w);
+        public readonly fix3 ttq => new fix3(y, y, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 yz_ => new float3(y, z, 0f);
+        public readonly fix3 yz_ => new fix3(y, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 gb_ => new float3(y, z, 0f);
+        public readonly fix3 gb_ => new fix3(y, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 tp_ => new float3(y, z, 0f);
+        public readonly fix3 tp_ => new fix3(y, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float3 yzx
+        public fix3 yzx
         {
-            readonly get => new float3(y, z, x);
+            readonly get => new fix3(y, z, x);
             set
             {
                 w = value.x;
@@ -11578,9 +11567,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float3 gbr
+        public fix3 gbr
         {
-            readonly get => new float3(y, z, x);
+            readonly get => new fix3(y, z, x);
             set
             {
                 w = value.x;
@@ -11592,9 +11581,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float3 tps
+        public fix3 tps
         {
-            readonly get => new float3(y, z, x);
+            readonly get => new fix3(y, z, x);
             set
             {
                 w = value.x;
@@ -11606,39 +11595,39 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 yzy => new float3(y, z, y);
+        public readonly fix3 yzy => new fix3(y, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 gbg => new float3(y, z, y);
+        public readonly fix3 gbg => new fix3(y, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 tpt => new float3(y, z, y);
+        public readonly fix3 tpt => new fix3(y, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 yzz => new float3(y, z, z);
+        public readonly fix3 yzz => new fix3(y, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 gbb => new float3(y, z, z);
+        public readonly fix3 gbb => new fix3(y, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 tpp => new float3(y, z, z);
+        public readonly fix3 tpp => new fix3(y, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float3 yzw
+        public fix3 yzw
         {
-            readonly get => new float3(y, z, w);
+            readonly get => new fix3(y, z, w);
             set
             {
                 w = value.x;
@@ -11650,9 +11639,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float3 gba
+        public fix3 gba
         {
-            readonly get => new float3(y, z, w);
+            readonly get => new fix3(y, z, w);
             set
             {
                 w = value.x;
@@ -11664,9 +11653,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float3 tpq
+        public fix3 tpq
         {
-            readonly get => new float3(y, z, w);
+            readonly get => new fix3(y, z, w);
             set
             {
                 w = value.x;
@@ -11678,24 +11667,24 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 yw_ => new float3(y, w, 0f);
+        public readonly fix3 yw_ => new fix3(y, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 ga_ => new float3(y, w, 0f);
+        public readonly fix3 ga_ => new fix3(y, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 tq_ => new float3(y, w, 0f);
+        public readonly fix3 tq_ => new fix3(y, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float3 ywx
+        public fix3 ywx
         {
-            readonly get => new float3(y, w, x);
+            readonly get => new fix3(y, w, x);
             set
             {
                 w = value.x;
@@ -11707,9 +11696,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float3 gar
+        public fix3 gar
         {
-            readonly get => new float3(y, w, x);
+            readonly get => new fix3(y, w, x);
             set
             {
                 w = value.x;
@@ -11721,9 +11710,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float3 tqs
+        public fix3 tqs
         {
-            readonly get => new float3(y, w, x);
+            readonly get => new fix3(y, w, x);
             set
             {
                 w = value.x;
@@ -11735,24 +11724,24 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 ywy => new float3(y, w, y);
+        public readonly fix3 ywy => new fix3(y, w, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 gag => new float3(y, w, y);
+        public readonly fix3 gag => new fix3(y, w, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 tqt => new float3(y, w, y);
+        public readonly fix3 tqt => new fix3(y, w, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float3 ywz
+        public fix3 ywz
         {
-            readonly get => new float3(y, w, z);
+            readonly get => new fix3(y, w, z);
             set
             {
                 w = value.x;
@@ -11764,9 +11753,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float3 gab
+        public fix3 gab
         {
-            readonly get => new float3(y, w, z);
+            readonly get => new fix3(y, w, z);
             set
             {
                 w = value.x;
@@ -11778,9 +11767,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float3 tqp
+        public fix3 tqp
         {
-            readonly get => new float3(y, w, z);
+            readonly get => new fix3(y, w, z);
             set
             {
                 w = value.x;
@@ -11792,129 +11781,129 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 yww => new float3(y, w, w);
+        public readonly fix3 yww => new fix3(y, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 gaa => new float3(y, w, w);
+        public readonly fix3 gaa => new fix3(y, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 tqq => new float3(y, w, w);
+        public readonly fix3 tqq => new fix3(y, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 z__ => new float3(z, 0f, 0f);
+        public readonly fix3 z__ => new fix3(z, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 b__ => new float3(z, 0f, 0f);
+        public readonly fix3 b__ => new fix3(z, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 p__ => new float3(z, 0f, 0f);
+        public readonly fix3 p__ => new fix3(z, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 z_x => new float3(z, 0f, x);
+        public readonly fix3 z_x => new fix3(z, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 b_r => new float3(z, 0f, x);
+        public readonly fix3 b_r => new fix3(z, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 p_s => new float3(z, 0f, x);
+        public readonly fix3 p_s => new fix3(z, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 z_y => new float3(z, 0f, y);
+        public readonly fix3 z_y => new fix3(z, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 b_g => new float3(z, 0f, y);
+        public readonly fix3 b_g => new fix3(z, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 p_t => new float3(z, 0f, y);
+        public readonly fix3 p_t => new fix3(z, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 z_z => new float3(z, 0f, z);
+        public readonly fix3 z_z => new fix3(z, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 b_b => new float3(z, 0f, z);
+        public readonly fix3 b_b => new fix3(z, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 p_p => new float3(z, 0f, z);
+        public readonly fix3 p_p => new fix3(z, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 z_w => new float3(z, 0f, w);
+        public readonly fix3 z_w => new fix3(z, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 b_a => new float3(z, 0f, w);
+        public readonly fix3 b_a => new fix3(z, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 p_q => new float3(z, 0f, w);
+        public readonly fix3 p_q => new fix3(z, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 zx_ => new float3(z, x, 0f);
+        public readonly fix3 zx_ => new fix3(z, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 br_ => new float3(z, x, 0f);
+        public readonly fix3 br_ => new fix3(z, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 ps_ => new float3(z, x, 0f);
+        public readonly fix3 ps_ => new fix3(z, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 zxx => new float3(z, x, x);
+        public readonly fix3 zxx => new fix3(z, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 brr => new float3(z, x, x);
+        public readonly fix3 brr => new fix3(z, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 pss => new float3(z, x, x);
+        public readonly fix3 pss => new fix3(z, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float3 zxy
+        public fix3 zxy
         {
-            readonly get => new float3(z, x, y);
+            readonly get => new fix3(z, x, y);
             set
             {
                 w = value.x;
@@ -11926,9 +11915,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float3 brg
+        public fix3 brg
         {
-            readonly get => new float3(z, x, y);
+            readonly get => new fix3(z, x, y);
             set
             {
                 w = value.x;
@@ -11940,9 +11929,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float3 pst
+        public fix3 pst
         {
-            readonly get => new float3(z, x, y);
+            readonly get => new fix3(z, x, y);
             set
             {
                 w = value.x;
@@ -11954,24 +11943,24 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 zxz => new float3(z, x, z);
+        public readonly fix3 zxz => new fix3(z, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 brb => new float3(z, x, z);
+        public readonly fix3 brb => new fix3(z, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 psp => new float3(z, x, z);
+        public readonly fix3 psp => new fix3(z, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float3 zxw
+        public fix3 zxw
         {
-            readonly get => new float3(z, x, w);
+            readonly get => new fix3(z, x, w);
             set
             {
                 w = value.x;
@@ -11983,9 +11972,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float3 bra
+        public fix3 bra
         {
-            readonly get => new float3(z, x, w);
+            readonly get => new fix3(z, x, w);
             set
             {
                 w = value.x;
@@ -11997,9 +11986,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float3 psq
+        public fix3 psq
         {
-            readonly get => new float3(z, x, w);
+            readonly get => new fix3(z, x, w);
             set
             {
                 w = value.x;
@@ -12011,24 +12000,24 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 zy_ => new float3(z, y, 0f);
+        public readonly fix3 zy_ => new fix3(z, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 bg_ => new float3(z, y, 0f);
+        public readonly fix3 bg_ => new fix3(z, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 pt_ => new float3(z, y, 0f);
+        public readonly fix3 pt_ => new fix3(z, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float3 zyx
+        public fix3 zyx
         {
-            readonly get => new float3(z, y, x);
+            readonly get => new fix3(z, y, x);
             set
             {
                 w = value.x;
@@ -12040,9 +12029,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float3 bgr
+        public fix3 bgr
         {
-            readonly get => new float3(z, y, x);
+            readonly get => new fix3(z, y, x);
             set
             {
                 w = value.x;
@@ -12054,9 +12043,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float3 pts
+        public fix3 pts
         {
-            readonly get => new float3(z, y, x);
+            readonly get => new fix3(z, y, x);
             set
             {
                 w = value.x;
@@ -12068,39 +12057,39 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 zyy => new float3(z, y, y);
+        public readonly fix3 zyy => new fix3(z, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 bgg => new float3(z, y, y);
+        public readonly fix3 bgg => new fix3(z, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 ptt => new float3(z, y, y);
+        public readonly fix3 ptt => new fix3(z, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 zyz => new float3(z, y, z);
+        public readonly fix3 zyz => new fix3(z, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 bgb => new float3(z, y, z);
+        public readonly fix3 bgb => new fix3(z, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 ptp => new float3(z, y, z);
+        public readonly fix3 ptp => new fix3(z, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float3 zyw
+        public fix3 zyw
         {
-            readonly get => new float3(z, y, w);
+            readonly get => new fix3(z, y, w);
             set
             {
                 w = value.x;
@@ -12112,9 +12101,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float3 bga
+        public fix3 bga
         {
-            readonly get => new float3(z, y, w);
+            readonly get => new fix3(z, y, w);
             set
             {
                 w = value.x;
@@ -12126,9 +12115,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float3 ptq
+        public fix3 ptq
         {
-            readonly get => new float3(z, y, w);
+            readonly get => new fix3(z, y, w);
             set
             {
                 w = value.x;
@@ -12140,99 +12129,99 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 zz_ => new float3(z, z, 0f);
+        public readonly fix3 zz_ => new fix3(z, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 bb_ => new float3(z, z, 0f);
+        public readonly fix3 bb_ => new fix3(z, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 pp_ => new float3(z, z, 0f);
+        public readonly fix3 pp_ => new fix3(z, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 zzx => new float3(z, z, x);
+        public readonly fix3 zzx => new fix3(z, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 bbr => new float3(z, z, x);
+        public readonly fix3 bbr => new fix3(z, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 pps => new float3(z, z, x);
+        public readonly fix3 pps => new fix3(z, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 zzy => new float3(z, z, y);
+        public readonly fix3 zzy => new fix3(z, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 bbg => new float3(z, z, y);
+        public readonly fix3 bbg => new fix3(z, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 ppt => new float3(z, z, y);
+        public readonly fix3 ppt => new fix3(z, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 zzz => new float3(z, z, z);
+        public readonly fix3 zzz => new fix3(z, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 bbb => new float3(z, z, z);
+        public readonly fix3 bbb => new fix3(z, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 ppp => new float3(z, z, z);
+        public readonly fix3 ppp => new fix3(z, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 zzw => new float3(z, z, w);
+        public readonly fix3 zzw => new fix3(z, z, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 bba => new float3(z, z, w);
+        public readonly fix3 bba => new fix3(z, z, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 ppq => new float3(z, z, w);
+        public readonly fix3 ppq => new fix3(z, z, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 zw_ => new float3(z, w, 0f);
+        public readonly fix3 zw_ => new fix3(z, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 ba_ => new float3(z, w, 0f);
+        public readonly fix3 ba_ => new fix3(z, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 pq_ => new float3(z, w, 0f);
+        public readonly fix3 pq_ => new fix3(z, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float3 zwx
+        public fix3 zwx
         {
-            readonly get => new float3(z, w, x);
+            readonly get => new fix3(z, w, x);
             set
             {
                 w = value.x;
@@ -12244,9 +12233,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float3 bar
+        public fix3 bar
         {
-            readonly get => new float3(z, w, x);
+            readonly get => new fix3(z, w, x);
             set
             {
                 w = value.x;
@@ -12258,9 +12247,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float3 pqs
+        public fix3 pqs
         {
-            readonly get => new float3(z, w, x);
+            readonly get => new fix3(z, w, x);
             set
             {
                 w = value.x;
@@ -12272,9 +12261,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float3 zwy
+        public fix3 zwy
         {
-            readonly get => new float3(z, w, y);
+            readonly get => new fix3(z, w, y);
             set
             {
                 w = value.x;
@@ -12286,9 +12275,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float3 bag
+        public fix3 bag
         {
-            readonly get => new float3(z, w, y);
+            readonly get => new fix3(z, w, y);
             set
             {
                 w = value.x;
@@ -12300,9 +12289,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float3 pqt
+        public fix3 pqt
         {
-            readonly get => new float3(z, w, y);
+            readonly get => new fix3(z, w, y);
             set
             {
                 w = value.x;
@@ -12314,144 +12303,144 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 zwz => new float3(z, w, z);
+        public readonly fix3 zwz => new fix3(z, w, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 bab => new float3(z, w, z);
+        public readonly fix3 bab => new fix3(z, w, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 pqp => new float3(z, w, z);
+        public readonly fix3 pqp => new fix3(z, w, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 zww => new float3(z, w, w);
+        public readonly fix3 zww => new fix3(z, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 baa => new float3(z, w, w);
+        public readonly fix3 baa => new fix3(z, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 pqq => new float3(z, w, w);
+        public readonly fix3 pqq => new fix3(z, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 w__ => new float3(w, 0f, 0f);
+        public readonly fix3 w__ => new fix3(w, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 a__ => new float3(w, 0f, 0f);
+        public readonly fix3 a__ => new fix3(w, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 q__ => new float3(w, 0f, 0f);
+        public readonly fix3 q__ => new fix3(w, fix.Zero, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 w_x => new float3(w, 0f, x);
+        public readonly fix3 w_x => new fix3(w, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 a_r => new float3(w, 0f, x);
+        public readonly fix3 a_r => new fix3(w, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 q_s => new float3(w, 0f, x);
+        public readonly fix3 q_s => new fix3(w, fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 w_y => new float3(w, 0f, y);
+        public readonly fix3 w_y => new fix3(w, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 a_g => new float3(w, 0f, y);
+        public readonly fix3 a_g => new fix3(w, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 q_t => new float3(w, 0f, y);
+        public readonly fix3 q_t => new fix3(w, fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 w_z => new float3(w, 0f, z);
+        public readonly fix3 w_z => new fix3(w, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 a_b => new float3(w, 0f, z);
+        public readonly fix3 a_b => new fix3(w, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 q_p => new float3(w, 0f, z);
+        public readonly fix3 q_p => new fix3(w, fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 w_w => new float3(w, 0f, w);
+        public readonly fix3 w_w => new fix3(w, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 a_a => new float3(w, 0f, w);
+        public readonly fix3 a_a => new fix3(w, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 q_q => new float3(w, 0f, w);
+        public readonly fix3 q_q => new fix3(w, fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 wx_ => new float3(w, x, 0f);
+        public readonly fix3 wx_ => new fix3(w, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 ar_ => new float3(w, x, 0f);
+        public readonly fix3 ar_ => new fix3(w, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 qs_ => new float3(w, x, 0f);
+        public readonly fix3 qs_ => new fix3(w, x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 wxx => new float3(w, x, x);
+        public readonly fix3 wxx => new fix3(w, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 arr => new float3(w, x, x);
+        public readonly fix3 arr => new fix3(w, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 qss => new float3(w, x, x);
+        public readonly fix3 qss => new fix3(w, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float3 wxy
+        public fix3 wxy
         {
-            readonly get => new float3(w, x, y);
+            readonly get => new fix3(w, x, y);
             set
             {
                 w = value.x;
@@ -12463,9 +12452,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float3 arg
+        public fix3 arg
         {
-            readonly get => new float3(w, x, y);
+            readonly get => new fix3(w, x, y);
             set
             {
                 w = value.x;
@@ -12477,9 +12466,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float3 qst
+        public fix3 qst
         {
-            readonly get => new float3(w, x, y);
+            readonly get => new fix3(w, x, y);
             set
             {
                 w = value.x;
@@ -12491,9 +12480,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float3 wxz
+        public fix3 wxz
         {
-            readonly get => new float3(w, x, z);
+            readonly get => new fix3(w, x, z);
             set
             {
                 w = value.x;
@@ -12505,9 +12494,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float3 arb
+        public fix3 arb
         {
-            readonly get => new float3(w, x, z);
+            readonly get => new fix3(w, x, z);
             set
             {
                 w = value.x;
@@ -12519,9 +12508,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float3 qsp
+        public fix3 qsp
         {
-            readonly get => new float3(w, x, z);
+            readonly get => new fix3(w, x, z);
             set
             {
                 w = value.x;
@@ -12533,39 +12522,39 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 wxw => new float3(w, x, w);
+        public readonly fix3 wxw => new fix3(w, x, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 ara => new float3(w, x, w);
+        public readonly fix3 ara => new fix3(w, x, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 qsq => new float3(w, x, w);
+        public readonly fix3 qsq => new fix3(w, x, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 wy_ => new float3(w, y, 0f);
+        public readonly fix3 wy_ => new fix3(w, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 ag_ => new float3(w, y, 0f);
+        public readonly fix3 ag_ => new fix3(w, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 qt_ => new float3(w, y, 0f);
+        public readonly fix3 qt_ => new fix3(w, y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float3 wyx
+        public fix3 wyx
         {
-            readonly get => new float3(w, y, x);
+            readonly get => new fix3(w, y, x);
             set
             {
                 w = value.x;
@@ -12577,9 +12566,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float3 agr
+        public fix3 agr
         {
-            readonly get => new float3(w, y, x);
+            readonly get => new fix3(w, y, x);
             set
             {
                 w = value.x;
@@ -12591,9 +12580,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float3 qts
+        public fix3 qts
         {
-            readonly get => new float3(w, y, x);
+            readonly get => new fix3(w, y, x);
             set
             {
                 w = value.x;
@@ -12605,24 +12594,24 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 wyy => new float3(w, y, y);
+        public readonly fix3 wyy => new fix3(w, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 agg => new float3(w, y, y);
+        public readonly fix3 agg => new fix3(w, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 qtt => new float3(w, y, y);
+        public readonly fix3 qtt => new fix3(w, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float3 wyz
+        public fix3 wyz
         {
-            readonly get => new float3(w, y, z);
+            readonly get => new fix3(w, y, z);
             set
             {
                 w = value.x;
@@ -12634,9 +12623,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float3 agb
+        public fix3 agb
         {
-            readonly get => new float3(w, y, z);
+            readonly get => new fix3(w, y, z);
             set
             {
                 w = value.x;
@@ -12648,9 +12637,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float3 qtp
+        public fix3 qtp
         {
-            readonly get => new float3(w, y, z);
+            readonly get => new fix3(w, y, z);
             set
             {
                 w = value.x;
@@ -12662,39 +12651,39 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 wyw => new float3(w, y, w);
+        public readonly fix3 wyw => new fix3(w, y, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 aga => new float3(w, y, w);
+        public readonly fix3 aga => new fix3(w, y, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 qtq => new float3(w, y, w);
+        public readonly fix3 qtq => new fix3(w, y, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 wz_ => new float3(w, z, 0f);
+        public readonly fix3 wz_ => new fix3(w, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 ab_ => new float3(w, z, 0f);
+        public readonly fix3 ab_ => new fix3(w, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 qp_ => new float3(w, z, 0f);
+        public readonly fix3 qp_ => new fix3(w, z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float3 wzx
+        public fix3 wzx
         {
-            readonly get => new float3(w, z, x);
+            readonly get => new fix3(w, z, x);
             set
             {
                 w = value.x;
@@ -12706,9 +12695,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float3 abr
+        public fix3 abr
         {
-            readonly get => new float3(w, z, x);
+            readonly get => new fix3(w, z, x);
             set
             {
                 w = value.x;
@@ -12720,9 +12709,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float3 qps
+        public fix3 qps
         {
-            readonly get => new float3(w, z, x);
+            readonly get => new fix3(w, z, x);
             set
             {
                 w = value.x;
@@ -12734,9 +12723,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float3 wzy
+        public fix3 wzy
         {
-            readonly get => new float3(w, z, y);
+            readonly get => new fix3(w, z, y);
             set
             {
                 w = value.x;
@@ -12748,9 +12737,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float3 abg
+        public fix3 abg
         {
-            readonly get => new float3(w, z, y);
+            readonly get => new fix3(w, z, y);
             set
             {
                 w = value.x;
@@ -12762,9 +12751,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float3 qpt
+        public fix3 qpt
         {
-            readonly get => new float3(w, z, y);
+            readonly get => new fix3(w, z, y);
             set
             {
                 w = value.x;
@@ -12776,204 +12765,204 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 wzz => new float3(w, z, z);
+        public readonly fix3 wzz => new fix3(w, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 abb => new float3(w, z, z);
+        public readonly fix3 abb => new fix3(w, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 qpp => new float3(w, z, z);
+        public readonly fix3 qpp => new fix3(w, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 wzw => new float3(w, z, w);
+        public readonly fix3 wzw => new fix3(w, z, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 aba => new float3(w, z, w);
+        public readonly fix3 aba => new fix3(w, z, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 qpq => new float3(w, z, w);
+        public readonly fix3 qpq => new fix3(w, z, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 ww_ => new float3(w, w, 0f);
+        public readonly fix3 ww_ => new fix3(w, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 aa_ => new float3(w, w, 0f);
+        public readonly fix3 aa_ => new fix3(w, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 qq_ => new float3(w, w, 0f);
+        public readonly fix3 qq_ => new fix3(w, w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 wwx => new float3(w, w, x);
+        public readonly fix3 wwx => new fix3(w, w, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 aar => new float3(w, w, x);
+        public readonly fix3 aar => new fix3(w, w, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 qqs => new float3(w, w, x);
+        public readonly fix3 qqs => new fix3(w, w, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 wwy => new float3(w, w, y);
+        public readonly fix3 wwy => new fix3(w, w, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 aag => new float3(w, w, y);
+        public readonly fix3 aag => new fix3(w, w, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 qqt => new float3(w, w, y);
+        public readonly fix3 qqt => new fix3(w, w, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 wwz => new float3(w, w, z);
+        public readonly fix3 wwz => new fix3(w, w, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 aab => new float3(w, w, z);
+        public readonly fix3 aab => new fix3(w, w, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 qqp => new float3(w, w, z);
+        public readonly fix3 qqp => new fix3(w, w, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 www => new float3(w, w, w);
+        public readonly fix3 www => new fix3(w, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 aaa => new float3(w, w, w);
+        public readonly fix3 aaa => new fix3(w, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float3 qqq => new float3(w, w, w);
+        public readonly fix3 qqq => new fix3(w, w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float2 _x => new float2(0f, x);
+        public readonly fix2 _x => new fix2(fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float2 _r => new float2(0f, x);
+        public readonly fix2 _r => new fix2(fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float2 _s => new float2(0f, x);
+        public readonly fix2 _s => new fix2(fix.Zero, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float2 _y => new float2(0f, y);
+        public readonly fix2 _y => new fix2(fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float2 _g => new float2(0f, y);
+        public readonly fix2 _g => new fix2(fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float2 _t => new float2(0f, y);
+        public readonly fix2 _t => new fix2(fix.Zero, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float2 _z => new float2(0f, z);
+        public readonly fix2 _z => new fix2(fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float2 _b => new float2(0f, z);
+        public readonly fix2 _b => new fix2(fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float2 _p => new float2(0f, z);
+        public readonly fix2 _p => new fix2(fix.Zero, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float2 _w => new float2(0f, w);
+        public readonly fix2 _w => new fix2(fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float2 _a => new float2(0f, w);
+        public readonly fix2 _a => new fix2(fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float2 _q => new float2(0f, w);
+        public readonly fix2 _q => new fix2(fix.Zero, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float2 x_ => new float2(x, 0f);
+        public readonly fix2 x_ => new fix2(x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float2 r_ => new float2(x, 0f);
+        public readonly fix2 r_ => new fix2(x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float2 s_ => new float2(x, 0f);
+        public readonly fix2 s_ => new fix2(x, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float2 xx => new float2(x, x);
+        public readonly fix2 xx => new fix2(x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float2 rr => new float2(x, x);
+        public readonly fix2 rr => new fix2(x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float2 ss => new float2(x, x);
+        public readonly fix2 ss => new fix2(x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float2 xy
+        public fix2 xy
         {
-            readonly get => new float2(x, y);
+            readonly get => new fix2(x, y);
             set
             {
                 w = value.x;
@@ -12984,9 +12973,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float2 rg
+        public fix2 rg
         {
-            readonly get => new float2(x, y);
+            readonly get => new fix2(x, y);
             set
             {
                 w = value.x;
@@ -12997,9 +12986,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float2 st
+        public fix2 st
         {
-            readonly get => new float2(x, y);
+            readonly get => new fix2(x, y);
             set
             {
                 w = value.x;
@@ -13010,9 +12999,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float2 xz
+        public fix2 xz
         {
-            readonly get => new float2(x, z);
+            readonly get => new fix2(x, z);
             set
             {
                 w = value.x;
@@ -13023,9 +13012,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float2 rb
+        public fix2 rb
         {
-            readonly get => new float2(x, z);
+            readonly get => new fix2(x, z);
             set
             {
                 w = value.x;
@@ -13036,9 +13025,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float2 sp
+        public fix2 sp
         {
-            readonly get => new float2(x, z);
+            readonly get => new fix2(x, z);
             set
             {
                 w = value.x;
@@ -13049,9 +13038,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float2 xw
+        public fix2 xw
         {
-            readonly get => new float2(x, w);
+            readonly get => new fix2(x, w);
             set
             {
                 w = value.x;
@@ -13062,9 +13051,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float2 ra
+        public fix2 ra
         {
-            readonly get => new float2(x, w);
+            readonly get => new fix2(x, w);
             set
             {
                 w = value.x;
@@ -13075,9 +13064,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float2 sq
+        public fix2 sq
         {
-            readonly get => new float2(x, w);
+            readonly get => new fix2(x, w);
             set
             {
                 w = value.x;
@@ -13088,24 +13077,24 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float2 y_ => new float2(y, 0f);
+        public readonly fix2 y_ => new fix2(y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float2 g_ => new float2(y, 0f);
+        public readonly fix2 g_ => new fix2(y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float2 t_ => new float2(y, 0f);
+        public readonly fix2 t_ => new fix2(y, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float2 yx
+        public fix2 yx
         {
-            readonly get => new float2(y, x);
+            readonly get => new fix2(y, x);
             set
             {
                 w = value.x;
@@ -13116,9 +13105,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float2 gr
+        public fix2 gr
         {
-            readonly get => new float2(y, x);
+            readonly get => new fix2(y, x);
             set
             {
                 w = value.x;
@@ -13129,9 +13118,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float2 ts
+        public fix2 ts
         {
-            readonly get => new float2(y, x);
+            readonly get => new fix2(y, x);
             set
             {
                 w = value.x;
@@ -13142,24 +13131,24 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float2 yy => new float2(y, y);
+        public readonly fix2 yy => new fix2(y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float2 gg => new float2(y, y);
+        public readonly fix2 gg => new fix2(y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float2 tt => new float2(y, y);
+        public readonly fix2 tt => new fix2(y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float2 yz
+        public fix2 yz
         {
-            readonly get => new float2(y, z);
+            readonly get => new fix2(y, z);
             set
             {
                 w = value.x;
@@ -13170,9 +13159,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float2 gb
+        public fix2 gb
         {
-            readonly get => new float2(y, z);
+            readonly get => new fix2(y, z);
             set
             {
                 w = value.x;
@@ -13183,9 +13172,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float2 tp
+        public fix2 tp
         {
-            readonly get => new float2(y, z);
+            readonly get => new fix2(y, z);
             set
             {
                 w = value.x;
@@ -13196,9 +13185,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float2 yw
+        public fix2 yw
         {
-            readonly get => new float2(y, w);
+            readonly get => new fix2(y, w);
             set
             {
                 w = value.x;
@@ -13209,9 +13198,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float2 ga
+        public fix2 ga
         {
-            readonly get => new float2(y, w);
+            readonly get => new fix2(y, w);
             set
             {
                 w = value.x;
@@ -13222,9 +13211,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float2 tq
+        public fix2 tq
         {
-            readonly get => new float2(y, w);
+            readonly get => new fix2(y, w);
             set
             {
                 w = value.x;
@@ -13235,24 +13224,24 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float2 z_ => new float2(z, 0f);
+        public readonly fix2 z_ => new fix2(z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float2 b_ => new float2(z, 0f);
+        public readonly fix2 b_ => new fix2(z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float2 p_ => new float2(z, 0f);
+        public readonly fix2 p_ => new fix2(z, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float2 zx
+        public fix2 zx
         {
-            readonly get => new float2(z, x);
+            readonly get => new fix2(z, x);
             set
             {
                 w = value.x;
@@ -13263,9 +13252,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float2 br
+        public fix2 br
         {
-            readonly get => new float2(z, x);
+            readonly get => new fix2(z, x);
             set
             {
                 w = value.x;
@@ -13276,9 +13265,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float2 ps
+        public fix2 ps
         {
-            readonly get => new float2(z, x);
+            readonly get => new fix2(z, x);
             set
             {
                 w = value.x;
@@ -13289,9 +13278,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float2 zy
+        public fix2 zy
         {
-            readonly get => new float2(z, y);
+            readonly get => new fix2(z, y);
             set
             {
                 w = value.x;
@@ -13302,9 +13291,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float2 bg
+        public fix2 bg
         {
-            readonly get => new float2(z, y);
+            readonly get => new fix2(z, y);
             set
             {
                 w = value.x;
@@ -13315,9 +13304,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float2 pt
+        public fix2 pt
         {
-            readonly get => new float2(z, y);
+            readonly get => new fix2(z, y);
             set
             {
                 w = value.x;
@@ -13328,24 +13317,24 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float2 zz => new float2(z, z);
+        public readonly fix2 zz => new fix2(z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float2 bb => new float2(z, z);
+        public readonly fix2 bb => new fix2(z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float2 pp => new float2(z, z);
+        public readonly fix2 pp => new fix2(z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float2 zw
+        public fix2 zw
         {
-            readonly get => new float2(z, w);
+            readonly get => new fix2(z, w);
             set
             {
                 w = value.x;
@@ -13356,9 +13345,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float2 ba
+        public fix2 ba
         {
-            readonly get => new float2(z, w);
+            readonly get => new fix2(z, w);
             set
             {
                 w = value.x;
@@ -13369,9 +13358,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float2 pq
+        public fix2 pq
         {
-            readonly get => new float2(z, w);
+            readonly get => new fix2(z, w);
             set
             {
                 w = value.x;
@@ -13382,24 +13371,24 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float2 w_ => new float2(w, 0f);
+        public readonly fix2 w_ => new fix2(w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float2 a_ => new float2(w, 0f);
+        public readonly fix2 a_ => new fix2(w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float2 q_ => new float2(w, 0f);
+        public readonly fix2 q_ => new fix2(w, fix.Zero);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float2 wx
+        public fix2 wx
         {
-            readonly get => new float2(w, x);
+            readonly get => new fix2(w, x);
             set
             {
                 w = value.x;
@@ -13410,9 +13399,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float2 ar
+        public fix2 ar
         {
-            readonly get => new float2(w, x);
+            readonly get => new fix2(w, x);
             set
             {
                 w = value.x;
@@ -13423,9 +13412,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float2 qs
+        public fix2 qs
         {
-            readonly get => new float2(w, x);
+            readonly get => new fix2(w, x);
             set
             {
                 w = value.x;
@@ -13436,9 +13425,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float2 wy
+        public fix2 wy
         {
-            readonly get => new float2(w, y);
+            readonly get => new fix2(w, y);
             set
             {
                 w = value.x;
@@ -13449,9 +13438,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float2 ag
+        public fix2 ag
         {
-            readonly get => new float2(w, y);
+            readonly get => new fix2(w, y);
             set
             {
                 w = value.x;
@@ -13462,9 +13451,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float2 qt
+        public fix2 qt
         {
-            readonly get => new float2(w, y);
+            readonly get => new fix2(w, y);
             set
             {
                 w = value.x;
@@ -13475,9 +13464,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float2 wz
+        public fix2 wz
         {
-            readonly get => new float2(w, z);
+            readonly get => new fix2(w, z);
             set
             {
                 w = value.x;
@@ -13488,9 +13477,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float2 ab
+        public fix2 ab
         {
-            readonly get => new float2(w, z);
+            readonly get => new fix2(w, z);
             set
             {
                 w = value.x;
@@ -13501,9 +13490,9 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public float2 qp
+        public fix2 qp
         {
-            readonly get => new float2(w, z);
+            readonly get => new fix2(w, z);
             set
             {
                 w = value.x;
@@ -13514,17 +13503,17 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float2 ww => new float2(w, w);
+        public readonly fix2 ww => new fix2(w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float2 aa => new float2(w, w);
+        public readonly fix2 aa => new fix2(w, w);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
-        public readonly float2 qq => new float2(w, w);
+        public readonly fix2 qq => new fix2(w, w);
 
         #endregion
 
@@ -13532,10 +13521,10 @@ namespace DVG
         #region Operators
         
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static bool operator==(float4 lhs, float4 rhs) => lhs.x == rhs.x&&lhs.y == rhs.y&&lhs.z == rhs.z&&lhs.w == rhs.w;
+        public static bool operator==(fix4 lhs, fix4 rhs) => lhs.x == rhs.x&&lhs.y == rhs.y&&lhs.z == rhs.z&&lhs.w == rhs.w;
         
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static bool operator!=(float4 lhs, float4 rhs) => lhs.x != rhs.x||lhs.y != rhs.y||lhs.z != rhs.z||lhs.w != rhs.w;
+        public static bool operator!=(fix4 lhs, fix4 rhs) => lhs.x != rhs.x||lhs.y != rhs.y||lhs.z != rhs.z||lhs.w != rhs.w;
 
         #endregion
 
@@ -13555,10 +13544,10 @@ namespace DVG
         public override readonly string ToString() => x + ", " + y + ", " + z + ", " + w;
         
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public readonly bool Equals(float4 other) => other == this;
+        public readonly bool Equals(fix4 other) => other == this;
         
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public override readonly bool Equals(object? obj) => obj is float4 other && Equals(other);
+        public override readonly bool Equals(object? obj) => obj is fix4 other && Equals(other);
 
         #endregion
 
@@ -13569,91 +13558,55 @@ namespace DVG
         /// Returns the euclidean length of this vector.
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float Length(float4 v) => Maths.Sqrt(v.x * v.x + v.y * v.y + v.z * v.z + v.w * v.w);
+        public static fix Length(fix4 v) => Maths.Sqrt(v.x * v.x + v.y * v.y + v.z * v.z + v.w * v.w);
         
         /// <summary>
         /// Returns the euclidean distance between the two vectors.
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float Distance(float4 lhs, float4 rhs) => float4.Length(lhs - rhs);
+        public static fix Distance(fix4 lhs, fix4 rhs) => fix4.Length(lhs - rhs);
         
         /// <summary>
         /// Returns the inner product (dot product, scalar product) of the two vectors.
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float Dot(float4 lhs, float4 rhs) => lhs.x * rhs.x + lhs.y * rhs.y + lhs.z * rhs.z + lhs.w * rhs.w;
+        public static fix Dot(fix4 lhs, fix4 rhs) => lhs.x * rhs.x + lhs.y * rhs.y + lhs.z * rhs.z + lhs.w * rhs.w;
         
         /// <summary>
         /// Returns a copy of this vector with length one (undefined if this has zero length).
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float4 Normalize(float4 v) => v / float4.Length(v);
+        public static fix4 Normalize(fix4 v) => v / fix4.Length(v);
         
         /// <summary>
         /// Returns a vector pointing in the same direction as another (faceforward orients a vector to point away from a surface as defined by its normal. If dot(Nref, I) is negative faceforward returns N, otherwise it returns -N).
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float4 FaceForward(float4 N, float4 I, float4 Nref) => float4.Dot(Nref, I) < 0 ? N : -N;
+        public static fix4 FaceForward(fix4 N, fix4 I, fix4 Nref) => fix4.Dot(Nref, I) < 0 ? N : -N;
         
         /// <summary>
         /// Calculate the reflection direction for an incident vector (N should be normalized in order to achieve the desired result).
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float4 Reflect(float4 I, float4 N) => I - 2 * float4.Dot(N, I) * N;
+        public static fix4 Reflect(fix4 I, fix4 N) => I - 2 * fix4.Dot(N, I) * N;
         
         /// <summary>
         /// Calculate the refraction direction for an incident vector (The input parameters I and N should be normalized in order to achieve the desired result).
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float4 Refract(float4 I, float4 N, float eta)
+        public static fix4 Refract(fix4 I, fix4 N, fix eta)
         {
-            var dNI = float4.Dot(N, I);
+            var dNI = fix4.Dot(N, I);
             var k = 1 - eta * eta * (1 - dNI * dNI);
-            if (k < 0) return new float4((float)0);
+            if (k < 0) return new fix4((fix)0);
             return eta * I - (eta * dNI + Maths.Sqrt(k)) * N;
         }
         
         /// <summary>
-        /// Returns a float4 from component-wise application of Clamp (Maths.Clamp(v, min, max)).
+        /// Returns a fix4 from component-wise application of Clamp (Maths.Clamp(v, min, max)).
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float4 Clamp(float4 v, float min, float max) => new float4(Maths.Clamp(v.x, min, max), Maths.Clamp(v.y, min, max), Maths.Clamp(v.z, min, max), Maths.Clamp(v.w, min, max));
-        
-        /// <summary>
-        /// Returns the square length of this vector.
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float SqrLength(float4 v) => v.x * v.x + v.y * v.y + v.z * v.z + v.w * v.w;
-        
-        /// <summary>
-        /// Returns the square distance between the two vectors.
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float SqrDistance(float4 lhs, float4 rhs) => float4.SqrLength(lhs - rhs);
-        
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float4 SmoothDamp(float4 source, float4 target, ref float4 velocity, float smoothTime, float deltaTime) => new float4(Maths.SmoothDamp(source.x, target.x, ref velocity.x, smoothTime, deltaTime), Maths.SmoothDamp(source.y, target.y, ref velocity.y, smoothTime, deltaTime), Maths.SmoothDamp(source.z, target.z, ref velocity.z, smoothTime, deltaTime), Maths.SmoothDamp(source.w, target.w, ref velocity.w, smoothTime, deltaTime));
-        
-        /// <summary>
-        /// Returns this vector with length clamped to maxLength.
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float4 ClampLength(float4 value, float maxLength)
-        {
-            var sqrLength = SqrLength(value);
-            if (sqrLength > maxLength * maxLength)
-            {
-                float ratio = maxLength / Maths.Sqrt(sqrLength);
-                return new float4(value.x * ratio, value.y * ratio, value.z * ratio, value.w * ratio);
-            }
-            return value;
-        }
-        
-        /// <summary>
-        /// Moves vector towards target.
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float4 MoveTowards(float4 current, float4 target, float maxDelta) => new float4(Maths.MoveTowards(current.x, target.x, maxDelta), Maths.MoveTowards(current.y, target.y, maxDelta), Maths.MoveTowards(current.z, target.z, maxDelta), Maths.MoveTowards(current.w, target.w, maxDelta));
+        public static fix4 Clamp(fix4 v, fix min, fix max) => new fix4(Maths.Clamp(v.x, min, max), Maths.Clamp(v.y, min, max), Maths.Clamp(v.z, min, max), Maths.Clamp(v.w, min, max));
 
         #endregion
 
@@ -13661,346 +13614,88 @@ namespace DVG
         #region Component-Wise Static Functions
         
         /// <summary>
-        /// Returns a float4 from component-wise application of Radians (Maths.Radians(v)).
+        /// Returns a fix4 from component-wise application of Abs (Maths.Abs(v)).
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float4 Radians(float4 v) => new float4(Maths.Radians(v.x), Maths.Radians(v.y), Maths.Radians(v.z), Maths.Radians(v.w));
+        public static fix4 Abs(fix4 v) => new fix4(Maths.Abs(v.x), Maths.Abs(v.y), Maths.Abs(v.z), Maths.Abs(v.w));
         
         /// <summary>
-        /// Returns a float4 from component-wise application of Degrees (Maths.Degrees(v)).
+        /// Returns a fix4 from component-wise application of Sign (Maths.Sign(v)).
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float4 Degrees(float4 v) => new float4(Maths.Degrees(v.x), Maths.Degrees(v.y), Maths.Degrees(v.z), Maths.Degrees(v.w));
+        public static fix4 Sign(fix4 v) => new fix4(Maths.Sign(v.x), Maths.Sign(v.y), Maths.Sign(v.z), Maths.Sign(v.w));
         
         /// <summary>
-        /// Returns a float4 from component-wise application of Sin (Maths.Sin(v)).
+        /// Returns a fix4 from component-wise application of Lerp (Maths.Lerp(edge0, edge1, v)).
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float4 Sin(float4 v) => new float4(Maths.Sin(v.x), Maths.Sin(v.y), Maths.Sin(v.z), Maths.Sin(v.w));
+        public static fix4 Lerp(fix4 edge0, fix4 edge1, fix4 v) => new fix4(Maths.Lerp(edge0.x, edge1.x, v.x), Maths.Lerp(edge0.y, edge1.y, v.y), Maths.Lerp(edge0.z, edge1.z, v.z), Maths.Lerp(edge0.w, edge1.w, v.w));
         
         /// <summary>
-        /// Returns a float4 from component-wise application of Cos (Maths.Cos(v)).
+        /// Returns a fix4 from component-wise application of Lerp (Maths.Lerp(edge0, edge1, v)).
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float4 Cos(float4 v) => new float4(Maths.Cos(v.x), Maths.Cos(v.y), Maths.Cos(v.z), Maths.Cos(v.w));
+        public static fix4 Lerp(fix4 edge0, fix4 edge1, fix v) => new fix4(Maths.Lerp(edge0.x, edge1.x, v), Maths.Lerp(edge0.y, edge1.y, v), Maths.Lerp(edge0.z, edge1.z, v), Maths.Lerp(edge0.w, edge1.w, v));
         
         /// <summary>
-        /// Returns a float4 from component-wise application of Tan (Maths.Tan(v)).
+        /// Returns a fix4 from component-wise application of Step (x &lt; edge ? 0 : 1).
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float4 Tan(float4 v) => new float4(Maths.Tan(v.x), Maths.Tan(v.y), Maths.Tan(v.z), Maths.Tan(v.w));
+        public static fix4 Step(fix4 edge, fix4 x) => new fix4(x.x < edge.x ? 0 : 1, x.y < edge.y ? 0 : 1, x.z < edge.z ? 0 : 1, x.w < edge.w ? 0 : 1);
         
         /// <summary>
-        /// Returns a float4 from component-wise application of Asin (Maths.Asin(v)).
+        /// Returns a fix4 from component-wise application of Step (x &lt; edge ? 0 : 1).
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float4 Asin(float4 v) => new float4(Maths.Asin(v.x), Maths.Asin(v.y), Maths.Asin(v.z), Maths.Asin(v.w));
+        public static fix4 Step(fix edge, fix4 x) => new fix4(x.x < edge ? 0 : 1, x.y < edge ? 0 : 1, x.z < edge ? 0 : 1, x.w < edge ? 0 : 1);
         
         /// <summary>
-        /// Returns a float4 from component-wise application of Acos (Maths.Acos(v)).
+        /// Returns a fix4 from component-wise application of SmoothStep (Maths.SmoothStep(edge0, edge1, x)).
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float4 Acos(float4 v) => new float4(Maths.Acos(v.x), Maths.Acos(v.y), Maths.Acos(v.z), Maths.Acos(v.w));
+        public static fix4 SmoothStep(fix4 edge0, fix4 edge1, fix4 x) => new fix4(Maths.SmoothStep(edge0.x, edge1.x, x.x), Maths.SmoothStep(edge0.y, edge1.y, x.y), Maths.SmoothStep(edge0.z, edge1.z, x.z), Maths.SmoothStep(edge0.w, edge1.w, x.w));
         
         /// <summary>
-        /// Returns a float4 from component-wise application of Atan (Maths.Atan(y / x)).
+        /// Returns a fix4 from component-wise application of SmoothStep (Maths.SmoothStep(edge0, edge1, x)).
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float4 Atan(float4 y, float4 x) => new float4(Maths.Atan(y.x / x.x), Maths.Atan(y.y / x.y), Maths.Atan(y.z / x.z), Maths.Atan(y.w / x.w));
+        public static fix4 SmoothStep(fix4 edge0, fix4 edge1, fix x) => new fix4(Maths.SmoothStep(edge0.x, edge1.x, x), Maths.SmoothStep(edge0.y, edge1.y, x), Maths.SmoothStep(edge0.z, edge1.z, x), Maths.SmoothStep(edge0.w, edge1.w, x));
         
         /// <summary>
-        /// Returns a float4 from component-wise application of Atan (Maths.Atan(v)).
+        /// Returns a fix4 from component-wise application of Min (Maths.Min(lhs, rhs)).
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float4 Atan(float4 v) => new float4(Maths.Atan(v.x), Maths.Atan(v.y), Maths.Atan(v.z), Maths.Atan(v.w));
+        public static fix4 Min(fix4 lhs, fix4 rhs) => new fix4(Maths.Min(lhs.x, rhs.x), Maths.Min(lhs.y, rhs.y), Maths.Min(lhs.z, rhs.z), Maths.Min(lhs.w, rhs.w));
         
         /// <summary>
-        /// Returns a float4 from component-wise application of Sinh (Maths.Sinh(v)).
+        /// Returns a fix4 from component-wise application of Min (Maths.Min(lhs, rhs)).
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float4 Sinh(float4 v) => new float4(Maths.Sinh(v.x), Maths.Sinh(v.y), Maths.Sinh(v.z), Maths.Sinh(v.w));
+        public static fix4 Min(fix4 lhs, fix rhs) => new fix4(Maths.Min(lhs.x, rhs), Maths.Min(lhs.y, rhs), Maths.Min(lhs.z, rhs), Maths.Min(lhs.w, rhs));
         
         /// <summary>
-        /// Returns a float4 from component-wise application of Cosh (Maths.Cosh(v)).
+        /// Returns a fix4 from component-wise application of Max (Maths.Max(lhs, rhs)).
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float4 Cosh(float4 v) => new float4(Maths.Cosh(v.x), Maths.Cosh(v.y), Maths.Cosh(v.z), Maths.Cosh(v.w));
+        public static fix4 Max(fix4 lhs, fix4 rhs) => new fix4(Maths.Max(lhs.x, rhs.x), Maths.Max(lhs.y, rhs.y), Maths.Max(lhs.z, rhs.z), Maths.Max(lhs.w, rhs.w));
         
         /// <summary>
-        /// Returns a float4 from component-wise application of Tanh (Maths.Tanh(v)).
+        /// Returns a fix4 from component-wise application of Max (Maths.Max(lhs, rhs)).
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float4 Tanh(float4 v) => new float4(Maths.Tanh(v.x), Maths.Tanh(v.y), Maths.Tanh(v.z), Maths.Tanh(v.w));
+        public static fix4 Max(fix4 lhs, fix rhs) => new fix4(Maths.Max(lhs.x, rhs), Maths.Max(lhs.y, rhs), Maths.Max(lhs.z, rhs), Maths.Max(lhs.w, rhs));
         
         /// <summary>
-        /// Returns a float4 from component-wise application of Asinh (Maths.Asinh(v)).
+        /// Returns a fix4 from component-wise application of Clamp (Maths.Clamp(v, min, max)).
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float4 Asinh(float4 v) => new float4(Maths.Asinh(v.x), Maths.Asinh(v.y), Maths.Asinh(v.z), Maths.Asinh(v.w));
+        public static fix4 Clamp(fix4 v, fix4 min, fix4 max) => new fix4(Maths.Clamp(v.x, min.x, max.x), Maths.Clamp(v.y, min.y, max.y), Maths.Clamp(v.z, min.z, max.z), Maths.Clamp(v.w, min.w, max.w));
         
         /// <summary>
-        /// Returns a float4 from component-wise application of Acosh (Maths.Acosh(v)).
+        /// Returns a fix4 from component-wise application of Mix (a ? y : x).
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float4 Acosh(float4 v) => new float4(Maths.Acosh(v.x), Maths.Acosh(v.y), Maths.Acosh(v.z), Maths.Acosh(v.w));
-        
-        /// <summary>
-        /// Returns a float4 from component-wise application of Atanh (Maths.Atanh(v)).
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float4 Atanh(float4 v) => new float4(Maths.Atanh(v.x), Maths.Atanh(v.y), Maths.Atanh(v.z), Maths.Atanh(v.w));
-        
-        /// <summary>
-        /// Returns a float4 from component-wise application of Pow (Maths.Pow(lhs, rhs)).
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float4 Pow(float4 lhs, float4 rhs) => new float4(Maths.Pow(lhs.x, rhs.x), Maths.Pow(lhs.y, rhs.y), Maths.Pow(lhs.z, rhs.z), Maths.Pow(lhs.w, rhs.w));
-        
-        /// <summary>
-        /// Returns a float4 from component-wise application of Exp (Maths.Exp(v)).
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float4 Exp(float4 v) => new float4(Maths.Exp(v.x), Maths.Exp(v.y), Maths.Exp(v.z), Maths.Exp(v.w));
-        
-        /// <summary>
-        /// Returns a float4 from component-wise application of Log (Maths.Log(v)).
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float4 Log(float4 v) => new float4(Maths.Log(v.x), Maths.Log(v.y), Maths.Log(v.z), Maths.Log(v.w));
-        
-        /// <summary>
-        /// Returns a float4 from component-wise application of Exp2 (Maths.Exp2(v)).
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float4 Exp2(float4 v) => new float4(Maths.Exp2(v.x), Maths.Exp2(v.y), Maths.Exp2(v.z), Maths.Exp2(v.w));
-        
-        /// <summary>
-        /// Returns a float4 from component-wise application of Log2 (Maths.Log2(v)).
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float4 Log2(float4 v) => new float4(Maths.Log2(v.x), Maths.Log2(v.y), Maths.Log2(v.z), Maths.Log2(v.w));
-        
-        /// <summary>
-        /// Returns a float4 from component-wise application of Sqrt (Maths.Sqrt(v)).
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float4 Sqrt(float4 v) => new float4(Maths.Sqrt(v.x), Maths.Sqrt(v.y), Maths.Sqrt(v.z), Maths.Sqrt(v.w));
-        
-        /// <summary>
-        /// Returns a float4 from component-wise application of InverseSqrt (Maths.InverseSqrt(v)).
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float4 InverseSqrt(float4 v) => new float4(Maths.InverseSqrt(v.x), Maths.InverseSqrt(v.y), Maths.InverseSqrt(v.z), Maths.InverseSqrt(v.w));
-        
-        /// <summary>
-        /// Returns a bool4 from component-wise application of LesserThan (lhs &lt; rhs).
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static bool4 LesserThan(float4 lhs, float4 rhs) => new bool4(lhs.x < rhs.x, lhs.y < rhs.y, lhs.z < rhs.z, lhs.w < rhs.w);
-        
-        /// <summary>
-        /// Returns a bool4 from component-wise application of LesserThanEqual (lhs &lt;= rhs).
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static bool4 LesserThanEqual(float4 lhs, float4 rhs) => new bool4(lhs.x <= rhs.x, lhs.y <= rhs.y, lhs.z <= rhs.z, lhs.w <= rhs.w);
-        
-        /// <summary>
-        /// Returns a bool4 from component-wise application of GreaterThan (lhs &gt; rhs).
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static bool4 GreaterThan(float4 lhs, float4 rhs) => new bool4(lhs.x > rhs.x, lhs.y > rhs.y, lhs.z > rhs.z, lhs.w > rhs.w);
-        
-        /// <summary>
-        /// Returns a bool4 from component-wise application of GreaterThanEqual (lhs &gt;= rhs).
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static bool4 GreaterThanEqual(float4 lhs, float4 rhs) => new bool4(lhs.x >= rhs.x, lhs.y >= rhs.y, lhs.z >= rhs.z, lhs.w >= rhs.w);
-        
-        /// <summary>
-        /// Returns a bool4 from component-wise application of Equal (lhs == rhs).
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static bool4 Equal(float4 lhs, float4 rhs) => new bool4(lhs.x == rhs.x, lhs.y == rhs.y, lhs.z == rhs.z, lhs.w == rhs.w);
-        
-        /// <summary>
-        /// Returns a bool4 from component-wise application of NotEqual (lhs != rhs).
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static bool4 NotEqual(float4 lhs, float4 rhs) => new bool4(lhs.x != rhs.x, lhs.y != rhs.y, lhs.z != rhs.z, lhs.w != rhs.w);
-        
-        /// <summary>
-        /// Returns a float4 from component-wise application of Abs (Maths.Abs(v)).
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float4 Abs(float4 v) => new float4(Maths.Abs(v.x), Maths.Abs(v.y), Maths.Abs(v.z), Maths.Abs(v.w));
-        
-        /// <summary>
-        /// Returns a float4 from component-wise application of Sign (Maths.Sign(v)).
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float4 Sign(float4 v) => new float4(Maths.Sign(v.x), Maths.Sign(v.y), Maths.Sign(v.z), Maths.Sign(v.w));
-        
-        /// <summary>
-        /// Returns a float4 from component-wise application of Floor (Maths.Floor(v)).
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float4 Floor(float4 v) => new float4(Maths.Floor(v.x), Maths.Floor(v.y), Maths.Floor(v.z), Maths.Floor(v.w));
-        
-        /// <summary>
-        /// Returns a float4 from component-wise application of Truncate (Maths.Truncate(v)).
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float4 Truncate(float4 v) => new float4(Maths.Truncate(v.x), Maths.Truncate(v.y), Maths.Truncate(v.z), Maths.Truncate(v.w));
-        
-        /// <summary>
-        /// Returns a float4 from component-wise application of Round (Maths.Round(v)).
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float4 Round(float4 v) => new float4(Maths.Round(v.x), Maths.Round(v.y), Maths.Round(v.z), Maths.Round(v.w));
-        
-        /// <summary>
-        /// Returns a float4 from component-wise application of RoundEven (Maths.RoundEven(v)).
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float4 RoundEven(float4 v) => new float4(Maths.RoundEven(v.x), Maths.RoundEven(v.y), Maths.RoundEven(v.z), Maths.RoundEven(v.w));
-        
-        /// <summary>
-        /// Returns a float4 from component-wise application of Ceil (Maths.Ceil(v)).
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float4 Ceil(float4 v) => new float4(Maths.Ceil(v.x), Maths.Ceil(v.y), Maths.Ceil(v.z), Maths.Ceil(v.w));
-        
-        /// <summary>
-        /// Returns a float4 from component-wise application of Fract (v - Maths.Floor(v)).
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float4 Fract(float4 v) => new float4(v.x - Maths.Floor(v.x), v.y - Maths.Floor(v.y), v.z - Maths.Floor(v.z), v.w - Maths.Floor(v.w));
-        
-        /// <summary>
-        /// Returns a float4 from component-wise application of Mod (lhs - rhs * Maths.Floor(lhs / rhs)).
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float4 Mod(float4 lhs, float4 rhs) => new float4(lhs.x - rhs.x * Maths.Floor(lhs.x / rhs.x), lhs.y - rhs.y * Maths.Floor(lhs.y / rhs.y), lhs.z - rhs.z * Maths.Floor(lhs.z / rhs.z), lhs.w - rhs.w * Maths.Floor(lhs.w / rhs.w));
-        
-        /// <summary>
-        /// Returns a float4 from component-wise application of Mod (lhs - rhs * Maths.Floor(lhs / rhs)).
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float4 Mod(float4 lhs, float rhs) => new float4(lhs.x - rhs * Maths.Floor(lhs.x / rhs), lhs.y - rhs * Maths.Floor(lhs.y / rhs), lhs.z - rhs * Maths.Floor(lhs.z / rhs), lhs.w - rhs * Maths.Floor(lhs.w / rhs));
-        
-        /// <summary>
-        /// Returns a float4 from component-wise application of Lerp (Maths.Lerp(edge0, edge1, v)).
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float4 Lerp(float4 edge0, float4 edge1, float4 v) => new float4(Maths.Lerp(edge0.x, edge1.x, v.x), Maths.Lerp(edge0.y, edge1.y, v.y), Maths.Lerp(edge0.z, edge1.z, v.z), Maths.Lerp(edge0.w, edge1.w, v.w));
-        
-        /// <summary>
-        /// Returns a float4 from component-wise application of Lerp (Maths.Lerp(edge0, edge1, v)).
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float4 Lerp(float4 edge0, float4 edge1, float v) => new float4(Maths.Lerp(edge0.x, edge1.x, v), Maths.Lerp(edge0.y, edge1.y, v), Maths.Lerp(edge0.z, edge1.z, v), Maths.Lerp(edge0.w, edge1.w, v));
-        
-        /// <summary>
-        /// Returns a float4 from component-wise application of Step (x &lt; edge ? 0 : 1).
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float4 Step(float4 edge, float4 x) => new float4(x.x < edge.x ? 0 : 1, x.y < edge.y ? 0 : 1, x.z < edge.z ? 0 : 1, x.w < edge.w ? 0 : 1);
-        
-        /// <summary>
-        /// Returns a float4 from component-wise application of Step (x &lt; edge ? 0 : 1).
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float4 Step(float edge, float4 x) => new float4(x.x < edge ? 0 : 1, x.y < edge ? 0 : 1, x.z < edge ? 0 : 1, x.w < edge ? 0 : 1);
-        
-        /// <summary>
-        /// Returns a float4 from component-wise application of SmoothStep (Maths.SmoothStep(edge0, edge1, x)).
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float4 SmoothStep(float4 edge0, float4 edge1, float4 x) => new float4(Maths.SmoothStep(edge0.x, edge1.x, x.x), Maths.SmoothStep(edge0.y, edge1.y, x.y), Maths.SmoothStep(edge0.z, edge1.z, x.z), Maths.SmoothStep(edge0.w, edge1.w, x.w));
-        
-        /// <summary>
-        /// Returns a float4 from component-wise application of SmoothStep (Maths.SmoothStep(edge0, edge1, x)).
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float4 SmoothStep(float4 edge0, float4 edge1, float x) => new float4(Maths.SmoothStep(edge0.x, edge1.x, x), Maths.SmoothStep(edge0.y, edge1.y, x), Maths.SmoothStep(edge0.z, edge1.z, x), Maths.SmoothStep(edge0.w, edge1.w, x));
-        
-        /// <summary>
-        /// Returns a bool4 from component-wise application of IsNaN (float.IsNaN(v)).
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static bool4 IsNaN(float4 v) => new bool4(float.IsNaN(v.x), float.IsNaN(v.y), float.IsNaN(v.z), float.IsNaN(v.w));
-        
-        /// <summary>
-        /// Returns a bool4 from component-wise application of IsInfinity (float.IsInfinity(v)).
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static bool4 IsInfinity(float4 v) => new bool4(float.IsInfinity(v.x), float.IsInfinity(v.y), float.IsInfinity(v.z), float.IsInfinity(v.w));
-        
-        /// <summary>
-        /// Returns a float4 from component-wise application of Fma (Maths.Fma(a, b, c)).
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float4 Fma(float4 a, float4 b, float4 c) => new float4(Maths.Fma(a.x, b.x, c.x), Maths.Fma(a.y, b.y, c.y), Maths.Fma(a.z, b.z, c.z), Maths.Fma(a.w, b.w, c.w));
-        
-        /// <summary>
-        /// Returns a float4 from component-wise application of Min (Maths.Min(lhs, rhs)).
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float4 Min(float4 lhs, float4 rhs) => new float4(Maths.Min(lhs.x, rhs.x), Maths.Min(lhs.y, rhs.y), Maths.Min(lhs.z, rhs.z), Maths.Min(lhs.w, rhs.w));
-        
-        /// <summary>
-        /// Returns a float4 from component-wise application of Min (Maths.Min(lhs, rhs)).
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float4 Min(float4 lhs, float rhs) => new float4(Maths.Min(lhs.x, rhs), Maths.Min(lhs.y, rhs), Maths.Min(lhs.z, rhs), Maths.Min(lhs.w, rhs));
-        
-        /// <summary>
-        /// Returns a float4 from component-wise application of Max (Maths.Max(lhs, rhs)).
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float4 Max(float4 lhs, float4 rhs) => new float4(Maths.Max(lhs.x, rhs.x), Maths.Max(lhs.y, rhs.y), Maths.Max(lhs.z, rhs.z), Maths.Max(lhs.w, rhs.w));
-        
-        /// <summary>
-        /// Returns a float4 from component-wise application of Max (Maths.Max(lhs, rhs)).
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float4 Max(float4 lhs, float rhs) => new float4(Maths.Max(lhs.x, rhs), Maths.Max(lhs.y, rhs), Maths.Max(lhs.z, rhs), Maths.Max(lhs.w, rhs));
-        
-        /// <summary>
-        /// Returns a float4 from component-wise application of Clamp (Maths.Clamp(v, min, max)).
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float4 Clamp(float4 v, float4 min, float4 max) => new float4(Maths.Clamp(v.x, min.x, max.x), Maths.Clamp(v.y, min.y, max.y), Maths.Clamp(v.z, min.z, max.z), Maths.Clamp(v.w, min.w, max.w));
-        
-        /// <summary>
-        /// Returns a float4 from component-wise application of Mix (a ? y : x).
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float4 Mix(float4 x, float4 y, bool4 a) => new float4(a.x ? y.x : x.x, a.y ? y.y : x.y, a.z ? y.z : x.z, a.w ? y.w : x.w);
-        
-        /// <summary>
-        /// Returns a int4 from component-wise application of FloatBitsToInt (Unsafe.As&lt;float, int&gt;(ref v)).
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static int4 FloatBitsToInt(float4 v) => new int4(Unsafe.As<float, int>(ref v.x), Unsafe.As<float, int>(ref v.y), Unsafe.As<float, int>(ref v.z), Unsafe.As<float, int>(ref v.w));
-        
-        /// <summary>
-        /// Returns a uint4 from component-wise application of FloatBitsToUInt (Unsafe.As&lt;float, uint&gt;(ref v)).
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static uint4 FloatBitsToUInt(float4 v) => new uint4(Unsafe.As<float, uint>(ref v.x), Unsafe.As<float, uint>(ref v.y), Unsafe.As<float, uint>(ref v.z), Unsafe.As<float, uint>(ref v.w));
-        
-        /// <summary>
-        /// Returns a float4 from component-wise application of InvLerp (Maths.InvLerp(edge0, edge1, v)).
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float4 InvLerp(float4 edge0, float4 edge1, float4 v) => new float4(Maths.InvLerp(edge0.x, edge1.x, v.x), Maths.InvLerp(edge0.y, edge1.y, v.y), Maths.InvLerp(edge0.z, edge1.z, v.z), Maths.InvLerp(edge0.w, edge1.w, v.w));
-        
-        /// <summary>
-        /// Returns a float4 from component-wise application of InvLerp (Maths.InvLerp(edge0, edge1, v)).
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float4 InvLerp(float4 edge0, float4 edge1, float v) => new float4(Maths.InvLerp(edge0.x, edge1.x, v), Maths.InvLerp(edge0.y, edge1.y, v), Maths.InvLerp(edge0.z, edge1.z, v), Maths.InvLerp(edge0.w, edge1.w, v));
+        public static fix4 Mix(fix4 x, fix4 y, bool4 a) => new fix4(a.x ? y.x : x.x, a.y ? y.y : x.y, a.z ? y.z : x.z, a.w ? y.w : x.w);
 
         #endregion
 
@@ -14008,82 +13703,82 @@ namespace DVG
         #region Component-Wise Operator Overloads
         
         /// <summary>
-        /// Returns a float4 from component-wise application of operator- (-v).
+        /// Returns a fix4 from component-wise application of operator- (-v).
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float4 operator-(float4 v) => new float4(-v.x, -v.y, -v.z, -v.w);
+        public static fix4 operator-(fix4 v) => new fix4(-v.x, -v.y, -v.z, -v.w);
         
         /// <summary>
-        /// Returns a float4 from component-wise application of operator+ (lhs + rhs).
+        /// Returns a fix4 from component-wise application of operator+ (lhs + rhs).
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float4 operator+(float4 lhs, float4 rhs) => new float4(lhs.x + rhs.x, lhs.y + rhs.y, lhs.z + rhs.z, lhs.w + rhs.w);
+        public static fix4 operator+(fix4 lhs, fix4 rhs) => new fix4(lhs.x + rhs.x, lhs.y + rhs.y, lhs.z + rhs.z, lhs.w + rhs.w);
         
         /// <summary>
-        /// Returns a float4 from component-wise application of operator+ (lhs + rhs).
+        /// Returns a fix4 from component-wise application of operator+ (lhs + rhs).
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float4 operator+(float4 lhs, float rhs) => new float4(lhs.x + rhs, lhs.y + rhs, lhs.z + rhs, lhs.w + rhs);
+        public static fix4 operator+(fix4 lhs, fix rhs) => new fix4(lhs.x + rhs, lhs.y + rhs, lhs.z + rhs, lhs.w + rhs);
         
         /// <summary>
-        /// Returns a float4 from component-wise application of operator+ (lhs + rhs).
+        /// Returns a fix4 from component-wise application of operator+ (lhs + rhs).
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float4 operator+(float lhs, float4 rhs) => new float4(lhs + rhs.x, lhs + rhs.y, lhs + rhs.z, lhs + rhs.w);
+        public static fix4 operator+(fix lhs, fix4 rhs) => new fix4(lhs + rhs.x, lhs + rhs.y, lhs + rhs.z, lhs + rhs.w);
         
         /// <summary>
-        /// Returns a float4 from component-wise application of operator- (lhs - rhs).
+        /// Returns a fix4 from component-wise application of operator- (lhs - rhs).
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float4 operator-(float4 lhs, float4 rhs) => new float4(lhs.x - rhs.x, lhs.y - rhs.y, lhs.z - rhs.z, lhs.w - rhs.w);
+        public static fix4 operator-(fix4 lhs, fix4 rhs) => new fix4(lhs.x - rhs.x, lhs.y - rhs.y, lhs.z - rhs.z, lhs.w - rhs.w);
         
         /// <summary>
-        /// Returns a float4 from component-wise application of operator- (lhs - rhs).
+        /// Returns a fix4 from component-wise application of operator- (lhs - rhs).
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float4 operator-(float4 lhs, float rhs) => new float4(lhs.x - rhs, lhs.y - rhs, lhs.z - rhs, lhs.w - rhs);
+        public static fix4 operator-(fix4 lhs, fix rhs) => new fix4(lhs.x - rhs, lhs.y - rhs, lhs.z - rhs, lhs.w - rhs);
         
         /// <summary>
-        /// Returns a float4 from component-wise application of operator- (lhs - rhs).
+        /// Returns a fix4 from component-wise application of operator- (lhs - rhs).
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float4 operator-(float lhs, float4 rhs) => new float4(lhs - rhs.x, lhs - rhs.y, lhs - rhs.z, lhs - rhs.w);
+        public static fix4 operator-(fix lhs, fix4 rhs) => new fix4(lhs - rhs.x, lhs - rhs.y, lhs - rhs.z, lhs - rhs.w);
         
         /// <summary>
-        /// Returns a float4 from component-wise application of operator* (lhs * rhs).
+        /// Returns a fix4 from component-wise application of operator* (lhs * rhs).
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float4 operator*(float4 lhs, float4 rhs) => new float4(lhs.x * rhs.x, lhs.y * rhs.y, lhs.z * rhs.z, lhs.w * rhs.w);
+        public static fix4 operator*(fix4 lhs, fix4 rhs) => new fix4(lhs.x * rhs.x, lhs.y * rhs.y, lhs.z * rhs.z, lhs.w * rhs.w);
         
         /// <summary>
-        /// Returns a float4 from component-wise application of operator* (lhs * rhs).
+        /// Returns a fix4 from component-wise application of operator* (lhs * rhs).
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float4 operator*(float4 lhs, float rhs) => new float4(lhs.x * rhs, lhs.y * rhs, lhs.z * rhs, lhs.w * rhs);
+        public static fix4 operator*(fix4 lhs, fix rhs) => new fix4(lhs.x * rhs, lhs.y * rhs, lhs.z * rhs, lhs.w * rhs);
         
         /// <summary>
-        /// Returns a float4 from component-wise application of operator* (lhs * rhs).
+        /// Returns a fix4 from component-wise application of operator* (lhs * rhs).
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float4 operator*(float lhs, float4 rhs) => new float4(lhs * rhs.x, lhs * rhs.y, lhs * rhs.z, lhs * rhs.w);
+        public static fix4 operator*(fix lhs, fix4 rhs) => new fix4(lhs * rhs.x, lhs * rhs.y, lhs * rhs.z, lhs * rhs.w);
         
         /// <summary>
-        /// Returns a float4 from component-wise application of operator/ (lhs / rhs).
+        /// Returns a fix4 from component-wise application of operator/ (lhs / rhs).
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float4 operator/(float4 lhs, float4 rhs) => new float4(lhs.x / rhs.x, lhs.y / rhs.y, lhs.z / rhs.z, lhs.w / rhs.w);
+        public static fix4 operator/(fix4 lhs, fix4 rhs) => new fix4(lhs.x / rhs.x, lhs.y / rhs.y, lhs.z / rhs.z, lhs.w / rhs.w);
         
         /// <summary>
-        /// Returns a float4 from component-wise application of operator/ (lhs / rhs).
+        /// Returns a fix4 from component-wise application of operator/ (lhs / rhs).
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float4 operator/(float4 lhs, float rhs) => new float4(lhs.x / rhs, lhs.y / rhs, lhs.z / rhs, lhs.w / rhs);
+        public static fix4 operator/(fix4 lhs, fix rhs) => new fix4(lhs.x / rhs, lhs.y / rhs, lhs.z / rhs, lhs.w / rhs);
         
         /// <summary>
-        /// Returns a float4 from component-wise application of operator/ (lhs / rhs).
+        /// Returns a fix4 from component-wise application of operator/ (lhs / rhs).
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float4 operator/(float lhs, float4 rhs) => new float4(lhs / rhs.x, lhs / rhs.y, lhs / rhs.z, lhs / rhs.w);
+        public static fix4 operator/(fix lhs, fix4 rhs) => new fix4(lhs / rhs.x, lhs / rhs.y, lhs / rhs.z, lhs / rhs.w);
 
         #endregion
 

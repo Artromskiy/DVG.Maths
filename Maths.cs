@@ -72,7 +72,7 @@ namespace DVG
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float Cbrt(float x) => MathF.Cbrt(x);
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float Ceiling(float x) => MathF.Ceiling(x);
+        public static float Ceil(float x) => MathF.Ceiling(x);
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float Clamp(float value, float min, float max) => Math.Clamp(value, min, max);
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -131,7 +131,7 @@ namespace DVG
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double Cbrt(double d) => Math.Cbrt(d);
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static double Ceiling(double a) => Math.Ceiling(a);
+        public static double Ceil(double a) => Math.Ceiling(a);
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double Clamp(double value, double min, double max) => Math.Clamp(value, min, max);
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

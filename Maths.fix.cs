@@ -1,10 +1,16 @@
-﻿namespace DVG
+﻿using System.Runtime.CompilerServices;
+
+namespace DVG
 {
     public static partial class Maths
     {
         private static readonly fix PiDiv4 = fix.Raw(0x0000C90F);
         private static readonly fix ThreePiDiv4 = fix.Raw(0x00025B2F);
 
+        public static fix Sign(fix x)
+        {
+            return x < 0 ? -1 : x > 0 ? 1 : 0;
+        }
         public static fix Abs(fix x)
         {
             // branchless implementation, see http://www.strchr.com/optimized_abs_function
@@ -176,6 +182,19 @@
         {
             return fix.Raw((fix.Pi._raw >> 1) - Asin(x)._raw);
         }
+
+        public static fix Lerp(fix edge0, fix edge1, fix value)
+        {
+            return edge0 + ((edge1 - edge0) * value);
+        }
+
+        public static fix SmoothStep(fix edge0, fix edge1, fix v)
+        {
+            fix x = Clamp((v - edge0) / (edge1 - edge0), 0, 1);
+            return x * x * (3 - 2 * x);
+        }
+
+        public static fix Fma(fix a, fix b, fix c) => a * b + c;
 
         private static fix SDiv(fix inArg0, fix inArg1)
         {
