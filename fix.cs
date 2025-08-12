@@ -1,11 +1,16 @@
 ﻿#pragma warning disable IDE1006
 using System;
+using System.Diagnostics;
 using System.Globalization;
+using System.Runtime.Serialization;
 
 namespace DVG
 {
+    [DebuggerDisplay("Value = {ToString()}")]
+    [DataContract]
     public readonly struct fix : IEquatable<fix>, IComparable<fix>
     {
+        [DataMember(Order = 0)]
         internal readonly int _raw;
 
         public static readonly fix One = new fix(0x00010000);
@@ -264,12 +269,14 @@ namespace DVG
         {
             return new fix(i);
         }
+
         public static fix Raw(uint i)
         {
             return new fix((int)i);
         }
-        public int GetRaw() => _raw;
 
+        public int GetRaw() => _raw;
+        
         private fix(int rawValue)
         {
             _raw = rawValue;
