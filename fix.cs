@@ -81,13 +81,12 @@ namespace DVG
 
         public static fix operator +(fix x, fix y)
         {
-            int b = y.raw;
             int a = x.raw;
+            int b = y.raw;
             var sum = a + b;
             // Overflow can only happen if sign of a == sign of b, and then
             // it causes sign of sum != sign of a.
-            var signA = Maths.Sign(a);
-            if (signA == Maths.Sign(b) && signA != Maths.Sign(sum))
+            if ((((a ^ b) & int.MinValue) == 0) && (((a ^ sum) & int.MinValue) != 0))
                 throw new OverflowException();
 
             return new fix(sum);
@@ -95,13 +94,12 @@ namespace DVG
 
         public static fix operator -(fix x, fix y)
         {
-            int b = y.raw;
             int a = x.raw;
+            int b = y.raw;
             var diff = a - b;
             // Overflow can only happen if sign of a != sign of b, and then
             // it causes sign of sum != sign of a.
-            var signA = Maths.Sign(a);
-            if (signA != Maths.Sign(b) && signA != Maths.Sign(diff))
+            if ((((a ^ b) & int.MinValue) != 0) && (((a ^ diff) & int.MinValue) != 0))
                 throw new OverflowException();
 
             return new fix(diff);
