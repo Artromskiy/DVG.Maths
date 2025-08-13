@@ -1,4 +1,6 @@
-﻿namespace DVG
+﻿using System;
+
+namespace DVG
 {
     public static partial class Maths
     {
@@ -8,6 +10,16 @@
         public static fix Sign(fix x)
         {
             return x < 0 ? -1 : x > 0 ? 1 : 0;
+        }
+
+        public static fix Radians(fix degrees)=> degrees * fix.Pi / 180;
+        public static fix Degrees(fix radians) => radians * 180 / fix.Pi;
+        public static fix Round(fix value)
+        {
+            int raw = value._raw;
+            int half = 0x00008000;
+            raw += raw >= 0 ? half : -half;
+            return fix.Raw(raw & unchecked((int)0xFFFF0000));
         }
 
         public static fix Abs(fix x)
