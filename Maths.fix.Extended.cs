@@ -10,7 +10,7 @@ namespace DVG
             fix omega = 2 / smoothTime;
             fix delta = current - target;
             fix x = deltaTime * omega;
-            fix exp = 1 / (1 + x + (x * x * ((x * fix.Raw(15401)) + fix.Raw(31457))));
+            fix exp = 1 / (1 + x + (x * x * ((x * new fix(15401)) + new fix(31457))));
             fix temp = (velocity * deltaTime) + (x * delta);
             velocity = (velocity - (omega * temp)) * exp;
             fix move = (delta + temp) * exp;

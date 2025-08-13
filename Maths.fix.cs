@@ -4,8 +4,8 @@ namespace DVG
 {
     public static partial class Maths
     {
-        private static readonly fix PiDiv4 = fix.Raw(0x0000C90F);
-        private static readonly fix ThreePiDiv4 = fix.Raw(0x00025B2F);
+        private static readonly fix PiDiv4 = new fix(0x0000C90F);
+        private static readonly fix ThreePiDiv4 = new fix(0x00025B2F);
 
         public static fix Sign(fix x)
         {
@@ -16,38 +16,38 @@ namespace DVG
         public static fix Degrees(fix radians) => radians * 180 / fix.Pi;
         public static fix Round(fix value)
         {
-            int raw = value._raw;
+            int raw = value.raw;
             int half = 0x00008000;
             raw += raw >= 0 ? half : -half;
-            return fix.Raw(raw & unchecked((int)0xFFFF0000));
+            return new fix(raw & unchecked((int)0xFFFF0000));
         }
 
         public static fix Abs(fix x)
         {
             // branchless implementation, see http://www.strchr.com/optimized_abs_function
-            int mask = x._raw >> 31;
-            return fix.Raw((x._raw + mask) ^ mask);
+            int mask = x.raw >> 31;
+            return new fix((x.raw + mask) ^ mask);
         }
 
         public static fix Floor(fix x)
         {
-            return fix.Raw((int)((ulong)x._raw & 0xFFFF0000UL));
+            return new fix((int)((ulong)x.raw & 0xFFFF0000UL));
         }
 
         public static fix Ceil(fix x)
         {
-            return fix.Raw((int)
-                (((ulong)x._raw & 0xFFFF0000UL) + (((ulong)x._raw & 0x0000FFFFUL) != 0UL ? (ulong)fix.One._raw : 0UL)));
+            return new fix((int)
+                (((ulong)x.raw & 0xFFFF0000UL) + (((ulong)x.raw & 0x0000FFFFUL) != 0UL ? (ulong)fix.One.raw : 0UL)));
         }
 
         public static fix Min(fix x, fix y)
         {
-            return x._raw < y._raw ? x : y;
+            return x.raw < y.raw ? x : y;
         }
 
         public static fix Max(fix x, fix y)
         {
-            return x._raw > y._raw ? x : y;
+            return x.raw > y.raw ? x : y;
         }
 
         public static fix Clamp(fix x, fix min, fix max)
@@ -57,7 +57,7 @@ namespace DVG
 
         public static fix Sqrt(fix x)
         {
-            var inValue = x._raw;
+            var inValue = x.raw;
             var neg = (inValue < 0);
             var num = (uint)(neg ? -inValue : inValue);
             var result = 0U;
@@ -109,7 +109,7 @@ namespace DVG
                 result++;
             }
 
-            return fix.Raw((int)(neg ? -result : result));
+            return new fix((int)(neg ? -result : result));
         }
 
         public static fix Sin(fix inAngle)
@@ -127,16 +127,16 @@ namespace DVG
             fix tempAngleSq = tempAngle * tempAngle;
 
             fix tempOut;
-            tempOut = (fix.Raw(-13) * tempAngleSq) + fix.Raw(546);
-            tempOut = (tempOut * tempAngleSq) - fix.Raw(10923);
-            tempOut = (tempOut * tempAngleSq) + fix.Raw(65536);
+            tempOut = (new fix(-13) * tempAngleSq) + new fix(546);
+            tempOut = (tempOut * tempAngleSq) - new fix(10923);
+            tempOut = (tempOut * tempAngleSq) + new fix(65536);
             tempOut = (tempOut * tempAngle);
             return tempOut;
         }
 
         public static fix Cos(fix inAngle)
         {
-            return Sin(fix.Raw(inAngle._raw + (fix.Pi._raw >> 1)));
+            return Sin(new fix(inAngle.raw + (fix.Pi.raw >> 1)));
         }
 
         public static fix Tan(fix inAngle)
@@ -166,14 +166,14 @@ namespace DVG
             {
                 var r = (inX - absInY) / (inX + absInY);
                 var r3 = r * r * r;
-                angle = (fix.Raw(0x00003240) * r3) - (fix.Raw(0x0000FB50) * r) + PiDiv4;
+                angle = (new fix(0x00003240) * r3) - (new fix(0x0000FB50) * r) + PiDiv4;
             }
             else
             {
                 var r = (inX + absInY) / (absInY - inX);
                 var r3 = r * r * r;
-                angle = (fix.Raw(0x00003240) * r3)
-                        - (fix.Raw(0x0000FB50) * r)
+                angle = (new fix(0x00003240) * r3)
+                        - (new fix(0x0000FB50) * r)
                         + ThreePiDiv4;
             }
             if (inY < fix.Zero)
@@ -191,7 +191,7 @@ namespace DVG
 
         public static fix Acos(fix x)
         {
-            return fix.Raw((fix.Pi._raw >> 1) - Asin(x)._raw);
+            return new fix((fix.Pi.raw >> 1) - Asin(x).raw);
         }
 
         public static fix Lerp(fix edge0, fix edge1, fix value)

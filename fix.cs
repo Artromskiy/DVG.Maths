@@ -11,7 +11,7 @@ namespace DVG
     public readonly struct fix : IEquatable<fix>, IComparable<fix>
     {
         [DataMember(Order = 0)]
-        internal readonly int _raw;
+        public readonly int raw;
 
         public static readonly fix One = new fix(0x00010000);
         public static readonly fix Zero = new fix(0);
@@ -23,56 +23,56 @@ namespace DVG
 
         public static implicit operator fix(int a)
         {
-            return new fix(a * One._raw);
+            return new fix(a * One.raw);
         }
 
         public static explicit operator float(fix a)
         {
-            return (float)a._raw / One._raw;
+            return (float)a.raw / One.raw;
         }
 
         public static explicit operator double(fix a)
         {
-            return (double)a._raw / One._raw;
+            return (double)a.raw / One.raw;
         }
 
         public static explicit operator decimal(fix a)
         {
-            return (decimal)a._raw / One._raw;
+            return (decimal)a.raw / One.raw;
         }
 
         public static explicit operator int(fix a)
         {
-            return a._raw >> 16;
+            return a.raw >> 16;
         }
 
         public static explicit operator fix(float a)
         {
-            var temp = a * One._raw;
+            var temp = a * One.raw;
             temp += (temp >= 0) ? 0.5f : -0.5f;
             return new fix((int)temp);
         }
 
         public static explicit operator fix(double a)
         {
-            var temp = a * One._raw;
+            var temp = a * One.raw;
             temp += (temp >= 0) ? 0.5 : -0.5;
             return new fix((int)temp);
         }
 
         public static explicit operator fix(decimal a)
         {
-            var temp = a * One._raw;
+            var temp = a * One.raw;
             temp += (temp >= 0) ? 0.5m : -0.5m;
             return new fix((int)temp);
         }
 
         public static fix operator +(fix x, fix y)
         {
-            var sum = x._raw + y._raw;
+            var sum = x.raw + y.raw;
             // Overflow can only happen if sign of a == sign of b, and then
             // it causes sign of sum != sign of a.
-            if ((((x._raw ^ y._raw) & int.MinValue) == 0) && (((x._raw ^ sum) & 0x80000000) != 0))
+            if ((((x.raw ^ y.raw) & int.MinValue) == 0) && (((x.raw ^ sum) & 0x80000000) != 0))
                 throw new OverflowException();
 
             return new fix(sum);
@@ -80,10 +80,10 @@ namespace DVG
 
         public static fix operator -(fix x, fix y)
         {
-            var diff = x._raw - y._raw;
+            var diff = x.raw - y.raw;
             // Overflow can only happen if sign of a != sign of b, and then
             // it causes sign of sum != sign of a.
-            if ((((x._raw ^ y._raw) & int.MinValue) != 0) && (((x._raw ^ diff) & 0x80000000) != 0))
+            if ((((x.raw ^ y.raw) & int.MinValue) != 0) && (((x.raw ^ diff) & 0x80000000) != 0))
                 throw new OverflowException();
 
             return new fix(diff);
@@ -91,7 +91,7 @@ namespace DVG
 
         public static fix operator *(fix x, fix y)
         {
-            var product = (long)x._raw * y._raw;
+            var product = (long)x.raw * y.raw;
 
             // The upper 17 bits should all be the same (the sign).
             var upper = (uint)(product >> 47);
@@ -136,8 +136,8 @@ namespace DVG
         {
             // This uses a hardware 32/32 bit division multiple times, until we have
             // computed all the bits in (a<<17)/b. Usually this takes 1-3 iterations.
-            var a = x._raw;
-            var b = y._raw;
+            var a = x.raw;
+            var b = y.raw;
 
             if (b == 0)
             {
@@ -195,7 +195,7 @@ namespace DVG
             // Figure out the sign of the result
             if (((a ^ b) & 0x80000000) != 0)
             {
-                if (result == MinValue._raw)
+                if (result == MinValue.raw)
                 {
                     throw new OverflowException();
                 }
@@ -207,47 +207,47 @@ namespace DVG
 
         public static fix operator %(fix x, fix y)
         {
-            return new fix(x._raw % y._raw);
+            return new fix(x.raw % y.raw);
         }
 
         public static fix operator >>(fix x, int shift)
         {
-            return new fix(x._raw >> shift);
+            return new fix(x.raw >> shift);
         }
 
         public static fix operator <<(fix x, int shift)
         {
-            return new fix(x._raw << shift);
+            return new fix(x.raw << shift);
         }
 
         public static fix operator -(fix x)
         {
-            return new fix(-x._raw);
+            return new fix(-x.raw);
         }
 
         public static bool operator >(fix x, fix y)
         {
-            return x._raw > y._raw;
+            return x.raw > y.raw;
         }
 
         public static bool operator <(fix x, fix y)
         {
-            return x._raw < y._raw;
+            return x.raw < y.raw;
         }
 
         public static bool operator >=(fix x, fix y)
         {
-            return x._raw >= y._raw;
+            return x.raw >= y.raw;
         }
 
         public static bool operator <=(fix x, fix y)
         {
-            return x._raw <= y._raw;
+            return x.raw <= y.raw;
         }
 
         public static bool operator ==(fix x, fix y)
         {
-            return x._raw == y._raw;
+            return x.raw == y.raw;
         }
 
         public static bool operator !=(fix x, fix y)
@@ -274,12 +274,15 @@ namespace DVG
         {
             return new fix((int)i);
         }
-
-        public int GetRaw() => _raw;
         
-        private fix(int rawValue)
+        /// <summary>
+        /// Creates fixed point number from raw integer representation
+        /// 
+        /// </summary>
+        /// <param name="rawValue"></param>
+        public fix(int rawValue)
         {
-            _raw = rawValue;
+            raw = rawValue;
         }
 
         public bool Equals(fix other)
@@ -289,7 +292,7 @@ namespace DVG
 
         public int CompareTo(fix other)
         {
-            return _raw.CompareTo(other._raw);
+            return raw.CompareTo(other.raw);
         }
 
         public override bool Equals(object obj)
@@ -299,7 +302,7 @@ namespace DVG
 
         public override int GetHashCode()
         {
-            return _raw;
+            return raw;
         }
 
         public override string ToString()
