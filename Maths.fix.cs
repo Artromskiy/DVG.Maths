@@ -7,11 +7,7 @@ namespace DVG
         private static readonly fix PiDiv4 = new fix(0x0000C90F);
         private static readonly fix ThreePiDiv4 = new fix(0x00025B2F);
 
-        public static fix Sign(fix x)
-        {
-            return x < 0 ? -1 : x > 0 ? 1 : 0;
-        }
-
+        public static fix Sign(fix x) => Sign(x.raw);
         public static fix Radians(fix degrees)=> degrees * fix.Pi / 180;
         public static fix Degrees(fix radians) => radians * 180 / fix.Pi;
         public static fix Round(fix value)

@@ -21,8 +21,20 @@ namespace DVG
         public static readonly fix Pi = new fix(205887);
         public static readonly fix E = new fix(178145);
 
+        /// <summary>
+        /// Creates fixed point number from raw integer representation
+        /// 
+        /// </summary>
+        /// <param name="rawValue"></param>
+        public fix(int rawValue)
+        {
+            raw = rawValue;
+        }
+
         public static implicit operator fix(int a)
         {
+            if(a < MinValue.raw || a > MaxValue.raw)
+                throw new OverflowException();
             return new fix(a * One.raw);
         }
 
@@ -69,10 +81,13 @@ namespace DVG
 
         public static fix operator +(fix x, fix y)
         {
-            var sum = x.raw + y.raw;
+            int b = y.raw;
+            int a = x.raw;
+            var sum = a + b;
             // Overflow can only happen if sign of a == sign of b, and then
             // it causes sign of sum != sign of a.
-            if ((((x.raw ^ y.raw) & int.MinValue) == 0) && (((x.raw ^ sum) & 0x80000000) != 0))
+            var signA = Maths.Sign(a);
+            if (signA == Maths.Sign(b) && signA != Maths.Sign(sum))
                 throw new OverflowException();
 
             return new fix(sum);
@@ -80,10 +95,13 @@ namespace DVG
 
         public static fix operator -(fix x, fix y)
         {
-            var diff = x.raw - y.raw;
+            int b = y.raw;
+            int a = x.raw;
+            var diff = a - b;
             // Overflow can only happen if sign of a != sign of b, and then
             // it causes sign of sum != sign of a.
-            if ((((x.raw ^ y.raw) & int.MinValue) != 0) && (((x.raw ^ diff) & 0x80000000) != 0))
+            var signA = Maths.Sign(a);
+            if (signA != Maths.Sign(b) && signA != Maths.Sign(diff))
                 throw new OverflowException();
 
             return new fix(diff);
@@ -91,118 +109,29 @@ namespace DVG
 
         public static fix operator *(fix x, fix y)
         {
-            var product = (long)x.raw * y.raw;
-
-            // The upper 17 bits should all be the same (the sign).
-            var upper = (uint)(product >> 47);
-
-            if (product < 0)
-            {
-                if (~upper != 0)
-                    throw new OverflowException();
-
-                product--;
-            }
-            else if (upper != 0)
-            {
+            long product = (long)x.raw * y.raw;
+            long upper = product >> 47;
+            if (upper != 0 && upper != -1)
                 throw new OverflowException();
-            }
-
-            var result = product >> 16;
-            result += (product & 0x8000) >> 15;
-
-            return new fix((int)result);
-        }
-
-        private static byte Clz(uint x)
-        {
-            byte result = 0;
-            if (x == 0)
-                return 32;
-            while ((x & 0xF0000000) == 0)
-            {
-                result += 4;
-                x <<= 4;
-            }
-            while ((x & 0x80000000) == 0)
-            {
-                result += 1;
-                x <<= 1;
-            }
-            return result;
+            product += 0x8000L * Maths.Sign(product);
+            return new fix((int)(product >> 16));
         }
 
         public static fix operator /(fix x, fix y)
         {
-            // This uses a hardware 32/32 bit division multiple times, until we have
-            // computed all the bits in (a<<17)/b. Usually this takes 1-3 iterations.
             var a = x.raw;
             var b = y.raw;
 
             if (b == 0)
-            {
-                return MinValue;
-            }
+                throw new InvalidOperationException();
 
-            var remainder = (uint)((a >= 0) ? a : (-a));
-            var divider = (uint)((b >= 0) ? b : (-b));
-            var quotient = 0U;
-            var bitPos = 17;
+            long scaled = ((long)a << 16);
+            long result = scaled / b;
 
-            // Kick-start the division a bit.
-            // This improves speed in the worst-case scenarios where N and D are large
-            // It gets a lower estimate for the result by N/(D >> 17 + 1).
-            if ((divider & 0xFFF00000) != 0)
-            {
-                var shiftedDiv = ((divider >> 17) + 1);
-                quotient = remainder / shiftedDiv;
-                remainder -= (uint)(((ulong)quotient * divider) >> 17);
-            }
+            if (result > MaxValue.raw || result < MinValue.raw)
+                throw new OverflowException();
 
-            // If the divider is divisible by 2^n, take advantage of it.
-            while ((divider & 0xF) == 0 && bitPos >= 4)
-            {
-                divider >>= 4;
-                bitPos -= 4;
-            }
-
-            while (remainder != 0 && bitPos >= 0)
-            {
-                // Shift remainder as much as we can without overflowing
-                int shift = Clz(remainder);
-                if (shift > bitPos) shift = bitPos;
-                remainder <<= shift;
-                bitPos -= shift;
-
-                var div = remainder / divider;
-                remainder = remainder % divider;
-                quotient += div << bitPos;
-
-                if ((div & ~(0xFFFFFFFF >> bitPos)) != 0)
-                {
-                    throw new OverflowException();
-                }
-
-                remainder <<= 1;
-                bitPos--;
-            }
-
-            // Quotient is always positive so rounding is easy
-            quotient++;
-
-            var result = (int)(quotient >> 1);
-
-            // Figure out the sign of the result
-            if (((a ^ b) & 0x80000000) != 0)
-            {
-                if (result == MinValue.raw)
-                {
-                    throw new OverflowException();
-                }
-                result = -result;
-            }
-
-            return new fix(result);
+            return new fix((int)result);
         }
 
         public static fix operator %(fix x, fix y)
@@ -264,27 +193,8 @@ namespace DVG
         {
             return x - One;
         }
-
-        public static fix Raw(int i)
-        {
-            return new fix(i);
-        }
-
-        public static fix Raw(uint i)
-        {
-            return new fix((int)i);
-        }
         
-        /// <summary>
-        /// Creates fixed point number from raw integer representation
-        /// 
-        /// </summary>
-        /// <param name="rawValue"></param>
-        public fix(int rawValue)
-        {
-            raw = rawValue;
-        }
-
+        
         public bool Equals(fix other)
         {
             return this == other;

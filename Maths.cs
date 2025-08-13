@@ -187,6 +187,7 @@ namespace DVG
         public static uint Min(uint val1, uint val2) => Math.Min(val1, val2);
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint Max(uint val1, uint val2) => Math.Max(val1, val2);
-
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static long Sign(long value) => Math.Sign(value);
     }
 }
