@@ -4,8 +4,8 @@ namespace DVG
 {
     public static partial class Maths
     {
-        private static readonly fix PiDiv4 = new fix(0x0000C90F);
-        private static readonly fix ThreePiDiv4 = new fix(0x00025B2F);
+        private static readonly fix PiDiv4 = new fix(0x0000C90F); // pi / 4
+        private static readonly fix ThreePiDiv4 = new fix(0x00025B2F); // 3 * pi / 4
 
         public static fix Sign(fix x) => Sign(x.raw);
         public static fix Radians(fix degrees)=> degrees * fix.Pi / 180;
@@ -157,22 +157,23 @@ namespace DVG
             // This code is based on http://en.wikipedia.org/wiki/User:Msiddalingaiah/Ideas#Fast_arc_tangent
 
             var absInY = Abs(inY);
-            fix angle;
-            if (inX >= fix.Zero)
+            fix mul1 = new fix(0x00003240); // 0.1963;
+            fix mul2 = new fix(0x0000FB50); // 0.9817
+            fix r;
+            fix piAdd;
+            if (inX.raw >= 0)
             {
-                var r = (inX - absInY) / (inX + absInY);
-                var r3 = r * r * r;
-                angle = (new fix(0x00003240) * r3) - (new fix(0x0000FB50) * r) + PiDiv4;
+                r = (inX - absInY) / (inX + absInY);
+                piAdd = PiDiv4;
             }
             else
             {
-                var r = (inX + absInY) / (absInY - inX);
-                var r3 = r * r * r;
-                angle = (new fix(0x00003240) * r3)
-                        - (new fix(0x0000FB50) * r)
-                        + ThreePiDiv4;
+                r = (inX + absInY) / (absInY - inX);
+                piAdd = ThreePiDiv4;
             }
-            if (inY < fix.Zero)
+            fix r3 = r * r * r;
+            fix angle = (mul1 * r3) - (mul2 * r) + piAdd;
+            if (inY.raw < 0)
             {
                 angle = -angle;
             }
