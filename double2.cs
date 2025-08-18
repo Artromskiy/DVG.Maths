@@ -4,6 +4,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Runtime.CompilerServices;
 using System.Runtime.Serialization;
+using System.Diagnostics;
 
 
 namespace DVG
@@ -177,1656 +178,1987 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 ___x => new double4(0.0, 0.0, 0.0, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 ___r => new double4(0.0, 0.0, 0.0, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 ___s => new double4(0.0, 0.0, 0.0, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 ___y => new double4(0.0, 0.0, 0.0, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 ___g => new double4(0.0, 0.0, 0.0, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 ___t => new double4(0.0, 0.0, 0.0, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 __x_ => new double4(0.0, 0.0, x, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 __r_ => new double4(0.0, 0.0, x, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 __s_ => new double4(0.0, 0.0, x, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 __xx => new double4(0.0, 0.0, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 __rr => new double4(0.0, 0.0, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 __ss => new double4(0.0, 0.0, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 __xy => new double4(0.0, 0.0, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 __rg => new double4(0.0, 0.0, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 __st => new double4(0.0, 0.0, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 __y_ => new double4(0.0, 0.0, y, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 __g_ => new double4(0.0, 0.0, y, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 __t_ => new double4(0.0, 0.0, y, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 __yx => new double4(0.0, 0.0, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 __gr => new double4(0.0, 0.0, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 __ts => new double4(0.0, 0.0, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 __yy => new double4(0.0, 0.0, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 __gg => new double4(0.0, 0.0, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 __tt => new double4(0.0, 0.0, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 _x__ => new double4(0.0, x, 0.0, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 _r__ => new double4(0.0, x, 0.0, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 _s__ => new double4(0.0, x, 0.0, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 _x_x => new double4(0.0, x, 0.0, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 _r_r => new double4(0.0, x, 0.0, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 _s_s => new double4(0.0, x, 0.0, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 _x_y => new double4(0.0, x, 0.0, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 _r_g => new double4(0.0, x, 0.0, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 _s_t => new double4(0.0, x, 0.0, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 _xx_ => new double4(0.0, x, x, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 _rr_ => new double4(0.0, x, x, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 _ss_ => new double4(0.0, x, x, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 _xxx => new double4(0.0, x, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 _rrr => new double4(0.0, x, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 _sss => new double4(0.0, x, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 _xxy => new double4(0.0, x, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 _rrg => new double4(0.0, x, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 _sst => new double4(0.0, x, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 _xy_ => new double4(0.0, x, y, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 _rg_ => new double4(0.0, x, y, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 _st_ => new double4(0.0, x, y, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 _xyx => new double4(0.0, x, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 _rgr => new double4(0.0, x, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 _sts => new double4(0.0, x, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 _xyy => new double4(0.0, x, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 _rgg => new double4(0.0, x, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 _stt => new double4(0.0, x, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 _y__ => new double4(0.0, y, 0.0, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 _g__ => new double4(0.0, y, 0.0, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 _t__ => new double4(0.0, y, 0.0, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 _y_x => new double4(0.0, y, 0.0, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 _g_r => new double4(0.0, y, 0.0, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 _t_s => new double4(0.0, y, 0.0, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 _y_y => new double4(0.0, y, 0.0, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 _g_g => new double4(0.0, y, 0.0, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 _t_t => new double4(0.0, y, 0.0, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 _yx_ => new double4(0.0, y, x, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 _gr_ => new double4(0.0, y, x, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 _ts_ => new double4(0.0, y, x, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 _yxx => new double4(0.0, y, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 _grr => new double4(0.0, y, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 _tss => new double4(0.0, y, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 _yxy => new double4(0.0, y, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 _grg => new double4(0.0, y, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 _tst => new double4(0.0, y, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 _yy_ => new double4(0.0, y, y, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 _gg_ => new double4(0.0, y, y, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 _tt_ => new double4(0.0, y, y, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 _yyx => new double4(0.0, y, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 _ggr => new double4(0.0, y, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 _tts => new double4(0.0, y, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 _yyy => new double4(0.0, y, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 _ggg => new double4(0.0, y, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 _ttt => new double4(0.0, y, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 x___ => new double4(x, 0.0, 0.0, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 r___ => new double4(x, 0.0, 0.0, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 s___ => new double4(x, 0.0, 0.0, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 x__x => new double4(x, 0.0, 0.0, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 r__r => new double4(x, 0.0, 0.0, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 s__s => new double4(x, 0.0, 0.0, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 x__y => new double4(x, 0.0, 0.0, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 r__g => new double4(x, 0.0, 0.0, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 s__t => new double4(x, 0.0, 0.0, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 x_x_ => new double4(x, 0.0, x, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 r_r_ => new double4(x, 0.0, x, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 s_s_ => new double4(x, 0.0, x, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 x_xx => new double4(x, 0.0, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 r_rr => new double4(x, 0.0, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 s_ss => new double4(x, 0.0, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 x_xy => new double4(x, 0.0, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 r_rg => new double4(x, 0.0, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 s_st => new double4(x, 0.0, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 x_y_ => new double4(x, 0.0, y, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 r_g_ => new double4(x, 0.0, y, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 s_t_ => new double4(x, 0.0, y, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 x_yx => new double4(x, 0.0, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 r_gr => new double4(x, 0.0, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 s_ts => new double4(x, 0.0, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 x_yy => new double4(x, 0.0, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 r_gg => new double4(x, 0.0, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 s_tt => new double4(x, 0.0, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 xx__ => new double4(x, x, 0.0, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 rr__ => new double4(x, x, 0.0, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 ss__ => new double4(x, x, 0.0, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 xx_x => new double4(x, x, 0.0, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 rr_r => new double4(x, x, 0.0, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 ss_s => new double4(x, x, 0.0, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 xx_y => new double4(x, x, 0.0, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 rr_g => new double4(x, x, 0.0, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 ss_t => new double4(x, x, 0.0, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 xxx_ => new double4(x, x, x, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 rrr_ => new double4(x, x, x, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 sss_ => new double4(x, x, x, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 xxxx => new double4(x, x, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 rrrr => new double4(x, x, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 ssss => new double4(x, x, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 xxxy => new double4(x, x, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 rrrg => new double4(x, x, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 ssst => new double4(x, x, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 xxy_ => new double4(x, x, y, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 rrg_ => new double4(x, x, y, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 sst_ => new double4(x, x, y, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 xxyx => new double4(x, x, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 rrgr => new double4(x, x, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 ssts => new double4(x, x, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 xxyy => new double4(x, x, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 rrgg => new double4(x, x, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 sstt => new double4(x, x, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 xy__ => new double4(x, y, 0.0, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 rg__ => new double4(x, y, 0.0, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 st__ => new double4(x, y, 0.0, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 xy_x => new double4(x, y, 0.0, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 rg_r => new double4(x, y, 0.0, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 st_s => new double4(x, y, 0.0, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 xy_y => new double4(x, y, 0.0, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 rg_g => new double4(x, y, 0.0, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 st_t => new double4(x, y, 0.0, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 xyx_ => new double4(x, y, x, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 rgr_ => new double4(x, y, x, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 sts_ => new double4(x, y, x, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 xyxx => new double4(x, y, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 rgrr => new double4(x, y, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 stss => new double4(x, y, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 xyxy => new double4(x, y, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 rgrg => new double4(x, y, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 stst => new double4(x, y, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 xyy_ => new double4(x, y, y, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 rgg_ => new double4(x, y, y, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 stt_ => new double4(x, y, y, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 xyyx => new double4(x, y, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 rggr => new double4(x, y, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 stts => new double4(x, y, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 xyyy => new double4(x, y, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 rggg => new double4(x, y, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 sttt => new double4(x, y, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 y___ => new double4(y, 0.0, 0.0, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 g___ => new double4(y, 0.0, 0.0, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 t___ => new double4(y, 0.0, 0.0, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 y__x => new double4(y, 0.0, 0.0, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 g__r => new double4(y, 0.0, 0.0, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 t__s => new double4(y, 0.0, 0.0, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 y__y => new double4(y, 0.0, 0.0, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 g__g => new double4(y, 0.0, 0.0, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 t__t => new double4(y, 0.0, 0.0, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 y_x_ => new double4(y, 0.0, x, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 g_r_ => new double4(y, 0.0, x, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 t_s_ => new double4(y, 0.0, x, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 y_xx => new double4(y, 0.0, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 g_rr => new double4(y, 0.0, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 t_ss => new double4(y, 0.0, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 y_xy => new double4(y, 0.0, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 g_rg => new double4(y, 0.0, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 t_st => new double4(y, 0.0, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 y_y_ => new double4(y, 0.0, y, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 g_g_ => new double4(y, 0.0, y, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 t_t_ => new double4(y, 0.0, y, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 y_yx => new double4(y, 0.0, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 g_gr => new double4(y, 0.0, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 t_ts => new double4(y, 0.0, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 y_yy => new double4(y, 0.0, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 g_gg => new double4(y, 0.0, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 t_tt => new double4(y, 0.0, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 yx__ => new double4(y, x, 0.0, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 gr__ => new double4(y, x, 0.0, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 ts__ => new double4(y, x, 0.0, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 yx_x => new double4(y, x, 0.0, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 gr_r => new double4(y, x, 0.0, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 ts_s => new double4(y, x, 0.0, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 yx_y => new double4(y, x, 0.0, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 gr_g => new double4(y, x, 0.0, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 ts_t => new double4(y, x, 0.0, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 yxx_ => new double4(y, x, x, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 grr_ => new double4(y, x, x, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 tss_ => new double4(y, x, x, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 yxxx => new double4(y, x, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 grrr => new double4(y, x, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 tsss => new double4(y, x, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 yxxy => new double4(y, x, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 grrg => new double4(y, x, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 tsst => new double4(y, x, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 yxy_ => new double4(y, x, y, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 grg_ => new double4(y, x, y, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 tst_ => new double4(y, x, y, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 yxyx => new double4(y, x, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 grgr => new double4(y, x, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 tsts => new double4(y, x, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 yxyy => new double4(y, x, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 grgg => new double4(y, x, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 tstt => new double4(y, x, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 yy__ => new double4(y, y, 0.0, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 gg__ => new double4(y, y, 0.0, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 tt__ => new double4(y, y, 0.0, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 yy_x => new double4(y, y, 0.0, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 gg_r => new double4(y, y, 0.0, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 tt_s => new double4(y, y, 0.0, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 yy_y => new double4(y, y, 0.0, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 gg_g => new double4(y, y, 0.0, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 tt_t => new double4(y, y, 0.0, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 yyx_ => new double4(y, y, x, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 ggr_ => new double4(y, y, x, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 tts_ => new double4(y, y, x, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 yyxx => new double4(y, y, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 ggrr => new double4(y, y, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 ttss => new double4(y, y, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 yyxy => new double4(y, y, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 ggrg => new double4(y, y, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 ttst => new double4(y, y, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 yyy_ => new double4(y, y, y, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 ggg_ => new double4(y, y, y, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 ttt_ => new double4(y, y, y, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 yyyx => new double4(y, y, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 gggr => new double4(y, y, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 ttts => new double4(y, y, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 yyyy => new double4(y, y, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 gggg => new double4(y, y, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double4 tttt => new double4(y, y, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double3 __x => new double3(0.0, 0.0, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double3 __r => new double3(0.0, 0.0, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double3 __s => new double3(0.0, 0.0, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double3 __y => new double3(0.0, 0.0, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double3 __g => new double3(0.0, 0.0, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double3 __t => new double3(0.0, 0.0, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double3 _x_ => new double3(0.0, x, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double3 _r_ => new double3(0.0, x, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double3 _s_ => new double3(0.0, x, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double3 _xx => new double3(0.0, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double3 _rr => new double3(0.0, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double3 _ss => new double3(0.0, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double3 _xy => new double3(0.0, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double3 _rg => new double3(0.0, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double3 _st => new double3(0.0, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double3 _y_ => new double3(0.0, y, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double3 _g_ => new double3(0.0, y, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double3 _t_ => new double3(0.0, y, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double3 _yx => new double3(0.0, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double3 _gr => new double3(0.0, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double3 _ts => new double3(0.0, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double3 _yy => new double3(0.0, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double3 _gg => new double3(0.0, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double3 _tt => new double3(0.0, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double3 x__ => new double3(x, 0.0, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double3 r__ => new double3(x, 0.0, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double3 s__ => new double3(x, 0.0, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double3 x_x => new double3(x, 0.0, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double3 r_r => new double3(x, 0.0, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double3 s_s => new double3(x, 0.0, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double3 x_y => new double3(x, 0.0, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double3 r_g => new double3(x, 0.0, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double3 s_t => new double3(x, 0.0, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double3 xx_ => new double3(x, x, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double3 rr_ => new double3(x, x, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double3 ss_ => new double3(x, x, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double3 xxx => new double3(x, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double3 rrr => new double3(x, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double3 sss => new double3(x, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double3 xxy => new double3(x, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double3 rrg => new double3(x, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double3 sst => new double3(x, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double3 xy_ => new double3(x, y, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double3 rg_ => new double3(x, y, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double3 st_ => new double3(x, y, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double3 xyx => new double3(x, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double3 rgr => new double3(x, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double3 sts => new double3(x, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double3 xyy => new double3(x, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double3 rgg => new double3(x, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double3 stt => new double3(x, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double3 y__ => new double3(y, 0.0, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double3 g__ => new double3(y, 0.0, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double3 t__ => new double3(y, 0.0, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double3 y_x => new double3(y, 0.0, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double3 g_r => new double3(y, 0.0, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double3 t_s => new double3(y, 0.0, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double3 y_y => new double3(y, 0.0, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double3 g_g => new double3(y, 0.0, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double3 t_t => new double3(y, 0.0, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double3 yx_ => new double3(y, x, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double3 gr_ => new double3(y, x, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double3 ts_ => new double3(y, x, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double3 yxx => new double3(y, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double3 grr => new double3(y, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double3 tss => new double3(y, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double3 yxy => new double3(y, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double3 grg => new double3(y, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double3 tst => new double3(y, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double3 yy_ => new double3(y, y, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double3 gg_ => new double3(y, y, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double3 tt_ => new double3(y, y, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double3 yyx => new double3(y, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double3 ggr => new double3(y, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double3 tts => new double3(y, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double3 yyy => new double3(y, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double3 ggg => new double3(y, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double3 ttt => new double3(y, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double2 _x => new double2(0.0, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double2 _r => new double2(0.0, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double2 _s => new double2(0.0, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double2 _y => new double2(0.0, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double2 _g => new double2(0.0, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double2 _t => new double2(0.0, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double2 x_ => new double2(x, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double2 r_ => new double2(x, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double2 s_ => new double2(x, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double2 xx => new double2(x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double2 rr => new double2(x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double2 ss => new double2(x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public double2 xy
         {
             readonly get => new double2(x, y);
@@ -1840,6 +2172,7 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public double2 rg
         {
             readonly get => new double2(x, y);
@@ -1853,6 +2186,7 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public double2 st
         {
             readonly get => new double2(x, y);
@@ -1866,21 +2200,25 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double2 y_ => new double2(y, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double2 g_ => new double2(y, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double2 t_ => new double2(y, 0.0);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public double2 yx
         {
             readonly get => new double2(y, x);
@@ -1894,6 +2232,7 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public double2 gr
         {
             readonly get => new double2(y, x);
@@ -1907,6 +2246,7 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public double2 ts
         {
             readonly get => new double2(y, x);
@@ -1920,16 +2260,19 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double2 yy => new double2(y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double2 gg => new double2(y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double2 tt => new double2(y, y);
 
         #endregion

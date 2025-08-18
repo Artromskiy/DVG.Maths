@@ -4,6 +4,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Runtime.CompilerServices;
 using System.Runtime.Serialization;
+using System.Diagnostics;
 
 
 namespace DVG
@@ -234,4221 +235,5065 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 ___x => new float4(0f, 0f, 0f, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 ___r => new float4(0f, 0f, 0f, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 ___s => new float4(0f, 0f, 0f, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 ___y => new float4(0f, 0f, 0f, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 ___g => new float4(0f, 0f, 0f, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 ___t => new float4(0f, 0f, 0f, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 ___z => new float4(0f, 0f, 0f, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 ___b => new float4(0f, 0f, 0f, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 ___p => new float4(0f, 0f, 0f, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 __x_ => new float4(0f, 0f, x, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 __r_ => new float4(0f, 0f, x, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 __s_ => new float4(0f, 0f, x, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 __xx => new float4(0f, 0f, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 __rr => new float4(0f, 0f, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 __ss => new float4(0f, 0f, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 __xy => new float4(0f, 0f, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 __rg => new float4(0f, 0f, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 __st => new float4(0f, 0f, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 __xz => new float4(0f, 0f, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 __rb => new float4(0f, 0f, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 __sp => new float4(0f, 0f, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 __y_ => new float4(0f, 0f, y, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 __g_ => new float4(0f, 0f, y, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 __t_ => new float4(0f, 0f, y, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 __yx => new float4(0f, 0f, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 __gr => new float4(0f, 0f, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 __ts => new float4(0f, 0f, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 __yy => new float4(0f, 0f, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 __gg => new float4(0f, 0f, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 __tt => new float4(0f, 0f, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 __yz => new float4(0f, 0f, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 __gb => new float4(0f, 0f, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 __tp => new float4(0f, 0f, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 __z_ => new float4(0f, 0f, z, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 __b_ => new float4(0f, 0f, z, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 __p_ => new float4(0f, 0f, z, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 __zx => new float4(0f, 0f, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 __br => new float4(0f, 0f, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 __ps => new float4(0f, 0f, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 __zy => new float4(0f, 0f, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 __bg => new float4(0f, 0f, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 __pt => new float4(0f, 0f, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 __zz => new float4(0f, 0f, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 __bb => new float4(0f, 0f, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 __pp => new float4(0f, 0f, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _x__ => new float4(0f, x, 0f, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _r__ => new float4(0f, x, 0f, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _s__ => new float4(0f, x, 0f, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _x_x => new float4(0f, x, 0f, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _r_r => new float4(0f, x, 0f, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _s_s => new float4(0f, x, 0f, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _x_y => new float4(0f, x, 0f, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _r_g => new float4(0f, x, 0f, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _s_t => new float4(0f, x, 0f, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _x_z => new float4(0f, x, 0f, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _r_b => new float4(0f, x, 0f, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _s_p => new float4(0f, x, 0f, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _xx_ => new float4(0f, x, x, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _rr_ => new float4(0f, x, x, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _ss_ => new float4(0f, x, x, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _xxx => new float4(0f, x, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _rrr => new float4(0f, x, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _sss => new float4(0f, x, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _xxy => new float4(0f, x, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _rrg => new float4(0f, x, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _sst => new float4(0f, x, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _xxz => new float4(0f, x, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _rrb => new float4(0f, x, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _ssp => new float4(0f, x, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _xy_ => new float4(0f, x, y, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _rg_ => new float4(0f, x, y, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _st_ => new float4(0f, x, y, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _xyx => new float4(0f, x, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _rgr => new float4(0f, x, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _sts => new float4(0f, x, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _xyy => new float4(0f, x, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _rgg => new float4(0f, x, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _stt => new float4(0f, x, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _xyz => new float4(0f, x, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _rgb => new float4(0f, x, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _stp => new float4(0f, x, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _xz_ => new float4(0f, x, z, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _rb_ => new float4(0f, x, z, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _sp_ => new float4(0f, x, z, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _xzx => new float4(0f, x, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _rbr => new float4(0f, x, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _sps => new float4(0f, x, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _xzy => new float4(0f, x, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _rbg => new float4(0f, x, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _spt => new float4(0f, x, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _xzz => new float4(0f, x, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _rbb => new float4(0f, x, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _spp => new float4(0f, x, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _y__ => new float4(0f, y, 0f, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _g__ => new float4(0f, y, 0f, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _t__ => new float4(0f, y, 0f, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _y_x => new float4(0f, y, 0f, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _g_r => new float4(0f, y, 0f, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _t_s => new float4(0f, y, 0f, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _y_y => new float4(0f, y, 0f, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _g_g => new float4(0f, y, 0f, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _t_t => new float4(0f, y, 0f, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _y_z => new float4(0f, y, 0f, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _g_b => new float4(0f, y, 0f, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _t_p => new float4(0f, y, 0f, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _yx_ => new float4(0f, y, x, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _gr_ => new float4(0f, y, x, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _ts_ => new float4(0f, y, x, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _yxx => new float4(0f, y, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _grr => new float4(0f, y, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _tss => new float4(0f, y, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _yxy => new float4(0f, y, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _grg => new float4(0f, y, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _tst => new float4(0f, y, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _yxz => new float4(0f, y, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _grb => new float4(0f, y, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _tsp => new float4(0f, y, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _yy_ => new float4(0f, y, y, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _gg_ => new float4(0f, y, y, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _tt_ => new float4(0f, y, y, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _yyx => new float4(0f, y, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _ggr => new float4(0f, y, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _tts => new float4(0f, y, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _yyy => new float4(0f, y, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _ggg => new float4(0f, y, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _ttt => new float4(0f, y, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _yyz => new float4(0f, y, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _ggb => new float4(0f, y, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _ttp => new float4(0f, y, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _yz_ => new float4(0f, y, z, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _gb_ => new float4(0f, y, z, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _tp_ => new float4(0f, y, z, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _yzx => new float4(0f, y, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _gbr => new float4(0f, y, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _tps => new float4(0f, y, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _yzy => new float4(0f, y, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _gbg => new float4(0f, y, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _tpt => new float4(0f, y, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _yzz => new float4(0f, y, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _gbb => new float4(0f, y, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _tpp => new float4(0f, y, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _z__ => new float4(0f, z, 0f, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _b__ => new float4(0f, z, 0f, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _p__ => new float4(0f, z, 0f, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _z_x => new float4(0f, z, 0f, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _b_r => new float4(0f, z, 0f, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _p_s => new float4(0f, z, 0f, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _z_y => new float4(0f, z, 0f, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _b_g => new float4(0f, z, 0f, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _p_t => new float4(0f, z, 0f, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _z_z => new float4(0f, z, 0f, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _b_b => new float4(0f, z, 0f, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _p_p => new float4(0f, z, 0f, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _zx_ => new float4(0f, z, x, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _br_ => new float4(0f, z, x, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _ps_ => new float4(0f, z, x, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _zxx => new float4(0f, z, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _brr => new float4(0f, z, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _pss => new float4(0f, z, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _zxy => new float4(0f, z, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _brg => new float4(0f, z, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _pst => new float4(0f, z, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _zxz => new float4(0f, z, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _brb => new float4(0f, z, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _psp => new float4(0f, z, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _zy_ => new float4(0f, z, y, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _bg_ => new float4(0f, z, y, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _pt_ => new float4(0f, z, y, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _zyx => new float4(0f, z, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _bgr => new float4(0f, z, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _pts => new float4(0f, z, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _zyy => new float4(0f, z, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _bgg => new float4(0f, z, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _ptt => new float4(0f, z, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _zyz => new float4(0f, z, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _bgb => new float4(0f, z, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _ptp => new float4(0f, z, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _zz_ => new float4(0f, z, z, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _bb_ => new float4(0f, z, z, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _pp_ => new float4(0f, z, z, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _zzx => new float4(0f, z, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _bbr => new float4(0f, z, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _pps => new float4(0f, z, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _zzy => new float4(0f, z, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _bbg => new float4(0f, z, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _ppt => new float4(0f, z, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _zzz => new float4(0f, z, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _bbb => new float4(0f, z, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 _ppp => new float4(0f, z, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 x___ => new float4(x, 0f, 0f, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 r___ => new float4(x, 0f, 0f, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 s___ => new float4(x, 0f, 0f, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 x__x => new float4(x, 0f, 0f, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 r__r => new float4(x, 0f, 0f, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 s__s => new float4(x, 0f, 0f, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 x__y => new float4(x, 0f, 0f, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 r__g => new float4(x, 0f, 0f, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 s__t => new float4(x, 0f, 0f, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 x__z => new float4(x, 0f, 0f, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 r__b => new float4(x, 0f, 0f, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 s__p => new float4(x, 0f, 0f, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 x_x_ => new float4(x, 0f, x, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 r_r_ => new float4(x, 0f, x, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 s_s_ => new float4(x, 0f, x, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 x_xx => new float4(x, 0f, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 r_rr => new float4(x, 0f, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 s_ss => new float4(x, 0f, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 x_xy => new float4(x, 0f, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 r_rg => new float4(x, 0f, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 s_st => new float4(x, 0f, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 x_xz => new float4(x, 0f, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 r_rb => new float4(x, 0f, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 s_sp => new float4(x, 0f, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 x_y_ => new float4(x, 0f, y, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 r_g_ => new float4(x, 0f, y, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 s_t_ => new float4(x, 0f, y, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 x_yx => new float4(x, 0f, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 r_gr => new float4(x, 0f, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 s_ts => new float4(x, 0f, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 x_yy => new float4(x, 0f, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 r_gg => new float4(x, 0f, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 s_tt => new float4(x, 0f, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 x_yz => new float4(x, 0f, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 r_gb => new float4(x, 0f, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 s_tp => new float4(x, 0f, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 x_z_ => new float4(x, 0f, z, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 r_b_ => new float4(x, 0f, z, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 s_p_ => new float4(x, 0f, z, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 x_zx => new float4(x, 0f, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 r_br => new float4(x, 0f, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 s_ps => new float4(x, 0f, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 x_zy => new float4(x, 0f, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 r_bg => new float4(x, 0f, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 s_pt => new float4(x, 0f, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 x_zz => new float4(x, 0f, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 r_bb => new float4(x, 0f, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 s_pp => new float4(x, 0f, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 xx__ => new float4(x, x, 0f, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 rr__ => new float4(x, x, 0f, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 ss__ => new float4(x, x, 0f, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 xx_x => new float4(x, x, 0f, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 rr_r => new float4(x, x, 0f, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 ss_s => new float4(x, x, 0f, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 xx_y => new float4(x, x, 0f, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 rr_g => new float4(x, x, 0f, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 ss_t => new float4(x, x, 0f, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 xx_z => new float4(x, x, 0f, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 rr_b => new float4(x, x, 0f, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 ss_p => new float4(x, x, 0f, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 xxx_ => new float4(x, x, x, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 rrr_ => new float4(x, x, x, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 sss_ => new float4(x, x, x, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 xxxx => new float4(x, x, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 rrrr => new float4(x, x, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 ssss => new float4(x, x, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 xxxy => new float4(x, x, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 rrrg => new float4(x, x, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 ssst => new float4(x, x, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 xxxz => new float4(x, x, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 rrrb => new float4(x, x, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 sssp => new float4(x, x, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 xxy_ => new float4(x, x, y, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 rrg_ => new float4(x, x, y, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 sst_ => new float4(x, x, y, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 xxyx => new float4(x, x, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 rrgr => new float4(x, x, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 ssts => new float4(x, x, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 xxyy => new float4(x, x, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 rrgg => new float4(x, x, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 sstt => new float4(x, x, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 xxyz => new float4(x, x, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 rrgb => new float4(x, x, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 sstp => new float4(x, x, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 xxz_ => new float4(x, x, z, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 rrb_ => new float4(x, x, z, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 ssp_ => new float4(x, x, z, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 xxzx => new float4(x, x, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 rrbr => new float4(x, x, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 ssps => new float4(x, x, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 xxzy => new float4(x, x, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 rrbg => new float4(x, x, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 sspt => new float4(x, x, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 xxzz => new float4(x, x, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 rrbb => new float4(x, x, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 sspp => new float4(x, x, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 xy__ => new float4(x, y, 0f, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 rg__ => new float4(x, y, 0f, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 st__ => new float4(x, y, 0f, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 xy_x => new float4(x, y, 0f, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 rg_r => new float4(x, y, 0f, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 st_s => new float4(x, y, 0f, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 xy_y => new float4(x, y, 0f, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 rg_g => new float4(x, y, 0f, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 st_t => new float4(x, y, 0f, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 xy_z => new float4(x, y, 0f, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 rg_b => new float4(x, y, 0f, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 st_p => new float4(x, y, 0f, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 xyx_ => new float4(x, y, x, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 rgr_ => new float4(x, y, x, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 sts_ => new float4(x, y, x, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 xyxx => new float4(x, y, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 rgrr => new float4(x, y, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 stss => new float4(x, y, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 xyxy => new float4(x, y, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 rgrg => new float4(x, y, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 stst => new float4(x, y, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 xyxz => new float4(x, y, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 rgrb => new float4(x, y, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 stsp => new float4(x, y, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 xyy_ => new float4(x, y, y, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 rgg_ => new float4(x, y, y, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 stt_ => new float4(x, y, y, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 xyyx => new float4(x, y, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 rggr => new float4(x, y, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 stts => new float4(x, y, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 xyyy => new float4(x, y, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 rggg => new float4(x, y, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 sttt => new float4(x, y, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 xyyz => new float4(x, y, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 rggb => new float4(x, y, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 sttp => new float4(x, y, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 xyz_ => new float4(x, y, z, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 rgb_ => new float4(x, y, z, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 stp_ => new float4(x, y, z, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 xyzx => new float4(x, y, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 rgbr => new float4(x, y, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 stps => new float4(x, y, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 xyzy => new float4(x, y, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 rgbg => new float4(x, y, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 stpt => new float4(x, y, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 xyzz => new float4(x, y, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 rgbb => new float4(x, y, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 stpp => new float4(x, y, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 xz__ => new float4(x, z, 0f, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 rb__ => new float4(x, z, 0f, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 sp__ => new float4(x, z, 0f, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 xz_x => new float4(x, z, 0f, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 rb_r => new float4(x, z, 0f, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 sp_s => new float4(x, z, 0f, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 xz_y => new float4(x, z, 0f, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 rb_g => new float4(x, z, 0f, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 sp_t => new float4(x, z, 0f, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 xz_z => new float4(x, z, 0f, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 rb_b => new float4(x, z, 0f, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 sp_p => new float4(x, z, 0f, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 xzx_ => new float4(x, z, x, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 rbr_ => new float4(x, z, x, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 sps_ => new float4(x, z, x, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 xzxx => new float4(x, z, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 rbrr => new float4(x, z, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 spss => new float4(x, z, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 xzxy => new float4(x, z, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 rbrg => new float4(x, z, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 spst => new float4(x, z, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 xzxz => new float4(x, z, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 rbrb => new float4(x, z, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 spsp => new float4(x, z, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 xzy_ => new float4(x, z, y, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 rbg_ => new float4(x, z, y, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 spt_ => new float4(x, z, y, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 xzyx => new float4(x, z, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 rbgr => new float4(x, z, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 spts => new float4(x, z, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 xzyy => new float4(x, z, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 rbgg => new float4(x, z, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 sptt => new float4(x, z, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 xzyz => new float4(x, z, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 rbgb => new float4(x, z, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 sptp => new float4(x, z, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 xzz_ => new float4(x, z, z, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 rbb_ => new float4(x, z, z, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 spp_ => new float4(x, z, z, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 xzzx => new float4(x, z, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 rbbr => new float4(x, z, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 spps => new float4(x, z, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 xzzy => new float4(x, z, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 rbbg => new float4(x, z, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 sppt => new float4(x, z, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 xzzz => new float4(x, z, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 rbbb => new float4(x, z, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 sppp => new float4(x, z, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 y___ => new float4(y, 0f, 0f, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 g___ => new float4(y, 0f, 0f, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 t___ => new float4(y, 0f, 0f, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 y__x => new float4(y, 0f, 0f, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 g__r => new float4(y, 0f, 0f, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 t__s => new float4(y, 0f, 0f, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 y__y => new float4(y, 0f, 0f, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 g__g => new float4(y, 0f, 0f, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 t__t => new float4(y, 0f, 0f, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 y__z => new float4(y, 0f, 0f, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 g__b => new float4(y, 0f, 0f, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 t__p => new float4(y, 0f, 0f, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 y_x_ => new float4(y, 0f, x, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 g_r_ => new float4(y, 0f, x, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 t_s_ => new float4(y, 0f, x, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 y_xx => new float4(y, 0f, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 g_rr => new float4(y, 0f, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 t_ss => new float4(y, 0f, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 y_xy => new float4(y, 0f, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 g_rg => new float4(y, 0f, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 t_st => new float4(y, 0f, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 y_xz => new float4(y, 0f, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 g_rb => new float4(y, 0f, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 t_sp => new float4(y, 0f, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 y_y_ => new float4(y, 0f, y, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 g_g_ => new float4(y, 0f, y, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 t_t_ => new float4(y, 0f, y, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 y_yx => new float4(y, 0f, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 g_gr => new float4(y, 0f, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 t_ts => new float4(y, 0f, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 y_yy => new float4(y, 0f, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 g_gg => new float4(y, 0f, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 t_tt => new float4(y, 0f, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 y_yz => new float4(y, 0f, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 g_gb => new float4(y, 0f, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 t_tp => new float4(y, 0f, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 y_z_ => new float4(y, 0f, z, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 g_b_ => new float4(y, 0f, z, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 t_p_ => new float4(y, 0f, z, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 y_zx => new float4(y, 0f, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 g_br => new float4(y, 0f, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 t_ps => new float4(y, 0f, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 y_zy => new float4(y, 0f, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 g_bg => new float4(y, 0f, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 t_pt => new float4(y, 0f, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 y_zz => new float4(y, 0f, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 g_bb => new float4(y, 0f, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 t_pp => new float4(y, 0f, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 yx__ => new float4(y, x, 0f, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 gr__ => new float4(y, x, 0f, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 ts__ => new float4(y, x, 0f, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 yx_x => new float4(y, x, 0f, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 gr_r => new float4(y, x, 0f, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 ts_s => new float4(y, x, 0f, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 yx_y => new float4(y, x, 0f, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 gr_g => new float4(y, x, 0f, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 ts_t => new float4(y, x, 0f, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 yx_z => new float4(y, x, 0f, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 gr_b => new float4(y, x, 0f, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 ts_p => new float4(y, x, 0f, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 yxx_ => new float4(y, x, x, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 grr_ => new float4(y, x, x, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 tss_ => new float4(y, x, x, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 yxxx => new float4(y, x, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 grrr => new float4(y, x, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 tsss => new float4(y, x, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 yxxy => new float4(y, x, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 grrg => new float4(y, x, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 tsst => new float4(y, x, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 yxxz => new float4(y, x, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 grrb => new float4(y, x, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 tssp => new float4(y, x, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 yxy_ => new float4(y, x, y, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 grg_ => new float4(y, x, y, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 tst_ => new float4(y, x, y, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 yxyx => new float4(y, x, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 grgr => new float4(y, x, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 tsts => new float4(y, x, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 yxyy => new float4(y, x, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 grgg => new float4(y, x, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 tstt => new float4(y, x, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 yxyz => new float4(y, x, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 grgb => new float4(y, x, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 tstp => new float4(y, x, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 yxz_ => new float4(y, x, z, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 grb_ => new float4(y, x, z, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 tsp_ => new float4(y, x, z, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 yxzx => new float4(y, x, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 grbr => new float4(y, x, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 tsps => new float4(y, x, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 yxzy => new float4(y, x, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 grbg => new float4(y, x, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 tspt => new float4(y, x, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 yxzz => new float4(y, x, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 grbb => new float4(y, x, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 tspp => new float4(y, x, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 yy__ => new float4(y, y, 0f, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 gg__ => new float4(y, y, 0f, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 tt__ => new float4(y, y, 0f, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 yy_x => new float4(y, y, 0f, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 gg_r => new float4(y, y, 0f, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 tt_s => new float4(y, y, 0f, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 yy_y => new float4(y, y, 0f, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 gg_g => new float4(y, y, 0f, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 tt_t => new float4(y, y, 0f, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 yy_z => new float4(y, y, 0f, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 gg_b => new float4(y, y, 0f, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 tt_p => new float4(y, y, 0f, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 yyx_ => new float4(y, y, x, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 ggr_ => new float4(y, y, x, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 tts_ => new float4(y, y, x, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 yyxx => new float4(y, y, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 ggrr => new float4(y, y, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 ttss => new float4(y, y, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 yyxy => new float4(y, y, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 ggrg => new float4(y, y, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 ttst => new float4(y, y, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 yyxz => new float4(y, y, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 ggrb => new float4(y, y, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 ttsp => new float4(y, y, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 yyy_ => new float4(y, y, y, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 ggg_ => new float4(y, y, y, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 ttt_ => new float4(y, y, y, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 yyyx => new float4(y, y, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 gggr => new float4(y, y, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 ttts => new float4(y, y, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 yyyy => new float4(y, y, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 gggg => new float4(y, y, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 tttt => new float4(y, y, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 yyyz => new float4(y, y, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 gggb => new float4(y, y, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 tttp => new float4(y, y, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 yyz_ => new float4(y, y, z, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 ggb_ => new float4(y, y, z, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 ttp_ => new float4(y, y, z, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 yyzx => new float4(y, y, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 ggbr => new float4(y, y, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 ttps => new float4(y, y, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 yyzy => new float4(y, y, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 ggbg => new float4(y, y, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 ttpt => new float4(y, y, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 yyzz => new float4(y, y, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 ggbb => new float4(y, y, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 ttpp => new float4(y, y, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 yz__ => new float4(y, z, 0f, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 gb__ => new float4(y, z, 0f, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 tp__ => new float4(y, z, 0f, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 yz_x => new float4(y, z, 0f, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 gb_r => new float4(y, z, 0f, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 tp_s => new float4(y, z, 0f, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 yz_y => new float4(y, z, 0f, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 gb_g => new float4(y, z, 0f, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 tp_t => new float4(y, z, 0f, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 yz_z => new float4(y, z, 0f, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 gb_b => new float4(y, z, 0f, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 tp_p => new float4(y, z, 0f, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 yzx_ => new float4(y, z, x, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 gbr_ => new float4(y, z, x, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 tps_ => new float4(y, z, x, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 yzxx => new float4(y, z, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 gbrr => new float4(y, z, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 tpss => new float4(y, z, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 yzxy => new float4(y, z, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 gbrg => new float4(y, z, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 tpst => new float4(y, z, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 yzxz => new float4(y, z, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 gbrb => new float4(y, z, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 tpsp => new float4(y, z, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 yzy_ => new float4(y, z, y, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 gbg_ => new float4(y, z, y, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 tpt_ => new float4(y, z, y, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 yzyx => new float4(y, z, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 gbgr => new float4(y, z, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 tpts => new float4(y, z, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 yzyy => new float4(y, z, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 gbgg => new float4(y, z, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 tptt => new float4(y, z, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 yzyz => new float4(y, z, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 gbgb => new float4(y, z, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 tptp => new float4(y, z, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 yzz_ => new float4(y, z, z, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 gbb_ => new float4(y, z, z, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 tpp_ => new float4(y, z, z, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 yzzx => new float4(y, z, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 gbbr => new float4(y, z, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 tpps => new float4(y, z, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 yzzy => new float4(y, z, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 gbbg => new float4(y, z, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 tppt => new float4(y, z, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 yzzz => new float4(y, z, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 gbbb => new float4(y, z, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 tppp => new float4(y, z, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 z___ => new float4(z, 0f, 0f, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 b___ => new float4(z, 0f, 0f, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 p___ => new float4(z, 0f, 0f, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 z__x => new float4(z, 0f, 0f, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 b__r => new float4(z, 0f, 0f, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 p__s => new float4(z, 0f, 0f, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 z__y => new float4(z, 0f, 0f, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 b__g => new float4(z, 0f, 0f, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 p__t => new float4(z, 0f, 0f, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 z__z => new float4(z, 0f, 0f, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 b__b => new float4(z, 0f, 0f, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 p__p => new float4(z, 0f, 0f, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 z_x_ => new float4(z, 0f, x, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 b_r_ => new float4(z, 0f, x, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 p_s_ => new float4(z, 0f, x, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 z_xx => new float4(z, 0f, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 b_rr => new float4(z, 0f, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 p_ss => new float4(z, 0f, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 z_xy => new float4(z, 0f, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 b_rg => new float4(z, 0f, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 p_st => new float4(z, 0f, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 z_xz => new float4(z, 0f, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 b_rb => new float4(z, 0f, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 p_sp => new float4(z, 0f, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 z_y_ => new float4(z, 0f, y, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 b_g_ => new float4(z, 0f, y, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 p_t_ => new float4(z, 0f, y, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 z_yx => new float4(z, 0f, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 b_gr => new float4(z, 0f, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 p_ts => new float4(z, 0f, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 z_yy => new float4(z, 0f, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 b_gg => new float4(z, 0f, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 p_tt => new float4(z, 0f, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 z_yz => new float4(z, 0f, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 b_gb => new float4(z, 0f, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 p_tp => new float4(z, 0f, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 z_z_ => new float4(z, 0f, z, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 b_b_ => new float4(z, 0f, z, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 p_p_ => new float4(z, 0f, z, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 z_zx => new float4(z, 0f, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 b_br => new float4(z, 0f, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 p_ps => new float4(z, 0f, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 z_zy => new float4(z, 0f, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 b_bg => new float4(z, 0f, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 p_pt => new float4(z, 0f, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 z_zz => new float4(z, 0f, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 b_bb => new float4(z, 0f, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 p_pp => new float4(z, 0f, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 zx__ => new float4(z, x, 0f, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 br__ => new float4(z, x, 0f, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 ps__ => new float4(z, x, 0f, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 zx_x => new float4(z, x, 0f, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 br_r => new float4(z, x, 0f, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 ps_s => new float4(z, x, 0f, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 zx_y => new float4(z, x, 0f, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 br_g => new float4(z, x, 0f, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 ps_t => new float4(z, x, 0f, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 zx_z => new float4(z, x, 0f, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 br_b => new float4(z, x, 0f, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 ps_p => new float4(z, x, 0f, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 zxx_ => new float4(z, x, x, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 brr_ => new float4(z, x, x, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 pss_ => new float4(z, x, x, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 zxxx => new float4(z, x, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 brrr => new float4(z, x, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 psss => new float4(z, x, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 zxxy => new float4(z, x, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 brrg => new float4(z, x, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 psst => new float4(z, x, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 zxxz => new float4(z, x, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 brrb => new float4(z, x, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 pssp => new float4(z, x, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 zxy_ => new float4(z, x, y, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 brg_ => new float4(z, x, y, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 pst_ => new float4(z, x, y, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 zxyx => new float4(z, x, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 brgr => new float4(z, x, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 psts => new float4(z, x, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 zxyy => new float4(z, x, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 brgg => new float4(z, x, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 pstt => new float4(z, x, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 zxyz => new float4(z, x, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 brgb => new float4(z, x, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 pstp => new float4(z, x, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 zxz_ => new float4(z, x, z, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 brb_ => new float4(z, x, z, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 psp_ => new float4(z, x, z, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 zxzx => new float4(z, x, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 brbr => new float4(z, x, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 psps => new float4(z, x, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 zxzy => new float4(z, x, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 brbg => new float4(z, x, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 pspt => new float4(z, x, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 zxzz => new float4(z, x, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 brbb => new float4(z, x, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 pspp => new float4(z, x, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 zy__ => new float4(z, y, 0f, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 bg__ => new float4(z, y, 0f, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 pt__ => new float4(z, y, 0f, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 zy_x => new float4(z, y, 0f, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 bg_r => new float4(z, y, 0f, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 pt_s => new float4(z, y, 0f, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 zy_y => new float4(z, y, 0f, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 bg_g => new float4(z, y, 0f, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 pt_t => new float4(z, y, 0f, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 zy_z => new float4(z, y, 0f, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 bg_b => new float4(z, y, 0f, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 pt_p => new float4(z, y, 0f, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 zyx_ => new float4(z, y, x, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 bgr_ => new float4(z, y, x, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 pts_ => new float4(z, y, x, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 zyxx => new float4(z, y, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 bgrr => new float4(z, y, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 ptss => new float4(z, y, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 zyxy => new float4(z, y, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 bgrg => new float4(z, y, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 ptst => new float4(z, y, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 zyxz => new float4(z, y, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 bgrb => new float4(z, y, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 ptsp => new float4(z, y, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 zyy_ => new float4(z, y, y, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 bgg_ => new float4(z, y, y, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 ptt_ => new float4(z, y, y, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 zyyx => new float4(z, y, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 bggr => new float4(z, y, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 ptts => new float4(z, y, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 zyyy => new float4(z, y, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 bggg => new float4(z, y, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 pttt => new float4(z, y, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 zyyz => new float4(z, y, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 bggb => new float4(z, y, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 pttp => new float4(z, y, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 zyz_ => new float4(z, y, z, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 bgb_ => new float4(z, y, z, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 ptp_ => new float4(z, y, z, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 zyzx => new float4(z, y, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 bgbr => new float4(z, y, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 ptps => new float4(z, y, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 zyzy => new float4(z, y, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 bgbg => new float4(z, y, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 ptpt => new float4(z, y, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 zyzz => new float4(z, y, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 bgbb => new float4(z, y, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 ptpp => new float4(z, y, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 zz__ => new float4(z, z, 0f, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 bb__ => new float4(z, z, 0f, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 pp__ => new float4(z, z, 0f, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 zz_x => new float4(z, z, 0f, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 bb_r => new float4(z, z, 0f, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 pp_s => new float4(z, z, 0f, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 zz_y => new float4(z, z, 0f, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 bb_g => new float4(z, z, 0f, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 pp_t => new float4(z, z, 0f, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 zz_z => new float4(z, z, 0f, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 bb_b => new float4(z, z, 0f, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 pp_p => new float4(z, z, 0f, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 zzx_ => new float4(z, z, x, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 bbr_ => new float4(z, z, x, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 pps_ => new float4(z, z, x, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 zzxx => new float4(z, z, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 bbrr => new float4(z, z, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 ppss => new float4(z, z, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 zzxy => new float4(z, z, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 bbrg => new float4(z, z, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 ppst => new float4(z, z, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 zzxz => new float4(z, z, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 bbrb => new float4(z, z, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 ppsp => new float4(z, z, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 zzy_ => new float4(z, z, y, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 bbg_ => new float4(z, z, y, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 ppt_ => new float4(z, z, y, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 zzyx => new float4(z, z, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 bbgr => new float4(z, z, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 ppts => new float4(z, z, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 zzyy => new float4(z, z, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 bbgg => new float4(z, z, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 pptt => new float4(z, z, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 zzyz => new float4(z, z, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 bbgb => new float4(z, z, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 pptp => new float4(z, z, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 zzz_ => new float4(z, z, z, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 bbb_ => new float4(z, z, z, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 ppp_ => new float4(z, z, z, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 zzzx => new float4(z, z, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 bbbr => new float4(z, z, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 ppps => new float4(z, z, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 zzzy => new float4(z, z, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 bbbg => new float4(z, z, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 pppt => new float4(z, z, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 zzzz => new float4(z, z, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 bbbb => new float4(z, z, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float4 pppp => new float4(z, z, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 __x => new float3(0f, 0f, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 __r => new float3(0f, 0f, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 __s => new float3(0f, 0f, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 __y => new float3(0f, 0f, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 __g => new float3(0f, 0f, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 __t => new float3(0f, 0f, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 __z => new float3(0f, 0f, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 __b => new float3(0f, 0f, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 __p => new float3(0f, 0f, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 _x_ => new float3(0f, x, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 _r_ => new float3(0f, x, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 _s_ => new float3(0f, x, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 _xx => new float3(0f, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 _rr => new float3(0f, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 _ss => new float3(0f, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 _xy => new float3(0f, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 _rg => new float3(0f, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 _st => new float3(0f, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 _xz => new float3(0f, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 _rb => new float3(0f, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 _sp => new float3(0f, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 _y_ => new float3(0f, y, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 _g_ => new float3(0f, y, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 _t_ => new float3(0f, y, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 _yx => new float3(0f, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 _gr => new float3(0f, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 _ts => new float3(0f, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 _yy => new float3(0f, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 _gg => new float3(0f, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 _tt => new float3(0f, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 _yz => new float3(0f, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 _gb => new float3(0f, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 _tp => new float3(0f, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 _z_ => new float3(0f, z, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 _b_ => new float3(0f, z, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 _p_ => new float3(0f, z, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 _zx => new float3(0f, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 _br => new float3(0f, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 _ps => new float3(0f, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 _zy => new float3(0f, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 _bg => new float3(0f, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 _pt => new float3(0f, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 _zz => new float3(0f, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 _bb => new float3(0f, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 _pp => new float3(0f, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 x__ => new float3(x, 0f, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 r__ => new float3(x, 0f, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 s__ => new float3(x, 0f, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 x_x => new float3(x, 0f, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 r_r => new float3(x, 0f, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 s_s => new float3(x, 0f, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 x_y => new float3(x, 0f, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 r_g => new float3(x, 0f, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 s_t => new float3(x, 0f, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 x_z => new float3(x, 0f, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 r_b => new float3(x, 0f, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 s_p => new float3(x, 0f, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 xx_ => new float3(x, x, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 rr_ => new float3(x, x, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 ss_ => new float3(x, x, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 xxx => new float3(x, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 rrr => new float3(x, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 sss => new float3(x, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 xxy => new float3(x, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 rrg => new float3(x, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 sst => new float3(x, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 xxz => new float3(x, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 rrb => new float3(x, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 ssp => new float3(x, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 xy_ => new float3(x, y, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 rg_ => new float3(x, y, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 st_ => new float3(x, y, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 xyx => new float3(x, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 rgr => new float3(x, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 sts => new float3(x, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 xyy => new float3(x, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 rgg => new float3(x, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 stt => new float3(x, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public float3 xyz
         {
             readonly get => new float3(x, y, z);
@@ -4463,6 +5308,7 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public float3 rgb
         {
             readonly get => new float3(x, y, z);
@@ -4477,6 +5323,7 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public float3 stp
         {
             readonly get => new float3(x, y, z);
@@ -4491,36 +5338,43 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 xz_ => new float3(x, z, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 rb_ => new float3(x, z, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 sp_ => new float3(x, z, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 xzx => new float3(x, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 rbr => new float3(x, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 sps => new float3(x, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public float3 xzy
         {
             readonly get => new float3(x, z, y);
@@ -4535,6 +5389,7 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public float3 rbg
         {
             readonly get => new float3(x, z, y);
@@ -4549,6 +5404,7 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public float3 spt
         {
             readonly get => new float3(x, z, y);
@@ -4563,126 +5419,151 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 xzz => new float3(x, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 rbb => new float3(x, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 spp => new float3(x, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 y__ => new float3(y, 0f, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 g__ => new float3(y, 0f, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 t__ => new float3(y, 0f, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 y_x => new float3(y, 0f, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 g_r => new float3(y, 0f, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 t_s => new float3(y, 0f, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 y_y => new float3(y, 0f, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 g_g => new float3(y, 0f, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 t_t => new float3(y, 0f, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 y_z => new float3(y, 0f, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 g_b => new float3(y, 0f, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 t_p => new float3(y, 0f, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 yx_ => new float3(y, x, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 gr_ => new float3(y, x, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 ts_ => new float3(y, x, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 yxx => new float3(y, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 grr => new float3(y, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 tss => new float3(y, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 yxy => new float3(y, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 grg => new float3(y, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 tst => new float3(y, x, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public float3 yxz
         {
             readonly get => new float3(y, x, z);
@@ -4697,6 +5578,7 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public float3 grb
         {
             readonly get => new float3(y, x, z);
@@ -4711,6 +5593,7 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public float3 tsp
         {
             readonly get => new float3(y, x, z);
@@ -4725,81 +5608,97 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 yy_ => new float3(y, y, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 gg_ => new float3(y, y, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 tt_ => new float3(y, y, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 yyx => new float3(y, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 ggr => new float3(y, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 tts => new float3(y, y, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 yyy => new float3(y, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 ggg => new float3(y, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 ttt => new float3(y, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 yyz => new float3(y, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 ggb => new float3(y, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 ttp => new float3(y, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 yz_ => new float3(y, z, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 gb_ => new float3(y, z, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 tp_ => new float3(y, z, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public float3 yzx
         {
             readonly get => new float3(y, z, x);
@@ -4814,6 +5713,7 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public float3 gbr
         {
             readonly get => new float3(y, z, x);
@@ -4828,6 +5728,7 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public float3 tps
         {
             readonly get => new float3(y, z, x);
@@ -4842,126 +5743,151 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 yzy => new float3(y, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 gbg => new float3(y, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 tpt => new float3(y, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 yzz => new float3(y, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 gbb => new float3(y, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 tpp => new float3(y, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 z__ => new float3(z, 0f, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 b__ => new float3(z, 0f, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 p__ => new float3(z, 0f, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 z_x => new float3(z, 0f, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 b_r => new float3(z, 0f, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 p_s => new float3(z, 0f, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 z_y => new float3(z, 0f, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 b_g => new float3(z, 0f, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 p_t => new float3(z, 0f, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 z_z => new float3(z, 0f, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 b_b => new float3(z, 0f, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 p_p => new float3(z, 0f, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 zx_ => new float3(z, x, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 br_ => new float3(z, x, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 ps_ => new float3(z, x, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 zxx => new float3(z, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 brr => new float3(z, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 pss => new float3(z, x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public float3 zxy
         {
             readonly get => new float3(z, x, y);
@@ -4976,6 +5902,7 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public float3 brg
         {
             readonly get => new float3(z, x, y);
@@ -4990,6 +5917,7 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public float3 pst
         {
             readonly get => new float3(z, x, y);
@@ -5004,36 +5932,43 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 zxz => new float3(z, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 brb => new float3(z, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 psp => new float3(z, x, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 zy_ => new float3(z, y, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 bg_ => new float3(z, y, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 pt_ => new float3(z, y, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public float3 zyx
         {
             readonly get => new float3(z, y, x);
@@ -5048,6 +5983,7 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public float3 bgr
         {
             readonly get => new float3(z, y, x);
@@ -5062,6 +5998,7 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public float3 pts
         {
             readonly get => new float3(z, y, x);
@@ -5076,171 +6013,205 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 zyy => new float3(z, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 bgg => new float3(z, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 ptt => new float3(z, y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 zyz => new float3(z, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 bgb => new float3(z, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 ptp => new float3(z, y, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 zz_ => new float3(z, z, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 bb_ => new float3(z, z, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 pp_ => new float3(z, z, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 zzx => new float3(z, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 bbr => new float3(z, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 pps => new float3(z, z, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 zzy => new float3(z, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 bbg => new float3(z, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 ppt => new float3(z, z, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 zzz => new float3(z, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 bbb => new float3(z, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float3 ppp => new float3(z, z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float2 _x => new float2(0f, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float2 _r => new float2(0f, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float2 _s => new float2(0f, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float2 _y => new float2(0f, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float2 _g => new float2(0f, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float2 _t => new float2(0f, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float2 _z => new float2(0f, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float2 _b => new float2(0f, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float2 _p => new float2(0f, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float2 x_ => new float2(x, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float2 r_ => new float2(x, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float2 s_ => new float2(x, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float2 xx => new float2(x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float2 rr => new float2(x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float2 ss => new float2(x, x);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public float2 xy
         {
             readonly get => new float2(x, y);
@@ -5254,6 +6225,7 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public float2 rg
         {
             readonly get => new float2(x, y);
@@ -5267,6 +6239,7 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public float2 st
         {
             readonly get => new float2(x, y);
@@ -5280,6 +6253,7 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public float2 xz
         {
             readonly get => new float2(x, z);
@@ -5293,6 +6267,7 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public float2 rb
         {
             readonly get => new float2(x, z);
@@ -5306,6 +6281,7 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public float2 sp
         {
             readonly get => new float2(x, z);
@@ -5319,21 +6295,25 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float2 y_ => new float2(y, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float2 g_ => new float2(y, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float2 t_ => new float2(y, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public float2 yx
         {
             readonly get => new float2(y, x);
@@ -5347,6 +6327,7 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public float2 gr
         {
             readonly get => new float2(y, x);
@@ -5360,6 +6341,7 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public float2 ts
         {
             readonly get => new float2(y, x);
@@ -5373,21 +6355,25 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float2 yy => new float2(y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float2 gg => new float2(y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float2 tt => new float2(y, y);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public float2 yz
         {
             readonly get => new float2(y, z);
@@ -5401,6 +6387,7 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public float2 gb
         {
             readonly get => new float2(y, z);
@@ -5414,6 +6401,7 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public float2 tp
         {
             readonly get => new float2(y, z);
@@ -5427,21 +6415,25 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float2 z_ => new float2(z, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float2 b_ => new float2(z, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float2 p_ => new float2(z, 0f);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public float2 zx
         {
             readonly get => new float2(z, x);
@@ -5455,6 +6447,7 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public float2 br
         {
             readonly get => new float2(z, x);
@@ -5468,6 +6461,7 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public float2 ps
         {
             readonly get => new float2(z, x);
@@ -5481,6 +6475,7 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public float2 zy
         {
             readonly get => new float2(z, y);
@@ -5494,6 +6489,7 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public float2 bg
         {
             readonly get => new float2(z, y);
@@ -5507,6 +6503,7 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public float2 pt
         {
             readonly get => new float2(z, y);
@@ -5520,16 +6517,19 @@ namespace DVG
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float2 zz => new float2(z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float2 bb => new float2(z, z);
         
         /// <summary>
         /// Gets or sets the specified subset of components.
         /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float2 pp => new float2(z, z);
 
         #endregion
