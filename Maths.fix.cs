@@ -163,15 +163,15 @@
             if (inX.raw >= 0)
             {
                 r = (inX - absInY) / (inX + absInY);
-                piAdd = PiDiv4;
+                piAdd = _piDiv4;
             }
             else
             {
                 r = (inX + absInY) / (absInY - inX);
-                piAdd = ThreePiDiv4;
+                piAdd = _threePiDiv4;
             }
-            fix r3 = r * r * r;
-            fix angle = (mul1 * r3) - (mul2 * r) + piAdd;
+            fix r2 = r * r;
+            fix angle = r * (mul1 * r2 - mul2) + piAdd;
             if (inY.raw < 0)
             {
                 angle = -angle;
