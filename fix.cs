@@ -23,7 +23,6 @@ namespace DVG
 
         /// <summary>
         /// Creates fixed point number from raw integer representation
-        /// 
         /// </summary>
         /// <param name="rawValue"></param>
         public fix(int rawValue)
@@ -35,7 +34,7 @@ namespace DVG
         {
             if(a < MinValue.raw || a > MaxValue.raw)
                 throw new OverflowException();
-            return new fix(a * One.raw);
+            return new fix(a << 16);
         }
 
         public static explicit operator float(fix a)

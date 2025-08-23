@@ -1,14 +1,9 @@
-﻿using System;
-
-namespace DVG
+﻿namespace DVG
 {
     public static partial class Maths
     {
-        private static readonly fix PiDiv4 = new fix(0x0000C90F); // pi / 4
-        private static readonly fix ThreePiDiv4 = new fix(0x00025B2F); // 3 * pi / 4
-
         public static fix Sign(fix x) => Sign(x.raw);
-        public static fix Radians(fix degrees)=> degrees * fix.Pi / 180;
+        public static fix Radians(fix degrees) => degrees * fix.Pi / 180;
         public static fix Degrees(fix radians) => radians * 180 / fix.Pi;
         public static fix Round(fix value)
         {
@@ -151,6 +146,10 @@ namespace DVG
             return rv;
         }
 
+        private static readonly fix _atanCoeff1 = new fix(0x00003240); // 0.1963;
+        private static readonly fix _atanCoeff2 = new fix(0x0000FB50); // 0.9817
+        private static readonly fix _piDiv4 = new fix(0x0000C90F); // pi / 4
+        private static readonly fix _threePiDiv4 = new fix(0x00025B2F); // 3 * pi / 4
 
         public static fix Atan2(fix inY, fix inX)
         {
