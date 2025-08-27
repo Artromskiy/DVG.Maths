@@ -74,7 +74,7 @@ namespace DVG
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float Ceil(float x) => MathF.Ceiling(x);
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float Clamp(float value, float min, float max) => Math.Clamp(value, min, max);
+        public static float Clamp(float value, float min, float max) => Min(Max(value, min), max);
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float Cos(float x) => MathF.Cos(x);
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -90,9 +90,9 @@ namespace DVG
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float Log10(float x) => MathF.Log(x);
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float Max(float x, float y) => MathF.Max(x, y);
+        public static float Max(float x, float y) => x >= y ? x : y;
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float Min(float x, float y) => MathF.Min(x, y);
+        public static float Min(float x, float y) => x <= y ? x : y;
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float Pow(float x, float y) => MathF.Pow(x, y);
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -132,7 +132,7 @@ namespace DVG
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double Ceil(double a) => Math.Ceiling(a);
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static double Clamp(double value, double min, double max) => Math.Clamp(value, min, max);
+        public static double Clamp(double value, double min, double max) => Min(Max(value, min), max);
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double Cos(double d) => Math.Cos(d);
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -148,9 +148,9 @@ namespace DVG
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double Log10(double d) => Math.Log10(d);
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static double Max(double val1, double val2) => Math.Max(val1, val2);
+        public static double Max(double x, double y) => x >= y ? x : y;
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static double Min(double val1, double val2) => Math.Min(val1, val2);
+        public static double Min(double x, double y) => x <= y ? x : y;
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double Pow(double x, double y) => Math.Pow(x, y);
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -175,18 +175,17 @@ namespace DVG
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static int Sign(int value) => Math.Sign(value);
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static int Min(int val1, int val2) => Math.Min(val1, val2);
+        public static int Min(int x, int y) => x <= y ? x : y;
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static int Max(int val1, int val2) => Math.Max(val1, val2);
+        public static int Max(int x, int y) => x >= y ? x : y;
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static int Clamp(int value, int min, int max) => Math.Clamp(value, min, max);
-
+        public static int Clamp(int value, int min, int max) => Min(Max(value, min), max);
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static uint Clamp(uint value, uint min, uint max) => Math.Clamp(value, min, max);
+        public static uint Clamp(uint value, uint min, uint max) => Min(Max(value, min), max);
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static uint Min(uint val1, uint val2) => Math.Min(val1, val2);
+        public static uint Min(uint x, uint y) => x <= y ? x : y;
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static uint Max(uint val1, uint val2) => Math.Max(val1, val2);
+        public static uint Max(uint x, uint y) => x >= y ? x : y;
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static long Sign(long value) => Math.Sign(value);
     }

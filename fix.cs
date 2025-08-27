@@ -2,6 +2,7 @@
 using System;
 using System.Diagnostics;
 using System.Globalization;
+using System.Runtime.CompilerServices;
 using System.Runtime.Serialization;
 
 namespace DVG
@@ -30,6 +31,7 @@ namespace DVG
             raw = rawValue;
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static implicit operator fix(int a)
         {
             if(a < MinValue.raw || a > MaxValue.raw)
@@ -37,26 +39,31 @@ namespace DVG
             return new fix(a << 16);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static explicit operator float(fix a)
         {
             return (float)a.raw / One.raw;
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static explicit operator double(fix a)
         {
             return (double)a.raw / One.raw;
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static explicit operator decimal(fix a)
         {
             return (decimal)a.raw / One.raw;
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static explicit operator int(fix a)
         {
             return a.raw >> 16;
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static explicit operator fix(float a)
         {
             var temp = a * One.raw;
@@ -64,6 +71,7 @@ namespace DVG
             return new fix((int)temp);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static explicit operator fix(double a)
         {
             var temp = a * One.raw;
@@ -71,6 +79,7 @@ namespace DVG
             return new fix((int)temp);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static explicit operator fix(decimal a)
         {
             var temp = a * One.raw;
@@ -78,32 +87,29 @@ namespace DVG
             return new fix((int)temp);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static fix operator +(fix x, fix y)
         {
             int a = x.raw;
             int b = y.raw;
-            var sum = a + b;
-            // Overflow can only happen if sign of a == sign of b, and then
-            // it causes sign of sum != sign of a.
-            if ((((a ^ b) & int.MinValue) == 0) && (((a ^ sum) & int.MinValue) != 0))
-                throw new OverflowException();
+
+            var sum = checked (a + b);
 
             return new fix(sum);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static fix operator -(fix x, fix y)
         {
             int a = x.raw;
             int b = y.raw;
-            var diff = a - b;
-            // Overflow can only happen if sign of a != sign of b, and then
-            // it causes sign of sum != sign of a.
-            if ((((a ^ b) & int.MinValue) != 0) && (((a ^ diff) & int.MinValue) != 0))
-                throw new OverflowException();
+
+            var diff = checked(a - b);
 
             return new fix(diff);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static fix operator *(fix x, fix y)
         {
             long product = (long)x.raw * y.raw;
@@ -114,6 +120,7 @@ namespace DVG
             return new fix((int)(product >> 16));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static fix operator /(fix x, fix y)
         {
             var a = x.raw;
@@ -131,82 +138,98 @@ namespace DVG
             return new fix((int)result);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static fix operator %(fix x, fix y)
         {
             return new fix(x.raw % y.raw);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static fix operator >>(fix x, int shift)
         {
             return new fix(x.raw >> shift);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static fix operator <<(fix x, int shift)
         {
             return new fix(x.raw << shift);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static fix operator -(fix x)
         {
             return new fix(-x.raw);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool operator >(fix x, fix y)
         {
             return x.raw > y.raw;
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool operator <(fix x, fix y)
         {
             return x.raw < y.raw;
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool operator >=(fix x, fix y)
         {
             return x.raw >= y.raw;
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool operator <=(fix x, fix y)
         {
             return x.raw <= y.raw;
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool operator ==(fix x, fix y)
         {
             return x.raw == y.raw;
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool operator !=(fix x, fix y)
         {
             return !(x == y);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static fix operator ++(fix x)
         {
             return x + One;
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static fix operator --(fix x)
         {
             return x - One;
         }
         
         
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public bool Equals(fix other)
         {
             return this == other;
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public int CompareTo(fix other)
         {
             return raw.CompareTo(other.raw);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public override bool Equals(object obj)
         {
             return obj is fix other && Equals(other);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public override int GetHashCode()
         {
             return raw;
