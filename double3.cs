@@ -6654,7 +6654,12 @@ namespace DVG
         /// Moves vector towards target.
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static double3 MoveTowards(double3 current, double3 target, double maxDelta) => new double3(Maths.MoveTowards(current.x, target.x, maxDelta), Maths.MoveTowards(current.y, target.y, maxDelta), Maths.MoveTowards(current.z, target.z, maxDelta));
+        public static double3 MoveTowards(double3 current, double3 target, double maxDelta)
+        {
+            var distance = Distance(current, target);
+            maxDelta = distance == 0? maxDelta: maxDelta / Distance(current, target);
+            return new double3(Maths.MoveTowards(current.x, target.x, maxDelta), Maths.MoveTowards(current.y, target.y, maxDelta), Maths.MoveTowards(current.z, target.z, maxDelta));
+        }
 
         #endregion
 

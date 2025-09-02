@@ -26,6 +26,7 @@ namespace DVG
         /// Creates fixed point number from raw integer representation
         /// </summary>
         /// <param name="rawValue"></param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public fix(int rawValue)
         {
             raw = rawValue;

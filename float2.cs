@@ -2413,7 +2413,12 @@ namespace DVG
         /// Moves vector towards target.
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float2 MoveTowards(float2 current, float2 target, float maxDelta) => new float2(Maths.MoveTowards(current.x, target.x, maxDelta), Maths.MoveTowards(current.y, target.y, maxDelta));
+        public static float2 MoveTowards(float2 current, float2 target, float maxDelta)
+        {
+            var distance = Distance(current, target);
+            maxDelta = distance == 0? maxDelta: maxDelta / Distance(current, target);
+            return new float2(Maths.MoveTowards(current.x, target.x, maxDelta), Maths.MoveTowards(current.y, target.y, maxDelta));
+        }
 
         #endregion
 

@@ -15960,7 +15960,12 @@ namespace DVG
         /// Moves vector towards target.
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static fix4 MoveTowards(fix4 current, fix4 target, fix maxDelta) => new fix4(Maths.MoveTowards(current.x, target.x, maxDelta), Maths.MoveTowards(current.y, target.y, maxDelta), Maths.MoveTowards(current.z, target.z, maxDelta), Maths.MoveTowards(current.w, target.w, maxDelta));
+        public static fix4 MoveTowards(fix4 current, fix4 target, fix maxDelta)
+        {
+            var distance = Distance(current, target);
+            maxDelta = distance == 0? maxDelta: maxDelta / Distance(current, target);
+            return new fix4(Maths.MoveTowards(current.x, target.x, maxDelta), Maths.MoveTowards(current.y, target.y, maxDelta), Maths.MoveTowards(current.z, target.z, maxDelta), Maths.MoveTowards(current.w, target.w, maxDelta));
+        }
 
         #endregion
 
