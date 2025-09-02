@@ -6657,8 +6657,8 @@ namespace DVG
         public static double3 MoveTowards(double3 current, double3 target, double maxDelta)
         {
             var distance = Distance(current, target);
-            maxDelta = distance == 0? maxDelta: maxDelta / Distance(current, target);
-            return new double3(Maths.MoveTowards(current.x, target.x, maxDelta), Maths.MoveTowards(current.y, target.y, maxDelta), Maths.MoveTowards(current.z, target.z, maxDelta));
+            distance = distance == 0 ? 1 : distance;
+            return new double3(current.x + (target.x - current.x) / distance * maxDelta, current.y + (target.y - current.y) / distance * maxDelta, current.z + (target.z - current.z) / distance * maxDelta);
         }
 
         #endregion

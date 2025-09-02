@@ -2416,8 +2416,8 @@ namespace DVG
         public static float2 MoveTowards(float2 current, float2 target, float maxDelta)
         {
             var distance = Distance(current, target);
-            maxDelta = distance == 0? maxDelta: maxDelta / Distance(current, target);
-            return new float2(Maths.MoveTowards(current.x, target.x, maxDelta), Maths.MoveTowards(current.y, target.y, maxDelta));
+            distance = distance == 0 ? 1 : distance;
+            return new float2(current.x + (target.x - current.x) / distance * maxDelta, current.y + (target.y - current.y) / distance * maxDelta);
         }
 
         #endregion
