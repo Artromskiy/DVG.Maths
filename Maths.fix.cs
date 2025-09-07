@@ -11,14 +11,7 @@ namespace DVG
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static fix Degrees(fix radians) => radians * 180 / fix.Pi;
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static fix Round(fix value)
-        {
-            int raw = value.raw;
-            int half = 0x00008000;
-            raw += raw >= 0 ? half : -half;
-            return new fix(raw & unchecked((int)0xFFFF0000));
-        }
-
+        public static fix Round(fix value) => (fix)(int)(value + Sign(value) / 2);
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static fix Abs(fix x)
         {

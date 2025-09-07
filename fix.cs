@@ -61,7 +61,9 @@ namespace DVG
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static explicit operator int(fix a)
         {
-            return a.raw >> 16;
+            int raw = a.raw;
+            int sign = raw >> 31;
+            return ((((raw ^ sign) - sign) >> 16) ^ sign) - sign;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
