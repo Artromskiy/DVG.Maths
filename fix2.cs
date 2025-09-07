@@ -2406,6 +2406,7 @@ namespace DVG
         {
             var distance = Distance(current, target);
             distance = distance == 0 ? 1 : distance;
+            maxDelta = distance <= maxDelta ? distance : maxDelta;
             return new fix2(current.x + (target.x - current.x) / distance * maxDelta, current.y + (target.y - current.y) / distance * maxDelta);
         }
 

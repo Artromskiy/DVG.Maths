@@ -6669,6 +6669,7 @@ namespace DVG
         {
             var distance = Distance(current, target);
             distance = distance == 0 ? 1 : distance;
+            maxDelta = distance <= maxDelta ? distance : maxDelta;
             return new float3(current.x + (target.x - current.x) / distance * maxDelta, current.y + (target.y - current.y) / distance * maxDelta, current.z + (target.z - current.z) / distance * maxDelta);
         }
 
