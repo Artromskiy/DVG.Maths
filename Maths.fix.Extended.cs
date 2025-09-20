@@ -22,10 +22,10 @@ namespace DVG
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static fix InvLerp(fix edge0, fix edge1, fix value) => (value - edge0) / (edge1 - edge0);
-        
+
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static fix Remap(fix source, fix sourceFrom, fix sourceTo, fix targetFrom, fix targetTo) => targetFrom + ((source - sourceFrom) * (targetTo - targetFrom) / (sourceTo - sourceFrom));
-        
+
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static fix MoveTowards(fix current, fix target, fix maxDelta)

@@ -35,7 +35,7 @@ namespace DVG
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static implicit operator fix(int a)
         {
-            if(a < MinValue.raw || a > MaxValue.raw)
+            if (a < MinValue.raw || a > MaxValue.raw)
                 throw new OverflowException();
             return new fix(a << 16);
         }
@@ -96,7 +96,7 @@ namespace DVG
             int a = x.raw;
             int b = y.raw;
 
-            var sum = checked (a + b);
+            var sum = checked(a + b);
 
             return new fix(sum);
         }
@@ -212,8 +212,8 @@ namespace DVG
         {
             return x - One;
         }
-        
-        
+
+
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public bool Equals(fix other)
         {

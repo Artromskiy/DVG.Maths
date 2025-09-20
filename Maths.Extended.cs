@@ -15,7 +15,7 @@ namespace DVG
             velocity = (velocity - (omega * temp)) * exp;
             float move = (delta + temp) * exp;
             bool stillMoving = Sign(delta) == Sign(move);
-            float final = stillMoving ? target + move: target;
+            float final = stillMoving ? target + move : target;
             velocity = stillMoving ? velocity : 0;
             return final;
         }
