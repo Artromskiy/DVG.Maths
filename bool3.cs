@@ -6547,7 +6547,7 @@ namespace DVG
         /// Returns a string representation of this vector.
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public override readonly string ToString() => x + ", " + y + ", " + z;
+        public override readonly string ToString() => $"{x}, {y}, {z}";
         
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public readonly bool Equals(bool3 other) => other == this;
@@ -6565,6 +6565,16 @@ namespace DVG
         
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool All(bool3 v) => v.x&&v.y&&v.z;
+        
+        /// <summary>
+        /// Parses vector value from string representation.
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool3 Parse(string value)
+        {
+            var values = value.Split(", ");
+            return new bool3(bool.Parse(values[0]), bool.Parse(values[1]), bool.Parse(values[2]));
+        }
 
         #endregion
 

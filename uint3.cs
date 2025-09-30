@@ -6564,7 +6564,7 @@ namespace DVG
         /// Returns a string representation of this vector.
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public override readonly string ToString() => x + ", " + y + ", " + z;
+        public override readonly string ToString() => $"{x}, {y}, {z}";
         
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public readonly bool Equals(uint3 other) => other == this;
@@ -6582,6 +6582,16 @@ namespace DVG
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint3 Clamp(uint3 v, uint min, uint max) => new uint3(Maths.Clamp(v.x, min, max), Maths.Clamp(v.y, min, max), Maths.Clamp(v.z, min, max));
+        
+        /// <summary>
+        /// Parses vector value from string representation.
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static uint3 Parse(string value)
+        {
+            var values = value.Split(", ");
+            return new uint3(uint.Parse(values[0]), uint.Parse(values[1]), uint.Parse(values[2]));
+        }
 
         #endregion
 

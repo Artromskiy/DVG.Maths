@@ -2301,7 +2301,7 @@ namespace DVG
         /// Returns a string representation of this vector.
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public override readonly string ToString() => x + ", " + y;
+        public override readonly string ToString() => $"{x}, {y}";
         
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public readonly bool Equals(fix2 other) => other == this;
@@ -2367,6 +2367,16 @@ namespace DVG
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static fix2 Clamp(fix2 v, fix min, fix max) => new fix2(Maths.Clamp(v.x, min, max), Maths.Clamp(v.y, min, max));
+        
+        /// <summary>
+        /// Parses vector value from string representation.
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static fix2 Parse(string value)
+        {
+            var values = value.Split(", ");
+            return new fix2(fix.Parse(values[0]), fix.Parse(values[1]));
+        }
         
         /// <summary>
         /// Returns the square length of this vector.

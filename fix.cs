@@ -238,6 +238,11 @@ namespace DVG
             return raw;
         }
 
+        public static fix Parse(string value)
+        {
+            return (fix)decimal.Parse(value);
+        }
+
         public override string ToString()
         {
             // Using Decimal.ToString() instead of float or double because decimal is 
