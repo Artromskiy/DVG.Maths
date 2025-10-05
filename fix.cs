@@ -242,6 +242,10 @@ namespace DVG
         {
             return (fix)decimal.Parse(value);
         }
+        public static fix Parse(string value, IFormatProvider formatProvider)
+        {
+            return (fix)decimal.Parse(value, formatProvider);
+        }
 
         public override string ToString()
         {

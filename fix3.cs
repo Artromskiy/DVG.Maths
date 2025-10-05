@@ -6631,6 +6631,16 @@ namespace DVG
         }
         
         /// <summary>
+        /// Parses vector value from string representation.
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static fix3 Parse(string value, IFormatProvider format)
+        {
+            var values = value.Split(", ");
+            return new fix3(fix.Parse(values[0], format), fix.Parse(values[1], format), fix.Parse(values[2], format));
+        }
+        
+        /// <summary>
         /// Returns the square length of this vector.
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

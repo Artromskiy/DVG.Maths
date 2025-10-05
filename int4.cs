@@ -15910,6 +15910,16 @@ namespace DVG
             var values = value.Split(", ");
             return new int4(int.Parse(values[0]), int.Parse(values[1]), int.Parse(values[2]), int.Parse(values[3]));
         }
+        
+        /// <summary>
+        /// Parses vector value from string representation.
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static int4 Parse(string value, IFormatProvider format)
+        {
+            var values = value.Split(", ");
+            return new int4(int.Parse(values[0], format), int.Parse(values[1], format), int.Parse(values[2], format), int.Parse(values[3], format));
+        }
 
         #endregion
 
