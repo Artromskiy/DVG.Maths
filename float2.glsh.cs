@@ -306,6 +306,11 @@ namespace DVG
         public static int GetHashCode(float2 v) => v.GetHashCode();
         
         /// <summary>
+        /// Compares two values
+        /// </summary>
+        public static int CompareTo(float2 v, float2 other) => v.CompareTo(other);
+        
+        /// <summary>
         /// Returns a string representation of this vector.
         /// </summary>
         public static string ToString(float2 v) => v.ToString();

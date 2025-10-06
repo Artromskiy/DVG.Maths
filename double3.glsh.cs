@@ -201,6 +201,11 @@ namespace DVG
         public static int GetHashCode(double3 v) => v.GetHashCode();
         
         /// <summary>
+        /// Compares two values
+        /// </summary>
+        public static int CompareTo(double3 v, double3 other) => v.CompareTo(other);
+        
+        /// <summary>
         /// Returns a string representation of this vector.
         /// </summary>
         public static string ToString(double3 v) => v.ToString();

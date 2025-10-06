@@ -16,7 +16,7 @@ namespace DVG
     [Serializable]
     [StructLayout(LayoutKind.Sequential)]
     [DataContract]
-    public partial struct bool2 : IEquatable<bool2>
+    public partial struct bool2 : IEquatable<bool2>, IComparable<bool2>
     {
 
         #region Fields
@@ -2296,6 +2296,12 @@ namespace DVG
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public override readonly int GetHashCode() => HashCode.Combine(x, y);
+        
+        /// <summary>
+        /// Compares two values
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public readonly int CompareTo(bool2 other) => Comparison.Combine(x, y, other.x, other.y);
         
         /// <summary>
         /// Returns a string representation of this vector.

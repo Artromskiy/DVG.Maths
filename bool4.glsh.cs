@@ -45,6 +45,11 @@ namespace DVG
         public static int GetHashCode(bool4 v) => v.GetHashCode();
         
         /// <summary>
+        /// Compares two values
+        /// </summary>
+        public static int CompareTo(bool4 v, bool4 other) => v.CompareTo(other);
+        
+        /// <summary>
         /// Returns a string representation of this vector.
         /// </summary>
         public static string ToString(bool4 v) => v.ToString();

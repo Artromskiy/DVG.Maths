@@ -16,7 +16,7 @@ namespace DVG
     [Serializable]
     [StructLayout(LayoutKind.Sequential)]
     [DataContract]
-    public partial struct uint2 : IEquatable<uint2>
+    public partial struct uint2 : IEquatable<uint2>, IComparable<uint2>
     {
 
         #region Fields
@@ -2313,6 +2313,12 @@ namespace DVG
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public override readonly int GetHashCode() => HashCode.Combine(x, y);
+        
+        /// <summary>
+        /// Compares two values
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public readonly int CompareTo(uint2 other) => Comparison.Combine(x, y, other.x, other.y);
         
         /// <summary>
         /// Returns a string representation of this vector.

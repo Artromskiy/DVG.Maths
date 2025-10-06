@@ -81,6 +81,11 @@ namespace DVG
         public static int GetHashCode(uint3 v) => v.GetHashCode();
         
         /// <summary>
+        /// Compares two values
+        /// </summary>
+        public static int CompareTo(uint3 v, uint3 other) => v.CompareTo(other);
+        
+        /// <summary>
         /// Returns a string representation of this vector.
         /// </summary>
         public static string ToString(uint3 v) => v.ToString();

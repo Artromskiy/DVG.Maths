@@ -106,6 +106,11 @@ namespace DVG
         public static int GetHashCode(fix2 v) => v.GetHashCode();
         
         /// <summary>
+        /// Compares two values
+        /// </summary>
+        public static int CompareTo(fix2 v, fix2 other) => v.CompareTo(other);
+        
+        /// <summary>
         /// Returns a string representation of this vector.
         /// </summary>
         public static string ToString(fix2 v) => v.ToString();
