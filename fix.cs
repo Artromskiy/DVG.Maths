@@ -9,18 +9,19 @@ namespace DVG
 {
     [DebuggerDisplay("Value = {ToString()}")]
     [DataContract]
-    public readonly struct fix : IEquatable<fix>, IComparable<fix>
+    [Serializable]
+    public struct fix : IEquatable<fix>, IComparable<fix>
     {
         [DataMember(Order = 0)]
-        public readonly int raw;
+        public int raw;
 
-        public static readonly fix One = new fix(0x00010000);
-        public static readonly fix Zero = new fix(0);
-        public static readonly fix MinValue = new fix(int.MinValue);
-        public static readonly fix MaxValue = new fix(int.MaxValue);
+        public static readonly fix One = new(0x00010000);
+        public static readonly fix Zero = new(0);
+        public static readonly fix MinValue = new(int.MinValue);
+        public static readonly fix MaxValue = new(int.MaxValue);
 
-        public static readonly fix Pi = new fix(205887);
-        public static readonly fix E = new fix(178145);
+        public static readonly fix Pi = new(205887);
+        public static readonly fix E = new(178145);
 
         /// <summary>
         /// Creates fixed point number from raw integer representation
@@ -215,25 +216,25 @@ namespace DVG
 
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public bool Equals(fix other)
+        public readonly bool Equals(fix other)
         {
             return this == other;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public int CompareTo(fix other)
+        public readonly int CompareTo(fix other)
         {
             return raw.CompareTo(other.raw);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public override bool Equals(object obj)
+        public override readonly bool Equals(object obj)
         {
             return obj is fix other && Equals(other);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public override int GetHashCode()
+        public override readonly int GetHashCode()
         {
             return raw;
         }
@@ -247,7 +248,7 @@ namespace DVG
             return (fix)decimal.Parse(value, formatProvider);
         }
 
-        public override string ToString()
+        public override readonly string ToString()
         {
             // Using Decimal.ToString() instead of float or double because decimal is 
             // also implemented in software. This guarantees a consistent string representation.
