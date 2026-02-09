@@ -96,28 +96,16 @@ namespace DVG
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static fix operator +(fix x, fix y)
-        {
-            return checked(x.raw + y.raw);
-        }
+        public static fix operator +(fix x, fix y) => new(checked(x.raw + y.raw));
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static fix operator -(fix x, fix y)
-        {
-            return checked(x.raw - y.raw);
-        }
+        public static fix operator -(fix x, fix y) => new(checked(x.raw - y.raw));
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static fix operator *(int x, fix y)
-        {
-            return checked(x * y.raw);
-        }
+        public static fix operator *(int x, fix y) => new(checked(x * y.raw));
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static fix operator *(fix x, int y)
-        {
-            return checked(x.raw * y);
-        }
+        public static fix operator *(fix x, int y) => new(checked(x.raw * y));
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static fix operator *(fix x, fix y)
@@ -146,117 +134,60 @@ namespace DVG
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static fix operator %(fix x, fix y)
-        {
-            return new fix(x.raw % y.raw);
-        }
+        public static fix operator %(fix x, fix y) => new(x.raw % y.raw);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static fix operator >>(fix x, int shift)
-        {
-            return new fix(x.raw >> shift);
-        }
+        public static fix operator >>(fix x, int shift) => new(x.raw >> shift);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static fix operator <<(fix x, int shift)
-        {
-            return new fix(x.raw << shift);
-        }
+        public static fix operator <<(fix x, int shift) => new(x.raw << shift);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static fix operator -(fix x)
-        {
-            return new fix(-x.raw);
-        }
+        public static fix operator -(fix x) => new(-x.raw);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static bool operator >(fix x, fix y)
-        {
-            return x.raw > y.raw;
-        }
+        public static bool operator >(fix x, fix y) => x.raw > y.raw;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static bool operator <(fix x, fix y)
-        {
-            return x.raw < y.raw;
-        }
+        public static bool operator <(fix x, fix y) => x.raw < y.raw;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static bool operator >=(fix x, fix y)
-        {
-            return x.raw >= y.raw;
-        }
+        public static bool operator >=(fix x, fix y) => x.raw >= y.raw;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static bool operator <=(fix x, fix y)
-        {
-            return x.raw <= y.raw;
-        }
+        public static bool operator <=(fix x, fix y) => x.raw <= y.raw;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static bool operator ==(fix x, fix y)
-        {
-            return x.raw == y.raw;
-        }
+        public static bool operator ==(fix x, fix y) => x.raw == y.raw;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static bool operator !=(fix x, fix y)
-        {
-            return x.raw != y.raw;
-        }
+        public static bool operator !=(fix x, fix y) => x.raw != y.raw;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static fix operator ++(fix x)
-        {
-            return new fix(x.raw + RawOne);
-        }
+        public static fix operator ++(fix x) => new(x.raw + RawOne);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static fix operator --(fix x)
-        {
-            return new fix(x.raw - RawOne);
-        }
+        public static fix operator --(fix x) => new(x.raw - RawOne);
 
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public readonly bool Equals(fix other)
-        {
-            return this == other;
-        }
+        public readonly bool Equals(fix other) => this == other;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public readonly int CompareTo(fix other)
-        {
-            return raw.CompareTo(other.raw);
-        }
+        public readonly int CompareTo(fix other) => raw.CompareTo(other.raw);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public override readonly bool Equals(object obj)
-        {
-            return obj is fix other && Equals(other);
-        }
+        public override readonly bool Equals(object obj) => obj is fix other && Equals(other);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public override readonly int GetHashCode()
-        {
-            return raw;
-        }
+        public override readonly int GetHashCode() => raw;
 
-        public static fix Parse(string value)
-        {
-            return (fix)decimal.Parse(value);
-        }
-        public static fix Parse(string value, IFormatProvider formatProvider)
-        {
-            return (fix)decimal.Parse(value, formatProvider);
-        }
+        public static fix Parse(string value) => (fix)decimal.Parse(value);
+        public static fix Parse(string value, IFormatProvider formatProvider) => (fix)decimal.Parse(value, formatProvider);
 
-        public override readonly string ToString()
-        {
-            // Using Decimal.ToString() instead of float or double because decimal is 
-            // also implemented in software. This guarantees a consistent string representation.
-            return ((decimal)this).ToString(CultureInfo.InvariantCulture);
-        }
+        // Using Decimal.ToString() instead of float or double because decimal is 
+        // also implemented in software. This guarantees a consistent string representation.
+        public override readonly string ToString() => ((decimal)this).ToString(CultureInfo.InvariantCulture);
 
     }
 }
