@@ -10,7 +10,7 @@ namespace DVG
     [DebuggerDisplay("Value = {ToString()}")]
     [DataContract]
     [Serializable]
-    public struct fix : IEquatable<fix>, IComparable<fix>
+    public partial struct fix : IEquatable<fix>, IComparable<fix>
     {
         [DataMember(Order = 0)]
         public int raw;
@@ -111,6 +111,28 @@ namespace DVG
             var diff = checked(a - b);
 
             return new fix(diff);
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static fix operator *(int x, fix y)
+        {
+            int a = x;
+            int b = y.raw;
+
+            var sum = checked(a * b);
+
+            return new fix(sum);
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static fix operator *(fix x, int y)
+        {
+            int a = x.raw;
+            int b = y;
+
+            var sum = checked(a * b);
+
+            return new fix(sum);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
