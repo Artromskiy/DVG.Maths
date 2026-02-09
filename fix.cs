@@ -120,7 +120,7 @@ namespace DVG
             long upper = product >> 47;
             if (upper != 0 && upper != -1)
                 throw new OverflowException();
-            product += 0x8000L * Maths.Sign(product);
+            product += (product >> 63) | 0x8000L;
             return new fix((int)(product >> 16));
         }
 
@@ -199,7 +199,7 @@ namespace DVG
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool operator !=(fix x, fix y)
         {
-            return !(x == y);
+            return x.raw != y.raw;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
