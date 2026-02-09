@@ -15,13 +15,17 @@ namespace DVG
         [DataMember(Order = 0)]
         public int raw;
 
-        public static readonly fix One = new(0x00010000);
+        public static readonly fix One = new(RawOne);
         public static readonly fix Zero = new(0);
         public static readonly fix MinValue = new(int.MinValue);
         public static readonly fix MaxValue = new(int.MaxValue);
 
         public static readonly fix Pi = new(205887);
         public static readonly fix E = new(178145);
+
+        private const int RawOne = 0x00010000;
+        private const int MinIntValue = short.MinValue;
+        private const int MaxIntValue = short.MaxValue;
 
         /// <summary>
         /// Creates fixed point number from raw integer representation
@@ -36,7 +40,7 @@ namespace DVG
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static implicit operator fix(int a)
         {
-            if (a < MinValue.raw || a > MaxValue.raw)
+            if (a < MinIntValue || a > MaxIntValue)
                 throw new OverflowException();
             return new fix(a << 16);
         }
@@ -94,45 +98,25 @@ namespace DVG
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static fix operator +(fix x, fix y)
         {
-            int a = x.raw;
-            int b = y.raw;
-
-            var sum = checked(a + b);
-
-            return new fix(sum);
+            return checked(x.raw + y.raw);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static fix operator -(fix x, fix y)
         {
-            int a = x.raw;
-            int b = y.raw;
-
-            var diff = checked(a - b);
-
-            return new fix(diff);
+            return checked(x.raw - y.raw);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static fix operator *(int x, fix y)
         {
-            int a = x;
-            int b = y.raw;
-
-            var sum = checked(a * b);
-
-            return new fix(sum);
+            return checked(x * y.raw);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static fix operator *(fix x, int y)
         {
-            int a = x.raw;
-            int b = y;
-
-            var sum = checked(a * b);
-
-            return new fix(sum);
+            return checked(x.raw * y);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -149,14 +133,11 @@ namespace DVG
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static fix operator /(fix x, fix y)
         {
-            var a = x.raw;
-            var b = y.raw;
-
-            if (b == 0)
+            if (0 == y.raw)
                 throw new InvalidOperationException();
 
-            long scaled = ((long)a << 16);
-            long result = scaled / b;
+            long scaled = ((long)x.raw << 16);
+            long result = scaled / y.raw;
 
             if (result > MaxValue.raw || result < MinValue.raw)
                 throw new OverflowException();
@@ -227,13 +208,13 @@ namespace DVG
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static fix operator ++(fix x)
         {
-            return x + One;
+            return new fix(x.raw + RawOne);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static fix operator --(fix x)
         {
-            return x - One;
+            return new fix(x.raw - RawOne);
         }
 
 
