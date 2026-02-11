@@ -4,7 +4,7 @@
 
 A lightweight, engine-agnostic mathematics library for .NET.
 
-This library provides fixed-point arithmetic, vector types, and a wide set of math utilities without any dependency on **System.Numerics**, **Unity**, or other game engines. It is designed for deterministic simulations, custom engines, server-side logic, and projects where full control over numeric behavior is required.
+This library provides fixed-point arithmetic, vector types, swizzling support, and a wide set of math utilities without any dependency on **System.Numerics**, **Unity**, or other game engines. It is designed for deterministic simulations, custom engines, server-side logic, and projects where full control over numeric behavior is required.
 
 ---
 
@@ -17,52 +17,122 @@ This library provides fixed-point arithmetic, vector types, and a wide set of ma
 * Pure .NET implementation
 * Suitable for runtime and server environments
 
-### ✔ Fixed-Point Arithmetic (`fix`)
+---
 
-* 16.16 fixed-point implementation
-* Deterministic and overflow-checked arithmetic
+## 🔢 Fixed-Point Arithmetic (`fix`)
+
+A 16.16 fixed-point implementation focused on deterministic behavior.
+
+### Characteristics
+
+* 16-bit integer part, 16-bit fractional part
+* Overflow-checked arithmetic
+* Deterministic string formatting (via `decimal`)
 * Explicit/implicit conversions to and from:
 
   * `int`
   * `float`
   * `double`
   * `decimal`
-* Software-based string formatting for deterministic output
-* Constants: `Zero`, `One`, `MinValue`, `MaxValue`, `Pi`, `E`
 
-Supports:
+### Constants
+
+* `Zero`
+* `One`
+* `MinValue`
+* `MaxValue`
+* `Pi`
+* `E`
+
+### Supported Operations
 
 * Arithmetic operators (`+`, `-`, `*`, `/`, `%`)
 * Bitwise operators (`&`, `|`, `^`, `~`, `<<`, `>>`)
 * Comparison operators
 * Increment / decrement
-* Parsing and formatting
+* Parsing (`Parse`)
 * Hashing and comparison
 
-Designed for deterministic gameplay logic and lockstep simulations.
+Ideal for deterministic gameplay logic, lockstep multiplayer, and simulation systems.
 
 ---
 
 ## 📐 Vector Types
 
-The library includes scalar and vector types for multiple numeric formats:
+The library provides vector types for multiple numeric formats.
+
+### Boolean Vectors
+
+* `bool2`
+* `bool3`
+* `bool4`
+
+Useful for:
+
+* Masking
+* Per-component comparisons
+* SIMD-like logic patterns
+* Branch-free math flows
+
+---
 
 ### 2D
 
 * `fix2`, `float2`, `double2`
 * `int2`, `uint2`
+* `bool2`
 
 ### 3D
 
 * `fix3`, `float3`, `double3`
 * `int3`, `uint3`
+* `bool3`
 
 ### 4D
 
 * `fix4`, `float4`, `double4`
 * `int4`, `uint4`
+* `bool4`
 
-### Common Vector Operations
+---
+
+## 🔁 Swizzling
+
+Swizzling is supported up to 4 dimensions.
+
+You can reorder components or construct new vectors from existing ones in a familiar shader-style way.
+
+Examples:
+
+```csharp
+fix3 v = new fix3(3, 1, 5);
+
+var xy = v.xy;      // fix2(3, 1)
+var yzx = v.yzx;    // fix3(1, 5, 3)
+var xxxx = v.xxxx;  // fix4(3, 3, 3, 3)
+```
+
+### Zero-Swizzle Support
+
+Special underscore-prefixed swizzles allow injecting zero into specific components.
+
+Example:
+
+```csharp
+fix3 v = new fix3(3, 1, 5);
+
+var result = v._xy;   // fix3(0, 1, 5)
+```
+
+This allows convenient construction of partially zeroed vectors without extra allocations or helper calls.
+
+Swizzling is available up to 4 components.
+
+---
+
+## 📊 Common Vector Operations
+
+Across numeric vector types:
 
 * `Length`, `SqrLength`
 * `Distance`, `SqrDistance`
@@ -81,9 +151,9 @@ The library includes scalar and vector types for multiple numeric formats:
 
 Comparison helpers:
 
-* `LesserThan`, `GreaterThan`
+* `LesserThan`, `LesserThanEqual`
+* `GreaterThan`, `GreaterThanEqual`
 * `Equal`, `NotEqual`
-* etc.
 
 ---
 
@@ -97,9 +167,7 @@ The `Maths` static class provides a consistent math API for:
 * `uint`
 * `long`
 
-### Included Functions
-
-#### Interpolation & Mapping
+### Interpolation & Mapping
 
 * `Lerp`
 * `InvLerp`
@@ -108,14 +176,14 @@ The `Maths` static class provides a consistent math API for:
 * `Remap`
 * `Mix`
 
-#### Trigonometry
+### Trigonometry
 
 * `Sin`, `Cos`, `Tan`
 * `Asin`, `Acos`, `Atan`, `Atan2`
 * Hyperbolic functions
 * `Radians`, `Degrees`
 
-#### Exponential & Logarithmic
+### Exponential & Logarithmic
 
 * `Pow`
 * `Exp`, `Exp2`
@@ -123,7 +191,7 @@ The `Maths` static class provides a consistent math API for:
 * `Sqrt`, `InverseSqrt`
 * `Cbrt`
 
-#### Rounding & Precision
+### Rounding & Precision
 
 * `Floor`
 * `Ceil`
@@ -134,7 +202,7 @@ The `Maths` static class provides a consistent math API for:
 * `Mod`
 * `Fma`
 
-#### Utility
+### Utility
 
 * `Min`, `Max`, `Clamp`
 * `Abs`, `Sign`
@@ -147,18 +215,18 @@ The `Maths` static class provides a consistent math API for:
 * `IsNaN`
 * `IsInfinity`
 
-The API is designed to feel familiar to developers coming from GLSL, HLSL, Unity.Mathematics, or System.Math — while remaining completely independent.
+The API is intentionally familiar to developers coming from GLSL, HLSL, Unity.Mathematics, or System.Math — while remaining completely independent.
 
 ---
 
 ## 🎯 Use Cases
 
 * Deterministic multiplayer games (lockstep / rollback)
-* Custom game engines
 * ECS-based architectures
+* Custom engines
 * Server-side simulations
 * Physics logic
-* Tools that require predictable numeric behavior
+* Tools requiring predictable numeric behavior
 * Projects where floating-point nondeterminism is unacceptable
 
 ---
@@ -184,7 +252,7 @@ fix b = (fix)2;
 
 fix result = a * b;
 
-fix2 position = new fix2(a, b);
+fix3 position = new fix3(a, b, fix.One);
 fix length = position.Length();
 
 float angle = Maths.Radians(90f);
@@ -192,4 +260,4 @@ float angle = Maths.Radians(90f);
 
 ---
 
-If you are building systems where numeric behavior matters — especially in multiplayer or simulation-heavy environments — this library aims to give you predictable, portable math without hidden engine assumptions.
+If you are building systems where numeric behavior must be predictable — especially in multiplayer or simulation-heavy environments — this library provides a portable and deterministic math foundation without engine constraints.
