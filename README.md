@@ -1,6 +1,6 @@
 ---
 
-# DVG.Math
+# DVG.Maths
 
 A lightweight, engine-agnostic mathematics library for .NET.
 
