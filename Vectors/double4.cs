@@ -15988,10 +15988,10 @@ namespace DVG
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double4 MoveTowards(double4 current, double4 target, double maxDelta)
         {
-            var distance = Distance(current, target);
-            distance = distance == 0 ? 1 : distance;
-            maxDelta = distance <= maxDelta ? distance : maxDelta;
-            return new double4(current.x + (target.x - current.x) / distance * maxDelta, current.y + (target.y - current.y) / distance * maxDelta, current.z + (target.z - current.z) / distance * maxDelta, current.w + (target.w - current.w) / distance * maxDelta);
+            var delta = target - current;
+            var sqrDist = SqrLength(delta);
+            return sqrDist <= maxDelta * maxDelta ? target :
+            current + delta * maxDelta * Maths.InverseSqrt(sqrDist);
         }
 
         #endregion

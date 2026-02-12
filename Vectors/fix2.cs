@@ -2430,10 +2430,10 @@ namespace DVG
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static fix2 MoveTowards(fix2 current, fix2 target, fix maxDelta)
         {
-            var distance = Distance(current, target);
-            distance = distance == 0 ? 1 : distance;
-            maxDelta = distance <= maxDelta ? distance : maxDelta;
-            return new fix2(current.x + (target.x - current.x) / distance * maxDelta, current.y + (target.y - current.y) / distance * maxDelta);
+            var delta = target - current;
+            var sqrDist = SqrLength(delta);
+            return sqrDist <= maxDelta * maxDelta ? target :
+            current + delta * maxDelta * Maths.InverseSqrt(sqrDist);
         }
 
         #endregion
