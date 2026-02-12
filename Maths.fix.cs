@@ -220,5 +220,7 @@ namespace DVG
 
             return result;
         }
+        public static fix InverseSqrt(fix value) => fix.One / Sqrt(value);
+
     }
 }
