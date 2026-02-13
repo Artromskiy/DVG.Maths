@@ -24,8 +24,6 @@ namespace DVG
         public static readonly fix E = new(178145);
 
         private const int RawOne = 0x00010000;
-        private const int MinIntValue = short.MinValue;
-        private const int MaxIntValue = short.MaxValue;
 
         /// <summary>
         /// Creates fixed point number from raw integer representation
@@ -40,9 +38,7 @@ namespace DVG
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static implicit operator fix(int a)
         {
-            if (a < MinIntValue || a > MaxIntValue)
-                throw new OverflowException();
-            return new fix(a << 16);
+            return new fix(checked(a << 16));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
