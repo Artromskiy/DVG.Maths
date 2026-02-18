@@ -3764,9 +3764,9 @@ namespace DVG
             readonly get => new fix4(x, y, z, w);
             set
             {
-                w = value.x;
-                w = value.y;
-                w = value.z;
+                x = value.x;
+                y = value.y;
+                z = value.z;
                 w = value.w;
             }
         }
@@ -3780,9 +3780,9 @@ namespace DVG
             readonly get => new fix4(x, y, z, w);
             set
             {
-                w = value.x;
-                w = value.y;
-                w = value.z;
+                x = value.x;
+                y = value.y;
+                z = value.z;
                 w = value.w;
             }
         }
@@ -3796,9 +3796,9 @@ namespace DVG
             readonly get => new fix4(x, y, z, w);
             set
             {
-                w = value.x;
-                w = value.y;
-                w = value.z;
+                x = value.x;
+                y = value.y;
+                z = value.z;
                 w = value.w;
             }
         }
@@ -3866,10 +3866,10 @@ namespace DVG
             readonly get => new fix4(x, y, w, z);
             set
             {
-                w = value.x;
-                w = value.y;
+                x = value.x;
+                y = value.y;
                 w = value.z;
-                w = value.w;
+                z = value.w;
             }
         }
         
@@ -3882,10 +3882,10 @@ namespace DVG
             readonly get => new fix4(x, y, w, z);
             set
             {
-                w = value.x;
-                w = value.y;
+                x = value.x;
+                y = value.y;
                 w = value.z;
-                w = value.w;
+                z = value.w;
             }
         }
         
@@ -3898,10 +3898,10 @@ namespace DVG
             readonly get => new fix4(x, y, w, z);
             set
             {
-                w = value.x;
-                w = value.y;
+                x = value.x;
+                y = value.y;
                 w = value.z;
-                w = value.w;
+                z = value.w;
             }
         }
         
@@ -4184,9 +4184,9 @@ namespace DVG
             readonly get => new fix4(x, z, y, w);
             set
             {
-                w = value.x;
-                w = value.y;
-                w = value.z;
+                x = value.x;
+                z = value.y;
+                y = value.z;
                 w = value.w;
             }
         }
@@ -4200,9 +4200,9 @@ namespace DVG
             readonly get => new fix4(x, z, y, w);
             set
             {
-                w = value.x;
-                w = value.y;
-                w = value.z;
+                x = value.x;
+                z = value.y;
+                y = value.z;
                 w = value.w;
             }
         }
@@ -4216,9 +4216,9 @@ namespace DVG
             readonly get => new fix4(x, z, y, w);
             set
             {
-                w = value.x;
-                w = value.y;
-                w = value.z;
+                x = value.x;
+                z = value.y;
+                y = value.z;
                 w = value.w;
             }
         }
@@ -4358,10 +4358,10 @@ namespace DVG
             readonly get => new fix4(x, z, w, y);
             set
             {
-                w = value.x;
-                w = value.y;
+                x = value.x;
+                z = value.y;
                 w = value.z;
-                w = value.w;
+                y = value.w;
             }
         }
         
@@ -4374,10 +4374,10 @@ namespace DVG
             readonly get => new fix4(x, z, w, y);
             set
             {
-                w = value.x;
-                w = value.y;
+                x = value.x;
+                z = value.y;
                 w = value.z;
-                w = value.w;
+                y = value.w;
             }
         }
         
@@ -4390,10 +4390,10 @@ namespace DVG
             readonly get => new fix4(x, z, w, y);
             set
             {
-                w = value.x;
-                w = value.y;
+                x = value.x;
+                z = value.y;
                 w = value.z;
-                w = value.w;
+                y = value.w;
             }
         }
         
@@ -4676,10 +4676,10 @@ namespace DVG
             readonly get => new fix4(x, w, y, z);
             set
             {
-                w = value.x;
+                x = value.x;
                 w = value.y;
-                w = value.z;
-                w = value.w;
+                y = value.z;
+                z = value.w;
             }
         }
         
@@ -4692,10 +4692,10 @@ namespace DVG
             readonly get => new fix4(x, w, y, z);
             set
             {
-                w = value.x;
+                x = value.x;
                 w = value.y;
-                w = value.z;
-                w = value.w;
+                y = value.z;
+                z = value.w;
             }
         }
         
@@ -4708,10 +4708,10 @@ namespace DVG
             readonly get => new fix4(x, w, y, z);
             set
             {
-                w = value.x;
+                x = value.x;
                 w = value.y;
-                w = value.z;
-                w = value.w;
+                y = value.z;
+                z = value.w;
             }
         }
         
@@ -4778,10 +4778,10 @@ namespace DVG
             readonly get => new fix4(x, w, z, y);
             set
             {
-                w = value.x;
+                x = value.x;
                 w = value.y;
-                w = value.z;
-                w = value.w;
+                z = value.z;
+                y = value.w;
             }
         }
         
@@ -4794,10 +4794,10 @@ namespace DVG
             readonly get => new fix4(x, w, z, y);
             set
             {
-                w = value.x;
+                x = value.x;
                 w = value.y;
-                w = value.z;
-                w = value.w;
+                z = value.z;
+                y = value.w;
             }
         }
         
@@ -4810,10 +4810,10 @@ namespace DVG
             readonly get => new fix4(x, w, z, y);
             set
             {
-                w = value.x;
+                x = value.x;
                 w = value.y;
-                w = value.z;
-                w = value.w;
+                z = value.z;
+                y = value.w;
             }
         }
         
@@ -5744,9 +5744,9 @@ namespace DVG
             readonly get => new fix4(y, x, z, w);
             set
             {
-                w = value.x;
-                w = value.y;
-                w = value.z;
+                y = value.x;
+                x = value.y;
+                z = value.z;
                 w = value.w;
             }
         }
@@ -5760,9 +5760,9 @@ namespace DVG
             readonly get => new fix4(y, x, z, w);
             set
             {
-                w = value.x;
-                w = value.y;
-                w = value.z;
+                y = value.x;
+                x = value.y;
+                z = value.z;
                 w = value.w;
             }
         }
@@ -5776,9 +5776,9 @@ namespace DVG
             readonly get => new fix4(y, x, z, w);
             set
             {
-                w = value.x;
-                w = value.y;
-                w = value.z;
+                y = value.x;
+                x = value.y;
+                z = value.z;
                 w = value.w;
             }
         }
@@ -5846,10 +5846,10 @@ namespace DVG
             readonly get => new fix4(y, x, w, z);
             set
             {
-                w = value.x;
-                w = value.y;
+                y = value.x;
+                x = value.y;
                 w = value.z;
-                w = value.w;
+                z = value.w;
             }
         }
         
@@ -5862,10 +5862,10 @@ namespace DVG
             readonly get => new fix4(y, x, w, z);
             set
             {
-                w = value.x;
-                w = value.y;
+                y = value.x;
+                x = value.y;
                 w = value.z;
-                w = value.w;
+                z = value.w;
             }
         }
         
@@ -5878,10 +5878,10 @@ namespace DVG
             readonly get => new fix4(y, x, w, z);
             set
             {
-                w = value.x;
-                w = value.y;
+                y = value.x;
+                x = value.y;
                 w = value.z;
-                w = value.w;
+                z = value.w;
             }
         }
         
@@ -6524,9 +6524,9 @@ namespace DVG
             readonly get => new fix4(y, z, x, w);
             set
             {
-                w = value.x;
-                w = value.y;
-                w = value.z;
+                y = value.x;
+                z = value.y;
+                x = value.z;
                 w = value.w;
             }
         }
@@ -6540,9 +6540,9 @@ namespace DVG
             readonly get => new fix4(y, z, x, w);
             set
             {
-                w = value.x;
-                w = value.y;
-                w = value.z;
+                y = value.x;
+                z = value.y;
+                x = value.z;
                 w = value.w;
             }
         }
@@ -6556,9 +6556,9 @@ namespace DVG
             readonly get => new fix4(y, z, x, w);
             set
             {
-                w = value.x;
-                w = value.y;
-                w = value.z;
+                y = value.x;
+                z = value.y;
+                x = value.z;
                 w = value.w;
             }
         }
@@ -6770,10 +6770,10 @@ namespace DVG
             readonly get => new fix4(y, z, w, x);
             set
             {
-                w = value.x;
-                w = value.y;
+                y = value.x;
+                z = value.y;
                 w = value.z;
-                w = value.w;
+                x = value.w;
             }
         }
         
@@ -6786,10 +6786,10 @@ namespace DVG
             readonly get => new fix4(y, z, w, x);
             set
             {
-                w = value.x;
-                w = value.y;
+                y = value.x;
+                z = value.y;
                 w = value.z;
-                w = value.w;
+                x = value.w;
             }
         }
         
@@ -6802,10 +6802,10 @@ namespace DVG
             readonly get => new fix4(y, z, w, x);
             set
             {
-                w = value.x;
-                w = value.y;
+                y = value.x;
+                z = value.y;
                 w = value.z;
-                w = value.w;
+                x = value.w;
             }
         }
         
@@ -7016,10 +7016,10 @@ namespace DVG
             readonly get => new fix4(y, w, x, z);
             set
             {
-                w = value.x;
+                y = value.x;
                 w = value.y;
-                w = value.z;
-                w = value.w;
+                x = value.z;
+                z = value.w;
             }
         }
         
@@ -7032,10 +7032,10 @@ namespace DVG
             readonly get => new fix4(y, w, x, z);
             set
             {
-                w = value.x;
+                y = value.x;
                 w = value.y;
-                w = value.z;
-                w = value.w;
+                x = value.z;
+                z = value.w;
             }
         }
         
@@ -7048,10 +7048,10 @@ namespace DVG
             readonly get => new fix4(y, w, x, z);
             set
             {
-                w = value.x;
+                y = value.x;
                 w = value.y;
-                w = value.z;
-                w = value.w;
+                x = value.z;
+                z = value.w;
             }
         }
         
@@ -7190,10 +7190,10 @@ namespace DVG
             readonly get => new fix4(y, w, z, x);
             set
             {
-                w = value.x;
+                y = value.x;
                 w = value.y;
-                w = value.z;
-                w = value.w;
+                z = value.z;
+                x = value.w;
             }
         }
         
@@ -7206,10 +7206,10 @@ namespace DVG
             readonly get => new fix4(y, w, z, x);
             set
             {
-                w = value.x;
+                y = value.x;
                 w = value.y;
-                w = value.z;
-                w = value.w;
+                z = value.z;
+                x = value.w;
             }
         }
         
@@ -7222,10 +7222,10 @@ namespace DVG
             readonly get => new fix4(y, w, z, x);
             set
             {
-                w = value.x;
+                y = value.x;
                 w = value.y;
-                w = value.z;
-                w = value.w;
+                z = value.z;
+                x = value.w;
             }
         }
         
@@ -8084,9 +8084,9 @@ namespace DVG
             readonly get => new fix4(z, x, y, w);
             set
             {
-                w = value.x;
-                w = value.y;
-                w = value.z;
+                z = value.x;
+                x = value.y;
+                y = value.z;
                 w = value.w;
             }
         }
@@ -8100,9 +8100,9 @@ namespace DVG
             readonly get => new fix4(z, x, y, w);
             set
             {
-                w = value.x;
-                w = value.y;
-                w = value.z;
+                z = value.x;
+                x = value.y;
+                y = value.z;
                 w = value.w;
             }
         }
@@ -8116,9 +8116,9 @@ namespace DVG
             readonly get => new fix4(z, x, y, w);
             set
             {
-                w = value.x;
-                w = value.y;
-                w = value.z;
+                z = value.x;
+                x = value.y;
+                y = value.z;
                 w = value.w;
             }
         }
@@ -8258,10 +8258,10 @@ namespace DVG
             readonly get => new fix4(z, x, w, y);
             set
             {
-                w = value.x;
-                w = value.y;
+                z = value.x;
+                x = value.y;
                 w = value.z;
-                w = value.w;
+                y = value.w;
             }
         }
         
@@ -8274,10 +8274,10 @@ namespace DVG
             readonly get => new fix4(z, x, w, y);
             set
             {
-                w = value.x;
-                w = value.y;
+                z = value.x;
+                x = value.y;
                 w = value.z;
-                w = value.w;
+                y = value.w;
             }
         }
         
@@ -8290,10 +8290,10 @@ namespace DVG
             readonly get => new fix4(z, x, w, y);
             set
             {
-                w = value.x;
-                w = value.y;
+                z = value.x;
+                x = value.y;
                 w = value.z;
-                w = value.w;
+                y = value.w;
             }
         }
         
@@ -8504,9 +8504,9 @@ namespace DVG
             readonly get => new fix4(z, y, x, w);
             set
             {
-                w = value.x;
-                w = value.y;
-                w = value.z;
+                z = value.x;
+                y = value.y;
+                x = value.z;
                 w = value.w;
             }
         }
@@ -8520,9 +8520,9 @@ namespace DVG
             readonly get => new fix4(z, y, x, w);
             set
             {
-                w = value.x;
-                w = value.y;
-                w = value.z;
+                z = value.x;
+                y = value.y;
+                x = value.z;
                 w = value.w;
             }
         }
@@ -8536,9 +8536,9 @@ namespace DVG
             readonly get => new fix4(z, y, x, w);
             set
             {
-                w = value.x;
-                w = value.y;
-                w = value.z;
+                z = value.x;
+                y = value.y;
+                x = value.z;
                 w = value.w;
             }
         }
@@ -8750,10 +8750,10 @@ namespace DVG
             readonly get => new fix4(z, y, w, x);
             set
             {
-                w = value.x;
-                w = value.y;
+                z = value.x;
+                y = value.y;
                 w = value.z;
-                w = value.w;
+                x = value.w;
             }
         }
         
@@ -8766,10 +8766,10 @@ namespace DVG
             readonly get => new fix4(z, y, w, x);
             set
             {
-                w = value.x;
-                w = value.y;
+                z = value.x;
+                y = value.y;
                 w = value.z;
-                w = value.w;
+                x = value.w;
             }
         }
         
@@ -8782,10 +8782,10 @@ namespace DVG
             readonly get => new fix4(z, y, w, x);
             set
             {
-                w = value.x;
-                w = value.y;
+                z = value.x;
+                y = value.y;
                 w = value.z;
-                w = value.w;
+                x = value.w;
             }
         }
         
@@ -9428,10 +9428,10 @@ namespace DVG
             readonly get => new fix4(z, w, x, y);
             set
             {
-                w = value.x;
+                z = value.x;
                 w = value.y;
-                w = value.z;
-                w = value.w;
+                x = value.z;
+                y = value.w;
             }
         }
         
@@ -9444,10 +9444,10 @@ namespace DVG
             readonly get => new fix4(z, w, x, y);
             set
             {
-                w = value.x;
+                z = value.x;
                 w = value.y;
-                w = value.z;
-                w = value.w;
+                x = value.z;
+                y = value.w;
             }
         }
         
@@ -9460,10 +9460,10 @@ namespace DVG
             readonly get => new fix4(z, w, x, y);
             set
             {
-                w = value.x;
+                z = value.x;
                 w = value.y;
-                w = value.z;
-                w = value.w;
+                x = value.z;
+                y = value.w;
             }
         }
         
@@ -9530,10 +9530,10 @@ namespace DVG
             readonly get => new fix4(z, w, y, x);
             set
             {
-                w = value.x;
+                z = value.x;
                 w = value.y;
-                w = value.z;
-                w = value.w;
+                y = value.z;
+                x = value.w;
             }
         }
         
@@ -9546,10 +9546,10 @@ namespace DVG
             readonly get => new fix4(z, w, y, x);
             set
             {
-                w = value.x;
+                z = value.x;
                 w = value.y;
-                w = value.z;
-                w = value.w;
+                y = value.z;
+                x = value.w;
             }
         }
         
@@ -9562,10 +9562,10 @@ namespace DVG
             readonly get => new fix4(z, w, y, x);
             set
             {
-                w = value.x;
+                z = value.x;
                 w = value.y;
-                w = value.z;
-                w = value.w;
+                y = value.z;
+                x = value.w;
             }
         }
         
@@ -10497,9 +10497,9 @@ namespace DVG
             set
             {
                 w = value.x;
-                w = value.y;
-                w = value.z;
-                w = value.w;
+                x = value.y;
+                y = value.z;
+                z = value.w;
             }
         }
         
@@ -10513,9 +10513,9 @@ namespace DVG
             set
             {
                 w = value.x;
-                w = value.y;
-                w = value.z;
-                w = value.w;
+                x = value.y;
+                y = value.z;
+                z = value.w;
             }
         }
         
@@ -10529,9 +10529,9 @@ namespace DVG
             set
             {
                 w = value.x;
-                w = value.y;
-                w = value.z;
-                w = value.w;
+                x = value.y;
+                y = value.z;
+                z = value.w;
             }
         }
         
@@ -10599,9 +10599,9 @@ namespace DVG
             set
             {
                 w = value.x;
-                w = value.y;
-                w = value.z;
-                w = value.w;
+                x = value.y;
+                z = value.z;
+                y = value.w;
             }
         }
         
@@ -10615,9 +10615,9 @@ namespace DVG
             set
             {
                 w = value.x;
-                w = value.y;
-                w = value.z;
-                w = value.w;
+                x = value.y;
+                z = value.z;
+                y = value.w;
             }
         }
         
@@ -10631,9 +10631,9 @@ namespace DVG
             set
             {
                 w = value.x;
-                w = value.y;
-                w = value.z;
-                w = value.w;
+                x = value.y;
+                z = value.z;
+                y = value.w;
             }
         }
         
@@ -10917,9 +10917,9 @@ namespace DVG
             set
             {
                 w = value.x;
-                w = value.y;
-                w = value.z;
-                w = value.w;
+                y = value.y;
+                x = value.z;
+                z = value.w;
             }
         }
         
@@ -10933,9 +10933,9 @@ namespace DVG
             set
             {
                 w = value.x;
-                w = value.y;
-                w = value.z;
-                w = value.w;
+                y = value.y;
+                x = value.z;
+                z = value.w;
             }
         }
         
@@ -10949,9 +10949,9 @@ namespace DVG
             set
             {
                 w = value.x;
-                w = value.y;
-                w = value.z;
-                w = value.w;
+                y = value.y;
+                x = value.z;
+                z = value.w;
             }
         }
         
@@ -11091,9 +11091,9 @@ namespace DVG
             set
             {
                 w = value.x;
-                w = value.y;
-                w = value.z;
-                w = value.w;
+                y = value.y;
+                z = value.z;
+                x = value.w;
             }
         }
         
@@ -11107,9 +11107,9 @@ namespace DVG
             set
             {
                 w = value.x;
-                w = value.y;
-                w = value.z;
-                w = value.w;
+                y = value.y;
+                z = value.z;
+                x = value.w;
             }
         }
         
@@ -11123,9 +11123,9 @@ namespace DVG
             set
             {
                 w = value.x;
-                w = value.y;
-                w = value.z;
-                w = value.w;
+                y = value.y;
+                z = value.z;
+                x = value.w;
             }
         }
         
@@ -11409,9 +11409,9 @@ namespace DVG
             set
             {
                 w = value.x;
-                w = value.y;
-                w = value.z;
-                w = value.w;
+                z = value.y;
+                x = value.z;
+                y = value.w;
             }
         }
         
@@ -11425,9 +11425,9 @@ namespace DVG
             set
             {
                 w = value.x;
-                w = value.y;
-                w = value.z;
-                w = value.w;
+                z = value.y;
+                x = value.z;
+                y = value.w;
             }
         }
         
@@ -11441,9 +11441,9 @@ namespace DVG
             set
             {
                 w = value.x;
-                w = value.y;
-                w = value.z;
-                w = value.w;
+                z = value.y;
+                x = value.z;
+                y = value.w;
             }
         }
         
@@ -11511,9 +11511,9 @@ namespace DVG
             set
             {
                 w = value.x;
-                w = value.y;
-                w = value.z;
-                w = value.w;
+                z = value.y;
+                y = value.z;
+                x = value.w;
             }
         }
         
@@ -11527,9 +11527,9 @@ namespace DVG
             set
             {
                 w = value.x;
-                w = value.y;
-                w = value.z;
-                w = value.w;
+                z = value.y;
+                y = value.z;
+                x = value.w;
             }
         }
         
@@ -11543,9 +11543,9 @@ namespace DVG
             set
             {
                 w = value.x;
-                w = value.y;
-                w = value.z;
-                w = value.w;
+                z = value.y;
+                y = value.z;
+                x = value.w;
             }
         }
         
@@ -12908,9 +12908,9 @@ namespace DVG
             readonly get => new fix3(x, y, z);
             set
             {
-                w = value.x;
-                w = value.y;
-                w = value.z;
+                x = value.x;
+                y = value.y;
+                z = value.z;
             }
         }
         
@@ -12923,9 +12923,9 @@ namespace DVG
             readonly get => new fix3(x, y, z);
             set
             {
-                w = value.x;
-                w = value.y;
-                w = value.z;
+                x = value.x;
+                y = value.y;
+                z = value.z;
             }
         }
         
@@ -12938,9 +12938,9 @@ namespace DVG
             readonly get => new fix3(x, y, z);
             set
             {
-                w = value.x;
-                w = value.y;
-                w = value.z;
+                x = value.x;
+                y = value.y;
+                z = value.z;
             }
         }
         
@@ -12953,8 +12953,8 @@ namespace DVG
             readonly get => new fix3(x, y, w);
             set
             {
-                w = value.x;
-                w = value.y;
+                x = value.x;
+                y = value.y;
                 w = value.z;
             }
         }
@@ -12968,8 +12968,8 @@ namespace DVG
             readonly get => new fix3(x, y, w);
             set
             {
-                w = value.x;
-                w = value.y;
+                x = value.x;
+                y = value.y;
                 w = value.z;
             }
         }
@@ -12983,8 +12983,8 @@ namespace DVG
             readonly get => new fix3(x, y, w);
             set
             {
-                w = value.x;
-                w = value.y;
+                x = value.x;
+                y = value.y;
                 w = value.z;
             }
         }
@@ -13034,9 +13034,9 @@ namespace DVG
             readonly get => new fix3(x, z, y);
             set
             {
-                w = value.x;
-                w = value.y;
-                w = value.z;
+                x = value.x;
+                z = value.y;
+                y = value.z;
             }
         }
         
@@ -13049,9 +13049,9 @@ namespace DVG
             readonly get => new fix3(x, z, y);
             set
             {
-                w = value.x;
-                w = value.y;
-                w = value.z;
+                x = value.x;
+                z = value.y;
+                y = value.z;
             }
         }
         
@@ -13064,9 +13064,9 @@ namespace DVG
             readonly get => new fix3(x, z, y);
             set
             {
-                w = value.x;
-                w = value.y;
-                w = value.z;
+                x = value.x;
+                z = value.y;
+                y = value.z;
             }
         }
         
@@ -13097,8 +13097,8 @@ namespace DVG
             readonly get => new fix3(x, z, w);
             set
             {
-                w = value.x;
-                w = value.y;
+                x = value.x;
+                z = value.y;
                 w = value.z;
             }
         }
@@ -13112,8 +13112,8 @@ namespace DVG
             readonly get => new fix3(x, z, w);
             set
             {
-                w = value.x;
-                w = value.y;
+                x = value.x;
+                z = value.y;
                 w = value.z;
             }
         }
@@ -13127,8 +13127,8 @@ namespace DVG
             readonly get => new fix3(x, z, w);
             set
             {
-                w = value.x;
-                w = value.y;
+                x = value.x;
+                z = value.y;
                 w = value.z;
             }
         }
@@ -13178,9 +13178,9 @@ namespace DVG
             readonly get => new fix3(x, w, y);
             set
             {
-                w = value.x;
+                x = value.x;
                 w = value.y;
-                w = value.z;
+                y = value.z;
             }
         }
         
@@ -13193,9 +13193,9 @@ namespace DVG
             readonly get => new fix3(x, w, y);
             set
             {
-                w = value.x;
+                x = value.x;
                 w = value.y;
-                w = value.z;
+                y = value.z;
             }
         }
         
@@ -13208,9 +13208,9 @@ namespace DVG
             readonly get => new fix3(x, w, y);
             set
             {
-                w = value.x;
+                x = value.x;
                 w = value.y;
-                w = value.z;
+                y = value.z;
             }
         }
         
@@ -13223,9 +13223,9 @@ namespace DVG
             readonly get => new fix3(x, w, z);
             set
             {
-                w = value.x;
+                x = value.x;
                 w = value.y;
-                w = value.z;
+                z = value.z;
             }
         }
         
@@ -13238,9 +13238,9 @@ namespace DVG
             readonly get => new fix3(x, w, z);
             set
             {
-                w = value.x;
+                x = value.x;
                 w = value.y;
-                w = value.z;
+                z = value.z;
             }
         }
         
@@ -13253,9 +13253,9 @@ namespace DVG
             readonly get => new fix3(x, w, z);
             set
             {
-                w = value.x;
+                x = value.x;
                 w = value.y;
-                w = value.z;
+                z = value.z;
             }
         }
         
@@ -13430,9 +13430,9 @@ namespace DVG
             readonly get => new fix3(y, x, z);
             set
             {
-                w = value.x;
-                w = value.y;
-                w = value.z;
+                y = value.x;
+                x = value.y;
+                z = value.z;
             }
         }
         
@@ -13445,9 +13445,9 @@ namespace DVG
             readonly get => new fix3(y, x, z);
             set
             {
-                w = value.x;
-                w = value.y;
-                w = value.z;
+                y = value.x;
+                x = value.y;
+                z = value.z;
             }
         }
         
@@ -13460,9 +13460,9 @@ namespace DVG
             readonly get => new fix3(y, x, z);
             set
             {
-                w = value.x;
-                w = value.y;
-                w = value.z;
+                y = value.x;
+                x = value.y;
+                z = value.z;
             }
         }
         
@@ -13475,8 +13475,8 @@ namespace DVG
             readonly get => new fix3(y, x, w);
             set
             {
-                w = value.x;
-                w = value.y;
+                y = value.x;
+                x = value.y;
                 w = value.z;
             }
         }
@@ -13490,8 +13490,8 @@ namespace DVG
             readonly get => new fix3(y, x, w);
             set
             {
-                w = value.x;
-                w = value.y;
+                y = value.x;
+                x = value.y;
                 w = value.z;
             }
         }
@@ -13505,8 +13505,8 @@ namespace DVG
             readonly get => new fix3(y, x, w);
             set
             {
-                w = value.x;
-                w = value.y;
+                y = value.x;
+                x = value.y;
                 w = value.z;
             }
         }
@@ -13628,9 +13628,9 @@ namespace DVG
             readonly get => new fix3(y, z, x);
             set
             {
-                w = value.x;
-                w = value.y;
-                w = value.z;
+                y = value.x;
+                z = value.y;
+                x = value.z;
             }
         }
         
@@ -13643,9 +13643,9 @@ namespace DVG
             readonly get => new fix3(y, z, x);
             set
             {
-                w = value.x;
-                w = value.y;
-                w = value.z;
+                y = value.x;
+                z = value.y;
+                x = value.z;
             }
         }
         
@@ -13658,9 +13658,9 @@ namespace DVG
             readonly get => new fix3(y, z, x);
             set
             {
-                w = value.x;
-                w = value.y;
-                w = value.z;
+                y = value.x;
+                z = value.y;
+                x = value.z;
             }
         }
         
@@ -13709,8 +13709,8 @@ namespace DVG
             readonly get => new fix3(y, z, w);
             set
             {
-                w = value.x;
-                w = value.y;
+                y = value.x;
+                z = value.y;
                 w = value.z;
             }
         }
@@ -13724,8 +13724,8 @@ namespace DVG
             readonly get => new fix3(y, z, w);
             set
             {
-                w = value.x;
-                w = value.y;
+                y = value.x;
+                z = value.y;
                 w = value.z;
             }
         }
@@ -13739,8 +13739,8 @@ namespace DVG
             readonly get => new fix3(y, z, w);
             set
             {
-                w = value.x;
-                w = value.y;
+                y = value.x;
+                z = value.y;
                 w = value.z;
             }
         }
@@ -13772,9 +13772,9 @@ namespace DVG
             readonly get => new fix3(y, w, x);
             set
             {
-                w = value.x;
+                y = value.x;
                 w = value.y;
-                w = value.z;
+                x = value.z;
             }
         }
         
@@ -13787,9 +13787,9 @@ namespace DVG
             readonly get => new fix3(y, w, x);
             set
             {
-                w = value.x;
+                y = value.x;
                 w = value.y;
-                w = value.z;
+                x = value.z;
             }
         }
         
@@ -13802,9 +13802,9 @@ namespace DVG
             readonly get => new fix3(y, w, x);
             set
             {
-                w = value.x;
+                y = value.x;
                 w = value.y;
-                w = value.z;
+                x = value.z;
             }
         }
         
@@ -13835,9 +13835,9 @@ namespace DVG
             readonly get => new fix3(y, w, z);
             set
             {
-                w = value.x;
+                y = value.x;
                 w = value.y;
-                w = value.z;
+                z = value.z;
             }
         }
         
@@ -13850,9 +13850,9 @@ namespace DVG
             readonly get => new fix3(y, w, z);
             set
             {
-                w = value.x;
+                y = value.x;
                 w = value.y;
-                w = value.z;
+                z = value.z;
             }
         }
         
@@ -13865,9 +13865,9 @@ namespace DVG
             readonly get => new fix3(y, w, z);
             set
             {
-                w = value.x;
+                y = value.x;
                 w = value.y;
-                w = value.z;
+                z = value.z;
             }
         }
         
@@ -14024,9 +14024,9 @@ namespace DVG
             readonly get => new fix3(z, x, y);
             set
             {
-                w = value.x;
-                w = value.y;
-                w = value.z;
+                z = value.x;
+                x = value.y;
+                y = value.z;
             }
         }
         
@@ -14039,9 +14039,9 @@ namespace DVG
             readonly get => new fix3(z, x, y);
             set
             {
-                w = value.x;
-                w = value.y;
-                w = value.z;
+                z = value.x;
+                x = value.y;
+                y = value.z;
             }
         }
         
@@ -14054,9 +14054,9 @@ namespace DVG
             readonly get => new fix3(z, x, y);
             set
             {
-                w = value.x;
-                w = value.y;
-                w = value.z;
+                z = value.x;
+                x = value.y;
+                y = value.z;
             }
         }
         
@@ -14087,8 +14087,8 @@ namespace DVG
             readonly get => new fix3(z, x, w);
             set
             {
-                w = value.x;
-                w = value.y;
+                z = value.x;
+                x = value.y;
                 w = value.z;
             }
         }
@@ -14102,8 +14102,8 @@ namespace DVG
             readonly get => new fix3(z, x, w);
             set
             {
-                w = value.x;
-                w = value.y;
+                z = value.x;
+                x = value.y;
                 w = value.z;
             }
         }
@@ -14117,8 +14117,8 @@ namespace DVG
             readonly get => new fix3(z, x, w);
             set
             {
-                w = value.x;
-                w = value.y;
+                z = value.x;
+                x = value.y;
                 w = value.z;
             }
         }
@@ -14150,9 +14150,9 @@ namespace DVG
             readonly get => new fix3(z, y, x);
             set
             {
-                w = value.x;
-                w = value.y;
-                w = value.z;
+                z = value.x;
+                y = value.y;
+                x = value.z;
             }
         }
         
@@ -14165,9 +14165,9 @@ namespace DVG
             readonly get => new fix3(z, y, x);
             set
             {
-                w = value.x;
-                w = value.y;
-                w = value.z;
+                z = value.x;
+                y = value.y;
+                x = value.z;
             }
         }
         
@@ -14180,9 +14180,9 @@ namespace DVG
             readonly get => new fix3(z, y, x);
             set
             {
-                w = value.x;
-                w = value.y;
-                w = value.z;
+                z = value.x;
+                y = value.y;
+                x = value.z;
             }
         }
         
@@ -14231,8 +14231,8 @@ namespace DVG
             readonly get => new fix3(z, y, w);
             set
             {
-                w = value.x;
-                w = value.y;
+                z = value.x;
+                y = value.y;
                 w = value.z;
             }
         }
@@ -14246,8 +14246,8 @@ namespace DVG
             readonly get => new fix3(z, y, w);
             set
             {
-                w = value.x;
-                w = value.y;
+                z = value.x;
+                y = value.y;
                 w = value.z;
             }
         }
@@ -14261,8 +14261,8 @@ namespace DVG
             readonly get => new fix3(z, y, w);
             set
             {
-                w = value.x;
-                w = value.y;
+                z = value.x;
+                y = value.y;
                 w = value.z;
             }
         }
@@ -14384,9 +14384,9 @@ namespace DVG
             readonly get => new fix3(z, w, x);
             set
             {
-                w = value.x;
+                z = value.x;
                 w = value.y;
-                w = value.z;
+                x = value.z;
             }
         }
         
@@ -14399,9 +14399,9 @@ namespace DVG
             readonly get => new fix3(z, w, x);
             set
             {
-                w = value.x;
+                z = value.x;
                 w = value.y;
-                w = value.z;
+                x = value.z;
             }
         }
         
@@ -14414,9 +14414,9 @@ namespace DVG
             readonly get => new fix3(z, w, x);
             set
             {
-                w = value.x;
+                z = value.x;
                 w = value.y;
-                w = value.z;
+                x = value.z;
             }
         }
         
@@ -14429,9 +14429,9 @@ namespace DVG
             readonly get => new fix3(z, w, y);
             set
             {
-                w = value.x;
+                z = value.x;
                 w = value.y;
-                w = value.z;
+                y = value.z;
             }
         }
         
@@ -14444,9 +14444,9 @@ namespace DVG
             readonly get => new fix3(z, w, y);
             set
             {
-                w = value.x;
+                z = value.x;
                 w = value.y;
-                w = value.z;
+                y = value.z;
             }
         }
         
@@ -14459,9 +14459,9 @@ namespace DVG
             readonly get => new fix3(z, w, y);
             set
             {
-                w = value.x;
+                z = value.x;
                 w = value.y;
-                w = value.z;
+                y = value.z;
             }
         }
         
@@ -14637,8 +14637,8 @@ namespace DVG
             set
             {
                 w = value.x;
-                w = value.y;
-                w = value.z;
+                x = value.y;
+                y = value.z;
             }
         }
         
@@ -14652,8 +14652,8 @@ namespace DVG
             set
             {
                 w = value.x;
-                w = value.y;
-                w = value.z;
+                x = value.y;
+                y = value.z;
             }
         }
         
@@ -14667,8 +14667,8 @@ namespace DVG
             set
             {
                 w = value.x;
-                w = value.y;
-                w = value.z;
+                x = value.y;
+                y = value.z;
             }
         }
         
@@ -14682,8 +14682,8 @@ namespace DVG
             set
             {
                 w = value.x;
-                w = value.y;
-                w = value.z;
+                x = value.y;
+                z = value.z;
             }
         }
         
@@ -14697,8 +14697,8 @@ namespace DVG
             set
             {
                 w = value.x;
-                w = value.y;
-                w = value.z;
+                x = value.y;
+                z = value.z;
             }
         }
         
@@ -14712,8 +14712,8 @@ namespace DVG
             set
             {
                 w = value.x;
-                w = value.y;
-                w = value.z;
+                x = value.y;
+                z = value.z;
             }
         }
         
@@ -14763,8 +14763,8 @@ namespace DVG
             set
             {
                 w = value.x;
-                w = value.y;
-                w = value.z;
+                y = value.y;
+                x = value.z;
             }
         }
         
@@ -14778,8 +14778,8 @@ namespace DVG
             set
             {
                 w = value.x;
-                w = value.y;
-                w = value.z;
+                y = value.y;
+                x = value.z;
             }
         }
         
@@ -14793,8 +14793,8 @@ namespace DVG
             set
             {
                 w = value.x;
-                w = value.y;
-                w = value.z;
+                y = value.y;
+                x = value.z;
             }
         }
         
@@ -14826,8 +14826,8 @@ namespace DVG
             set
             {
                 w = value.x;
-                w = value.y;
-                w = value.z;
+                y = value.y;
+                z = value.z;
             }
         }
         
@@ -14841,8 +14841,8 @@ namespace DVG
             set
             {
                 w = value.x;
-                w = value.y;
-                w = value.z;
+                y = value.y;
+                z = value.z;
             }
         }
         
@@ -14856,8 +14856,8 @@ namespace DVG
             set
             {
                 w = value.x;
-                w = value.y;
-                w = value.z;
+                y = value.y;
+                z = value.z;
             }
         }
         
@@ -14907,8 +14907,8 @@ namespace DVG
             set
             {
                 w = value.x;
-                w = value.y;
-                w = value.z;
+                z = value.y;
+                x = value.z;
             }
         }
         
@@ -14922,8 +14922,8 @@ namespace DVG
             set
             {
                 w = value.x;
-                w = value.y;
-                w = value.z;
+                z = value.y;
+                x = value.z;
             }
         }
         
@@ -14937,8 +14937,8 @@ namespace DVG
             set
             {
                 w = value.x;
-                w = value.y;
-                w = value.z;
+                z = value.y;
+                x = value.z;
             }
         }
         
@@ -14952,8 +14952,8 @@ namespace DVG
             set
             {
                 w = value.x;
-                w = value.y;
-                w = value.z;
+                z = value.y;
+                y = value.z;
             }
         }
         
@@ -14967,8 +14967,8 @@ namespace DVG
             set
             {
                 w = value.x;
-                w = value.y;
-                w = value.z;
+                z = value.y;
+                y = value.z;
             }
         }
         
@@ -14982,8 +14982,8 @@ namespace DVG
             set
             {
                 w = value.x;
-                w = value.y;
-                w = value.z;
+                z = value.y;
+                y = value.z;
             }
         }
         
@@ -15230,8 +15230,8 @@ namespace DVG
             readonly get => new fix2(x, y);
             set
             {
-                w = value.x;
-                w = value.y;
+                x = value.x;
+                y = value.y;
             }
         }
         
@@ -15244,8 +15244,8 @@ namespace DVG
             readonly get => new fix2(x, y);
             set
             {
-                w = value.x;
-                w = value.y;
+                x = value.x;
+                y = value.y;
             }
         }
         
@@ -15258,8 +15258,8 @@ namespace DVG
             readonly get => new fix2(x, y);
             set
             {
-                w = value.x;
-                w = value.y;
+                x = value.x;
+                y = value.y;
             }
         }
         
@@ -15272,8 +15272,8 @@ namespace DVG
             readonly get => new fix2(x, z);
             set
             {
-                w = value.x;
-                w = value.y;
+                x = value.x;
+                z = value.y;
             }
         }
         
@@ -15286,8 +15286,8 @@ namespace DVG
             readonly get => new fix2(x, z);
             set
             {
-                w = value.x;
-                w = value.y;
+                x = value.x;
+                z = value.y;
             }
         }
         
@@ -15300,8 +15300,8 @@ namespace DVG
             readonly get => new fix2(x, z);
             set
             {
-                w = value.x;
-                w = value.y;
+                x = value.x;
+                z = value.y;
             }
         }
         
@@ -15314,7 +15314,7 @@ namespace DVG
             readonly get => new fix2(x, w);
             set
             {
-                w = value.x;
+                x = value.x;
                 w = value.y;
             }
         }
@@ -15328,7 +15328,7 @@ namespace DVG
             readonly get => new fix2(x, w);
             set
             {
-                w = value.x;
+                x = value.x;
                 w = value.y;
             }
         }
@@ -15342,7 +15342,7 @@ namespace DVG
             readonly get => new fix2(x, w);
             set
             {
-                w = value.x;
+                x = value.x;
                 w = value.y;
             }
         }
@@ -15374,8 +15374,8 @@ namespace DVG
             readonly get => new fix2(y, x);
             set
             {
-                w = value.x;
-                w = value.y;
+                y = value.x;
+                x = value.y;
             }
         }
         
@@ -15388,8 +15388,8 @@ namespace DVG
             readonly get => new fix2(y, x);
             set
             {
-                w = value.x;
-                w = value.y;
+                y = value.x;
+                x = value.y;
             }
         }
         
@@ -15402,8 +15402,8 @@ namespace DVG
             readonly get => new fix2(y, x);
             set
             {
-                w = value.x;
-                w = value.y;
+                y = value.x;
+                x = value.y;
             }
         }
         
@@ -15434,8 +15434,8 @@ namespace DVG
             readonly get => new fix2(y, z);
             set
             {
-                w = value.x;
-                w = value.y;
+                y = value.x;
+                z = value.y;
             }
         }
         
@@ -15448,8 +15448,8 @@ namespace DVG
             readonly get => new fix2(y, z);
             set
             {
-                w = value.x;
-                w = value.y;
+                y = value.x;
+                z = value.y;
             }
         }
         
@@ -15462,8 +15462,8 @@ namespace DVG
             readonly get => new fix2(y, z);
             set
             {
-                w = value.x;
-                w = value.y;
+                y = value.x;
+                z = value.y;
             }
         }
         
@@ -15476,7 +15476,7 @@ namespace DVG
             readonly get => new fix2(y, w);
             set
             {
-                w = value.x;
+                y = value.x;
                 w = value.y;
             }
         }
@@ -15490,7 +15490,7 @@ namespace DVG
             readonly get => new fix2(y, w);
             set
             {
-                w = value.x;
+                y = value.x;
                 w = value.y;
             }
         }
@@ -15504,7 +15504,7 @@ namespace DVG
             readonly get => new fix2(y, w);
             set
             {
-                w = value.x;
+                y = value.x;
                 w = value.y;
             }
         }
@@ -15536,8 +15536,8 @@ namespace DVG
             readonly get => new fix2(z, x);
             set
             {
-                w = value.x;
-                w = value.y;
+                z = value.x;
+                x = value.y;
             }
         }
         
@@ -15550,8 +15550,8 @@ namespace DVG
             readonly get => new fix2(z, x);
             set
             {
-                w = value.x;
-                w = value.y;
+                z = value.x;
+                x = value.y;
             }
         }
         
@@ -15564,8 +15564,8 @@ namespace DVG
             readonly get => new fix2(z, x);
             set
             {
-                w = value.x;
-                w = value.y;
+                z = value.x;
+                x = value.y;
             }
         }
         
@@ -15578,8 +15578,8 @@ namespace DVG
             readonly get => new fix2(z, y);
             set
             {
-                w = value.x;
-                w = value.y;
+                z = value.x;
+                y = value.y;
             }
         }
         
@@ -15592,8 +15592,8 @@ namespace DVG
             readonly get => new fix2(z, y);
             set
             {
-                w = value.x;
-                w = value.y;
+                z = value.x;
+                y = value.y;
             }
         }
         
@@ -15606,8 +15606,8 @@ namespace DVG
             readonly get => new fix2(z, y);
             set
             {
-                w = value.x;
-                w = value.y;
+                z = value.x;
+                y = value.y;
             }
         }
         
@@ -15638,7 +15638,7 @@ namespace DVG
             readonly get => new fix2(z, w);
             set
             {
-                w = value.x;
+                z = value.x;
                 w = value.y;
             }
         }
@@ -15652,7 +15652,7 @@ namespace DVG
             readonly get => new fix2(z, w);
             set
             {
-                w = value.x;
+                z = value.x;
                 w = value.y;
             }
         }
@@ -15666,7 +15666,7 @@ namespace DVG
             readonly get => new fix2(z, w);
             set
             {
-                w = value.x;
+                z = value.x;
                 w = value.y;
             }
         }
@@ -15699,7 +15699,7 @@ namespace DVG
             set
             {
                 w = value.x;
-                w = value.y;
+                x = value.y;
             }
         }
         
@@ -15713,7 +15713,7 @@ namespace DVG
             set
             {
                 w = value.x;
-                w = value.y;
+                x = value.y;
             }
         }
         
@@ -15727,7 +15727,7 @@ namespace DVG
             set
             {
                 w = value.x;
-                w = value.y;
+                x = value.y;
             }
         }
         
@@ -15741,7 +15741,7 @@ namespace DVG
             set
             {
                 w = value.x;
-                w = value.y;
+                y = value.y;
             }
         }
         
@@ -15755,7 +15755,7 @@ namespace DVG
             set
             {
                 w = value.x;
-                w = value.y;
+                y = value.y;
             }
         }
         
@@ -15769,7 +15769,7 @@ namespace DVG
             set
             {
                 w = value.x;
-                w = value.y;
+                y = value.y;
             }
         }
         
@@ -15783,7 +15783,7 @@ namespace DVG
             set
             {
                 w = value.x;
-                w = value.y;
+                z = value.y;
             }
         }
         
@@ -15797,7 +15797,7 @@ namespace DVG
             set
             {
                 w = value.x;
-                w = value.y;
+                z = value.y;
             }
         }
         
@@ -15811,7 +15811,7 @@ namespace DVG
             set
             {
                 w = value.x;
-                w = value.y;
+                z = value.y;
             }
         }
         

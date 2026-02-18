@@ -5299,8 +5299,8 @@ namespace DVG
             readonly get => new float3(x, y, z);
             set
             {
-                z = value.x;
-                z = value.y;
+                x = value.x;
+                y = value.y;
                 z = value.z;
             }
         }
@@ -5314,8 +5314,8 @@ namespace DVG
             readonly get => new float3(x, y, z);
             set
             {
-                z = value.x;
-                z = value.y;
+                x = value.x;
+                y = value.y;
                 z = value.z;
             }
         }
@@ -5329,8 +5329,8 @@ namespace DVG
             readonly get => new float3(x, y, z);
             set
             {
-                z = value.x;
-                z = value.y;
+                x = value.x;
+                y = value.y;
                 z = value.z;
             }
         }
@@ -5380,9 +5380,9 @@ namespace DVG
             readonly get => new float3(x, z, y);
             set
             {
-                z = value.x;
+                x = value.x;
                 z = value.y;
-                z = value.z;
+                y = value.z;
             }
         }
         
@@ -5395,9 +5395,9 @@ namespace DVG
             readonly get => new float3(x, z, y);
             set
             {
-                z = value.x;
+                x = value.x;
                 z = value.y;
-                z = value.z;
+                y = value.z;
             }
         }
         
@@ -5410,9 +5410,9 @@ namespace DVG
             readonly get => new float3(x, z, y);
             set
             {
-                z = value.x;
+                x = value.x;
                 z = value.y;
-                z = value.z;
+                y = value.z;
             }
         }
         
@@ -5569,8 +5569,8 @@ namespace DVG
             readonly get => new float3(y, x, z);
             set
             {
-                z = value.x;
-                z = value.y;
+                y = value.x;
+                x = value.y;
                 z = value.z;
             }
         }
@@ -5584,8 +5584,8 @@ namespace DVG
             readonly get => new float3(y, x, z);
             set
             {
-                z = value.x;
-                z = value.y;
+                y = value.x;
+                x = value.y;
                 z = value.z;
             }
         }
@@ -5599,8 +5599,8 @@ namespace DVG
             readonly get => new float3(y, x, z);
             set
             {
-                z = value.x;
-                z = value.y;
+                y = value.x;
+                x = value.y;
                 z = value.z;
             }
         }
@@ -5704,9 +5704,9 @@ namespace DVG
             readonly get => new float3(y, z, x);
             set
             {
-                z = value.x;
+                y = value.x;
                 z = value.y;
-                z = value.z;
+                x = value.z;
             }
         }
         
@@ -5719,9 +5719,9 @@ namespace DVG
             readonly get => new float3(y, z, x);
             set
             {
-                z = value.x;
+                y = value.x;
                 z = value.y;
-                z = value.z;
+                x = value.z;
             }
         }
         
@@ -5734,9 +5734,9 @@ namespace DVG
             readonly get => new float3(y, z, x);
             set
             {
-                z = value.x;
+                y = value.x;
                 z = value.y;
-                z = value.z;
+                x = value.z;
             }
         }
         
@@ -5894,8 +5894,8 @@ namespace DVG
             set
             {
                 z = value.x;
-                z = value.y;
-                z = value.z;
+                x = value.y;
+                y = value.z;
             }
         }
         
@@ -5909,8 +5909,8 @@ namespace DVG
             set
             {
                 z = value.x;
-                z = value.y;
-                z = value.z;
+                x = value.y;
+                y = value.z;
             }
         }
         
@@ -5924,8 +5924,8 @@ namespace DVG
             set
             {
                 z = value.x;
-                z = value.y;
-                z = value.z;
+                x = value.y;
+                y = value.z;
             }
         }
         
@@ -5975,8 +5975,8 @@ namespace DVG
             set
             {
                 z = value.x;
-                z = value.y;
-                z = value.z;
+                y = value.y;
+                x = value.z;
             }
         }
         
@@ -5990,8 +5990,8 @@ namespace DVG
             set
             {
                 z = value.x;
-                z = value.y;
-                z = value.z;
+                y = value.y;
+                x = value.z;
             }
         }
         
@@ -6005,8 +6005,8 @@ namespace DVG
             set
             {
                 z = value.x;
-                z = value.y;
-                z = value.z;
+                y = value.y;
+                x = value.z;
             }
         }
         
@@ -6217,8 +6217,8 @@ namespace DVG
             readonly get => new float2(x, y);
             set
             {
-                z = value.x;
-                z = value.y;
+                x = value.x;
+                y = value.y;
             }
         }
         
@@ -6231,8 +6231,8 @@ namespace DVG
             readonly get => new float2(x, y);
             set
             {
-                z = value.x;
-                z = value.y;
+                x = value.x;
+                y = value.y;
             }
         }
         
@@ -6245,8 +6245,8 @@ namespace DVG
             readonly get => new float2(x, y);
             set
             {
-                z = value.x;
-                z = value.y;
+                x = value.x;
+                y = value.y;
             }
         }
         
@@ -6259,7 +6259,7 @@ namespace DVG
             readonly get => new float2(x, z);
             set
             {
-                z = value.x;
+                x = value.x;
                 z = value.y;
             }
         }
@@ -6273,7 +6273,7 @@ namespace DVG
             readonly get => new float2(x, z);
             set
             {
-                z = value.x;
+                x = value.x;
                 z = value.y;
             }
         }
@@ -6287,7 +6287,7 @@ namespace DVG
             readonly get => new float2(x, z);
             set
             {
-                z = value.x;
+                x = value.x;
                 z = value.y;
             }
         }
@@ -6319,8 +6319,8 @@ namespace DVG
             readonly get => new float2(y, x);
             set
             {
-                z = value.x;
-                z = value.y;
+                y = value.x;
+                x = value.y;
             }
         }
         
@@ -6333,8 +6333,8 @@ namespace DVG
             readonly get => new float2(y, x);
             set
             {
-                z = value.x;
-                z = value.y;
+                y = value.x;
+                x = value.y;
             }
         }
         
@@ -6347,8 +6347,8 @@ namespace DVG
             readonly get => new float2(y, x);
             set
             {
-                z = value.x;
-                z = value.y;
+                y = value.x;
+                x = value.y;
             }
         }
         
@@ -6379,7 +6379,7 @@ namespace DVG
             readonly get => new float2(y, z);
             set
             {
-                z = value.x;
+                y = value.x;
                 z = value.y;
             }
         }
@@ -6393,7 +6393,7 @@ namespace DVG
             readonly get => new float2(y, z);
             set
             {
-                z = value.x;
+                y = value.x;
                 z = value.y;
             }
         }
@@ -6407,7 +6407,7 @@ namespace DVG
             readonly get => new float2(y, z);
             set
             {
-                z = value.x;
+                y = value.x;
                 z = value.y;
             }
         }
@@ -6440,7 +6440,7 @@ namespace DVG
             set
             {
                 z = value.x;
-                z = value.y;
+                x = value.y;
             }
         }
         
@@ -6454,7 +6454,7 @@ namespace DVG
             set
             {
                 z = value.x;
-                z = value.y;
+                x = value.y;
             }
         }
         
@@ -6468,7 +6468,7 @@ namespace DVG
             set
             {
                 z = value.x;
-                z = value.y;
+                x = value.y;
             }
         }
         
@@ -6482,7 +6482,7 @@ namespace DVG
             set
             {
                 z = value.x;
-                z = value.y;
+                y = value.y;
             }
         }
         
@@ -6496,7 +6496,7 @@ namespace DVG
             set
             {
                 z = value.x;
-                z = value.y;
+                y = value.y;
             }
         }
         
@@ -6510,7 +6510,7 @@ namespace DVG
             set
             {
                 z = value.x;
-                z = value.y;
+                y = value.y;
             }
         }
         
