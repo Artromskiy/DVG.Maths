@@ -2175,7 +2175,7 @@ namespace DVG
             readonly get => new float2(x, y);
             set
             {
-                y = value.x;
+                x = value.x;
                 y = value.y;
             }
         }
@@ -2189,7 +2189,7 @@ namespace DVG
             readonly get => new float2(x, y);
             set
             {
-                y = value.x;
+                x = value.x;
                 y = value.y;
             }
         }
@@ -2203,7 +2203,7 @@ namespace DVG
             readonly get => new float2(x, y);
             set
             {
-                y = value.x;
+                x = value.x;
                 y = value.y;
             }
         }
@@ -2236,7 +2236,7 @@ namespace DVG
             set
             {
                 y = value.x;
-                y = value.y;
+                x = value.y;
             }
         }
         
@@ -2250,7 +2250,7 @@ namespace DVG
             set
             {
                 y = value.x;
-                y = value.y;
+                x = value.y;
             }
         }
         
@@ -2264,7 +2264,7 @@ namespace DVG
             set
             {
                 y = value.x;
-                y = value.y;
+                x = value.y;
             }
         }
         
