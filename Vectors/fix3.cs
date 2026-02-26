@@ -40,11 +40,6 @@ namespace DVG
         public fix z;
         
         /// <summary>
-        /// Returns the number of components (3).
-        /// </summary>
-        public const int Count = 3;
-        
-        /// <summary>
         /// Returns new vector with every component set to default.
         /// </summary>
         public static readonly fix3 zero = new fix3(fix.Zero, fix.Zero, fix.Zero);
@@ -6520,6 +6515,11 @@ namespace DVG
         /// </summary>
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly fix2 pp => new fix2(z, z);
+        
+        /// <summary>
+        /// Returns the number of components (3).
+        /// </summary>
+        public readonly int Count => 3;
 
         #endregion
 

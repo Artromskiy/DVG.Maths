@@ -46,11 +46,6 @@ namespace DVG
         public bool w;
         
         /// <summary>
-        /// Returns the number of components (4).
-        /// </summary>
-        public const int Count = 4;
-        
-        /// <summary>
         /// Returns new vector with every component set to default.
         /// </summary>
         public static readonly bool4 zero = new bool4(false, false, false, false);
@@ -15832,6 +15827,11 @@ namespace DVG
         /// </summary>
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly bool2 qq => new bool2(w, w);
+        
+        /// <summary>
+        /// Returns the number of components (4).
+        /// </summary>
+        public readonly int Count => 4;
 
         #endregion
 

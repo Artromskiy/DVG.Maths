@@ -46,11 +46,6 @@ namespace DVG
         public float w;
         
         /// <summary>
-        /// Returns the number of components (4).
-        /// </summary>
-        public const int Count = 4;
-        
-        /// <summary>
         /// Returns new vector with every component set to default.
         /// </summary>
         public static readonly float4 zero = new float4(0f, 0f, 0f, 0f);
@@ -15843,6 +15838,11 @@ namespace DVG
         /// </summary>
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float2 qq => new float2(w, w);
+        
+        /// <summary>
+        /// Returns the number of components (4).
+        /// </summary>
+        public readonly int Count => 4;
 
         #endregion
 
