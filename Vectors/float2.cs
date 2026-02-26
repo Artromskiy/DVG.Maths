@@ -34,11 +34,6 @@ namespace DVG
         public float y;
         
         /// <summary>
-        /// Returns the number of components (2).
-        /// </summary>
-        public const int Count = 2;
-        
-        /// <summary>
         /// Returns new vector with every component set to default.
         /// </summary>
         public static readonly float2 zero = new float2(0f, 0f);
@@ -2285,6 +2280,11 @@ namespace DVG
         /// </summary>
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly float2 tt => new float2(y, y);
+        
+        /// <summary>
+        /// Returns the number of components (2).
+        /// </summary>
+        public readonly int Count => 2;
 
         #endregion
 

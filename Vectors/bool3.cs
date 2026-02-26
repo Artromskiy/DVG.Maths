@@ -40,11 +40,6 @@ namespace DVG
         public bool z;
         
         /// <summary>
-        /// Returns the number of components (3).
-        /// </summary>
-        public const int Count = 3;
-        
-        /// <summary>
         /// Returns new vector with every component set to default.
         /// </summary>
         public static readonly bool3 zero = new bool3(false, false, false);
@@ -6520,6 +6515,11 @@ namespace DVG
         /// </summary>
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly bool2 pp => new bool2(z, z);
+        
+        /// <summary>
+        /// Returns the number of components (3).
+        /// </summary>
+        public readonly int Count => 3;
 
         #endregion
 

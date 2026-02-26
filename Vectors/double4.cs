@@ -46,11 +46,6 @@ namespace DVG
         public double w;
         
         /// <summary>
-        /// Returns the number of components (4).
-        /// </summary>
-        public const int Count = 4;
-        
-        /// <summary>
         /// Returns new vector with every component set to default.
         /// </summary>
         public static readonly double4 zero = new double4(0.0, 0.0, 0.0, 0.0);
@@ -15832,6 +15827,11 @@ namespace DVG
         /// </summary>
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly double2 qq => new double2(w, w);
+        
+        /// <summary>
+        /// Returns the number of components (4).
+        /// </summary>
+        public readonly int Count => 4;
 
         #endregion
 

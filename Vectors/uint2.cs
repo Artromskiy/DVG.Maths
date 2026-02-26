@@ -34,11 +34,6 @@ namespace DVG
         public uint y;
         
         /// <summary>
-        /// Returns the number of components (2).
-        /// </summary>
-        public const int Count = 2;
-        
-        /// <summary>
         /// Returns new vector with every component set to default.
         /// </summary>
         public static readonly uint2 zero = new uint2(0u, 0u);
@@ -2291,6 +2286,11 @@ namespace DVG
         /// </summary>
         [DebuggerBrowsable(DebuggerBrowsableState.Never)]
         public readonly uint2 tt => new uint2(y, y);
+        
+        /// <summary>
+        /// Returns the number of components (2).
+        /// </summary>
+        public readonly int Count => 2;
 
         #endregion
 
