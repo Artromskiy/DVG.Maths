@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.CompilerServices;
 
-namespace DVG
+namespace Kibix
 {
     public static partial class Maths
     {

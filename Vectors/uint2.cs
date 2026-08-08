@@ -7,7 +7,7 @@ using System.Runtime.Serialization;
 using System.Diagnostics;
 
 
-namespace DVG
+namespace Kibix
 {
     
     /// <summary>

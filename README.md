@@ -1,6 +1,6 @@
 ---
 
-# DVG.Maths
+# Kibix.Maths
 
 A lightweight, engine-agnostic mathematics library for .NET.
 
@@ -245,7 +245,7 @@ The API is intentionally familiar to developers coming from GLSL, HLSL, Unity.Ma
 ## Example
 
 ```csharp
-using DVG;
+using Kibix;
 
 fix a = (fix)1.5f;
 fix b = (fix)2;

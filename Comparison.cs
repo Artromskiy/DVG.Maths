@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DVG
+namespace Kibix
 {
     public static class Comparison
     {

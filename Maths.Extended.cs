@@ -1,6 +1,6 @@
 ﻿using System.Runtime.CompilerServices;
 
-namespace DVG
+namespace Kibix
 {
     public partial class Maths
     {
