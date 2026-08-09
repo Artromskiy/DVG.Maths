@@ -1,91 +1,140 @@
 #pragma warning disable IDE1006
 #nullable enable
-using System.Runtime.CompilerServices;
 
 namespace KibiHex
 {
     public static partial class maths
     {
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float2 lerp(float2 edge0, float2 edge1, float2 value) => float2.Lerp(edge0, edge1, value);
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float2 lerp(float2 edge0, float2 edge1, float value) => float2.Lerp(edge0, edge1, value);
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float dot(float2 left, float2 right) => float2.Dot(left, right);
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float2 normalize(float2 value) => float2.Normalize(value);
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float3 lerp(float3 edge0, float3 edge1, float3 value) => float3.Lerp(edge0, edge1, value);
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float3 lerp(float3 edge0, float3 edge1, float value) => float3.Lerp(edge0, edge1, value);
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float dot(float3 left, float3 right) => float3.Dot(left, right);
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float3 normalize(float3 value) => float3.Normalize(value);
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float4 lerp(float4 edge0, float4 edge1, float4 value) => float4.Lerp(edge0, edge1, value);
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float4 lerp(float4 edge0, float4 edge1, float value) => float4.Lerp(edge0, edge1, value);
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float dot(float4 left, float4 right) => float4.Dot(left, right);
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float4 normalize(float4 value) => float4.Normalize(value);
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static double2 lerp(double2 edge0, double2 edge1, double2 value) => double2.Lerp(edge0, edge1, value);
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static double2 lerp(double2 edge0, double2 edge1, double value) => double2.Lerp(edge0, edge1, value);
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static double dot(double2 left, double2 right) => double2.Dot(left, right);
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static double2 normalize(double2 value) => double2.Normalize(value);
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static double3 lerp(double3 edge0, double3 edge1, double3 value) => double3.Lerp(edge0, edge1, value);
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static double3 lerp(double3 edge0, double3 edge1, double value) => double3.Lerp(edge0, edge1, value);
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static double dot(double3 left, double3 right) => double3.Dot(left, right);
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static double3 normalize(double3 value) => double3.Normalize(value);
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static double4 lerp(double4 edge0, double4 edge1, double4 value) => double4.Lerp(edge0, edge1, value);
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static double4 lerp(double4 edge0, double4 edge1, double value) => double4.Lerp(edge0, edge1, value);
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static double dot(double4 left, double4 right) => double4.Dot(left, right);
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static double4 normalize(double4 value) => double4.Normalize(value);
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static fix2 lerp(fix2 edge0, fix2 edge1, fix2 value) => fix2.Lerp(edge0, edge1, value);
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static fix2 lerp(fix2 edge0, fix2 edge1, fix value) => fix2.Lerp(edge0, edge1, value);
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static fix dot(fix2 left, fix2 right) => fix2.Dot(left, right);
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static fix2 normalize(fix2 value) => fix2.Normalize(value);
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static fix3 lerp(fix3 edge0, fix3 edge1, fix3 value) => fix3.Lerp(edge0, edge1, value);
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static fix3 lerp(fix3 edge0, fix3 edge1, fix value) => fix3.Lerp(edge0, edge1, value);
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static fix dot(fix3 left, fix3 right) => fix3.Dot(left, right);
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static fix3 normalize(fix3 value) => fix3.Normalize(value);
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static fix4 lerp(fix4 edge0, fix4 edge1, fix4 value) => fix4.Lerp(edge0, edge1, value);
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static fix4 lerp(fix4 edge0, fix4 edge1, fix value) => fix4.Lerp(edge0, edge1, value);
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static fix dot(fix4 left, fix4 right) => fix4.Dot(left, right);
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static fix4 normalize(fix4 value) => fix4.Normalize(value);
+        public static float smoothDamp(float current, float target, ref float velocity, float smoothTime, float deltaTime) => Maths.SmoothDamp(current, target, ref velocity, smoothTime, deltaTime);
+        public static double smoothDamp(double current, double target, ref double velocity, double smoothTime, double deltaTime) => Maths.SmoothDamp(current, target, ref velocity, smoothTime, deltaTime);
+        public static float invLerp(float edge0, float edge1, float value) => Maths.InvLerp(edge0, edge1, value);
+        public static double invLerp(double edge0, double edge1, double value) => Maths.InvLerp(edge0, edge1, value);
+        public static float remap(float source, float sourceFrom, float sourceTo, float targetFrom, float targetTo) => Maths.Remap(source, sourceFrom, sourceTo, targetFrom, targetTo);
+        public static double remap(double source, double sourceFrom, double sourceTo, double targetFrom, double targetTo) => Maths.Remap(source, sourceFrom, sourceTo, targetFrom, targetTo);
+        public static float moveTowards(float current, float target, float maxDelta) => Maths.MoveTowards(current, target, maxDelta);
+        public static double moveTowards(double current, double target, double maxDelta) => Maths.MoveTowards(current, target, maxDelta);
+        public static float rotateTowards(float current, float target, float maxStep) => Maths.RotateTowards(current, target, maxStep);
+        public static double rotateTowards(double current, double target, double maxStep) => Maths.RotateTowards(current, target, maxStep);
+        public static float smoothDampAngle(float current, float target, ref float velocity, float smoothTime, float deltaTime) => Maths.SmoothDampAngle(current, target, ref velocity, smoothTime, deltaTime);
+        public static double smoothDampAngle(double current, double target, ref double velocity, double smoothTime, double deltaTime) => Maths.SmoothDampAngle(current, target, ref velocity, smoothTime, deltaTime);
+        public static float deltaAngle(float current, float target) => Maths.DeltaAngle(current, target);
+        public static double deltaAngle(double current, double target) => Maths.DeltaAngle(current, target);
+        public static float repeat(float t, float length) => Maths.Repeat(t, length);
+        public static double repeat(double t, double length) => Maths.Repeat(t, length);
+        public static fix sign(fix x) => Maths.Sign(x);
+        public static fix radians(fix degrees) => Maths.Radians(degrees);
+        public static fix degrees(fix radians) => Maths.Degrees(radians);
+        public static fix round(fix value) => Maths.Round(value);
+        public static fix abs(fix x) => Maths.Abs(x);
+        public static fix floor(fix x) => Maths.Floor(x);
+        public static fix ceil(fix x) => Maths.Ceil(x);
+        public static fix min(fix x, fix y) => Maths.Min(x, y);
+        public static fix max(fix x, fix y) => Maths.Max(x, y);
+        public static fix clamp(fix x, fix min, fix max) => Maths.Clamp(x, min, max);
+        public static fix sqrt(fix x) => Maths.Sqrt(x);
+        public static fix sin(fix inAngle) => Maths.Sin(inAngle);
+        public static fix cos(fix inAngle) => Maths.Cos(inAngle);
+        public static fix tan(fix inAngle) => Maths.Tan(inAngle);
+        public static fix asin(fix x) => Maths.Asin(x);
+        public static fix atan2(fix inY, fix inX) => Maths.Atan2(inY, inX);
+        public static fix atan(fix x) => Maths.Atan(x);
+        public static fix acos(fix x) => Maths.Acos(x);
+        public static fix lerp(fix edge0, fix edge1, fix value) => Maths.Lerp(edge0, edge1, value);
+        public static fix smoothStep(fix edge0, fix edge1, fix v) => Maths.SmoothStep(edge0, edge1, v);
+        public static fix fma(fix a, fix b, fix c) => Maths.Fma(a, b, c);
+        public static fix inverseSqrt(fix value) => Maths.InverseSqrt(value);
+        public static float lerp(float edge0, float edge1, float value) => Maths.Lerp(edge0, edge1, value);
+        public static float smoothStep(float edge0, float edge1, float v) => Maths.SmoothStep(edge0, edge1, v);
+        public static float radians(float degrees) => Maths.Radians(degrees);
+        public static float degrees(float radians) => Maths.Degrees(radians);
+        public static float fma(float a, float b, float c) => Maths.Fma(a, b, c);
+        public static float roundEven(float value) => Maths.RoundEven(value);
+        public static float inverseSqrt(float value) => Maths.InverseSqrt(value);
+        public static float log2(float value) => Maths.Log2(value);
+        public static float exp2(float value) => Maths.Exp2(value);
+        public static double lerp(double edge0, double edge1, double value) => Maths.Lerp(edge0, edge1, value);
+        public static double smoothStep(double edge0, double edge1, double v) => Maths.SmoothStep(edge0, edge1, v);
+        public static double degrees(double radians) => Maths.Degrees(radians);
+        public static double radians(double degrees) => Maths.Radians(degrees);
+        public static double fma(double a, double b, double c) => Maths.Fma(a, b, c);
+        public static double roundEven(double value) => Maths.RoundEven(value);
+        public static double inverseSqrt(double value) => Maths.InverseSqrt(value);
+        public static double log2(double value) => Maths.Log2(value);
+        public static double exp2(double value) => Maths.Exp2(value);
+        public static float abs(float x) => Maths.Abs(x);
+        public static float acos(float x) => Maths.Acos(x);
+        public static float acosh(float x) => Maths.Acosh(x);
+        public static float asin(float x) => Maths.Asin(x);
+        public static float asinh(float x) => Maths.Asinh(x);
+        public static float atan(float x) => Maths.Atan(x);
+        public static float atan2(float y, float x) => Maths.Atan2(y, x);
+        public static float atanh(float x) => Maths.Atanh(x);
+        public static float cbrt(float x) => Maths.Cbrt(x);
+        public static float ceil(float x) => Maths.Ceil(x);
+        public static float clamp(float value, float min, float max) => Maths.Clamp(value, min, max);
+        public static float cos(float x) => Maths.Cos(x);
+        public static float cosh(float x) => Maths.Cosh(x);
+        public static float exp(float x) => Maths.Exp(x);
+        public static float floor(float x) => Maths.Floor(x);
+        public static float log(float x) => Maths.Log(x);
+        public static float log(float x, float y) => Maths.Log(x, y);
+        public static float log10(float x) => Maths.Log10(x);
+        public static float max(float x, float y) => Maths.Max(x, y);
+        public static float min(float x, float y) => Maths.Min(x, y);
+        public static float pow(float x, float y) => Maths.Pow(x, y);
+        public static float round(float a) => Maths.Round(a);
+        public static float sin(float x) => Maths.Sin(x);
+        public static float sinh(float x) => Maths.Sinh(x);
+        public static float sqrt(float x) => Maths.Sqrt(x);
+        public static float tan(float x) => Maths.Tan(x);
+        public static float tanh(float x) => Maths.Tanh(x);
+        public static float truncate(float x) => Maths.Truncate(x);
+        public static int sign(float x) => Maths.Sign(x);
+        public static double abs(double value) => Maths.Abs(value);
+        public static double acos(double d) => Maths.Acos(d);
+        public static double acosh(double d) => Maths.Acosh(d);
+        public static double asin(double d) => Maths.Asin(d);
+        public static double asinh(double d) => Maths.Asinh(d);
+        public static double atan(double d) => Maths.Atan(d);
+        public static double atan2(double y, double x) => Maths.Atan2(y, x);
+        public static double atanh(double d) => Maths.Atanh(d);
+        public static double cbrt(double d) => Maths.Cbrt(d);
+        public static double ceil(double a) => Maths.Ceil(a);
+        public static double clamp(double value, double min, double max) => Maths.Clamp(value, min, max);
+        public static double cos(double d) => Maths.Cos(d);
+        public static double cosh(double value) => Maths.Cosh(value);
+        public static double exp(double d) => Maths.Exp(d);
+        public static double floor(double d) => Maths.Floor(d);
+        public static double log(double d) => Maths.Log(d);
+        public static double log(double a, double newBase) => Maths.Log(a, newBase);
+        public static double log10(double d) => Maths.Log10(d);
+        public static double max(double x, double y) => Maths.Max(x, y);
+        public static double min(double x, double y) => Maths.Min(x, y);
+        public static double pow(double x, double y) => Maths.Pow(x, y);
+        public static double round(double a) => Maths.Round(a);
+        public static double sin(double a) => Maths.Sin(a);
+        public static double sinh(double value) => Maths.Sinh(value);
+        public static double sqrt(double d) => Maths.Sqrt(d);
+        public static double tan(double a) => Maths.Tan(a);
+        public static double tanh(double value) => Maths.Tanh(value);
+        public static double truncate(double d) => Maths.Truncate(d);
+        public static int sign(double value) => Maths.Sign(value);
+        public static int abs(int value) => Maths.Abs(value);
+        public static int sign(int value) => Maths.Sign(value);
+        public static int min(int x, int y) => Maths.Min(x, y);
+        public static int max(int x, int y) => Maths.Max(x, y);
+        public static int clamp(int value, int min, int max) => Maths.Clamp(value, min, max);
+        public static uint clamp(uint value, uint min, uint max) => Maths.Clamp(value, min, max);
+        public static uint min(uint x, uint y) => Maths.Min(x, y);
+        public static uint max(uint x, uint y) => Maths.Max(x, y);
+        public static long sign(long value) => Maths.Sign(value);
+        public static fix smoothDamp(fix current, fix target, ref fix velocity, fix smoothTime, fix deltaTime) => Maths.SmoothDamp(current, target, ref velocity, smoothTime, deltaTime);
+        public static fix invLerp(fix edge0, fix edge1, fix value) => Maths.InvLerp(edge0, edge1, value);
+        public static fix remap(fix source, fix sourceFrom, fix sourceTo, fix targetFrom, fix targetTo) => Maths.Remap(source, sourceFrom, sourceTo, targetFrom, targetTo);
+        public static fix moveTowards(fix current, fix target, fix maxDelta) => Maths.MoveTowards(current, target, maxDelta);
+        public static fix rotateTowards(fix current, fix target, fix maxStep) => Maths.RotateTowards(current, target, maxStep);
+        public static fix smoothDampAngle(fix current, fix target, ref fix velocity, fix smoothTime, fix deltaTime) => Maths.SmoothDampAngle(current, target, ref velocity, smoothTime, deltaTime);
+        public static fix deltaAngle(fix current, fix target) => Maths.DeltaAngle(current, target);
+        public static fix repeat(fix t, fix length) => Maths.Repeat(t, length);
     }
 }

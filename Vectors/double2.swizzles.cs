@@ -1,3041 +1,62 @@
-#pragma warning disable IDE1006
 #nullable enable
 using System;
 using System.Runtime.InteropServices;
 using System.Runtime.CompilerServices;
-using System.Runtime.Serialization;
-using System.Diagnostics;
-
 
 namespace KibiHex
 {
     public partial struct double2
     {
 
-        #region Swizzles
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
         public double r
         {
             get => x;
-            set
-            {
-                x = value;
-            }
+            set => x = value;
         }
 
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        public double s
-        {
-            get => x;
-            set
-            {
-                x = value;
-            }
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
         public double g
         {
             get => y;
-            set
-            {
-                y = value;
-            }
+            set => y = value;
         }
 
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
+        public double s
+        {
+            get => x;
+            set => x = value;
+        }
+
         public double t
         {
             get => y;
-            set
-            {
-                y = value;
-            }
+            set => y = value;
         }
 
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 ___x
-        {
-            get => new double4(0.0, 0.0, 0.0, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 ___r
-        {
-            get => new double4(0.0, 0.0, 0.0, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 ___s
-        {
-            get => new double4(0.0, 0.0, 0.0, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 ___y
-        {
-            get => new double4(0.0, 0.0, 0.0, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 ___g
-        {
-            get => new double4(0.0, 0.0, 0.0, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 ___t
-        {
-            get => new double4(0.0, 0.0, 0.0, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 __x_
-        {
-            get => new double4(0.0, 0.0, x, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 __r_
-        {
-            get => new double4(0.0, 0.0, x, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 __s_
-        {
-            get => new double4(0.0, 0.0, x, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 __xx
-        {
-            get => new double4(0.0, 0.0, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 __rr
-        {
-            get => new double4(0.0, 0.0, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 __ss
-        {
-            get => new double4(0.0, 0.0, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 __xy
-        {
-            get => new double4(0.0, 0.0, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 __rg
-        {
-            get => new double4(0.0, 0.0, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 __st
-        {
-            get => new double4(0.0, 0.0, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 __y_
-        {
-            get => new double4(0.0, 0.0, y, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 __g_
-        {
-            get => new double4(0.0, 0.0, y, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 __t_
-        {
-            get => new double4(0.0, 0.0, y, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 __yx
-        {
-            get => new double4(0.0, 0.0, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 __gr
-        {
-            get => new double4(0.0, 0.0, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 __ts
-        {
-            get => new double4(0.0, 0.0, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 __yy
-        {
-            get => new double4(0.0, 0.0, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 __gg
-        {
-            get => new double4(0.0, 0.0, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 __tt
-        {
-            get => new double4(0.0, 0.0, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 _x__
-        {
-            get => new double4(0.0, x, 0.0, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 _r__
-        {
-            get => new double4(0.0, x, 0.0, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 _s__
-        {
-            get => new double4(0.0, x, 0.0, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 _x_x
-        {
-            get => new double4(0.0, x, 0.0, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 _r_r
-        {
-            get => new double4(0.0, x, 0.0, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 _s_s
-        {
-            get => new double4(0.0, x, 0.0, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 _x_y
-        {
-            get => new double4(0.0, x, 0.0, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 _r_g
-        {
-            get => new double4(0.0, x, 0.0, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 _s_t
-        {
-            get => new double4(0.0, x, 0.0, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 _xx_
-        {
-            get => new double4(0.0, x, x, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 _rr_
-        {
-            get => new double4(0.0, x, x, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 _ss_
-        {
-            get => new double4(0.0, x, x, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 _xxx
-        {
-            get => new double4(0.0, x, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 _rrr
-        {
-            get => new double4(0.0, x, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 _sss
-        {
-            get => new double4(0.0, x, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 _xxy
-        {
-            get => new double4(0.0, x, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 _rrg
-        {
-            get => new double4(0.0, x, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 _sst
-        {
-            get => new double4(0.0, x, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 _xy_
-        {
-            get => new double4(0.0, x, y, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 _rg_
-        {
-            get => new double4(0.0, x, y, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 _st_
-        {
-            get => new double4(0.0, x, y, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 _xyx
-        {
-            get => new double4(0.0, x, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 _rgr
-        {
-            get => new double4(0.0, x, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 _sts
-        {
-            get => new double4(0.0, x, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 _xyy
-        {
-            get => new double4(0.0, x, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 _rgg
-        {
-            get => new double4(0.0, x, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 _stt
-        {
-            get => new double4(0.0, x, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 _y__
-        {
-            get => new double4(0.0, y, 0.0, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 _g__
-        {
-            get => new double4(0.0, y, 0.0, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 _t__
-        {
-            get => new double4(0.0, y, 0.0, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 _y_x
-        {
-            get => new double4(0.0, y, 0.0, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 _g_r
-        {
-            get => new double4(0.0, y, 0.0, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 _t_s
-        {
-            get => new double4(0.0, y, 0.0, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 _y_y
-        {
-            get => new double4(0.0, y, 0.0, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 _g_g
-        {
-            get => new double4(0.0, y, 0.0, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 _t_t
-        {
-            get => new double4(0.0, y, 0.0, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 _yx_
-        {
-            get => new double4(0.0, y, x, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 _gr_
-        {
-            get => new double4(0.0, y, x, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 _ts_
-        {
-            get => new double4(0.0, y, x, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 _yxx
-        {
-            get => new double4(0.0, y, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 _grr
-        {
-            get => new double4(0.0, y, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 _tss
-        {
-            get => new double4(0.0, y, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 _yxy
-        {
-            get => new double4(0.0, y, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 _grg
-        {
-            get => new double4(0.0, y, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 _tst
-        {
-            get => new double4(0.0, y, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 _yy_
-        {
-            get => new double4(0.0, y, y, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 _gg_
-        {
-            get => new double4(0.0, y, y, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 _tt_
-        {
-            get => new double4(0.0, y, y, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 _yyx
-        {
-            get => new double4(0.0, y, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 _ggr
-        {
-            get => new double4(0.0, y, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 _tts
-        {
-            get => new double4(0.0, y, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 _yyy
-        {
-            get => new double4(0.0, y, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 _ggg
-        {
-            get => new double4(0.0, y, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 _ttt
-        {
-            get => new double4(0.0, y, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 x___
-        {
-            get => new double4(x, 0.0, 0.0, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 r___
-        {
-            get => new double4(x, 0.0, 0.0, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 s___
-        {
-            get => new double4(x, 0.0, 0.0, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 x__x
-        {
-            get => new double4(x, 0.0, 0.0, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 r__r
-        {
-            get => new double4(x, 0.0, 0.0, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 s__s
-        {
-            get => new double4(x, 0.0, 0.0, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 x__y
-        {
-            get => new double4(x, 0.0, 0.0, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 r__g
-        {
-            get => new double4(x, 0.0, 0.0, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 s__t
-        {
-            get => new double4(x, 0.0, 0.0, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 x_x_
-        {
-            get => new double4(x, 0.0, x, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 r_r_
-        {
-            get => new double4(x, 0.0, x, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 s_s_
-        {
-            get => new double4(x, 0.0, x, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 x_xx
-        {
-            get => new double4(x, 0.0, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 r_rr
-        {
-            get => new double4(x, 0.0, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 s_ss
-        {
-            get => new double4(x, 0.0, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 x_xy
-        {
-            get => new double4(x, 0.0, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 r_rg
-        {
-            get => new double4(x, 0.0, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 s_st
-        {
-            get => new double4(x, 0.0, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 x_y_
-        {
-            get => new double4(x, 0.0, y, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 r_g_
-        {
-            get => new double4(x, 0.0, y, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 s_t_
-        {
-            get => new double4(x, 0.0, y, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 x_yx
-        {
-            get => new double4(x, 0.0, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 r_gr
-        {
-            get => new double4(x, 0.0, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 s_ts
-        {
-            get => new double4(x, 0.0, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 x_yy
-        {
-            get => new double4(x, 0.0, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 r_gg
-        {
-            get => new double4(x, 0.0, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 s_tt
-        {
-            get => new double4(x, 0.0, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 xx__
-        {
-            get => new double4(x, x, 0.0, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 rr__
-        {
-            get => new double4(x, x, 0.0, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 ss__
-        {
-            get => new double4(x, x, 0.0, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 xx_x
-        {
-            get => new double4(x, x, 0.0, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 rr_r
-        {
-            get => new double4(x, x, 0.0, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 ss_s
-        {
-            get => new double4(x, x, 0.0, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 xx_y
-        {
-            get => new double4(x, x, 0.0, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 rr_g
-        {
-            get => new double4(x, x, 0.0, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 ss_t
-        {
-            get => new double4(x, x, 0.0, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 xxx_
-        {
-            get => new double4(x, x, x, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 rrr_
-        {
-            get => new double4(x, x, x, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 sss_
-        {
-            get => new double4(x, x, x, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 xxxx
-        {
-            get => new double4(x, x, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 rrrr
-        {
-            get => new double4(x, x, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 ssss
-        {
-            get => new double4(x, x, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 xxxy
-        {
-            get => new double4(x, x, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 rrrg
-        {
-            get => new double4(x, x, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 ssst
-        {
-            get => new double4(x, x, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 xxy_
-        {
-            get => new double4(x, x, y, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 rrg_
-        {
-            get => new double4(x, x, y, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 sst_
-        {
-            get => new double4(x, x, y, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 xxyx
-        {
-            get => new double4(x, x, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 rrgr
-        {
-            get => new double4(x, x, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 ssts
-        {
-            get => new double4(x, x, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 xxyy
-        {
-            get => new double4(x, x, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 rrgg
-        {
-            get => new double4(x, x, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 sstt
-        {
-            get => new double4(x, x, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 xy__
-        {
-            get => new double4(x, y, 0.0, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 rg__
-        {
-            get => new double4(x, y, 0.0, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 st__
-        {
-            get => new double4(x, y, 0.0, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 xy_x
-        {
-            get => new double4(x, y, 0.0, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 rg_r
-        {
-            get => new double4(x, y, 0.0, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 st_s
-        {
-            get => new double4(x, y, 0.0, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 xy_y
-        {
-            get => new double4(x, y, 0.0, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 rg_g
-        {
-            get => new double4(x, y, 0.0, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 st_t
-        {
-            get => new double4(x, y, 0.0, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 xyx_
-        {
-            get => new double4(x, y, x, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 rgr_
-        {
-            get => new double4(x, y, x, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 sts_
-        {
-            get => new double4(x, y, x, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 xyxx
-        {
-            get => new double4(x, y, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 rgrr
-        {
-            get => new double4(x, y, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 stss
-        {
-            get => new double4(x, y, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 xyxy
-        {
-            get => new double4(x, y, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 rgrg
-        {
-            get => new double4(x, y, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 stst
-        {
-            get => new double4(x, y, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 xyy_
-        {
-            get => new double4(x, y, y, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 rgg_
-        {
-            get => new double4(x, y, y, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 stt_
-        {
-            get => new double4(x, y, y, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 xyyx
-        {
-            get => new double4(x, y, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 rggr
-        {
-            get => new double4(x, y, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 stts
-        {
-            get => new double4(x, y, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 xyyy
-        {
-            get => new double4(x, y, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 rggg
-        {
-            get => new double4(x, y, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 sttt
-        {
-            get => new double4(x, y, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 y___
-        {
-            get => new double4(y, 0.0, 0.0, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 g___
-        {
-            get => new double4(y, 0.0, 0.0, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 t___
-        {
-            get => new double4(y, 0.0, 0.0, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 y__x
-        {
-            get => new double4(y, 0.0, 0.0, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 g__r
-        {
-            get => new double4(y, 0.0, 0.0, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 t__s
-        {
-            get => new double4(y, 0.0, 0.0, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 y__y
-        {
-            get => new double4(y, 0.0, 0.0, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 g__g
-        {
-            get => new double4(y, 0.0, 0.0, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 t__t
-        {
-            get => new double4(y, 0.0, 0.0, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 y_x_
-        {
-            get => new double4(y, 0.0, x, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 g_r_
-        {
-            get => new double4(y, 0.0, x, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 t_s_
-        {
-            get => new double4(y, 0.0, x, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 y_xx
-        {
-            get => new double4(y, 0.0, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 g_rr
-        {
-            get => new double4(y, 0.0, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 t_ss
-        {
-            get => new double4(y, 0.0, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 y_xy
-        {
-            get => new double4(y, 0.0, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 g_rg
-        {
-            get => new double4(y, 0.0, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 t_st
-        {
-            get => new double4(y, 0.0, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 y_y_
-        {
-            get => new double4(y, 0.0, y, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 g_g_
-        {
-            get => new double4(y, 0.0, y, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 t_t_
-        {
-            get => new double4(y, 0.0, y, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 y_yx
-        {
-            get => new double4(y, 0.0, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 g_gr
-        {
-            get => new double4(y, 0.0, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 t_ts
-        {
-            get => new double4(y, 0.0, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 y_yy
-        {
-            get => new double4(y, 0.0, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 g_gg
-        {
-            get => new double4(y, 0.0, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 t_tt
-        {
-            get => new double4(y, 0.0, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 yx__
-        {
-            get => new double4(y, x, 0.0, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 gr__
-        {
-            get => new double4(y, x, 0.0, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 ts__
-        {
-            get => new double4(y, x, 0.0, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 yx_x
-        {
-            get => new double4(y, x, 0.0, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 gr_r
-        {
-            get => new double4(y, x, 0.0, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 ts_s
-        {
-            get => new double4(y, x, 0.0, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 yx_y
-        {
-            get => new double4(y, x, 0.0, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 gr_g
-        {
-            get => new double4(y, x, 0.0, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 ts_t
-        {
-            get => new double4(y, x, 0.0, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 yxx_
-        {
-            get => new double4(y, x, x, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 grr_
-        {
-            get => new double4(y, x, x, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 tss_
-        {
-            get => new double4(y, x, x, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 yxxx
-        {
-            get => new double4(y, x, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 grrr
-        {
-            get => new double4(y, x, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 tsss
-        {
-            get => new double4(y, x, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 yxxy
-        {
-            get => new double4(y, x, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 grrg
-        {
-            get => new double4(y, x, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 tsst
-        {
-            get => new double4(y, x, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 yxy_
-        {
-            get => new double4(y, x, y, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 grg_
-        {
-            get => new double4(y, x, y, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 tst_
-        {
-            get => new double4(y, x, y, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 yxyx
-        {
-            get => new double4(y, x, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 grgr
-        {
-            get => new double4(y, x, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 tsts
-        {
-            get => new double4(y, x, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 yxyy
-        {
-            get => new double4(y, x, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 grgg
-        {
-            get => new double4(y, x, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 tstt
-        {
-            get => new double4(y, x, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 yy__
-        {
-            get => new double4(y, y, 0.0, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 gg__
-        {
-            get => new double4(y, y, 0.0, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 tt__
-        {
-            get => new double4(y, y, 0.0, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 yy_x
-        {
-            get => new double4(y, y, 0.0, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 gg_r
-        {
-            get => new double4(y, y, 0.0, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 tt_s
-        {
-            get => new double4(y, y, 0.0, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 yy_y
-        {
-            get => new double4(y, y, 0.0, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 gg_g
-        {
-            get => new double4(y, y, 0.0, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 tt_t
-        {
-            get => new double4(y, y, 0.0, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 yyx_
-        {
-            get => new double4(y, y, x, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 ggr_
-        {
-            get => new double4(y, y, x, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 tts_
-        {
-            get => new double4(y, y, x, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 yyxx
-        {
-            get => new double4(y, y, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 ggrr
-        {
-            get => new double4(y, y, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 ttss
-        {
-            get => new double4(y, y, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 yyxy
-        {
-            get => new double4(y, y, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 ggrg
-        {
-            get => new double4(y, y, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 ttst
-        {
-            get => new double4(y, y, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 yyy_
-        {
-            get => new double4(y, y, y, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 ggg_
-        {
-            get => new double4(y, y, y, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 ttt_
-        {
-            get => new double4(y, y, y, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 yyyx
-        {
-            get => new double4(y, y, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 gggr
-        {
-            get => new double4(y, y, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 ttts
-        {
-            get => new double4(y, y, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 yyyy
-        {
-            get => new double4(y, y, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 gggg
-        {
-            get => new double4(y, y, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double4 tttt
-        {
-            get => new double4(y, y, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double3 __x
-        {
-            get => new double3(0.0, 0.0, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double3 __r
-        {
-            get => new double3(0.0, 0.0, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double3 __s
-        {
-            get => new double3(0.0, 0.0, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double3 __y
-        {
-            get => new double3(0.0, 0.0, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double3 __g
-        {
-            get => new double3(0.0, 0.0, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double3 __t
-        {
-            get => new double3(0.0, 0.0, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double3 _x_
-        {
-            get => new double3(0.0, x, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double3 _r_
-        {
-            get => new double3(0.0, x, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double3 _s_
-        {
-            get => new double3(0.0, x, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double3 _xx
-        {
-            get => new double3(0.0, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double3 _rr
-        {
-            get => new double3(0.0, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double3 _ss
-        {
-            get => new double3(0.0, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double3 _xy
-        {
-            get => new double3(0.0, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double3 _rg
-        {
-            get => new double3(0.0, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double3 _st
-        {
-            get => new double3(0.0, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double3 _y_
-        {
-            get => new double3(0.0, y, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double3 _g_
-        {
-            get => new double3(0.0, y, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double3 _t_
-        {
-            get => new double3(0.0, y, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double3 _yx
-        {
-            get => new double3(0.0, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double3 _gr
-        {
-            get => new double3(0.0, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double3 _ts
-        {
-            get => new double3(0.0, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double3 _yy
-        {
-            get => new double3(0.0, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double3 _gg
-        {
-            get => new double3(0.0, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double3 _tt
-        {
-            get => new double3(0.0, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double3 x__
-        {
-            get => new double3(x, 0.0, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double3 r__
-        {
-            get => new double3(x, 0.0, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double3 s__
-        {
-            get => new double3(x, 0.0, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double3 x_x
-        {
-            get => new double3(x, 0.0, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double3 r_r
-        {
-            get => new double3(x, 0.0, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double3 s_s
-        {
-            get => new double3(x, 0.0, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double3 x_y
-        {
-            get => new double3(x, 0.0, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double3 r_g
-        {
-            get => new double3(x, 0.0, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double3 s_t
-        {
-            get => new double3(x, 0.0, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double3 xx_
-        {
-            get => new double3(x, x, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double3 rr_
-        {
-            get => new double3(x, x, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double3 ss_
-        {
-            get => new double3(x, x, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double3 xxx
-        {
-            get => new double3(x, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double3 rrr
-        {
-            get => new double3(x, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double3 sss
-        {
-            get => new double3(x, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double3 xxy
-        {
-            get => new double3(x, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double3 rrg
-        {
-            get => new double3(x, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double3 sst
-        {
-            get => new double3(x, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double3 xy_
-        {
-            get => new double3(x, y, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double3 rg_
-        {
-            get => new double3(x, y, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double3 st_
-        {
-            get => new double3(x, y, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double3 xyx
-        {
-            get => new double3(x, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double3 rgr
-        {
-            get => new double3(x, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double3 sts
-        {
-            get => new double3(x, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double3 xyy
-        {
-            get => new double3(x, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double3 rgg
-        {
-            get => new double3(x, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double3 stt
-        {
-            get => new double3(x, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double3 y__
-        {
-            get => new double3(y, 0.0, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double3 g__
-        {
-            get => new double3(y, 0.0, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double3 t__
-        {
-            get => new double3(y, 0.0, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double3 y_x
-        {
-            get => new double3(y, 0.0, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double3 g_r
-        {
-            get => new double3(y, 0.0, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double3 t_s
-        {
-            get => new double3(y, 0.0, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double3 y_y
-        {
-            get => new double3(y, 0.0, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double3 g_g
-        {
-            get => new double3(y, 0.0, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double3 t_t
-        {
-            get => new double3(y, 0.0, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double3 yx_
-        {
-            get => new double3(y, x, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double3 gr_
-        {
-            get => new double3(y, x, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double3 ts_
-        {
-            get => new double3(y, x, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double3 yxx
-        {
-            get => new double3(y, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double3 grr
-        {
-            get => new double3(y, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double3 tss
-        {
-            get => new double3(y, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double3 yxy
-        {
-            get => new double3(y, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double3 grg
-        {
-            get => new double3(y, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double3 tst
-        {
-            get => new double3(y, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double3 yy_
-        {
-            get => new double3(y, y, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double3 gg_
-        {
-            get => new double3(y, y, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double3 tt_
-        {
-            get => new double3(y, y, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double3 yyx
-        {
-            get => new double3(y, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double3 ggr
-        {
-            get => new double3(y, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double3 tts
-        {
-            get => new double3(y, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double3 yyy
-        {
-            get => new double3(y, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double3 ggg
-        {
-            get => new double3(y, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double3 ttt
-        {
-            get => new double3(y, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
         public double2 _x
         {
             get => new double2(0.0, x);
         }
 
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double2 _r
-        {
-            get => new double2(0.0, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double2 _s
-        {
-            get => new double2(0.0, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
         public double2 _y
         {
             get => new double2(0.0, y);
         }
 
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double2 _g
-        {
-            get => new double2(0.0, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double2 _t
-        {
-            get => new double2(0.0, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
         public double2 x_
         {
             get => new double2(x, 0.0);
         }
 
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double2 r_
-        {
-            get => new double2(x, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double2 s_
-        {
-            get => new double2(x, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
         public double2 xx
         {
             get => new double2(x, x);
         }
 
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double2 rr
-        {
-            get => new double2(x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double2 ss
-        {
-            get => new double2(x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
         public double2 xy
         {
             get => new double2(x, y);
@@ -3046,65 +67,13 @@ namespace KibiHex
             }
         }
 
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double2 rg
-        {
-            get => new double2(x, y);
-            set
-            {
-                x = value.x;
-                y = value.y;
-            }
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double2 st
-        {
-            get => new double2(x, y);
-            set
-            {
-                x = value.x;
-                y = value.y;
-            }
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
         public double2 y_
         {
             get => new double2(y, 0.0);
         }
 
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double2 g_
-        {
-            get => new double2(y, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double2 t_
-        {
-            get => new double2(y, 0.0);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
         public double2 yx
         {
             get => new double2(y, x);
@@ -3115,10 +84,690 @@ namespace KibiHex
             }
         }
 
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double2 yy
+        {
+            get => new double2(y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double3 __x
+        {
+            get => new double3(0.0, 0.0, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double3 __y
+        {
+            get => new double3(0.0, 0.0, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double3 _x_
+        {
+            get => new double3(0.0, x, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double3 _xx
+        {
+            get => new double3(0.0, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double3 _xy
+        {
+            get => new double3(0.0, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double3 _y_
+        {
+            get => new double3(0.0, y, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double3 _yx
+        {
+            get => new double3(0.0, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double3 _yy
+        {
+            get => new double3(0.0, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double3 x__
+        {
+            get => new double3(x, 0.0, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double3 x_x
+        {
+            get => new double3(x, 0.0, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double3 x_y
+        {
+            get => new double3(x, 0.0, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double3 xx_
+        {
+            get => new double3(x, x, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double3 xxx
+        {
+            get => new double3(x, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double3 xxy
+        {
+            get => new double3(x, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double3 xy_
+        {
+            get => new double3(x, y, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double3 xyx
+        {
+            get => new double3(x, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double3 xyy
+        {
+            get => new double3(x, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double3 y__
+        {
+            get => new double3(y, 0.0, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double3 y_x
+        {
+            get => new double3(y, 0.0, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double3 y_y
+        {
+            get => new double3(y, 0.0, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double3 yx_
+        {
+            get => new double3(y, x, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double3 yxx
+        {
+            get => new double3(y, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double3 yxy
+        {
+            get => new double3(y, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double3 yy_
+        {
+            get => new double3(y, y, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double3 yyx
+        {
+            get => new double3(y, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double3 yyy
+        {
+            get => new double3(y, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 ___x
+        {
+            get => new double4(0.0, 0.0, 0.0, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 ___y
+        {
+            get => new double4(0.0, 0.0, 0.0, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 __x_
+        {
+            get => new double4(0.0, 0.0, x, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 __xx
+        {
+            get => new double4(0.0, 0.0, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 __xy
+        {
+            get => new double4(0.0, 0.0, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 __y_
+        {
+            get => new double4(0.0, 0.0, y, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 __yx
+        {
+            get => new double4(0.0, 0.0, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 __yy
+        {
+            get => new double4(0.0, 0.0, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 _x__
+        {
+            get => new double4(0.0, x, 0.0, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 _x_x
+        {
+            get => new double4(0.0, x, 0.0, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 _x_y
+        {
+            get => new double4(0.0, x, 0.0, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 _xx_
+        {
+            get => new double4(0.0, x, x, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 _xxx
+        {
+            get => new double4(0.0, x, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 _xxy
+        {
+            get => new double4(0.0, x, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 _xy_
+        {
+            get => new double4(0.0, x, y, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 _xyx
+        {
+            get => new double4(0.0, x, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 _xyy
+        {
+            get => new double4(0.0, x, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 _y__
+        {
+            get => new double4(0.0, y, 0.0, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 _y_x
+        {
+            get => new double4(0.0, y, 0.0, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 _y_y
+        {
+            get => new double4(0.0, y, 0.0, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 _yx_
+        {
+            get => new double4(0.0, y, x, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 _yxx
+        {
+            get => new double4(0.0, y, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 _yxy
+        {
+            get => new double4(0.0, y, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 _yy_
+        {
+            get => new double4(0.0, y, y, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 _yyx
+        {
+            get => new double4(0.0, y, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 _yyy
+        {
+            get => new double4(0.0, y, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 x___
+        {
+            get => new double4(x, 0.0, 0.0, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 x__x
+        {
+            get => new double4(x, 0.0, 0.0, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 x__y
+        {
+            get => new double4(x, 0.0, 0.0, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 x_x_
+        {
+            get => new double4(x, 0.0, x, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 x_xx
+        {
+            get => new double4(x, 0.0, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 x_xy
+        {
+            get => new double4(x, 0.0, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 x_y_
+        {
+            get => new double4(x, 0.0, y, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 x_yx
+        {
+            get => new double4(x, 0.0, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 x_yy
+        {
+            get => new double4(x, 0.0, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 xx__
+        {
+            get => new double4(x, x, 0.0, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 xx_x
+        {
+            get => new double4(x, x, 0.0, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 xx_y
+        {
+            get => new double4(x, x, 0.0, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 xxx_
+        {
+            get => new double4(x, x, x, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 xxxx
+        {
+            get => new double4(x, x, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 xxxy
+        {
+            get => new double4(x, x, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 xxy_
+        {
+            get => new double4(x, x, y, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 xxyx
+        {
+            get => new double4(x, x, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 xxyy
+        {
+            get => new double4(x, x, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 xy__
+        {
+            get => new double4(x, y, 0.0, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 xy_x
+        {
+            get => new double4(x, y, 0.0, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 xy_y
+        {
+            get => new double4(x, y, 0.0, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 xyx_
+        {
+            get => new double4(x, y, x, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 xyxx
+        {
+            get => new double4(x, y, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 xyxy
+        {
+            get => new double4(x, y, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 xyy_
+        {
+            get => new double4(x, y, y, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 xyyx
+        {
+            get => new double4(x, y, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 xyyy
+        {
+            get => new double4(x, y, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 y___
+        {
+            get => new double4(y, 0.0, 0.0, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 y__x
+        {
+            get => new double4(y, 0.0, 0.0, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 y__y
+        {
+            get => new double4(y, 0.0, 0.0, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 y_x_
+        {
+            get => new double4(y, 0.0, x, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 y_xx
+        {
+            get => new double4(y, 0.0, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 y_xy
+        {
+            get => new double4(y, 0.0, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 y_y_
+        {
+            get => new double4(y, 0.0, y, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 y_yx
+        {
+            get => new double4(y, 0.0, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 y_yy
+        {
+            get => new double4(y, 0.0, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 yx__
+        {
+            get => new double4(y, x, 0.0, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 yx_x
+        {
+            get => new double4(y, x, 0.0, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 yx_y
+        {
+            get => new double4(y, x, 0.0, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 yxx_
+        {
+            get => new double4(y, x, x, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 yxxx
+        {
+            get => new double4(y, x, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 yxxy
+        {
+            get => new double4(y, x, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 yxy_
+        {
+            get => new double4(y, x, y, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 yxyx
+        {
+            get => new double4(y, x, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 yxyy
+        {
+            get => new double4(y, x, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 yy__
+        {
+            get => new double4(y, y, 0.0, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 yy_x
+        {
+            get => new double4(y, y, 0.0, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 yy_y
+        {
+            get => new double4(y, y, 0.0, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 yyx_
+        {
+            get => new double4(y, y, x, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 yyxx
+        {
+            get => new double4(y, y, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 yyxy
+        {
+            get => new double4(y, y, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 yyy_
+        {
+            get => new double4(y, y, y, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 yyyx
+        {
+            get => new double4(y, y, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 yyyy
+        {
+            get => new double4(y, y, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double2 _r
+        {
+            get => new double2(0.0, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double2 _g
+        {
+            get => new double2(0.0, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double2 r_
+        {
+            get => new double2(x, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double2 rr
+        {
+            get => new double2(x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double2 rg
+        {
+            get => new double2(x, y);
+            set
+            {
+                x = value.x;
+                y = value.y;
+            }
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double2 g_
+        {
+            get => new double2(y, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
         public double2 gr
         {
             get => new double2(y, x);
@@ -3129,10 +778,690 @@ namespace KibiHex
             }
         }
 
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double2 gg
+        {
+            get => new double2(y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double3 __r
+        {
+            get => new double3(0.0, 0.0, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double3 __g
+        {
+            get => new double3(0.0, 0.0, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double3 _r_
+        {
+            get => new double3(0.0, x, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double3 _rr
+        {
+            get => new double3(0.0, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double3 _rg
+        {
+            get => new double3(0.0, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double3 _g_
+        {
+            get => new double3(0.0, y, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double3 _gr
+        {
+            get => new double3(0.0, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double3 _gg
+        {
+            get => new double3(0.0, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double3 r__
+        {
+            get => new double3(x, 0.0, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double3 r_r
+        {
+            get => new double3(x, 0.0, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double3 r_g
+        {
+            get => new double3(x, 0.0, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double3 rr_
+        {
+            get => new double3(x, x, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double3 rrr
+        {
+            get => new double3(x, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double3 rrg
+        {
+            get => new double3(x, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double3 rg_
+        {
+            get => new double3(x, y, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double3 rgr
+        {
+            get => new double3(x, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double3 rgg
+        {
+            get => new double3(x, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double3 g__
+        {
+            get => new double3(y, 0.0, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double3 g_r
+        {
+            get => new double3(y, 0.0, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double3 g_g
+        {
+            get => new double3(y, 0.0, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double3 gr_
+        {
+            get => new double3(y, x, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double3 grr
+        {
+            get => new double3(y, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double3 grg
+        {
+            get => new double3(y, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double3 gg_
+        {
+            get => new double3(y, y, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double3 ggr
+        {
+            get => new double3(y, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double3 ggg
+        {
+            get => new double3(y, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 ___r
+        {
+            get => new double4(0.0, 0.0, 0.0, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 ___g
+        {
+            get => new double4(0.0, 0.0, 0.0, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 __r_
+        {
+            get => new double4(0.0, 0.0, x, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 __rr
+        {
+            get => new double4(0.0, 0.0, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 __rg
+        {
+            get => new double4(0.0, 0.0, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 __g_
+        {
+            get => new double4(0.0, 0.0, y, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 __gr
+        {
+            get => new double4(0.0, 0.0, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 __gg
+        {
+            get => new double4(0.0, 0.0, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 _r__
+        {
+            get => new double4(0.0, x, 0.0, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 _r_r
+        {
+            get => new double4(0.0, x, 0.0, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 _r_g
+        {
+            get => new double4(0.0, x, 0.0, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 _rr_
+        {
+            get => new double4(0.0, x, x, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 _rrr
+        {
+            get => new double4(0.0, x, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 _rrg
+        {
+            get => new double4(0.0, x, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 _rg_
+        {
+            get => new double4(0.0, x, y, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 _rgr
+        {
+            get => new double4(0.0, x, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 _rgg
+        {
+            get => new double4(0.0, x, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 _g__
+        {
+            get => new double4(0.0, y, 0.0, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 _g_r
+        {
+            get => new double4(0.0, y, 0.0, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 _g_g
+        {
+            get => new double4(0.0, y, 0.0, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 _gr_
+        {
+            get => new double4(0.0, y, x, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 _grr
+        {
+            get => new double4(0.0, y, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 _grg
+        {
+            get => new double4(0.0, y, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 _gg_
+        {
+            get => new double4(0.0, y, y, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 _ggr
+        {
+            get => new double4(0.0, y, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 _ggg
+        {
+            get => new double4(0.0, y, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 r___
+        {
+            get => new double4(x, 0.0, 0.0, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 r__r
+        {
+            get => new double4(x, 0.0, 0.0, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 r__g
+        {
+            get => new double4(x, 0.0, 0.0, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 r_r_
+        {
+            get => new double4(x, 0.0, x, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 r_rr
+        {
+            get => new double4(x, 0.0, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 r_rg
+        {
+            get => new double4(x, 0.0, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 r_g_
+        {
+            get => new double4(x, 0.0, y, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 r_gr
+        {
+            get => new double4(x, 0.0, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 r_gg
+        {
+            get => new double4(x, 0.0, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 rr__
+        {
+            get => new double4(x, x, 0.0, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 rr_r
+        {
+            get => new double4(x, x, 0.0, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 rr_g
+        {
+            get => new double4(x, x, 0.0, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 rrr_
+        {
+            get => new double4(x, x, x, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 rrrr
+        {
+            get => new double4(x, x, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 rrrg
+        {
+            get => new double4(x, x, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 rrg_
+        {
+            get => new double4(x, x, y, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 rrgr
+        {
+            get => new double4(x, x, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 rrgg
+        {
+            get => new double4(x, x, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 rg__
+        {
+            get => new double4(x, y, 0.0, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 rg_r
+        {
+            get => new double4(x, y, 0.0, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 rg_g
+        {
+            get => new double4(x, y, 0.0, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 rgr_
+        {
+            get => new double4(x, y, x, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 rgrr
+        {
+            get => new double4(x, y, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 rgrg
+        {
+            get => new double4(x, y, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 rgg_
+        {
+            get => new double4(x, y, y, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 rggr
+        {
+            get => new double4(x, y, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 rggg
+        {
+            get => new double4(x, y, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 g___
+        {
+            get => new double4(y, 0.0, 0.0, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 g__r
+        {
+            get => new double4(y, 0.0, 0.0, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 g__g
+        {
+            get => new double4(y, 0.0, 0.0, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 g_r_
+        {
+            get => new double4(y, 0.0, x, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 g_rr
+        {
+            get => new double4(y, 0.0, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 g_rg
+        {
+            get => new double4(y, 0.0, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 g_g_
+        {
+            get => new double4(y, 0.0, y, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 g_gr
+        {
+            get => new double4(y, 0.0, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 g_gg
+        {
+            get => new double4(y, 0.0, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 gr__
+        {
+            get => new double4(y, x, 0.0, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 gr_r
+        {
+            get => new double4(y, x, 0.0, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 gr_g
+        {
+            get => new double4(y, x, 0.0, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 grr_
+        {
+            get => new double4(y, x, x, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 grrr
+        {
+            get => new double4(y, x, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 grrg
+        {
+            get => new double4(y, x, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 grg_
+        {
+            get => new double4(y, x, y, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 grgr
+        {
+            get => new double4(y, x, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 grgg
+        {
+            get => new double4(y, x, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 gg__
+        {
+            get => new double4(y, y, 0.0, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 gg_r
+        {
+            get => new double4(y, y, 0.0, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 gg_g
+        {
+            get => new double4(y, y, 0.0, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 ggr_
+        {
+            get => new double4(y, y, x, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 ggrr
+        {
+            get => new double4(y, y, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 ggrg
+        {
+            get => new double4(y, y, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 ggg_
+        {
+            get => new double4(y, y, y, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 gggr
+        {
+            get => new double4(y, y, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 gggg
+        {
+            get => new double4(y, y, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double2 _s
+        {
+            get => new double2(0.0, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double2 _t
+        {
+            get => new double2(0.0, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double2 s_
+        {
+            get => new double2(x, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double2 ss
+        {
+            get => new double2(x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double2 st
+        {
+            get => new double2(x, y);
+            set
+            {
+                x = value.x;
+                y = value.y;
+            }
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double2 t_
+        {
+            get => new double2(y, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
         public double2 ts
         {
             get => new double2(y, x);
@@ -3143,34 +1472,646 @@ namespace KibiHex
             }
         }
 
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double2 yy
-        {
-            get => new double2(y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public double2 gg
-        {
-            get => new double2(y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
         public double2 tt
         {
             get => new double2(y, y);
         }
 
-        #endregion
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double3 __s
+        {
+            get => new double3(0.0, 0.0, x);
+        }
 
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double3 __t
+        {
+            get => new double3(0.0, 0.0, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double3 _s_
+        {
+            get => new double3(0.0, x, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double3 _ss
+        {
+            get => new double3(0.0, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double3 _st
+        {
+            get => new double3(0.0, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double3 _t_
+        {
+            get => new double3(0.0, y, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double3 _ts
+        {
+            get => new double3(0.0, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double3 _tt
+        {
+            get => new double3(0.0, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double3 s__
+        {
+            get => new double3(x, 0.0, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double3 s_s
+        {
+            get => new double3(x, 0.0, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double3 s_t
+        {
+            get => new double3(x, 0.0, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double3 ss_
+        {
+            get => new double3(x, x, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double3 sss
+        {
+            get => new double3(x, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double3 sst
+        {
+            get => new double3(x, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double3 st_
+        {
+            get => new double3(x, y, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double3 sts
+        {
+            get => new double3(x, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double3 stt
+        {
+            get => new double3(x, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double3 t__
+        {
+            get => new double3(y, 0.0, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double3 t_s
+        {
+            get => new double3(y, 0.0, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double3 t_t
+        {
+            get => new double3(y, 0.0, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double3 ts_
+        {
+            get => new double3(y, x, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double3 tss
+        {
+            get => new double3(y, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double3 tst
+        {
+            get => new double3(y, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double3 tt_
+        {
+            get => new double3(y, y, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double3 tts
+        {
+            get => new double3(y, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double3 ttt
+        {
+            get => new double3(y, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 ___s
+        {
+            get => new double4(0.0, 0.0, 0.0, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 ___t
+        {
+            get => new double4(0.0, 0.0, 0.0, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 __s_
+        {
+            get => new double4(0.0, 0.0, x, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 __ss
+        {
+            get => new double4(0.0, 0.0, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 __st
+        {
+            get => new double4(0.0, 0.0, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 __t_
+        {
+            get => new double4(0.0, 0.0, y, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 __ts
+        {
+            get => new double4(0.0, 0.0, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 __tt
+        {
+            get => new double4(0.0, 0.0, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 _s__
+        {
+            get => new double4(0.0, x, 0.0, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 _s_s
+        {
+            get => new double4(0.0, x, 0.0, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 _s_t
+        {
+            get => new double4(0.0, x, 0.0, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 _ss_
+        {
+            get => new double4(0.0, x, x, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 _sss
+        {
+            get => new double4(0.0, x, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 _sst
+        {
+            get => new double4(0.0, x, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 _st_
+        {
+            get => new double4(0.0, x, y, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 _sts
+        {
+            get => new double4(0.0, x, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 _stt
+        {
+            get => new double4(0.0, x, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 _t__
+        {
+            get => new double4(0.0, y, 0.0, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 _t_s
+        {
+            get => new double4(0.0, y, 0.0, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 _t_t
+        {
+            get => new double4(0.0, y, 0.0, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 _ts_
+        {
+            get => new double4(0.0, y, x, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 _tss
+        {
+            get => new double4(0.0, y, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 _tst
+        {
+            get => new double4(0.0, y, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 _tt_
+        {
+            get => new double4(0.0, y, y, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 _tts
+        {
+            get => new double4(0.0, y, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 _ttt
+        {
+            get => new double4(0.0, y, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 s___
+        {
+            get => new double4(x, 0.0, 0.0, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 s__s
+        {
+            get => new double4(x, 0.0, 0.0, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 s__t
+        {
+            get => new double4(x, 0.0, 0.0, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 s_s_
+        {
+            get => new double4(x, 0.0, x, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 s_ss
+        {
+            get => new double4(x, 0.0, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 s_st
+        {
+            get => new double4(x, 0.0, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 s_t_
+        {
+            get => new double4(x, 0.0, y, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 s_ts
+        {
+            get => new double4(x, 0.0, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 s_tt
+        {
+            get => new double4(x, 0.0, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 ss__
+        {
+            get => new double4(x, x, 0.0, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 ss_s
+        {
+            get => new double4(x, x, 0.0, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 ss_t
+        {
+            get => new double4(x, x, 0.0, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 sss_
+        {
+            get => new double4(x, x, x, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 ssss
+        {
+            get => new double4(x, x, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 ssst
+        {
+            get => new double4(x, x, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 sst_
+        {
+            get => new double4(x, x, y, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 ssts
+        {
+            get => new double4(x, x, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 sstt
+        {
+            get => new double4(x, x, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 st__
+        {
+            get => new double4(x, y, 0.0, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 st_s
+        {
+            get => new double4(x, y, 0.0, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 st_t
+        {
+            get => new double4(x, y, 0.0, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 sts_
+        {
+            get => new double4(x, y, x, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 stss
+        {
+            get => new double4(x, y, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 stst
+        {
+            get => new double4(x, y, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 stt_
+        {
+            get => new double4(x, y, y, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 stts
+        {
+            get => new double4(x, y, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 sttt
+        {
+            get => new double4(x, y, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 t___
+        {
+            get => new double4(y, 0.0, 0.0, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 t__s
+        {
+            get => new double4(y, 0.0, 0.0, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 t__t
+        {
+            get => new double4(y, 0.0, 0.0, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 t_s_
+        {
+            get => new double4(y, 0.0, x, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 t_ss
+        {
+            get => new double4(y, 0.0, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 t_st
+        {
+            get => new double4(y, 0.0, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 t_t_
+        {
+            get => new double4(y, 0.0, y, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 t_ts
+        {
+            get => new double4(y, 0.0, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 t_tt
+        {
+            get => new double4(y, 0.0, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 ts__
+        {
+            get => new double4(y, x, 0.0, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 ts_s
+        {
+            get => new double4(y, x, 0.0, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 ts_t
+        {
+            get => new double4(y, x, 0.0, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 tss_
+        {
+            get => new double4(y, x, x, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 tsss
+        {
+            get => new double4(y, x, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 tsst
+        {
+            get => new double4(y, x, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 tst_
+        {
+            get => new double4(y, x, y, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 tsts
+        {
+            get => new double4(y, x, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 tstt
+        {
+            get => new double4(y, x, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 tt__
+        {
+            get => new double4(y, y, 0.0, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 tt_s
+        {
+            get => new double4(y, y, 0.0, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 tt_t
+        {
+            get => new double4(y, y, 0.0, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 tts_
+        {
+            get => new double4(y, y, x, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 ttss
+        {
+            get => new double4(y, y, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 ttst
+        {
+            get => new double4(y, y, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 ttt_
+        {
+            get => new double4(y, y, y, 0.0);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 ttts
+        {
+            get => new double4(y, y, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public double4 tttt
+        {
+            get => new double4(y, y, y, y);
+        }
     }
 }

@@ -1,64 +1,31 @@
-#pragma warning disable IDE1006
 #nullable enable
 using System;
 using System.Runtime.InteropServices;
 using System.Runtime.CompilerServices;
-using System.Runtime.Serialization;
-using System.Diagnostics;
-
 
 namespace KibiHex
 {
-
-    /// <summary>
-    /// A vector of type bool with 4 components.
-    /// </summary>
+    /// <summary>A vector of type bool with 4 components.</summary>
     [Serializable]
     [StructLayout(LayoutKind.Sequential)]
-    [DataContract]
+    [System.Runtime.Serialization.DataContract]
     public partial struct bool4 : IEquatable<bool4>, IComparable<bool4>
     {
 
-        #region Fields
-
-        /// <summary>
-        /// x-component
-        /// </summary>
-        [DataMember(Order = 0)]
+        [System.Runtime.Serialization.DataMember(Order = 0)]
         public bool x;
 
-        /// <summary>
-        /// y-component
-        /// </summary>
-        [DataMember(Order = 1)]
+        [System.Runtime.Serialization.DataMember(Order = 1)]
         public bool y;
 
-        /// <summary>
-        /// z-component
-        /// </summary>
-        [DataMember(Order = 2)]
+        [System.Runtime.Serialization.DataMember(Order = 2)]
         public bool z;
 
-        /// <summary>
-        /// w-component
-        /// </summary>
-        [DataMember(Order = 3)]
+        [System.Runtime.Serialization.DataMember(Order = 3)]
         public bool w;
 
-        /// <summary>
-        /// Returns new vector with every component set to default.
-        /// </summary>
         public static readonly bool4 zero = new bool4(false, false, false, false);
 
-        #endregion
-
-
-        #region Constructors
-
-        /// <summary>
-        /// Component-wise constructor
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public bool4(bool x, bool y, bool z, bool w)
         {
             this.x = x;
@@ -67,98 +34,38 @@ namespace KibiHex
             this.w = w;
         }
 
-        /// <summary>
-        /// all-same-value constructor
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public bool4(bool v)
+        public bool4(bool value)
         {
-            this.x = v;
-            this.y = v;
-            this.z = v;
-            this.w = v;
+            x = value;
+            y = value;
+            z = value;
+            w = value;
         }
 
-        /// <summary>
-        /// from-vector constructor (empty fields are zero/false)
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public bool4(bool2 v)
+        public bool4(bool2 value)
         {
-            this.x = v.x;
-            this.y = v.y;
-            this.z = false;
-            this.w = false;
+            x = value.x;
+            y = value.y;
+            z = false;
+            w = false;
         }
 
-        /// <summary>
-        /// from-vector-and-value constructor (empty fields are zero/false)
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public bool4(bool2 v, bool z)
+        public bool4(bool3 value)
         {
-            this.x = v.x;
-            this.y = v.y;
-            this.z = z;
-            this.w = false;
+            x = value.x;
+            y = value.y;
+            z = value.z;
+            w = false;
         }
 
-        /// <summary>
-        /// from-vector-and-value constructor
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public bool4(bool2 v, bool z, bool w)
+        public bool4(bool4 value)
         {
-            this.x = v.x;
-            this.y = v.y;
-            this.z = z;
-            this.w = w;
+            x = value.x;
+            y = value.y;
+            z = value.z;
+            w = value.w;
         }
 
-        /// <summary>
-        /// from-vector constructor (empty fields are zero/false)
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public bool4(bool3 v)
-        {
-            this.x = v.x;
-            this.y = v.y;
-            this.z = v.z;
-            this.w = false;
-        }
-
-        /// <summary>
-        /// from-vector-and-value constructor
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public bool4(bool3 v, bool w)
-        {
-            this.x = v.x;
-            this.y = v.y;
-            this.z = v.z;
-            this.w = w;
-        }
-
-        /// <summary>
-        /// from-vector constructor
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public bool4(bool4 v)
-        {
-            this.x = v.x;
-            this.y = v.y;
-            this.z = v.z;
-            this.w = v.w;
-        }
-
-        #endregion
-
-
-        #region Indexer
-
-        /// <summary>
-        /// Gets/Sets a specific indexed component (a bit slower than direct access).
-        /// </summary>
         public bool this[int index]
         {
             get
@@ -175,81 +82,63 @@ namespace KibiHex
             }
         }
 
-        #endregion
+        public int Count => 4;
 
-
-        #region Properties
-
-        /// <summary>
-        /// Returns the number of components (4).
-        /// </summary>
-        public int Count
+        public bool Equals(bool4 other)
         {
-            get => 4;
+            return x.Equals(other.x) && y.Equals(other.y) && z.Equals(other.z) && w.Equals(other.w);
         }
 
-        #endregion
+        public override bool Equals(object obj)
+        {
+            return obj is bool4 other && Equals(other);
+        }
 
+        public override int GetHashCode()
+        {
+            unchecked
+            {
+                var hash = 17;
+                hash = hash * 31 + x.GetHashCode();
+                hash = hash * 31 + y.GetHashCode();
+                hash = hash * 31 + z.GetHashCode();
+                hash = hash * 31 + w.GetHashCode();
+                return hash;
+            }
+        }
 
-        #region Operators
+        public int CompareTo(bool4 other)
+        {
+            var xComparison = x.CompareTo(other.x);
+            if (xComparison != 0) return xComparison;
+            var yComparison = y.CompareTo(other.y);
+            if (yComparison != 0) return yComparison;
+            var zComparison = z.CompareTo(other.z);
+            if (zComparison != 0) return zComparison;
+            var wComparison = w.CompareTo(other.w);
+            if (wComparison != 0) return wComparison;
+            return 0;
+        }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static bool operator==(bool4 lhs, bool4 rhs) => lhs.x == rhs.x&&lhs.y == rhs.y&&lhs.z == rhs.z&&lhs.w == rhs.w;
+        public override string ToString()
+        {
+            return $"[{x}, {y}, {z}, {w}]";
+        }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static bool operator!=(bool4 lhs, bool4 rhs) => lhs.x != rhs.x||lhs.y != rhs.y||lhs.z != rhs.z||lhs.w != rhs.w;
-
-        #endregion
-
-
-        #region Functions
-
-        /// <summary>
-        /// Returns HashCode
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public override readonly int GetHashCode() => HashCode.Combine(x, y, z, w);
-
-        /// <summary>
-        /// Compares two values
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public readonly int CompareTo(bool4 other) => Comparison.Combine(x, y, z, w, other.x, other.y, other.z, other.w);
-
-        /// <summary>
-        /// Returns a string representation of this vector.
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public override readonly string ToString() => $"{x}, {y}, {z}, {w}";
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public readonly bool Equals(bool4 other) => other == this;
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public override readonly bool Equals(object? obj) => obj is bool4 other && Equals(other);
-
-        #endregion
-
-
-        #region Static Functions
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static bool Any(bool4 v) => v.x||v.y||v.z||v.w;
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static bool All(bool4 v) => v.x&&v.y&&v.z&&v.w;
-
-        /// <summary>
-        /// Parses vector value from string representation.
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool4 Parse(string value)
         {
-            var values = value.Split(", ");
-            return new bool4(bool.Parse(values[0]), bool.Parse(values[1]), bool.Parse(values[2]), bool.Parse(values[3]));
+            var values = value.Split(',');
+            return new(bool.Parse(values[0]), bool.Parse(values[1]), bool.Parse(values[2]), bool.Parse(values[3]));
         }
 
-        #endregion
+        public static bool Any(bool4 value)
+        {
+            return value.x || value.y || value.z || value.w;
+        }
 
+        public static bool All(bool4 value)
+        {
+            return value.x && value.y && value.z && value.w;
+        }
     }
 }

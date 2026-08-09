@@ -1,3041 +1,62 @@
-#pragma warning disable IDE1006
 #nullable enable
 using System;
 using System.Runtime.InteropServices;
 using System.Runtime.CompilerServices;
-using System.Runtime.Serialization;
-using System.Diagnostics;
-
 
 namespace KibiHex
 {
     public partial struct bool2
     {
 
-        #region Swizzles
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
         public bool r
         {
             get => x;
-            set
-            {
-                x = value;
-            }
+            set => x = value;
         }
 
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        public bool s
-        {
-            get => x;
-            set
-            {
-                x = value;
-            }
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
         public bool g
         {
             get => y;
-            set
-            {
-                y = value;
-            }
+            set => y = value;
         }
 
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
+        public bool s
+        {
+            get => x;
+            set => x = value;
+        }
+
         public bool t
         {
             get => y;
-            set
-            {
-                y = value;
-            }
+            set => y = value;
         }
 
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 ___x
-        {
-            get => new bool4(false, false, false, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 ___r
-        {
-            get => new bool4(false, false, false, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 ___s
-        {
-            get => new bool4(false, false, false, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 ___y
-        {
-            get => new bool4(false, false, false, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 ___g
-        {
-            get => new bool4(false, false, false, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 ___t
-        {
-            get => new bool4(false, false, false, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 __x_
-        {
-            get => new bool4(false, false, x, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 __r_
-        {
-            get => new bool4(false, false, x, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 __s_
-        {
-            get => new bool4(false, false, x, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 __xx
-        {
-            get => new bool4(false, false, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 __rr
-        {
-            get => new bool4(false, false, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 __ss
-        {
-            get => new bool4(false, false, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 __xy
-        {
-            get => new bool4(false, false, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 __rg
-        {
-            get => new bool4(false, false, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 __st
-        {
-            get => new bool4(false, false, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 __y_
-        {
-            get => new bool4(false, false, y, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 __g_
-        {
-            get => new bool4(false, false, y, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 __t_
-        {
-            get => new bool4(false, false, y, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 __yx
-        {
-            get => new bool4(false, false, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 __gr
-        {
-            get => new bool4(false, false, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 __ts
-        {
-            get => new bool4(false, false, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 __yy
-        {
-            get => new bool4(false, false, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 __gg
-        {
-            get => new bool4(false, false, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 __tt
-        {
-            get => new bool4(false, false, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 _x__
-        {
-            get => new bool4(false, x, false, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 _r__
-        {
-            get => new bool4(false, x, false, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 _s__
-        {
-            get => new bool4(false, x, false, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 _x_x
-        {
-            get => new bool4(false, x, false, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 _r_r
-        {
-            get => new bool4(false, x, false, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 _s_s
-        {
-            get => new bool4(false, x, false, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 _x_y
-        {
-            get => new bool4(false, x, false, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 _r_g
-        {
-            get => new bool4(false, x, false, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 _s_t
-        {
-            get => new bool4(false, x, false, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 _xx_
-        {
-            get => new bool4(false, x, x, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 _rr_
-        {
-            get => new bool4(false, x, x, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 _ss_
-        {
-            get => new bool4(false, x, x, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 _xxx
-        {
-            get => new bool4(false, x, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 _rrr
-        {
-            get => new bool4(false, x, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 _sss
-        {
-            get => new bool4(false, x, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 _xxy
-        {
-            get => new bool4(false, x, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 _rrg
-        {
-            get => new bool4(false, x, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 _sst
-        {
-            get => new bool4(false, x, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 _xy_
-        {
-            get => new bool4(false, x, y, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 _rg_
-        {
-            get => new bool4(false, x, y, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 _st_
-        {
-            get => new bool4(false, x, y, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 _xyx
-        {
-            get => new bool4(false, x, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 _rgr
-        {
-            get => new bool4(false, x, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 _sts
-        {
-            get => new bool4(false, x, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 _xyy
-        {
-            get => new bool4(false, x, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 _rgg
-        {
-            get => new bool4(false, x, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 _stt
-        {
-            get => new bool4(false, x, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 _y__
-        {
-            get => new bool4(false, y, false, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 _g__
-        {
-            get => new bool4(false, y, false, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 _t__
-        {
-            get => new bool4(false, y, false, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 _y_x
-        {
-            get => new bool4(false, y, false, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 _g_r
-        {
-            get => new bool4(false, y, false, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 _t_s
-        {
-            get => new bool4(false, y, false, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 _y_y
-        {
-            get => new bool4(false, y, false, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 _g_g
-        {
-            get => new bool4(false, y, false, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 _t_t
-        {
-            get => new bool4(false, y, false, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 _yx_
-        {
-            get => new bool4(false, y, x, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 _gr_
-        {
-            get => new bool4(false, y, x, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 _ts_
-        {
-            get => new bool4(false, y, x, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 _yxx
-        {
-            get => new bool4(false, y, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 _grr
-        {
-            get => new bool4(false, y, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 _tss
-        {
-            get => new bool4(false, y, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 _yxy
-        {
-            get => new bool4(false, y, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 _grg
-        {
-            get => new bool4(false, y, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 _tst
-        {
-            get => new bool4(false, y, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 _yy_
-        {
-            get => new bool4(false, y, y, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 _gg_
-        {
-            get => new bool4(false, y, y, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 _tt_
-        {
-            get => new bool4(false, y, y, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 _yyx
-        {
-            get => new bool4(false, y, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 _ggr
-        {
-            get => new bool4(false, y, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 _tts
-        {
-            get => new bool4(false, y, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 _yyy
-        {
-            get => new bool4(false, y, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 _ggg
-        {
-            get => new bool4(false, y, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 _ttt
-        {
-            get => new bool4(false, y, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 x___
-        {
-            get => new bool4(x, false, false, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 r___
-        {
-            get => new bool4(x, false, false, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 s___
-        {
-            get => new bool4(x, false, false, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 x__x
-        {
-            get => new bool4(x, false, false, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 r__r
-        {
-            get => new bool4(x, false, false, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 s__s
-        {
-            get => new bool4(x, false, false, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 x__y
-        {
-            get => new bool4(x, false, false, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 r__g
-        {
-            get => new bool4(x, false, false, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 s__t
-        {
-            get => new bool4(x, false, false, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 x_x_
-        {
-            get => new bool4(x, false, x, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 r_r_
-        {
-            get => new bool4(x, false, x, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 s_s_
-        {
-            get => new bool4(x, false, x, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 x_xx
-        {
-            get => new bool4(x, false, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 r_rr
-        {
-            get => new bool4(x, false, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 s_ss
-        {
-            get => new bool4(x, false, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 x_xy
-        {
-            get => new bool4(x, false, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 r_rg
-        {
-            get => new bool4(x, false, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 s_st
-        {
-            get => new bool4(x, false, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 x_y_
-        {
-            get => new bool4(x, false, y, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 r_g_
-        {
-            get => new bool4(x, false, y, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 s_t_
-        {
-            get => new bool4(x, false, y, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 x_yx
-        {
-            get => new bool4(x, false, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 r_gr
-        {
-            get => new bool4(x, false, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 s_ts
-        {
-            get => new bool4(x, false, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 x_yy
-        {
-            get => new bool4(x, false, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 r_gg
-        {
-            get => new bool4(x, false, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 s_tt
-        {
-            get => new bool4(x, false, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 xx__
-        {
-            get => new bool4(x, x, false, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 rr__
-        {
-            get => new bool4(x, x, false, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 ss__
-        {
-            get => new bool4(x, x, false, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 xx_x
-        {
-            get => new bool4(x, x, false, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 rr_r
-        {
-            get => new bool4(x, x, false, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 ss_s
-        {
-            get => new bool4(x, x, false, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 xx_y
-        {
-            get => new bool4(x, x, false, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 rr_g
-        {
-            get => new bool4(x, x, false, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 ss_t
-        {
-            get => new bool4(x, x, false, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 xxx_
-        {
-            get => new bool4(x, x, x, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 rrr_
-        {
-            get => new bool4(x, x, x, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 sss_
-        {
-            get => new bool4(x, x, x, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 xxxx
-        {
-            get => new bool4(x, x, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 rrrr
-        {
-            get => new bool4(x, x, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 ssss
-        {
-            get => new bool4(x, x, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 xxxy
-        {
-            get => new bool4(x, x, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 rrrg
-        {
-            get => new bool4(x, x, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 ssst
-        {
-            get => new bool4(x, x, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 xxy_
-        {
-            get => new bool4(x, x, y, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 rrg_
-        {
-            get => new bool4(x, x, y, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 sst_
-        {
-            get => new bool4(x, x, y, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 xxyx
-        {
-            get => new bool4(x, x, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 rrgr
-        {
-            get => new bool4(x, x, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 ssts
-        {
-            get => new bool4(x, x, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 xxyy
-        {
-            get => new bool4(x, x, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 rrgg
-        {
-            get => new bool4(x, x, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 sstt
-        {
-            get => new bool4(x, x, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 xy__
-        {
-            get => new bool4(x, y, false, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 rg__
-        {
-            get => new bool4(x, y, false, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 st__
-        {
-            get => new bool4(x, y, false, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 xy_x
-        {
-            get => new bool4(x, y, false, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 rg_r
-        {
-            get => new bool4(x, y, false, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 st_s
-        {
-            get => new bool4(x, y, false, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 xy_y
-        {
-            get => new bool4(x, y, false, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 rg_g
-        {
-            get => new bool4(x, y, false, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 st_t
-        {
-            get => new bool4(x, y, false, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 xyx_
-        {
-            get => new bool4(x, y, x, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 rgr_
-        {
-            get => new bool4(x, y, x, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 sts_
-        {
-            get => new bool4(x, y, x, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 xyxx
-        {
-            get => new bool4(x, y, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 rgrr
-        {
-            get => new bool4(x, y, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 stss
-        {
-            get => new bool4(x, y, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 xyxy
-        {
-            get => new bool4(x, y, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 rgrg
-        {
-            get => new bool4(x, y, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 stst
-        {
-            get => new bool4(x, y, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 xyy_
-        {
-            get => new bool4(x, y, y, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 rgg_
-        {
-            get => new bool4(x, y, y, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 stt_
-        {
-            get => new bool4(x, y, y, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 xyyx
-        {
-            get => new bool4(x, y, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 rggr
-        {
-            get => new bool4(x, y, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 stts
-        {
-            get => new bool4(x, y, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 xyyy
-        {
-            get => new bool4(x, y, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 rggg
-        {
-            get => new bool4(x, y, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 sttt
-        {
-            get => new bool4(x, y, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 y___
-        {
-            get => new bool4(y, false, false, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 g___
-        {
-            get => new bool4(y, false, false, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 t___
-        {
-            get => new bool4(y, false, false, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 y__x
-        {
-            get => new bool4(y, false, false, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 g__r
-        {
-            get => new bool4(y, false, false, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 t__s
-        {
-            get => new bool4(y, false, false, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 y__y
-        {
-            get => new bool4(y, false, false, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 g__g
-        {
-            get => new bool4(y, false, false, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 t__t
-        {
-            get => new bool4(y, false, false, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 y_x_
-        {
-            get => new bool4(y, false, x, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 g_r_
-        {
-            get => new bool4(y, false, x, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 t_s_
-        {
-            get => new bool4(y, false, x, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 y_xx
-        {
-            get => new bool4(y, false, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 g_rr
-        {
-            get => new bool4(y, false, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 t_ss
-        {
-            get => new bool4(y, false, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 y_xy
-        {
-            get => new bool4(y, false, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 g_rg
-        {
-            get => new bool4(y, false, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 t_st
-        {
-            get => new bool4(y, false, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 y_y_
-        {
-            get => new bool4(y, false, y, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 g_g_
-        {
-            get => new bool4(y, false, y, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 t_t_
-        {
-            get => new bool4(y, false, y, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 y_yx
-        {
-            get => new bool4(y, false, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 g_gr
-        {
-            get => new bool4(y, false, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 t_ts
-        {
-            get => new bool4(y, false, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 y_yy
-        {
-            get => new bool4(y, false, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 g_gg
-        {
-            get => new bool4(y, false, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 t_tt
-        {
-            get => new bool4(y, false, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 yx__
-        {
-            get => new bool4(y, x, false, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 gr__
-        {
-            get => new bool4(y, x, false, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 ts__
-        {
-            get => new bool4(y, x, false, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 yx_x
-        {
-            get => new bool4(y, x, false, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 gr_r
-        {
-            get => new bool4(y, x, false, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 ts_s
-        {
-            get => new bool4(y, x, false, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 yx_y
-        {
-            get => new bool4(y, x, false, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 gr_g
-        {
-            get => new bool4(y, x, false, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 ts_t
-        {
-            get => new bool4(y, x, false, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 yxx_
-        {
-            get => new bool4(y, x, x, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 grr_
-        {
-            get => new bool4(y, x, x, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 tss_
-        {
-            get => new bool4(y, x, x, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 yxxx
-        {
-            get => new bool4(y, x, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 grrr
-        {
-            get => new bool4(y, x, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 tsss
-        {
-            get => new bool4(y, x, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 yxxy
-        {
-            get => new bool4(y, x, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 grrg
-        {
-            get => new bool4(y, x, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 tsst
-        {
-            get => new bool4(y, x, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 yxy_
-        {
-            get => new bool4(y, x, y, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 grg_
-        {
-            get => new bool4(y, x, y, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 tst_
-        {
-            get => new bool4(y, x, y, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 yxyx
-        {
-            get => new bool4(y, x, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 grgr
-        {
-            get => new bool4(y, x, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 tsts
-        {
-            get => new bool4(y, x, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 yxyy
-        {
-            get => new bool4(y, x, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 grgg
-        {
-            get => new bool4(y, x, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 tstt
-        {
-            get => new bool4(y, x, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 yy__
-        {
-            get => new bool4(y, y, false, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 gg__
-        {
-            get => new bool4(y, y, false, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 tt__
-        {
-            get => new bool4(y, y, false, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 yy_x
-        {
-            get => new bool4(y, y, false, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 gg_r
-        {
-            get => new bool4(y, y, false, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 tt_s
-        {
-            get => new bool4(y, y, false, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 yy_y
-        {
-            get => new bool4(y, y, false, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 gg_g
-        {
-            get => new bool4(y, y, false, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 tt_t
-        {
-            get => new bool4(y, y, false, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 yyx_
-        {
-            get => new bool4(y, y, x, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 ggr_
-        {
-            get => new bool4(y, y, x, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 tts_
-        {
-            get => new bool4(y, y, x, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 yyxx
-        {
-            get => new bool4(y, y, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 ggrr
-        {
-            get => new bool4(y, y, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 ttss
-        {
-            get => new bool4(y, y, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 yyxy
-        {
-            get => new bool4(y, y, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 ggrg
-        {
-            get => new bool4(y, y, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 ttst
-        {
-            get => new bool4(y, y, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 yyy_
-        {
-            get => new bool4(y, y, y, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 ggg_
-        {
-            get => new bool4(y, y, y, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 ttt_
-        {
-            get => new bool4(y, y, y, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 yyyx
-        {
-            get => new bool4(y, y, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 gggr
-        {
-            get => new bool4(y, y, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 ttts
-        {
-            get => new bool4(y, y, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 yyyy
-        {
-            get => new bool4(y, y, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 gggg
-        {
-            get => new bool4(y, y, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool4 tttt
-        {
-            get => new bool4(y, y, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool3 __x
-        {
-            get => new bool3(false, false, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool3 __r
-        {
-            get => new bool3(false, false, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool3 __s
-        {
-            get => new bool3(false, false, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool3 __y
-        {
-            get => new bool3(false, false, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool3 __g
-        {
-            get => new bool3(false, false, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool3 __t
-        {
-            get => new bool3(false, false, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool3 _x_
-        {
-            get => new bool3(false, x, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool3 _r_
-        {
-            get => new bool3(false, x, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool3 _s_
-        {
-            get => new bool3(false, x, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool3 _xx
-        {
-            get => new bool3(false, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool3 _rr
-        {
-            get => new bool3(false, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool3 _ss
-        {
-            get => new bool3(false, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool3 _xy
-        {
-            get => new bool3(false, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool3 _rg
-        {
-            get => new bool3(false, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool3 _st
-        {
-            get => new bool3(false, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool3 _y_
-        {
-            get => new bool3(false, y, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool3 _g_
-        {
-            get => new bool3(false, y, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool3 _t_
-        {
-            get => new bool3(false, y, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool3 _yx
-        {
-            get => new bool3(false, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool3 _gr
-        {
-            get => new bool3(false, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool3 _ts
-        {
-            get => new bool3(false, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool3 _yy
-        {
-            get => new bool3(false, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool3 _gg
-        {
-            get => new bool3(false, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool3 _tt
-        {
-            get => new bool3(false, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool3 x__
-        {
-            get => new bool3(x, false, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool3 r__
-        {
-            get => new bool3(x, false, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool3 s__
-        {
-            get => new bool3(x, false, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool3 x_x
-        {
-            get => new bool3(x, false, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool3 r_r
-        {
-            get => new bool3(x, false, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool3 s_s
-        {
-            get => new bool3(x, false, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool3 x_y
-        {
-            get => new bool3(x, false, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool3 r_g
-        {
-            get => new bool3(x, false, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool3 s_t
-        {
-            get => new bool3(x, false, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool3 xx_
-        {
-            get => new bool3(x, x, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool3 rr_
-        {
-            get => new bool3(x, x, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool3 ss_
-        {
-            get => new bool3(x, x, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool3 xxx
-        {
-            get => new bool3(x, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool3 rrr
-        {
-            get => new bool3(x, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool3 sss
-        {
-            get => new bool3(x, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool3 xxy
-        {
-            get => new bool3(x, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool3 rrg
-        {
-            get => new bool3(x, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool3 sst
-        {
-            get => new bool3(x, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool3 xy_
-        {
-            get => new bool3(x, y, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool3 rg_
-        {
-            get => new bool3(x, y, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool3 st_
-        {
-            get => new bool3(x, y, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool3 xyx
-        {
-            get => new bool3(x, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool3 rgr
-        {
-            get => new bool3(x, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool3 sts
-        {
-            get => new bool3(x, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool3 xyy
-        {
-            get => new bool3(x, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool3 rgg
-        {
-            get => new bool3(x, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool3 stt
-        {
-            get => new bool3(x, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool3 y__
-        {
-            get => new bool3(y, false, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool3 g__
-        {
-            get => new bool3(y, false, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool3 t__
-        {
-            get => new bool3(y, false, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool3 y_x
-        {
-            get => new bool3(y, false, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool3 g_r
-        {
-            get => new bool3(y, false, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool3 t_s
-        {
-            get => new bool3(y, false, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool3 y_y
-        {
-            get => new bool3(y, false, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool3 g_g
-        {
-            get => new bool3(y, false, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool3 t_t
-        {
-            get => new bool3(y, false, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool3 yx_
-        {
-            get => new bool3(y, x, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool3 gr_
-        {
-            get => new bool3(y, x, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool3 ts_
-        {
-            get => new bool3(y, x, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool3 yxx
-        {
-            get => new bool3(y, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool3 grr
-        {
-            get => new bool3(y, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool3 tss
-        {
-            get => new bool3(y, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool3 yxy
-        {
-            get => new bool3(y, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool3 grg
-        {
-            get => new bool3(y, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool3 tst
-        {
-            get => new bool3(y, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool3 yy_
-        {
-            get => new bool3(y, y, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool3 gg_
-        {
-            get => new bool3(y, y, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool3 tt_
-        {
-            get => new bool3(y, y, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool3 yyx
-        {
-            get => new bool3(y, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool3 ggr
-        {
-            get => new bool3(y, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool3 tts
-        {
-            get => new bool3(y, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool3 yyy
-        {
-            get => new bool3(y, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool3 ggg
-        {
-            get => new bool3(y, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool3 ttt
-        {
-            get => new bool3(y, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
         public bool2 _x
         {
             get => new bool2(false, x);
         }
 
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool2 _r
-        {
-            get => new bool2(false, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool2 _s
-        {
-            get => new bool2(false, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
         public bool2 _y
         {
             get => new bool2(false, y);
         }
 
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool2 _g
-        {
-            get => new bool2(false, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool2 _t
-        {
-            get => new bool2(false, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
         public bool2 x_
         {
             get => new bool2(x, false);
         }
 
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool2 r_
-        {
-            get => new bool2(x, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool2 s_
-        {
-            get => new bool2(x, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
         public bool2 xx
         {
             get => new bool2(x, x);
         }
 
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool2 rr
-        {
-            get => new bool2(x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool2 ss
-        {
-            get => new bool2(x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
         public bool2 xy
         {
             get => new bool2(x, y);
@@ -3046,65 +67,13 @@ namespace KibiHex
             }
         }
 
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool2 rg
-        {
-            get => new bool2(x, y);
-            set
-            {
-                x = value.x;
-                y = value.y;
-            }
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool2 st
-        {
-            get => new bool2(x, y);
-            set
-            {
-                x = value.x;
-                y = value.y;
-            }
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
         public bool2 y_
         {
             get => new bool2(y, false);
         }
 
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool2 g_
-        {
-            get => new bool2(y, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool2 t_
-        {
-            get => new bool2(y, false);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
         public bool2 yx
         {
             get => new bool2(y, x);
@@ -3115,10 +84,690 @@ namespace KibiHex
             }
         }
 
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool2 yy
+        {
+            get => new bool2(y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool3 __x
+        {
+            get => new bool3(false, false, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool3 __y
+        {
+            get => new bool3(false, false, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool3 _x_
+        {
+            get => new bool3(false, x, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool3 _xx
+        {
+            get => new bool3(false, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool3 _xy
+        {
+            get => new bool3(false, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool3 _y_
+        {
+            get => new bool3(false, y, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool3 _yx
+        {
+            get => new bool3(false, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool3 _yy
+        {
+            get => new bool3(false, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool3 x__
+        {
+            get => new bool3(x, false, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool3 x_x
+        {
+            get => new bool3(x, false, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool3 x_y
+        {
+            get => new bool3(x, false, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool3 xx_
+        {
+            get => new bool3(x, x, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool3 xxx
+        {
+            get => new bool3(x, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool3 xxy
+        {
+            get => new bool3(x, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool3 xy_
+        {
+            get => new bool3(x, y, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool3 xyx
+        {
+            get => new bool3(x, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool3 xyy
+        {
+            get => new bool3(x, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool3 y__
+        {
+            get => new bool3(y, false, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool3 y_x
+        {
+            get => new bool3(y, false, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool3 y_y
+        {
+            get => new bool3(y, false, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool3 yx_
+        {
+            get => new bool3(y, x, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool3 yxx
+        {
+            get => new bool3(y, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool3 yxy
+        {
+            get => new bool3(y, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool3 yy_
+        {
+            get => new bool3(y, y, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool3 yyx
+        {
+            get => new bool3(y, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool3 yyy
+        {
+            get => new bool3(y, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 ___x
+        {
+            get => new bool4(false, false, false, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 ___y
+        {
+            get => new bool4(false, false, false, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 __x_
+        {
+            get => new bool4(false, false, x, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 __xx
+        {
+            get => new bool4(false, false, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 __xy
+        {
+            get => new bool4(false, false, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 __y_
+        {
+            get => new bool4(false, false, y, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 __yx
+        {
+            get => new bool4(false, false, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 __yy
+        {
+            get => new bool4(false, false, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 _x__
+        {
+            get => new bool4(false, x, false, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 _x_x
+        {
+            get => new bool4(false, x, false, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 _x_y
+        {
+            get => new bool4(false, x, false, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 _xx_
+        {
+            get => new bool4(false, x, x, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 _xxx
+        {
+            get => new bool4(false, x, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 _xxy
+        {
+            get => new bool4(false, x, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 _xy_
+        {
+            get => new bool4(false, x, y, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 _xyx
+        {
+            get => new bool4(false, x, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 _xyy
+        {
+            get => new bool4(false, x, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 _y__
+        {
+            get => new bool4(false, y, false, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 _y_x
+        {
+            get => new bool4(false, y, false, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 _y_y
+        {
+            get => new bool4(false, y, false, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 _yx_
+        {
+            get => new bool4(false, y, x, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 _yxx
+        {
+            get => new bool4(false, y, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 _yxy
+        {
+            get => new bool4(false, y, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 _yy_
+        {
+            get => new bool4(false, y, y, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 _yyx
+        {
+            get => new bool4(false, y, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 _yyy
+        {
+            get => new bool4(false, y, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 x___
+        {
+            get => new bool4(x, false, false, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 x__x
+        {
+            get => new bool4(x, false, false, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 x__y
+        {
+            get => new bool4(x, false, false, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 x_x_
+        {
+            get => new bool4(x, false, x, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 x_xx
+        {
+            get => new bool4(x, false, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 x_xy
+        {
+            get => new bool4(x, false, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 x_y_
+        {
+            get => new bool4(x, false, y, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 x_yx
+        {
+            get => new bool4(x, false, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 x_yy
+        {
+            get => new bool4(x, false, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 xx__
+        {
+            get => new bool4(x, x, false, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 xx_x
+        {
+            get => new bool4(x, x, false, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 xx_y
+        {
+            get => new bool4(x, x, false, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 xxx_
+        {
+            get => new bool4(x, x, x, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 xxxx
+        {
+            get => new bool4(x, x, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 xxxy
+        {
+            get => new bool4(x, x, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 xxy_
+        {
+            get => new bool4(x, x, y, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 xxyx
+        {
+            get => new bool4(x, x, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 xxyy
+        {
+            get => new bool4(x, x, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 xy__
+        {
+            get => new bool4(x, y, false, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 xy_x
+        {
+            get => new bool4(x, y, false, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 xy_y
+        {
+            get => new bool4(x, y, false, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 xyx_
+        {
+            get => new bool4(x, y, x, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 xyxx
+        {
+            get => new bool4(x, y, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 xyxy
+        {
+            get => new bool4(x, y, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 xyy_
+        {
+            get => new bool4(x, y, y, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 xyyx
+        {
+            get => new bool4(x, y, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 xyyy
+        {
+            get => new bool4(x, y, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 y___
+        {
+            get => new bool4(y, false, false, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 y__x
+        {
+            get => new bool4(y, false, false, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 y__y
+        {
+            get => new bool4(y, false, false, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 y_x_
+        {
+            get => new bool4(y, false, x, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 y_xx
+        {
+            get => new bool4(y, false, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 y_xy
+        {
+            get => new bool4(y, false, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 y_y_
+        {
+            get => new bool4(y, false, y, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 y_yx
+        {
+            get => new bool4(y, false, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 y_yy
+        {
+            get => new bool4(y, false, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 yx__
+        {
+            get => new bool4(y, x, false, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 yx_x
+        {
+            get => new bool4(y, x, false, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 yx_y
+        {
+            get => new bool4(y, x, false, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 yxx_
+        {
+            get => new bool4(y, x, x, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 yxxx
+        {
+            get => new bool4(y, x, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 yxxy
+        {
+            get => new bool4(y, x, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 yxy_
+        {
+            get => new bool4(y, x, y, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 yxyx
+        {
+            get => new bool4(y, x, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 yxyy
+        {
+            get => new bool4(y, x, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 yy__
+        {
+            get => new bool4(y, y, false, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 yy_x
+        {
+            get => new bool4(y, y, false, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 yy_y
+        {
+            get => new bool4(y, y, false, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 yyx_
+        {
+            get => new bool4(y, y, x, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 yyxx
+        {
+            get => new bool4(y, y, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 yyxy
+        {
+            get => new bool4(y, y, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 yyy_
+        {
+            get => new bool4(y, y, y, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 yyyx
+        {
+            get => new bool4(y, y, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 yyyy
+        {
+            get => new bool4(y, y, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool2 _r
+        {
+            get => new bool2(false, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool2 _g
+        {
+            get => new bool2(false, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool2 r_
+        {
+            get => new bool2(x, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool2 rr
+        {
+            get => new bool2(x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool2 rg
+        {
+            get => new bool2(x, y);
+            set
+            {
+                x = value.x;
+                y = value.y;
+            }
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool2 g_
+        {
+            get => new bool2(y, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
         public bool2 gr
         {
             get => new bool2(y, x);
@@ -3129,10 +778,690 @@ namespace KibiHex
             }
         }
 
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool2 gg
+        {
+            get => new bool2(y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool3 __r
+        {
+            get => new bool3(false, false, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool3 __g
+        {
+            get => new bool3(false, false, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool3 _r_
+        {
+            get => new bool3(false, x, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool3 _rr
+        {
+            get => new bool3(false, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool3 _rg
+        {
+            get => new bool3(false, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool3 _g_
+        {
+            get => new bool3(false, y, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool3 _gr
+        {
+            get => new bool3(false, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool3 _gg
+        {
+            get => new bool3(false, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool3 r__
+        {
+            get => new bool3(x, false, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool3 r_r
+        {
+            get => new bool3(x, false, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool3 r_g
+        {
+            get => new bool3(x, false, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool3 rr_
+        {
+            get => new bool3(x, x, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool3 rrr
+        {
+            get => new bool3(x, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool3 rrg
+        {
+            get => new bool3(x, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool3 rg_
+        {
+            get => new bool3(x, y, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool3 rgr
+        {
+            get => new bool3(x, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool3 rgg
+        {
+            get => new bool3(x, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool3 g__
+        {
+            get => new bool3(y, false, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool3 g_r
+        {
+            get => new bool3(y, false, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool3 g_g
+        {
+            get => new bool3(y, false, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool3 gr_
+        {
+            get => new bool3(y, x, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool3 grr
+        {
+            get => new bool3(y, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool3 grg
+        {
+            get => new bool3(y, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool3 gg_
+        {
+            get => new bool3(y, y, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool3 ggr
+        {
+            get => new bool3(y, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool3 ggg
+        {
+            get => new bool3(y, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 ___r
+        {
+            get => new bool4(false, false, false, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 ___g
+        {
+            get => new bool4(false, false, false, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 __r_
+        {
+            get => new bool4(false, false, x, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 __rr
+        {
+            get => new bool4(false, false, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 __rg
+        {
+            get => new bool4(false, false, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 __g_
+        {
+            get => new bool4(false, false, y, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 __gr
+        {
+            get => new bool4(false, false, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 __gg
+        {
+            get => new bool4(false, false, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 _r__
+        {
+            get => new bool4(false, x, false, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 _r_r
+        {
+            get => new bool4(false, x, false, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 _r_g
+        {
+            get => new bool4(false, x, false, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 _rr_
+        {
+            get => new bool4(false, x, x, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 _rrr
+        {
+            get => new bool4(false, x, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 _rrg
+        {
+            get => new bool4(false, x, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 _rg_
+        {
+            get => new bool4(false, x, y, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 _rgr
+        {
+            get => new bool4(false, x, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 _rgg
+        {
+            get => new bool4(false, x, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 _g__
+        {
+            get => new bool4(false, y, false, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 _g_r
+        {
+            get => new bool4(false, y, false, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 _g_g
+        {
+            get => new bool4(false, y, false, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 _gr_
+        {
+            get => new bool4(false, y, x, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 _grr
+        {
+            get => new bool4(false, y, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 _grg
+        {
+            get => new bool4(false, y, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 _gg_
+        {
+            get => new bool4(false, y, y, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 _ggr
+        {
+            get => new bool4(false, y, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 _ggg
+        {
+            get => new bool4(false, y, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 r___
+        {
+            get => new bool4(x, false, false, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 r__r
+        {
+            get => new bool4(x, false, false, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 r__g
+        {
+            get => new bool4(x, false, false, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 r_r_
+        {
+            get => new bool4(x, false, x, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 r_rr
+        {
+            get => new bool4(x, false, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 r_rg
+        {
+            get => new bool4(x, false, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 r_g_
+        {
+            get => new bool4(x, false, y, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 r_gr
+        {
+            get => new bool4(x, false, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 r_gg
+        {
+            get => new bool4(x, false, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 rr__
+        {
+            get => new bool4(x, x, false, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 rr_r
+        {
+            get => new bool4(x, x, false, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 rr_g
+        {
+            get => new bool4(x, x, false, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 rrr_
+        {
+            get => new bool4(x, x, x, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 rrrr
+        {
+            get => new bool4(x, x, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 rrrg
+        {
+            get => new bool4(x, x, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 rrg_
+        {
+            get => new bool4(x, x, y, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 rrgr
+        {
+            get => new bool4(x, x, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 rrgg
+        {
+            get => new bool4(x, x, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 rg__
+        {
+            get => new bool4(x, y, false, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 rg_r
+        {
+            get => new bool4(x, y, false, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 rg_g
+        {
+            get => new bool4(x, y, false, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 rgr_
+        {
+            get => new bool4(x, y, x, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 rgrr
+        {
+            get => new bool4(x, y, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 rgrg
+        {
+            get => new bool4(x, y, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 rgg_
+        {
+            get => new bool4(x, y, y, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 rggr
+        {
+            get => new bool4(x, y, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 rggg
+        {
+            get => new bool4(x, y, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 g___
+        {
+            get => new bool4(y, false, false, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 g__r
+        {
+            get => new bool4(y, false, false, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 g__g
+        {
+            get => new bool4(y, false, false, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 g_r_
+        {
+            get => new bool4(y, false, x, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 g_rr
+        {
+            get => new bool4(y, false, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 g_rg
+        {
+            get => new bool4(y, false, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 g_g_
+        {
+            get => new bool4(y, false, y, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 g_gr
+        {
+            get => new bool4(y, false, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 g_gg
+        {
+            get => new bool4(y, false, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 gr__
+        {
+            get => new bool4(y, x, false, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 gr_r
+        {
+            get => new bool4(y, x, false, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 gr_g
+        {
+            get => new bool4(y, x, false, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 grr_
+        {
+            get => new bool4(y, x, x, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 grrr
+        {
+            get => new bool4(y, x, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 grrg
+        {
+            get => new bool4(y, x, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 grg_
+        {
+            get => new bool4(y, x, y, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 grgr
+        {
+            get => new bool4(y, x, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 grgg
+        {
+            get => new bool4(y, x, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 gg__
+        {
+            get => new bool4(y, y, false, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 gg_r
+        {
+            get => new bool4(y, y, false, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 gg_g
+        {
+            get => new bool4(y, y, false, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 ggr_
+        {
+            get => new bool4(y, y, x, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 ggrr
+        {
+            get => new bool4(y, y, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 ggrg
+        {
+            get => new bool4(y, y, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 ggg_
+        {
+            get => new bool4(y, y, y, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 gggr
+        {
+            get => new bool4(y, y, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 gggg
+        {
+            get => new bool4(y, y, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool2 _s
+        {
+            get => new bool2(false, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool2 _t
+        {
+            get => new bool2(false, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool2 s_
+        {
+            get => new bool2(x, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool2 ss
+        {
+            get => new bool2(x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool2 st
+        {
+            get => new bool2(x, y);
+            set
+            {
+                x = value.x;
+                y = value.y;
+            }
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool2 t_
+        {
+            get => new bool2(y, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
         public bool2 ts
         {
             get => new bool2(y, x);
@@ -3143,34 +1472,646 @@ namespace KibiHex
             }
         }
 
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool2 yy
-        {
-            get => new bool2(y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public bool2 gg
-        {
-            get => new bool2(y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
         public bool2 tt
         {
             get => new bool2(y, y);
         }
 
-        #endregion
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool3 __s
+        {
+            get => new bool3(false, false, x);
+        }
 
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool3 __t
+        {
+            get => new bool3(false, false, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool3 _s_
+        {
+            get => new bool3(false, x, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool3 _ss
+        {
+            get => new bool3(false, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool3 _st
+        {
+            get => new bool3(false, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool3 _t_
+        {
+            get => new bool3(false, y, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool3 _ts
+        {
+            get => new bool3(false, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool3 _tt
+        {
+            get => new bool3(false, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool3 s__
+        {
+            get => new bool3(x, false, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool3 s_s
+        {
+            get => new bool3(x, false, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool3 s_t
+        {
+            get => new bool3(x, false, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool3 ss_
+        {
+            get => new bool3(x, x, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool3 sss
+        {
+            get => new bool3(x, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool3 sst
+        {
+            get => new bool3(x, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool3 st_
+        {
+            get => new bool3(x, y, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool3 sts
+        {
+            get => new bool3(x, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool3 stt
+        {
+            get => new bool3(x, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool3 t__
+        {
+            get => new bool3(y, false, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool3 t_s
+        {
+            get => new bool3(y, false, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool3 t_t
+        {
+            get => new bool3(y, false, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool3 ts_
+        {
+            get => new bool3(y, x, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool3 tss
+        {
+            get => new bool3(y, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool3 tst
+        {
+            get => new bool3(y, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool3 tt_
+        {
+            get => new bool3(y, y, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool3 tts
+        {
+            get => new bool3(y, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool3 ttt
+        {
+            get => new bool3(y, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 ___s
+        {
+            get => new bool4(false, false, false, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 ___t
+        {
+            get => new bool4(false, false, false, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 __s_
+        {
+            get => new bool4(false, false, x, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 __ss
+        {
+            get => new bool4(false, false, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 __st
+        {
+            get => new bool4(false, false, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 __t_
+        {
+            get => new bool4(false, false, y, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 __ts
+        {
+            get => new bool4(false, false, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 __tt
+        {
+            get => new bool4(false, false, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 _s__
+        {
+            get => new bool4(false, x, false, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 _s_s
+        {
+            get => new bool4(false, x, false, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 _s_t
+        {
+            get => new bool4(false, x, false, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 _ss_
+        {
+            get => new bool4(false, x, x, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 _sss
+        {
+            get => new bool4(false, x, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 _sst
+        {
+            get => new bool4(false, x, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 _st_
+        {
+            get => new bool4(false, x, y, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 _sts
+        {
+            get => new bool4(false, x, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 _stt
+        {
+            get => new bool4(false, x, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 _t__
+        {
+            get => new bool4(false, y, false, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 _t_s
+        {
+            get => new bool4(false, y, false, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 _t_t
+        {
+            get => new bool4(false, y, false, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 _ts_
+        {
+            get => new bool4(false, y, x, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 _tss
+        {
+            get => new bool4(false, y, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 _tst
+        {
+            get => new bool4(false, y, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 _tt_
+        {
+            get => new bool4(false, y, y, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 _tts
+        {
+            get => new bool4(false, y, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 _ttt
+        {
+            get => new bool4(false, y, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 s___
+        {
+            get => new bool4(x, false, false, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 s__s
+        {
+            get => new bool4(x, false, false, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 s__t
+        {
+            get => new bool4(x, false, false, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 s_s_
+        {
+            get => new bool4(x, false, x, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 s_ss
+        {
+            get => new bool4(x, false, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 s_st
+        {
+            get => new bool4(x, false, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 s_t_
+        {
+            get => new bool4(x, false, y, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 s_ts
+        {
+            get => new bool4(x, false, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 s_tt
+        {
+            get => new bool4(x, false, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 ss__
+        {
+            get => new bool4(x, x, false, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 ss_s
+        {
+            get => new bool4(x, x, false, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 ss_t
+        {
+            get => new bool4(x, x, false, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 sss_
+        {
+            get => new bool4(x, x, x, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 ssss
+        {
+            get => new bool4(x, x, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 ssst
+        {
+            get => new bool4(x, x, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 sst_
+        {
+            get => new bool4(x, x, y, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 ssts
+        {
+            get => new bool4(x, x, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 sstt
+        {
+            get => new bool4(x, x, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 st__
+        {
+            get => new bool4(x, y, false, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 st_s
+        {
+            get => new bool4(x, y, false, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 st_t
+        {
+            get => new bool4(x, y, false, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 sts_
+        {
+            get => new bool4(x, y, x, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 stss
+        {
+            get => new bool4(x, y, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 stst
+        {
+            get => new bool4(x, y, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 stt_
+        {
+            get => new bool4(x, y, y, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 stts
+        {
+            get => new bool4(x, y, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 sttt
+        {
+            get => new bool4(x, y, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 t___
+        {
+            get => new bool4(y, false, false, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 t__s
+        {
+            get => new bool4(y, false, false, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 t__t
+        {
+            get => new bool4(y, false, false, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 t_s_
+        {
+            get => new bool4(y, false, x, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 t_ss
+        {
+            get => new bool4(y, false, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 t_st
+        {
+            get => new bool4(y, false, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 t_t_
+        {
+            get => new bool4(y, false, y, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 t_ts
+        {
+            get => new bool4(y, false, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 t_tt
+        {
+            get => new bool4(y, false, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 ts__
+        {
+            get => new bool4(y, x, false, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 ts_s
+        {
+            get => new bool4(y, x, false, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 ts_t
+        {
+            get => new bool4(y, x, false, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 tss_
+        {
+            get => new bool4(y, x, x, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 tsss
+        {
+            get => new bool4(y, x, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 tsst
+        {
+            get => new bool4(y, x, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 tst_
+        {
+            get => new bool4(y, x, y, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 tsts
+        {
+            get => new bool4(y, x, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 tstt
+        {
+            get => new bool4(y, x, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 tt__
+        {
+            get => new bool4(y, y, false, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 tt_s
+        {
+            get => new bool4(y, y, false, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 tt_t
+        {
+            get => new bool4(y, y, false, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 tts_
+        {
+            get => new bool4(y, y, x, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 ttss
+        {
+            get => new bool4(y, y, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 ttst
+        {
+            get => new bool4(y, y, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 ttt_
+        {
+            get => new bool4(y, y, y, false);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 ttts
+        {
+            get => new bool4(y, y, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public bool4 tttt
+        {
+            get => new bool4(y, y, y, y);
+        }
     }
 }

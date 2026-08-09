@@ -1,123 +1,55 @@
-#pragma warning disable IDE1006
 #nullable enable
 using System;
 using System.Runtime.InteropServices;
 using System.Runtime.CompilerServices;
-using System.Runtime.Serialization;
-using System.Diagnostics;
-
 
 namespace KibiHex
 {
-
-    /// <summary>
-    /// A vector of type uint with 2 components.
-    /// </summary>
+    /// <summary>A vector of type uint with 2 components.</summary>
     [Serializable]
     [StructLayout(LayoutKind.Sequential)]
-    [DataContract]
+    [System.Runtime.Serialization.DataContract]
     public partial struct uint2 : IEquatable<uint2>, IComparable<uint2>
     {
 
-        #region Fields
-
-        /// <summary>
-        /// x-component
-        /// </summary>
-        [DataMember(Order = 0)]
+        [System.Runtime.Serialization.DataMember(Order = 0)]
         public uint x;
 
-        /// <summary>
-        /// y-component
-        /// </summary>
-        [DataMember(Order = 1)]
+        [System.Runtime.Serialization.DataMember(Order = 1)]
         public uint y;
 
-        /// <summary>
-        /// Returns new vector with every component set to default.
-        /// </summary>
         public static readonly uint2 zero = new uint2(0u, 0u);
 
-        #endregion
-
-
-        #region Constructors
-
-        /// <summary>
-        /// Component-wise constructor
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public uint2(uint x, uint y)
         {
             this.x = x;
             this.y = y;
         }
 
-        /// <summary>
-        /// all-same-value constructor
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public uint2(uint v)
+        public uint2(uint value)
         {
-            this.x = v;
-            this.y = v;
+            x = value;
+            y = value;
         }
 
-        /// <summary>
-        /// from-vector constructor
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public uint2(uint2 v)
+        public uint2(uint2 value)
         {
-            this.x = v.x;
-            this.y = v.y;
+            x = value.x;
+            y = value.y;
         }
 
-        /// <summary>
-        /// from-vector constructor (additional fields are truncated)
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public uint2(uint3 v)
+        public uint2(uint3 value)
         {
-            this.x = v.x;
-            this.y = v.y;
+            x = value.x;
+            y = value.y;
         }
 
-        /// <summary>
-        /// from-vector constructor (additional fields are truncated)
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public uint2(uint4 v)
+        public uint2(uint4 value)
         {
-            this.x = v.x;
-            this.y = v.y;
+            x = value.x;
+            y = value.y;
         }
 
-        #endregion
-
-
-        #region Implicit Operators
-
-        /// <summary>
-        /// Implicitly converts this to a float2.
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static implicit operator float2(uint2 v) => new float2((float)v.x, (float)v.y);
-
-        /// <summary>
-        /// Implicitly converts this to a double2.
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static implicit operator double2(uint2 v) => new double2((double)v.x, (double)v.y);
-
-        #endregion
-
-
-        #region Indexer
-
-        /// <summary>
-        /// Gets/Sets a specific indexed component (a bit slower than direct access).
-        /// </summary>
         public uint this[int index]
         {
             get
@@ -134,258 +66,53 @@ namespace KibiHex
             }
         }
 
-        #endregion
+        public int Count => 2;
 
-
-        #region Properties
-
-        /// <summary>
-        /// Returns the number of components (2).
-        /// </summary>
-        public int Count
+        public bool Equals(uint2 other)
         {
-            get => 2;
+            return x.Equals(other.x) && y.Equals(other.y);
         }
 
-        #endregion
+        public override bool Equals(object obj)
+        {
+            return obj is uint2 other && Equals(other);
+        }
 
+        public override int GetHashCode()
+        {
+            unchecked
+            {
+                var hash = 17;
+                hash = hash * 31 + x.GetHashCode();
+                hash = hash * 31 + y.GetHashCode();
+                return hash;
+            }
+        }
 
-        #region Operators
+        public int CompareTo(uint2 other)
+        {
+            var xComparison = x.CompareTo(other.x);
+            if (xComparison != 0) return xComparison;
+            var yComparison = y.CompareTo(other.y);
+            if (yComparison != 0) return yComparison;
+            return 0;
+        }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static bool operator==(uint2 lhs, uint2 rhs) => lhs.x == rhs.x&&lhs.y == rhs.y;
+        public override string ToString()
+        {
+            return $"[{x}, {y}]";
+        }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static bool operator!=(uint2 lhs, uint2 rhs) => lhs.x != rhs.x||lhs.y != rhs.y;
-
-        #endregion
-
-
-        #region Functions
-
-        /// <summary>
-        /// Returns HashCode
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public override readonly int GetHashCode() => HashCode.Combine(x, y);
-
-        /// <summary>
-        /// Compares two values
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public readonly int CompareTo(uint2 other) => Comparison.Combine(x, y, other.x, other.y);
-
-        /// <summary>
-        /// Returns a string representation of this vector.
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public override readonly string ToString() => $"{x}, {y}";
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public readonly bool Equals(uint2 other) => other == this;
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public override readonly bool Equals(object? obj) => obj is uint2 other && Equals(other);
-
-        #endregion
-
-
-        #region Static Functions
-
-        /// <summary>
-        /// Returns a uint2 from component-wise application of Clamp (Maths.Clamp(v, min, max)).
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static uint2 Clamp(uint2 v, uint min, uint max) => new uint2(Maths.Clamp(v.x, min, max), Maths.Clamp(v.y, min, max));
-
-        /// <summary>
-        /// Parses vector value from string representation.
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint2 Parse(string value)
         {
-            var values = value.Split(", ");
-            return new uint2(uint.Parse(values[0]), uint.Parse(values[1]));
+            var values = value.Split(',');
+            return new(uint.Parse(values[0]), uint.Parse(values[1]));
         }
 
-        /// <summary>
-        /// Parses vector value from string representation.
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint2 Parse(string value, IFormatProvider format)
         {
-            var values = value.Split(", ");
-            return new uint2(uint.Parse(values[0], format), uint.Parse(values[1], format));
+            var values = value.Split(',');
+            return new(uint.Parse(values[0], format), uint.Parse(values[1], format));
         }
-
-        #endregion
-
-
-        #region Component-Wise Operator Overloads
-
-        /// <summary>
-        /// Returns a uint2 from component-wise application of operator+ (lhs + rhs).
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static uint2 operator +(uint2 lhs, uint2 rhs) => new uint2(lhs.x + rhs.x, lhs.y + rhs.y);
-
-        /// <summary>
-        /// Returns a uint2 from component-wise application of operator+ (lhs + rhs).
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static uint2 operator +(uint2 lhs, uint rhs) => new uint2(lhs.x + rhs, lhs.y + rhs);
-
-        /// <summary>
-        /// Returns a uint2 from component-wise application of operator+ (lhs + rhs).
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static uint2 operator +(uint lhs, uint2 rhs) => new uint2(lhs + rhs.x, lhs + rhs.y);
-
-        /// <summary>
-        /// Returns a uint2 from component-wise application of operator- (lhs - rhs).
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static uint2 operator -(uint2 lhs, uint2 rhs) => new uint2(lhs.x - rhs.x, lhs.y - rhs.y);
-
-        /// <summary>
-        /// Returns a uint2 from component-wise application of operator- (lhs - rhs).
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static uint2 operator -(uint2 lhs, uint rhs) => new uint2(lhs.x - rhs, lhs.y - rhs);
-
-        /// <summary>
-        /// Returns a uint2 from component-wise application of operator- (lhs - rhs).
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static uint2 operator -(uint lhs, uint2 rhs) => new uint2(lhs - rhs.x, lhs - rhs.y);
-
-        /// <summary>
-        /// Returns a uint2 from component-wise application of operator* (lhs * rhs).
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static uint2 operator *(uint2 lhs, uint2 rhs) => new uint2(lhs.x * rhs.x, lhs.y * rhs.y);
-
-        /// <summary>
-        /// Returns a uint2 from component-wise application of operator* (lhs * rhs).
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static uint2 operator *(uint2 lhs, uint rhs) => new uint2(lhs.x * rhs, lhs.y * rhs);
-
-        /// <summary>
-        /// Returns a uint2 from component-wise application of operator* (lhs * rhs).
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static uint2 operator *(uint lhs, uint2 rhs) => new uint2(lhs * rhs.x, lhs * rhs.y);
-
-        /// <summary>
-        /// Returns a uint2 from component-wise application of operator/ (lhs / rhs).
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static uint2 operator /(uint2 lhs, uint2 rhs) => new uint2(lhs.x / rhs.x, lhs.y / rhs.y);
-
-        /// <summary>
-        /// Returns a uint2 from component-wise application of operator/ (lhs / rhs).
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static uint2 operator /(uint2 lhs, uint rhs) => new uint2(lhs.x / rhs, lhs.y / rhs);
-
-        /// <summary>
-        /// Returns a uint2 from component-wise application of operator/ (lhs / rhs).
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static uint2 operator /(uint lhs, uint2 rhs) => new uint2(lhs / rhs.x, lhs / rhs.y);
-
-        /// <summary>
-        /// Returns a uint2 from component-wise application of operator% (lhs % rhs).
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static uint2 operator %(uint2 lhs, uint2 rhs) => new uint2(lhs.x % rhs.x, lhs.y % rhs.y);
-
-        /// <summary>
-        /// Returns a uint2 from component-wise application of operator% (lhs % rhs).
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static uint2 operator %(uint2 lhs, uint rhs) => new uint2(lhs.x % rhs, lhs.y % rhs);
-
-        /// <summary>
-        /// Returns a uint2 from component-wise application of operator% (lhs % rhs).
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static uint2 operator %(uint lhs, uint2 rhs) => new uint2(lhs % rhs.x, lhs % rhs.y);
-
-        /// <summary>
-        /// Returns a uint2 from component-wise application of operator^ (lhs ^ rhs).
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static uint2 operator ^(uint2 lhs, uint2 rhs) => new uint2(lhs.x ^ rhs.x, lhs.y ^ rhs.y);
-
-        /// <summary>
-        /// Returns a uint2 from component-wise application of operator^ (lhs ^ rhs).
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static uint2 operator ^(uint2 lhs, uint rhs) => new uint2(lhs.x ^ rhs, lhs.y ^ rhs);
-
-        /// <summary>
-        /// Returns a uint2 from component-wise application of operator^ (lhs ^ rhs).
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static uint2 operator ^(uint lhs, uint2 rhs) => new uint2(lhs ^ rhs.x, lhs ^ rhs.y);
-
-        /// <summary>
-        /// Returns a uint2 from component-wise application of operator| (lhs | rhs).
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static uint2 operator |(uint2 lhs, uint2 rhs) => new uint2(lhs.x | rhs.x, lhs.y | rhs.y);
-
-        /// <summary>
-        /// Returns a uint2 from component-wise application of operator| (lhs | rhs).
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static uint2 operator |(uint2 lhs, uint rhs) => new uint2(lhs.x | rhs, lhs.y | rhs);
-
-        /// <summary>
-        /// Returns a uint2 from component-wise application of operator| (lhs | rhs).
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static uint2 operator |(uint lhs, uint2 rhs) => new uint2(lhs | rhs.x, lhs | rhs.y);
-
-        /// <summary>
-        /// Returns a uint2 from component-wise application of operator&amp; (lhs &amp; rhs).
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static uint2 operator &(uint2 lhs, uint2 rhs) => new uint2(lhs.x & rhs.x, lhs.y & rhs.y);
-
-        /// <summary>
-        /// Returns a uint2 from component-wise application of operator&amp; (lhs &amp; rhs).
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static uint2 operator &(uint2 lhs, uint rhs) => new uint2(lhs.x & rhs, lhs.y & rhs);
-
-        /// <summary>
-        /// Returns a uint2 from component-wise application of operator&amp; (lhs &amp; rhs).
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static uint2 operator &(uint lhs, uint2 rhs) => new uint2(lhs & rhs.x, lhs & rhs.y);
-
-        /// <summary>
-        /// Returns a uint2 from component-wise application of operator~ (~v).
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static uint2 operator ~(uint2 v) => new uint2(~v.x, ~v.y);
-
-        /// <summary>
-        /// Returns a uint2 from component-wise application of operator&lt;&lt; (lhs &lt;&lt; rhs).
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static uint2 operator <<(uint2 lhs, int rhs) => new uint2(lhs.x << rhs, lhs.y << rhs);
-
-        /// <summary>
-        /// Returns a uint2 from component-wise application of operator&gt;&gt; (lhs &gt;&gt; rhs).
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static uint2 operator >>(uint2 lhs, int rhs) => new uint2(lhs.x >> rhs, lhs.y >> rhs);
-
-        #endregion
-
     }
 }

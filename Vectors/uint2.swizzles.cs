@@ -1,3041 +1,62 @@
-#pragma warning disable IDE1006
 #nullable enable
 using System;
 using System.Runtime.InteropServices;
 using System.Runtime.CompilerServices;
-using System.Runtime.Serialization;
-using System.Diagnostics;
-
 
 namespace KibiHex
 {
     public partial struct uint2
     {
 
-        #region Swizzles
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
         public uint r
         {
             get => x;
-            set
-            {
-                x = value;
-            }
+            set => x = value;
         }
 
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        public uint s
-        {
-            get => x;
-            set
-            {
-                x = value;
-            }
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
         public uint g
         {
             get => y;
-            set
-            {
-                y = value;
-            }
+            set => y = value;
         }
 
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
+        public uint s
+        {
+            get => x;
+            set => x = value;
+        }
+
         public uint t
         {
             get => y;
-            set
-            {
-                y = value;
-            }
+            set => y = value;
         }
 
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 ___x
-        {
-            get => new uint4(0u, 0u, 0u, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 ___r
-        {
-            get => new uint4(0u, 0u, 0u, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 ___s
-        {
-            get => new uint4(0u, 0u, 0u, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 ___y
-        {
-            get => new uint4(0u, 0u, 0u, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 ___g
-        {
-            get => new uint4(0u, 0u, 0u, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 ___t
-        {
-            get => new uint4(0u, 0u, 0u, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 __x_
-        {
-            get => new uint4(0u, 0u, x, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 __r_
-        {
-            get => new uint4(0u, 0u, x, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 __s_
-        {
-            get => new uint4(0u, 0u, x, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 __xx
-        {
-            get => new uint4(0u, 0u, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 __rr
-        {
-            get => new uint4(0u, 0u, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 __ss
-        {
-            get => new uint4(0u, 0u, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 __xy
-        {
-            get => new uint4(0u, 0u, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 __rg
-        {
-            get => new uint4(0u, 0u, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 __st
-        {
-            get => new uint4(0u, 0u, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 __y_
-        {
-            get => new uint4(0u, 0u, y, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 __g_
-        {
-            get => new uint4(0u, 0u, y, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 __t_
-        {
-            get => new uint4(0u, 0u, y, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 __yx
-        {
-            get => new uint4(0u, 0u, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 __gr
-        {
-            get => new uint4(0u, 0u, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 __ts
-        {
-            get => new uint4(0u, 0u, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 __yy
-        {
-            get => new uint4(0u, 0u, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 __gg
-        {
-            get => new uint4(0u, 0u, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 __tt
-        {
-            get => new uint4(0u, 0u, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 _x__
-        {
-            get => new uint4(0u, x, 0u, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 _r__
-        {
-            get => new uint4(0u, x, 0u, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 _s__
-        {
-            get => new uint4(0u, x, 0u, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 _x_x
-        {
-            get => new uint4(0u, x, 0u, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 _r_r
-        {
-            get => new uint4(0u, x, 0u, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 _s_s
-        {
-            get => new uint4(0u, x, 0u, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 _x_y
-        {
-            get => new uint4(0u, x, 0u, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 _r_g
-        {
-            get => new uint4(0u, x, 0u, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 _s_t
-        {
-            get => new uint4(0u, x, 0u, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 _xx_
-        {
-            get => new uint4(0u, x, x, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 _rr_
-        {
-            get => new uint4(0u, x, x, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 _ss_
-        {
-            get => new uint4(0u, x, x, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 _xxx
-        {
-            get => new uint4(0u, x, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 _rrr
-        {
-            get => new uint4(0u, x, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 _sss
-        {
-            get => new uint4(0u, x, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 _xxy
-        {
-            get => new uint4(0u, x, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 _rrg
-        {
-            get => new uint4(0u, x, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 _sst
-        {
-            get => new uint4(0u, x, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 _xy_
-        {
-            get => new uint4(0u, x, y, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 _rg_
-        {
-            get => new uint4(0u, x, y, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 _st_
-        {
-            get => new uint4(0u, x, y, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 _xyx
-        {
-            get => new uint4(0u, x, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 _rgr
-        {
-            get => new uint4(0u, x, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 _sts
-        {
-            get => new uint4(0u, x, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 _xyy
-        {
-            get => new uint4(0u, x, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 _rgg
-        {
-            get => new uint4(0u, x, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 _stt
-        {
-            get => new uint4(0u, x, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 _y__
-        {
-            get => new uint4(0u, y, 0u, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 _g__
-        {
-            get => new uint4(0u, y, 0u, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 _t__
-        {
-            get => new uint4(0u, y, 0u, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 _y_x
-        {
-            get => new uint4(0u, y, 0u, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 _g_r
-        {
-            get => new uint4(0u, y, 0u, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 _t_s
-        {
-            get => new uint4(0u, y, 0u, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 _y_y
-        {
-            get => new uint4(0u, y, 0u, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 _g_g
-        {
-            get => new uint4(0u, y, 0u, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 _t_t
-        {
-            get => new uint4(0u, y, 0u, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 _yx_
-        {
-            get => new uint4(0u, y, x, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 _gr_
-        {
-            get => new uint4(0u, y, x, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 _ts_
-        {
-            get => new uint4(0u, y, x, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 _yxx
-        {
-            get => new uint4(0u, y, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 _grr
-        {
-            get => new uint4(0u, y, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 _tss
-        {
-            get => new uint4(0u, y, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 _yxy
-        {
-            get => new uint4(0u, y, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 _grg
-        {
-            get => new uint4(0u, y, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 _tst
-        {
-            get => new uint4(0u, y, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 _yy_
-        {
-            get => new uint4(0u, y, y, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 _gg_
-        {
-            get => new uint4(0u, y, y, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 _tt_
-        {
-            get => new uint4(0u, y, y, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 _yyx
-        {
-            get => new uint4(0u, y, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 _ggr
-        {
-            get => new uint4(0u, y, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 _tts
-        {
-            get => new uint4(0u, y, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 _yyy
-        {
-            get => new uint4(0u, y, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 _ggg
-        {
-            get => new uint4(0u, y, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 _ttt
-        {
-            get => new uint4(0u, y, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 x___
-        {
-            get => new uint4(x, 0u, 0u, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 r___
-        {
-            get => new uint4(x, 0u, 0u, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 s___
-        {
-            get => new uint4(x, 0u, 0u, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 x__x
-        {
-            get => new uint4(x, 0u, 0u, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 r__r
-        {
-            get => new uint4(x, 0u, 0u, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 s__s
-        {
-            get => new uint4(x, 0u, 0u, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 x__y
-        {
-            get => new uint4(x, 0u, 0u, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 r__g
-        {
-            get => new uint4(x, 0u, 0u, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 s__t
-        {
-            get => new uint4(x, 0u, 0u, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 x_x_
-        {
-            get => new uint4(x, 0u, x, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 r_r_
-        {
-            get => new uint4(x, 0u, x, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 s_s_
-        {
-            get => new uint4(x, 0u, x, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 x_xx
-        {
-            get => new uint4(x, 0u, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 r_rr
-        {
-            get => new uint4(x, 0u, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 s_ss
-        {
-            get => new uint4(x, 0u, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 x_xy
-        {
-            get => new uint4(x, 0u, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 r_rg
-        {
-            get => new uint4(x, 0u, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 s_st
-        {
-            get => new uint4(x, 0u, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 x_y_
-        {
-            get => new uint4(x, 0u, y, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 r_g_
-        {
-            get => new uint4(x, 0u, y, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 s_t_
-        {
-            get => new uint4(x, 0u, y, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 x_yx
-        {
-            get => new uint4(x, 0u, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 r_gr
-        {
-            get => new uint4(x, 0u, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 s_ts
-        {
-            get => new uint4(x, 0u, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 x_yy
-        {
-            get => new uint4(x, 0u, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 r_gg
-        {
-            get => new uint4(x, 0u, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 s_tt
-        {
-            get => new uint4(x, 0u, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 xx__
-        {
-            get => new uint4(x, x, 0u, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 rr__
-        {
-            get => new uint4(x, x, 0u, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 ss__
-        {
-            get => new uint4(x, x, 0u, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 xx_x
-        {
-            get => new uint4(x, x, 0u, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 rr_r
-        {
-            get => new uint4(x, x, 0u, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 ss_s
-        {
-            get => new uint4(x, x, 0u, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 xx_y
-        {
-            get => new uint4(x, x, 0u, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 rr_g
-        {
-            get => new uint4(x, x, 0u, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 ss_t
-        {
-            get => new uint4(x, x, 0u, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 xxx_
-        {
-            get => new uint4(x, x, x, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 rrr_
-        {
-            get => new uint4(x, x, x, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 sss_
-        {
-            get => new uint4(x, x, x, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 xxxx
-        {
-            get => new uint4(x, x, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 rrrr
-        {
-            get => new uint4(x, x, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 ssss
-        {
-            get => new uint4(x, x, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 xxxy
-        {
-            get => new uint4(x, x, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 rrrg
-        {
-            get => new uint4(x, x, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 ssst
-        {
-            get => new uint4(x, x, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 xxy_
-        {
-            get => new uint4(x, x, y, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 rrg_
-        {
-            get => new uint4(x, x, y, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 sst_
-        {
-            get => new uint4(x, x, y, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 xxyx
-        {
-            get => new uint4(x, x, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 rrgr
-        {
-            get => new uint4(x, x, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 ssts
-        {
-            get => new uint4(x, x, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 xxyy
-        {
-            get => new uint4(x, x, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 rrgg
-        {
-            get => new uint4(x, x, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 sstt
-        {
-            get => new uint4(x, x, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 xy__
-        {
-            get => new uint4(x, y, 0u, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 rg__
-        {
-            get => new uint4(x, y, 0u, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 st__
-        {
-            get => new uint4(x, y, 0u, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 xy_x
-        {
-            get => new uint4(x, y, 0u, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 rg_r
-        {
-            get => new uint4(x, y, 0u, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 st_s
-        {
-            get => new uint4(x, y, 0u, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 xy_y
-        {
-            get => new uint4(x, y, 0u, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 rg_g
-        {
-            get => new uint4(x, y, 0u, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 st_t
-        {
-            get => new uint4(x, y, 0u, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 xyx_
-        {
-            get => new uint4(x, y, x, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 rgr_
-        {
-            get => new uint4(x, y, x, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 sts_
-        {
-            get => new uint4(x, y, x, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 xyxx
-        {
-            get => new uint4(x, y, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 rgrr
-        {
-            get => new uint4(x, y, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 stss
-        {
-            get => new uint4(x, y, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 xyxy
-        {
-            get => new uint4(x, y, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 rgrg
-        {
-            get => new uint4(x, y, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 stst
-        {
-            get => new uint4(x, y, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 xyy_
-        {
-            get => new uint4(x, y, y, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 rgg_
-        {
-            get => new uint4(x, y, y, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 stt_
-        {
-            get => new uint4(x, y, y, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 xyyx
-        {
-            get => new uint4(x, y, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 rggr
-        {
-            get => new uint4(x, y, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 stts
-        {
-            get => new uint4(x, y, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 xyyy
-        {
-            get => new uint4(x, y, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 rggg
-        {
-            get => new uint4(x, y, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 sttt
-        {
-            get => new uint4(x, y, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 y___
-        {
-            get => new uint4(y, 0u, 0u, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 g___
-        {
-            get => new uint4(y, 0u, 0u, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 t___
-        {
-            get => new uint4(y, 0u, 0u, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 y__x
-        {
-            get => new uint4(y, 0u, 0u, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 g__r
-        {
-            get => new uint4(y, 0u, 0u, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 t__s
-        {
-            get => new uint4(y, 0u, 0u, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 y__y
-        {
-            get => new uint4(y, 0u, 0u, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 g__g
-        {
-            get => new uint4(y, 0u, 0u, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 t__t
-        {
-            get => new uint4(y, 0u, 0u, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 y_x_
-        {
-            get => new uint4(y, 0u, x, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 g_r_
-        {
-            get => new uint4(y, 0u, x, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 t_s_
-        {
-            get => new uint4(y, 0u, x, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 y_xx
-        {
-            get => new uint4(y, 0u, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 g_rr
-        {
-            get => new uint4(y, 0u, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 t_ss
-        {
-            get => new uint4(y, 0u, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 y_xy
-        {
-            get => new uint4(y, 0u, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 g_rg
-        {
-            get => new uint4(y, 0u, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 t_st
-        {
-            get => new uint4(y, 0u, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 y_y_
-        {
-            get => new uint4(y, 0u, y, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 g_g_
-        {
-            get => new uint4(y, 0u, y, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 t_t_
-        {
-            get => new uint4(y, 0u, y, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 y_yx
-        {
-            get => new uint4(y, 0u, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 g_gr
-        {
-            get => new uint4(y, 0u, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 t_ts
-        {
-            get => new uint4(y, 0u, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 y_yy
-        {
-            get => new uint4(y, 0u, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 g_gg
-        {
-            get => new uint4(y, 0u, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 t_tt
-        {
-            get => new uint4(y, 0u, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 yx__
-        {
-            get => new uint4(y, x, 0u, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 gr__
-        {
-            get => new uint4(y, x, 0u, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 ts__
-        {
-            get => new uint4(y, x, 0u, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 yx_x
-        {
-            get => new uint4(y, x, 0u, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 gr_r
-        {
-            get => new uint4(y, x, 0u, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 ts_s
-        {
-            get => new uint4(y, x, 0u, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 yx_y
-        {
-            get => new uint4(y, x, 0u, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 gr_g
-        {
-            get => new uint4(y, x, 0u, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 ts_t
-        {
-            get => new uint4(y, x, 0u, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 yxx_
-        {
-            get => new uint4(y, x, x, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 grr_
-        {
-            get => new uint4(y, x, x, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 tss_
-        {
-            get => new uint4(y, x, x, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 yxxx
-        {
-            get => new uint4(y, x, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 grrr
-        {
-            get => new uint4(y, x, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 tsss
-        {
-            get => new uint4(y, x, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 yxxy
-        {
-            get => new uint4(y, x, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 grrg
-        {
-            get => new uint4(y, x, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 tsst
-        {
-            get => new uint4(y, x, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 yxy_
-        {
-            get => new uint4(y, x, y, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 grg_
-        {
-            get => new uint4(y, x, y, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 tst_
-        {
-            get => new uint4(y, x, y, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 yxyx
-        {
-            get => new uint4(y, x, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 grgr
-        {
-            get => new uint4(y, x, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 tsts
-        {
-            get => new uint4(y, x, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 yxyy
-        {
-            get => new uint4(y, x, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 grgg
-        {
-            get => new uint4(y, x, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 tstt
-        {
-            get => new uint4(y, x, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 yy__
-        {
-            get => new uint4(y, y, 0u, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 gg__
-        {
-            get => new uint4(y, y, 0u, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 tt__
-        {
-            get => new uint4(y, y, 0u, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 yy_x
-        {
-            get => new uint4(y, y, 0u, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 gg_r
-        {
-            get => new uint4(y, y, 0u, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 tt_s
-        {
-            get => new uint4(y, y, 0u, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 yy_y
-        {
-            get => new uint4(y, y, 0u, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 gg_g
-        {
-            get => new uint4(y, y, 0u, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 tt_t
-        {
-            get => new uint4(y, y, 0u, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 yyx_
-        {
-            get => new uint4(y, y, x, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 ggr_
-        {
-            get => new uint4(y, y, x, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 tts_
-        {
-            get => new uint4(y, y, x, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 yyxx
-        {
-            get => new uint4(y, y, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 ggrr
-        {
-            get => new uint4(y, y, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 ttss
-        {
-            get => new uint4(y, y, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 yyxy
-        {
-            get => new uint4(y, y, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 ggrg
-        {
-            get => new uint4(y, y, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 ttst
-        {
-            get => new uint4(y, y, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 yyy_
-        {
-            get => new uint4(y, y, y, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 ggg_
-        {
-            get => new uint4(y, y, y, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 ttt_
-        {
-            get => new uint4(y, y, y, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 yyyx
-        {
-            get => new uint4(y, y, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 gggr
-        {
-            get => new uint4(y, y, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 ttts
-        {
-            get => new uint4(y, y, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 yyyy
-        {
-            get => new uint4(y, y, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 gggg
-        {
-            get => new uint4(y, y, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint4 tttt
-        {
-            get => new uint4(y, y, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint3 __x
-        {
-            get => new uint3(0u, 0u, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint3 __r
-        {
-            get => new uint3(0u, 0u, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint3 __s
-        {
-            get => new uint3(0u, 0u, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint3 __y
-        {
-            get => new uint3(0u, 0u, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint3 __g
-        {
-            get => new uint3(0u, 0u, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint3 __t
-        {
-            get => new uint3(0u, 0u, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint3 _x_
-        {
-            get => new uint3(0u, x, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint3 _r_
-        {
-            get => new uint3(0u, x, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint3 _s_
-        {
-            get => new uint3(0u, x, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint3 _xx
-        {
-            get => new uint3(0u, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint3 _rr
-        {
-            get => new uint3(0u, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint3 _ss
-        {
-            get => new uint3(0u, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint3 _xy
-        {
-            get => new uint3(0u, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint3 _rg
-        {
-            get => new uint3(0u, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint3 _st
-        {
-            get => new uint3(0u, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint3 _y_
-        {
-            get => new uint3(0u, y, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint3 _g_
-        {
-            get => new uint3(0u, y, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint3 _t_
-        {
-            get => new uint3(0u, y, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint3 _yx
-        {
-            get => new uint3(0u, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint3 _gr
-        {
-            get => new uint3(0u, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint3 _ts
-        {
-            get => new uint3(0u, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint3 _yy
-        {
-            get => new uint3(0u, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint3 _gg
-        {
-            get => new uint3(0u, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint3 _tt
-        {
-            get => new uint3(0u, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint3 x__
-        {
-            get => new uint3(x, 0u, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint3 r__
-        {
-            get => new uint3(x, 0u, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint3 s__
-        {
-            get => new uint3(x, 0u, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint3 x_x
-        {
-            get => new uint3(x, 0u, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint3 r_r
-        {
-            get => new uint3(x, 0u, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint3 s_s
-        {
-            get => new uint3(x, 0u, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint3 x_y
-        {
-            get => new uint3(x, 0u, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint3 r_g
-        {
-            get => new uint3(x, 0u, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint3 s_t
-        {
-            get => new uint3(x, 0u, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint3 xx_
-        {
-            get => new uint3(x, x, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint3 rr_
-        {
-            get => new uint3(x, x, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint3 ss_
-        {
-            get => new uint3(x, x, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint3 xxx
-        {
-            get => new uint3(x, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint3 rrr
-        {
-            get => new uint3(x, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint3 sss
-        {
-            get => new uint3(x, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint3 xxy
-        {
-            get => new uint3(x, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint3 rrg
-        {
-            get => new uint3(x, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint3 sst
-        {
-            get => new uint3(x, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint3 xy_
-        {
-            get => new uint3(x, y, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint3 rg_
-        {
-            get => new uint3(x, y, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint3 st_
-        {
-            get => new uint3(x, y, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint3 xyx
-        {
-            get => new uint3(x, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint3 rgr
-        {
-            get => new uint3(x, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint3 sts
-        {
-            get => new uint3(x, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint3 xyy
-        {
-            get => new uint3(x, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint3 rgg
-        {
-            get => new uint3(x, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint3 stt
-        {
-            get => new uint3(x, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint3 y__
-        {
-            get => new uint3(y, 0u, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint3 g__
-        {
-            get => new uint3(y, 0u, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint3 t__
-        {
-            get => new uint3(y, 0u, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint3 y_x
-        {
-            get => new uint3(y, 0u, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint3 g_r
-        {
-            get => new uint3(y, 0u, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint3 t_s
-        {
-            get => new uint3(y, 0u, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint3 y_y
-        {
-            get => new uint3(y, 0u, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint3 g_g
-        {
-            get => new uint3(y, 0u, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint3 t_t
-        {
-            get => new uint3(y, 0u, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint3 yx_
-        {
-            get => new uint3(y, x, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint3 gr_
-        {
-            get => new uint3(y, x, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint3 ts_
-        {
-            get => new uint3(y, x, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint3 yxx
-        {
-            get => new uint3(y, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint3 grr
-        {
-            get => new uint3(y, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint3 tss
-        {
-            get => new uint3(y, x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint3 yxy
-        {
-            get => new uint3(y, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint3 grg
-        {
-            get => new uint3(y, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint3 tst
-        {
-            get => new uint3(y, x, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint3 yy_
-        {
-            get => new uint3(y, y, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint3 gg_
-        {
-            get => new uint3(y, y, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint3 tt_
-        {
-            get => new uint3(y, y, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint3 yyx
-        {
-            get => new uint3(y, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint3 ggr
-        {
-            get => new uint3(y, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint3 tts
-        {
-            get => new uint3(y, y, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint3 yyy
-        {
-            get => new uint3(y, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint3 ggg
-        {
-            get => new uint3(y, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint3 ttt
-        {
-            get => new uint3(y, y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
         public uint2 _x
         {
             get => new uint2(0u, x);
         }
 
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint2 _r
-        {
-            get => new uint2(0u, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint2 _s
-        {
-            get => new uint2(0u, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
         public uint2 _y
         {
             get => new uint2(0u, y);
         }
 
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint2 _g
-        {
-            get => new uint2(0u, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint2 _t
-        {
-            get => new uint2(0u, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
         public uint2 x_
         {
             get => new uint2(x, 0u);
         }
 
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint2 r_
-        {
-            get => new uint2(x, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint2 s_
-        {
-            get => new uint2(x, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
         public uint2 xx
         {
             get => new uint2(x, x);
         }
 
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint2 rr
-        {
-            get => new uint2(x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint2 ss
-        {
-            get => new uint2(x, x);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
         public uint2 xy
         {
             get => new uint2(x, y);
@@ -3046,65 +67,13 @@ namespace KibiHex
             }
         }
 
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint2 rg
-        {
-            get => new uint2(x, y);
-            set
-            {
-                x = value.x;
-                y = value.y;
-            }
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint2 st
-        {
-            get => new uint2(x, y);
-            set
-            {
-                x = value.x;
-                y = value.y;
-            }
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
         public uint2 y_
         {
             get => new uint2(y, 0u);
         }
 
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint2 g_
-        {
-            get => new uint2(y, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint2 t_
-        {
-            get => new uint2(y, 0u);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
         public uint2 yx
         {
             get => new uint2(y, x);
@@ -3115,10 +84,690 @@ namespace KibiHex
             }
         }
 
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint2 yy
+        {
+            get => new uint2(y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint3 __x
+        {
+            get => new uint3(0u, 0u, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint3 __y
+        {
+            get => new uint3(0u, 0u, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint3 _x_
+        {
+            get => new uint3(0u, x, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint3 _xx
+        {
+            get => new uint3(0u, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint3 _xy
+        {
+            get => new uint3(0u, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint3 _y_
+        {
+            get => new uint3(0u, y, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint3 _yx
+        {
+            get => new uint3(0u, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint3 _yy
+        {
+            get => new uint3(0u, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint3 x__
+        {
+            get => new uint3(x, 0u, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint3 x_x
+        {
+            get => new uint3(x, 0u, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint3 x_y
+        {
+            get => new uint3(x, 0u, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint3 xx_
+        {
+            get => new uint3(x, x, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint3 xxx
+        {
+            get => new uint3(x, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint3 xxy
+        {
+            get => new uint3(x, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint3 xy_
+        {
+            get => new uint3(x, y, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint3 xyx
+        {
+            get => new uint3(x, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint3 xyy
+        {
+            get => new uint3(x, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint3 y__
+        {
+            get => new uint3(y, 0u, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint3 y_x
+        {
+            get => new uint3(y, 0u, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint3 y_y
+        {
+            get => new uint3(y, 0u, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint3 yx_
+        {
+            get => new uint3(y, x, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint3 yxx
+        {
+            get => new uint3(y, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint3 yxy
+        {
+            get => new uint3(y, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint3 yy_
+        {
+            get => new uint3(y, y, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint3 yyx
+        {
+            get => new uint3(y, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint3 yyy
+        {
+            get => new uint3(y, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 ___x
+        {
+            get => new uint4(0u, 0u, 0u, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 ___y
+        {
+            get => new uint4(0u, 0u, 0u, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 __x_
+        {
+            get => new uint4(0u, 0u, x, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 __xx
+        {
+            get => new uint4(0u, 0u, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 __xy
+        {
+            get => new uint4(0u, 0u, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 __y_
+        {
+            get => new uint4(0u, 0u, y, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 __yx
+        {
+            get => new uint4(0u, 0u, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 __yy
+        {
+            get => new uint4(0u, 0u, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 _x__
+        {
+            get => new uint4(0u, x, 0u, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 _x_x
+        {
+            get => new uint4(0u, x, 0u, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 _x_y
+        {
+            get => new uint4(0u, x, 0u, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 _xx_
+        {
+            get => new uint4(0u, x, x, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 _xxx
+        {
+            get => new uint4(0u, x, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 _xxy
+        {
+            get => new uint4(0u, x, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 _xy_
+        {
+            get => new uint4(0u, x, y, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 _xyx
+        {
+            get => new uint4(0u, x, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 _xyy
+        {
+            get => new uint4(0u, x, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 _y__
+        {
+            get => new uint4(0u, y, 0u, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 _y_x
+        {
+            get => new uint4(0u, y, 0u, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 _y_y
+        {
+            get => new uint4(0u, y, 0u, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 _yx_
+        {
+            get => new uint4(0u, y, x, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 _yxx
+        {
+            get => new uint4(0u, y, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 _yxy
+        {
+            get => new uint4(0u, y, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 _yy_
+        {
+            get => new uint4(0u, y, y, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 _yyx
+        {
+            get => new uint4(0u, y, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 _yyy
+        {
+            get => new uint4(0u, y, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 x___
+        {
+            get => new uint4(x, 0u, 0u, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 x__x
+        {
+            get => new uint4(x, 0u, 0u, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 x__y
+        {
+            get => new uint4(x, 0u, 0u, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 x_x_
+        {
+            get => new uint4(x, 0u, x, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 x_xx
+        {
+            get => new uint4(x, 0u, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 x_xy
+        {
+            get => new uint4(x, 0u, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 x_y_
+        {
+            get => new uint4(x, 0u, y, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 x_yx
+        {
+            get => new uint4(x, 0u, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 x_yy
+        {
+            get => new uint4(x, 0u, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 xx__
+        {
+            get => new uint4(x, x, 0u, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 xx_x
+        {
+            get => new uint4(x, x, 0u, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 xx_y
+        {
+            get => new uint4(x, x, 0u, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 xxx_
+        {
+            get => new uint4(x, x, x, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 xxxx
+        {
+            get => new uint4(x, x, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 xxxy
+        {
+            get => new uint4(x, x, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 xxy_
+        {
+            get => new uint4(x, x, y, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 xxyx
+        {
+            get => new uint4(x, x, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 xxyy
+        {
+            get => new uint4(x, x, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 xy__
+        {
+            get => new uint4(x, y, 0u, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 xy_x
+        {
+            get => new uint4(x, y, 0u, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 xy_y
+        {
+            get => new uint4(x, y, 0u, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 xyx_
+        {
+            get => new uint4(x, y, x, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 xyxx
+        {
+            get => new uint4(x, y, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 xyxy
+        {
+            get => new uint4(x, y, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 xyy_
+        {
+            get => new uint4(x, y, y, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 xyyx
+        {
+            get => new uint4(x, y, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 xyyy
+        {
+            get => new uint4(x, y, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 y___
+        {
+            get => new uint4(y, 0u, 0u, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 y__x
+        {
+            get => new uint4(y, 0u, 0u, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 y__y
+        {
+            get => new uint4(y, 0u, 0u, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 y_x_
+        {
+            get => new uint4(y, 0u, x, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 y_xx
+        {
+            get => new uint4(y, 0u, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 y_xy
+        {
+            get => new uint4(y, 0u, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 y_y_
+        {
+            get => new uint4(y, 0u, y, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 y_yx
+        {
+            get => new uint4(y, 0u, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 y_yy
+        {
+            get => new uint4(y, 0u, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 yx__
+        {
+            get => new uint4(y, x, 0u, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 yx_x
+        {
+            get => new uint4(y, x, 0u, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 yx_y
+        {
+            get => new uint4(y, x, 0u, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 yxx_
+        {
+            get => new uint4(y, x, x, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 yxxx
+        {
+            get => new uint4(y, x, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 yxxy
+        {
+            get => new uint4(y, x, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 yxy_
+        {
+            get => new uint4(y, x, y, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 yxyx
+        {
+            get => new uint4(y, x, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 yxyy
+        {
+            get => new uint4(y, x, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 yy__
+        {
+            get => new uint4(y, y, 0u, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 yy_x
+        {
+            get => new uint4(y, y, 0u, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 yy_y
+        {
+            get => new uint4(y, y, 0u, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 yyx_
+        {
+            get => new uint4(y, y, x, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 yyxx
+        {
+            get => new uint4(y, y, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 yyxy
+        {
+            get => new uint4(y, y, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 yyy_
+        {
+            get => new uint4(y, y, y, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 yyyx
+        {
+            get => new uint4(y, y, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 yyyy
+        {
+            get => new uint4(y, y, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint2 _r
+        {
+            get => new uint2(0u, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint2 _g
+        {
+            get => new uint2(0u, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint2 r_
+        {
+            get => new uint2(x, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint2 rr
+        {
+            get => new uint2(x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint2 rg
+        {
+            get => new uint2(x, y);
+            set
+            {
+                x = value.x;
+                y = value.y;
+            }
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint2 g_
+        {
+            get => new uint2(y, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
         public uint2 gr
         {
             get => new uint2(y, x);
@@ -3129,10 +778,690 @@ namespace KibiHex
             }
         }
 
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint2 gg
+        {
+            get => new uint2(y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint3 __r
+        {
+            get => new uint3(0u, 0u, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint3 __g
+        {
+            get => new uint3(0u, 0u, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint3 _r_
+        {
+            get => new uint3(0u, x, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint3 _rr
+        {
+            get => new uint3(0u, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint3 _rg
+        {
+            get => new uint3(0u, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint3 _g_
+        {
+            get => new uint3(0u, y, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint3 _gr
+        {
+            get => new uint3(0u, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint3 _gg
+        {
+            get => new uint3(0u, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint3 r__
+        {
+            get => new uint3(x, 0u, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint3 r_r
+        {
+            get => new uint3(x, 0u, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint3 r_g
+        {
+            get => new uint3(x, 0u, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint3 rr_
+        {
+            get => new uint3(x, x, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint3 rrr
+        {
+            get => new uint3(x, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint3 rrg
+        {
+            get => new uint3(x, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint3 rg_
+        {
+            get => new uint3(x, y, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint3 rgr
+        {
+            get => new uint3(x, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint3 rgg
+        {
+            get => new uint3(x, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint3 g__
+        {
+            get => new uint3(y, 0u, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint3 g_r
+        {
+            get => new uint3(y, 0u, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint3 g_g
+        {
+            get => new uint3(y, 0u, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint3 gr_
+        {
+            get => new uint3(y, x, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint3 grr
+        {
+            get => new uint3(y, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint3 grg
+        {
+            get => new uint3(y, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint3 gg_
+        {
+            get => new uint3(y, y, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint3 ggr
+        {
+            get => new uint3(y, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint3 ggg
+        {
+            get => new uint3(y, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 ___r
+        {
+            get => new uint4(0u, 0u, 0u, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 ___g
+        {
+            get => new uint4(0u, 0u, 0u, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 __r_
+        {
+            get => new uint4(0u, 0u, x, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 __rr
+        {
+            get => new uint4(0u, 0u, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 __rg
+        {
+            get => new uint4(0u, 0u, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 __g_
+        {
+            get => new uint4(0u, 0u, y, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 __gr
+        {
+            get => new uint4(0u, 0u, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 __gg
+        {
+            get => new uint4(0u, 0u, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 _r__
+        {
+            get => new uint4(0u, x, 0u, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 _r_r
+        {
+            get => new uint4(0u, x, 0u, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 _r_g
+        {
+            get => new uint4(0u, x, 0u, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 _rr_
+        {
+            get => new uint4(0u, x, x, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 _rrr
+        {
+            get => new uint4(0u, x, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 _rrg
+        {
+            get => new uint4(0u, x, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 _rg_
+        {
+            get => new uint4(0u, x, y, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 _rgr
+        {
+            get => new uint4(0u, x, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 _rgg
+        {
+            get => new uint4(0u, x, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 _g__
+        {
+            get => new uint4(0u, y, 0u, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 _g_r
+        {
+            get => new uint4(0u, y, 0u, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 _g_g
+        {
+            get => new uint4(0u, y, 0u, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 _gr_
+        {
+            get => new uint4(0u, y, x, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 _grr
+        {
+            get => new uint4(0u, y, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 _grg
+        {
+            get => new uint4(0u, y, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 _gg_
+        {
+            get => new uint4(0u, y, y, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 _ggr
+        {
+            get => new uint4(0u, y, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 _ggg
+        {
+            get => new uint4(0u, y, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 r___
+        {
+            get => new uint4(x, 0u, 0u, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 r__r
+        {
+            get => new uint4(x, 0u, 0u, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 r__g
+        {
+            get => new uint4(x, 0u, 0u, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 r_r_
+        {
+            get => new uint4(x, 0u, x, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 r_rr
+        {
+            get => new uint4(x, 0u, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 r_rg
+        {
+            get => new uint4(x, 0u, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 r_g_
+        {
+            get => new uint4(x, 0u, y, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 r_gr
+        {
+            get => new uint4(x, 0u, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 r_gg
+        {
+            get => new uint4(x, 0u, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 rr__
+        {
+            get => new uint4(x, x, 0u, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 rr_r
+        {
+            get => new uint4(x, x, 0u, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 rr_g
+        {
+            get => new uint4(x, x, 0u, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 rrr_
+        {
+            get => new uint4(x, x, x, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 rrrr
+        {
+            get => new uint4(x, x, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 rrrg
+        {
+            get => new uint4(x, x, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 rrg_
+        {
+            get => new uint4(x, x, y, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 rrgr
+        {
+            get => new uint4(x, x, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 rrgg
+        {
+            get => new uint4(x, x, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 rg__
+        {
+            get => new uint4(x, y, 0u, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 rg_r
+        {
+            get => new uint4(x, y, 0u, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 rg_g
+        {
+            get => new uint4(x, y, 0u, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 rgr_
+        {
+            get => new uint4(x, y, x, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 rgrr
+        {
+            get => new uint4(x, y, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 rgrg
+        {
+            get => new uint4(x, y, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 rgg_
+        {
+            get => new uint4(x, y, y, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 rggr
+        {
+            get => new uint4(x, y, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 rggg
+        {
+            get => new uint4(x, y, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 g___
+        {
+            get => new uint4(y, 0u, 0u, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 g__r
+        {
+            get => new uint4(y, 0u, 0u, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 g__g
+        {
+            get => new uint4(y, 0u, 0u, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 g_r_
+        {
+            get => new uint4(y, 0u, x, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 g_rr
+        {
+            get => new uint4(y, 0u, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 g_rg
+        {
+            get => new uint4(y, 0u, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 g_g_
+        {
+            get => new uint4(y, 0u, y, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 g_gr
+        {
+            get => new uint4(y, 0u, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 g_gg
+        {
+            get => new uint4(y, 0u, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 gr__
+        {
+            get => new uint4(y, x, 0u, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 gr_r
+        {
+            get => new uint4(y, x, 0u, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 gr_g
+        {
+            get => new uint4(y, x, 0u, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 grr_
+        {
+            get => new uint4(y, x, x, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 grrr
+        {
+            get => new uint4(y, x, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 grrg
+        {
+            get => new uint4(y, x, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 grg_
+        {
+            get => new uint4(y, x, y, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 grgr
+        {
+            get => new uint4(y, x, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 grgg
+        {
+            get => new uint4(y, x, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 gg__
+        {
+            get => new uint4(y, y, 0u, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 gg_r
+        {
+            get => new uint4(y, y, 0u, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 gg_g
+        {
+            get => new uint4(y, y, 0u, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 ggr_
+        {
+            get => new uint4(y, y, x, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 ggrr
+        {
+            get => new uint4(y, y, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 ggrg
+        {
+            get => new uint4(y, y, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 ggg_
+        {
+            get => new uint4(y, y, y, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 gggr
+        {
+            get => new uint4(y, y, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 gggg
+        {
+            get => new uint4(y, y, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint2 _s
+        {
+            get => new uint2(0u, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint2 _t
+        {
+            get => new uint2(0u, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint2 s_
+        {
+            get => new uint2(x, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint2 ss
+        {
+            get => new uint2(x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint2 st
+        {
+            get => new uint2(x, y);
+            set
+            {
+                x = value.x;
+                y = value.y;
+            }
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint2 t_
+        {
+            get => new uint2(y, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
         public uint2 ts
         {
             get => new uint2(y, x);
@@ -3143,34 +1472,646 @@ namespace KibiHex
             }
         }
 
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint2 yy
-        {
-            get => new uint2(y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
-        public uint2 gg
-        {
-            get => new uint2(y, y);
-        }
-
-        /// <summary>
-        /// Gets or sets the specified subset of components.
-        /// </summary>
-        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
         public uint2 tt
         {
             get => new uint2(y, y);
         }
 
-        #endregion
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint3 __s
+        {
+            get => new uint3(0u, 0u, x);
+        }
 
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint3 __t
+        {
+            get => new uint3(0u, 0u, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint3 _s_
+        {
+            get => new uint3(0u, x, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint3 _ss
+        {
+            get => new uint3(0u, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint3 _st
+        {
+            get => new uint3(0u, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint3 _t_
+        {
+            get => new uint3(0u, y, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint3 _ts
+        {
+            get => new uint3(0u, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint3 _tt
+        {
+            get => new uint3(0u, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint3 s__
+        {
+            get => new uint3(x, 0u, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint3 s_s
+        {
+            get => new uint3(x, 0u, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint3 s_t
+        {
+            get => new uint3(x, 0u, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint3 ss_
+        {
+            get => new uint3(x, x, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint3 sss
+        {
+            get => new uint3(x, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint3 sst
+        {
+            get => new uint3(x, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint3 st_
+        {
+            get => new uint3(x, y, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint3 sts
+        {
+            get => new uint3(x, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint3 stt
+        {
+            get => new uint3(x, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint3 t__
+        {
+            get => new uint3(y, 0u, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint3 t_s
+        {
+            get => new uint3(y, 0u, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint3 t_t
+        {
+            get => new uint3(y, 0u, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint3 ts_
+        {
+            get => new uint3(y, x, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint3 tss
+        {
+            get => new uint3(y, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint3 tst
+        {
+            get => new uint3(y, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint3 tt_
+        {
+            get => new uint3(y, y, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint3 tts
+        {
+            get => new uint3(y, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint3 ttt
+        {
+            get => new uint3(y, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 ___s
+        {
+            get => new uint4(0u, 0u, 0u, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 ___t
+        {
+            get => new uint4(0u, 0u, 0u, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 __s_
+        {
+            get => new uint4(0u, 0u, x, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 __ss
+        {
+            get => new uint4(0u, 0u, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 __st
+        {
+            get => new uint4(0u, 0u, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 __t_
+        {
+            get => new uint4(0u, 0u, y, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 __ts
+        {
+            get => new uint4(0u, 0u, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 __tt
+        {
+            get => new uint4(0u, 0u, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 _s__
+        {
+            get => new uint4(0u, x, 0u, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 _s_s
+        {
+            get => new uint4(0u, x, 0u, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 _s_t
+        {
+            get => new uint4(0u, x, 0u, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 _ss_
+        {
+            get => new uint4(0u, x, x, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 _sss
+        {
+            get => new uint4(0u, x, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 _sst
+        {
+            get => new uint4(0u, x, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 _st_
+        {
+            get => new uint4(0u, x, y, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 _sts
+        {
+            get => new uint4(0u, x, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 _stt
+        {
+            get => new uint4(0u, x, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 _t__
+        {
+            get => new uint4(0u, y, 0u, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 _t_s
+        {
+            get => new uint4(0u, y, 0u, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 _t_t
+        {
+            get => new uint4(0u, y, 0u, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 _ts_
+        {
+            get => new uint4(0u, y, x, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 _tss
+        {
+            get => new uint4(0u, y, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 _tst
+        {
+            get => new uint4(0u, y, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 _tt_
+        {
+            get => new uint4(0u, y, y, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 _tts
+        {
+            get => new uint4(0u, y, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 _ttt
+        {
+            get => new uint4(0u, y, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 s___
+        {
+            get => new uint4(x, 0u, 0u, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 s__s
+        {
+            get => new uint4(x, 0u, 0u, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 s__t
+        {
+            get => new uint4(x, 0u, 0u, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 s_s_
+        {
+            get => new uint4(x, 0u, x, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 s_ss
+        {
+            get => new uint4(x, 0u, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 s_st
+        {
+            get => new uint4(x, 0u, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 s_t_
+        {
+            get => new uint4(x, 0u, y, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 s_ts
+        {
+            get => new uint4(x, 0u, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 s_tt
+        {
+            get => new uint4(x, 0u, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 ss__
+        {
+            get => new uint4(x, x, 0u, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 ss_s
+        {
+            get => new uint4(x, x, 0u, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 ss_t
+        {
+            get => new uint4(x, x, 0u, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 sss_
+        {
+            get => new uint4(x, x, x, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 ssss
+        {
+            get => new uint4(x, x, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 ssst
+        {
+            get => new uint4(x, x, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 sst_
+        {
+            get => new uint4(x, x, y, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 ssts
+        {
+            get => new uint4(x, x, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 sstt
+        {
+            get => new uint4(x, x, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 st__
+        {
+            get => new uint4(x, y, 0u, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 st_s
+        {
+            get => new uint4(x, y, 0u, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 st_t
+        {
+            get => new uint4(x, y, 0u, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 sts_
+        {
+            get => new uint4(x, y, x, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 stss
+        {
+            get => new uint4(x, y, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 stst
+        {
+            get => new uint4(x, y, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 stt_
+        {
+            get => new uint4(x, y, y, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 stts
+        {
+            get => new uint4(x, y, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 sttt
+        {
+            get => new uint4(x, y, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 t___
+        {
+            get => new uint4(y, 0u, 0u, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 t__s
+        {
+            get => new uint4(y, 0u, 0u, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 t__t
+        {
+            get => new uint4(y, 0u, 0u, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 t_s_
+        {
+            get => new uint4(y, 0u, x, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 t_ss
+        {
+            get => new uint4(y, 0u, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 t_st
+        {
+            get => new uint4(y, 0u, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 t_t_
+        {
+            get => new uint4(y, 0u, y, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 t_ts
+        {
+            get => new uint4(y, 0u, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 t_tt
+        {
+            get => new uint4(y, 0u, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 ts__
+        {
+            get => new uint4(y, x, 0u, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 ts_s
+        {
+            get => new uint4(y, x, 0u, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 ts_t
+        {
+            get => new uint4(y, x, 0u, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 tss_
+        {
+            get => new uint4(y, x, x, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 tsss
+        {
+            get => new uint4(y, x, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 tsst
+        {
+            get => new uint4(y, x, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 tst_
+        {
+            get => new uint4(y, x, y, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 tsts
+        {
+            get => new uint4(y, x, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 tstt
+        {
+            get => new uint4(y, x, y, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 tt__
+        {
+            get => new uint4(y, y, 0u, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 tt_s
+        {
+            get => new uint4(y, y, 0u, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 tt_t
+        {
+            get => new uint4(y, y, 0u, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 tts_
+        {
+            get => new uint4(y, y, x, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 ttss
+        {
+            get => new uint4(y, y, x, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 ttst
+        {
+            get => new uint4(y, y, x, y);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 ttt_
+        {
+            get => new uint4(y, y, y, 0u);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 ttts
+        {
+            get => new uint4(y, y, y, x);
+        }
+
+        [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.Never)]
+        public uint4 tttt
+        {
+            get => new uint4(y, y, y, y);
+        }
     }
 }

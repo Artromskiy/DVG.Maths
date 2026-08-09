@@ -1,58 +1,28 @@
-#pragma warning disable IDE1006
 #nullable enable
 using System;
 using System.Runtime.InteropServices;
 using System.Runtime.CompilerServices;
-using System.Runtime.Serialization;
-using System.Diagnostics;
-
 
 namespace KibiHex
 {
-
-    /// <summary>
-    /// A vector of type bool with 3 components.
-    /// </summary>
+    /// <summary>A vector of type bool with 3 components.</summary>
     [Serializable]
     [StructLayout(LayoutKind.Sequential)]
-    [DataContract]
+    [System.Runtime.Serialization.DataContract]
     public partial struct bool3 : IEquatable<bool3>, IComparable<bool3>
     {
 
-        #region Fields
-
-        /// <summary>
-        /// x-component
-        /// </summary>
-        [DataMember(Order = 0)]
+        [System.Runtime.Serialization.DataMember(Order = 0)]
         public bool x;
 
-        /// <summary>
-        /// y-component
-        /// </summary>
-        [DataMember(Order = 1)]
+        [System.Runtime.Serialization.DataMember(Order = 1)]
         public bool y;
 
-        /// <summary>
-        /// z-component
-        /// </summary>
-        [DataMember(Order = 2)]
+        [System.Runtime.Serialization.DataMember(Order = 2)]
         public bool z;
 
-        /// <summary>
-        /// Returns new vector with every component set to default.
-        /// </summary>
         public static readonly bool3 zero = new bool3(false, false, false);
 
-        #endregion
-
-
-        #region Constructors
-
-        /// <summary>
-        /// Component-wise constructor
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public bool3(bool x, bool y, bool z)
         {
             this.x = x;
@@ -60,69 +30,34 @@ namespace KibiHex
             this.z = z;
         }
 
-        /// <summary>
-        /// all-same-value constructor
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public bool3(bool v)
+        public bool3(bool value)
         {
-            this.x = v;
-            this.y = v;
-            this.z = v;
+            x = value;
+            y = value;
+            z = value;
         }
 
-        /// <summary>
-        /// from-vector constructor (empty fields are zero/false)
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public bool3(bool2 v)
+        public bool3(bool2 value)
         {
-            this.x = v.x;
-            this.y = v.y;
-            this.z = false;
+            x = value.x;
+            y = value.y;
+            z = false;
         }
 
-        /// <summary>
-        /// from-vector-and-value constructor
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public bool3(bool2 v, bool z)
+        public bool3(bool3 value)
         {
-            this.x = v.x;
-            this.y = v.y;
-            this.z = z;
+            x = value.x;
+            y = value.y;
+            z = value.z;
         }
 
-        /// <summary>
-        /// from-vector constructor
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public bool3(bool3 v)
+        public bool3(bool4 value)
         {
-            this.x = v.x;
-            this.y = v.y;
-            this.z = v.z;
+            x = value.x;
+            y = value.y;
+            z = value.z;
         }
 
-        /// <summary>
-        /// from-vector constructor (additional fields are truncated)
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public bool3(bool4 v)
-        {
-            this.x = v.x;
-            this.y = v.y;
-            this.z = v.z;
-        }
-
-        #endregion
-
-
-        #region Indexer
-
-        /// <summary>
-        /// Gets/Sets a specific indexed component (a bit slower than direct access).
-        /// </summary>
         public bool this[int index]
         {
             get
@@ -139,81 +74,60 @@ namespace KibiHex
             }
         }
 
-        #endregion
+        public int Count => 3;
 
-
-        #region Properties
-
-        /// <summary>
-        /// Returns the number of components (3).
-        /// </summary>
-        public int Count
+        public bool Equals(bool3 other)
         {
-            get => 3;
+            return x.Equals(other.x) && y.Equals(other.y) && z.Equals(other.z);
         }
 
-        #endregion
+        public override bool Equals(object obj)
+        {
+            return obj is bool3 other && Equals(other);
+        }
 
+        public override int GetHashCode()
+        {
+            unchecked
+            {
+                var hash = 17;
+                hash = hash * 31 + x.GetHashCode();
+                hash = hash * 31 + y.GetHashCode();
+                hash = hash * 31 + z.GetHashCode();
+                return hash;
+            }
+        }
 
-        #region Operators
+        public int CompareTo(bool3 other)
+        {
+            var xComparison = x.CompareTo(other.x);
+            if (xComparison != 0) return xComparison;
+            var yComparison = y.CompareTo(other.y);
+            if (yComparison != 0) return yComparison;
+            var zComparison = z.CompareTo(other.z);
+            if (zComparison != 0) return zComparison;
+            return 0;
+        }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static bool operator==(bool3 lhs, bool3 rhs) => lhs.x == rhs.x&&lhs.y == rhs.y&&lhs.z == rhs.z;
+        public override string ToString()
+        {
+            return $"[{x}, {y}, {z}]";
+        }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static bool operator!=(bool3 lhs, bool3 rhs) => lhs.x != rhs.x||lhs.y != rhs.y||lhs.z != rhs.z;
-
-        #endregion
-
-
-        #region Functions
-
-        /// <summary>
-        /// Returns HashCode
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public override readonly int GetHashCode() => HashCode.Combine(x, y, z);
-
-        /// <summary>
-        /// Compares two values
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public readonly int CompareTo(bool3 other) => Comparison.Combine(x, y, z, other.x, other.y, other.z);
-
-        /// <summary>
-        /// Returns a string representation of this vector.
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public override readonly string ToString() => $"{x}, {y}, {z}";
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public readonly bool Equals(bool3 other) => other == this;
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public override readonly bool Equals(object? obj) => obj is bool3 other && Equals(other);
-
-        #endregion
-
-
-        #region Static Functions
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static bool Any(bool3 v) => v.x||v.y||v.z;
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static bool All(bool3 v) => v.x&&v.y&&v.z;
-
-        /// <summary>
-        /// Parses vector value from string representation.
-        /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool3 Parse(string value)
         {
-            var values = value.Split(", ");
-            return new bool3(bool.Parse(values[0]), bool.Parse(values[1]), bool.Parse(values[2]));
+            var values = value.Split(',');
+            return new(bool.Parse(values[0]), bool.Parse(values[1]), bool.Parse(values[2]));
         }
 
-        #endregion
+        public static bool Any(bool3 value)
+        {
+            return value.x || value.y || value.z;
+        }
 
+        public static bool All(bool3 value)
+        {
+            return value.x && value.y && value.z;
+        }
     }
 }
