@@ -7,7 +7,7 @@ using System.Runtime.Serialization;
 using System.Diagnostics;
 
 
-namespace Kibix
+namespace KibiHex
 {
 
     /// <summary>
@@ -223,6 +223,179 @@ namespace Kibix
             var values = value.Split(", ");
             return new int2(int.Parse(values[0], format), int.Parse(values[1], format));
         }
+
+        #endregion
+
+
+        #region Component-Wise Operator Overloads
+
+        /// <summary>
+        /// Returns a int2 from component-wise application of operator- (-v).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static int2 operator -(int2 v) => new int2(-v.x, -v.y);
+
+        /// <summary>
+        /// Returns a int2 from component-wise application of operator+ (lhs + rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static int2 operator +(int2 lhs, int2 rhs) => new int2(lhs.x + rhs.x, lhs.y + rhs.y);
+
+        /// <summary>
+        /// Returns a int2 from component-wise application of operator+ (lhs + rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static int2 operator +(int2 lhs, int rhs) => new int2(lhs.x + rhs, lhs.y + rhs);
+
+        /// <summary>
+        /// Returns a int2 from component-wise application of operator+ (lhs + rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static int2 operator +(int lhs, int2 rhs) => new int2(lhs + rhs.x, lhs + rhs.y);
+
+        /// <summary>
+        /// Returns a int2 from component-wise application of operator- (lhs - rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static int2 operator -(int2 lhs, int2 rhs) => new int2(lhs.x - rhs.x, lhs.y - rhs.y);
+
+        /// <summary>
+        /// Returns a int2 from component-wise application of operator- (lhs - rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static int2 operator -(int2 lhs, int rhs) => new int2(lhs.x - rhs, lhs.y - rhs);
+
+        /// <summary>
+        /// Returns a int2 from component-wise application of operator- (lhs - rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static int2 operator -(int lhs, int2 rhs) => new int2(lhs - rhs.x, lhs - rhs.y);
+
+        /// <summary>
+        /// Returns a int2 from component-wise application of operator* (lhs * rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static int2 operator *(int2 lhs, int2 rhs) => new int2(lhs.x * rhs.x, lhs.y * rhs.y);
+
+        /// <summary>
+        /// Returns a int2 from component-wise application of operator* (lhs * rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static int2 operator *(int2 lhs, int rhs) => new int2(lhs.x * rhs, lhs.y * rhs);
+
+        /// <summary>
+        /// Returns a int2 from component-wise application of operator* (lhs * rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static int2 operator *(int lhs, int2 rhs) => new int2(lhs * rhs.x, lhs * rhs.y);
+
+        /// <summary>
+        /// Returns a int2 from component-wise application of operator/ (lhs / rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static int2 operator /(int2 lhs, int2 rhs) => new int2(lhs.x / rhs.x, lhs.y / rhs.y);
+
+        /// <summary>
+        /// Returns a int2 from component-wise application of operator/ (lhs / rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static int2 operator /(int2 lhs, int rhs) => new int2(lhs.x / rhs, lhs.y / rhs);
+
+        /// <summary>
+        /// Returns a int2 from component-wise application of operator/ (lhs / rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static int2 operator /(int lhs, int2 rhs) => new int2(lhs / rhs.x, lhs / rhs.y);
+
+        /// <summary>
+        /// Returns a int2 from component-wise application of operator% (lhs % rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static int2 operator %(int2 lhs, int2 rhs) => new int2(lhs.x % rhs.x, lhs.y % rhs.y);
+
+        /// <summary>
+        /// Returns a int2 from component-wise application of operator% (lhs % rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static int2 operator %(int2 lhs, int rhs) => new int2(lhs.x % rhs, lhs.y % rhs);
+
+        /// <summary>
+        /// Returns a int2 from component-wise application of operator% (lhs % rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static int2 operator %(int lhs, int2 rhs) => new int2(lhs % rhs.x, lhs % rhs.y);
+
+        /// <summary>
+        /// Returns a int2 from component-wise application of operator^ (lhs ^ rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static int2 operator ^(int2 lhs, int2 rhs) => new int2(lhs.x ^ rhs.x, lhs.y ^ rhs.y);
+
+        /// <summary>
+        /// Returns a int2 from component-wise application of operator^ (lhs ^ rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static int2 operator ^(int2 lhs, int rhs) => new int2(lhs.x ^ rhs, lhs.y ^ rhs);
+
+        /// <summary>
+        /// Returns a int2 from component-wise application of operator^ (lhs ^ rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static int2 operator ^(int lhs, int2 rhs) => new int2(lhs ^ rhs.x, lhs ^ rhs.y);
+
+        /// <summary>
+        /// Returns a int2 from component-wise application of operator| (lhs | rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static int2 operator |(int2 lhs, int2 rhs) => new int2(lhs.x | rhs.x, lhs.y | rhs.y);
+
+        /// <summary>
+        /// Returns a int2 from component-wise application of operator| (lhs | rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static int2 operator |(int2 lhs, int rhs) => new int2(lhs.x | rhs, lhs.y | rhs);
+
+        /// <summary>
+        /// Returns a int2 from component-wise application of operator| (lhs | rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static int2 operator |(int lhs, int2 rhs) => new int2(lhs | rhs.x, lhs | rhs.y);
+
+        /// <summary>
+        /// Returns a int2 from component-wise application of operator&amp; (lhs &amp; rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static int2 operator &(int2 lhs, int2 rhs) => new int2(lhs.x & rhs.x, lhs.y & rhs.y);
+
+        /// <summary>
+        /// Returns a int2 from component-wise application of operator&amp; (lhs &amp; rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static int2 operator &(int2 lhs, int rhs) => new int2(lhs.x & rhs, lhs.y & rhs);
+
+        /// <summary>
+        /// Returns a int2 from component-wise application of operator&amp; (lhs &amp; rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static int2 operator &(int lhs, int2 rhs) => new int2(lhs & rhs.x, lhs & rhs.y);
+
+        /// <summary>
+        /// Returns a int2 from component-wise application of operator~ (~v).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static int2 operator ~(int2 v) => new int2(~v.x, ~v.y);
+
+        /// <summary>
+        /// Returns a int2 from component-wise application of operator&lt;&lt; (lhs &lt;&lt; rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static int2 operator <<(int2 lhs, int rhs) => new int2(lhs.x << rhs, lhs.y << rhs);
+
+        /// <summary>
+        /// Returns a int2 from component-wise application of operator&gt;&gt; (lhs &gt;&gt; rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static int2 operator >>(int2 lhs, int rhs) => new int2(lhs.x >> rhs, lhs.y >> rhs);
 
         #endregion
 

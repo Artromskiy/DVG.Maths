@@ -7,7 +7,7 @@ using System.Runtime.Serialization;
 using System.Diagnostics;
 
 
-namespace Kibix
+namespace KibiHex
 {
 
     /// <summary>
@@ -395,6 +395,89 @@ namespace Kibix
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double3 InvLerp(double3 edge0, double3 edge1, double v) => new double3(Maths.InvLerp(edge0.x, edge1.x, v), Maths.InvLerp(edge0.y, edge1.y, v), Maths.InvLerp(edge0.z, edge1.z, v));
+
+        #endregion
+
+
+        #region Component-Wise Operator Overloads
+
+        /// <summary>
+        /// Returns a double3 from component-wise application of operator- (-v).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double3 operator -(double3 v) => new double3(-v.x, -v.y, -v.z);
+
+        /// <summary>
+        /// Returns a double3 from component-wise application of operator+ (lhs + rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double3 operator +(double3 lhs, double3 rhs) => new double3(lhs.x + rhs.x, lhs.y + rhs.y, lhs.z + rhs.z);
+
+        /// <summary>
+        /// Returns a double3 from component-wise application of operator+ (lhs + rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double3 operator +(double3 lhs, double rhs) => new double3(lhs.x + rhs, lhs.y + rhs, lhs.z + rhs);
+
+        /// <summary>
+        /// Returns a double3 from component-wise application of operator+ (lhs + rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double3 operator +(double lhs, double3 rhs) => new double3(lhs + rhs.x, lhs + rhs.y, lhs + rhs.z);
+
+        /// <summary>
+        /// Returns a double3 from component-wise application of operator- (lhs - rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double3 operator -(double3 lhs, double3 rhs) => new double3(lhs.x - rhs.x, lhs.y - rhs.y, lhs.z - rhs.z);
+
+        /// <summary>
+        /// Returns a double3 from component-wise application of operator- (lhs - rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double3 operator -(double3 lhs, double rhs) => new double3(lhs.x - rhs, lhs.y - rhs, lhs.z - rhs);
+
+        /// <summary>
+        /// Returns a double3 from component-wise application of operator- (lhs - rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double3 operator -(double lhs, double3 rhs) => new double3(lhs - rhs.x, lhs - rhs.y, lhs - rhs.z);
+
+        /// <summary>
+        /// Returns a double3 from component-wise application of operator* (lhs * rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double3 operator *(double3 lhs, double3 rhs) => new double3(lhs.x * rhs.x, lhs.y * rhs.y, lhs.z * rhs.z);
+
+        /// <summary>
+        /// Returns a double3 from component-wise application of operator* (lhs * rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double3 operator *(double3 lhs, double rhs) => new double3(lhs.x * rhs, lhs.y * rhs, lhs.z * rhs);
+
+        /// <summary>
+        /// Returns a double3 from component-wise application of operator* (lhs * rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double3 operator *(double lhs, double3 rhs) => new double3(lhs * rhs.x, lhs * rhs.y, lhs * rhs.z);
+
+        /// <summary>
+        /// Returns a double3 from component-wise application of operator/ (lhs / rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double3 operator /(double3 lhs, double3 rhs) => new double3(lhs.x / rhs.x, lhs.y / rhs.y, lhs.z / rhs.z);
+
+        /// <summary>
+        /// Returns a double3 from component-wise application of operator/ (lhs / rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double3 operator /(double3 lhs, double rhs) => new double3(lhs.x / rhs, lhs.y / rhs, lhs.z / rhs);
+
+        /// <summary>
+        /// Returns a double3 from component-wise application of operator/ (lhs / rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double3 operator /(double lhs, double3 rhs) => new double3(lhs / rhs.x, lhs / rhs.y, lhs / rhs.z);
 
         #endregion
 

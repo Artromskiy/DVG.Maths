@@ -1,6 +1,6 @@
 ﻿using System.Runtime.CompilerServices;
 
-namespace Kibix
+namespace KibiHex
 {
     public static partial class Maths
     {
@@ -224,3 +224,4 @@ namespace Kibix
 
     }
 }
+

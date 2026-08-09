@@ -1,6 +1,6 @@
 ﻿using System.Runtime.CompilerServices;
 
-namespace Kibix
+namespace KibiHex
 {
     public partial class Maths
     {
@@ -111,3 +111,4 @@ namespace Kibix
         public static double Repeat(double t, double length) => Clamp(t - (Floor(t / length) * length), 0, length);
     }
 }
+

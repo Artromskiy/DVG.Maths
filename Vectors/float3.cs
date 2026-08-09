@@ -7,7 +7,7 @@ using System.Runtime.Serialization;
 using System.Diagnostics;
 
 
-namespace Kibix
+namespace KibiHex
 {
 
     /// <summary>
@@ -436,6 +436,89 @@ namespace Kibix
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float3 InvLerp(float3 edge0, float3 edge1, float v) => new float3(Maths.InvLerp(edge0.x, edge1.x, v), Maths.InvLerp(edge0.y, edge1.y, v), Maths.InvLerp(edge0.z, edge1.z, v));
+
+        #endregion
+
+
+        #region Component-Wise Operator Overloads
+
+        /// <summary>
+        /// Returns a float3 from component-wise application of operator- (-v).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float3 operator -(float3 v) => new float3(-v.x, -v.y, -v.z);
+
+        /// <summary>
+        /// Returns a float3 from component-wise application of operator+ (lhs + rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float3 operator +(float3 lhs, float3 rhs) => new float3(lhs.x + rhs.x, lhs.y + rhs.y, lhs.z + rhs.z);
+
+        /// <summary>
+        /// Returns a float3 from component-wise application of operator+ (lhs + rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float3 operator +(float3 lhs, float rhs) => new float3(lhs.x + rhs, lhs.y + rhs, lhs.z + rhs);
+
+        /// <summary>
+        /// Returns a float3 from component-wise application of operator+ (lhs + rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float3 operator +(float lhs, float3 rhs) => new float3(lhs + rhs.x, lhs + rhs.y, lhs + rhs.z);
+
+        /// <summary>
+        /// Returns a float3 from component-wise application of operator- (lhs - rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float3 operator -(float3 lhs, float3 rhs) => new float3(lhs.x - rhs.x, lhs.y - rhs.y, lhs.z - rhs.z);
+
+        /// <summary>
+        /// Returns a float3 from component-wise application of operator- (lhs - rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float3 operator -(float3 lhs, float rhs) => new float3(lhs.x - rhs, lhs.y - rhs, lhs.z - rhs);
+
+        /// <summary>
+        /// Returns a float3 from component-wise application of operator- (lhs - rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float3 operator -(float lhs, float3 rhs) => new float3(lhs - rhs.x, lhs - rhs.y, lhs - rhs.z);
+
+        /// <summary>
+        /// Returns a float3 from component-wise application of operator* (lhs * rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float3 operator *(float3 lhs, float3 rhs) => new float3(lhs.x * rhs.x, lhs.y * rhs.y, lhs.z * rhs.z);
+
+        /// <summary>
+        /// Returns a float3 from component-wise application of operator* (lhs * rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float3 operator *(float3 lhs, float rhs) => new float3(lhs.x * rhs, lhs.y * rhs, lhs.z * rhs);
+
+        /// <summary>
+        /// Returns a float3 from component-wise application of operator* (lhs * rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float3 operator *(float lhs, float3 rhs) => new float3(lhs * rhs.x, lhs * rhs.y, lhs * rhs.z);
+
+        /// <summary>
+        /// Returns a float3 from component-wise application of operator/ (lhs / rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float3 operator /(float3 lhs, float3 rhs) => new float3(lhs.x / rhs.x, lhs.y / rhs.y, lhs.z / rhs.z);
+
+        /// <summary>
+        /// Returns a float3 from component-wise application of operator/ (lhs / rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float3 operator /(float3 lhs, float rhs) => new float3(lhs.x / rhs, lhs.y / rhs, lhs.z / rhs);
+
+        /// <summary>
+        /// Returns a float3 from component-wise application of operator/ (lhs / rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float3 operator /(float lhs, float3 rhs) => new float3(lhs / rhs.x, lhs / rhs.y, lhs / rhs.z);
 
         #endregion
 

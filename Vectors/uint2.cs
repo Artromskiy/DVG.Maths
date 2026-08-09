@@ -7,7 +7,7 @@ using System.Runtime.Serialization;
 using System.Diagnostics;
 
 
-namespace Kibix
+namespace KibiHex
 {
 
     /// <summary>
@@ -217,6 +217,173 @@ namespace Kibix
             var values = value.Split(", ");
             return new uint2(uint.Parse(values[0], format), uint.Parse(values[1], format));
         }
+
+        #endregion
+
+
+        #region Component-Wise Operator Overloads
+
+        /// <summary>
+        /// Returns a uint2 from component-wise application of operator+ (lhs + rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static uint2 operator +(uint2 lhs, uint2 rhs) => new uint2(lhs.x + rhs.x, lhs.y + rhs.y);
+
+        /// <summary>
+        /// Returns a uint2 from component-wise application of operator+ (lhs + rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static uint2 operator +(uint2 lhs, uint rhs) => new uint2(lhs.x + rhs, lhs.y + rhs);
+
+        /// <summary>
+        /// Returns a uint2 from component-wise application of operator+ (lhs + rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static uint2 operator +(uint lhs, uint2 rhs) => new uint2(lhs + rhs.x, lhs + rhs.y);
+
+        /// <summary>
+        /// Returns a uint2 from component-wise application of operator- (lhs - rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static uint2 operator -(uint2 lhs, uint2 rhs) => new uint2(lhs.x - rhs.x, lhs.y - rhs.y);
+
+        /// <summary>
+        /// Returns a uint2 from component-wise application of operator- (lhs - rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static uint2 operator -(uint2 lhs, uint rhs) => new uint2(lhs.x - rhs, lhs.y - rhs);
+
+        /// <summary>
+        /// Returns a uint2 from component-wise application of operator- (lhs - rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static uint2 operator -(uint lhs, uint2 rhs) => new uint2(lhs - rhs.x, lhs - rhs.y);
+
+        /// <summary>
+        /// Returns a uint2 from component-wise application of operator* (lhs * rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static uint2 operator *(uint2 lhs, uint2 rhs) => new uint2(lhs.x * rhs.x, lhs.y * rhs.y);
+
+        /// <summary>
+        /// Returns a uint2 from component-wise application of operator* (lhs * rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static uint2 operator *(uint2 lhs, uint rhs) => new uint2(lhs.x * rhs, lhs.y * rhs);
+
+        /// <summary>
+        /// Returns a uint2 from component-wise application of operator* (lhs * rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static uint2 operator *(uint lhs, uint2 rhs) => new uint2(lhs * rhs.x, lhs * rhs.y);
+
+        /// <summary>
+        /// Returns a uint2 from component-wise application of operator/ (lhs / rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static uint2 operator /(uint2 lhs, uint2 rhs) => new uint2(lhs.x / rhs.x, lhs.y / rhs.y);
+
+        /// <summary>
+        /// Returns a uint2 from component-wise application of operator/ (lhs / rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static uint2 operator /(uint2 lhs, uint rhs) => new uint2(lhs.x / rhs, lhs.y / rhs);
+
+        /// <summary>
+        /// Returns a uint2 from component-wise application of operator/ (lhs / rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static uint2 operator /(uint lhs, uint2 rhs) => new uint2(lhs / rhs.x, lhs / rhs.y);
+
+        /// <summary>
+        /// Returns a uint2 from component-wise application of operator% (lhs % rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static uint2 operator %(uint2 lhs, uint2 rhs) => new uint2(lhs.x % rhs.x, lhs.y % rhs.y);
+
+        /// <summary>
+        /// Returns a uint2 from component-wise application of operator% (lhs % rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static uint2 operator %(uint2 lhs, uint rhs) => new uint2(lhs.x % rhs, lhs.y % rhs);
+
+        /// <summary>
+        /// Returns a uint2 from component-wise application of operator% (lhs % rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static uint2 operator %(uint lhs, uint2 rhs) => new uint2(lhs % rhs.x, lhs % rhs.y);
+
+        /// <summary>
+        /// Returns a uint2 from component-wise application of operator^ (lhs ^ rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static uint2 operator ^(uint2 lhs, uint2 rhs) => new uint2(lhs.x ^ rhs.x, lhs.y ^ rhs.y);
+
+        /// <summary>
+        /// Returns a uint2 from component-wise application of operator^ (lhs ^ rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static uint2 operator ^(uint2 lhs, uint rhs) => new uint2(lhs.x ^ rhs, lhs.y ^ rhs);
+
+        /// <summary>
+        /// Returns a uint2 from component-wise application of operator^ (lhs ^ rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static uint2 operator ^(uint lhs, uint2 rhs) => new uint2(lhs ^ rhs.x, lhs ^ rhs.y);
+
+        /// <summary>
+        /// Returns a uint2 from component-wise application of operator| (lhs | rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static uint2 operator |(uint2 lhs, uint2 rhs) => new uint2(lhs.x | rhs.x, lhs.y | rhs.y);
+
+        /// <summary>
+        /// Returns a uint2 from component-wise application of operator| (lhs | rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static uint2 operator |(uint2 lhs, uint rhs) => new uint2(lhs.x | rhs, lhs.y | rhs);
+
+        /// <summary>
+        /// Returns a uint2 from component-wise application of operator| (lhs | rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static uint2 operator |(uint lhs, uint2 rhs) => new uint2(lhs | rhs.x, lhs | rhs.y);
+
+        /// <summary>
+        /// Returns a uint2 from component-wise application of operator&amp; (lhs &amp; rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static uint2 operator &(uint2 lhs, uint2 rhs) => new uint2(lhs.x & rhs.x, lhs.y & rhs.y);
+
+        /// <summary>
+        /// Returns a uint2 from component-wise application of operator&amp; (lhs &amp; rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static uint2 operator &(uint2 lhs, uint rhs) => new uint2(lhs.x & rhs, lhs.y & rhs);
+
+        /// <summary>
+        /// Returns a uint2 from component-wise application of operator&amp; (lhs &amp; rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static uint2 operator &(uint lhs, uint2 rhs) => new uint2(lhs & rhs.x, lhs & rhs.y);
+
+        /// <summary>
+        /// Returns a uint2 from component-wise application of operator~ (~v).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static uint2 operator ~(uint2 v) => new uint2(~v.x, ~v.y);
+
+        /// <summary>
+        /// Returns a uint2 from component-wise application of operator&lt;&lt; (lhs &lt;&lt; rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static uint2 operator <<(uint2 lhs, int rhs) => new uint2(lhs.x << rhs, lhs.y << rhs);
+
+        /// <summary>
+        /// Returns a uint2 from component-wise application of operator&gt;&gt; (lhs &gt;&gt; rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static uint2 operator >>(uint2 lhs, int rhs) => new uint2(lhs.x >> rhs, lhs.y >> rhs);
 
         #endregion
 

@@ -7,7 +7,7 @@ using System.Runtime.Serialization;
 using System.Diagnostics;
 
 
-namespace Kibix
+namespace KibiHex
 {
 
     /// <summary>
@@ -367,6 +367,89 @@ namespace Kibix
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double2 InvLerp(double2 edge0, double2 edge1, double v) => new double2(Maths.InvLerp(edge0.x, edge1.x, v), Maths.InvLerp(edge0.y, edge1.y, v));
+
+        #endregion
+
+
+        #region Component-Wise Operator Overloads
+
+        /// <summary>
+        /// Returns a double2 from component-wise application of operator- (-v).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double2 operator -(double2 v) => new double2(-v.x, -v.y);
+
+        /// <summary>
+        /// Returns a double2 from component-wise application of operator+ (lhs + rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double2 operator +(double2 lhs, double2 rhs) => new double2(lhs.x + rhs.x, lhs.y + rhs.y);
+
+        /// <summary>
+        /// Returns a double2 from component-wise application of operator+ (lhs + rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double2 operator +(double2 lhs, double rhs) => new double2(lhs.x + rhs, lhs.y + rhs);
+
+        /// <summary>
+        /// Returns a double2 from component-wise application of operator+ (lhs + rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double2 operator +(double lhs, double2 rhs) => new double2(lhs + rhs.x, lhs + rhs.y);
+
+        /// <summary>
+        /// Returns a double2 from component-wise application of operator- (lhs - rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double2 operator -(double2 lhs, double2 rhs) => new double2(lhs.x - rhs.x, lhs.y - rhs.y);
+
+        /// <summary>
+        /// Returns a double2 from component-wise application of operator- (lhs - rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double2 operator -(double2 lhs, double rhs) => new double2(lhs.x - rhs, lhs.y - rhs);
+
+        /// <summary>
+        /// Returns a double2 from component-wise application of operator- (lhs - rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double2 operator -(double lhs, double2 rhs) => new double2(lhs - rhs.x, lhs - rhs.y);
+
+        /// <summary>
+        /// Returns a double2 from component-wise application of operator* (lhs * rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double2 operator *(double2 lhs, double2 rhs) => new double2(lhs.x * rhs.x, lhs.y * rhs.y);
+
+        /// <summary>
+        /// Returns a double2 from component-wise application of operator* (lhs * rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double2 operator *(double2 lhs, double rhs) => new double2(lhs.x * rhs, lhs.y * rhs);
+
+        /// <summary>
+        /// Returns a double2 from component-wise application of operator* (lhs * rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double2 operator *(double lhs, double2 rhs) => new double2(lhs * rhs.x, lhs * rhs.y);
+
+        /// <summary>
+        /// Returns a double2 from component-wise application of operator/ (lhs / rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double2 operator /(double2 lhs, double2 rhs) => new double2(lhs.x / rhs.x, lhs.y / rhs.y);
+
+        /// <summary>
+        /// Returns a double2 from component-wise application of operator/ (lhs / rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double2 operator /(double2 lhs, double rhs) => new double2(lhs.x / rhs, lhs.y / rhs);
+
+        /// <summary>
+        /// Returns a double2 from component-wise application of operator/ (lhs / rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double2 operator /(double lhs, double2 rhs) => new double2(lhs / rhs.x, lhs / rhs.y);
 
         #endregion
 

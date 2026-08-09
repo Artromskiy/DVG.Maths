@@ -1,6 +1,6 @@
 ---
 
-# Kibix.Maths
+# KibiHex.Maths
 
 A lightweight, engine-agnostic mathematics library for .NET.
 
@@ -245,7 +245,7 @@ The API is intentionally familiar to developers coming from shader languages, Un
 ## Example
 
 ```csharp
-using Kibix;
+using KibiHex;
 
 fix a = (fix)1.5f;
 fix b = (fix)2;
@@ -261,3 +261,4 @@ float angle = Maths.Radians(90f);
 ---
 
 If you are building systems where numeric behavior must be predictable — especially in multiplayer or simulation-heavy environments — this library provides a portable and deterministic math foundation without engine constraints.
+

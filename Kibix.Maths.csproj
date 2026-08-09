@@ -5,7 +5,7 @@
     <LangVersion>9.0</LangVersion>
     <Nullable>enable</Nullable>
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
-    <RootNamespace>Kibix</RootNamespace>
+    <RootNamespace>KibiHex</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -17,3 +17,4 @@
   </ItemGroup>
 
 </Project>
+

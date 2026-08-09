@@ -7,7 +7,7 @@ using System.Runtime.Serialization;
 using System.Diagnostics;
 
 
-namespace Kibix
+namespace KibiHex
 {
 
     /// <summary>
@@ -355,6 +355,89 @@ namespace Kibix
         /// </summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static fix2 InvLerp(fix2 edge0, fix2 edge1, fix v) => new fix2(Maths.InvLerp(edge0.x, edge1.x, v), Maths.InvLerp(edge0.y, edge1.y, v));
+
+        #endregion
+
+
+        #region Component-Wise Operator Overloads
+
+        /// <summary>
+        /// Returns a fix2 from component-wise application of operator- (-v).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static fix2 operator -(fix2 v) => new fix2(-v.x, -v.y);
+
+        /// <summary>
+        /// Returns a fix2 from component-wise application of operator+ (lhs + rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static fix2 operator +(fix2 lhs, fix2 rhs) => new fix2(lhs.x + rhs.x, lhs.y + rhs.y);
+
+        /// <summary>
+        /// Returns a fix2 from component-wise application of operator+ (lhs + rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static fix2 operator +(fix2 lhs, fix rhs) => new fix2(lhs.x + rhs, lhs.y + rhs);
+
+        /// <summary>
+        /// Returns a fix2 from component-wise application of operator+ (lhs + rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static fix2 operator +(fix lhs, fix2 rhs) => new fix2(lhs + rhs.x, lhs + rhs.y);
+
+        /// <summary>
+        /// Returns a fix2 from component-wise application of operator- (lhs - rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static fix2 operator -(fix2 lhs, fix2 rhs) => new fix2(lhs.x - rhs.x, lhs.y - rhs.y);
+
+        /// <summary>
+        /// Returns a fix2 from component-wise application of operator- (lhs - rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static fix2 operator -(fix2 lhs, fix rhs) => new fix2(lhs.x - rhs, lhs.y - rhs);
+
+        /// <summary>
+        /// Returns a fix2 from component-wise application of operator- (lhs - rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static fix2 operator -(fix lhs, fix2 rhs) => new fix2(lhs - rhs.x, lhs - rhs.y);
+
+        /// <summary>
+        /// Returns a fix2 from component-wise application of operator* (lhs * rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static fix2 operator *(fix2 lhs, fix2 rhs) => new fix2(lhs.x * rhs.x, lhs.y * rhs.y);
+
+        /// <summary>
+        /// Returns a fix2 from component-wise application of operator* (lhs * rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static fix2 operator *(fix2 lhs, fix rhs) => new fix2(lhs.x * rhs, lhs.y * rhs);
+
+        /// <summary>
+        /// Returns a fix2 from component-wise application of operator* (lhs * rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static fix2 operator *(fix lhs, fix2 rhs) => new fix2(lhs * rhs.x, lhs * rhs.y);
+
+        /// <summary>
+        /// Returns a fix2 from component-wise application of operator/ (lhs / rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static fix2 operator /(fix2 lhs, fix2 rhs) => new fix2(lhs.x / rhs.x, lhs.y / rhs.y);
+
+        /// <summary>
+        /// Returns a fix2 from component-wise application of operator/ (lhs / rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static fix2 operator /(fix2 lhs, fix rhs) => new fix2(lhs.x / rhs, lhs.y / rhs);
+
+        /// <summary>
+        /// Returns a fix2 from component-wise application of operator/ (lhs / rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static fix2 operator /(fix lhs, fix2 rhs) => new fix2(lhs / rhs.x, lhs / rhs.y);
 
         #endregion
 

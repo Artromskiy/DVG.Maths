@@ -7,7 +7,7 @@ using System.Runtime.Serialization;
 using System.Diagnostics;
 
 
-namespace Kibix
+namespace KibiHex
 {
 
     /// <summary>
@@ -239,6 +239,173 @@ namespace Kibix
             var values = value.Split(", ");
             return new uint3(uint.Parse(values[0], format), uint.Parse(values[1], format), uint.Parse(values[2], format));
         }
+
+        #endregion
+
+
+        #region Component-Wise Operator Overloads
+
+        /// <summary>
+        /// Returns a uint3 from component-wise application of operator+ (lhs + rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static uint3 operator +(uint3 lhs, uint3 rhs) => new uint3(lhs.x + rhs.x, lhs.y + rhs.y, lhs.z + rhs.z);
+
+        /// <summary>
+        /// Returns a uint3 from component-wise application of operator+ (lhs + rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static uint3 operator +(uint3 lhs, uint rhs) => new uint3(lhs.x + rhs, lhs.y + rhs, lhs.z + rhs);
+
+        /// <summary>
+        /// Returns a uint3 from component-wise application of operator+ (lhs + rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static uint3 operator +(uint lhs, uint3 rhs) => new uint3(lhs + rhs.x, lhs + rhs.y, lhs + rhs.z);
+
+        /// <summary>
+        /// Returns a uint3 from component-wise application of operator- (lhs - rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static uint3 operator -(uint3 lhs, uint3 rhs) => new uint3(lhs.x - rhs.x, lhs.y - rhs.y, lhs.z - rhs.z);
+
+        /// <summary>
+        /// Returns a uint3 from component-wise application of operator- (lhs - rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static uint3 operator -(uint3 lhs, uint rhs) => new uint3(lhs.x - rhs, lhs.y - rhs, lhs.z - rhs);
+
+        /// <summary>
+        /// Returns a uint3 from component-wise application of operator- (lhs - rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static uint3 operator -(uint lhs, uint3 rhs) => new uint3(lhs - rhs.x, lhs - rhs.y, lhs - rhs.z);
+
+        /// <summary>
+        /// Returns a uint3 from component-wise application of operator* (lhs * rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static uint3 operator *(uint3 lhs, uint3 rhs) => new uint3(lhs.x * rhs.x, lhs.y * rhs.y, lhs.z * rhs.z);
+
+        /// <summary>
+        /// Returns a uint3 from component-wise application of operator* (lhs * rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static uint3 operator *(uint3 lhs, uint rhs) => new uint3(lhs.x * rhs, lhs.y * rhs, lhs.z * rhs);
+
+        /// <summary>
+        /// Returns a uint3 from component-wise application of operator* (lhs * rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static uint3 operator *(uint lhs, uint3 rhs) => new uint3(lhs * rhs.x, lhs * rhs.y, lhs * rhs.z);
+
+        /// <summary>
+        /// Returns a uint3 from component-wise application of operator/ (lhs / rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static uint3 operator /(uint3 lhs, uint3 rhs) => new uint3(lhs.x / rhs.x, lhs.y / rhs.y, lhs.z / rhs.z);
+
+        /// <summary>
+        /// Returns a uint3 from component-wise application of operator/ (lhs / rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static uint3 operator /(uint3 lhs, uint rhs) => new uint3(lhs.x / rhs, lhs.y / rhs, lhs.z / rhs);
+
+        /// <summary>
+        /// Returns a uint3 from component-wise application of operator/ (lhs / rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static uint3 operator /(uint lhs, uint3 rhs) => new uint3(lhs / rhs.x, lhs / rhs.y, lhs / rhs.z);
+
+        /// <summary>
+        /// Returns a uint3 from component-wise application of operator% (lhs % rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static uint3 operator %(uint3 lhs, uint3 rhs) => new uint3(lhs.x % rhs.x, lhs.y % rhs.y, lhs.z % rhs.z);
+
+        /// <summary>
+        /// Returns a uint3 from component-wise application of operator% (lhs % rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static uint3 operator %(uint3 lhs, uint rhs) => new uint3(lhs.x % rhs, lhs.y % rhs, lhs.z % rhs);
+
+        /// <summary>
+        /// Returns a uint3 from component-wise application of operator% (lhs % rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static uint3 operator %(uint lhs, uint3 rhs) => new uint3(lhs % rhs.x, lhs % rhs.y, lhs % rhs.z);
+
+        /// <summary>
+        /// Returns a uint3 from component-wise application of operator^ (lhs ^ rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static uint3 operator ^(uint3 lhs, uint3 rhs) => new uint3(lhs.x ^ rhs.x, lhs.y ^ rhs.y, lhs.z ^ rhs.z);
+
+        /// <summary>
+        /// Returns a uint3 from component-wise application of operator^ (lhs ^ rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static uint3 operator ^(uint3 lhs, uint rhs) => new uint3(lhs.x ^ rhs, lhs.y ^ rhs, lhs.z ^ rhs);
+
+        /// <summary>
+        /// Returns a uint3 from component-wise application of operator^ (lhs ^ rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static uint3 operator ^(uint lhs, uint3 rhs) => new uint3(lhs ^ rhs.x, lhs ^ rhs.y, lhs ^ rhs.z);
+
+        /// <summary>
+        /// Returns a uint3 from component-wise application of operator| (lhs | rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static uint3 operator |(uint3 lhs, uint3 rhs) => new uint3(lhs.x | rhs.x, lhs.y | rhs.y, lhs.z | rhs.z);
+
+        /// <summary>
+        /// Returns a uint3 from component-wise application of operator| (lhs | rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static uint3 operator |(uint3 lhs, uint rhs) => new uint3(lhs.x | rhs, lhs.y | rhs, lhs.z | rhs);
+
+        /// <summary>
+        /// Returns a uint3 from component-wise application of operator| (lhs | rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static uint3 operator |(uint lhs, uint3 rhs) => new uint3(lhs | rhs.x, lhs | rhs.y, lhs | rhs.z);
+
+        /// <summary>
+        /// Returns a uint3 from component-wise application of operator&amp; (lhs &amp; rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static uint3 operator &(uint3 lhs, uint3 rhs) => new uint3(lhs.x & rhs.x, lhs.y & rhs.y, lhs.z & rhs.z);
+
+        /// <summary>
+        /// Returns a uint3 from component-wise application of operator&amp; (lhs &amp; rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static uint3 operator &(uint3 lhs, uint rhs) => new uint3(lhs.x & rhs, lhs.y & rhs, lhs.z & rhs);
+
+        /// <summary>
+        /// Returns a uint3 from component-wise application of operator&amp; (lhs &amp; rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static uint3 operator &(uint lhs, uint3 rhs) => new uint3(lhs & rhs.x, lhs & rhs.y, lhs & rhs.z);
+
+        /// <summary>
+        /// Returns a uint3 from component-wise application of operator~ (~v).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static uint3 operator ~(uint3 v) => new uint3(~v.x, ~v.y, ~v.z);
+
+        /// <summary>
+        /// Returns a uint3 from component-wise application of operator&lt;&lt; (lhs &lt;&lt; rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static uint3 operator <<(uint3 lhs, int rhs) => new uint3(lhs.x << rhs, lhs.y << rhs, lhs.z << rhs);
+
+        /// <summary>
+        /// Returns a uint3 from component-wise application of operator&gt;&gt; (lhs &gt;&gt; rhs).
+        /// </summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static uint3 operator >>(uint3 lhs, int rhs) => new uint3(lhs.x >> rhs, lhs.y >> rhs, lhs.z >> rhs);
 
         #endregion
 

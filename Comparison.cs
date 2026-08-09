@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Kibix
+namespace KibiHex
 {
     public static class Comparison
     {
@@ -62,3 +62,4 @@ namespace Kibix
         }
     }
 }
+
