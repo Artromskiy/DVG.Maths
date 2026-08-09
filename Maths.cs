@@ -38,9 +38,9 @@ namespace KibiHex
 			return x * x * (3.0f - 2.0f * x);
 		}
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static double Degrees(double radians) => radians * 180 * Math.PI;
+		public static double Degrees(double radians) => radians * 180 / Math.PI;
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static double Radians(double degrees) => degrees / 180 / Math.PI;
+		public static double Radians(double degrees) => degrees * Math.PI / 180;
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static double Fma(double a, double b, double c) => a * b + c;
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -88,7 +88,7 @@ namespace KibiHex
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static float Log(float x, float y) => MathF.Log(x, y);
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static float Log10(float x) => MathF.Log(x);
+		public static float Log10(float x) => MathF.Log10(x);
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static float Max(float x, float y) => x >= y ? x : y;
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -190,4 +190,3 @@ namespace KibiHex
 		public static long Sign(long value) => Math.Sign(value);
 	}
 }
-

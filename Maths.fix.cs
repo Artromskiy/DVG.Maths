@@ -13,6 +13,14 @@ namespace KibiHex
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static fix Round(fix value) => (fix)(int)(value + Sign(value) / 2);
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static fix Truncate(fix value) => value.raw >= 0 ? Floor(value) : Ceil(value);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static fix Fract(fix value) => value - Floor(value);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static fix Step(fix edge, fix value) => value < edge ? fix.Zero : fix.One;
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static fix Saturate(fix value) => Clamp(value, fix.Zero, fix.One);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static fix Abs(fix x)
         {
             // branchless implementation, see http://www.strchr.com/optimized_abs_function
@@ -224,4 +232,3 @@ namespace KibiHex
 
     }
 }
-

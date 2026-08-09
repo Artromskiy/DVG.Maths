@@ -42,6 +42,34 @@ namespace KibiHex
         public static double InvLerp(double edge0, double edge1, double value) => (value - edge0) / (edge1 - edge0);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float Step(float edge, float value) => value < edge ? 0f : 1f;
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double Step(double edge, double value) => value < edge ? 0.0 : 1.0;
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float Saturate(float value) => Clamp(value, 0f, 1f);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double Saturate(double value) => Clamp(value, 0.0, 1.0);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float Fract(float value) => value - Floor(value);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double Fract(double value) => value - Floor(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool IsNaN(float value) => float.IsNaN(value);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool IsNaN(double value) => double.IsNaN(value);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool IsInfinity(float value) => float.IsInfinity(value);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool IsInfinity(double value) => double.IsInfinity(value);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool IsFinite(float value) => !float.IsNaN(value) && !float.IsInfinity(value);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool IsFinite(double value) => !double.IsNaN(value) && !double.IsInfinity(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float Remap(float source, float sourceFrom, float sourceTo, float targetFrom, float targetTo) => targetFrom + ((source - sourceFrom) * (targetTo - targetFrom) / (sourceTo - sourceFrom));
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double Remap(double source, double sourceFrom, double sourceTo, double targetFrom, double targetTo) => targetFrom + ((source - sourceFrom) * (targetTo - targetFrom) / (sourceTo - sourceFrom));
@@ -111,4 +139,3 @@ namespace KibiHex
         public static double Repeat(double t, double length) => Clamp(t - (Floor(t / length) * length), 0, length);
     }
 }
-

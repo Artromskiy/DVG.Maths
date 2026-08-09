@@ -11,8 +11,8 @@ The runtime library targets `netstandard2.1`; its code generator is a separate .
 - `float`, `double`, `int`, `uint`, and deterministic `fix` mathematics
 - 2D, 3D, and 4D vectors
 - boolean vectors and mask operations
-- arithmetic, bitwise, comparison, and conversion operators
-- geometry and interpolation functions
+- arithmetic, remainder, bitwise, boolean, comparison, increment, and conversion operators
+- geometry, interpolation, rounding, trigonometric, exponential, and classification functions
 - `xyzw`, `rgba`, and `stpq` swizzles
 - zero-inserting underscore swizzles
 - conventional C# and shader-like API styles
@@ -115,9 +115,10 @@ float3 to = new float3(10f, 5f, 0f);
 float distance = float3.Distance(from, to);
 float3 halfway = float3.Lerp(from, to, 0.5f);
 float3 direction = float3.Normalize(to - from);
+float3 safeDirection = float3.NormalizeSafe(float3.zero);
 ```
 
-Integer vectors additionally provide remainder, bitwise, complement, and shift operators. Boolean vectors provide `Any` and `All`.
+Integer vectors additionally provide dot products, component sums, remainder, bitwise, complement, and shift operators. Boolean vectors provide component-wise `!`, `&`, `|`, and `^`, plus `Any` and `All`.
 
 ## `Maths`: conventional C# API
 
@@ -158,7 +159,11 @@ Vector source is generated as partial structs. Each concern has its own file:
 ```text
 float3.cs
 float3.operators.cs
+float3.common.cs
 float3.geometry.cs
+float3.trigonometry.cs
+float3.exponential.cs
+float3.relational.cs
 float3.swizzles.cs
 ```
 
@@ -177,6 +182,12 @@ The generator also creates:
 
 ```bash
 dotnet build KibiHex.Maths.csproj
+```
+
+The repository also contains an offline, dependency-free test executable:
+
+```bash
+dotnet run --project Tests/KibiHex.Maths.Tests.csproj --no-restore
 ```
 
 To reference the project directly:
