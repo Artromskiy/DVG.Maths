@@ -215,7 +215,7 @@ The `Maths` static class provides a consistent math API for:
 * `IsNaN`
 * `IsInfinity`
 
-The API is intentionally familiar to developers coming from GLSL, HLSL, Unity.Mathematics, or System.Math — while remaining completely independent.
+The API is intentionally familiar to developers coming from shader languages, Unity.Mathematics, or System.Math — while remaining completely independent.
 
 ---
 

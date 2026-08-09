@@ -1,0 +1,22076 @@
+#pragma warning disable IDE1006
+#nullable enable
+using System;
+using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
+using System.Runtime.Serialization;
+using System.Diagnostics;
+
+
+namespace Kibix
+{
+    public partial struct fix4
+    {
+
+        #region Swizzles
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public fix r
+        {
+            get => x;
+            set
+            {
+                x = value;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public fix s
+        {
+            get => x;
+            set
+            {
+                x = value;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public fix g
+        {
+            get => y;
+            set
+            {
+                y = value;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public fix t
+        {
+            get => y;
+            set
+            {
+                y = value;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public fix b
+        {
+            get => z;
+            set
+            {
+                z = value;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public fix p
+        {
+            get => z;
+            set
+            {
+                z = value;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public fix a
+        {
+            get => w;
+            set
+            {
+                w = value;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public fix q
+        {
+            get => w;
+            set
+            {
+                w = value;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ___x
+        {
+            get => new fix4(fix.Zero, fix.Zero, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ___r
+        {
+            get => new fix4(fix.Zero, fix.Zero, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ___s
+        {
+            get => new fix4(fix.Zero, fix.Zero, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ___y
+        {
+            get => new fix4(fix.Zero, fix.Zero, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ___g
+        {
+            get => new fix4(fix.Zero, fix.Zero, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ___t
+        {
+            get => new fix4(fix.Zero, fix.Zero, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ___z
+        {
+            get => new fix4(fix.Zero, fix.Zero, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ___b
+        {
+            get => new fix4(fix.Zero, fix.Zero, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ___p
+        {
+            get => new fix4(fix.Zero, fix.Zero, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ___w
+        {
+            get => new fix4(fix.Zero, fix.Zero, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ___a
+        {
+            get => new fix4(fix.Zero, fix.Zero, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ___q
+        {
+            get => new fix4(fix.Zero, fix.Zero, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 __x_
+        {
+            get => new fix4(fix.Zero, fix.Zero, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 __r_
+        {
+            get => new fix4(fix.Zero, fix.Zero, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 __s_
+        {
+            get => new fix4(fix.Zero, fix.Zero, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 __xx
+        {
+            get => new fix4(fix.Zero, fix.Zero, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 __rr
+        {
+            get => new fix4(fix.Zero, fix.Zero, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 __ss
+        {
+            get => new fix4(fix.Zero, fix.Zero, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 __xy
+        {
+            get => new fix4(fix.Zero, fix.Zero, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 __rg
+        {
+            get => new fix4(fix.Zero, fix.Zero, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 __st
+        {
+            get => new fix4(fix.Zero, fix.Zero, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 __xz
+        {
+            get => new fix4(fix.Zero, fix.Zero, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 __rb
+        {
+            get => new fix4(fix.Zero, fix.Zero, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 __sp
+        {
+            get => new fix4(fix.Zero, fix.Zero, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 __xw
+        {
+            get => new fix4(fix.Zero, fix.Zero, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 __ra
+        {
+            get => new fix4(fix.Zero, fix.Zero, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 __sq
+        {
+            get => new fix4(fix.Zero, fix.Zero, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 __y_
+        {
+            get => new fix4(fix.Zero, fix.Zero, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 __g_
+        {
+            get => new fix4(fix.Zero, fix.Zero, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 __t_
+        {
+            get => new fix4(fix.Zero, fix.Zero, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 __yx
+        {
+            get => new fix4(fix.Zero, fix.Zero, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 __gr
+        {
+            get => new fix4(fix.Zero, fix.Zero, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 __ts
+        {
+            get => new fix4(fix.Zero, fix.Zero, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 __yy
+        {
+            get => new fix4(fix.Zero, fix.Zero, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 __gg
+        {
+            get => new fix4(fix.Zero, fix.Zero, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 __tt
+        {
+            get => new fix4(fix.Zero, fix.Zero, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 __yz
+        {
+            get => new fix4(fix.Zero, fix.Zero, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 __gb
+        {
+            get => new fix4(fix.Zero, fix.Zero, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 __tp
+        {
+            get => new fix4(fix.Zero, fix.Zero, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 __yw
+        {
+            get => new fix4(fix.Zero, fix.Zero, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 __ga
+        {
+            get => new fix4(fix.Zero, fix.Zero, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 __tq
+        {
+            get => new fix4(fix.Zero, fix.Zero, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 __z_
+        {
+            get => new fix4(fix.Zero, fix.Zero, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 __b_
+        {
+            get => new fix4(fix.Zero, fix.Zero, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 __p_
+        {
+            get => new fix4(fix.Zero, fix.Zero, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 __zx
+        {
+            get => new fix4(fix.Zero, fix.Zero, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 __br
+        {
+            get => new fix4(fix.Zero, fix.Zero, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 __ps
+        {
+            get => new fix4(fix.Zero, fix.Zero, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 __zy
+        {
+            get => new fix4(fix.Zero, fix.Zero, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 __bg
+        {
+            get => new fix4(fix.Zero, fix.Zero, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 __pt
+        {
+            get => new fix4(fix.Zero, fix.Zero, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 __zz
+        {
+            get => new fix4(fix.Zero, fix.Zero, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 __bb
+        {
+            get => new fix4(fix.Zero, fix.Zero, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 __pp
+        {
+            get => new fix4(fix.Zero, fix.Zero, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 __zw
+        {
+            get => new fix4(fix.Zero, fix.Zero, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 __ba
+        {
+            get => new fix4(fix.Zero, fix.Zero, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 __pq
+        {
+            get => new fix4(fix.Zero, fix.Zero, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 __w_
+        {
+            get => new fix4(fix.Zero, fix.Zero, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 __a_
+        {
+            get => new fix4(fix.Zero, fix.Zero, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 __q_
+        {
+            get => new fix4(fix.Zero, fix.Zero, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 __wx
+        {
+            get => new fix4(fix.Zero, fix.Zero, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 __ar
+        {
+            get => new fix4(fix.Zero, fix.Zero, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 __qs
+        {
+            get => new fix4(fix.Zero, fix.Zero, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 __wy
+        {
+            get => new fix4(fix.Zero, fix.Zero, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 __ag
+        {
+            get => new fix4(fix.Zero, fix.Zero, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 __qt
+        {
+            get => new fix4(fix.Zero, fix.Zero, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 __wz
+        {
+            get => new fix4(fix.Zero, fix.Zero, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 __ab
+        {
+            get => new fix4(fix.Zero, fix.Zero, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 __qp
+        {
+            get => new fix4(fix.Zero, fix.Zero, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 __ww
+        {
+            get => new fix4(fix.Zero, fix.Zero, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 __aa
+        {
+            get => new fix4(fix.Zero, fix.Zero, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 __qq
+        {
+            get => new fix4(fix.Zero, fix.Zero, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _x__
+        {
+            get => new fix4(fix.Zero, x, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _r__
+        {
+            get => new fix4(fix.Zero, x, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _s__
+        {
+            get => new fix4(fix.Zero, x, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _x_x
+        {
+            get => new fix4(fix.Zero, x, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _r_r
+        {
+            get => new fix4(fix.Zero, x, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _s_s
+        {
+            get => new fix4(fix.Zero, x, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _x_y
+        {
+            get => new fix4(fix.Zero, x, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _r_g
+        {
+            get => new fix4(fix.Zero, x, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _s_t
+        {
+            get => new fix4(fix.Zero, x, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _x_z
+        {
+            get => new fix4(fix.Zero, x, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _r_b
+        {
+            get => new fix4(fix.Zero, x, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _s_p
+        {
+            get => new fix4(fix.Zero, x, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _x_w
+        {
+            get => new fix4(fix.Zero, x, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _r_a
+        {
+            get => new fix4(fix.Zero, x, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _s_q
+        {
+            get => new fix4(fix.Zero, x, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _xx_
+        {
+            get => new fix4(fix.Zero, x, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _rr_
+        {
+            get => new fix4(fix.Zero, x, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _ss_
+        {
+            get => new fix4(fix.Zero, x, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _xxx
+        {
+            get => new fix4(fix.Zero, x, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _rrr
+        {
+            get => new fix4(fix.Zero, x, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _sss
+        {
+            get => new fix4(fix.Zero, x, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _xxy
+        {
+            get => new fix4(fix.Zero, x, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _rrg
+        {
+            get => new fix4(fix.Zero, x, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _sst
+        {
+            get => new fix4(fix.Zero, x, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _xxz
+        {
+            get => new fix4(fix.Zero, x, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _rrb
+        {
+            get => new fix4(fix.Zero, x, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _ssp
+        {
+            get => new fix4(fix.Zero, x, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _xxw
+        {
+            get => new fix4(fix.Zero, x, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _rra
+        {
+            get => new fix4(fix.Zero, x, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _ssq
+        {
+            get => new fix4(fix.Zero, x, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _xy_
+        {
+            get => new fix4(fix.Zero, x, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _rg_
+        {
+            get => new fix4(fix.Zero, x, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _st_
+        {
+            get => new fix4(fix.Zero, x, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _xyx
+        {
+            get => new fix4(fix.Zero, x, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _rgr
+        {
+            get => new fix4(fix.Zero, x, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _sts
+        {
+            get => new fix4(fix.Zero, x, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _xyy
+        {
+            get => new fix4(fix.Zero, x, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _rgg
+        {
+            get => new fix4(fix.Zero, x, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _stt
+        {
+            get => new fix4(fix.Zero, x, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _xyz
+        {
+            get => new fix4(fix.Zero, x, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _rgb
+        {
+            get => new fix4(fix.Zero, x, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _stp
+        {
+            get => new fix4(fix.Zero, x, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _xyw
+        {
+            get => new fix4(fix.Zero, x, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _rga
+        {
+            get => new fix4(fix.Zero, x, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _stq
+        {
+            get => new fix4(fix.Zero, x, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _xz_
+        {
+            get => new fix4(fix.Zero, x, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _rb_
+        {
+            get => new fix4(fix.Zero, x, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _sp_
+        {
+            get => new fix4(fix.Zero, x, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _xzx
+        {
+            get => new fix4(fix.Zero, x, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _rbr
+        {
+            get => new fix4(fix.Zero, x, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _sps
+        {
+            get => new fix4(fix.Zero, x, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _xzy
+        {
+            get => new fix4(fix.Zero, x, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _rbg
+        {
+            get => new fix4(fix.Zero, x, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _spt
+        {
+            get => new fix4(fix.Zero, x, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _xzz
+        {
+            get => new fix4(fix.Zero, x, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _rbb
+        {
+            get => new fix4(fix.Zero, x, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _spp
+        {
+            get => new fix4(fix.Zero, x, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _xzw
+        {
+            get => new fix4(fix.Zero, x, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _rba
+        {
+            get => new fix4(fix.Zero, x, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _spq
+        {
+            get => new fix4(fix.Zero, x, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _xw_
+        {
+            get => new fix4(fix.Zero, x, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _ra_
+        {
+            get => new fix4(fix.Zero, x, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _sq_
+        {
+            get => new fix4(fix.Zero, x, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _xwx
+        {
+            get => new fix4(fix.Zero, x, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _rar
+        {
+            get => new fix4(fix.Zero, x, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _sqs
+        {
+            get => new fix4(fix.Zero, x, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _xwy
+        {
+            get => new fix4(fix.Zero, x, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _rag
+        {
+            get => new fix4(fix.Zero, x, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _sqt
+        {
+            get => new fix4(fix.Zero, x, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _xwz
+        {
+            get => new fix4(fix.Zero, x, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _rab
+        {
+            get => new fix4(fix.Zero, x, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _sqp
+        {
+            get => new fix4(fix.Zero, x, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _xww
+        {
+            get => new fix4(fix.Zero, x, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _raa
+        {
+            get => new fix4(fix.Zero, x, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _sqq
+        {
+            get => new fix4(fix.Zero, x, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _y__
+        {
+            get => new fix4(fix.Zero, y, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _g__
+        {
+            get => new fix4(fix.Zero, y, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _t__
+        {
+            get => new fix4(fix.Zero, y, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _y_x
+        {
+            get => new fix4(fix.Zero, y, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _g_r
+        {
+            get => new fix4(fix.Zero, y, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _t_s
+        {
+            get => new fix4(fix.Zero, y, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _y_y
+        {
+            get => new fix4(fix.Zero, y, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _g_g
+        {
+            get => new fix4(fix.Zero, y, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _t_t
+        {
+            get => new fix4(fix.Zero, y, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _y_z
+        {
+            get => new fix4(fix.Zero, y, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _g_b
+        {
+            get => new fix4(fix.Zero, y, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _t_p
+        {
+            get => new fix4(fix.Zero, y, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _y_w
+        {
+            get => new fix4(fix.Zero, y, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _g_a
+        {
+            get => new fix4(fix.Zero, y, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _t_q
+        {
+            get => new fix4(fix.Zero, y, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _yx_
+        {
+            get => new fix4(fix.Zero, y, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _gr_
+        {
+            get => new fix4(fix.Zero, y, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _ts_
+        {
+            get => new fix4(fix.Zero, y, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _yxx
+        {
+            get => new fix4(fix.Zero, y, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _grr
+        {
+            get => new fix4(fix.Zero, y, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _tss
+        {
+            get => new fix4(fix.Zero, y, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _yxy
+        {
+            get => new fix4(fix.Zero, y, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _grg
+        {
+            get => new fix4(fix.Zero, y, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _tst
+        {
+            get => new fix4(fix.Zero, y, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _yxz
+        {
+            get => new fix4(fix.Zero, y, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _grb
+        {
+            get => new fix4(fix.Zero, y, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _tsp
+        {
+            get => new fix4(fix.Zero, y, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _yxw
+        {
+            get => new fix4(fix.Zero, y, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _gra
+        {
+            get => new fix4(fix.Zero, y, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _tsq
+        {
+            get => new fix4(fix.Zero, y, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _yy_
+        {
+            get => new fix4(fix.Zero, y, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _gg_
+        {
+            get => new fix4(fix.Zero, y, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _tt_
+        {
+            get => new fix4(fix.Zero, y, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _yyx
+        {
+            get => new fix4(fix.Zero, y, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _ggr
+        {
+            get => new fix4(fix.Zero, y, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _tts
+        {
+            get => new fix4(fix.Zero, y, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _yyy
+        {
+            get => new fix4(fix.Zero, y, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _ggg
+        {
+            get => new fix4(fix.Zero, y, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _ttt
+        {
+            get => new fix4(fix.Zero, y, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _yyz
+        {
+            get => new fix4(fix.Zero, y, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _ggb
+        {
+            get => new fix4(fix.Zero, y, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _ttp
+        {
+            get => new fix4(fix.Zero, y, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _yyw
+        {
+            get => new fix4(fix.Zero, y, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _gga
+        {
+            get => new fix4(fix.Zero, y, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _ttq
+        {
+            get => new fix4(fix.Zero, y, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _yz_
+        {
+            get => new fix4(fix.Zero, y, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _gb_
+        {
+            get => new fix4(fix.Zero, y, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _tp_
+        {
+            get => new fix4(fix.Zero, y, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _yzx
+        {
+            get => new fix4(fix.Zero, y, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _gbr
+        {
+            get => new fix4(fix.Zero, y, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _tps
+        {
+            get => new fix4(fix.Zero, y, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _yzy
+        {
+            get => new fix4(fix.Zero, y, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _gbg
+        {
+            get => new fix4(fix.Zero, y, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _tpt
+        {
+            get => new fix4(fix.Zero, y, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _yzz
+        {
+            get => new fix4(fix.Zero, y, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _gbb
+        {
+            get => new fix4(fix.Zero, y, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _tpp
+        {
+            get => new fix4(fix.Zero, y, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _yzw
+        {
+            get => new fix4(fix.Zero, y, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _gba
+        {
+            get => new fix4(fix.Zero, y, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _tpq
+        {
+            get => new fix4(fix.Zero, y, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _yw_
+        {
+            get => new fix4(fix.Zero, y, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _ga_
+        {
+            get => new fix4(fix.Zero, y, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _tq_
+        {
+            get => new fix4(fix.Zero, y, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _ywx
+        {
+            get => new fix4(fix.Zero, y, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _gar
+        {
+            get => new fix4(fix.Zero, y, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _tqs
+        {
+            get => new fix4(fix.Zero, y, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _ywy
+        {
+            get => new fix4(fix.Zero, y, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _gag
+        {
+            get => new fix4(fix.Zero, y, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _tqt
+        {
+            get => new fix4(fix.Zero, y, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _ywz
+        {
+            get => new fix4(fix.Zero, y, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _gab
+        {
+            get => new fix4(fix.Zero, y, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _tqp
+        {
+            get => new fix4(fix.Zero, y, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _yww
+        {
+            get => new fix4(fix.Zero, y, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _gaa
+        {
+            get => new fix4(fix.Zero, y, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _tqq
+        {
+            get => new fix4(fix.Zero, y, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _z__
+        {
+            get => new fix4(fix.Zero, z, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _b__
+        {
+            get => new fix4(fix.Zero, z, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _p__
+        {
+            get => new fix4(fix.Zero, z, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _z_x
+        {
+            get => new fix4(fix.Zero, z, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _b_r
+        {
+            get => new fix4(fix.Zero, z, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _p_s
+        {
+            get => new fix4(fix.Zero, z, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _z_y
+        {
+            get => new fix4(fix.Zero, z, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _b_g
+        {
+            get => new fix4(fix.Zero, z, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _p_t
+        {
+            get => new fix4(fix.Zero, z, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _z_z
+        {
+            get => new fix4(fix.Zero, z, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _b_b
+        {
+            get => new fix4(fix.Zero, z, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _p_p
+        {
+            get => new fix4(fix.Zero, z, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _z_w
+        {
+            get => new fix4(fix.Zero, z, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _b_a
+        {
+            get => new fix4(fix.Zero, z, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _p_q
+        {
+            get => new fix4(fix.Zero, z, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _zx_
+        {
+            get => new fix4(fix.Zero, z, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _br_
+        {
+            get => new fix4(fix.Zero, z, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _ps_
+        {
+            get => new fix4(fix.Zero, z, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _zxx
+        {
+            get => new fix4(fix.Zero, z, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _brr
+        {
+            get => new fix4(fix.Zero, z, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _pss
+        {
+            get => new fix4(fix.Zero, z, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _zxy
+        {
+            get => new fix4(fix.Zero, z, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _brg
+        {
+            get => new fix4(fix.Zero, z, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _pst
+        {
+            get => new fix4(fix.Zero, z, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _zxz
+        {
+            get => new fix4(fix.Zero, z, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _brb
+        {
+            get => new fix4(fix.Zero, z, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _psp
+        {
+            get => new fix4(fix.Zero, z, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _zxw
+        {
+            get => new fix4(fix.Zero, z, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _bra
+        {
+            get => new fix4(fix.Zero, z, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _psq
+        {
+            get => new fix4(fix.Zero, z, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _zy_
+        {
+            get => new fix4(fix.Zero, z, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _bg_
+        {
+            get => new fix4(fix.Zero, z, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _pt_
+        {
+            get => new fix4(fix.Zero, z, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _zyx
+        {
+            get => new fix4(fix.Zero, z, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _bgr
+        {
+            get => new fix4(fix.Zero, z, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _pts
+        {
+            get => new fix4(fix.Zero, z, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _zyy
+        {
+            get => new fix4(fix.Zero, z, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _bgg
+        {
+            get => new fix4(fix.Zero, z, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _ptt
+        {
+            get => new fix4(fix.Zero, z, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _zyz
+        {
+            get => new fix4(fix.Zero, z, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _bgb
+        {
+            get => new fix4(fix.Zero, z, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _ptp
+        {
+            get => new fix4(fix.Zero, z, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _zyw
+        {
+            get => new fix4(fix.Zero, z, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _bga
+        {
+            get => new fix4(fix.Zero, z, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _ptq
+        {
+            get => new fix4(fix.Zero, z, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _zz_
+        {
+            get => new fix4(fix.Zero, z, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _bb_
+        {
+            get => new fix4(fix.Zero, z, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _pp_
+        {
+            get => new fix4(fix.Zero, z, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _zzx
+        {
+            get => new fix4(fix.Zero, z, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _bbr
+        {
+            get => new fix4(fix.Zero, z, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _pps
+        {
+            get => new fix4(fix.Zero, z, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _zzy
+        {
+            get => new fix4(fix.Zero, z, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _bbg
+        {
+            get => new fix4(fix.Zero, z, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _ppt
+        {
+            get => new fix4(fix.Zero, z, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _zzz
+        {
+            get => new fix4(fix.Zero, z, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _bbb
+        {
+            get => new fix4(fix.Zero, z, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _ppp
+        {
+            get => new fix4(fix.Zero, z, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _zzw
+        {
+            get => new fix4(fix.Zero, z, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _bba
+        {
+            get => new fix4(fix.Zero, z, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _ppq
+        {
+            get => new fix4(fix.Zero, z, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _zw_
+        {
+            get => new fix4(fix.Zero, z, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _ba_
+        {
+            get => new fix4(fix.Zero, z, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _pq_
+        {
+            get => new fix4(fix.Zero, z, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _zwx
+        {
+            get => new fix4(fix.Zero, z, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _bar
+        {
+            get => new fix4(fix.Zero, z, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _pqs
+        {
+            get => new fix4(fix.Zero, z, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _zwy
+        {
+            get => new fix4(fix.Zero, z, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _bag
+        {
+            get => new fix4(fix.Zero, z, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _pqt
+        {
+            get => new fix4(fix.Zero, z, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _zwz
+        {
+            get => new fix4(fix.Zero, z, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _bab
+        {
+            get => new fix4(fix.Zero, z, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _pqp
+        {
+            get => new fix4(fix.Zero, z, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _zww
+        {
+            get => new fix4(fix.Zero, z, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _baa
+        {
+            get => new fix4(fix.Zero, z, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _pqq
+        {
+            get => new fix4(fix.Zero, z, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _w__
+        {
+            get => new fix4(fix.Zero, w, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _a__
+        {
+            get => new fix4(fix.Zero, w, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _q__
+        {
+            get => new fix4(fix.Zero, w, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _w_x
+        {
+            get => new fix4(fix.Zero, w, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _a_r
+        {
+            get => new fix4(fix.Zero, w, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _q_s
+        {
+            get => new fix4(fix.Zero, w, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _w_y
+        {
+            get => new fix4(fix.Zero, w, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _a_g
+        {
+            get => new fix4(fix.Zero, w, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _q_t
+        {
+            get => new fix4(fix.Zero, w, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _w_z
+        {
+            get => new fix4(fix.Zero, w, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _a_b
+        {
+            get => new fix4(fix.Zero, w, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _q_p
+        {
+            get => new fix4(fix.Zero, w, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _w_w
+        {
+            get => new fix4(fix.Zero, w, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _a_a
+        {
+            get => new fix4(fix.Zero, w, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _q_q
+        {
+            get => new fix4(fix.Zero, w, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _wx_
+        {
+            get => new fix4(fix.Zero, w, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _ar_
+        {
+            get => new fix4(fix.Zero, w, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _qs_
+        {
+            get => new fix4(fix.Zero, w, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _wxx
+        {
+            get => new fix4(fix.Zero, w, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _arr
+        {
+            get => new fix4(fix.Zero, w, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _qss
+        {
+            get => new fix4(fix.Zero, w, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _wxy
+        {
+            get => new fix4(fix.Zero, w, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _arg
+        {
+            get => new fix4(fix.Zero, w, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _qst
+        {
+            get => new fix4(fix.Zero, w, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _wxz
+        {
+            get => new fix4(fix.Zero, w, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _arb
+        {
+            get => new fix4(fix.Zero, w, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _qsp
+        {
+            get => new fix4(fix.Zero, w, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _wxw
+        {
+            get => new fix4(fix.Zero, w, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _ara
+        {
+            get => new fix4(fix.Zero, w, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _qsq
+        {
+            get => new fix4(fix.Zero, w, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _wy_
+        {
+            get => new fix4(fix.Zero, w, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _ag_
+        {
+            get => new fix4(fix.Zero, w, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _qt_
+        {
+            get => new fix4(fix.Zero, w, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _wyx
+        {
+            get => new fix4(fix.Zero, w, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _agr
+        {
+            get => new fix4(fix.Zero, w, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _qts
+        {
+            get => new fix4(fix.Zero, w, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _wyy
+        {
+            get => new fix4(fix.Zero, w, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _agg
+        {
+            get => new fix4(fix.Zero, w, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _qtt
+        {
+            get => new fix4(fix.Zero, w, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _wyz
+        {
+            get => new fix4(fix.Zero, w, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _agb
+        {
+            get => new fix4(fix.Zero, w, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _qtp
+        {
+            get => new fix4(fix.Zero, w, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _wyw
+        {
+            get => new fix4(fix.Zero, w, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _aga
+        {
+            get => new fix4(fix.Zero, w, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _qtq
+        {
+            get => new fix4(fix.Zero, w, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _wz_
+        {
+            get => new fix4(fix.Zero, w, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _ab_
+        {
+            get => new fix4(fix.Zero, w, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _qp_
+        {
+            get => new fix4(fix.Zero, w, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _wzx
+        {
+            get => new fix4(fix.Zero, w, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _abr
+        {
+            get => new fix4(fix.Zero, w, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _qps
+        {
+            get => new fix4(fix.Zero, w, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _wzy
+        {
+            get => new fix4(fix.Zero, w, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _abg
+        {
+            get => new fix4(fix.Zero, w, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _qpt
+        {
+            get => new fix4(fix.Zero, w, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _wzz
+        {
+            get => new fix4(fix.Zero, w, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _abb
+        {
+            get => new fix4(fix.Zero, w, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _qpp
+        {
+            get => new fix4(fix.Zero, w, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _wzw
+        {
+            get => new fix4(fix.Zero, w, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _aba
+        {
+            get => new fix4(fix.Zero, w, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _qpq
+        {
+            get => new fix4(fix.Zero, w, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _ww_
+        {
+            get => new fix4(fix.Zero, w, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _aa_
+        {
+            get => new fix4(fix.Zero, w, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _qq_
+        {
+            get => new fix4(fix.Zero, w, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _wwx
+        {
+            get => new fix4(fix.Zero, w, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _aar
+        {
+            get => new fix4(fix.Zero, w, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _qqs
+        {
+            get => new fix4(fix.Zero, w, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _wwy
+        {
+            get => new fix4(fix.Zero, w, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _aag
+        {
+            get => new fix4(fix.Zero, w, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _qqt
+        {
+            get => new fix4(fix.Zero, w, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _wwz
+        {
+            get => new fix4(fix.Zero, w, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _aab
+        {
+            get => new fix4(fix.Zero, w, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _qqp
+        {
+            get => new fix4(fix.Zero, w, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _www
+        {
+            get => new fix4(fix.Zero, w, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _aaa
+        {
+            get => new fix4(fix.Zero, w, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 _qqq
+        {
+            get => new fix4(fix.Zero, w, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 x___
+        {
+            get => new fix4(x, fix.Zero, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 r___
+        {
+            get => new fix4(x, fix.Zero, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 s___
+        {
+            get => new fix4(x, fix.Zero, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 x__x
+        {
+            get => new fix4(x, fix.Zero, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 r__r
+        {
+            get => new fix4(x, fix.Zero, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 s__s
+        {
+            get => new fix4(x, fix.Zero, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 x__y
+        {
+            get => new fix4(x, fix.Zero, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 r__g
+        {
+            get => new fix4(x, fix.Zero, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 s__t
+        {
+            get => new fix4(x, fix.Zero, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 x__z
+        {
+            get => new fix4(x, fix.Zero, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 r__b
+        {
+            get => new fix4(x, fix.Zero, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 s__p
+        {
+            get => new fix4(x, fix.Zero, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 x__w
+        {
+            get => new fix4(x, fix.Zero, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 r__a
+        {
+            get => new fix4(x, fix.Zero, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 s__q
+        {
+            get => new fix4(x, fix.Zero, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 x_x_
+        {
+            get => new fix4(x, fix.Zero, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 r_r_
+        {
+            get => new fix4(x, fix.Zero, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 s_s_
+        {
+            get => new fix4(x, fix.Zero, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 x_xx
+        {
+            get => new fix4(x, fix.Zero, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 r_rr
+        {
+            get => new fix4(x, fix.Zero, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 s_ss
+        {
+            get => new fix4(x, fix.Zero, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 x_xy
+        {
+            get => new fix4(x, fix.Zero, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 r_rg
+        {
+            get => new fix4(x, fix.Zero, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 s_st
+        {
+            get => new fix4(x, fix.Zero, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 x_xz
+        {
+            get => new fix4(x, fix.Zero, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 r_rb
+        {
+            get => new fix4(x, fix.Zero, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 s_sp
+        {
+            get => new fix4(x, fix.Zero, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 x_xw
+        {
+            get => new fix4(x, fix.Zero, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 r_ra
+        {
+            get => new fix4(x, fix.Zero, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 s_sq
+        {
+            get => new fix4(x, fix.Zero, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 x_y_
+        {
+            get => new fix4(x, fix.Zero, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 r_g_
+        {
+            get => new fix4(x, fix.Zero, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 s_t_
+        {
+            get => new fix4(x, fix.Zero, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 x_yx
+        {
+            get => new fix4(x, fix.Zero, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 r_gr
+        {
+            get => new fix4(x, fix.Zero, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 s_ts
+        {
+            get => new fix4(x, fix.Zero, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 x_yy
+        {
+            get => new fix4(x, fix.Zero, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 r_gg
+        {
+            get => new fix4(x, fix.Zero, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 s_tt
+        {
+            get => new fix4(x, fix.Zero, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 x_yz
+        {
+            get => new fix4(x, fix.Zero, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 r_gb
+        {
+            get => new fix4(x, fix.Zero, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 s_tp
+        {
+            get => new fix4(x, fix.Zero, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 x_yw
+        {
+            get => new fix4(x, fix.Zero, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 r_ga
+        {
+            get => new fix4(x, fix.Zero, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 s_tq
+        {
+            get => new fix4(x, fix.Zero, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 x_z_
+        {
+            get => new fix4(x, fix.Zero, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 r_b_
+        {
+            get => new fix4(x, fix.Zero, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 s_p_
+        {
+            get => new fix4(x, fix.Zero, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 x_zx
+        {
+            get => new fix4(x, fix.Zero, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 r_br
+        {
+            get => new fix4(x, fix.Zero, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 s_ps
+        {
+            get => new fix4(x, fix.Zero, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 x_zy
+        {
+            get => new fix4(x, fix.Zero, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 r_bg
+        {
+            get => new fix4(x, fix.Zero, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 s_pt
+        {
+            get => new fix4(x, fix.Zero, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 x_zz
+        {
+            get => new fix4(x, fix.Zero, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 r_bb
+        {
+            get => new fix4(x, fix.Zero, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 s_pp
+        {
+            get => new fix4(x, fix.Zero, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 x_zw
+        {
+            get => new fix4(x, fix.Zero, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 r_ba
+        {
+            get => new fix4(x, fix.Zero, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 s_pq
+        {
+            get => new fix4(x, fix.Zero, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 x_w_
+        {
+            get => new fix4(x, fix.Zero, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 r_a_
+        {
+            get => new fix4(x, fix.Zero, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 s_q_
+        {
+            get => new fix4(x, fix.Zero, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 x_wx
+        {
+            get => new fix4(x, fix.Zero, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 r_ar
+        {
+            get => new fix4(x, fix.Zero, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 s_qs
+        {
+            get => new fix4(x, fix.Zero, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 x_wy
+        {
+            get => new fix4(x, fix.Zero, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 r_ag
+        {
+            get => new fix4(x, fix.Zero, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 s_qt
+        {
+            get => new fix4(x, fix.Zero, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 x_wz
+        {
+            get => new fix4(x, fix.Zero, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 r_ab
+        {
+            get => new fix4(x, fix.Zero, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 s_qp
+        {
+            get => new fix4(x, fix.Zero, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 x_ww
+        {
+            get => new fix4(x, fix.Zero, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 r_aa
+        {
+            get => new fix4(x, fix.Zero, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 s_qq
+        {
+            get => new fix4(x, fix.Zero, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xx__
+        {
+            get => new fix4(x, x, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rr__
+        {
+            get => new fix4(x, x, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ss__
+        {
+            get => new fix4(x, x, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xx_x
+        {
+            get => new fix4(x, x, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rr_r
+        {
+            get => new fix4(x, x, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ss_s
+        {
+            get => new fix4(x, x, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xx_y
+        {
+            get => new fix4(x, x, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rr_g
+        {
+            get => new fix4(x, x, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ss_t
+        {
+            get => new fix4(x, x, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xx_z
+        {
+            get => new fix4(x, x, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rr_b
+        {
+            get => new fix4(x, x, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ss_p
+        {
+            get => new fix4(x, x, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xx_w
+        {
+            get => new fix4(x, x, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rr_a
+        {
+            get => new fix4(x, x, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ss_q
+        {
+            get => new fix4(x, x, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xxx_
+        {
+            get => new fix4(x, x, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rrr_
+        {
+            get => new fix4(x, x, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 sss_
+        {
+            get => new fix4(x, x, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xxxx
+        {
+            get => new fix4(x, x, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rrrr
+        {
+            get => new fix4(x, x, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ssss
+        {
+            get => new fix4(x, x, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xxxy
+        {
+            get => new fix4(x, x, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rrrg
+        {
+            get => new fix4(x, x, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ssst
+        {
+            get => new fix4(x, x, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xxxz
+        {
+            get => new fix4(x, x, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rrrb
+        {
+            get => new fix4(x, x, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 sssp
+        {
+            get => new fix4(x, x, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xxxw
+        {
+            get => new fix4(x, x, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rrra
+        {
+            get => new fix4(x, x, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 sssq
+        {
+            get => new fix4(x, x, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xxy_
+        {
+            get => new fix4(x, x, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rrg_
+        {
+            get => new fix4(x, x, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 sst_
+        {
+            get => new fix4(x, x, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xxyx
+        {
+            get => new fix4(x, x, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rrgr
+        {
+            get => new fix4(x, x, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ssts
+        {
+            get => new fix4(x, x, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xxyy
+        {
+            get => new fix4(x, x, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rrgg
+        {
+            get => new fix4(x, x, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 sstt
+        {
+            get => new fix4(x, x, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xxyz
+        {
+            get => new fix4(x, x, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rrgb
+        {
+            get => new fix4(x, x, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 sstp
+        {
+            get => new fix4(x, x, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xxyw
+        {
+            get => new fix4(x, x, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rrga
+        {
+            get => new fix4(x, x, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 sstq
+        {
+            get => new fix4(x, x, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xxz_
+        {
+            get => new fix4(x, x, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rrb_
+        {
+            get => new fix4(x, x, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ssp_
+        {
+            get => new fix4(x, x, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xxzx
+        {
+            get => new fix4(x, x, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rrbr
+        {
+            get => new fix4(x, x, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ssps
+        {
+            get => new fix4(x, x, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xxzy
+        {
+            get => new fix4(x, x, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rrbg
+        {
+            get => new fix4(x, x, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 sspt
+        {
+            get => new fix4(x, x, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xxzz
+        {
+            get => new fix4(x, x, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rrbb
+        {
+            get => new fix4(x, x, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 sspp
+        {
+            get => new fix4(x, x, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xxzw
+        {
+            get => new fix4(x, x, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rrba
+        {
+            get => new fix4(x, x, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 sspq
+        {
+            get => new fix4(x, x, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xxw_
+        {
+            get => new fix4(x, x, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rra_
+        {
+            get => new fix4(x, x, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ssq_
+        {
+            get => new fix4(x, x, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xxwx
+        {
+            get => new fix4(x, x, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rrar
+        {
+            get => new fix4(x, x, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ssqs
+        {
+            get => new fix4(x, x, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xxwy
+        {
+            get => new fix4(x, x, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rrag
+        {
+            get => new fix4(x, x, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ssqt
+        {
+            get => new fix4(x, x, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xxwz
+        {
+            get => new fix4(x, x, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rrab
+        {
+            get => new fix4(x, x, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ssqp
+        {
+            get => new fix4(x, x, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xxww
+        {
+            get => new fix4(x, x, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rraa
+        {
+            get => new fix4(x, x, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ssqq
+        {
+            get => new fix4(x, x, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xy__
+        {
+            get => new fix4(x, y, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rg__
+        {
+            get => new fix4(x, y, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 st__
+        {
+            get => new fix4(x, y, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xy_x
+        {
+            get => new fix4(x, y, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rg_r
+        {
+            get => new fix4(x, y, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 st_s
+        {
+            get => new fix4(x, y, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xy_y
+        {
+            get => new fix4(x, y, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rg_g
+        {
+            get => new fix4(x, y, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 st_t
+        {
+            get => new fix4(x, y, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xy_z
+        {
+            get => new fix4(x, y, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rg_b
+        {
+            get => new fix4(x, y, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 st_p
+        {
+            get => new fix4(x, y, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xy_w
+        {
+            get => new fix4(x, y, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rg_a
+        {
+            get => new fix4(x, y, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 st_q
+        {
+            get => new fix4(x, y, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xyx_
+        {
+            get => new fix4(x, y, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rgr_
+        {
+            get => new fix4(x, y, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 sts_
+        {
+            get => new fix4(x, y, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xyxx
+        {
+            get => new fix4(x, y, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rgrr
+        {
+            get => new fix4(x, y, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 stss
+        {
+            get => new fix4(x, y, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xyxy
+        {
+            get => new fix4(x, y, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rgrg
+        {
+            get => new fix4(x, y, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 stst
+        {
+            get => new fix4(x, y, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xyxz
+        {
+            get => new fix4(x, y, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rgrb
+        {
+            get => new fix4(x, y, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 stsp
+        {
+            get => new fix4(x, y, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xyxw
+        {
+            get => new fix4(x, y, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rgra
+        {
+            get => new fix4(x, y, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 stsq
+        {
+            get => new fix4(x, y, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xyy_
+        {
+            get => new fix4(x, y, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rgg_
+        {
+            get => new fix4(x, y, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 stt_
+        {
+            get => new fix4(x, y, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xyyx
+        {
+            get => new fix4(x, y, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rggr
+        {
+            get => new fix4(x, y, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 stts
+        {
+            get => new fix4(x, y, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xyyy
+        {
+            get => new fix4(x, y, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rggg
+        {
+            get => new fix4(x, y, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 sttt
+        {
+            get => new fix4(x, y, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xyyz
+        {
+            get => new fix4(x, y, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rggb
+        {
+            get => new fix4(x, y, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 sttp
+        {
+            get => new fix4(x, y, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xyyw
+        {
+            get => new fix4(x, y, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rgga
+        {
+            get => new fix4(x, y, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 sttq
+        {
+            get => new fix4(x, y, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xyz_
+        {
+            get => new fix4(x, y, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rgb_
+        {
+            get => new fix4(x, y, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 stp_
+        {
+            get => new fix4(x, y, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xyzx
+        {
+            get => new fix4(x, y, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rgbr
+        {
+            get => new fix4(x, y, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 stps
+        {
+            get => new fix4(x, y, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xyzy
+        {
+            get => new fix4(x, y, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rgbg
+        {
+            get => new fix4(x, y, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 stpt
+        {
+            get => new fix4(x, y, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xyzz
+        {
+            get => new fix4(x, y, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rgbb
+        {
+            get => new fix4(x, y, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 stpp
+        {
+            get => new fix4(x, y, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xyzw
+        {
+            get => new fix4(x, y, z, w);
+            set
+            {
+                x = value.x;
+                y = value.y;
+                z = value.z;
+                w = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rgba
+        {
+            get => new fix4(x, y, z, w);
+            set
+            {
+                x = value.x;
+                y = value.y;
+                z = value.z;
+                w = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 stpq
+        {
+            get => new fix4(x, y, z, w);
+            set
+            {
+                x = value.x;
+                y = value.y;
+                z = value.z;
+                w = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xyw_
+        {
+            get => new fix4(x, y, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rga_
+        {
+            get => new fix4(x, y, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 stq_
+        {
+            get => new fix4(x, y, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xywx
+        {
+            get => new fix4(x, y, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rgar
+        {
+            get => new fix4(x, y, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 stqs
+        {
+            get => new fix4(x, y, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xywy
+        {
+            get => new fix4(x, y, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rgag
+        {
+            get => new fix4(x, y, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 stqt
+        {
+            get => new fix4(x, y, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xywz
+        {
+            get => new fix4(x, y, w, z);
+            set
+            {
+                x = value.x;
+                y = value.y;
+                w = value.z;
+                z = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rgab
+        {
+            get => new fix4(x, y, w, z);
+            set
+            {
+                x = value.x;
+                y = value.y;
+                w = value.z;
+                z = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 stqp
+        {
+            get => new fix4(x, y, w, z);
+            set
+            {
+                x = value.x;
+                y = value.y;
+                w = value.z;
+                z = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xyww
+        {
+            get => new fix4(x, y, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rgaa
+        {
+            get => new fix4(x, y, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 stqq
+        {
+            get => new fix4(x, y, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xz__
+        {
+            get => new fix4(x, z, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rb__
+        {
+            get => new fix4(x, z, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 sp__
+        {
+            get => new fix4(x, z, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xz_x
+        {
+            get => new fix4(x, z, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rb_r
+        {
+            get => new fix4(x, z, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 sp_s
+        {
+            get => new fix4(x, z, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xz_y
+        {
+            get => new fix4(x, z, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rb_g
+        {
+            get => new fix4(x, z, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 sp_t
+        {
+            get => new fix4(x, z, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xz_z
+        {
+            get => new fix4(x, z, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rb_b
+        {
+            get => new fix4(x, z, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 sp_p
+        {
+            get => new fix4(x, z, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xz_w
+        {
+            get => new fix4(x, z, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rb_a
+        {
+            get => new fix4(x, z, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 sp_q
+        {
+            get => new fix4(x, z, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xzx_
+        {
+            get => new fix4(x, z, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rbr_
+        {
+            get => new fix4(x, z, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 sps_
+        {
+            get => new fix4(x, z, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xzxx
+        {
+            get => new fix4(x, z, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rbrr
+        {
+            get => new fix4(x, z, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 spss
+        {
+            get => new fix4(x, z, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xzxy
+        {
+            get => new fix4(x, z, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rbrg
+        {
+            get => new fix4(x, z, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 spst
+        {
+            get => new fix4(x, z, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xzxz
+        {
+            get => new fix4(x, z, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rbrb
+        {
+            get => new fix4(x, z, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 spsp
+        {
+            get => new fix4(x, z, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xzxw
+        {
+            get => new fix4(x, z, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rbra
+        {
+            get => new fix4(x, z, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 spsq
+        {
+            get => new fix4(x, z, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xzy_
+        {
+            get => new fix4(x, z, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rbg_
+        {
+            get => new fix4(x, z, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 spt_
+        {
+            get => new fix4(x, z, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xzyx
+        {
+            get => new fix4(x, z, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rbgr
+        {
+            get => new fix4(x, z, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 spts
+        {
+            get => new fix4(x, z, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xzyy
+        {
+            get => new fix4(x, z, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rbgg
+        {
+            get => new fix4(x, z, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 sptt
+        {
+            get => new fix4(x, z, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xzyz
+        {
+            get => new fix4(x, z, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rbgb
+        {
+            get => new fix4(x, z, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 sptp
+        {
+            get => new fix4(x, z, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xzyw
+        {
+            get => new fix4(x, z, y, w);
+            set
+            {
+                x = value.x;
+                z = value.y;
+                y = value.z;
+                w = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rbga
+        {
+            get => new fix4(x, z, y, w);
+            set
+            {
+                x = value.x;
+                z = value.y;
+                y = value.z;
+                w = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 sptq
+        {
+            get => new fix4(x, z, y, w);
+            set
+            {
+                x = value.x;
+                z = value.y;
+                y = value.z;
+                w = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xzz_
+        {
+            get => new fix4(x, z, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rbb_
+        {
+            get => new fix4(x, z, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 spp_
+        {
+            get => new fix4(x, z, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xzzx
+        {
+            get => new fix4(x, z, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rbbr
+        {
+            get => new fix4(x, z, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 spps
+        {
+            get => new fix4(x, z, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xzzy
+        {
+            get => new fix4(x, z, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rbbg
+        {
+            get => new fix4(x, z, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 sppt
+        {
+            get => new fix4(x, z, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xzzz
+        {
+            get => new fix4(x, z, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rbbb
+        {
+            get => new fix4(x, z, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 sppp
+        {
+            get => new fix4(x, z, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xzzw
+        {
+            get => new fix4(x, z, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rbba
+        {
+            get => new fix4(x, z, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 sppq
+        {
+            get => new fix4(x, z, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xzw_
+        {
+            get => new fix4(x, z, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rba_
+        {
+            get => new fix4(x, z, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 spq_
+        {
+            get => new fix4(x, z, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xzwx
+        {
+            get => new fix4(x, z, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rbar
+        {
+            get => new fix4(x, z, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 spqs
+        {
+            get => new fix4(x, z, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xzwy
+        {
+            get => new fix4(x, z, w, y);
+            set
+            {
+                x = value.x;
+                z = value.y;
+                w = value.z;
+                y = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rbag
+        {
+            get => new fix4(x, z, w, y);
+            set
+            {
+                x = value.x;
+                z = value.y;
+                w = value.z;
+                y = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 spqt
+        {
+            get => new fix4(x, z, w, y);
+            set
+            {
+                x = value.x;
+                z = value.y;
+                w = value.z;
+                y = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xzwz
+        {
+            get => new fix4(x, z, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rbab
+        {
+            get => new fix4(x, z, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 spqp
+        {
+            get => new fix4(x, z, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xzww
+        {
+            get => new fix4(x, z, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rbaa
+        {
+            get => new fix4(x, z, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 spqq
+        {
+            get => new fix4(x, z, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xw__
+        {
+            get => new fix4(x, w, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ra__
+        {
+            get => new fix4(x, w, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 sq__
+        {
+            get => new fix4(x, w, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xw_x
+        {
+            get => new fix4(x, w, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ra_r
+        {
+            get => new fix4(x, w, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 sq_s
+        {
+            get => new fix4(x, w, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xw_y
+        {
+            get => new fix4(x, w, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ra_g
+        {
+            get => new fix4(x, w, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 sq_t
+        {
+            get => new fix4(x, w, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xw_z
+        {
+            get => new fix4(x, w, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ra_b
+        {
+            get => new fix4(x, w, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 sq_p
+        {
+            get => new fix4(x, w, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xw_w
+        {
+            get => new fix4(x, w, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ra_a
+        {
+            get => new fix4(x, w, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 sq_q
+        {
+            get => new fix4(x, w, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xwx_
+        {
+            get => new fix4(x, w, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rar_
+        {
+            get => new fix4(x, w, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 sqs_
+        {
+            get => new fix4(x, w, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xwxx
+        {
+            get => new fix4(x, w, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rarr
+        {
+            get => new fix4(x, w, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 sqss
+        {
+            get => new fix4(x, w, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xwxy
+        {
+            get => new fix4(x, w, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rarg
+        {
+            get => new fix4(x, w, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 sqst
+        {
+            get => new fix4(x, w, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xwxz
+        {
+            get => new fix4(x, w, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rarb
+        {
+            get => new fix4(x, w, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 sqsp
+        {
+            get => new fix4(x, w, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xwxw
+        {
+            get => new fix4(x, w, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rara
+        {
+            get => new fix4(x, w, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 sqsq
+        {
+            get => new fix4(x, w, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xwy_
+        {
+            get => new fix4(x, w, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rag_
+        {
+            get => new fix4(x, w, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 sqt_
+        {
+            get => new fix4(x, w, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xwyx
+        {
+            get => new fix4(x, w, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ragr
+        {
+            get => new fix4(x, w, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 sqts
+        {
+            get => new fix4(x, w, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xwyy
+        {
+            get => new fix4(x, w, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ragg
+        {
+            get => new fix4(x, w, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 sqtt
+        {
+            get => new fix4(x, w, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xwyz
+        {
+            get => new fix4(x, w, y, z);
+            set
+            {
+                x = value.x;
+                w = value.y;
+                y = value.z;
+                z = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ragb
+        {
+            get => new fix4(x, w, y, z);
+            set
+            {
+                x = value.x;
+                w = value.y;
+                y = value.z;
+                z = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 sqtp
+        {
+            get => new fix4(x, w, y, z);
+            set
+            {
+                x = value.x;
+                w = value.y;
+                y = value.z;
+                z = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xwyw
+        {
+            get => new fix4(x, w, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 raga
+        {
+            get => new fix4(x, w, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 sqtq
+        {
+            get => new fix4(x, w, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xwz_
+        {
+            get => new fix4(x, w, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rab_
+        {
+            get => new fix4(x, w, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 sqp_
+        {
+            get => new fix4(x, w, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xwzx
+        {
+            get => new fix4(x, w, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rabr
+        {
+            get => new fix4(x, w, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 sqps
+        {
+            get => new fix4(x, w, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xwzy
+        {
+            get => new fix4(x, w, z, y);
+            set
+            {
+                x = value.x;
+                w = value.y;
+                z = value.z;
+                y = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rabg
+        {
+            get => new fix4(x, w, z, y);
+            set
+            {
+                x = value.x;
+                w = value.y;
+                z = value.z;
+                y = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 sqpt
+        {
+            get => new fix4(x, w, z, y);
+            set
+            {
+                x = value.x;
+                w = value.y;
+                z = value.z;
+                y = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xwzz
+        {
+            get => new fix4(x, w, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 rabb
+        {
+            get => new fix4(x, w, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 sqpp
+        {
+            get => new fix4(x, w, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xwzw
+        {
+            get => new fix4(x, w, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 raba
+        {
+            get => new fix4(x, w, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 sqpq
+        {
+            get => new fix4(x, w, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xww_
+        {
+            get => new fix4(x, w, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 raa_
+        {
+            get => new fix4(x, w, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 sqq_
+        {
+            get => new fix4(x, w, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xwwx
+        {
+            get => new fix4(x, w, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 raar
+        {
+            get => new fix4(x, w, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 sqqs
+        {
+            get => new fix4(x, w, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xwwy
+        {
+            get => new fix4(x, w, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 raag
+        {
+            get => new fix4(x, w, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 sqqt
+        {
+            get => new fix4(x, w, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xwwz
+        {
+            get => new fix4(x, w, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 raab
+        {
+            get => new fix4(x, w, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 sqqp
+        {
+            get => new fix4(x, w, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 xwww
+        {
+            get => new fix4(x, w, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 raaa
+        {
+            get => new fix4(x, w, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 sqqq
+        {
+            get => new fix4(x, w, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 y___
+        {
+            get => new fix4(y, fix.Zero, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 g___
+        {
+            get => new fix4(y, fix.Zero, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 t___
+        {
+            get => new fix4(y, fix.Zero, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 y__x
+        {
+            get => new fix4(y, fix.Zero, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 g__r
+        {
+            get => new fix4(y, fix.Zero, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 t__s
+        {
+            get => new fix4(y, fix.Zero, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 y__y
+        {
+            get => new fix4(y, fix.Zero, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 g__g
+        {
+            get => new fix4(y, fix.Zero, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 t__t
+        {
+            get => new fix4(y, fix.Zero, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 y__z
+        {
+            get => new fix4(y, fix.Zero, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 g__b
+        {
+            get => new fix4(y, fix.Zero, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 t__p
+        {
+            get => new fix4(y, fix.Zero, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 y__w
+        {
+            get => new fix4(y, fix.Zero, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 g__a
+        {
+            get => new fix4(y, fix.Zero, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 t__q
+        {
+            get => new fix4(y, fix.Zero, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 y_x_
+        {
+            get => new fix4(y, fix.Zero, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 g_r_
+        {
+            get => new fix4(y, fix.Zero, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 t_s_
+        {
+            get => new fix4(y, fix.Zero, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 y_xx
+        {
+            get => new fix4(y, fix.Zero, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 g_rr
+        {
+            get => new fix4(y, fix.Zero, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 t_ss
+        {
+            get => new fix4(y, fix.Zero, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 y_xy
+        {
+            get => new fix4(y, fix.Zero, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 g_rg
+        {
+            get => new fix4(y, fix.Zero, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 t_st
+        {
+            get => new fix4(y, fix.Zero, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 y_xz
+        {
+            get => new fix4(y, fix.Zero, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 g_rb
+        {
+            get => new fix4(y, fix.Zero, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 t_sp
+        {
+            get => new fix4(y, fix.Zero, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 y_xw
+        {
+            get => new fix4(y, fix.Zero, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 g_ra
+        {
+            get => new fix4(y, fix.Zero, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 t_sq
+        {
+            get => new fix4(y, fix.Zero, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 y_y_
+        {
+            get => new fix4(y, fix.Zero, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 g_g_
+        {
+            get => new fix4(y, fix.Zero, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 t_t_
+        {
+            get => new fix4(y, fix.Zero, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 y_yx
+        {
+            get => new fix4(y, fix.Zero, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 g_gr
+        {
+            get => new fix4(y, fix.Zero, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 t_ts
+        {
+            get => new fix4(y, fix.Zero, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 y_yy
+        {
+            get => new fix4(y, fix.Zero, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 g_gg
+        {
+            get => new fix4(y, fix.Zero, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 t_tt
+        {
+            get => new fix4(y, fix.Zero, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 y_yz
+        {
+            get => new fix4(y, fix.Zero, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 g_gb
+        {
+            get => new fix4(y, fix.Zero, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 t_tp
+        {
+            get => new fix4(y, fix.Zero, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 y_yw
+        {
+            get => new fix4(y, fix.Zero, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 g_ga
+        {
+            get => new fix4(y, fix.Zero, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 t_tq
+        {
+            get => new fix4(y, fix.Zero, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 y_z_
+        {
+            get => new fix4(y, fix.Zero, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 g_b_
+        {
+            get => new fix4(y, fix.Zero, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 t_p_
+        {
+            get => new fix4(y, fix.Zero, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 y_zx
+        {
+            get => new fix4(y, fix.Zero, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 g_br
+        {
+            get => new fix4(y, fix.Zero, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 t_ps
+        {
+            get => new fix4(y, fix.Zero, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 y_zy
+        {
+            get => new fix4(y, fix.Zero, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 g_bg
+        {
+            get => new fix4(y, fix.Zero, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 t_pt
+        {
+            get => new fix4(y, fix.Zero, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 y_zz
+        {
+            get => new fix4(y, fix.Zero, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 g_bb
+        {
+            get => new fix4(y, fix.Zero, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 t_pp
+        {
+            get => new fix4(y, fix.Zero, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 y_zw
+        {
+            get => new fix4(y, fix.Zero, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 g_ba
+        {
+            get => new fix4(y, fix.Zero, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 t_pq
+        {
+            get => new fix4(y, fix.Zero, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 y_w_
+        {
+            get => new fix4(y, fix.Zero, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 g_a_
+        {
+            get => new fix4(y, fix.Zero, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 t_q_
+        {
+            get => new fix4(y, fix.Zero, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 y_wx
+        {
+            get => new fix4(y, fix.Zero, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 g_ar
+        {
+            get => new fix4(y, fix.Zero, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 t_qs
+        {
+            get => new fix4(y, fix.Zero, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 y_wy
+        {
+            get => new fix4(y, fix.Zero, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 g_ag
+        {
+            get => new fix4(y, fix.Zero, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 t_qt
+        {
+            get => new fix4(y, fix.Zero, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 y_wz
+        {
+            get => new fix4(y, fix.Zero, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 g_ab
+        {
+            get => new fix4(y, fix.Zero, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 t_qp
+        {
+            get => new fix4(y, fix.Zero, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 y_ww
+        {
+            get => new fix4(y, fix.Zero, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 g_aa
+        {
+            get => new fix4(y, fix.Zero, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 t_qq
+        {
+            get => new fix4(y, fix.Zero, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 yx__
+        {
+            get => new fix4(y, x, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 gr__
+        {
+            get => new fix4(y, x, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ts__
+        {
+            get => new fix4(y, x, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 yx_x
+        {
+            get => new fix4(y, x, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 gr_r
+        {
+            get => new fix4(y, x, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ts_s
+        {
+            get => new fix4(y, x, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 yx_y
+        {
+            get => new fix4(y, x, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 gr_g
+        {
+            get => new fix4(y, x, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ts_t
+        {
+            get => new fix4(y, x, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 yx_z
+        {
+            get => new fix4(y, x, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 gr_b
+        {
+            get => new fix4(y, x, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ts_p
+        {
+            get => new fix4(y, x, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 yx_w
+        {
+            get => new fix4(y, x, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 gr_a
+        {
+            get => new fix4(y, x, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ts_q
+        {
+            get => new fix4(y, x, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 yxx_
+        {
+            get => new fix4(y, x, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 grr_
+        {
+            get => new fix4(y, x, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 tss_
+        {
+            get => new fix4(y, x, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 yxxx
+        {
+            get => new fix4(y, x, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 grrr
+        {
+            get => new fix4(y, x, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 tsss
+        {
+            get => new fix4(y, x, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 yxxy
+        {
+            get => new fix4(y, x, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 grrg
+        {
+            get => new fix4(y, x, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 tsst
+        {
+            get => new fix4(y, x, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 yxxz
+        {
+            get => new fix4(y, x, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 grrb
+        {
+            get => new fix4(y, x, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 tssp
+        {
+            get => new fix4(y, x, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 yxxw
+        {
+            get => new fix4(y, x, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 grra
+        {
+            get => new fix4(y, x, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 tssq
+        {
+            get => new fix4(y, x, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 yxy_
+        {
+            get => new fix4(y, x, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 grg_
+        {
+            get => new fix4(y, x, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 tst_
+        {
+            get => new fix4(y, x, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 yxyx
+        {
+            get => new fix4(y, x, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 grgr
+        {
+            get => new fix4(y, x, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 tsts
+        {
+            get => new fix4(y, x, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 yxyy
+        {
+            get => new fix4(y, x, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 grgg
+        {
+            get => new fix4(y, x, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 tstt
+        {
+            get => new fix4(y, x, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 yxyz
+        {
+            get => new fix4(y, x, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 grgb
+        {
+            get => new fix4(y, x, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 tstp
+        {
+            get => new fix4(y, x, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 yxyw
+        {
+            get => new fix4(y, x, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 grga
+        {
+            get => new fix4(y, x, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 tstq
+        {
+            get => new fix4(y, x, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 yxz_
+        {
+            get => new fix4(y, x, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 grb_
+        {
+            get => new fix4(y, x, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 tsp_
+        {
+            get => new fix4(y, x, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 yxzx
+        {
+            get => new fix4(y, x, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 grbr
+        {
+            get => new fix4(y, x, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 tsps
+        {
+            get => new fix4(y, x, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 yxzy
+        {
+            get => new fix4(y, x, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 grbg
+        {
+            get => new fix4(y, x, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 tspt
+        {
+            get => new fix4(y, x, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 yxzz
+        {
+            get => new fix4(y, x, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 grbb
+        {
+            get => new fix4(y, x, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 tspp
+        {
+            get => new fix4(y, x, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 yxzw
+        {
+            get => new fix4(y, x, z, w);
+            set
+            {
+                y = value.x;
+                x = value.y;
+                z = value.z;
+                w = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 grba
+        {
+            get => new fix4(y, x, z, w);
+            set
+            {
+                y = value.x;
+                x = value.y;
+                z = value.z;
+                w = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 tspq
+        {
+            get => new fix4(y, x, z, w);
+            set
+            {
+                y = value.x;
+                x = value.y;
+                z = value.z;
+                w = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 yxw_
+        {
+            get => new fix4(y, x, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 gra_
+        {
+            get => new fix4(y, x, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 tsq_
+        {
+            get => new fix4(y, x, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 yxwx
+        {
+            get => new fix4(y, x, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 grar
+        {
+            get => new fix4(y, x, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 tsqs
+        {
+            get => new fix4(y, x, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 yxwy
+        {
+            get => new fix4(y, x, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 grag
+        {
+            get => new fix4(y, x, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 tsqt
+        {
+            get => new fix4(y, x, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 yxwz
+        {
+            get => new fix4(y, x, w, z);
+            set
+            {
+                y = value.x;
+                x = value.y;
+                w = value.z;
+                z = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 grab
+        {
+            get => new fix4(y, x, w, z);
+            set
+            {
+                y = value.x;
+                x = value.y;
+                w = value.z;
+                z = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 tsqp
+        {
+            get => new fix4(y, x, w, z);
+            set
+            {
+                y = value.x;
+                x = value.y;
+                w = value.z;
+                z = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 yxww
+        {
+            get => new fix4(y, x, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 graa
+        {
+            get => new fix4(y, x, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 tsqq
+        {
+            get => new fix4(y, x, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 yy__
+        {
+            get => new fix4(y, y, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 gg__
+        {
+            get => new fix4(y, y, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 tt__
+        {
+            get => new fix4(y, y, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 yy_x
+        {
+            get => new fix4(y, y, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 gg_r
+        {
+            get => new fix4(y, y, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 tt_s
+        {
+            get => new fix4(y, y, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 yy_y
+        {
+            get => new fix4(y, y, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 gg_g
+        {
+            get => new fix4(y, y, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 tt_t
+        {
+            get => new fix4(y, y, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 yy_z
+        {
+            get => new fix4(y, y, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 gg_b
+        {
+            get => new fix4(y, y, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 tt_p
+        {
+            get => new fix4(y, y, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 yy_w
+        {
+            get => new fix4(y, y, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 gg_a
+        {
+            get => new fix4(y, y, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 tt_q
+        {
+            get => new fix4(y, y, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 yyx_
+        {
+            get => new fix4(y, y, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ggr_
+        {
+            get => new fix4(y, y, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 tts_
+        {
+            get => new fix4(y, y, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 yyxx
+        {
+            get => new fix4(y, y, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ggrr
+        {
+            get => new fix4(y, y, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ttss
+        {
+            get => new fix4(y, y, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 yyxy
+        {
+            get => new fix4(y, y, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ggrg
+        {
+            get => new fix4(y, y, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ttst
+        {
+            get => new fix4(y, y, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 yyxz
+        {
+            get => new fix4(y, y, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ggrb
+        {
+            get => new fix4(y, y, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ttsp
+        {
+            get => new fix4(y, y, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 yyxw
+        {
+            get => new fix4(y, y, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ggra
+        {
+            get => new fix4(y, y, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ttsq
+        {
+            get => new fix4(y, y, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 yyy_
+        {
+            get => new fix4(y, y, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ggg_
+        {
+            get => new fix4(y, y, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ttt_
+        {
+            get => new fix4(y, y, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 yyyx
+        {
+            get => new fix4(y, y, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 gggr
+        {
+            get => new fix4(y, y, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ttts
+        {
+            get => new fix4(y, y, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 yyyy
+        {
+            get => new fix4(y, y, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 gggg
+        {
+            get => new fix4(y, y, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 tttt
+        {
+            get => new fix4(y, y, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 yyyz
+        {
+            get => new fix4(y, y, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 gggb
+        {
+            get => new fix4(y, y, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 tttp
+        {
+            get => new fix4(y, y, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 yyyw
+        {
+            get => new fix4(y, y, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ggga
+        {
+            get => new fix4(y, y, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 tttq
+        {
+            get => new fix4(y, y, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 yyz_
+        {
+            get => new fix4(y, y, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ggb_
+        {
+            get => new fix4(y, y, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ttp_
+        {
+            get => new fix4(y, y, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 yyzx
+        {
+            get => new fix4(y, y, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ggbr
+        {
+            get => new fix4(y, y, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ttps
+        {
+            get => new fix4(y, y, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 yyzy
+        {
+            get => new fix4(y, y, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ggbg
+        {
+            get => new fix4(y, y, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ttpt
+        {
+            get => new fix4(y, y, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 yyzz
+        {
+            get => new fix4(y, y, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ggbb
+        {
+            get => new fix4(y, y, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ttpp
+        {
+            get => new fix4(y, y, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 yyzw
+        {
+            get => new fix4(y, y, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ggba
+        {
+            get => new fix4(y, y, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ttpq
+        {
+            get => new fix4(y, y, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 yyw_
+        {
+            get => new fix4(y, y, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 gga_
+        {
+            get => new fix4(y, y, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ttq_
+        {
+            get => new fix4(y, y, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 yywx
+        {
+            get => new fix4(y, y, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ggar
+        {
+            get => new fix4(y, y, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ttqs
+        {
+            get => new fix4(y, y, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 yywy
+        {
+            get => new fix4(y, y, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ggag
+        {
+            get => new fix4(y, y, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ttqt
+        {
+            get => new fix4(y, y, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 yywz
+        {
+            get => new fix4(y, y, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ggab
+        {
+            get => new fix4(y, y, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ttqp
+        {
+            get => new fix4(y, y, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 yyww
+        {
+            get => new fix4(y, y, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ggaa
+        {
+            get => new fix4(y, y, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ttqq
+        {
+            get => new fix4(y, y, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 yz__
+        {
+            get => new fix4(y, z, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 gb__
+        {
+            get => new fix4(y, z, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 tp__
+        {
+            get => new fix4(y, z, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 yz_x
+        {
+            get => new fix4(y, z, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 gb_r
+        {
+            get => new fix4(y, z, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 tp_s
+        {
+            get => new fix4(y, z, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 yz_y
+        {
+            get => new fix4(y, z, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 gb_g
+        {
+            get => new fix4(y, z, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 tp_t
+        {
+            get => new fix4(y, z, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 yz_z
+        {
+            get => new fix4(y, z, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 gb_b
+        {
+            get => new fix4(y, z, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 tp_p
+        {
+            get => new fix4(y, z, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 yz_w
+        {
+            get => new fix4(y, z, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 gb_a
+        {
+            get => new fix4(y, z, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 tp_q
+        {
+            get => new fix4(y, z, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 yzx_
+        {
+            get => new fix4(y, z, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 gbr_
+        {
+            get => new fix4(y, z, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 tps_
+        {
+            get => new fix4(y, z, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 yzxx
+        {
+            get => new fix4(y, z, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 gbrr
+        {
+            get => new fix4(y, z, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 tpss
+        {
+            get => new fix4(y, z, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 yzxy
+        {
+            get => new fix4(y, z, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 gbrg
+        {
+            get => new fix4(y, z, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 tpst
+        {
+            get => new fix4(y, z, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 yzxz
+        {
+            get => new fix4(y, z, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 gbrb
+        {
+            get => new fix4(y, z, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 tpsp
+        {
+            get => new fix4(y, z, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 yzxw
+        {
+            get => new fix4(y, z, x, w);
+            set
+            {
+                y = value.x;
+                z = value.y;
+                x = value.z;
+                w = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 gbra
+        {
+            get => new fix4(y, z, x, w);
+            set
+            {
+                y = value.x;
+                z = value.y;
+                x = value.z;
+                w = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 tpsq
+        {
+            get => new fix4(y, z, x, w);
+            set
+            {
+                y = value.x;
+                z = value.y;
+                x = value.z;
+                w = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 yzy_
+        {
+            get => new fix4(y, z, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 gbg_
+        {
+            get => new fix4(y, z, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 tpt_
+        {
+            get => new fix4(y, z, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 yzyx
+        {
+            get => new fix4(y, z, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 gbgr
+        {
+            get => new fix4(y, z, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 tpts
+        {
+            get => new fix4(y, z, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 yzyy
+        {
+            get => new fix4(y, z, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 gbgg
+        {
+            get => new fix4(y, z, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 tptt
+        {
+            get => new fix4(y, z, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 yzyz
+        {
+            get => new fix4(y, z, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 gbgb
+        {
+            get => new fix4(y, z, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 tptp
+        {
+            get => new fix4(y, z, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 yzyw
+        {
+            get => new fix4(y, z, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 gbga
+        {
+            get => new fix4(y, z, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 tptq
+        {
+            get => new fix4(y, z, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 yzz_
+        {
+            get => new fix4(y, z, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 gbb_
+        {
+            get => new fix4(y, z, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 tpp_
+        {
+            get => new fix4(y, z, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 yzzx
+        {
+            get => new fix4(y, z, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 gbbr
+        {
+            get => new fix4(y, z, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 tpps
+        {
+            get => new fix4(y, z, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 yzzy
+        {
+            get => new fix4(y, z, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 gbbg
+        {
+            get => new fix4(y, z, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 tppt
+        {
+            get => new fix4(y, z, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 yzzz
+        {
+            get => new fix4(y, z, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 gbbb
+        {
+            get => new fix4(y, z, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 tppp
+        {
+            get => new fix4(y, z, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 yzzw
+        {
+            get => new fix4(y, z, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 gbba
+        {
+            get => new fix4(y, z, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 tppq
+        {
+            get => new fix4(y, z, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 yzw_
+        {
+            get => new fix4(y, z, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 gba_
+        {
+            get => new fix4(y, z, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 tpq_
+        {
+            get => new fix4(y, z, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 yzwx
+        {
+            get => new fix4(y, z, w, x);
+            set
+            {
+                y = value.x;
+                z = value.y;
+                w = value.z;
+                x = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 gbar
+        {
+            get => new fix4(y, z, w, x);
+            set
+            {
+                y = value.x;
+                z = value.y;
+                w = value.z;
+                x = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 tpqs
+        {
+            get => new fix4(y, z, w, x);
+            set
+            {
+                y = value.x;
+                z = value.y;
+                w = value.z;
+                x = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 yzwy
+        {
+            get => new fix4(y, z, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 gbag
+        {
+            get => new fix4(y, z, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 tpqt
+        {
+            get => new fix4(y, z, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 yzwz
+        {
+            get => new fix4(y, z, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 gbab
+        {
+            get => new fix4(y, z, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 tpqp
+        {
+            get => new fix4(y, z, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 yzww
+        {
+            get => new fix4(y, z, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 gbaa
+        {
+            get => new fix4(y, z, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 tpqq
+        {
+            get => new fix4(y, z, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 yw__
+        {
+            get => new fix4(y, w, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ga__
+        {
+            get => new fix4(y, w, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 tq__
+        {
+            get => new fix4(y, w, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 yw_x
+        {
+            get => new fix4(y, w, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ga_r
+        {
+            get => new fix4(y, w, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 tq_s
+        {
+            get => new fix4(y, w, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 yw_y
+        {
+            get => new fix4(y, w, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ga_g
+        {
+            get => new fix4(y, w, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 tq_t
+        {
+            get => new fix4(y, w, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 yw_z
+        {
+            get => new fix4(y, w, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ga_b
+        {
+            get => new fix4(y, w, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 tq_p
+        {
+            get => new fix4(y, w, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 yw_w
+        {
+            get => new fix4(y, w, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ga_a
+        {
+            get => new fix4(y, w, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 tq_q
+        {
+            get => new fix4(y, w, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ywx_
+        {
+            get => new fix4(y, w, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 gar_
+        {
+            get => new fix4(y, w, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 tqs_
+        {
+            get => new fix4(y, w, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ywxx
+        {
+            get => new fix4(y, w, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 garr
+        {
+            get => new fix4(y, w, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 tqss
+        {
+            get => new fix4(y, w, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ywxy
+        {
+            get => new fix4(y, w, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 garg
+        {
+            get => new fix4(y, w, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 tqst
+        {
+            get => new fix4(y, w, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ywxz
+        {
+            get => new fix4(y, w, x, z);
+            set
+            {
+                y = value.x;
+                w = value.y;
+                x = value.z;
+                z = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 garb
+        {
+            get => new fix4(y, w, x, z);
+            set
+            {
+                y = value.x;
+                w = value.y;
+                x = value.z;
+                z = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 tqsp
+        {
+            get => new fix4(y, w, x, z);
+            set
+            {
+                y = value.x;
+                w = value.y;
+                x = value.z;
+                z = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ywxw
+        {
+            get => new fix4(y, w, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 gara
+        {
+            get => new fix4(y, w, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 tqsq
+        {
+            get => new fix4(y, w, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ywy_
+        {
+            get => new fix4(y, w, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 gag_
+        {
+            get => new fix4(y, w, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 tqt_
+        {
+            get => new fix4(y, w, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ywyx
+        {
+            get => new fix4(y, w, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 gagr
+        {
+            get => new fix4(y, w, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 tqts
+        {
+            get => new fix4(y, w, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ywyy
+        {
+            get => new fix4(y, w, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 gagg
+        {
+            get => new fix4(y, w, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 tqtt
+        {
+            get => new fix4(y, w, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ywyz
+        {
+            get => new fix4(y, w, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 gagb
+        {
+            get => new fix4(y, w, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 tqtp
+        {
+            get => new fix4(y, w, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ywyw
+        {
+            get => new fix4(y, w, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 gaga
+        {
+            get => new fix4(y, w, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 tqtq
+        {
+            get => new fix4(y, w, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ywz_
+        {
+            get => new fix4(y, w, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 gab_
+        {
+            get => new fix4(y, w, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 tqp_
+        {
+            get => new fix4(y, w, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ywzx
+        {
+            get => new fix4(y, w, z, x);
+            set
+            {
+                y = value.x;
+                w = value.y;
+                z = value.z;
+                x = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 gabr
+        {
+            get => new fix4(y, w, z, x);
+            set
+            {
+                y = value.x;
+                w = value.y;
+                z = value.z;
+                x = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 tqps
+        {
+            get => new fix4(y, w, z, x);
+            set
+            {
+                y = value.x;
+                w = value.y;
+                z = value.z;
+                x = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ywzy
+        {
+            get => new fix4(y, w, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 gabg
+        {
+            get => new fix4(y, w, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 tqpt
+        {
+            get => new fix4(y, w, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ywzz
+        {
+            get => new fix4(y, w, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 gabb
+        {
+            get => new fix4(y, w, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 tqpp
+        {
+            get => new fix4(y, w, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ywzw
+        {
+            get => new fix4(y, w, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 gaba
+        {
+            get => new fix4(y, w, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 tqpq
+        {
+            get => new fix4(y, w, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 yww_
+        {
+            get => new fix4(y, w, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 gaa_
+        {
+            get => new fix4(y, w, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 tqq_
+        {
+            get => new fix4(y, w, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ywwx
+        {
+            get => new fix4(y, w, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 gaar
+        {
+            get => new fix4(y, w, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 tqqs
+        {
+            get => new fix4(y, w, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ywwy
+        {
+            get => new fix4(y, w, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 gaag
+        {
+            get => new fix4(y, w, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 tqqt
+        {
+            get => new fix4(y, w, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ywwz
+        {
+            get => new fix4(y, w, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 gaab
+        {
+            get => new fix4(y, w, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 tqqp
+        {
+            get => new fix4(y, w, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ywww
+        {
+            get => new fix4(y, w, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 gaaa
+        {
+            get => new fix4(y, w, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 tqqq
+        {
+            get => new fix4(y, w, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 z___
+        {
+            get => new fix4(z, fix.Zero, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 b___
+        {
+            get => new fix4(z, fix.Zero, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 p___
+        {
+            get => new fix4(z, fix.Zero, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 z__x
+        {
+            get => new fix4(z, fix.Zero, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 b__r
+        {
+            get => new fix4(z, fix.Zero, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 p__s
+        {
+            get => new fix4(z, fix.Zero, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 z__y
+        {
+            get => new fix4(z, fix.Zero, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 b__g
+        {
+            get => new fix4(z, fix.Zero, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 p__t
+        {
+            get => new fix4(z, fix.Zero, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 z__z
+        {
+            get => new fix4(z, fix.Zero, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 b__b
+        {
+            get => new fix4(z, fix.Zero, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 p__p
+        {
+            get => new fix4(z, fix.Zero, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 z__w
+        {
+            get => new fix4(z, fix.Zero, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 b__a
+        {
+            get => new fix4(z, fix.Zero, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 p__q
+        {
+            get => new fix4(z, fix.Zero, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 z_x_
+        {
+            get => new fix4(z, fix.Zero, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 b_r_
+        {
+            get => new fix4(z, fix.Zero, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 p_s_
+        {
+            get => new fix4(z, fix.Zero, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 z_xx
+        {
+            get => new fix4(z, fix.Zero, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 b_rr
+        {
+            get => new fix4(z, fix.Zero, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 p_ss
+        {
+            get => new fix4(z, fix.Zero, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 z_xy
+        {
+            get => new fix4(z, fix.Zero, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 b_rg
+        {
+            get => new fix4(z, fix.Zero, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 p_st
+        {
+            get => new fix4(z, fix.Zero, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 z_xz
+        {
+            get => new fix4(z, fix.Zero, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 b_rb
+        {
+            get => new fix4(z, fix.Zero, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 p_sp
+        {
+            get => new fix4(z, fix.Zero, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 z_xw
+        {
+            get => new fix4(z, fix.Zero, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 b_ra
+        {
+            get => new fix4(z, fix.Zero, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 p_sq
+        {
+            get => new fix4(z, fix.Zero, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 z_y_
+        {
+            get => new fix4(z, fix.Zero, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 b_g_
+        {
+            get => new fix4(z, fix.Zero, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 p_t_
+        {
+            get => new fix4(z, fix.Zero, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 z_yx
+        {
+            get => new fix4(z, fix.Zero, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 b_gr
+        {
+            get => new fix4(z, fix.Zero, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 p_ts
+        {
+            get => new fix4(z, fix.Zero, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 z_yy
+        {
+            get => new fix4(z, fix.Zero, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 b_gg
+        {
+            get => new fix4(z, fix.Zero, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 p_tt
+        {
+            get => new fix4(z, fix.Zero, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 z_yz
+        {
+            get => new fix4(z, fix.Zero, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 b_gb
+        {
+            get => new fix4(z, fix.Zero, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 p_tp
+        {
+            get => new fix4(z, fix.Zero, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 z_yw
+        {
+            get => new fix4(z, fix.Zero, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 b_ga
+        {
+            get => new fix4(z, fix.Zero, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 p_tq
+        {
+            get => new fix4(z, fix.Zero, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 z_z_
+        {
+            get => new fix4(z, fix.Zero, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 b_b_
+        {
+            get => new fix4(z, fix.Zero, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 p_p_
+        {
+            get => new fix4(z, fix.Zero, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 z_zx
+        {
+            get => new fix4(z, fix.Zero, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 b_br
+        {
+            get => new fix4(z, fix.Zero, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 p_ps
+        {
+            get => new fix4(z, fix.Zero, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 z_zy
+        {
+            get => new fix4(z, fix.Zero, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 b_bg
+        {
+            get => new fix4(z, fix.Zero, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 p_pt
+        {
+            get => new fix4(z, fix.Zero, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 z_zz
+        {
+            get => new fix4(z, fix.Zero, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 b_bb
+        {
+            get => new fix4(z, fix.Zero, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 p_pp
+        {
+            get => new fix4(z, fix.Zero, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 z_zw
+        {
+            get => new fix4(z, fix.Zero, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 b_ba
+        {
+            get => new fix4(z, fix.Zero, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 p_pq
+        {
+            get => new fix4(z, fix.Zero, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 z_w_
+        {
+            get => new fix4(z, fix.Zero, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 b_a_
+        {
+            get => new fix4(z, fix.Zero, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 p_q_
+        {
+            get => new fix4(z, fix.Zero, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 z_wx
+        {
+            get => new fix4(z, fix.Zero, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 b_ar
+        {
+            get => new fix4(z, fix.Zero, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 p_qs
+        {
+            get => new fix4(z, fix.Zero, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 z_wy
+        {
+            get => new fix4(z, fix.Zero, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 b_ag
+        {
+            get => new fix4(z, fix.Zero, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 p_qt
+        {
+            get => new fix4(z, fix.Zero, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 z_wz
+        {
+            get => new fix4(z, fix.Zero, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 b_ab
+        {
+            get => new fix4(z, fix.Zero, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 p_qp
+        {
+            get => new fix4(z, fix.Zero, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 z_ww
+        {
+            get => new fix4(z, fix.Zero, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 b_aa
+        {
+            get => new fix4(z, fix.Zero, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 p_qq
+        {
+            get => new fix4(z, fix.Zero, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zx__
+        {
+            get => new fix4(z, x, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 br__
+        {
+            get => new fix4(z, x, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ps__
+        {
+            get => new fix4(z, x, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zx_x
+        {
+            get => new fix4(z, x, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 br_r
+        {
+            get => new fix4(z, x, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ps_s
+        {
+            get => new fix4(z, x, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zx_y
+        {
+            get => new fix4(z, x, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 br_g
+        {
+            get => new fix4(z, x, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ps_t
+        {
+            get => new fix4(z, x, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zx_z
+        {
+            get => new fix4(z, x, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 br_b
+        {
+            get => new fix4(z, x, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ps_p
+        {
+            get => new fix4(z, x, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zx_w
+        {
+            get => new fix4(z, x, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 br_a
+        {
+            get => new fix4(z, x, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ps_q
+        {
+            get => new fix4(z, x, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zxx_
+        {
+            get => new fix4(z, x, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 brr_
+        {
+            get => new fix4(z, x, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 pss_
+        {
+            get => new fix4(z, x, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zxxx
+        {
+            get => new fix4(z, x, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 brrr
+        {
+            get => new fix4(z, x, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 psss
+        {
+            get => new fix4(z, x, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zxxy
+        {
+            get => new fix4(z, x, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 brrg
+        {
+            get => new fix4(z, x, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 psst
+        {
+            get => new fix4(z, x, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zxxz
+        {
+            get => new fix4(z, x, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 brrb
+        {
+            get => new fix4(z, x, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 pssp
+        {
+            get => new fix4(z, x, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zxxw
+        {
+            get => new fix4(z, x, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 brra
+        {
+            get => new fix4(z, x, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 pssq
+        {
+            get => new fix4(z, x, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zxy_
+        {
+            get => new fix4(z, x, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 brg_
+        {
+            get => new fix4(z, x, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 pst_
+        {
+            get => new fix4(z, x, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zxyx
+        {
+            get => new fix4(z, x, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 brgr
+        {
+            get => new fix4(z, x, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 psts
+        {
+            get => new fix4(z, x, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zxyy
+        {
+            get => new fix4(z, x, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 brgg
+        {
+            get => new fix4(z, x, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 pstt
+        {
+            get => new fix4(z, x, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zxyz
+        {
+            get => new fix4(z, x, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 brgb
+        {
+            get => new fix4(z, x, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 pstp
+        {
+            get => new fix4(z, x, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zxyw
+        {
+            get => new fix4(z, x, y, w);
+            set
+            {
+                z = value.x;
+                x = value.y;
+                y = value.z;
+                w = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 brga
+        {
+            get => new fix4(z, x, y, w);
+            set
+            {
+                z = value.x;
+                x = value.y;
+                y = value.z;
+                w = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 pstq
+        {
+            get => new fix4(z, x, y, w);
+            set
+            {
+                z = value.x;
+                x = value.y;
+                y = value.z;
+                w = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zxz_
+        {
+            get => new fix4(z, x, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 brb_
+        {
+            get => new fix4(z, x, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 psp_
+        {
+            get => new fix4(z, x, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zxzx
+        {
+            get => new fix4(z, x, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 brbr
+        {
+            get => new fix4(z, x, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 psps
+        {
+            get => new fix4(z, x, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zxzy
+        {
+            get => new fix4(z, x, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 brbg
+        {
+            get => new fix4(z, x, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 pspt
+        {
+            get => new fix4(z, x, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zxzz
+        {
+            get => new fix4(z, x, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 brbb
+        {
+            get => new fix4(z, x, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 pspp
+        {
+            get => new fix4(z, x, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zxzw
+        {
+            get => new fix4(z, x, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 brba
+        {
+            get => new fix4(z, x, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 pspq
+        {
+            get => new fix4(z, x, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zxw_
+        {
+            get => new fix4(z, x, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 bra_
+        {
+            get => new fix4(z, x, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 psq_
+        {
+            get => new fix4(z, x, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zxwx
+        {
+            get => new fix4(z, x, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 brar
+        {
+            get => new fix4(z, x, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 psqs
+        {
+            get => new fix4(z, x, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zxwy
+        {
+            get => new fix4(z, x, w, y);
+            set
+            {
+                z = value.x;
+                x = value.y;
+                w = value.z;
+                y = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 brag
+        {
+            get => new fix4(z, x, w, y);
+            set
+            {
+                z = value.x;
+                x = value.y;
+                w = value.z;
+                y = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 psqt
+        {
+            get => new fix4(z, x, w, y);
+            set
+            {
+                z = value.x;
+                x = value.y;
+                w = value.z;
+                y = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zxwz
+        {
+            get => new fix4(z, x, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 brab
+        {
+            get => new fix4(z, x, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 psqp
+        {
+            get => new fix4(z, x, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zxww
+        {
+            get => new fix4(z, x, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 braa
+        {
+            get => new fix4(z, x, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 psqq
+        {
+            get => new fix4(z, x, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zy__
+        {
+            get => new fix4(z, y, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 bg__
+        {
+            get => new fix4(z, y, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 pt__
+        {
+            get => new fix4(z, y, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zy_x
+        {
+            get => new fix4(z, y, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 bg_r
+        {
+            get => new fix4(z, y, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 pt_s
+        {
+            get => new fix4(z, y, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zy_y
+        {
+            get => new fix4(z, y, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 bg_g
+        {
+            get => new fix4(z, y, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 pt_t
+        {
+            get => new fix4(z, y, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zy_z
+        {
+            get => new fix4(z, y, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 bg_b
+        {
+            get => new fix4(z, y, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 pt_p
+        {
+            get => new fix4(z, y, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zy_w
+        {
+            get => new fix4(z, y, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 bg_a
+        {
+            get => new fix4(z, y, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 pt_q
+        {
+            get => new fix4(z, y, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zyx_
+        {
+            get => new fix4(z, y, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 bgr_
+        {
+            get => new fix4(z, y, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 pts_
+        {
+            get => new fix4(z, y, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zyxx
+        {
+            get => new fix4(z, y, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 bgrr
+        {
+            get => new fix4(z, y, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ptss
+        {
+            get => new fix4(z, y, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zyxy
+        {
+            get => new fix4(z, y, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 bgrg
+        {
+            get => new fix4(z, y, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ptst
+        {
+            get => new fix4(z, y, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zyxz
+        {
+            get => new fix4(z, y, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 bgrb
+        {
+            get => new fix4(z, y, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ptsp
+        {
+            get => new fix4(z, y, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zyxw
+        {
+            get => new fix4(z, y, x, w);
+            set
+            {
+                z = value.x;
+                y = value.y;
+                x = value.z;
+                w = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 bgra
+        {
+            get => new fix4(z, y, x, w);
+            set
+            {
+                z = value.x;
+                y = value.y;
+                x = value.z;
+                w = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ptsq
+        {
+            get => new fix4(z, y, x, w);
+            set
+            {
+                z = value.x;
+                y = value.y;
+                x = value.z;
+                w = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zyy_
+        {
+            get => new fix4(z, y, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 bgg_
+        {
+            get => new fix4(z, y, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ptt_
+        {
+            get => new fix4(z, y, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zyyx
+        {
+            get => new fix4(z, y, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 bggr
+        {
+            get => new fix4(z, y, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ptts
+        {
+            get => new fix4(z, y, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zyyy
+        {
+            get => new fix4(z, y, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 bggg
+        {
+            get => new fix4(z, y, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 pttt
+        {
+            get => new fix4(z, y, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zyyz
+        {
+            get => new fix4(z, y, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 bggb
+        {
+            get => new fix4(z, y, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 pttp
+        {
+            get => new fix4(z, y, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zyyw
+        {
+            get => new fix4(z, y, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 bgga
+        {
+            get => new fix4(z, y, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 pttq
+        {
+            get => new fix4(z, y, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zyz_
+        {
+            get => new fix4(z, y, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 bgb_
+        {
+            get => new fix4(z, y, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ptp_
+        {
+            get => new fix4(z, y, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zyzx
+        {
+            get => new fix4(z, y, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 bgbr
+        {
+            get => new fix4(z, y, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ptps
+        {
+            get => new fix4(z, y, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zyzy
+        {
+            get => new fix4(z, y, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 bgbg
+        {
+            get => new fix4(z, y, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ptpt
+        {
+            get => new fix4(z, y, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zyzz
+        {
+            get => new fix4(z, y, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 bgbb
+        {
+            get => new fix4(z, y, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ptpp
+        {
+            get => new fix4(z, y, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zyzw
+        {
+            get => new fix4(z, y, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 bgba
+        {
+            get => new fix4(z, y, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ptpq
+        {
+            get => new fix4(z, y, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zyw_
+        {
+            get => new fix4(z, y, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 bga_
+        {
+            get => new fix4(z, y, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ptq_
+        {
+            get => new fix4(z, y, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zywx
+        {
+            get => new fix4(z, y, w, x);
+            set
+            {
+                z = value.x;
+                y = value.y;
+                w = value.z;
+                x = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 bgar
+        {
+            get => new fix4(z, y, w, x);
+            set
+            {
+                z = value.x;
+                y = value.y;
+                w = value.z;
+                x = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ptqs
+        {
+            get => new fix4(z, y, w, x);
+            set
+            {
+                z = value.x;
+                y = value.y;
+                w = value.z;
+                x = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zywy
+        {
+            get => new fix4(z, y, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 bgag
+        {
+            get => new fix4(z, y, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ptqt
+        {
+            get => new fix4(z, y, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zywz
+        {
+            get => new fix4(z, y, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 bgab
+        {
+            get => new fix4(z, y, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ptqp
+        {
+            get => new fix4(z, y, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zyww
+        {
+            get => new fix4(z, y, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 bgaa
+        {
+            get => new fix4(z, y, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ptqq
+        {
+            get => new fix4(z, y, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zz__
+        {
+            get => new fix4(z, z, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 bb__
+        {
+            get => new fix4(z, z, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 pp__
+        {
+            get => new fix4(z, z, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zz_x
+        {
+            get => new fix4(z, z, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 bb_r
+        {
+            get => new fix4(z, z, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 pp_s
+        {
+            get => new fix4(z, z, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zz_y
+        {
+            get => new fix4(z, z, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 bb_g
+        {
+            get => new fix4(z, z, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 pp_t
+        {
+            get => new fix4(z, z, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zz_z
+        {
+            get => new fix4(z, z, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 bb_b
+        {
+            get => new fix4(z, z, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 pp_p
+        {
+            get => new fix4(z, z, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zz_w
+        {
+            get => new fix4(z, z, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 bb_a
+        {
+            get => new fix4(z, z, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 pp_q
+        {
+            get => new fix4(z, z, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zzx_
+        {
+            get => new fix4(z, z, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 bbr_
+        {
+            get => new fix4(z, z, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 pps_
+        {
+            get => new fix4(z, z, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zzxx
+        {
+            get => new fix4(z, z, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 bbrr
+        {
+            get => new fix4(z, z, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ppss
+        {
+            get => new fix4(z, z, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zzxy
+        {
+            get => new fix4(z, z, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 bbrg
+        {
+            get => new fix4(z, z, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ppst
+        {
+            get => new fix4(z, z, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zzxz
+        {
+            get => new fix4(z, z, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 bbrb
+        {
+            get => new fix4(z, z, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ppsp
+        {
+            get => new fix4(z, z, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zzxw
+        {
+            get => new fix4(z, z, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 bbra
+        {
+            get => new fix4(z, z, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ppsq
+        {
+            get => new fix4(z, z, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zzy_
+        {
+            get => new fix4(z, z, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 bbg_
+        {
+            get => new fix4(z, z, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ppt_
+        {
+            get => new fix4(z, z, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zzyx
+        {
+            get => new fix4(z, z, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 bbgr
+        {
+            get => new fix4(z, z, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ppts
+        {
+            get => new fix4(z, z, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zzyy
+        {
+            get => new fix4(z, z, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 bbgg
+        {
+            get => new fix4(z, z, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 pptt
+        {
+            get => new fix4(z, z, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zzyz
+        {
+            get => new fix4(z, z, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 bbgb
+        {
+            get => new fix4(z, z, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 pptp
+        {
+            get => new fix4(z, z, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zzyw
+        {
+            get => new fix4(z, z, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 bbga
+        {
+            get => new fix4(z, z, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 pptq
+        {
+            get => new fix4(z, z, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zzz_
+        {
+            get => new fix4(z, z, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 bbb_
+        {
+            get => new fix4(z, z, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ppp_
+        {
+            get => new fix4(z, z, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zzzx
+        {
+            get => new fix4(z, z, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 bbbr
+        {
+            get => new fix4(z, z, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ppps
+        {
+            get => new fix4(z, z, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zzzy
+        {
+            get => new fix4(z, z, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 bbbg
+        {
+            get => new fix4(z, z, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 pppt
+        {
+            get => new fix4(z, z, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zzzz
+        {
+            get => new fix4(z, z, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 bbbb
+        {
+            get => new fix4(z, z, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 pppp
+        {
+            get => new fix4(z, z, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zzzw
+        {
+            get => new fix4(z, z, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 bbba
+        {
+            get => new fix4(z, z, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 pppq
+        {
+            get => new fix4(z, z, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zzw_
+        {
+            get => new fix4(z, z, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 bba_
+        {
+            get => new fix4(z, z, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ppq_
+        {
+            get => new fix4(z, z, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zzwx
+        {
+            get => new fix4(z, z, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 bbar
+        {
+            get => new fix4(z, z, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ppqs
+        {
+            get => new fix4(z, z, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zzwy
+        {
+            get => new fix4(z, z, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 bbag
+        {
+            get => new fix4(z, z, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ppqt
+        {
+            get => new fix4(z, z, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zzwz
+        {
+            get => new fix4(z, z, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 bbab
+        {
+            get => new fix4(z, z, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ppqp
+        {
+            get => new fix4(z, z, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zzww
+        {
+            get => new fix4(z, z, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 bbaa
+        {
+            get => new fix4(z, z, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ppqq
+        {
+            get => new fix4(z, z, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zw__
+        {
+            get => new fix4(z, w, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ba__
+        {
+            get => new fix4(z, w, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 pq__
+        {
+            get => new fix4(z, w, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zw_x
+        {
+            get => new fix4(z, w, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ba_r
+        {
+            get => new fix4(z, w, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 pq_s
+        {
+            get => new fix4(z, w, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zw_y
+        {
+            get => new fix4(z, w, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ba_g
+        {
+            get => new fix4(z, w, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 pq_t
+        {
+            get => new fix4(z, w, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zw_z
+        {
+            get => new fix4(z, w, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ba_b
+        {
+            get => new fix4(z, w, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 pq_p
+        {
+            get => new fix4(z, w, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zw_w
+        {
+            get => new fix4(z, w, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ba_a
+        {
+            get => new fix4(z, w, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 pq_q
+        {
+            get => new fix4(z, w, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zwx_
+        {
+            get => new fix4(z, w, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 bar_
+        {
+            get => new fix4(z, w, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 pqs_
+        {
+            get => new fix4(z, w, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zwxx
+        {
+            get => new fix4(z, w, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 barr
+        {
+            get => new fix4(z, w, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 pqss
+        {
+            get => new fix4(z, w, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zwxy
+        {
+            get => new fix4(z, w, x, y);
+            set
+            {
+                z = value.x;
+                w = value.y;
+                x = value.z;
+                y = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 barg
+        {
+            get => new fix4(z, w, x, y);
+            set
+            {
+                z = value.x;
+                w = value.y;
+                x = value.z;
+                y = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 pqst
+        {
+            get => new fix4(z, w, x, y);
+            set
+            {
+                z = value.x;
+                w = value.y;
+                x = value.z;
+                y = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zwxz
+        {
+            get => new fix4(z, w, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 barb
+        {
+            get => new fix4(z, w, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 pqsp
+        {
+            get => new fix4(z, w, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zwxw
+        {
+            get => new fix4(z, w, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 bara
+        {
+            get => new fix4(z, w, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 pqsq
+        {
+            get => new fix4(z, w, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zwy_
+        {
+            get => new fix4(z, w, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 bag_
+        {
+            get => new fix4(z, w, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 pqt_
+        {
+            get => new fix4(z, w, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zwyx
+        {
+            get => new fix4(z, w, y, x);
+            set
+            {
+                z = value.x;
+                w = value.y;
+                y = value.z;
+                x = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 bagr
+        {
+            get => new fix4(z, w, y, x);
+            set
+            {
+                z = value.x;
+                w = value.y;
+                y = value.z;
+                x = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 pqts
+        {
+            get => new fix4(z, w, y, x);
+            set
+            {
+                z = value.x;
+                w = value.y;
+                y = value.z;
+                x = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zwyy
+        {
+            get => new fix4(z, w, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 bagg
+        {
+            get => new fix4(z, w, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 pqtt
+        {
+            get => new fix4(z, w, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zwyz
+        {
+            get => new fix4(z, w, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 bagb
+        {
+            get => new fix4(z, w, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 pqtp
+        {
+            get => new fix4(z, w, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zwyw
+        {
+            get => new fix4(z, w, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 baga
+        {
+            get => new fix4(z, w, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 pqtq
+        {
+            get => new fix4(z, w, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zwz_
+        {
+            get => new fix4(z, w, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 bab_
+        {
+            get => new fix4(z, w, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 pqp_
+        {
+            get => new fix4(z, w, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zwzx
+        {
+            get => new fix4(z, w, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 babr
+        {
+            get => new fix4(z, w, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 pqps
+        {
+            get => new fix4(z, w, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zwzy
+        {
+            get => new fix4(z, w, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 babg
+        {
+            get => new fix4(z, w, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 pqpt
+        {
+            get => new fix4(z, w, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zwzz
+        {
+            get => new fix4(z, w, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 babb
+        {
+            get => new fix4(z, w, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 pqpp
+        {
+            get => new fix4(z, w, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zwzw
+        {
+            get => new fix4(z, w, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 baba
+        {
+            get => new fix4(z, w, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 pqpq
+        {
+            get => new fix4(z, w, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zww_
+        {
+            get => new fix4(z, w, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 baa_
+        {
+            get => new fix4(z, w, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 pqq_
+        {
+            get => new fix4(z, w, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zwwx
+        {
+            get => new fix4(z, w, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 baar
+        {
+            get => new fix4(z, w, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 pqqs
+        {
+            get => new fix4(z, w, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zwwy
+        {
+            get => new fix4(z, w, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 baag
+        {
+            get => new fix4(z, w, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 pqqt
+        {
+            get => new fix4(z, w, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zwwz
+        {
+            get => new fix4(z, w, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 baab
+        {
+            get => new fix4(z, w, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 pqqp
+        {
+            get => new fix4(z, w, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 zwww
+        {
+            get => new fix4(z, w, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 baaa
+        {
+            get => new fix4(z, w, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 pqqq
+        {
+            get => new fix4(z, w, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 w___
+        {
+            get => new fix4(w, fix.Zero, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 a___
+        {
+            get => new fix4(w, fix.Zero, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 q___
+        {
+            get => new fix4(w, fix.Zero, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 w__x
+        {
+            get => new fix4(w, fix.Zero, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 a__r
+        {
+            get => new fix4(w, fix.Zero, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 q__s
+        {
+            get => new fix4(w, fix.Zero, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 w__y
+        {
+            get => new fix4(w, fix.Zero, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 a__g
+        {
+            get => new fix4(w, fix.Zero, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 q__t
+        {
+            get => new fix4(w, fix.Zero, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 w__z
+        {
+            get => new fix4(w, fix.Zero, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 a__b
+        {
+            get => new fix4(w, fix.Zero, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 q__p
+        {
+            get => new fix4(w, fix.Zero, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 w__w
+        {
+            get => new fix4(w, fix.Zero, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 a__a
+        {
+            get => new fix4(w, fix.Zero, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 q__q
+        {
+            get => new fix4(w, fix.Zero, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 w_x_
+        {
+            get => new fix4(w, fix.Zero, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 a_r_
+        {
+            get => new fix4(w, fix.Zero, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 q_s_
+        {
+            get => new fix4(w, fix.Zero, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 w_xx
+        {
+            get => new fix4(w, fix.Zero, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 a_rr
+        {
+            get => new fix4(w, fix.Zero, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 q_ss
+        {
+            get => new fix4(w, fix.Zero, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 w_xy
+        {
+            get => new fix4(w, fix.Zero, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 a_rg
+        {
+            get => new fix4(w, fix.Zero, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 q_st
+        {
+            get => new fix4(w, fix.Zero, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 w_xz
+        {
+            get => new fix4(w, fix.Zero, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 a_rb
+        {
+            get => new fix4(w, fix.Zero, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 q_sp
+        {
+            get => new fix4(w, fix.Zero, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 w_xw
+        {
+            get => new fix4(w, fix.Zero, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 a_ra
+        {
+            get => new fix4(w, fix.Zero, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 q_sq
+        {
+            get => new fix4(w, fix.Zero, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 w_y_
+        {
+            get => new fix4(w, fix.Zero, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 a_g_
+        {
+            get => new fix4(w, fix.Zero, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 q_t_
+        {
+            get => new fix4(w, fix.Zero, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 w_yx
+        {
+            get => new fix4(w, fix.Zero, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 a_gr
+        {
+            get => new fix4(w, fix.Zero, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 q_ts
+        {
+            get => new fix4(w, fix.Zero, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 w_yy
+        {
+            get => new fix4(w, fix.Zero, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 a_gg
+        {
+            get => new fix4(w, fix.Zero, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 q_tt
+        {
+            get => new fix4(w, fix.Zero, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 w_yz
+        {
+            get => new fix4(w, fix.Zero, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 a_gb
+        {
+            get => new fix4(w, fix.Zero, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 q_tp
+        {
+            get => new fix4(w, fix.Zero, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 w_yw
+        {
+            get => new fix4(w, fix.Zero, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 a_ga
+        {
+            get => new fix4(w, fix.Zero, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 q_tq
+        {
+            get => new fix4(w, fix.Zero, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 w_z_
+        {
+            get => new fix4(w, fix.Zero, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 a_b_
+        {
+            get => new fix4(w, fix.Zero, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 q_p_
+        {
+            get => new fix4(w, fix.Zero, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 w_zx
+        {
+            get => new fix4(w, fix.Zero, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 a_br
+        {
+            get => new fix4(w, fix.Zero, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 q_ps
+        {
+            get => new fix4(w, fix.Zero, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 w_zy
+        {
+            get => new fix4(w, fix.Zero, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 a_bg
+        {
+            get => new fix4(w, fix.Zero, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 q_pt
+        {
+            get => new fix4(w, fix.Zero, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 w_zz
+        {
+            get => new fix4(w, fix.Zero, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 a_bb
+        {
+            get => new fix4(w, fix.Zero, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 q_pp
+        {
+            get => new fix4(w, fix.Zero, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 w_zw
+        {
+            get => new fix4(w, fix.Zero, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 a_ba
+        {
+            get => new fix4(w, fix.Zero, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 q_pq
+        {
+            get => new fix4(w, fix.Zero, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 w_w_
+        {
+            get => new fix4(w, fix.Zero, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 a_a_
+        {
+            get => new fix4(w, fix.Zero, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 q_q_
+        {
+            get => new fix4(w, fix.Zero, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 w_wx
+        {
+            get => new fix4(w, fix.Zero, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 a_ar
+        {
+            get => new fix4(w, fix.Zero, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 q_qs
+        {
+            get => new fix4(w, fix.Zero, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 w_wy
+        {
+            get => new fix4(w, fix.Zero, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 a_ag
+        {
+            get => new fix4(w, fix.Zero, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 q_qt
+        {
+            get => new fix4(w, fix.Zero, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 w_wz
+        {
+            get => new fix4(w, fix.Zero, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 a_ab
+        {
+            get => new fix4(w, fix.Zero, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 q_qp
+        {
+            get => new fix4(w, fix.Zero, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 w_ww
+        {
+            get => new fix4(w, fix.Zero, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 a_aa
+        {
+            get => new fix4(w, fix.Zero, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 q_qq
+        {
+            get => new fix4(w, fix.Zero, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wx__
+        {
+            get => new fix4(w, x, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ar__
+        {
+            get => new fix4(w, x, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qs__
+        {
+            get => new fix4(w, x, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wx_x
+        {
+            get => new fix4(w, x, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ar_r
+        {
+            get => new fix4(w, x, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qs_s
+        {
+            get => new fix4(w, x, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wx_y
+        {
+            get => new fix4(w, x, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ar_g
+        {
+            get => new fix4(w, x, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qs_t
+        {
+            get => new fix4(w, x, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wx_z
+        {
+            get => new fix4(w, x, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ar_b
+        {
+            get => new fix4(w, x, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qs_p
+        {
+            get => new fix4(w, x, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wx_w
+        {
+            get => new fix4(w, x, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ar_a
+        {
+            get => new fix4(w, x, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qs_q
+        {
+            get => new fix4(w, x, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wxx_
+        {
+            get => new fix4(w, x, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 arr_
+        {
+            get => new fix4(w, x, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qss_
+        {
+            get => new fix4(w, x, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wxxx
+        {
+            get => new fix4(w, x, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 arrr
+        {
+            get => new fix4(w, x, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qsss
+        {
+            get => new fix4(w, x, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wxxy
+        {
+            get => new fix4(w, x, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 arrg
+        {
+            get => new fix4(w, x, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qsst
+        {
+            get => new fix4(w, x, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wxxz
+        {
+            get => new fix4(w, x, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 arrb
+        {
+            get => new fix4(w, x, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qssp
+        {
+            get => new fix4(w, x, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wxxw
+        {
+            get => new fix4(w, x, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 arra
+        {
+            get => new fix4(w, x, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qssq
+        {
+            get => new fix4(w, x, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wxy_
+        {
+            get => new fix4(w, x, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 arg_
+        {
+            get => new fix4(w, x, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qst_
+        {
+            get => new fix4(w, x, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wxyx
+        {
+            get => new fix4(w, x, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 argr
+        {
+            get => new fix4(w, x, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qsts
+        {
+            get => new fix4(w, x, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wxyy
+        {
+            get => new fix4(w, x, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 argg
+        {
+            get => new fix4(w, x, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qstt
+        {
+            get => new fix4(w, x, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wxyz
+        {
+            get => new fix4(w, x, y, z);
+            set
+            {
+                w = value.x;
+                x = value.y;
+                y = value.z;
+                z = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 argb
+        {
+            get => new fix4(w, x, y, z);
+            set
+            {
+                w = value.x;
+                x = value.y;
+                y = value.z;
+                z = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qstp
+        {
+            get => new fix4(w, x, y, z);
+            set
+            {
+                w = value.x;
+                x = value.y;
+                y = value.z;
+                z = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wxyw
+        {
+            get => new fix4(w, x, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 arga
+        {
+            get => new fix4(w, x, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qstq
+        {
+            get => new fix4(w, x, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wxz_
+        {
+            get => new fix4(w, x, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 arb_
+        {
+            get => new fix4(w, x, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qsp_
+        {
+            get => new fix4(w, x, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wxzx
+        {
+            get => new fix4(w, x, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 arbr
+        {
+            get => new fix4(w, x, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qsps
+        {
+            get => new fix4(w, x, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wxzy
+        {
+            get => new fix4(w, x, z, y);
+            set
+            {
+                w = value.x;
+                x = value.y;
+                z = value.z;
+                y = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 arbg
+        {
+            get => new fix4(w, x, z, y);
+            set
+            {
+                w = value.x;
+                x = value.y;
+                z = value.z;
+                y = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qspt
+        {
+            get => new fix4(w, x, z, y);
+            set
+            {
+                w = value.x;
+                x = value.y;
+                z = value.z;
+                y = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wxzz
+        {
+            get => new fix4(w, x, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 arbb
+        {
+            get => new fix4(w, x, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qspp
+        {
+            get => new fix4(w, x, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wxzw
+        {
+            get => new fix4(w, x, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 arba
+        {
+            get => new fix4(w, x, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qspq
+        {
+            get => new fix4(w, x, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wxw_
+        {
+            get => new fix4(w, x, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ara_
+        {
+            get => new fix4(w, x, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qsq_
+        {
+            get => new fix4(w, x, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wxwx
+        {
+            get => new fix4(w, x, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 arar
+        {
+            get => new fix4(w, x, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qsqs
+        {
+            get => new fix4(w, x, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wxwy
+        {
+            get => new fix4(w, x, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 arag
+        {
+            get => new fix4(w, x, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qsqt
+        {
+            get => new fix4(w, x, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wxwz
+        {
+            get => new fix4(w, x, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 arab
+        {
+            get => new fix4(w, x, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qsqp
+        {
+            get => new fix4(w, x, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wxww
+        {
+            get => new fix4(w, x, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 araa
+        {
+            get => new fix4(w, x, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qsqq
+        {
+            get => new fix4(w, x, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wy__
+        {
+            get => new fix4(w, y, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ag__
+        {
+            get => new fix4(w, y, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qt__
+        {
+            get => new fix4(w, y, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wy_x
+        {
+            get => new fix4(w, y, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ag_r
+        {
+            get => new fix4(w, y, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qt_s
+        {
+            get => new fix4(w, y, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wy_y
+        {
+            get => new fix4(w, y, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ag_g
+        {
+            get => new fix4(w, y, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qt_t
+        {
+            get => new fix4(w, y, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wy_z
+        {
+            get => new fix4(w, y, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ag_b
+        {
+            get => new fix4(w, y, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qt_p
+        {
+            get => new fix4(w, y, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wy_w
+        {
+            get => new fix4(w, y, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ag_a
+        {
+            get => new fix4(w, y, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qt_q
+        {
+            get => new fix4(w, y, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wyx_
+        {
+            get => new fix4(w, y, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 agr_
+        {
+            get => new fix4(w, y, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qts_
+        {
+            get => new fix4(w, y, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wyxx
+        {
+            get => new fix4(w, y, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 agrr
+        {
+            get => new fix4(w, y, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qtss
+        {
+            get => new fix4(w, y, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wyxy
+        {
+            get => new fix4(w, y, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 agrg
+        {
+            get => new fix4(w, y, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qtst
+        {
+            get => new fix4(w, y, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wyxz
+        {
+            get => new fix4(w, y, x, z);
+            set
+            {
+                w = value.x;
+                y = value.y;
+                x = value.z;
+                z = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 agrb
+        {
+            get => new fix4(w, y, x, z);
+            set
+            {
+                w = value.x;
+                y = value.y;
+                x = value.z;
+                z = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qtsp
+        {
+            get => new fix4(w, y, x, z);
+            set
+            {
+                w = value.x;
+                y = value.y;
+                x = value.z;
+                z = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wyxw
+        {
+            get => new fix4(w, y, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 agra
+        {
+            get => new fix4(w, y, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qtsq
+        {
+            get => new fix4(w, y, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wyy_
+        {
+            get => new fix4(w, y, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 agg_
+        {
+            get => new fix4(w, y, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qtt_
+        {
+            get => new fix4(w, y, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wyyx
+        {
+            get => new fix4(w, y, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 aggr
+        {
+            get => new fix4(w, y, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qtts
+        {
+            get => new fix4(w, y, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wyyy
+        {
+            get => new fix4(w, y, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 aggg
+        {
+            get => new fix4(w, y, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qttt
+        {
+            get => new fix4(w, y, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wyyz
+        {
+            get => new fix4(w, y, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 aggb
+        {
+            get => new fix4(w, y, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qttp
+        {
+            get => new fix4(w, y, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wyyw
+        {
+            get => new fix4(w, y, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 agga
+        {
+            get => new fix4(w, y, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qttq
+        {
+            get => new fix4(w, y, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wyz_
+        {
+            get => new fix4(w, y, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 agb_
+        {
+            get => new fix4(w, y, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qtp_
+        {
+            get => new fix4(w, y, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wyzx
+        {
+            get => new fix4(w, y, z, x);
+            set
+            {
+                w = value.x;
+                y = value.y;
+                z = value.z;
+                x = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 agbr
+        {
+            get => new fix4(w, y, z, x);
+            set
+            {
+                w = value.x;
+                y = value.y;
+                z = value.z;
+                x = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qtps
+        {
+            get => new fix4(w, y, z, x);
+            set
+            {
+                w = value.x;
+                y = value.y;
+                z = value.z;
+                x = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wyzy
+        {
+            get => new fix4(w, y, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 agbg
+        {
+            get => new fix4(w, y, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qtpt
+        {
+            get => new fix4(w, y, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wyzz
+        {
+            get => new fix4(w, y, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 agbb
+        {
+            get => new fix4(w, y, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qtpp
+        {
+            get => new fix4(w, y, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wyzw
+        {
+            get => new fix4(w, y, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 agba
+        {
+            get => new fix4(w, y, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qtpq
+        {
+            get => new fix4(w, y, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wyw_
+        {
+            get => new fix4(w, y, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 aga_
+        {
+            get => new fix4(w, y, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qtq_
+        {
+            get => new fix4(w, y, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wywx
+        {
+            get => new fix4(w, y, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 agar
+        {
+            get => new fix4(w, y, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qtqs
+        {
+            get => new fix4(w, y, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wywy
+        {
+            get => new fix4(w, y, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 agag
+        {
+            get => new fix4(w, y, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qtqt
+        {
+            get => new fix4(w, y, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wywz
+        {
+            get => new fix4(w, y, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 agab
+        {
+            get => new fix4(w, y, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qtqp
+        {
+            get => new fix4(w, y, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wyww
+        {
+            get => new fix4(w, y, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 agaa
+        {
+            get => new fix4(w, y, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qtqq
+        {
+            get => new fix4(w, y, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wz__
+        {
+            get => new fix4(w, z, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ab__
+        {
+            get => new fix4(w, z, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qp__
+        {
+            get => new fix4(w, z, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wz_x
+        {
+            get => new fix4(w, z, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ab_r
+        {
+            get => new fix4(w, z, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qp_s
+        {
+            get => new fix4(w, z, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wz_y
+        {
+            get => new fix4(w, z, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ab_g
+        {
+            get => new fix4(w, z, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qp_t
+        {
+            get => new fix4(w, z, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wz_z
+        {
+            get => new fix4(w, z, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ab_b
+        {
+            get => new fix4(w, z, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qp_p
+        {
+            get => new fix4(w, z, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wz_w
+        {
+            get => new fix4(w, z, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ab_a
+        {
+            get => new fix4(w, z, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qp_q
+        {
+            get => new fix4(w, z, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wzx_
+        {
+            get => new fix4(w, z, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 abr_
+        {
+            get => new fix4(w, z, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qps_
+        {
+            get => new fix4(w, z, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wzxx
+        {
+            get => new fix4(w, z, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 abrr
+        {
+            get => new fix4(w, z, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qpss
+        {
+            get => new fix4(w, z, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wzxy
+        {
+            get => new fix4(w, z, x, y);
+            set
+            {
+                w = value.x;
+                z = value.y;
+                x = value.z;
+                y = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 abrg
+        {
+            get => new fix4(w, z, x, y);
+            set
+            {
+                w = value.x;
+                z = value.y;
+                x = value.z;
+                y = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qpst
+        {
+            get => new fix4(w, z, x, y);
+            set
+            {
+                w = value.x;
+                z = value.y;
+                x = value.z;
+                y = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wzxz
+        {
+            get => new fix4(w, z, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 abrb
+        {
+            get => new fix4(w, z, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qpsp
+        {
+            get => new fix4(w, z, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wzxw
+        {
+            get => new fix4(w, z, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 abra
+        {
+            get => new fix4(w, z, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qpsq
+        {
+            get => new fix4(w, z, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wzy_
+        {
+            get => new fix4(w, z, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 abg_
+        {
+            get => new fix4(w, z, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qpt_
+        {
+            get => new fix4(w, z, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wzyx
+        {
+            get => new fix4(w, z, y, x);
+            set
+            {
+                w = value.x;
+                z = value.y;
+                y = value.z;
+                x = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 abgr
+        {
+            get => new fix4(w, z, y, x);
+            set
+            {
+                w = value.x;
+                z = value.y;
+                y = value.z;
+                x = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qpts
+        {
+            get => new fix4(w, z, y, x);
+            set
+            {
+                w = value.x;
+                z = value.y;
+                y = value.z;
+                x = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wzyy
+        {
+            get => new fix4(w, z, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 abgg
+        {
+            get => new fix4(w, z, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qptt
+        {
+            get => new fix4(w, z, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wzyz
+        {
+            get => new fix4(w, z, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 abgb
+        {
+            get => new fix4(w, z, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qptp
+        {
+            get => new fix4(w, z, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wzyw
+        {
+            get => new fix4(w, z, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 abga
+        {
+            get => new fix4(w, z, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qptq
+        {
+            get => new fix4(w, z, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wzz_
+        {
+            get => new fix4(w, z, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 abb_
+        {
+            get => new fix4(w, z, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qpp_
+        {
+            get => new fix4(w, z, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wzzx
+        {
+            get => new fix4(w, z, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 abbr
+        {
+            get => new fix4(w, z, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qpps
+        {
+            get => new fix4(w, z, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wzzy
+        {
+            get => new fix4(w, z, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 abbg
+        {
+            get => new fix4(w, z, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qppt
+        {
+            get => new fix4(w, z, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wzzz
+        {
+            get => new fix4(w, z, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 abbb
+        {
+            get => new fix4(w, z, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qppp
+        {
+            get => new fix4(w, z, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wzzw
+        {
+            get => new fix4(w, z, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 abba
+        {
+            get => new fix4(w, z, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qppq
+        {
+            get => new fix4(w, z, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wzw_
+        {
+            get => new fix4(w, z, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 aba_
+        {
+            get => new fix4(w, z, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qpq_
+        {
+            get => new fix4(w, z, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wzwx
+        {
+            get => new fix4(w, z, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 abar
+        {
+            get => new fix4(w, z, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qpqs
+        {
+            get => new fix4(w, z, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wzwy
+        {
+            get => new fix4(w, z, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 abag
+        {
+            get => new fix4(w, z, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qpqt
+        {
+            get => new fix4(w, z, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wzwz
+        {
+            get => new fix4(w, z, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 abab
+        {
+            get => new fix4(w, z, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qpqp
+        {
+            get => new fix4(w, z, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wzww
+        {
+            get => new fix4(w, z, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 abaa
+        {
+            get => new fix4(w, z, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qpqq
+        {
+            get => new fix4(w, z, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ww__
+        {
+            get => new fix4(w, w, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 aa__
+        {
+            get => new fix4(w, w, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qq__
+        {
+            get => new fix4(w, w, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ww_x
+        {
+            get => new fix4(w, w, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 aa_r
+        {
+            get => new fix4(w, w, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qq_s
+        {
+            get => new fix4(w, w, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ww_y
+        {
+            get => new fix4(w, w, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 aa_g
+        {
+            get => new fix4(w, w, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qq_t
+        {
+            get => new fix4(w, w, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ww_z
+        {
+            get => new fix4(w, w, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 aa_b
+        {
+            get => new fix4(w, w, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qq_p
+        {
+            get => new fix4(w, w, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 ww_w
+        {
+            get => new fix4(w, w, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 aa_a
+        {
+            get => new fix4(w, w, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qq_q
+        {
+            get => new fix4(w, w, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wwx_
+        {
+            get => new fix4(w, w, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 aar_
+        {
+            get => new fix4(w, w, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qqs_
+        {
+            get => new fix4(w, w, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wwxx
+        {
+            get => new fix4(w, w, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 aarr
+        {
+            get => new fix4(w, w, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qqss
+        {
+            get => new fix4(w, w, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wwxy
+        {
+            get => new fix4(w, w, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 aarg
+        {
+            get => new fix4(w, w, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qqst
+        {
+            get => new fix4(w, w, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wwxz
+        {
+            get => new fix4(w, w, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 aarb
+        {
+            get => new fix4(w, w, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qqsp
+        {
+            get => new fix4(w, w, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wwxw
+        {
+            get => new fix4(w, w, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 aara
+        {
+            get => new fix4(w, w, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qqsq
+        {
+            get => new fix4(w, w, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wwy_
+        {
+            get => new fix4(w, w, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 aag_
+        {
+            get => new fix4(w, w, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qqt_
+        {
+            get => new fix4(w, w, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wwyx
+        {
+            get => new fix4(w, w, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 aagr
+        {
+            get => new fix4(w, w, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qqts
+        {
+            get => new fix4(w, w, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wwyy
+        {
+            get => new fix4(w, w, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 aagg
+        {
+            get => new fix4(w, w, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qqtt
+        {
+            get => new fix4(w, w, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wwyz
+        {
+            get => new fix4(w, w, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 aagb
+        {
+            get => new fix4(w, w, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qqtp
+        {
+            get => new fix4(w, w, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wwyw
+        {
+            get => new fix4(w, w, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 aaga
+        {
+            get => new fix4(w, w, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qqtq
+        {
+            get => new fix4(w, w, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wwz_
+        {
+            get => new fix4(w, w, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 aab_
+        {
+            get => new fix4(w, w, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qqp_
+        {
+            get => new fix4(w, w, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wwzx
+        {
+            get => new fix4(w, w, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 aabr
+        {
+            get => new fix4(w, w, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qqps
+        {
+            get => new fix4(w, w, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wwzy
+        {
+            get => new fix4(w, w, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 aabg
+        {
+            get => new fix4(w, w, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qqpt
+        {
+            get => new fix4(w, w, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wwzz
+        {
+            get => new fix4(w, w, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 aabb
+        {
+            get => new fix4(w, w, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qqpp
+        {
+            get => new fix4(w, w, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wwzw
+        {
+            get => new fix4(w, w, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 aaba
+        {
+            get => new fix4(w, w, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qqpq
+        {
+            get => new fix4(w, w, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 www_
+        {
+            get => new fix4(w, w, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 aaa_
+        {
+            get => new fix4(w, w, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qqq_
+        {
+            get => new fix4(w, w, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wwwx
+        {
+            get => new fix4(w, w, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 aaar
+        {
+            get => new fix4(w, w, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qqqs
+        {
+            get => new fix4(w, w, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wwwy
+        {
+            get => new fix4(w, w, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 aaag
+        {
+            get => new fix4(w, w, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qqqt
+        {
+            get => new fix4(w, w, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wwwz
+        {
+            get => new fix4(w, w, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 aaab
+        {
+            get => new fix4(w, w, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qqqp
+        {
+            get => new fix4(w, w, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 wwww
+        {
+            get => new fix4(w, w, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 aaaa
+        {
+            get => new fix4(w, w, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix4 qqqq
+        {
+            get => new fix4(w, w, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 __x
+        {
+            get => new fix3(fix.Zero, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 __r
+        {
+            get => new fix3(fix.Zero, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 __s
+        {
+            get => new fix3(fix.Zero, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 __y
+        {
+            get => new fix3(fix.Zero, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 __g
+        {
+            get => new fix3(fix.Zero, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 __t
+        {
+            get => new fix3(fix.Zero, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 __z
+        {
+            get => new fix3(fix.Zero, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 __b
+        {
+            get => new fix3(fix.Zero, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 __p
+        {
+            get => new fix3(fix.Zero, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 __w
+        {
+            get => new fix3(fix.Zero, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 __a
+        {
+            get => new fix3(fix.Zero, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 __q
+        {
+            get => new fix3(fix.Zero, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 _x_
+        {
+            get => new fix3(fix.Zero, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 _r_
+        {
+            get => new fix3(fix.Zero, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 _s_
+        {
+            get => new fix3(fix.Zero, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 _xx
+        {
+            get => new fix3(fix.Zero, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 _rr
+        {
+            get => new fix3(fix.Zero, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 _ss
+        {
+            get => new fix3(fix.Zero, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 _xy
+        {
+            get => new fix3(fix.Zero, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 _rg
+        {
+            get => new fix3(fix.Zero, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 _st
+        {
+            get => new fix3(fix.Zero, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 _xz
+        {
+            get => new fix3(fix.Zero, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 _rb
+        {
+            get => new fix3(fix.Zero, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 _sp
+        {
+            get => new fix3(fix.Zero, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 _xw
+        {
+            get => new fix3(fix.Zero, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 _ra
+        {
+            get => new fix3(fix.Zero, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 _sq
+        {
+            get => new fix3(fix.Zero, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 _y_
+        {
+            get => new fix3(fix.Zero, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 _g_
+        {
+            get => new fix3(fix.Zero, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 _t_
+        {
+            get => new fix3(fix.Zero, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 _yx
+        {
+            get => new fix3(fix.Zero, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 _gr
+        {
+            get => new fix3(fix.Zero, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 _ts
+        {
+            get => new fix3(fix.Zero, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 _yy
+        {
+            get => new fix3(fix.Zero, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 _gg
+        {
+            get => new fix3(fix.Zero, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 _tt
+        {
+            get => new fix3(fix.Zero, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 _yz
+        {
+            get => new fix3(fix.Zero, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 _gb
+        {
+            get => new fix3(fix.Zero, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 _tp
+        {
+            get => new fix3(fix.Zero, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 _yw
+        {
+            get => new fix3(fix.Zero, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 _ga
+        {
+            get => new fix3(fix.Zero, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 _tq
+        {
+            get => new fix3(fix.Zero, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 _z_
+        {
+            get => new fix3(fix.Zero, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 _b_
+        {
+            get => new fix3(fix.Zero, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 _p_
+        {
+            get => new fix3(fix.Zero, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 _zx
+        {
+            get => new fix3(fix.Zero, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 _br
+        {
+            get => new fix3(fix.Zero, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 _ps
+        {
+            get => new fix3(fix.Zero, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 _zy
+        {
+            get => new fix3(fix.Zero, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 _bg
+        {
+            get => new fix3(fix.Zero, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 _pt
+        {
+            get => new fix3(fix.Zero, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 _zz
+        {
+            get => new fix3(fix.Zero, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 _bb
+        {
+            get => new fix3(fix.Zero, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 _pp
+        {
+            get => new fix3(fix.Zero, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 _zw
+        {
+            get => new fix3(fix.Zero, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 _ba
+        {
+            get => new fix3(fix.Zero, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 _pq
+        {
+            get => new fix3(fix.Zero, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 _w_
+        {
+            get => new fix3(fix.Zero, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 _a_
+        {
+            get => new fix3(fix.Zero, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 _q_
+        {
+            get => new fix3(fix.Zero, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 _wx
+        {
+            get => new fix3(fix.Zero, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 _ar
+        {
+            get => new fix3(fix.Zero, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 _qs
+        {
+            get => new fix3(fix.Zero, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 _wy
+        {
+            get => new fix3(fix.Zero, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 _ag
+        {
+            get => new fix3(fix.Zero, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 _qt
+        {
+            get => new fix3(fix.Zero, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 _wz
+        {
+            get => new fix3(fix.Zero, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 _ab
+        {
+            get => new fix3(fix.Zero, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 _qp
+        {
+            get => new fix3(fix.Zero, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 _ww
+        {
+            get => new fix3(fix.Zero, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 _aa
+        {
+            get => new fix3(fix.Zero, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 _qq
+        {
+            get => new fix3(fix.Zero, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 x__
+        {
+            get => new fix3(x, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 r__
+        {
+            get => new fix3(x, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 s__
+        {
+            get => new fix3(x, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 x_x
+        {
+            get => new fix3(x, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 r_r
+        {
+            get => new fix3(x, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 s_s
+        {
+            get => new fix3(x, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 x_y
+        {
+            get => new fix3(x, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 r_g
+        {
+            get => new fix3(x, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 s_t
+        {
+            get => new fix3(x, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 x_z
+        {
+            get => new fix3(x, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 r_b
+        {
+            get => new fix3(x, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 s_p
+        {
+            get => new fix3(x, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 x_w
+        {
+            get => new fix3(x, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 r_a
+        {
+            get => new fix3(x, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 s_q
+        {
+            get => new fix3(x, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 xx_
+        {
+            get => new fix3(x, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 rr_
+        {
+            get => new fix3(x, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 ss_
+        {
+            get => new fix3(x, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 xxx
+        {
+            get => new fix3(x, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 rrr
+        {
+            get => new fix3(x, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 sss
+        {
+            get => new fix3(x, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 xxy
+        {
+            get => new fix3(x, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 rrg
+        {
+            get => new fix3(x, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 sst
+        {
+            get => new fix3(x, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 xxz
+        {
+            get => new fix3(x, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 rrb
+        {
+            get => new fix3(x, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 ssp
+        {
+            get => new fix3(x, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 xxw
+        {
+            get => new fix3(x, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 rra
+        {
+            get => new fix3(x, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 ssq
+        {
+            get => new fix3(x, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 xy_
+        {
+            get => new fix3(x, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 rg_
+        {
+            get => new fix3(x, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 st_
+        {
+            get => new fix3(x, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 xyx
+        {
+            get => new fix3(x, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 rgr
+        {
+            get => new fix3(x, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 sts
+        {
+            get => new fix3(x, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 xyy
+        {
+            get => new fix3(x, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 rgg
+        {
+            get => new fix3(x, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 stt
+        {
+            get => new fix3(x, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 xyz
+        {
+            get => new fix3(x, y, z);
+            set
+            {
+                x = value.x;
+                y = value.y;
+                z = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 rgb
+        {
+            get => new fix3(x, y, z);
+            set
+            {
+                x = value.x;
+                y = value.y;
+                z = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 stp
+        {
+            get => new fix3(x, y, z);
+            set
+            {
+                x = value.x;
+                y = value.y;
+                z = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 xyw
+        {
+            get => new fix3(x, y, w);
+            set
+            {
+                x = value.x;
+                y = value.y;
+                w = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 rga
+        {
+            get => new fix3(x, y, w);
+            set
+            {
+                x = value.x;
+                y = value.y;
+                w = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 stq
+        {
+            get => new fix3(x, y, w);
+            set
+            {
+                x = value.x;
+                y = value.y;
+                w = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 xz_
+        {
+            get => new fix3(x, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 rb_
+        {
+            get => new fix3(x, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 sp_
+        {
+            get => new fix3(x, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 xzx
+        {
+            get => new fix3(x, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 rbr
+        {
+            get => new fix3(x, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 sps
+        {
+            get => new fix3(x, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 xzy
+        {
+            get => new fix3(x, z, y);
+            set
+            {
+                x = value.x;
+                z = value.y;
+                y = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 rbg
+        {
+            get => new fix3(x, z, y);
+            set
+            {
+                x = value.x;
+                z = value.y;
+                y = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 spt
+        {
+            get => new fix3(x, z, y);
+            set
+            {
+                x = value.x;
+                z = value.y;
+                y = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 xzz
+        {
+            get => new fix3(x, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 rbb
+        {
+            get => new fix3(x, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 spp
+        {
+            get => new fix3(x, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 xzw
+        {
+            get => new fix3(x, z, w);
+            set
+            {
+                x = value.x;
+                z = value.y;
+                w = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 rba
+        {
+            get => new fix3(x, z, w);
+            set
+            {
+                x = value.x;
+                z = value.y;
+                w = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 spq
+        {
+            get => new fix3(x, z, w);
+            set
+            {
+                x = value.x;
+                z = value.y;
+                w = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 xw_
+        {
+            get => new fix3(x, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 ra_
+        {
+            get => new fix3(x, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 sq_
+        {
+            get => new fix3(x, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 xwx
+        {
+            get => new fix3(x, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 rar
+        {
+            get => new fix3(x, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 sqs
+        {
+            get => new fix3(x, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 xwy
+        {
+            get => new fix3(x, w, y);
+            set
+            {
+                x = value.x;
+                w = value.y;
+                y = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 rag
+        {
+            get => new fix3(x, w, y);
+            set
+            {
+                x = value.x;
+                w = value.y;
+                y = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 sqt
+        {
+            get => new fix3(x, w, y);
+            set
+            {
+                x = value.x;
+                w = value.y;
+                y = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 xwz
+        {
+            get => new fix3(x, w, z);
+            set
+            {
+                x = value.x;
+                w = value.y;
+                z = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 rab
+        {
+            get => new fix3(x, w, z);
+            set
+            {
+                x = value.x;
+                w = value.y;
+                z = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 sqp
+        {
+            get => new fix3(x, w, z);
+            set
+            {
+                x = value.x;
+                w = value.y;
+                z = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 xww
+        {
+            get => new fix3(x, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 raa
+        {
+            get => new fix3(x, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 sqq
+        {
+            get => new fix3(x, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 y__
+        {
+            get => new fix3(y, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 g__
+        {
+            get => new fix3(y, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 t__
+        {
+            get => new fix3(y, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 y_x
+        {
+            get => new fix3(y, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 g_r
+        {
+            get => new fix3(y, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 t_s
+        {
+            get => new fix3(y, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 y_y
+        {
+            get => new fix3(y, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 g_g
+        {
+            get => new fix3(y, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 t_t
+        {
+            get => new fix3(y, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 y_z
+        {
+            get => new fix3(y, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 g_b
+        {
+            get => new fix3(y, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 t_p
+        {
+            get => new fix3(y, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 y_w
+        {
+            get => new fix3(y, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 g_a
+        {
+            get => new fix3(y, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 t_q
+        {
+            get => new fix3(y, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 yx_
+        {
+            get => new fix3(y, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 gr_
+        {
+            get => new fix3(y, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 ts_
+        {
+            get => new fix3(y, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 yxx
+        {
+            get => new fix3(y, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 grr
+        {
+            get => new fix3(y, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 tss
+        {
+            get => new fix3(y, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 yxy
+        {
+            get => new fix3(y, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 grg
+        {
+            get => new fix3(y, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 tst
+        {
+            get => new fix3(y, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 yxz
+        {
+            get => new fix3(y, x, z);
+            set
+            {
+                y = value.x;
+                x = value.y;
+                z = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 grb
+        {
+            get => new fix3(y, x, z);
+            set
+            {
+                y = value.x;
+                x = value.y;
+                z = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 tsp
+        {
+            get => new fix3(y, x, z);
+            set
+            {
+                y = value.x;
+                x = value.y;
+                z = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 yxw
+        {
+            get => new fix3(y, x, w);
+            set
+            {
+                y = value.x;
+                x = value.y;
+                w = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 gra
+        {
+            get => new fix3(y, x, w);
+            set
+            {
+                y = value.x;
+                x = value.y;
+                w = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 tsq
+        {
+            get => new fix3(y, x, w);
+            set
+            {
+                y = value.x;
+                x = value.y;
+                w = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 yy_
+        {
+            get => new fix3(y, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 gg_
+        {
+            get => new fix3(y, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 tt_
+        {
+            get => new fix3(y, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 yyx
+        {
+            get => new fix3(y, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 ggr
+        {
+            get => new fix3(y, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 tts
+        {
+            get => new fix3(y, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 yyy
+        {
+            get => new fix3(y, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 ggg
+        {
+            get => new fix3(y, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 ttt
+        {
+            get => new fix3(y, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 yyz
+        {
+            get => new fix3(y, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 ggb
+        {
+            get => new fix3(y, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 ttp
+        {
+            get => new fix3(y, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 yyw
+        {
+            get => new fix3(y, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 gga
+        {
+            get => new fix3(y, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 ttq
+        {
+            get => new fix3(y, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 yz_
+        {
+            get => new fix3(y, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 gb_
+        {
+            get => new fix3(y, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 tp_
+        {
+            get => new fix3(y, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 yzx
+        {
+            get => new fix3(y, z, x);
+            set
+            {
+                y = value.x;
+                z = value.y;
+                x = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 gbr
+        {
+            get => new fix3(y, z, x);
+            set
+            {
+                y = value.x;
+                z = value.y;
+                x = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 tps
+        {
+            get => new fix3(y, z, x);
+            set
+            {
+                y = value.x;
+                z = value.y;
+                x = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 yzy
+        {
+            get => new fix3(y, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 gbg
+        {
+            get => new fix3(y, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 tpt
+        {
+            get => new fix3(y, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 yzz
+        {
+            get => new fix3(y, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 gbb
+        {
+            get => new fix3(y, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 tpp
+        {
+            get => new fix3(y, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 yzw
+        {
+            get => new fix3(y, z, w);
+            set
+            {
+                y = value.x;
+                z = value.y;
+                w = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 gba
+        {
+            get => new fix3(y, z, w);
+            set
+            {
+                y = value.x;
+                z = value.y;
+                w = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 tpq
+        {
+            get => new fix3(y, z, w);
+            set
+            {
+                y = value.x;
+                z = value.y;
+                w = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 yw_
+        {
+            get => new fix3(y, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 ga_
+        {
+            get => new fix3(y, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 tq_
+        {
+            get => new fix3(y, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 ywx
+        {
+            get => new fix3(y, w, x);
+            set
+            {
+                y = value.x;
+                w = value.y;
+                x = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 gar
+        {
+            get => new fix3(y, w, x);
+            set
+            {
+                y = value.x;
+                w = value.y;
+                x = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 tqs
+        {
+            get => new fix3(y, w, x);
+            set
+            {
+                y = value.x;
+                w = value.y;
+                x = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 ywy
+        {
+            get => new fix3(y, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 gag
+        {
+            get => new fix3(y, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 tqt
+        {
+            get => new fix3(y, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 ywz
+        {
+            get => new fix3(y, w, z);
+            set
+            {
+                y = value.x;
+                w = value.y;
+                z = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 gab
+        {
+            get => new fix3(y, w, z);
+            set
+            {
+                y = value.x;
+                w = value.y;
+                z = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 tqp
+        {
+            get => new fix3(y, w, z);
+            set
+            {
+                y = value.x;
+                w = value.y;
+                z = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 yww
+        {
+            get => new fix3(y, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 gaa
+        {
+            get => new fix3(y, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 tqq
+        {
+            get => new fix3(y, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 z__
+        {
+            get => new fix3(z, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 b__
+        {
+            get => new fix3(z, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 p__
+        {
+            get => new fix3(z, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 z_x
+        {
+            get => new fix3(z, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 b_r
+        {
+            get => new fix3(z, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 p_s
+        {
+            get => new fix3(z, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 z_y
+        {
+            get => new fix3(z, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 b_g
+        {
+            get => new fix3(z, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 p_t
+        {
+            get => new fix3(z, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 z_z
+        {
+            get => new fix3(z, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 b_b
+        {
+            get => new fix3(z, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 p_p
+        {
+            get => new fix3(z, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 z_w
+        {
+            get => new fix3(z, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 b_a
+        {
+            get => new fix3(z, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 p_q
+        {
+            get => new fix3(z, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 zx_
+        {
+            get => new fix3(z, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 br_
+        {
+            get => new fix3(z, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 ps_
+        {
+            get => new fix3(z, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 zxx
+        {
+            get => new fix3(z, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 brr
+        {
+            get => new fix3(z, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 pss
+        {
+            get => new fix3(z, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 zxy
+        {
+            get => new fix3(z, x, y);
+            set
+            {
+                z = value.x;
+                x = value.y;
+                y = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 brg
+        {
+            get => new fix3(z, x, y);
+            set
+            {
+                z = value.x;
+                x = value.y;
+                y = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 pst
+        {
+            get => new fix3(z, x, y);
+            set
+            {
+                z = value.x;
+                x = value.y;
+                y = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 zxz
+        {
+            get => new fix3(z, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 brb
+        {
+            get => new fix3(z, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 psp
+        {
+            get => new fix3(z, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 zxw
+        {
+            get => new fix3(z, x, w);
+            set
+            {
+                z = value.x;
+                x = value.y;
+                w = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 bra
+        {
+            get => new fix3(z, x, w);
+            set
+            {
+                z = value.x;
+                x = value.y;
+                w = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 psq
+        {
+            get => new fix3(z, x, w);
+            set
+            {
+                z = value.x;
+                x = value.y;
+                w = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 zy_
+        {
+            get => new fix3(z, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 bg_
+        {
+            get => new fix3(z, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 pt_
+        {
+            get => new fix3(z, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 zyx
+        {
+            get => new fix3(z, y, x);
+            set
+            {
+                z = value.x;
+                y = value.y;
+                x = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 bgr
+        {
+            get => new fix3(z, y, x);
+            set
+            {
+                z = value.x;
+                y = value.y;
+                x = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 pts
+        {
+            get => new fix3(z, y, x);
+            set
+            {
+                z = value.x;
+                y = value.y;
+                x = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 zyy
+        {
+            get => new fix3(z, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 bgg
+        {
+            get => new fix3(z, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 ptt
+        {
+            get => new fix3(z, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 zyz
+        {
+            get => new fix3(z, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 bgb
+        {
+            get => new fix3(z, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 ptp
+        {
+            get => new fix3(z, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 zyw
+        {
+            get => new fix3(z, y, w);
+            set
+            {
+                z = value.x;
+                y = value.y;
+                w = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 bga
+        {
+            get => new fix3(z, y, w);
+            set
+            {
+                z = value.x;
+                y = value.y;
+                w = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 ptq
+        {
+            get => new fix3(z, y, w);
+            set
+            {
+                z = value.x;
+                y = value.y;
+                w = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 zz_
+        {
+            get => new fix3(z, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 bb_
+        {
+            get => new fix3(z, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 pp_
+        {
+            get => new fix3(z, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 zzx
+        {
+            get => new fix3(z, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 bbr
+        {
+            get => new fix3(z, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 pps
+        {
+            get => new fix3(z, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 zzy
+        {
+            get => new fix3(z, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 bbg
+        {
+            get => new fix3(z, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 ppt
+        {
+            get => new fix3(z, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 zzz
+        {
+            get => new fix3(z, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 bbb
+        {
+            get => new fix3(z, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 ppp
+        {
+            get => new fix3(z, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 zzw
+        {
+            get => new fix3(z, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 bba
+        {
+            get => new fix3(z, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 ppq
+        {
+            get => new fix3(z, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 zw_
+        {
+            get => new fix3(z, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 ba_
+        {
+            get => new fix3(z, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 pq_
+        {
+            get => new fix3(z, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 zwx
+        {
+            get => new fix3(z, w, x);
+            set
+            {
+                z = value.x;
+                w = value.y;
+                x = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 bar
+        {
+            get => new fix3(z, w, x);
+            set
+            {
+                z = value.x;
+                w = value.y;
+                x = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 pqs
+        {
+            get => new fix3(z, w, x);
+            set
+            {
+                z = value.x;
+                w = value.y;
+                x = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 zwy
+        {
+            get => new fix3(z, w, y);
+            set
+            {
+                z = value.x;
+                w = value.y;
+                y = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 bag
+        {
+            get => new fix3(z, w, y);
+            set
+            {
+                z = value.x;
+                w = value.y;
+                y = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 pqt
+        {
+            get => new fix3(z, w, y);
+            set
+            {
+                z = value.x;
+                w = value.y;
+                y = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 zwz
+        {
+            get => new fix3(z, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 bab
+        {
+            get => new fix3(z, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 pqp
+        {
+            get => new fix3(z, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 zww
+        {
+            get => new fix3(z, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 baa
+        {
+            get => new fix3(z, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 pqq
+        {
+            get => new fix3(z, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 w__
+        {
+            get => new fix3(w, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 a__
+        {
+            get => new fix3(w, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 q__
+        {
+            get => new fix3(w, fix.Zero, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 w_x
+        {
+            get => new fix3(w, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 a_r
+        {
+            get => new fix3(w, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 q_s
+        {
+            get => new fix3(w, fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 w_y
+        {
+            get => new fix3(w, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 a_g
+        {
+            get => new fix3(w, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 q_t
+        {
+            get => new fix3(w, fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 w_z
+        {
+            get => new fix3(w, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 a_b
+        {
+            get => new fix3(w, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 q_p
+        {
+            get => new fix3(w, fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 w_w
+        {
+            get => new fix3(w, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 a_a
+        {
+            get => new fix3(w, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 q_q
+        {
+            get => new fix3(w, fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 wx_
+        {
+            get => new fix3(w, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 ar_
+        {
+            get => new fix3(w, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 qs_
+        {
+            get => new fix3(w, x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 wxx
+        {
+            get => new fix3(w, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 arr
+        {
+            get => new fix3(w, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 qss
+        {
+            get => new fix3(w, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 wxy
+        {
+            get => new fix3(w, x, y);
+            set
+            {
+                w = value.x;
+                x = value.y;
+                y = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 arg
+        {
+            get => new fix3(w, x, y);
+            set
+            {
+                w = value.x;
+                x = value.y;
+                y = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 qst
+        {
+            get => new fix3(w, x, y);
+            set
+            {
+                w = value.x;
+                x = value.y;
+                y = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 wxz
+        {
+            get => new fix3(w, x, z);
+            set
+            {
+                w = value.x;
+                x = value.y;
+                z = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 arb
+        {
+            get => new fix3(w, x, z);
+            set
+            {
+                w = value.x;
+                x = value.y;
+                z = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 qsp
+        {
+            get => new fix3(w, x, z);
+            set
+            {
+                w = value.x;
+                x = value.y;
+                z = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 wxw
+        {
+            get => new fix3(w, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 ara
+        {
+            get => new fix3(w, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 qsq
+        {
+            get => new fix3(w, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 wy_
+        {
+            get => new fix3(w, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 ag_
+        {
+            get => new fix3(w, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 qt_
+        {
+            get => new fix3(w, y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 wyx
+        {
+            get => new fix3(w, y, x);
+            set
+            {
+                w = value.x;
+                y = value.y;
+                x = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 agr
+        {
+            get => new fix3(w, y, x);
+            set
+            {
+                w = value.x;
+                y = value.y;
+                x = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 qts
+        {
+            get => new fix3(w, y, x);
+            set
+            {
+                w = value.x;
+                y = value.y;
+                x = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 wyy
+        {
+            get => new fix3(w, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 agg
+        {
+            get => new fix3(w, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 qtt
+        {
+            get => new fix3(w, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 wyz
+        {
+            get => new fix3(w, y, z);
+            set
+            {
+                w = value.x;
+                y = value.y;
+                z = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 agb
+        {
+            get => new fix3(w, y, z);
+            set
+            {
+                w = value.x;
+                y = value.y;
+                z = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 qtp
+        {
+            get => new fix3(w, y, z);
+            set
+            {
+                w = value.x;
+                y = value.y;
+                z = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 wyw
+        {
+            get => new fix3(w, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 aga
+        {
+            get => new fix3(w, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 qtq
+        {
+            get => new fix3(w, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 wz_
+        {
+            get => new fix3(w, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 ab_
+        {
+            get => new fix3(w, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 qp_
+        {
+            get => new fix3(w, z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 wzx
+        {
+            get => new fix3(w, z, x);
+            set
+            {
+                w = value.x;
+                z = value.y;
+                x = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 abr
+        {
+            get => new fix3(w, z, x);
+            set
+            {
+                w = value.x;
+                z = value.y;
+                x = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 qps
+        {
+            get => new fix3(w, z, x);
+            set
+            {
+                w = value.x;
+                z = value.y;
+                x = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 wzy
+        {
+            get => new fix3(w, z, y);
+            set
+            {
+                w = value.x;
+                z = value.y;
+                y = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 abg
+        {
+            get => new fix3(w, z, y);
+            set
+            {
+                w = value.x;
+                z = value.y;
+                y = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 qpt
+        {
+            get => new fix3(w, z, y);
+            set
+            {
+                w = value.x;
+                z = value.y;
+                y = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 wzz
+        {
+            get => new fix3(w, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 abb
+        {
+            get => new fix3(w, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 qpp
+        {
+            get => new fix3(w, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 wzw
+        {
+            get => new fix3(w, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 aba
+        {
+            get => new fix3(w, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 qpq
+        {
+            get => new fix3(w, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 ww_
+        {
+            get => new fix3(w, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 aa_
+        {
+            get => new fix3(w, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 qq_
+        {
+            get => new fix3(w, w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 wwx
+        {
+            get => new fix3(w, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 aar
+        {
+            get => new fix3(w, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 qqs
+        {
+            get => new fix3(w, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 wwy
+        {
+            get => new fix3(w, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 aag
+        {
+            get => new fix3(w, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 qqt
+        {
+            get => new fix3(w, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 wwz
+        {
+            get => new fix3(w, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 aab
+        {
+            get => new fix3(w, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 qqp
+        {
+            get => new fix3(w, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 www
+        {
+            get => new fix3(w, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 aaa
+        {
+            get => new fix3(w, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix3 qqq
+        {
+            get => new fix3(w, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix2 _x
+        {
+            get => new fix2(fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix2 _r
+        {
+            get => new fix2(fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix2 _s
+        {
+            get => new fix2(fix.Zero, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix2 _y
+        {
+            get => new fix2(fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix2 _g
+        {
+            get => new fix2(fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix2 _t
+        {
+            get => new fix2(fix.Zero, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix2 _z
+        {
+            get => new fix2(fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix2 _b
+        {
+            get => new fix2(fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix2 _p
+        {
+            get => new fix2(fix.Zero, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix2 _w
+        {
+            get => new fix2(fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix2 _a
+        {
+            get => new fix2(fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix2 _q
+        {
+            get => new fix2(fix.Zero, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix2 x_
+        {
+            get => new fix2(x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix2 r_
+        {
+            get => new fix2(x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix2 s_
+        {
+            get => new fix2(x, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix2 xx
+        {
+            get => new fix2(x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix2 rr
+        {
+            get => new fix2(x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix2 ss
+        {
+            get => new fix2(x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix2 xy
+        {
+            get => new fix2(x, y);
+            set
+            {
+                x = value.x;
+                y = value.y;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix2 rg
+        {
+            get => new fix2(x, y);
+            set
+            {
+                x = value.x;
+                y = value.y;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix2 st
+        {
+            get => new fix2(x, y);
+            set
+            {
+                x = value.x;
+                y = value.y;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix2 xz
+        {
+            get => new fix2(x, z);
+            set
+            {
+                x = value.x;
+                z = value.y;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix2 rb
+        {
+            get => new fix2(x, z);
+            set
+            {
+                x = value.x;
+                z = value.y;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix2 sp
+        {
+            get => new fix2(x, z);
+            set
+            {
+                x = value.x;
+                z = value.y;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix2 xw
+        {
+            get => new fix2(x, w);
+            set
+            {
+                x = value.x;
+                w = value.y;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix2 ra
+        {
+            get => new fix2(x, w);
+            set
+            {
+                x = value.x;
+                w = value.y;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix2 sq
+        {
+            get => new fix2(x, w);
+            set
+            {
+                x = value.x;
+                w = value.y;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix2 y_
+        {
+            get => new fix2(y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix2 g_
+        {
+            get => new fix2(y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix2 t_
+        {
+            get => new fix2(y, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix2 yx
+        {
+            get => new fix2(y, x);
+            set
+            {
+                y = value.x;
+                x = value.y;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix2 gr
+        {
+            get => new fix2(y, x);
+            set
+            {
+                y = value.x;
+                x = value.y;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix2 ts
+        {
+            get => new fix2(y, x);
+            set
+            {
+                y = value.x;
+                x = value.y;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix2 yy
+        {
+            get => new fix2(y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix2 gg
+        {
+            get => new fix2(y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix2 tt
+        {
+            get => new fix2(y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix2 yz
+        {
+            get => new fix2(y, z);
+            set
+            {
+                y = value.x;
+                z = value.y;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix2 gb
+        {
+            get => new fix2(y, z);
+            set
+            {
+                y = value.x;
+                z = value.y;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix2 tp
+        {
+            get => new fix2(y, z);
+            set
+            {
+                y = value.x;
+                z = value.y;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix2 yw
+        {
+            get => new fix2(y, w);
+            set
+            {
+                y = value.x;
+                w = value.y;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix2 ga
+        {
+            get => new fix2(y, w);
+            set
+            {
+                y = value.x;
+                w = value.y;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix2 tq
+        {
+            get => new fix2(y, w);
+            set
+            {
+                y = value.x;
+                w = value.y;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix2 z_
+        {
+            get => new fix2(z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix2 b_
+        {
+            get => new fix2(z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix2 p_
+        {
+            get => new fix2(z, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix2 zx
+        {
+            get => new fix2(z, x);
+            set
+            {
+                z = value.x;
+                x = value.y;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix2 br
+        {
+            get => new fix2(z, x);
+            set
+            {
+                z = value.x;
+                x = value.y;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix2 ps
+        {
+            get => new fix2(z, x);
+            set
+            {
+                z = value.x;
+                x = value.y;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix2 zy
+        {
+            get => new fix2(z, y);
+            set
+            {
+                z = value.x;
+                y = value.y;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix2 bg
+        {
+            get => new fix2(z, y);
+            set
+            {
+                z = value.x;
+                y = value.y;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix2 pt
+        {
+            get => new fix2(z, y);
+            set
+            {
+                z = value.x;
+                y = value.y;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix2 zz
+        {
+            get => new fix2(z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix2 bb
+        {
+            get => new fix2(z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix2 pp
+        {
+            get => new fix2(z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix2 zw
+        {
+            get => new fix2(z, w);
+            set
+            {
+                z = value.x;
+                w = value.y;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix2 ba
+        {
+            get => new fix2(z, w);
+            set
+            {
+                z = value.x;
+                w = value.y;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix2 pq
+        {
+            get => new fix2(z, w);
+            set
+            {
+                z = value.x;
+                w = value.y;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix2 w_
+        {
+            get => new fix2(w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix2 a_
+        {
+            get => new fix2(w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix2 q_
+        {
+            get => new fix2(w, fix.Zero);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix2 wx
+        {
+            get => new fix2(w, x);
+            set
+            {
+                w = value.x;
+                x = value.y;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix2 ar
+        {
+            get => new fix2(w, x);
+            set
+            {
+                w = value.x;
+                x = value.y;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix2 qs
+        {
+            get => new fix2(w, x);
+            set
+            {
+                w = value.x;
+                x = value.y;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix2 wy
+        {
+            get => new fix2(w, y);
+            set
+            {
+                w = value.x;
+                y = value.y;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix2 ag
+        {
+            get => new fix2(w, y);
+            set
+            {
+                w = value.x;
+                y = value.y;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix2 qt
+        {
+            get => new fix2(w, y);
+            set
+            {
+                w = value.x;
+                y = value.y;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix2 wz
+        {
+            get => new fix2(w, z);
+            set
+            {
+                w = value.x;
+                z = value.y;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix2 ab
+        {
+            get => new fix2(w, z);
+            set
+            {
+                w = value.x;
+                z = value.y;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix2 qp
+        {
+            get => new fix2(w, z);
+            set
+            {
+                w = value.x;
+                z = value.y;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix2 ww
+        {
+            get => new fix2(w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix2 aa
+        {
+            get => new fix2(w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public fix2 qq
+        {
+            get => new fix2(w, w);
+        }
+
+        #endregion
+
+    }
+}

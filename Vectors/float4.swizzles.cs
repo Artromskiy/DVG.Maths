@@ -1,0 +1,22076 @@
+#pragma warning disable IDE1006
+#nullable enable
+using System;
+using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
+using System.Runtime.Serialization;
+using System.Diagnostics;
+
+
+namespace Kibix
+{
+    public partial struct float4
+    {
+
+        #region Swizzles
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public float r
+        {
+            get => x;
+            set
+            {
+                x = value;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public float s
+        {
+            get => x;
+            set
+            {
+                x = value;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public float g
+        {
+            get => y;
+            set
+            {
+                y = value;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public float t
+        {
+            get => y;
+            set
+            {
+                y = value;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public float b
+        {
+            get => z;
+            set
+            {
+                z = value;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public float p
+        {
+            get => z;
+            set
+            {
+                z = value;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public float a
+        {
+            get => w;
+            set
+            {
+                w = value;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        public float q
+        {
+            get => w;
+            set
+            {
+                w = value;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ___x
+        {
+            get => new float4(0f, 0f, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ___r
+        {
+            get => new float4(0f, 0f, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ___s
+        {
+            get => new float4(0f, 0f, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ___y
+        {
+            get => new float4(0f, 0f, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ___g
+        {
+            get => new float4(0f, 0f, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ___t
+        {
+            get => new float4(0f, 0f, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ___z
+        {
+            get => new float4(0f, 0f, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ___b
+        {
+            get => new float4(0f, 0f, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ___p
+        {
+            get => new float4(0f, 0f, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ___w
+        {
+            get => new float4(0f, 0f, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ___a
+        {
+            get => new float4(0f, 0f, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ___q
+        {
+            get => new float4(0f, 0f, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 __x_
+        {
+            get => new float4(0f, 0f, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 __r_
+        {
+            get => new float4(0f, 0f, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 __s_
+        {
+            get => new float4(0f, 0f, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 __xx
+        {
+            get => new float4(0f, 0f, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 __rr
+        {
+            get => new float4(0f, 0f, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 __ss
+        {
+            get => new float4(0f, 0f, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 __xy
+        {
+            get => new float4(0f, 0f, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 __rg
+        {
+            get => new float4(0f, 0f, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 __st
+        {
+            get => new float4(0f, 0f, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 __xz
+        {
+            get => new float4(0f, 0f, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 __rb
+        {
+            get => new float4(0f, 0f, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 __sp
+        {
+            get => new float4(0f, 0f, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 __xw
+        {
+            get => new float4(0f, 0f, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 __ra
+        {
+            get => new float4(0f, 0f, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 __sq
+        {
+            get => new float4(0f, 0f, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 __y_
+        {
+            get => new float4(0f, 0f, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 __g_
+        {
+            get => new float4(0f, 0f, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 __t_
+        {
+            get => new float4(0f, 0f, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 __yx
+        {
+            get => new float4(0f, 0f, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 __gr
+        {
+            get => new float4(0f, 0f, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 __ts
+        {
+            get => new float4(0f, 0f, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 __yy
+        {
+            get => new float4(0f, 0f, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 __gg
+        {
+            get => new float4(0f, 0f, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 __tt
+        {
+            get => new float4(0f, 0f, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 __yz
+        {
+            get => new float4(0f, 0f, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 __gb
+        {
+            get => new float4(0f, 0f, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 __tp
+        {
+            get => new float4(0f, 0f, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 __yw
+        {
+            get => new float4(0f, 0f, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 __ga
+        {
+            get => new float4(0f, 0f, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 __tq
+        {
+            get => new float4(0f, 0f, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 __z_
+        {
+            get => new float4(0f, 0f, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 __b_
+        {
+            get => new float4(0f, 0f, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 __p_
+        {
+            get => new float4(0f, 0f, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 __zx
+        {
+            get => new float4(0f, 0f, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 __br
+        {
+            get => new float4(0f, 0f, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 __ps
+        {
+            get => new float4(0f, 0f, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 __zy
+        {
+            get => new float4(0f, 0f, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 __bg
+        {
+            get => new float4(0f, 0f, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 __pt
+        {
+            get => new float4(0f, 0f, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 __zz
+        {
+            get => new float4(0f, 0f, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 __bb
+        {
+            get => new float4(0f, 0f, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 __pp
+        {
+            get => new float4(0f, 0f, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 __zw
+        {
+            get => new float4(0f, 0f, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 __ba
+        {
+            get => new float4(0f, 0f, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 __pq
+        {
+            get => new float4(0f, 0f, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 __w_
+        {
+            get => new float4(0f, 0f, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 __a_
+        {
+            get => new float4(0f, 0f, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 __q_
+        {
+            get => new float4(0f, 0f, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 __wx
+        {
+            get => new float4(0f, 0f, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 __ar
+        {
+            get => new float4(0f, 0f, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 __qs
+        {
+            get => new float4(0f, 0f, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 __wy
+        {
+            get => new float4(0f, 0f, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 __ag
+        {
+            get => new float4(0f, 0f, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 __qt
+        {
+            get => new float4(0f, 0f, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 __wz
+        {
+            get => new float4(0f, 0f, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 __ab
+        {
+            get => new float4(0f, 0f, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 __qp
+        {
+            get => new float4(0f, 0f, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 __ww
+        {
+            get => new float4(0f, 0f, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 __aa
+        {
+            get => new float4(0f, 0f, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 __qq
+        {
+            get => new float4(0f, 0f, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _x__
+        {
+            get => new float4(0f, x, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _r__
+        {
+            get => new float4(0f, x, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _s__
+        {
+            get => new float4(0f, x, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _x_x
+        {
+            get => new float4(0f, x, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _r_r
+        {
+            get => new float4(0f, x, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _s_s
+        {
+            get => new float4(0f, x, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _x_y
+        {
+            get => new float4(0f, x, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _r_g
+        {
+            get => new float4(0f, x, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _s_t
+        {
+            get => new float4(0f, x, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _x_z
+        {
+            get => new float4(0f, x, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _r_b
+        {
+            get => new float4(0f, x, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _s_p
+        {
+            get => new float4(0f, x, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _x_w
+        {
+            get => new float4(0f, x, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _r_a
+        {
+            get => new float4(0f, x, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _s_q
+        {
+            get => new float4(0f, x, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _xx_
+        {
+            get => new float4(0f, x, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _rr_
+        {
+            get => new float4(0f, x, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _ss_
+        {
+            get => new float4(0f, x, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _xxx
+        {
+            get => new float4(0f, x, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _rrr
+        {
+            get => new float4(0f, x, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _sss
+        {
+            get => new float4(0f, x, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _xxy
+        {
+            get => new float4(0f, x, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _rrg
+        {
+            get => new float4(0f, x, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _sst
+        {
+            get => new float4(0f, x, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _xxz
+        {
+            get => new float4(0f, x, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _rrb
+        {
+            get => new float4(0f, x, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _ssp
+        {
+            get => new float4(0f, x, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _xxw
+        {
+            get => new float4(0f, x, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _rra
+        {
+            get => new float4(0f, x, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _ssq
+        {
+            get => new float4(0f, x, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _xy_
+        {
+            get => new float4(0f, x, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _rg_
+        {
+            get => new float4(0f, x, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _st_
+        {
+            get => new float4(0f, x, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _xyx
+        {
+            get => new float4(0f, x, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _rgr
+        {
+            get => new float4(0f, x, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _sts
+        {
+            get => new float4(0f, x, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _xyy
+        {
+            get => new float4(0f, x, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _rgg
+        {
+            get => new float4(0f, x, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _stt
+        {
+            get => new float4(0f, x, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _xyz
+        {
+            get => new float4(0f, x, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _rgb
+        {
+            get => new float4(0f, x, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _stp
+        {
+            get => new float4(0f, x, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _xyw
+        {
+            get => new float4(0f, x, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _rga
+        {
+            get => new float4(0f, x, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _stq
+        {
+            get => new float4(0f, x, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _xz_
+        {
+            get => new float4(0f, x, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _rb_
+        {
+            get => new float4(0f, x, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _sp_
+        {
+            get => new float4(0f, x, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _xzx
+        {
+            get => new float4(0f, x, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _rbr
+        {
+            get => new float4(0f, x, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _sps
+        {
+            get => new float4(0f, x, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _xzy
+        {
+            get => new float4(0f, x, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _rbg
+        {
+            get => new float4(0f, x, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _spt
+        {
+            get => new float4(0f, x, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _xzz
+        {
+            get => new float4(0f, x, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _rbb
+        {
+            get => new float4(0f, x, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _spp
+        {
+            get => new float4(0f, x, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _xzw
+        {
+            get => new float4(0f, x, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _rba
+        {
+            get => new float4(0f, x, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _spq
+        {
+            get => new float4(0f, x, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _xw_
+        {
+            get => new float4(0f, x, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _ra_
+        {
+            get => new float4(0f, x, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _sq_
+        {
+            get => new float4(0f, x, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _xwx
+        {
+            get => new float4(0f, x, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _rar
+        {
+            get => new float4(0f, x, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _sqs
+        {
+            get => new float4(0f, x, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _xwy
+        {
+            get => new float4(0f, x, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _rag
+        {
+            get => new float4(0f, x, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _sqt
+        {
+            get => new float4(0f, x, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _xwz
+        {
+            get => new float4(0f, x, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _rab
+        {
+            get => new float4(0f, x, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _sqp
+        {
+            get => new float4(0f, x, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _xww
+        {
+            get => new float4(0f, x, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _raa
+        {
+            get => new float4(0f, x, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _sqq
+        {
+            get => new float4(0f, x, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _y__
+        {
+            get => new float4(0f, y, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _g__
+        {
+            get => new float4(0f, y, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _t__
+        {
+            get => new float4(0f, y, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _y_x
+        {
+            get => new float4(0f, y, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _g_r
+        {
+            get => new float4(0f, y, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _t_s
+        {
+            get => new float4(0f, y, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _y_y
+        {
+            get => new float4(0f, y, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _g_g
+        {
+            get => new float4(0f, y, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _t_t
+        {
+            get => new float4(0f, y, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _y_z
+        {
+            get => new float4(0f, y, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _g_b
+        {
+            get => new float4(0f, y, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _t_p
+        {
+            get => new float4(0f, y, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _y_w
+        {
+            get => new float4(0f, y, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _g_a
+        {
+            get => new float4(0f, y, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _t_q
+        {
+            get => new float4(0f, y, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _yx_
+        {
+            get => new float4(0f, y, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _gr_
+        {
+            get => new float4(0f, y, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _ts_
+        {
+            get => new float4(0f, y, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _yxx
+        {
+            get => new float4(0f, y, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _grr
+        {
+            get => new float4(0f, y, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _tss
+        {
+            get => new float4(0f, y, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _yxy
+        {
+            get => new float4(0f, y, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _grg
+        {
+            get => new float4(0f, y, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _tst
+        {
+            get => new float4(0f, y, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _yxz
+        {
+            get => new float4(0f, y, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _grb
+        {
+            get => new float4(0f, y, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _tsp
+        {
+            get => new float4(0f, y, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _yxw
+        {
+            get => new float4(0f, y, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _gra
+        {
+            get => new float4(0f, y, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _tsq
+        {
+            get => new float4(0f, y, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _yy_
+        {
+            get => new float4(0f, y, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _gg_
+        {
+            get => new float4(0f, y, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _tt_
+        {
+            get => new float4(0f, y, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _yyx
+        {
+            get => new float4(0f, y, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _ggr
+        {
+            get => new float4(0f, y, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _tts
+        {
+            get => new float4(0f, y, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _yyy
+        {
+            get => new float4(0f, y, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _ggg
+        {
+            get => new float4(0f, y, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _ttt
+        {
+            get => new float4(0f, y, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _yyz
+        {
+            get => new float4(0f, y, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _ggb
+        {
+            get => new float4(0f, y, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _ttp
+        {
+            get => new float4(0f, y, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _yyw
+        {
+            get => new float4(0f, y, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _gga
+        {
+            get => new float4(0f, y, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _ttq
+        {
+            get => new float4(0f, y, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _yz_
+        {
+            get => new float4(0f, y, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _gb_
+        {
+            get => new float4(0f, y, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _tp_
+        {
+            get => new float4(0f, y, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _yzx
+        {
+            get => new float4(0f, y, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _gbr
+        {
+            get => new float4(0f, y, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _tps
+        {
+            get => new float4(0f, y, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _yzy
+        {
+            get => new float4(0f, y, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _gbg
+        {
+            get => new float4(0f, y, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _tpt
+        {
+            get => new float4(0f, y, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _yzz
+        {
+            get => new float4(0f, y, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _gbb
+        {
+            get => new float4(0f, y, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _tpp
+        {
+            get => new float4(0f, y, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _yzw
+        {
+            get => new float4(0f, y, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _gba
+        {
+            get => new float4(0f, y, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _tpq
+        {
+            get => new float4(0f, y, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _yw_
+        {
+            get => new float4(0f, y, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _ga_
+        {
+            get => new float4(0f, y, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _tq_
+        {
+            get => new float4(0f, y, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _ywx
+        {
+            get => new float4(0f, y, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _gar
+        {
+            get => new float4(0f, y, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _tqs
+        {
+            get => new float4(0f, y, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _ywy
+        {
+            get => new float4(0f, y, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _gag
+        {
+            get => new float4(0f, y, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _tqt
+        {
+            get => new float4(0f, y, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _ywz
+        {
+            get => new float4(0f, y, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _gab
+        {
+            get => new float4(0f, y, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _tqp
+        {
+            get => new float4(0f, y, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _yww
+        {
+            get => new float4(0f, y, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _gaa
+        {
+            get => new float4(0f, y, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _tqq
+        {
+            get => new float4(0f, y, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _z__
+        {
+            get => new float4(0f, z, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _b__
+        {
+            get => new float4(0f, z, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _p__
+        {
+            get => new float4(0f, z, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _z_x
+        {
+            get => new float4(0f, z, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _b_r
+        {
+            get => new float4(0f, z, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _p_s
+        {
+            get => new float4(0f, z, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _z_y
+        {
+            get => new float4(0f, z, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _b_g
+        {
+            get => new float4(0f, z, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _p_t
+        {
+            get => new float4(0f, z, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _z_z
+        {
+            get => new float4(0f, z, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _b_b
+        {
+            get => new float4(0f, z, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _p_p
+        {
+            get => new float4(0f, z, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _z_w
+        {
+            get => new float4(0f, z, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _b_a
+        {
+            get => new float4(0f, z, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _p_q
+        {
+            get => new float4(0f, z, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _zx_
+        {
+            get => new float4(0f, z, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _br_
+        {
+            get => new float4(0f, z, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _ps_
+        {
+            get => new float4(0f, z, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _zxx
+        {
+            get => new float4(0f, z, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _brr
+        {
+            get => new float4(0f, z, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _pss
+        {
+            get => new float4(0f, z, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _zxy
+        {
+            get => new float4(0f, z, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _brg
+        {
+            get => new float4(0f, z, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _pst
+        {
+            get => new float4(0f, z, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _zxz
+        {
+            get => new float4(0f, z, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _brb
+        {
+            get => new float4(0f, z, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _psp
+        {
+            get => new float4(0f, z, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _zxw
+        {
+            get => new float4(0f, z, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _bra
+        {
+            get => new float4(0f, z, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _psq
+        {
+            get => new float4(0f, z, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _zy_
+        {
+            get => new float4(0f, z, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _bg_
+        {
+            get => new float4(0f, z, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _pt_
+        {
+            get => new float4(0f, z, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _zyx
+        {
+            get => new float4(0f, z, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _bgr
+        {
+            get => new float4(0f, z, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _pts
+        {
+            get => new float4(0f, z, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _zyy
+        {
+            get => new float4(0f, z, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _bgg
+        {
+            get => new float4(0f, z, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _ptt
+        {
+            get => new float4(0f, z, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _zyz
+        {
+            get => new float4(0f, z, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _bgb
+        {
+            get => new float4(0f, z, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _ptp
+        {
+            get => new float4(0f, z, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _zyw
+        {
+            get => new float4(0f, z, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _bga
+        {
+            get => new float4(0f, z, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _ptq
+        {
+            get => new float4(0f, z, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _zz_
+        {
+            get => new float4(0f, z, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _bb_
+        {
+            get => new float4(0f, z, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _pp_
+        {
+            get => new float4(0f, z, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _zzx
+        {
+            get => new float4(0f, z, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _bbr
+        {
+            get => new float4(0f, z, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _pps
+        {
+            get => new float4(0f, z, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _zzy
+        {
+            get => new float4(0f, z, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _bbg
+        {
+            get => new float4(0f, z, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _ppt
+        {
+            get => new float4(0f, z, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _zzz
+        {
+            get => new float4(0f, z, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _bbb
+        {
+            get => new float4(0f, z, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _ppp
+        {
+            get => new float4(0f, z, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _zzw
+        {
+            get => new float4(0f, z, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _bba
+        {
+            get => new float4(0f, z, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _ppq
+        {
+            get => new float4(0f, z, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _zw_
+        {
+            get => new float4(0f, z, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _ba_
+        {
+            get => new float4(0f, z, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _pq_
+        {
+            get => new float4(0f, z, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _zwx
+        {
+            get => new float4(0f, z, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _bar
+        {
+            get => new float4(0f, z, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _pqs
+        {
+            get => new float4(0f, z, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _zwy
+        {
+            get => new float4(0f, z, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _bag
+        {
+            get => new float4(0f, z, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _pqt
+        {
+            get => new float4(0f, z, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _zwz
+        {
+            get => new float4(0f, z, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _bab
+        {
+            get => new float4(0f, z, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _pqp
+        {
+            get => new float4(0f, z, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _zww
+        {
+            get => new float4(0f, z, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _baa
+        {
+            get => new float4(0f, z, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _pqq
+        {
+            get => new float4(0f, z, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _w__
+        {
+            get => new float4(0f, w, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _a__
+        {
+            get => new float4(0f, w, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _q__
+        {
+            get => new float4(0f, w, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _w_x
+        {
+            get => new float4(0f, w, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _a_r
+        {
+            get => new float4(0f, w, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _q_s
+        {
+            get => new float4(0f, w, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _w_y
+        {
+            get => new float4(0f, w, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _a_g
+        {
+            get => new float4(0f, w, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _q_t
+        {
+            get => new float4(0f, w, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _w_z
+        {
+            get => new float4(0f, w, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _a_b
+        {
+            get => new float4(0f, w, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _q_p
+        {
+            get => new float4(0f, w, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _w_w
+        {
+            get => new float4(0f, w, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _a_a
+        {
+            get => new float4(0f, w, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _q_q
+        {
+            get => new float4(0f, w, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _wx_
+        {
+            get => new float4(0f, w, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _ar_
+        {
+            get => new float4(0f, w, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _qs_
+        {
+            get => new float4(0f, w, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _wxx
+        {
+            get => new float4(0f, w, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _arr
+        {
+            get => new float4(0f, w, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _qss
+        {
+            get => new float4(0f, w, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _wxy
+        {
+            get => new float4(0f, w, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _arg
+        {
+            get => new float4(0f, w, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _qst
+        {
+            get => new float4(0f, w, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _wxz
+        {
+            get => new float4(0f, w, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _arb
+        {
+            get => new float4(0f, w, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _qsp
+        {
+            get => new float4(0f, w, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _wxw
+        {
+            get => new float4(0f, w, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _ara
+        {
+            get => new float4(0f, w, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _qsq
+        {
+            get => new float4(0f, w, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _wy_
+        {
+            get => new float4(0f, w, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _ag_
+        {
+            get => new float4(0f, w, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _qt_
+        {
+            get => new float4(0f, w, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _wyx
+        {
+            get => new float4(0f, w, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _agr
+        {
+            get => new float4(0f, w, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _qts
+        {
+            get => new float4(0f, w, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _wyy
+        {
+            get => new float4(0f, w, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _agg
+        {
+            get => new float4(0f, w, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _qtt
+        {
+            get => new float4(0f, w, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _wyz
+        {
+            get => new float4(0f, w, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _agb
+        {
+            get => new float4(0f, w, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _qtp
+        {
+            get => new float4(0f, w, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _wyw
+        {
+            get => new float4(0f, w, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _aga
+        {
+            get => new float4(0f, w, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _qtq
+        {
+            get => new float4(0f, w, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _wz_
+        {
+            get => new float4(0f, w, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _ab_
+        {
+            get => new float4(0f, w, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _qp_
+        {
+            get => new float4(0f, w, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _wzx
+        {
+            get => new float4(0f, w, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _abr
+        {
+            get => new float4(0f, w, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _qps
+        {
+            get => new float4(0f, w, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _wzy
+        {
+            get => new float4(0f, w, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _abg
+        {
+            get => new float4(0f, w, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _qpt
+        {
+            get => new float4(0f, w, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _wzz
+        {
+            get => new float4(0f, w, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _abb
+        {
+            get => new float4(0f, w, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _qpp
+        {
+            get => new float4(0f, w, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _wzw
+        {
+            get => new float4(0f, w, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _aba
+        {
+            get => new float4(0f, w, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _qpq
+        {
+            get => new float4(0f, w, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _ww_
+        {
+            get => new float4(0f, w, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _aa_
+        {
+            get => new float4(0f, w, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _qq_
+        {
+            get => new float4(0f, w, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _wwx
+        {
+            get => new float4(0f, w, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _aar
+        {
+            get => new float4(0f, w, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _qqs
+        {
+            get => new float4(0f, w, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _wwy
+        {
+            get => new float4(0f, w, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _aag
+        {
+            get => new float4(0f, w, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _qqt
+        {
+            get => new float4(0f, w, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _wwz
+        {
+            get => new float4(0f, w, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _aab
+        {
+            get => new float4(0f, w, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _qqp
+        {
+            get => new float4(0f, w, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _www
+        {
+            get => new float4(0f, w, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _aaa
+        {
+            get => new float4(0f, w, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 _qqq
+        {
+            get => new float4(0f, w, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 x___
+        {
+            get => new float4(x, 0f, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 r___
+        {
+            get => new float4(x, 0f, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 s___
+        {
+            get => new float4(x, 0f, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 x__x
+        {
+            get => new float4(x, 0f, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 r__r
+        {
+            get => new float4(x, 0f, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 s__s
+        {
+            get => new float4(x, 0f, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 x__y
+        {
+            get => new float4(x, 0f, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 r__g
+        {
+            get => new float4(x, 0f, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 s__t
+        {
+            get => new float4(x, 0f, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 x__z
+        {
+            get => new float4(x, 0f, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 r__b
+        {
+            get => new float4(x, 0f, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 s__p
+        {
+            get => new float4(x, 0f, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 x__w
+        {
+            get => new float4(x, 0f, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 r__a
+        {
+            get => new float4(x, 0f, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 s__q
+        {
+            get => new float4(x, 0f, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 x_x_
+        {
+            get => new float4(x, 0f, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 r_r_
+        {
+            get => new float4(x, 0f, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 s_s_
+        {
+            get => new float4(x, 0f, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 x_xx
+        {
+            get => new float4(x, 0f, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 r_rr
+        {
+            get => new float4(x, 0f, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 s_ss
+        {
+            get => new float4(x, 0f, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 x_xy
+        {
+            get => new float4(x, 0f, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 r_rg
+        {
+            get => new float4(x, 0f, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 s_st
+        {
+            get => new float4(x, 0f, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 x_xz
+        {
+            get => new float4(x, 0f, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 r_rb
+        {
+            get => new float4(x, 0f, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 s_sp
+        {
+            get => new float4(x, 0f, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 x_xw
+        {
+            get => new float4(x, 0f, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 r_ra
+        {
+            get => new float4(x, 0f, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 s_sq
+        {
+            get => new float4(x, 0f, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 x_y_
+        {
+            get => new float4(x, 0f, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 r_g_
+        {
+            get => new float4(x, 0f, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 s_t_
+        {
+            get => new float4(x, 0f, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 x_yx
+        {
+            get => new float4(x, 0f, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 r_gr
+        {
+            get => new float4(x, 0f, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 s_ts
+        {
+            get => new float4(x, 0f, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 x_yy
+        {
+            get => new float4(x, 0f, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 r_gg
+        {
+            get => new float4(x, 0f, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 s_tt
+        {
+            get => new float4(x, 0f, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 x_yz
+        {
+            get => new float4(x, 0f, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 r_gb
+        {
+            get => new float4(x, 0f, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 s_tp
+        {
+            get => new float4(x, 0f, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 x_yw
+        {
+            get => new float4(x, 0f, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 r_ga
+        {
+            get => new float4(x, 0f, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 s_tq
+        {
+            get => new float4(x, 0f, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 x_z_
+        {
+            get => new float4(x, 0f, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 r_b_
+        {
+            get => new float4(x, 0f, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 s_p_
+        {
+            get => new float4(x, 0f, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 x_zx
+        {
+            get => new float4(x, 0f, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 r_br
+        {
+            get => new float4(x, 0f, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 s_ps
+        {
+            get => new float4(x, 0f, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 x_zy
+        {
+            get => new float4(x, 0f, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 r_bg
+        {
+            get => new float4(x, 0f, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 s_pt
+        {
+            get => new float4(x, 0f, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 x_zz
+        {
+            get => new float4(x, 0f, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 r_bb
+        {
+            get => new float4(x, 0f, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 s_pp
+        {
+            get => new float4(x, 0f, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 x_zw
+        {
+            get => new float4(x, 0f, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 r_ba
+        {
+            get => new float4(x, 0f, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 s_pq
+        {
+            get => new float4(x, 0f, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 x_w_
+        {
+            get => new float4(x, 0f, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 r_a_
+        {
+            get => new float4(x, 0f, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 s_q_
+        {
+            get => new float4(x, 0f, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 x_wx
+        {
+            get => new float4(x, 0f, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 r_ar
+        {
+            get => new float4(x, 0f, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 s_qs
+        {
+            get => new float4(x, 0f, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 x_wy
+        {
+            get => new float4(x, 0f, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 r_ag
+        {
+            get => new float4(x, 0f, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 s_qt
+        {
+            get => new float4(x, 0f, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 x_wz
+        {
+            get => new float4(x, 0f, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 r_ab
+        {
+            get => new float4(x, 0f, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 s_qp
+        {
+            get => new float4(x, 0f, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 x_ww
+        {
+            get => new float4(x, 0f, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 r_aa
+        {
+            get => new float4(x, 0f, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 s_qq
+        {
+            get => new float4(x, 0f, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xx__
+        {
+            get => new float4(x, x, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rr__
+        {
+            get => new float4(x, x, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ss__
+        {
+            get => new float4(x, x, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xx_x
+        {
+            get => new float4(x, x, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rr_r
+        {
+            get => new float4(x, x, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ss_s
+        {
+            get => new float4(x, x, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xx_y
+        {
+            get => new float4(x, x, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rr_g
+        {
+            get => new float4(x, x, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ss_t
+        {
+            get => new float4(x, x, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xx_z
+        {
+            get => new float4(x, x, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rr_b
+        {
+            get => new float4(x, x, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ss_p
+        {
+            get => new float4(x, x, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xx_w
+        {
+            get => new float4(x, x, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rr_a
+        {
+            get => new float4(x, x, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ss_q
+        {
+            get => new float4(x, x, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xxx_
+        {
+            get => new float4(x, x, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rrr_
+        {
+            get => new float4(x, x, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 sss_
+        {
+            get => new float4(x, x, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xxxx
+        {
+            get => new float4(x, x, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rrrr
+        {
+            get => new float4(x, x, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ssss
+        {
+            get => new float4(x, x, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xxxy
+        {
+            get => new float4(x, x, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rrrg
+        {
+            get => new float4(x, x, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ssst
+        {
+            get => new float4(x, x, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xxxz
+        {
+            get => new float4(x, x, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rrrb
+        {
+            get => new float4(x, x, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 sssp
+        {
+            get => new float4(x, x, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xxxw
+        {
+            get => new float4(x, x, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rrra
+        {
+            get => new float4(x, x, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 sssq
+        {
+            get => new float4(x, x, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xxy_
+        {
+            get => new float4(x, x, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rrg_
+        {
+            get => new float4(x, x, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 sst_
+        {
+            get => new float4(x, x, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xxyx
+        {
+            get => new float4(x, x, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rrgr
+        {
+            get => new float4(x, x, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ssts
+        {
+            get => new float4(x, x, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xxyy
+        {
+            get => new float4(x, x, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rrgg
+        {
+            get => new float4(x, x, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 sstt
+        {
+            get => new float4(x, x, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xxyz
+        {
+            get => new float4(x, x, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rrgb
+        {
+            get => new float4(x, x, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 sstp
+        {
+            get => new float4(x, x, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xxyw
+        {
+            get => new float4(x, x, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rrga
+        {
+            get => new float4(x, x, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 sstq
+        {
+            get => new float4(x, x, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xxz_
+        {
+            get => new float4(x, x, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rrb_
+        {
+            get => new float4(x, x, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ssp_
+        {
+            get => new float4(x, x, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xxzx
+        {
+            get => new float4(x, x, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rrbr
+        {
+            get => new float4(x, x, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ssps
+        {
+            get => new float4(x, x, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xxzy
+        {
+            get => new float4(x, x, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rrbg
+        {
+            get => new float4(x, x, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 sspt
+        {
+            get => new float4(x, x, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xxzz
+        {
+            get => new float4(x, x, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rrbb
+        {
+            get => new float4(x, x, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 sspp
+        {
+            get => new float4(x, x, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xxzw
+        {
+            get => new float4(x, x, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rrba
+        {
+            get => new float4(x, x, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 sspq
+        {
+            get => new float4(x, x, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xxw_
+        {
+            get => new float4(x, x, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rra_
+        {
+            get => new float4(x, x, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ssq_
+        {
+            get => new float4(x, x, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xxwx
+        {
+            get => new float4(x, x, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rrar
+        {
+            get => new float4(x, x, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ssqs
+        {
+            get => new float4(x, x, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xxwy
+        {
+            get => new float4(x, x, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rrag
+        {
+            get => new float4(x, x, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ssqt
+        {
+            get => new float4(x, x, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xxwz
+        {
+            get => new float4(x, x, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rrab
+        {
+            get => new float4(x, x, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ssqp
+        {
+            get => new float4(x, x, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xxww
+        {
+            get => new float4(x, x, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rraa
+        {
+            get => new float4(x, x, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ssqq
+        {
+            get => new float4(x, x, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xy__
+        {
+            get => new float4(x, y, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rg__
+        {
+            get => new float4(x, y, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 st__
+        {
+            get => new float4(x, y, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xy_x
+        {
+            get => new float4(x, y, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rg_r
+        {
+            get => new float4(x, y, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 st_s
+        {
+            get => new float4(x, y, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xy_y
+        {
+            get => new float4(x, y, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rg_g
+        {
+            get => new float4(x, y, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 st_t
+        {
+            get => new float4(x, y, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xy_z
+        {
+            get => new float4(x, y, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rg_b
+        {
+            get => new float4(x, y, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 st_p
+        {
+            get => new float4(x, y, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xy_w
+        {
+            get => new float4(x, y, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rg_a
+        {
+            get => new float4(x, y, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 st_q
+        {
+            get => new float4(x, y, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xyx_
+        {
+            get => new float4(x, y, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rgr_
+        {
+            get => new float4(x, y, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 sts_
+        {
+            get => new float4(x, y, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xyxx
+        {
+            get => new float4(x, y, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rgrr
+        {
+            get => new float4(x, y, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 stss
+        {
+            get => new float4(x, y, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xyxy
+        {
+            get => new float4(x, y, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rgrg
+        {
+            get => new float4(x, y, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 stst
+        {
+            get => new float4(x, y, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xyxz
+        {
+            get => new float4(x, y, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rgrb
+        {
+            get => new float4(x, y, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 stsp
+        {
+            get => new float4(x, y, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xyxw
+        {
+            get => new float4(x, y, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rgra
+        {
+            get => new float4(x, y, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 stsq
+        {
+            get => new float4(x, y, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xyy_
+        {
+            get => new float4(x, y, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rgg_
+        {
+            get => new float4(x, y, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 stt_
+        {
+            get => new float4(x, y, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xyyx
+        {
+            get => new float4(x, y, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rggr
+        {
+            get => new float4(x, y, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 stts
+        {
+            get => new float4(x, y, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xyyy
+        {
+            get => new float4(x, y, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rggg
+        {
+            get => new float4(x, y, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 sttt
+        {
+            get => new float4(x, y, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xyyz
+        {
+            get => new float4(x, y, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rggb
+        {
+            get => new float4(x, y, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 sttp
+        {
+            get => new float4(x, y, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xyyw
+        {
+            get => new float4(x, y, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rgga
+        {
+            get => new float4(x, y, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 sttq
+        {
+            get => new float4(x, y, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xyz_
+        {
+            get => new float4(x, y, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rgb_
+        {
+            get => new float4(x, y, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 stp_
+        {
+            get => new float4(x, y, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xyzx
+        {
+            get => new float4(x, y, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rgbr
+        {
+            get => new float4(x, y, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 stps
+        {
+            get => new float4(x, y, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xyzy
+        {
+            get => new float4(x, y, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rgbg
+        {
+            get => new float4(x, y, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 stpt
+        {
+            get => new float4(x, y, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xyzz
+        {
+            get => new float4(x, y, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rgbb
+        {
+            get => new float4(x, y, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 stpp
+        {
+            get => new float4(x, y, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xyzw
+        {
+            get => new float4(x, y, z, w);
+            set
+            {
+                x = value.x;
+                y = value.y;
+                z = value.z;
+                w = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rgba
+        {
+            get => new float4(x, y, z, w);
+            set
+            {
+                x = value.x;
+                y = value.y;
+                z = value.z;
+                w = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 stpq
+        {
+            get => new float4(x, y, z, w);
+            set
+            {
+                x = value.x;
+                y = value.y;
+                z = value.z;
+                w = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xyw_
+        {
+            get => new float4(x, y, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rga_
+        {
+            get => new float4(x, y, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 stq_
+        {
+            get => new float4(x, y, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xywx
+        {
+            get => new float4(x, y, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rgar
+        {
+            get => new float4(x, y, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 stqs
+        {
+            get => new float4(x, y, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xywy
+        {
+            get => new float4(x, y, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rgag
+        {
+            get => new float4(x, y, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 stqt
+        {
+            get => new float4(x, y, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xywz
+        {
+            get => new float4(x, y, w, z);
+            set
+            {
+                x = value.x;
+                y = value.y;
+                w = value.z;
+                z = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rgab
+        {
+            get => new float4(x, y, w, z);
+            set
+            {
+                x = value.x;
+                y = value.y;
+                w = value.z;
+                z = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 stqp
+        {
+            get => new float4(x, y, w, z);
+            set
+            {
+                x = value.x;
+                y = value.y;
+                w = value.z;
+                z = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xyww
+        {
+            get => new float4(x, y, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rgaa
+        {
+            get => new float4(x, y, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 stqq
+        {
+            get => new float4(x, y, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xz__
+        {
+            get => new float4(x, z, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rb__
+        {
+            get => new float4(x, z, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 sp__
+        {
+            get => new float4(x, z, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xz_x
+        {
+            get => new float4(x, z, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rb_r
+        {
+            get => new float4(x, z, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 sp_s
+        {
+            get => new float4(x, z, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xz_y
+        {
+            get => new float4(x, z, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rb_g
+        {
+            get => new float4(x, z, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 sp_t
+        {
+            get => new float4(x, z, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xz_z
+        {
+            get => new float4(x, z, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rb_b
+        {
+            get => new float4(x, z, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 sp_p
+        {
+            get => new float4(x, z, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xz_w
+        {
+            get => new float4(x, z, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rb_a
+        {
+            get => new float4(x, z, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 sp_q
+        {
+            get => new float4(x, z, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xzx_
+        {
+            get => new float4(x, z, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rbr_
+        {
+            get => new float4(x, z, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 sps_
+        {
+            get => new float4(x, z, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xzxx
+        {
+            get => new float4(x, z, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rbrr
+        {
+            get => new float4(x, z, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 spss
+        {
+            get => new float4(x, z, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xzxy
+        {
+            get => new float4(x, z, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rbrg
+        {
+            get => new float4(x, z, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 spst
+        {
+            get => new float4(x, z, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xzxz
+        {
+            get => new float4(x, z, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rbrb
+        {
+            get => new float4(x, z, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 spsp
+        {
+            get => new float4(x, z, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xzxw
+        {
+            get => new float4(x, z, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rbra
+        {
+            get => new float4(x, z, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 spsq
+        {
+            get => new float4(x, z, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xzy_
+        {
+            get => new float4(x, z, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rbg_
+        {
+            get => new float4(x, z, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 spt_
+        {
+            get => new float4(x, z, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xzyx
+        {
+            get => new float4(x, z, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rbgr
+        {
+            get => new float4(x, z, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 spts
+        {
+            get => new float4(x, z, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xzyy
+        {
+            get => new float4(x, z, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rbgg
+        {
+            get => new float4(x, z, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 sptt
+        {
+            get => new float4(x, z, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xzyz
+        {
+            get => new float4(x, z, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rbgb
+        {
+            get => new float4(x, z, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 sptp
+        {
+            get => new float4(x, z, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xzyw
+        {
+            get => new float4(x, z, y, w);
+            set
+            {
+                x = value.x;
+                z = value.y;
+                y = value.z;
+                w = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rbga
+        {
+            get => new float4(x, z, y, w);
+            set
+            {
+                x = value.x;
+                z = value.y;
+                y = value.z;
+                w = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 sptq
+        {
+            get => new float4(x, z, y, w);
+            set
+            {
+                x = value.x;
+                z = value.y;
+                y = value.z;
+                w = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xzz_
+        {
+            get => new float4(x, z, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rbb_
+        {
+            get => new float4(x, z, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 spp_
+        {
+            get => new float4(x, z, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xzzx
+        {
+            get => new float4(x, z, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rbbr
+        {
+            get => new float4(x, z, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 spps
+        {
+            get => new float4(x, z, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xzzy
+        {
+            get => new float4(x, z, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rbbg
+        {
+            get => new float4(x, z, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 sppt
+        {
+            get => new float4(x, z, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xzzz
+        {
+            get => new float4(x, z, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rbbb
+        {
+            get => new float4(x, z, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 sppp
+        {
+            get => new float4(x, z, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xzzw
+        {
+            get => new float4(x, z, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rbba
+        {
+            get => new float4(x, z, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 sppq
+        {
+            get => new float4(x, z, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xzw_
+        {
+            get => new float4(x, z, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rba_
+        {
+            get => new float4(x, z, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 spq_
+        {
+            get => new float4(x, z, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xzwx
+        {
+            get => new float4(x, z, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rbar
+        {
+            get => new float4(x, z, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 spqs
+        {
+            get => new float4(x, z, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xzwy
+        {
+            get => new float4(x, z, w, y);
+            set
+            {
+                x = value.x;
+                z = value.y;
+                w = value.z;
+                y = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rbag
+        {
+            get => new float4(x, z, w, y);
+            set
+            {
+                x = value.x;
+                z = value.y;
+                w = value.z;
+                y = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 spqt
+        {
+            get => new float4(x, z, w, y);
+            set
+            {
+                x = value.x;
+                z = value.y;
+                w = value.z;
+                y = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xzwz
+        {
+            get => new float4(x, z, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rbab
+        {
+            get => new float4(x, z, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 spqp
+        {
+            get => new float4(x, z, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xzww
+        {
+            get => new float4(x, z, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rbaa
+        {
+            get => new float4(x, z, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 spqq
+        {
+            get => new float4(x, z, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xw__
+        {
+            get => new float4(x, w, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ra__
+        {
+            get => new float4(x, w, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 sq__
+        {
+            get => new float4(x, w, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xw_x
+        {
+            get => new float4(x, w, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ra_r
+        {
+            get => new float4(x, w, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 sq_s
+        {
+            get => new float4(x, w, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xw_y
+        {
+            get => new float4(x, w, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ra_g
+        {
+            get => new float4(x, w, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 sq_t
+        {
+            get => new float4(x, w, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xw_z
+        {
+            get => new float4(x, w, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ra_b
+        {
+            get => new float4(x, w, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 sq_p
+        {
+            get => new float4(x, w, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xw_w
+        {
+            get => new float4(x, w, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ra_a
+        {
+            get => new float4(x, w, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 sq_q
+        {
+            get => new float4(x, w, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xwx_
+        {
+            get => new float4(x, w, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rar_
+        {
+            get => new float4(x, w, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 sqs_
+        {
+            get => new float4(x, w, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xwxx
+        {
+            get => new float4(x, w, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rarr
+        {
+            get => new float4(x, w, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 sqss
+        {
+            get => new float4(x, w, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xwxy
+        {
+            get => new float4(x, w, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rarg
+        {
+            get => new float4(x, w, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 sqst
+        {
+            get => new float4(x, w, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xwxz
+        {
+            get => new float4(x, w, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rarb
+        {
+            get => new float4(x, w, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 sqsp
+        {
+            get => new float4(x, w, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xwxw
+        {
+            get => new float4(x, w, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rara
+        {
+            get => new float4(x, w, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 sqsq
+        {
+            get => new float4(x, w, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xwy_
+        {
+            get => new float4(x, w, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rag_
+        {
+            get => new float4(x, w, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 sqt_
+        {
+            get => new float4(x, w, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xwyx
+        {
+            get => new float4(x, w, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ragr
+        {
+            get => new float4(x, w, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 sqts
+        {
+            get => new float4(x, w, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xwyy
+        {
+            get => new float4(x, w, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ragg
+        {
+            get => new float4(x, w, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 sqtt
+        {
+            get => new float4(x, w, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xwyz
+        {
+            get => new float4(x, w, y, z);
+            set
+            {
+                x = value.x;
+                w = value.y;
+                y = value.z;
+                z = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ragb
+        {
+            get => new float4(x, w, y, z);
+            set
+            {
+                x = value.x;
+                w = value.y;
+                y = value.z;
+                z = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 sqtp
+        {
+            get => new float4(x, w, y, z);
+            set
+            {
+                x = value.x;
+                w = value.y;
+                y = value.z;
+                z = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xwyw
+        {
+            get => new float4(x, w, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 raga
+        {
+            get => new float4(x, w, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 sqtq
+        {
+            get => new float4(x, w, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xwz_
+        {
+            get => new float4(x, w, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rab_
+        {
+            get => new float4(x, w, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 sqp_
+        {
+            get => new float4(x, w, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xwzx
+        {
+            get => new float4(x, w, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rabr
+        {
+            get => new float4(x, w, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 sqps
+        {
+            get => new float4(x, w, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xwzy
+        {
+            get => new float4(x, w, z, y);
+            set
+            {
+                x = value.x;
+                w = value.y;
+                z = value.z;
+                y = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rabg
+        {
+            get => new float4(x, w, z, y);
+            set
+            {
+                x = value.x;
+                w = value.y;
+                z = value.z;
+                y = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 sqpt
+        {
+            get => new float4(x, w, z, y);
+            set
+            {
+                x = value.x;
+                w = value.y;
+                z = value.z;
+                y = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xwzz
+        {
+            get => new float4(x, w, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 rabb
+        {
+            get => new float4(x, w, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 sqpp
+        {
+            get => new float4(x, w, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xwzw
+        {
+            get => new float4(x, w, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 raba
+        {
+            get => new float4(x, w, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 sqpq
+        {
+            get => new float4(x, w, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xww_
+        {
+            get => new float4(x, w, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 raa_
+        {
+            get => new float4(x, w, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 sqq_
+        {
+            get => new float4(x, w, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xwwx
+        {
+            get => new float4(x, w, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 raar
+        {
+            get => new float4(x, w, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 sqqs
+        {
+            get => new float4(x, w, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xwwy
+        {
+            get => new float4(x, w, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 raag
+        {
+            get => new float4(x, w, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 sqqt
+        {
+            get => new float4(x, w, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xwwz
+        {
+            get => new float4(x, w, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 raab
+        {
+            get => new float4(x, w, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 sqqp
+        {
+            get => new float4(x, w, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 xwww
+        {
+            get => new float4(x, w, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 raaa
+        {
+            get => new float4(x, w, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 sqqq
+        {
+            get => new float4(x, w, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 y___
+        {
+            get => new float4(y, 0f, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 g___
+        {
+            get => new float4(y, 0f, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 t___
+        {
+            get => new float4(y, 0f, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 y__x
+        {
+            get => new float4(y, 0f, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 g__r
+        {
+            get => new float4(y, 0f, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 t__s
+        {
+            get => new float4(y, 0f, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 y__y
+        {
+            get => new float4(y, 0f, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 g__g
+        {
+            get => new float4(y, 0f, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 t__t
+        {
+            get => new float4(y, 0f, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 y__z
+        {
+            get => new float4(y, 0f, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 g__b
+        {
+            get => new float4(y, 0f, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 t__p
+        {
+            get => new float4(y, 0f, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 y__w
+        {
+            get => new float4(y, 0f, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 g__a
+        {
+            get => new float4(y, 0f, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 t__q
+        {
+            get => new float4(y, 0f, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 y_x_
+        {
+            get => new float4(y, 0f, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 g_r_
+        {
+            get => new float4(y, 0f, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 t_s_
+        {
+            get => new float4(y, 0f, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 y_xx
+        {
+            get => new float4(y, 0f, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 g_rr
+        {
+            get => new float4(y, 0f, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 t_ss
+        {
+            get => new float4(y, 0f, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 y_xy
+        {
+            get => new float4(y, 0f, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 g_rg
+        {
+            get => new float4(y, 0f, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 t_st
+        {
+            get => new float4(y, 0f, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 y_xz
+        {
+            get => new float4(y, 0f, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 g_rb
+        {
+            get => new float4(y, 0f, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 t_sp
+        {
+            get => new float4(y, 0f, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 y_xw
+        {
+            get => new float4(y, 0f, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 g_ra
+        {
+            get => new float4(y, 0f, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 t_sq
+        {
+            get => new float4(y, 0f, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 y_y_
+        {
+            get => new float4(y, 0f, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 g_g_
+        {
+            get => new float4(y, 0f, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 t_t_
+        {
+            get => new float4(y, 0f, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 y_yx
+        {
+            get => new float4(y, 0f, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 g_gr
+        {
+            get => new float4(y, 0f, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 t_ts
+        {
+            get => new float4(y, 0f, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 y_yy
+        {
+            get => new float4(y, 0f, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 g_gg
+        {
+            get => new float4(y, 0f, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 t_tt
+        {
+            get => new float4(y, 0f, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 y_yz
+        {
+            get => new float4(y, 0f, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 g_gb
+        {
+            get => new float4(y, 0f, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 t_tp
+        {
+            get => new float4(y, 0f, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 y_yw
+        {
+            get => new float4(y, 0f, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 g_ga
+        {
+            get => new float4(y, 0f, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 t_tq
+        {
+            get => new float4(y, 0f, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 y_z_
+        {
+            get => new float4(y, 0f, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 g_b_
+        {
+            get => new float4(y, 0f, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 t_p_
+        {
+            get => new float4(y, 0f, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 y_zx
+        {
+            get => new float4(y, 0f, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 g_br
+        {
+            get => new float4(y, 0f, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 t_ps
+        {
+            get => new float4(y, 0f, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 y_zy
+        {
+            get => new float4(y, 0f, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 g_bg
+        {
+            get => new float4(y, 0f, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 t_pt
+        {
+            get => new float4(y, 0f, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 y_zz
+        {
+            get => new float4(y, 0f, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 g_bb
+        {
+            get => new float4(y, 0f, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 t_pp
+        {
+            get => new float4(y, 0f, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 y_zw
+        {
+            get => new float4(y, 0f, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 g_ba
+        {
+            get => new float4(y, 0f, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 t_pq
+        {
+            get => new float4(y, 0f, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 y_w_
+        {
+            get => new float4(y, 0f, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 g_a_
+        {
+            get => new float4(y, 0f, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 t_q_
+        {
+            get => new float4(y, 0f, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 y_wx
+        {
+            get => new float4(y, 0f, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 g_ar
+        {
+            get => new float4(y, 0f, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 t_qs
+        {
+            get => new float4(y, 0f, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 y_wy
+        {
+            get => new float4(y, 0f, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 g_ag
+        {
+            get => new float4(y, 0f, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 t_qt
+        {
+            get => new float4(y, 0f, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 y_wz
+        {
+            get => new float4(y, 0f, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 g_ab
+        {
+            get => new float4(y, 0f, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 t_qp
+        {
+            get => new float4(y, 0f, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 y_ww
+        {
+            get => new float4(y, 0f, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 g_aa
+        {
+            get => new float4(y, 0f, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 t_qq
+        {
+            get => new float4(y, 0f, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 yx__
+        {
+            get => new float4(y, x, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 gr__
+        {
+            get => new float4(y, x, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ts__
+        {
+            get => new float4(y, x, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 yx_x
+        {
+            get => new float4(y, x, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 gr_r
+        {
+            get => new float4(y, x, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ts_s
+        {
+            get => new float4(y, x, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 yx_y
+        {
+            get => new float4(y, x, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 gr_g
+        {
+            get => new float4(y, x, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ts_t
+        {
+            get => new float4(y, x, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 yx_z
+        {
+            get => new float4(y, x, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 gr_b
+        {
+            get => new float4(y, x, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ts_p
+        {
+            get => new float4(y, x, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 yx_w
+        {
+            get => new float4(y, x, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 gr_a
+        {
+            get => new float4(y, x, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ts_q
+        {
+            get => new float4(y, x, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 yxx_
+        {
+            get => new float4(y, x, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 grr_
+        {
+            get => new float4(y, x, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 tss_
+        {
+            get => new float4(y, x, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 yxxx
+        {
+            get => new float4(y, x, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 grrr
+        {
+            get => new float4(y, x, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 tsss
+        {
+            get => new float4(y, x, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 yxxy
+        {
+            get => new float4(y, x, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 grrg
+        {
+            get => new float4(y, x, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 tsst
+        {
+            get => new float4(y, x, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 yxxz
+        {
+            get => new float4(y, x, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 grrb
+        {
+            get => new float4(y, x, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 tssp
+        {
+            get => new float4(y, x, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 yxxw
+        {
+            get => new float4(y, x, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 grra
+        {
+            get => new float4(y, x, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 tssq
+        {
+            get => new float4(y, x, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 yxy_
+        {
+            get => new float4(y, x, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 grg_
+        {
+            get => new float4(y, x, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 tst_
+        {
+            get => new float4(y, x, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 yxyx
+        {
+            get => new float4(y, x, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 grgr
+        {
+            get => new float4(y, x, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 tsts
+        {
+            get => new float4(y, x, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 yxyy
+        {
+            get => new float4(y, x, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 grgg
+        {
+            get => new float4(y, x, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 tstt
+        {
+            get => new float4(y, x, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 yxyz
+        {
+            get => new float4(y, x, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 grgb
+        {
+            get => new float4(y, x, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 tstp
+        {
+            get => new float4(y, x, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 yxyw
+        {
+            get => new float4(y, x, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 grga
+        {
+            get => new float4(y, x, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 tstq
+        {
+            get => new float4(y, x, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 yxz_
+        {
+            get => new float4(y, x, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 grb_
+        {
+            get => new float4(y, x, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 tsp_
+        {
+            get => new float4(y, x, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 yxzx
+        {
+            get => new float4(y, x, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 grbr
+        {
+            get => new float4(y, x, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 tsps
+        {
+            get => new float4(y, x, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 yxzy
+        {
+            get => new float4(y, x, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 grbg
+        {
+            get => new float4(y, x, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 tspt
+        {
+            get => new float4(y, x, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 yxzz
+        {
+            get => new float4(y, x, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 grbb
+        {
+            get => new float4(y, x, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 tspp
+        {
+            get => new float4(y, x, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 yxzw
+        {
+            get => new float4(y, x, z, w);
+            set
+            {
+                y = value.x;
+                x = value.y;
+                z = value.z;
+                w = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 grba
+        {
+            get => new float4(y, x, z, w);
+            set
+            {
+                y = value.x;
+                x = value.y;
+                z = value.z;
+                w = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 tspq
+        {
+            get => new float4(y, x, z, w);
+            set
+            {
+                y = value.x;
+                x = value.y;
+                z = value.z;
+                w = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 yxw_
+        {
+            get => new float4(y, x, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 gra_
+        {
+            get => new float4(y, x, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 tsq_
+        {
+            get => new float4(y, x, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 yxwx
+        {
+            get => new float4(y, x, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 grar
+        {
+            get => new float4(y, x, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 tsqs
+        {
+            get => new float4(y, x, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 yxwy
+        {
+            get => new float4(y, x, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 grag
+        {
+            get => new float4(y, x, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 tsqt
+        {
+            get => new float4(y, x, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 yxwz
+        {
+            get => new float4(y, x, w, z);
+            set
+            {
+                y = value.x;
+                x = value.y;
+                w = value.z;
+                z = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 grab
+        {
+            get => new float4(y, x, w, z);
+            set
+            {
+                y = value.x;
+                x = value.y;
+                w = value.z;
+                z = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 tsqp
+        {
+            get => new float4(y, x, w, z);
+            set
+            {
+                y = value.x;
+                x = value.y;
+                w = value.z;
+                z = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 yxww
+        {
+            get => new float4(y, x, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 graa
+        {
+            get => new float4(y, x, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 tsqq
+        {
+            get => new float4(y, x, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 yy__
+        {
+            get => new float4(y, y, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 gg__
+        {
+            get => new float4(y, y, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 tt__
+        {
+            get => new float4(y, y, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 yy_x
+        {
+            get => new float4(y, y, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 gg_r
+        {
+            get => new float4(y, y, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 tt_s
+        {
+            get => new float4(y, y, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 yy_y
+        {
+            get => new float4(y, y, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 gg_g
+        {
+            get => new float4(y, y, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 tt_t
+        {
+            get => new float4(y, y, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 yy_z
+        {
+            get => new float4(y, y, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 gg_b
+        {
+            get => new float4(y, y, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 tt_p
+        {
+            get => new float4(y, y, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 yy_w
+        {
+            get => new float4(y, y, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 gg_a
+        {
+            get => new float4(y, y, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 tt_q
+        {
+            get => new float4(y, y, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 yyx_
+        {
+            get => new float4(y, y, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ggr_
+        {
+            get => new float4(y, y, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 tts_
+        {
+            get => new float4(y, y, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 yyxx
+        {
+            get => new float4(y, y, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ggrr
+        {
+            get => new float4(y, y, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ttss
+        {
+            get => new float4(y, y, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 yyxy
+        {
+            get => new float4(y, y, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ggrg
+        {
+            get => new float4(y, y, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ttst
+        {
+            get => new float4(y, y, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 yyxz
+        {
+            get => new float4(y, y, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ggrb
+        {
+            get => new float4(y, y, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ttsp
+        {
+            get => new float4(y, y, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 yyxw
+        {
+            get => new float4(y, y, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ggra
+        {
+            get => new float4(y, y, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ttsq
+        {
+            get => new float4(y, y, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 yyy_
+        {
+            get => new float4(y, y, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ggg_
+        {
+            get => new float4(y, y, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ttt_
+        {
+            get => new float4(y, y, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 yyyx
+        {
+            get => new float4(y, y, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 gggr
+        {
+            get => new float4(y, y, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ttts
+        {
+            get => new float4(y, y, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 yyyy
+        {
+            get => new float4(y, y, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 gggg
+        {
+            get => new float4(y, y, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 tttt
+        {
+            get => new float4(y, y, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 yyyz
+        {
+            get => new float4(y, y, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 gggb
+        {
+            get => new float4(y, y, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 tttp
+        {
+            get => new float4(y, y, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 yyyw
+        {
+            get => new float4(y, y, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ggga
+        {
+            get => new float4(y, y, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 tttq
+        {
+            get => new float4(y, y, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 yyz_
+        {
+            get => new float4(y, y, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ggb_
+        {
+            get => new float4(y, y, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ttp_
+        {
+            get => new float4(y, y, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 yyzx
+        {
+            get => new float4(y, y, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ggbr
+        {
+            get => new float4(y, y, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ttps
+        {
+            get => new float4(y, y, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 yyzy
+        {
+            get => new float4(y, y, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ggbg
+        {
+            get => new float4(y, y, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ttpt
+        {
+            get => new float4(y, y, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 yyzz
+        {
+            get => new float4(y, y, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ggbb
+        {
+            get => new float4(y, y, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ttpp
+        {
+            get => new float4(y, y, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 yyzw
+        {
+            get => new float4(y, y, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ggba
+        {
+            get => new float4(y, y, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ttpq
+        {
+            get => new float4(y, y, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 yyw_
+        {
+            get => new float4(y, y, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 gga_
+        {
+            get => new float4(y, y, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ttq_
+        {
+            get => new float4(y, y, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 yywx
+        {
+            get => new float4(y, y, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ggar
+        {
+            get => new float4(y, y, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ttqs
+        {
+            get => new float4(y, y, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 yywy
+        {
+            get => new float4(y, y, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ggag
+        {
+            get => new float4(y, y, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ttqt
+        {
+            get => new float4(y, y, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 yywz
+        {
+            get => new float4(y, y, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ggab
+        {
+            get => new float4(y, y, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ttqp
+        {
+            get => new float4(y, y, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 yyww
+        {
+            get => new float4(y, y, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ggaa
+        {
+            get => new float4(y, y, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ttqq
+        {
+            get => new float4(y, y, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 yz__
+        {
+            get => new float4(y, z, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 gb__
+        {
+            get => new float4(y, z, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 tp__
+        {
+            get => new float4(y, z, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 yz_x
+        {
+            get => new float4(y, z, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 gb_r
+        {
+            get => new float4(y, z, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 tp_s
+        {
+            get => new float4(y, z, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 yz_y
+        {
+            get => new float4(y, z, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 gb_g
+        {
+            get => new float4(y, z, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 tp_t
+        {
+            get => new float4(y, z, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 yz_z
+        {
+            get => new float4(y, z, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 gb_b
+        {
+            get => new float4(y, z, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 tp_p
+        {
+            get => new float4(y, z, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 yz_w
+        {
+            get => new float4(y, z, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 gb_a
+        {
+            get => new float4(y, z, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 tp_q
+        {
+            get => new float4(y, z, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 yzx_
+        {
+            get => new float4(y, z, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 gbr_
+        {
+            get => new float4(y, z, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 tps_
+        {
+            get => new float4(y, z, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 yzxx
+        {
+            get => new float4(y, z, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 gbrr
+        {
+            get => new float4(y, z, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 tpss
+        {
+            get => new float4(y, z, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 yzxy
+        {
+            get => new float4(y, z, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 gbrg
+        {
+            get => new float4(y, z, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 tpst
+        {
+            get => new float4(y, z, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 yzxz
+        {
+            get => new float4(y, z, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 gbrb
+        {
+            get => new float4(y, z, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 tpsp
+        {
+            get => new float4(y, z, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 yzxw
+        {
+            get => new float4(y, z, x, w);
+            set
+            {
+                y = value.x;
+                z = value.y;
+                x = value.z;
+                w = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 gbra
+        {
+            get => new float4(y, z, x, w);
+            set
+            {
+                y = value.x;
+                z = value.y;
+                x = value.z;
+                w = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 tpsq
+        {
+            get => new float4(y, z, x, w);
+            set
+            {
+                y = value.x;
+                z = value.y;
+                x = value.z;
+                w = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 yzy_
+        {
+            get => new float4(y, z, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 gbg_
+        {
+            get => new float4(y, z, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 tpt_
+        {
+            get => new float4(y, z, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 yzyx
+        {
+            get => new float4(y, z, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 gbgr
+        {
+            get => new float4(y, z, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 tpts
+        {
+            get => new float4(y, z, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 yzyy
+        {
+            get => new float4(y, z, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 gbgg
+        {
+            get => new float4(y, z, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 tptt
+        {
+            get => new float4(y, z, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 yzyz
+        {
+            get => new float4(y, z, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 gbgb
+        {
+            get => new float4(y, z, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 tptp
+        {
+            get => new float4(y, z, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 yzyw
+        {
+            get => new float4(y, z, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 gbga
+        {
+            get => new float4(y, z, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 tptq
+        {
+            get => new float4(y, z, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 yzz_
+        {
+            get => new float4(y, z, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 gbb_
+        {
+            get => new float4(y, z, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 tpp_
+        {
+            get => new float4(y, z, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 yzzx
+        {
+            get => new float4(y, z, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 gbbr
+        {
+            get => new float4(y, z, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 tpps
+        {
+            get => new float4(y, z, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 yzzy
+        {
+            get => new float4(y, z, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 gbbg
+        {
+            get => new float4(y, z, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 tppt
+        {
+            get => new float4(y, z, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 yzzz
+        {
+            get => new float4(y, z, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 gbbb
+        {
+            get => new float4(y, z, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 tppp
+        {
+            get => new float4(y, z, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 yzzw
+        {
+            get => new float4(y, z, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 gbba
+        {
+            get => new float4(y, z, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 tppq
+        {
+            get => new float4(y, z, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 yzw_
+        {
+            get => new float4(y, z, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 gba_
+        {
+            get => new float4(y, z, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 tpq_
+        {
+            get => new float4(y, z, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 yzwx
+        {
+            get => new float4(y, z, w, x);
+            set
+            {
+                y = value.x;
+                z = value.y;
+                w = value.z;
+                x = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 gbar
+        {
+            get => new float4(y, z, w, x);
+            set
+            {
+                y = value.x;
+                z = value.y;
+                w = value.z;
+                x = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 tpqs
+        {
+            get => new float4(y, z, w, x);
+            set
+            {
+                y = value.x;
+                z = value.y;
+                w = value.z;
+                x = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 yzwy
+        {
+            get => new float4(y, z, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 gbag
+        {
+            get => new float4(y, z, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 tpqt
+        {
+            get => new float4(y, z, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 yzwz
+        {
+            get => new float4(y, z, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 gbab
+        {
+            get => new float4(y, z, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 tpqp
+        {
+            get => new float4(y, z, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 yzww
+        {
+            get => new float4(y, z, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 gbaa
+        {
+            get => new float4(y, z, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 tpqq
+        {
+            get => new float4(y, z, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 yw__
+        {
+            get => new float4(y, w, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ga__
+        {
+            get => new float4(y, w, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 tq__
+        {
+            get => new float4(y, w, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 yw_x
+        {
+            get => new float4(y, w, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ga_r
+        {
+            get => new float4(y, w, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 tq_s
+        {
+            get => new float4(y, w, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 yw_y
+        {
+            get => new float4(y, w, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ga_g
+        {
+            get => new float4(y, w, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 tq_t
+        {
+            get => new float4(y, w, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 yw_z
+        {
+            get => new float4(y, w, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ga_b
+        {
+            get => new float4(y, w, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 tq_p
+        {
+            get => new float4(y, w, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 yw_w
+        {
+            get => new float4(y, w, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ga_a
+        {
+            get => new float4(y, w, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 tq_q
+        {
+            get => new float4(y, w, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ywx_
+        {
+            get => new float4(y, w, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 gar_
+        {
+            get => new float4(y, w, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 tqs_
+        {
+            get => new float4(y, w, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ywxx
+        {
+            get => new float4(y, w, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 garr
+        {
+            get => new float4(y, w, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 tqss
+        {
+            get => new float4(y, w, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ywxy
+        {
+            get => new float4(y, w, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 garg
+        {
+            get => new float4(y, w, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 tqst
+        {
+            get => new float4(y, w, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ywxz
+        {
+            get => new float4(y, w, x, z);
+            set
+            {
+                y = value.x;
+                w = value.y;
+                x = value.z;
+                z = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 garb
+        {
+            get => new float4(y, w, x, z);
+            set
+            {
+                y = value.x;
+                w = value.y;
+                x = value.z;
+                z = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 tqsp
+        {
+            get => new float4(y, w, x, z);
+            set
+            {
+                y = value.x;
+                w = value.y;
+                x = value.z;
+                z = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ywxw
+        {
+            get => new float4(y, w, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 gara
+        {
+            get => new float4(y, w, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 tqsq
+        {
+            get => new float4(y, w, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ywy_
+        {
+            get => new float4(y, w, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 gag_
+        {
+            get => new float4(y, w, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 tqt_
+        {
+            get => new float4(y, w, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ywyx
+        {
+            get => new float4(y, w, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 gagr
+        {
+            get => new float4(y, w, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 tqts
+        {
+            get => new float4(y, w, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ywyy
+        {
+            get => new float4(y, w, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 gagg
+        {
+            get => new float4(y, w, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 tqtt
+        {
+            get => new float4(y, w, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ywyz
+        {
+            get => new float4(y, w, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 gagb
+        {
+            get => new float4(y, w, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 tqtp
+        {
+            get => new float4(y, w, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ywyw
+        {
+            get => new float4(y, w, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 gaga
+        {
+            get => new float4(y, w, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 tqtq
+        {
+            get => new float4(y, w, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ywz_
+        {
+            get => new float4(y, w, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 gab_
+        {
+            get => new float4(y, w, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 tqp_
+        {
+            get => new float4(y, w, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ywzx
+        {
+            get => new float4(y, w, z, x);
+            set
+            {
+                y = value.x;
+                w = value.y;
+                z = value.z;
+                x = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 gabr
+        {
+            get => new float4(y, w, z, x);
+            set
+            {
+                y = value.x;
+                w = value.y;
+                z = value.z;
+                x = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 tqps
+        {
+            get => new float4(y, w, z, x);
+            set
+            {
+                y = value.x;
+                w = value.y;
+                z = value.z;
+                x = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ywzy
+        {
+            get => new float4(y, w, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 gabg
+        {
+            get => new float4(y, w, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 tqpt
+        {
+            get => new float4(y, w, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ywzz
+        {
+            get => new float4(y, w, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 gabb
+        {
+            get => new float4(y, w, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 tqpp
+        {
+            get => new float4(y, w, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ywzw
+        {
+            get => new float4(y, w, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 gaba
+        {
+            get => new float4(y, w, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 tqpq
+        {
+            get => new float4(y, w, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 yww_
+        {
+            get => new float4(y, w, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 gaa_
+        {
+            get => new float4(y, w, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 tqq_
+        {
+            get => new float4(y, w, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ywwx
+        {
+            get => new float4(y, w, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 gaar
+        {
+            get => new float4(y, w, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 tqqs
+        {
+            get => new float4(y, w, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ywwy
+        {
+            get => new float4(y, w, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 gaag
+        {
+            get => new float4(y, w, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 tqqt
+        {
+            get => new float4(y, w, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ywwz
+        {
+            get => new float4(y, w, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 gaab
+        {
+            get => new float4(y, w, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 tqqp
+        {
+            get => new float4(y, w, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ywww
+        {
+            get => new float4(y, w, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 gaaa
+        {
+            get => new float4(y, w, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 tqqq
+        {
+            get => new float4(y, w, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 z___
+        {
+            get => new float4(z, 0f, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 b___
+        {
+            get => new float4(z, 0f, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 p___
+        {
+            get => new float4(z, 0f, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 z__x
+        {
+            get => new float4(z, 0f, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 b__r
+        {
+            get => new float4(z, 0f, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 p__s
+        {
+            get => new float4(z, 0f, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 z__y
+        {
+            get => new float4(z, 0f, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 b__g
+        {
+            get => new float4(z, 0f, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 p__t
+        {
+            get => new float4(z, 0f, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 z__z
+        {
+            get => new float4(z, 0f, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 b__b
+        {
+            get => new float4(z, 0f, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 p__p
+        {
+            get => new float4(z, 0f, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 z__w
+        {
+            get => new float4(z, 0f, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 b__a
+        {
+            get => new float4(z, 0f, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 p__q
+        {
+            get => new float4(z, 0f, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 z_x_
+        {
+            get => new float4(z, 0f, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 b_r_
+        {
+            get => new float4(z, 0f, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 p_s_
+        {
+            get => new float4(z, 0f, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 z_xx
+        {
+            get => new float4(z, 0f, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 b_rr
+        {
+            get => new float4(z, 0f, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 p_ss
+        {
+            get => new float4(z, 0f, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 z_xy
+        {
+            get => new float4(z, 0f, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 b_rg
+        {
+            get => new float4(z, 0f, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 p_st
+        {
+            get => new float4(z, 0f, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 z_xz
+        {
+            get => new float4(z, 0f, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 b_rb
+        {
+            get => new float4(z, 0f, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 p_sp
+        {
+            get => new float4(z, 0f, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 z_xw
+        {
+            get => new float4(z, 0f, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 b_ra
+        {
+            get => new float4(z, 0f, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 p_sq
+        {
+            get => new float4(z, 0f, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 z_y_
+        {
+            get => new float4(z, 0f, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 b_g_
+        {
+            get => new float4(z, 0f, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 p_t_
+        {
+            get => new float4(z, 0f, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 z_yx
+        {
+            get => new float4(z, 0f, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 b_gr
+        {
+            get => new float4(z, 0f, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 p_ts
+        {
+            get => new float4(z, 0f, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 z_yy
+        {
+            get => new float4(z, 0f, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 b_gg
+        {
+            get => new float4(z, 0f, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 p_tt
+        {
+            get => new float4(z, 0f, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 z_yz
+        {
+            get => new float4(z, 0f, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 b_gb
+        {
+            get => new float4(z, 0f, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 p_tp
+        {
+            get => new float4(z, 0f, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 z_yw
+        {
+            get => new float4(z, 0f, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 b_ga
+        {
+            get => new float4(z, 0f, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 p_tq
+        {
+            get => new float4(z, 0f, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 z_z_
+        {
+            get => new float4(z, 0f, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 b_b_
+        {
+            get => new float4(z, 0f, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 p_p_
+        {
+            get => new float4(z, 0f, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 z_zx
+        {
+            get => new float4(z, 0f, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 b_br
+        {
+            get => new float4(z, 0f, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 p_ps
+        {
+            get => new float4(z, 0f, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 z_zy
+        {
+            get => new float4(z, 0f, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 b_bg
+        {
+            get => new float4(z, 0f, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 p_pt
+        {
+            get => new float4(z, 0f, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 z_zz
+        {
+            get => new float4(z, 0f, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 b_bb
+        {
+            get => new float4(z, 0f, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 p_pp
+        {
+            get => new float4(z, 0f, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 z_zw
+        {
+            get => new float4(z, 0f, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 b_ba
+        {
+            get => new float4(z, 0f, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 p_pq
+        {
+            get => new float4(z, 0f, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 z_w_
+        {
+            get => new float4(z, 0f, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 b_a_
+        {
+            get => new float4(z, 0f, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 p_q_
+        {
+            get => new float4(z, 0f, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 z_wx
+        {
+            get => new float4(z, 0f, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 b_ar
+        {
+            get => new float4(z, 0f, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 p_qs
+        {
+            get => new float4(z, 0f, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 z_wy
+        {
+            get => new float4(z, 0f, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 b_ag
+        {
+            get => new float4(z, 0f, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 p_qt
+        {
+            get => new float4(z, 0f, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 z_wz
+        {
+            get => new float4(z, 0f, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 b_ab
+        {
+            get => new float4(z, 0f, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 p_qp
+        {
+            get => new float4(z, 0f, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 z_ww
+        {
+            get => new float4(z, 0f, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 b_aa
+        {
+            get => new float4(z, 0f, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 p_qq
+        {
+            get => new float4(z, 0f, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zx__
+        {
+            get => new float4(z, x, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 br__
+        {
+            get => new float4(z, x, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ps__
+        {
+            get => new float4(z, x, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zx_x
+        {
+            get => new float4(z, x, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 br_r
+        {
+            get => new float4(z, x, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ps_s
+        {
+            get => new float4(z, x, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zx_y
+        {
+            get => new float4(z, x, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 br_g
+        {
+            get => new float4(z, x, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ps_t
+        {
+            get => new float4(z, x, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zx_z
+        {
+            get => new float4(z, x, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 br_b
+        {
+            get => new float4(z, x, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ps_p
+        {
+            get => new float4(z, x, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zx_w
+        {
+            get => new float4(z, x, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 br_a
+        {
+            get => new float4(z, x, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ps_q
+        {
+            get => new float4(z, x, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zxx_
+        {
+            get => new float4(z, x, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 brr_
+        {
+            get => new float4(z, x, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 pss_
+        {
+            get => new float4(z, x, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zxxx
+        {
+            get => new float4(z, x, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 brrr
+        {
+            get => new float4(z, x, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 psss
+        {
+            get => new float4(z, x, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zxxy
+        {
+            get => new float4(z, x, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 brrg
+        {
+            get => new float4(z, x, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 psst
+        {
+            get => new float4(z, x, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zxxz
+        {
+            get => new float4(z, x, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 brrb
+        {
+            get => new float4(z, x, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 pssp
+        {
+            get => new float4(z, x, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zxxw
+        {
+            get => new float4(z, x, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 brra
+        {
+            get => new float4(z, x, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 pssq
+        {
+            get => new float4(z, x, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zxy_
+        {
+            get => new float4(z, x, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 brg_
+        {
+            get => new float4(z, x, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 pst_
+        {
+            get => new float4(z, x, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zxyx
+        {
+            get => new float4(z, x, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 brgr
+        {
+            get => new float4(z, x, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 psts
+        {
+            get => new float4(z, x, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zxyy
+        {
+            get => new float4(z, x, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 brgg
+        {
+            get => new float4(z, x, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 pstt
+        {
+            get => new float4(z, x, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zxyz
+        {
+            get => new float4(z, x, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 brgb
+        {
+            get => new float4(z, x, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 pstp
+        {
+            get => new float4(z, x, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zxyw
+        {
+            get => new float4(z, x, y, w);
+            set
+            {
+                z = value.x;
+                x = value.y;
+                y = value.z;
+                w = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 brga
+        {
+            get => new float4(z, x, y, w);
+            set
+            {
+                z = value.x;
+                x = value.y;
+                y = value.z;
+                w = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 pstq
+        {
+            get => new float4(z, x, y, w);
+            set
+            {
+                z = value.x;
+                x = value.y;
+                y = value.z;
+                w = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zxz_
+        {
+            get => new float4(z, x, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 brb_
+        {
+            get => new float4(z, x, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 psp_
+        {
+            get => new float4(z, x, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zxzx
+        {
+            get => new float4(z, x, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 brbr
+        {
+            get => new float4(z, x, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 psps
+        {
+            get => new float4(z, x, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zxzy
+        {
+            get => new float4(z, x, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 brbg
+        {
+            get => new float4(z, x, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 pspt
+        {
+            get => new float4(z, x, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zxzz
+        {
+            get => new float4(z, x, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 brbb
+        {
+            get => new float4(z, x, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 pspp
+        {
+            get => new float4(z, x, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zxzw
+        {
+            get => new float4(z, x, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 brba
+        {
+            get => new float4(z, x, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 pspq
+        {
+            get => new float4(z, x, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zxw_
+        {
+            get => new float4(z, x, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 bra_
+        {
+            get => new float4(z, x, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 psq_
+        {
+            get => new float4(z, x, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zxwx
+        {
+            get => new float4(z, x, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 brar
+        {
+            get => new float4(z, x, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 psqs
+        {
+            get => new float4(z, x, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zxwy
+        {
+            get => new float4(z, x, w, y);
+            set
+            {
+                z = value.x;
+                x = value.y;
+                w = value.z;
+                y = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 brag
+        {
+            get => new float4(z, x, w, y);
+            set
+            {
+                z = value.x;
+                x = value.y;
+                w = value.z;
+                y = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 psqt
+        {
+            get => new float4(z, x, w, y);
+            set
+            {
+                z = value.x;
+                x = value.y;
+                w = value.z;
+                y = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zxwz
+        {
+            get => new float4(z, x, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 brab
+        {
+            get => new float4(z, x, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 psqp
+        {
+            get => new float4(z, x, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zxww
+        {
+            get => new float4(z, x, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 braa
+        {
+            get => new float4(z, x, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 psqq
+        {
+            get => new float4(z, x, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zy__
+        {
+            get => new float4(z, y, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 bg__
+        {
+            get => new float4(z, y, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 pt__
+        {
+            get => new float4(z, y, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zy_x
+        {
+            get => new float4(z, y, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 bg_r
+        {
+            get => new float4(z, y, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 pt_s
+        {
+            get => new float4(z, y, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zy_y
+        {
+            get => new float4(z, y, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 bg_g
+        {
+            get => new float4(z, y, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 pt_t
+        {
+            get => new float4(z, y, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zy_z
+        {
+            get => new float4(z, y, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 bg_b
+        {
+            get => new float4(z, y, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 pt_p
+        {
+            get => new float4(z, y, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zy_w
+        {
+            get => new float4(z, y, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 bg_a
+        {
+            get => new float4(z, y, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 pt_q
+        {
+            get => new float4(z, y, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zyx_
+        {
+            get => new float4(z, y, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 bgr_
+        {
+            get => new float4(z, y, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 pts_
+        {
+            get => new float4(z, y, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zyxx
+        {
+            get => new float4(z, y, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 bgrr
+        {
+            get => new float4(z, y, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ptss
+        {
+            get => new float4(z, y, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zyxy
+        {
+            get => new float4(z, y, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 bgrg
+        {
+            get => new float4(z, y, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ptst
+        {
+            get => new float4(z, y, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zyxz
+        {
+            get => new float4(z, y, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 bgrb
+        {
+            get => new float4(z, y, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ptsp
+        {
+            get => new float4(z, y, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zyxw
+        {
+            get => new float4(z, y, x, w);
+            set
+            {
+                z = value.x;
+                y = value.y;
+                x = value.z;
+                w = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 bgra
+        {
+            get => new float4(z, y, x, w);
+            set
+            {
+                z = value.x;
+                y = value.y;
+                x = value.z;
+                w = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ptsq
+        {
+            get => new float4(z, y, x, w);
+            set
+            {
+                z = value.x;
+                y = value.y;
+                x = value.z;
+                w = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zyy_
+        {
+            get => new float4(z, y, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 bgg_
+        {
+            get => new float4(z, y, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ptt_
+        {
+            get => new float4(z, y, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zyyx
+        {
+            get => new float4(z, y, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 bggr
+        {
+            get => new float4(z, y, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ptts
+        {
+            get => new float4(z, y, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zyyy
+        {
+            get => new float4(z, y, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 bggg
+        {
+            get => new float4(z, y, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 pttt
+        {
+            get => new float4(z, y, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zyyz
+        {
+            get => new float4(z, y, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 bggb
+        {
+            get => new float4(z, y, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 pttp
+        {
+            get => new float4(z, y, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zyyw
+        {
+            get => new float4(z, y, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 bgga
+        {
+            get => new float4(z, y, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 pttq
+        {
+            get => new float4(z, y, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zyz_
+        {
+            get => new float4(z, y, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 bgb_
+        {
+            get => new float4(z, y, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ptp_
+        {
+            get => new float4(z, y, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zyzx
+        {
+            get => new float4(z, y, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 bgbr
+        {
+            get => new float4(z, y, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ptps
+        {
+            get => new float4(z, y, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zyzy
+        {
+            get => new float4(z, y, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 bgbg
+        {
+            get => new float4(z, y, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ptpt
+        {
+            get => new float4(z, y, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zyzz
+        {
+            get => new float4(z, y, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 bgbb
+        {
+            get => new float4(z, y, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ptpp
+        {
+            get => new float4(z, y, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zyzw
+        {
+            get => new float4(z, y, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 bgba
+        {
+            get => new float4(z, y, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ptpq
+        {
+            get => new float4(z, y, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zyw_
+        {
+            get => new float4(z, y, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 bga_
+        {
+            get => new float4(z, y, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ptq_
+        {
+            get => new float4(z, y, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zywx
+        {
+            get => new float4(z, y, w, x);
+            set
+            {
+                z = value.x;
+                y = value.y;
+                w = value.z;
+                x = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 bgar
+        {
+            get => new float4(z, y, w, x);
+            set
+            {
+                z = value.x;
+                y = value.y;
+                w = value.z;
+                x = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ptqs
+        {
+            get => new float4(z, y, w, x);
+            set
+            {
+                z = value.x;
+                y = value.y;
+                w = value.z;
+                x = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zywy
+        {
+            get => new float4(z, y, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 bgag
+        {
+            get => new float4(z, y, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ptqt
+        {
+            get => new float4(z, y, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zywz
+        {
+            get => new float4(z, y, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 bgab
+        {
+            get => new float4(z, y, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ptqp
+        {
+            get => new float4(z, y, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zyww
+        {
+            get => new float4(z, y, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 bgaa
+        {
+            get => new float4(z, y, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ptqq
+        {
+            get => new float4(z, y, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zz__
+        {
+            get => new float4(z, z, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 bb__
+        {
+            get => new float4(z, z, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 pp__
+        {
+            get => new float4(z, z, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zz_x
+        {
+            get => new float4(z, z, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 bb_r
+        {
+            get => new float4(z, z, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 pp_s
+        {
+            get => new float4(z, z, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zz_y
+        {
+            get => new float4(z, z, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 bb_g
+        {
+            get => new float4(z, z, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 pp_t
+        {
+            get => new float4(z, z, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zz_z
+        {
+            get => new float4(z, z, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 bb_b
+        {
+            get => new float4(z, z, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 pp_p
+        {
+            get => new float4(z, z, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zz_w
+        {
+            get => new float4(z, z, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 bb_a
+        {
+            get => new float4(z, z, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 pp_q
+        {
+            get => new float4(z, z, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zzx_
+        {
+            get => new float4(z, z, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 bbr_
+        {
+            get => new float4(z, z, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 pps_
+        {
+            get => new float4(z, z, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zzxx
+        {
+            get => new float4(z, z, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 bbrr
+        {
+            get => new float4(z, z, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ppss
+        {
+            get => new float4(z, z, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zzxy
+        {
+            get => new float4(z, z, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 bbrg
+        {
+            get => new float4(z, z, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ppst
+        {
+            get => new float4(z, z, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zzxz
+        {
+            get => new float4(z, z, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 bbrb
+        {
+            get => new float4(z, z, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ppsp
+        {
+            get => new float4(z, z, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zzxw
+        {
+            get => new float4(z, z, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 bbra
+        {
+            get => new float4(z, z, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ppsq
+        {
+            get => new float4(z, z, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zzy_
+        {
+            get => new float4(z, z, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 bbg_
+        {
+            get => new float4(z, z, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ppt_
+        {
+            get => new float4(z, z, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zzyx
+        {
+            get => new float4(z, z, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 bbgr
+        {
+            get => new float4(z, z, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ppts
+        {
+            get => new float4(z, z, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zzyy
+        {
+            get => new float4(z, z, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 bbgg
+        {
+            get => new float4(z, z, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 pptt
+        {
+            get => new float4(z, z, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zzyz
+        {
+            get => new float4(z, z, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 bbgb
+        {
+            get => new float4(z, z, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 pptp
+        {
+            get => new float4(z, z, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zzyw
+        {
+            get => new float4(z, z, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 bbga
+        {
+            get => new float4(z, z, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 pptq
+        {
+            get => new float4(z, z, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zzz_
+        {
+            get => new float4(z, z, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 bbb_
+        {
+            get => new float4(z, z, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ppp_
+        {
+            get => new float4(z, z, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zzzx
+        {
+            get => new float4(z, z, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 bbbr
+        {
+            get => new float4(z, z, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ppps
+        {
+            get => new float4(z, z, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zzzy
+        {
+            get => new float4(z, z, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 bbbg
+        {
+            get => new float4(z, z, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 pppt
+        {
+            get => new float4(z, z, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zzzz
+        {
+            get => new float4(z, z, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 bbbb
+        {
+            get => new float4(z, z, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 pppp
+        {
+            get => new float4(z, z, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zzzw
+        {
+            get => new float4(z, z, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 bbba
+        {
+            get => new float4(z, z, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 pppq
+        {
+            get => new float4(z, z, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zzw_
+        {
+            get => new float4(z, z, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 bba_
+        {
+            get => new float4(z, z, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ppq_
+        {
+            get => new float4(z, z, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zzwx
+        {
+            get => new float4(z, z, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 bbar
+        {
+            get => new float4(z, z, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ppqs
+        {
+            get => new float4(z, z, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zzwy
+        {
+            get => new float4(z, z, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 bbag
+        {
+            get => new float4(z, z, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ppqt
+        {
+            get => new float4(z, z, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zzwz
+        {
+            get => new float4(z, z, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 bbab
+        {
+            get => new float4(z, z, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ppqp
+        {
+            get => new float4(z, z, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zzww
+        {
+            get => new float4(z, z, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 bbaa
+        {
+            get => new float4(z, z, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ppqq
+        {
+            get => new float4(z, z, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zw__
+        {
+            get => new float4(z, w, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ba__
+        {
+            get => new float4(z, w, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 pq__
+        {
+            get => new float4(z, w, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zw_x
+        {
+            get => new float4(z, w, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ba_r
+        {
+            get => new float4(z, w, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 pq_s
+        {
+            get => new float4(z, w, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zw_y
+        {
+            get => new float4(z, w, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ba_g
+        {
+            get => new float4(z, w, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 pq_t
+        {
+            get => new float4(z, w, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zw_z
+        {
+            get => new float4(z, w, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ba_b
+        {
+            get => new float4(z, w, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 pq_p
+        {
+            get => new float4(z, w, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zw_w
+        {
+            get => new float4(z, w, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ba_a
+        {
+            get => new float4(z, w, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 pq_q
+        {
+            get => new float4(z, w, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zwx_
+        {
+            get => new float4(z, w, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 bar_
+        {
+            get => new float4(z, w, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 pqs_
+        {
+            get => new float4(z, w, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zwxx
+        {
+            get => new float4(z, w, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 barr
+        {
+            get => new float4(z, w, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 pqss
+        {
+            get => new float4(z, w, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zwxy
+        {
+            get => new float4(z, w, x, y);
+            set
+            {
+                z = value.x;
+                w = value.y;
+                x = value.z;
+                y = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 barg
+        {
+            get => new float4(z, w, x, y);
+            set
+            {
+                z = value.x;
+                w = value.y;
+                x = value.z;
+                y = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 pqst
+        {
+            get => new float4(z, w, x, y);
+            set
+            {
+                z = value.x;
+                w = value.y;
+                x = value.z;
+                y = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zwxz
+        {
+            get => new float4(z, w, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 barb
+        {
+            get => new float4(z, w, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 pqsp
+        {
+            get => new float4(z, w, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zwxw
+        {
+            get => new float4(z, w, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 bara
+        {
+            get => new float4(z, w, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 pqsq
+        {
+            get => new float4(z, w, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zwy_
+        {
+            get => new float4(z, w, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 bag_
+        {
+            get => new float4(z, w, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 pqt_
+        {
+            get => new float4(z, w, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zwyx
+        {
+            get => new float4(z, w, y, x);
+            set
+            {
+                z = value.x;
+                w = value.y;
+                y = value.z;
+                x = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 bagr
+        {
+            get => new float4(z, w, y, x);
+            set
+            {
+                z = value.x;
+                w = value.y;
+                y = value.z;
+                x = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 pqts
+        {
+            get => new float4(z, w, y, x);
+            set
+            {
+                z = value.x;
+                w = value.y;
+                y = value.z;
+                x = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zwyy
+        {
+            get => new float4(z, w, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 bagg
+        {
+            get => new float4(z, w, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 pqtt
+        {
+            get => new float4(z, w, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zwyz
+        {
+            get => new float4(z, w, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 bagb
+        {
+            get => new float4(z, w, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 pqtp
+        {
+            get => new float4(z, w, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zwyw
+        {
+            get => new float4(z, w, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 baga
+        {
+            get => new float4(z, w, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 pqtq
+        {
+            get => new float4(z, w, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zwz_
+        {
+            get => new float4(z, w, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 bab_
+        {
+            get => new float4(z, w, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 pqp_
+        {
+            get => new float4(z, w, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zwzx
+        {
+            get => new float4(z, w, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 babr
+        {
+            get => new float4(z, w, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 pqps
+        {
+            get => new float4(z, w, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zwzy
+        {
+            get => new float4(z, w, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 babg
+        {
+            get => new float4(z, w, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 pqpt
+        {
+            get => new float4(z, w, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zwzz
+        {
+            get => new float4(z, w, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 babb
+        {
+            get => new float4(z, w, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 pqpp
+        {
+            get => new float4(z, w, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zwzw
+        {
+            get => new float4(z, w, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 baba
+        {
+            get => new float4(z, w, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 pqpq
+        {
+            get => new float4(z, w, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zww_
+        {
+            get => new float4(z, w, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 baa_
+        {
+            get => new float4(z, w, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 pqq_
+        {
+            get => new float4(z, w, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zwwx
+        {
+            get => new float4(z, w, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 baar
+        {
+            get => new float4(z, w, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 pqqs
+        {
+            get => new float4(z, w, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zwwy
+        {
+            get => new float4(z, w, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 baag
+        {
+            get => new float4(z, w, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 pqqt
+        {
+            get => new float4(z, w, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zwwz
+        {
+            get => new float4(z, w, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 baab
+        {
+            get => new float4(z, w, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 pqqp
+        {
+            get => new float4(z, w, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 zwww
+        {
+            get => new float4(z, w, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 baaa
+        {
+            get => new float4(z, w, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 pqqq
+        {
+            get => new float4(z, w, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 w___
+        {
+            get => new float4(w, 0f, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 a___
+        {
+            get => new float4(w, 0f, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 q___
+        {
+            get => new float4(w, 0f, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 w__x
+        {
+            get => new float4(w, 0f, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 a__r
+        {
+            get => new float4(w, 0f, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 q__s
+        {
+            get => new float4(w, 0f, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 w__y
+        {
+            get => new float4(w, 0f, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 a__g
+        {
+            get => new float4(w, 0f, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 q__t
+        {
+            get => new float4(w, 0f, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 w__z
+        {
+            get => new float4(w, 0f, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 a__b
+        {
+            get => new float4(w, 0f, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 q__p
+        {
+            get => new float4(w, 0f, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 w__w
+        {
+            get => new float4(w, 0f, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 a__a
+        {
+            get => new float4(w, 0f, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 q__q
+        {
+            get => new float4(w, 0f, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 w_x_
+        {
+            get => new float4(w, 0f, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 a_r_
+        {
+            get => new float4(w, 0f, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 q_s_
+        {
+            get => new float4(w, 0f, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 w_xx
+        {
+            get => new float4(w, 0f, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 a_rr
+        {
+            get => new float4(w, 0f, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 q_ss
+        {
+            get => new float4(w, 0f, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 w_xy
+        {
+            get => new float4(w, 0f, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 a_rg
+        {
+            get => new float4(w, 0f, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 q_st
+        {
+            get => new float4(w, 0f, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 w_xz
+        {
+            get => new float4(w, 0f, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 a_rb
+        {
+            get => new float4(w, 0f, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 q_sp
+        {
+            get => new float4(w, 0f, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 w_xw
+        {
+            get => new float4(w, 0f, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 a_ra
+        {
+            get => new float4(w, 0f, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 q_sq
+        {
+            get => new float4(w, 0f, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 w_y_
+        {
+            get => new float4(w, 0f, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 a_g_
+        {
+            get => new float4(w, 0f, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 q_t_
+        {
+            get => new float4(w, 0f, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 w_yx
+        {
+            get => new float4(w, 0f, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 a_gr
+        {
+            get => new float4(w, 0f, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 q_ts
+        {
+            get => new float4(w, 0f, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 w_yy
+        {
+            get => new float4(w, 0f, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 a_gg
+        {
+            get => new float4(w, 0f, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 q_tt
+        {
+            get => new float4(w, 0f, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 w_yz
+        {
+            get => new float4(w, 0f, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 a_gb
+        {
+            get => new float4(w, 0f, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 q_tp
+        {
+            get => new float4(w, 0f, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 w_yw
+        {
+            get => new float4(w, 0f, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 a_ga
+        {
+            get => new float4(w, 0f, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 q_tq
+        {
+            get => new float4(w, 0f, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 w_z_
+        {
+            get => new float4(w, 0f, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 a_b_
+        {
+            get => new float4(w, 0f, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 q_p_
+        {
+            get => new float4(w, 0f, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 w_zx
+        {
+            get => new float4(w, 0f, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 a_br
+        {
+            get => new float4(w, 0f, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 q_ps
+        {
+            get => new float4(w, 0f, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 w_zy
+        {
+            get => new float4(w, 0f, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 a_bg
+        {
+            get => new float4(w, 0f, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 q_pt
+        {
+            get => new float4(w, 0f, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 w_zz
+        {
+            get => new float4(w, 0f, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 a_bb
+        {
+            get => new float4(w, 0f, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 q_pp
+        {
+            get => new float4(w, 0f, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 w_zw
+        {
+            get => new float4(w, 0f, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 a_ba
+        {
+            get => new float4(w, 0f, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 q_pq
+        {
+            get => new float4(w, 0f, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 w_w_
+        {
+            get => new float4(w, 0f, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 a_a_
+        {
+            get => new float4(w, 0f, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 q_q_
+        {
+            get => new float4(w, 0f, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 w_wx
+        {
+            get => new float4(w, 0f, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 a_ar
+        {
+            get => new float4(w, 0f, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 q_qs
+        {
+            get => new float4(w, 0f, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 w_wy
+        {
+            get => new float4(w, 0f, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 a_ag
+        {
+            get => new float4(w, 0f, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 q_qt
+        {
+            get => new float4(w, 0f, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 w_wz
+        {
+            get => new float4(w, 0f, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 a_ab
+        {
+            get => new float4(w, 0f, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 q_qp
+        {
+            get => new float4(w, 0f, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 w_ww
+        {
+            get => new float4(w, 0f, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 a_aa
+        {
+            get => new float4(w, 0f, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 q_qq
+        {
+            get => new float4(w, 0f, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wx__
+        {
+            get => new float4(w, x, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ar__
+        {
+            get => new float4(w, x, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qs__
+        {
+            get => new float4(w, x, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wx_x
+        {
+            get => new float4(w, x, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ar_r
+        {
+            get => new float4(w, x, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qs_s
+        {
+            get => new float4(w, x, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wx_y
+        {
+            get => new float4(w, x, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ar_g
+        {
+            get => new float4(w, x, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qs_t
+        {
+            get => new float4(w, x, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wx_z
+        {
+            get => new float4(w, x, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ar_b
+        {
+            get => new float4(w, x, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qs_p
+        {
+            get => new float4(w, x, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wx_w
+        {
+            get => new float4(w, x, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ar_a
+        {
+            get => new float4(w, x, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qs_q
+        {
+            get => new float4(w, x, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wxx_
+        {
+            get => new float4(w, x, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 arr_
+        {
+            get => new float4(w, x, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qss_
+        {
+            get => new float4(w, x, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wxxx
+        {
+            get => new float4(w, x, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 arrr
+        {
+            get => new float4(w, x, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qsss
+        {
+            get => new float4(w, x, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wxxy
+        {
+            get => new float4(w, x, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 arrg
+        {
+            get => new float4(w, x, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qsst
+        {
+            get => new float4(w, x, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wxxz
+        {
+            get => new float4(w, x, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 arrb
+        {
+            get => new float4(w, x, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qssp
+        {
+            get => new float4(w, x, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wxxw
+        {
+            get => new float4(w, x, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 arra
+        {
+            get => new float4(w, x, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qssq
+        {
+            get => new float4(w, x, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wxy_
+        {
+            get => new float4(w, x, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 arg_
+        {
+            get => new float4(w, x, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qst_
+        {
+            get => new float4(w, x, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wxyx
+        {
+            get => new float4(w, x, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 argr
+        {
+            get => new float4(w, x, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qsts
+        {
+            get => new float4(w, x, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wxyy
+        {
+            get => new float4(w, x, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 argg
+        {
+            get => new float4(w, x, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qstt
+        {
+            get => new float4(w, x, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wxyz
+        {
+            get => new float4(w, x, y, z);
+            set
+            {
+                w = value.x;
+                x = value.y;
+                y = value.z;
+                z = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 argb
+        {
+            get => new float4(w, x, y, z);
+            set
+            {
+                w = value.x;
+                x = value.y;
+                y = value.z;
+                z = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qstp
+        {
+            get => new float4(w, x, y, z);
+            set
+            {
+                w = value.x;
+                x = value.y;
+                y = value.z;
+                z = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wxyw
+        {
+            get => new float4(w, x, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 arga
+        {
+            get => new float4(w, x, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qstq
+        {
+            get => new float4(w, x, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wxz_
+        {
+            get => new float4(w, x, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 arb_
+        {
+            get => new float4(w, x, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qsp_
+        {
+            get => new float4(w, x, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wxzx
+        {
+            get => new float4(w, x, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 arbr
+        {
+            get => new float4(w, x, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qsps
+        {
+            get => new float4(w, x, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wxzy
+        {
+            get => new float4(w, x, z, y);
+            set
+            {
+                w = value.x;
+                x = value.y;
+                z = value.z;
+                y = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 arbg
+        {
+            get => new float4(w, x, z, y);
+            set
+            {
+                w = value.x;
+                x = value.y;
+                z = value.z;
+                y = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qspt
+        {
+            get => new float4(w, x, z, y);
+            set
+            {
+                w = value.x;
+                x = value.y;
+                z = value.z;
+                y = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wxzz
+        {
+            get => new float4(w, x, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 arbb
+        {
+            get => new float4(w, x, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qspp
+        {
+            get => new float4(w, x, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wxzw
+        {
+            get => new float4(w, x, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 arba
+        {
+            get => new float4(w, x, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qspq
+        {
+            get => new float4(w, x, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wxw_
+        {
+            get => new float4(w, x, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ara_
+        {
+            get => new float4(w, x, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qsq_
+        {
+            get => new float4(w, x, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wxwx
+        {
+            get => new float4(w, x, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 arar
+        {
+            get => new float4(w, x, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qsqs
+        {
+            get => new float4(w, x, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wxwy
+        {
+            get => new float4(w, x, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 arag
+        {
+            get => new float4(w, x, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qsqt
+        {
+            get => new float4(w, x, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wxwz
+        {
+            get => new float4(w, x, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 arab
+        {
+            get => new float4(w, x, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qsqp
+        {
+            get => new float4(w, x, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wxww
+        {
+            get => new float4(w, x, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 araa
+        {
+            get => new float4(w, x, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qsqq
+        {
+            get => new float4(w, x, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wy__
+        {
+            get => new float4(w, y, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ag__
+        {
+            get => new float4(w, y, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qt__
+        {
+            get => new float4(w, y, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wy_x
+        {
+            get => new float4(w, y, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ag_r
+        {
+            get => new float4(w, y, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qt_s
+        {
+            get => new float4(w, y, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wy_y
+        {
+            get => new float4(w, y, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ag_g
+        {
+            get => new float4(w, y, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qt_t
+        {
+            get => new float4(w, y, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wy_z
+        {
+            get => new float4(w, y, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ag_b
+        {
+            get => new float4(w, y, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qt_p
+        {
+            get => new float4(w, y, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wy_w
+        {
+            get => new float4(w, y, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ag_a
+        {
+            get => new float4(w, y, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qt_q
+        {
+            get => new float4(w, y, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wyx_
+        {
+            get => new float4(w, y, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 agr_
+        {
+            get => new float4(w, y, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qts_
+        {
+            get => new float4(w, y, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wyxx
+        {
+            get => new float4(w, y, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 agrr
+        {
+            get => new float4(w, y, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qtss
+        {
+            get => new float4(w, y, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wyxy
+        {
+            get => new float4(w, y, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 agrg
+        {
+            get => new float4(w, y, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qtst
+        {
+            get => new float4(w, y, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wyxz
+        {
+            get => new float4(w, y, x, z);
+            set
+            {
+                w = value.x;
+                y = value.y;
+                x = value.z;
+                z = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 agrb
+        {
+            get => new float4(w, y, x, z);
+            set
+            {
+                w = value.x;
+                y = value.y;
+                x = value.z;
+                z = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qtsp
+        {
+            get => new float4(w, y, x, z);
+            set
+            {
+                w = value.x;
+                y = value.y;
+                x = value.z;
+                z = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wyxw
+        {
+            get => new float4(w, y, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 agra
+        {
+            get => new float4(w, y, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qtsq
+        {
+            get => new float4(w, y, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wyy_
+        {
+            get => new float4(w, y, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 agg_
+        {
+            get => new float4(w, y, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qtt_
+        {
+            get => new float4(w, y, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wyyx
+        {
+            get => new float4(w, y, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 aggr
+        {
+            get => new float4(w, y, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qtts
+        {
+            get => new float4(w, y, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wyyy
+        {
+            get => new float4(w, y, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 aggg
+        {
+            get => new float4(w, y, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qttt
+        {
+            get => new float4(w, y, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wyyz
+        {
+            get => new float4(w, y, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 aggb
+        {
+            get => new float4(w, y, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qttp
+        {
+            get => new float4(w, y, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wyyw
+        {
+            get => new float4(w, y, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 agga
+        {
+            get => new float4(w, y, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qttq
+        {
+            get => new float4(w, y, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wyz_
+        {
+            get => new float4(w, y, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 agb_
+        {
+            get => new float4(w, y, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qtp_
+        {
+            get => new float4(w, y, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wyzx
+        {
+            get => new float4(w, y, z, x);
+            set
+            {
+                w = value.x;
+                y = value.y;
+                z = value.z;
+                x = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 agbr
+        {
+            get => new float4(w, y, z, x);
+            set
+            {
+                w = value.x;
+                y = value.y;
+                z = value.z;
+                x = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qtps
+        {
+            get => new float4(w, y, z, x);
+            set
+            {
+                w = value.x;
+                y = value.y;
+                z = value.z;
+                x = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wyzy
+        {
+            get => new float4(w, y, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 agbg
+        {
+            get => new float4(w, y, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qtpt
+        {
+            get => new float4(w, y, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wyzz
+        {
+            get => new float4(w, y, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 agbb
+        {
+            get => new float4(w, y, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qtpp
+        {
+            get => new float4(w, y, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wyzw
+        {
+            get => new float4(w, y, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 agba
+        {
+            get => new float4(w, y, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qtpq
+        {
+            get => new float4(w, y, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wyw_
+        {
+            get => new float4(w, y, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 aga_
+        {
+            get => new float4(w, y, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qtq_
+        {
+            get => new float4(w, y, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wywx
+        {
+            get => new float4(w, y, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 agar
+        {
+            get => new float4(w, y, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qtqs
+        {
+            get => new float4(w, y, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wywy
+        {
+            get => new float4(w, y, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 agag
+        {
+            get => new float4(w, y, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qtqt
+        {
+            get => new float4(w, y, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wywz
+        {
+            get => new float4(w, y, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 agab
+        {
+            get => new float4(w, y, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qtqp
+        {
+            get => new float4(w, y, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wyww
+        {
+            get => new float4(w, y, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 agaa
+        {
+            get => new float4(w, y, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qtqq
+        {
+            get => new float4(w, y, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wz__
+        {
+            get => new float4(w, z, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ab__
+        {
+            get => new float4(w, z, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qp__
+        {
+            get => new float4(w, z, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wz_x
+        {
+            get => new float4(w, z, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ab_r
+        {
+            get => new float4(w, z, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qp_s
+        {
+            get => new float4(w, z, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wz_y
+        {
+            get => new float4(w, z, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ab_g
+        {
+            get => new float4(w, z, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qp_t
+        {
+            get => new float4(w, z, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wz_z
+        {
+            get => new float4(w, z, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ab_b
+        {
+            get => new float4(w, z, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qp_p
+        {
+            get => new float4(w, z, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wz_w
+        {
+            get => new float4(w, z, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ab_a
+        {
+            get => new float4(w, z, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qp_q
+        {
+            get => new float4(w, z, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wzx_
+        {
+            get => new float4(w, z, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 abr_
+        {
+            get => new float4(w, z, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qps_
+        {
+            get => new float4(w, z, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wzxx
+        {
+            get => new float4(w, z, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 abrr
+        {
+            get => new float4(w, z, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qpss
+        {
+            get => new float4(w, z, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wzxy
+        {
+            get => new float4(w, z, x, y);
+            set
+            {
+                w = value.x;
+                z = value.y;
+                x = value.z;
+                y = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 abrg
+        {
+            get => new float4(w, z, x, y);
+            set
+            {
+                w = value.x;
+                z = value.y;
+                x = value.z;
+                y = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qpst
+        {
+            get => new float4(w, z, x, y);
+            set
+            {
+                w = value.x;
+                z = value.y;
+                x = value.z;
+                y = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wzxz
+        {
+            get => new float4(w, z, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 abrb
+        {
+            get => new float4(w, z, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qpsp
+        {
+            get => new float4(w, z, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wzxw
+        {
+            get => new float4(w, z, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 abra
+        {
+            get => new float4(w, z, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qpsq
+        {
+            get => new float4(w, z, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wzy_
+        {
+            get => new float4(w, z, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 abg_
+        {
+            get => new float4(w, z, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qpt_
+        {
+            get => new float4(w, z, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wzyx
+        {
+            get => new float4(w, z, y, x);
+            set
+            {
+                w = value.x;
+                z = value.y;
+                y = value.z;
+                x = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 abgr
+        {
+            get => new float4(w, z, y, x);
+            set
+            {
+                w = value.x;
+                z = value.y;
+                y = value.z;
+                x = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qpts
+        {
+            get => new float4(w, z, y, x);
+            set
+            {
+                w = value.x;
+                z = value.y;
+                y = value.z;
+                x = value.w;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wzyy
+        {
+            get => new float4(w, z, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 abgg
+        {
+            get => new float4(w, z, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qptt
+        {
+            get => new float4(w, z, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wzyz
+        {
+            get => new float4(w, z, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 abgb
+        {
+            get => new float4(w, z, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qptp
+        {
+            get => new float4(w, z, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wzyw
+        {
+            get => new float4(w, z, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 abga
+        {
+            get => new float4(w, z, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qptq
+        {
+            get => new float4(w, z, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wzz_
+        {
+            get => new float4(w, z, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 abb_
+        {
+            get => new float4(w, z, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qpp_
+        {
+            get => new float4(w, z, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wzzx
+        {
+            get => new float4(w, z, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 abbr
+        {
+            get => new float4(w, z, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qpps
+        {
+            get => new float4(w, z, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wzzy
+        {
+            get => new float4(w, z, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 abbg
+        {
+            get => new float4(w, z, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qppt
+        {
+            get => new float4(w, z, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wzzz
+        {
+            get => new float4(w, z, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 abbb
+        {
+            get => new float4(w, z, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qppp
+        {
+            get => new float4(w, z, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wzzw
+        {
+            get => new float4(w, z, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 abba
+        {
+            get => new float4(w, z, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qppq
+        {
+            get => new float4(w, z, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wzw_
+        {
+            get => new float4(w, z, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 aba_
+        {
+            get => new float4(w, z, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qpq_
+        {
+            get => new float4(w, z, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wzwx
+        {
+            get => new float4(w, z, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 abar
+        {
+            get => new float4(w, z, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qpqs
+        {
+            get => new float4(w, z, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wzwy
+        {
+            get => new float4(w, z, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 abag
+        {
+            get => new float4(w, z, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qpqt
+        {
+            get => new float4(w, z, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wzwz
+        {
+            get => new float4(w, z, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 abab
+        {
+            get => new float4(w, z, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qpqp
+        {
+            get => new float4(w, z, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wzww
+        {
+            get => new float4(w, z, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 abaa
+        {
+            get => new float4(w, z, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qpqq
+        {
+            get => new float4(w, z, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ww__
+        {
+            get => new float4(w, w, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 aa__
+        {
+            get => new float4(w, w, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qq__
+        {
+            get => new float4(w, w, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ww_x
+        {
+            get => new float4(w, w, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 aa_r
+        {
+            get => new float4(w, w, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qq_s
+        {
+            get => new float4(w, w, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ww_y
+        {
+            get => new float4(w, w, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 aa_g
+        {
+            get => new float4(w, w, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qq_t
+        {
+            get => new float4(w, w, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ww_z
+        {
+            get => new float4(w, w, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 aa_b
+        {
+            get => new float4(w, w, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qq_p
+        {
+            get => new float4(w, w, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 ww_w
+        {
+            get => new float4(w, w, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 aa_a
+        {
+            get => new float4(w, w, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qq_q
+        {
+            get => new float4(w, w, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wwx_
+        {
+            get => new float4(w, w, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 aar_
+        {
+            get => new float4(w, w, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qqs_
+        {
+            get => new float4(w, w, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wwxx
+        {
+            get => new float4(w, w, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 aarr
+        {
+            get => new float4(w, w, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qqss
+        {
+            get => new float4(w, w, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wwxy
+        {
+            get => new float4(w, w, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 aarg
+        {
+            get => new float4(w, w, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qqst
+        {
+            get => new float4(w, w, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wwxz
+        {
+            get => new float4(w, w, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 aarb
+        {
+            get => new float4(w, w, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qqsp
+        {
+            get => new float4(w, w, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wwxw
+        {
+            get => new float4(w, w, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 aara
+        {
+            get => new float4(w, w, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qqsq
+        {
+            get => new float4(w, w, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wwy_
+        {
+            get => new float4(w, w, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 aag_
+        {
+            get => new float4(w, w, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qqt_
+        {
+            get => new float4(w, w, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wwyx
+        {
+            get => new float4(w, w, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 aagr
+        {
+            get => new float4(w, w, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qqts
+        {
+            get => new float4(w, w, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wwyy
+        {
+            get => new float4(w, w, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 aagg
+        {
+            get => new float4(w, w, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qqtt
+        {
+            get => new float4(w, w, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wwyz
+        {
+            get => new float4(w, w, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 aagb
+        {
+            get => new float4(w, w, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qqtp
+        {
+            get => new float4(w, w, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wwyw
+        {
+            get => new float4(w, w, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 aaga
+        {
+            get => new float4(w, w, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qqtq
+        {
+            get => new float4(w, w, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wwz_
+        {
+            get => new float4(w, w, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 aab_
+        {
+            get => new float4(w, w, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qqp_
+        {
+            get => new float4(w, w, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wwzx
+        {
+            get => new float4(w, w, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 aabr
+        {
+            get => new float4(w, w, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qqps
+        {
+            get => new float4(w, w, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wwzy
+        {
+            get => new float4(w, w, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 aabg
+        {
+            get => new float4(w, w, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qqpt
+        {
+            get => new float4(w, w, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wwzz
+        {
+            get => new float4(w, w, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 aabb
+        {
+            get => new float4(w, w, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qqpp
+        {
+            get => new float4(w, w, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wwzw
+        {
+            get => new float4(w, w, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 aaba
+        {
+            get => new float4(w, w, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qqpq
+        {
+            get => new float4(w, w, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 www_
+        {
+            get => new float4(w, w, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 aaa_
+        {
+            get => new float4(w, w, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qqq_
+        {
+            get => new float4(w, w, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wwwx
+        {
+            get => new float4(w, w, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 aaar
+        {
+            get => new float4(w, w, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qqqs
+        {
+            get => new float4(w, w, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wwwy
+        {
+            get => new float4(w, w, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 aaag
+        {
+            get => new float4(w, w, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qqqt
+        {
+            get => new float4(w, w, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wwwz
+        {
+            get => new float4(w, w, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 aaab
+        {
+            get => new float4(w, w, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qqqp
+        {
+            get => new float4(w, w, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 wwww
+        {
+            get => new float4(w, w, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 aaaa
+        {
+            get => new float4(w, w, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float4 qqqq
+        {
+            get => new float4(w, w, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 __x
+        {
+            get => new float3(0f, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 __r
+        {
+            get => new float3(0f, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 __s
+        {
+            get => new float3(0f, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 __y
+        {
+            get => new float3(0f, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 __g
+        {
+            get => new float3(0f, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 __t
+        {
+            get => new float3(0f, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 __z
+        {
+            get => new float3(0f, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 __b
+        {
+            get => new float3(0f, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 __p
+        {
+            get => new float3(0f, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 __w
+        {
+            get => new float3(0f, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 __a
+        {
+            get => new float3(0f, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 __q
+        {
+            get => new float3(0f, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 _x_
+        {
+            get => new float3(0f, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 _r_
+        {
+            get => new float3(0f, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 _s_
+        {
+            get => new float3(0f, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 _xx
+        {
+            get => new float3(0f, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 _rr
+        {
+            get => new float3(0f, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 _ss
+        {
+            get => new float3(0f, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 _xy
+        {
+            get => new float3(0f, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 _rg
+        {
+            get => new float3(0f, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 _st
+        {
+            get => new float3(0f, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 _xz
+        {
+            get => new float3(0f, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 _rb
+        {
+            get => new float3(0f, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 _sp
+        {
+            get => new float3(0f, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 _xw
+        {
+            get => new float3(0f, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 _ra
+        {
+            get => new float3(0f, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 _sq
+        {
+            get => new float3(0f, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 _y_
+        {
+            get => new float3(0f, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 _g_
+        {
+            get => new float3(0f, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 _t_
+        {
+            get => new float3(0f, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 _yx
+        {
+            get => new float3(0f, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 _gr
+        {
+            get => new float3(0f, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 _ts
+        {
+            get => new float3(0f, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 _yy
+        {
+            get => new float3(0f, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 _gg
+        {
+            get => new float3(0f, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 _tt
+        {
+            get => new float3(0f, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 _yz
+        {
+            get => new float3(0f, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 _gb
+        {
+            get => new float3(0f, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 _tp
+        {
+            get => new float3(0f, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 _yw
+        {
+            get => new float3(0f, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 _ga
+        {
+            get => new float3(0f, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 _tq
+        {
+            get => new float3(0f, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 _z_
+        {
+            get => new float3(0f, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 _b_
+        {
+            get => new float3(0f, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 _p_
+        {
+            get => new float3(0f, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 _zx
+        {
+            get => new float3(0f, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 _br
+        {
+            get => new float3(0f, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 _ps
+        {
+            get => new float3(0f, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 _zy
+        {
+            get => new float3(0f, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 _bg
+        {
+            get => new float3(0f, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 _pt
+        {
+            get => new float3(0f, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 _zz
+        {
+            get => new float3(0f, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 _bb
+        {
+            get => new float3(0f, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 _pp
+        {
+            get => new float3(0f, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 _zw
+        {
+            get => new float3(0f, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 _ba
+        {
+            get => new float3(0f, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 _pq
+        {
+            get => new float3(0f, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 _w_
+        {
+            get => new float3(0f, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 _a_
+        {
+            get => new float3(0f, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 _q_
+        {
+            get => new float3(0f, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 _wx
+        {
+            get => new float3(0f, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 _ar
+        {
+            get => new float3(0f, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 _qs
+        {
+            get => new float3(0f, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 _wy
+        {
+            get => new float3(0f, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 _ag
+        {
+            get => new float3(0f, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 _qt
+        {
+            get => new float3(0f, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 _wz
+        {
+            get => new float3(0f, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 _ab
+        {
+            get => new float3(0f, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 _qp
+        {
+            get => new float3(0f, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 _ww
+        {
+            get => new float3(0f, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 _aa
+        {
+            get => new float3(0f, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 _qq
+        {
+            get => new float3(0f, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 x__
+        {
+            get => new float3(x, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 r__
+        {
+            get => new float3(x, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 s__
+        {
+            get => new float3(x, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 x_x
+        {
+            get => new float3(x, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 r_r
+        {
+            get => new float3(x, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 s_s
+        {
+            get => new float3(x, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 x_y
+        {
+            get => new float3(x, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 r_g
+        {
+            get => new float3(x, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 s_t
+        {
+            get => new float3(x, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 x_z
+        {
+            get => new float3(x, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 r_b
+        {
+            get => new float3(x, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 s_p
+        {
+            get => new float3(x, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 x_w
+        {
+            get => new float3(x, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 r_a
+        {
+            get => new float3(x, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 s_q
+        {
+            get => new float3(x, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 xx_
+        {
+            get => new float3(x, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 rr_
+        {
+            get => new float3(x, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 ss_
+        {
+            get => new float3(x, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 xxx
+        {
+            get => new float3(x, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 rrr
+        {
+            get => new float3(x, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 sss
+        {
+            get => new float3(x, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 xxy
+        {
+            get => new float3(x, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 rrg
+        {
+            get => new float3(x, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 sst
+        {
+            get => new float3(x, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 xxz
+        {
+            get => new float3(x, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 rrb
+        {
+            get => new float3(x, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 ssp
+        {
+            get => new float3(x, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 xxw
+        {
+            get => new float3(x, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 rra
+        {
+            get => new float3(x, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 ssq
+        {
+            get => new float3(x, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 xy_
+        {
+            get => new float3(x, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 rg_
+        {
+            get => new float3(x, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 st_
+        {
+            get => new float3(x, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 xyx
+        {
+            get => new float3(x, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 rgr
+        {
+            get => new float3(x, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 sts
+        {
+            get => new float3(x, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 xyy
+        {
+            get => new float3(x, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 rgg
+        {
+            get => new float3(x, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 stt
+        {
+            get => new float3(x, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 xyz
+        {
+            get => new float3(x, y, z);
+            set
+            {
+                x = value.x;
+                y = value.y;
+                z = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 rgb
+        {
+            get => new float3(x, y, z);
+            set
+            {
+                x = value.x;
+                y = value.y;
+                z = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 stp
+        {
+            get => new float3(x, y, z);
+            set
+            {
+                x = value.x;
+                y = value.y;
+                z = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 xyw
+        {
+            get => new float3(x, y, w);
+            set
+            {
+                x = value.x;
+                y = value.y;
+                w = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 rga
+        {
+            get => new float3(x, y, w);
+            set
+            {
+                x = value.x;
+                y = value.y;
+                w = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 stq
+        {
+            get => new float3(x, y, w);
+            set
+            {
+                x = value.x;
+                y = value.y;
+                w = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 xz_
+        {
+            get => new float3(x, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 rb_
+        {
+            get => new float3(x, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 sp_
+        {
+            get => new float3(x, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 xzx
+        {
+            get => new float3(x, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 rbr
+        {
+            get => new float3(x, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 sps
+        {
+            get => new float3(x, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 xzy
+        {
+            get => new float3(x, z, y);
+            set
+            {
+                x = value.x;
+                z = value.y;
+                y = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 rbg
+        {
+            get => new float3(x, z, y);
+            set
+            {
+                x = value.x;
+                z = value.y;
+                y = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 spt
+        {
+            get => new float3(x, z, y);
+            set
+            {
+                x = value.x;
+                z = value.y;
+                y = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 xzz
+        {
+            get => new float3(x, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 rbb
+        {
+            get => new float3(x, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 spp
+        {
+            get => new float3(x, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 xzw
+        {
+            get => new float3(x, z, w);
+            set
+            {
+                x = value.x;
+                z = value.y;
+                w = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 rba
+        {
+            get => new float3(x, z, w);
+            set
+            {
+                x = value.x;
+                z = value.y;
+                w = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 spq
+        {
+            get => new float3(x, z, w);
+            set
+            {
+                x = value.x;
+                z = value.y;
+                w = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 xw_
+        {
+            get => new float3(x, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 ra_
+        {
+            get => new float3(x, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 sq_
+        {
+            get => new float3(x, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 xwx
+        {
+            get => new float3(x, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 rar
+        {
+            get => new float3(x, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 sqs
+        {
+            get => new float3(x, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 xwy
+        {
+            get => new float3(x, w, y);
+            set
+            {
+                x = value.x;
+                w = value.y;
+                y = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 rag
+        {
+            get => new float3(x, w, y);
+            set
+            {
+                x = value.x;
+                w = value.y;
+                y = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 sqt
+        {
+            get => new float3(x, w, y);
+            set
+            {
+                x = value.x;
+                w = value.y;
+                y = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 xwz
+        {
+            get => new float3(x, w, z);
+            set
+            {
+                x = value.x;
+                w = value.y;
+                z = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 rab
+        {
+            get => new float3(x, w, z);
+            set
+            {
+                x = value.x;
+                w = value.y;
+                z = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 sqp
+        {
+            get => new float3(x, w, z);
+            set
+            {
+                x = value.x;
+                w = value.y;
+                z = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 xww
+        {
+            get => new float3(x, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 raa
+        {
+            get => new float3(x, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 sqq
+        {
+            get => new float3(x, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 y__
+        {
+            get => new float3(y, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 g__
+        {
+            get => new float3(y, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 t__
+        {
+            get => new float3(y, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 y_x
+        {
+            get => new float3(y, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 g_r
+        {
+            get => new float3(y, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 t_s
+        {
+            get => new float3(y, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 y_y
+        {
+            get => new float3(y, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 g_g
+        {
+            get => new float3(y, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 t_t
+        {
+            get => new float3(y, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 y_z
+        {
+            get => new float3(y, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 g_b
+        {
+            get => new float3(y, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 t_p
+        {
+            get => new float3(y, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 y_w
+        {
+            get => new float3(y, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 g_a
+        {
+            get => new float3(y, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 t_q
+        {
+            get => new float3(y, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 yx_
+        {
+            get => new float3(y, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 gr_
+        {
+            get => new float3(y, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 ts_
+        {
+            get => new float3(y, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 yxx
+        {
+            get => new float3(y, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 grr
+        {
+            get => new float3(y, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 tss
+        {
+            get => new float3(y, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 yxy
+        {
+            get => new float3(y, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 grg
+        {
+            get => new float3(y, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 tst
+        {
+            get => new float3(y, x, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 yxz
+        {
+            get => new float3(y, x, z);
+            set
+            {
+                y = value.x;
+                x = value.y;
+                z = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 grb
+        {
+            get => new float3(y, x, z);
+            set
+            {
+                y = value.x;
+                x = value.y;
+                z = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 tsp
+        {
+            get => new float3(y, x, z);
+            set
+            {
+                y = value.x;
+                x = value.y;
+                z = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 yxw
+        {
+            get => new float3(y, x, w);
+            set
+            {
+                y = value.x;
+                x = value.y;
+                w = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 gra
+        {
+            get => new float3(y, x, w);
+            set
+            {
+                y = value.x;
+                x = value.y;
+                w = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 tsq
+        {
+            get => new float3(y, x, w);
+            set
+            {
+                y = value.x;
+                x = value.y;
+                w = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 yy_
+        {
+            get => new float3(y, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 gg_
+        {
+            get => new float3(y, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 tt_
+        {
+            get => new float3(y, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 yyx
+        {
+            get => new float3(y, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 ggr
+        {
+            get => new float3(y, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 tts
+        {
+            get => new float3(y, y, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 yyy
+        {
+            get => new float3(y, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 ggg
+        {
+            get => new float3(y, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 ttt
+        {
+            get => new float3(y, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 yyz
+        {
+            get => new float3(y, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 ggb
+        {
+            get => new float3(y, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 ttp
+        {
+            get => new float3(y, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 yyw
+        {
+            get => new float3(y, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 gga
+        {
+            get => new float3(y, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 ttq
+        {
+            get => new float3(y, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 yz_
+        {
+            get => new float3(y, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 gb_
+        {
+            get => new float3(y, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 tp_
+        {
+            get => new float3(y, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 yzx
+        {
+            get => new float3(y, z, x);
+            set
+            {
+                y = value.x;
+                z = value.y;
+                x = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 gbr
+        {
+            get => new float3(y, z, x);
+            set
+            {
+                y = value.x;
+                z = value.y;
+                x = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 tps
+        {
+            get => new float3(y, z, x);
+            set
+            {
+                y = value.x;
+                z = value.y;
+                x = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 yzy
+        {
+            get => new float3(y, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 gbg
+        {
+            get => new float3(y, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 tpt
+        {
+            get => new float3(y, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 yzz
+        {
+            get => new float3(y, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 gbb
+        {
+            get => new float3(y, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 tpp
+        {
+            get => new float3(y, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 yzw
+        {
+            get => new float3(y, z, w);
+            set
+            {
+                y = value.x;
+                z = value.y;
+                w = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 gba
+        {
+            get => new float3(y, z, w);
+            set
+            {
+                y = value.x;
+                z = value.y;
+                w = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 tpq
+        {
+            get => new float3(y, z, w);
+            set
+            {
+                y = value.x;
+                z = value.y;
+                w = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 yw_
+        {
+            get => new float3(y, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 ga_
+        {
+            get => new float3(y, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 tq_
+        {
+            get => new float3(y, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 ywx
+        {
+            get => new float3(y, w, x);
+            set
+            {
+                y = value.x;
+                w = value.y;
+                x = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 gar
+        {
+            get => new float3(y, w, x);
+            set
+            {
+                y = value.x;
+                w = value.y;
+                x = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 tqs
+        {
+            get => new float3(y, w, x);
+            set
+            {
+                y = value.x;
+                w = value.y;
+                x = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 ywy
+        {
+            get => new float3(y, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 gag
+        {
+            get => new float3(y, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 tqt
+        {
+            get => new float3(y, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 ywz
+        {
+            get => new float3(y, w, z);
+            set
+            {
+                y = value.x;
+                w = value.y;
+                z = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 gab
+        {
+            get => new float3(y, w, z);
+            set
+            {
+                y = value.x;
+                w = value.y;
+                z = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 tqp
+        {
+            get => new float3(y, w, z);
+            set
+            {
+                y = value.x;
+                w = value.y;
+                z = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 yww
+        {
+            get => new float3(y, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 gaa
+        {
+            get => new float3(y, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 tqq
+        {
+            get => new float3(y, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 z__
+        {
+            get => new float3(z, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 b__
+        {
+            get => new float3(z, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 p__
+        {
+            get => new float3(z, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 z_x
+        {
+            get => new float3(z, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 b_r
+        {
+            get => new float3(z, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 p_s
+        {
+            get => new float3(z, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 z_y
+        {
+            get => new float3(z, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 b_g
+        {
+            get => new float3(z, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 p_t
+        {
+            get => new float3(z, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 z_z
+        {
+            get => new float3(z, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 b_b
+        {
+            get => new float3(z, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 p_p
+        {
+            get => new float3(z, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 z_w
+        {
+            get => new float3(z, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 b_a
+        {
+            get => new float3(z, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 p_q
+        {
+            get => new float3(z, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 zx_
+        {
+            get => new float3(z, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 br_
+        {
+            get => new float3(z, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 ps_
+        {
+            get => new float3(z, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 zxx
+        {
+            get => new float3(z, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 brr
+        {
+            get => new float3(z, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 pss
+        {
+            get => new float3(z, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 zxy
+        {
+            get => new float3(z, x, y);
+            set
+            {
+                z = value.x;
+                x = value.y;
+                y = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 brg
+        {
+            get => new float3(z, x, y);
+            set
+            {
+                z = value.x;
+                x = value.y;
+                y = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 pst
+        {
+            get => new float3(z, x, y);
+            set
+            {
+                z = value.x;
+                x = value.y;
+                y = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 zxz
+        {
+            get => new float3(z, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 brb
+        {
+            get => new float3(z, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 psp
+        {
+            get => new float3(z, x, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 zxw
+        {
+            get => new float3(z, x, w);
+            set
+            {
+                z = value.x;
+                x = value.y;
+                w = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 bra
+        {
+            get => new float3(z, x, w);
+            set
+            {
+                z = value.x;
+                x = value.y;
+                w = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 psq
+        {
+            get => new float3(z, x, w);
+            set
+            {
+                z = value.x;
+                x = value.y;
+                w = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 zy_
+        {
+            get => new float3(z, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 bg_
+        {
+            get => new float3(z, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 pt_
+        {
+            get => new float3(z, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 zyx
+        {
+            get => new float3(z, y, x);
+            set
+            {
+                z = value.x;
+                y = value.y;
+                x = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 bgr
+        {
+            get => new float3(z, y, x);
+            set
+            {
+                z = value.x;
+                y = value.y;
+                x = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 pts
+        {
+            get => new float3(z, y, x);
+            set
+            {
+                z = value.x;
+                y = value.y;
+                x = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 zyy
+        {
+            get => new float3(z, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 bgg
+        {
+            get => new float3(z, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 ptt
+        {
+            get => new float3(z, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 zyz
+        {
+            get => new float3(z, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 bgb
+        {
+            get => new float3(z, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 ptp
+        {
+            get => new float3(z, y, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 zyw
+        {
+            get => new float3(z, y, w);
+            set
+            {
+                z = value.x;
+                y = value.y;
+                w = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 bga
+        {
+            get => new float3(z, y, w);
+            set
+            {
+                z = value.x;
+                y = value.y;
+                w = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 ptq
+        {
+            get => new float3(z, y, w);
+            set
+            {
+                z = value.x;
+                y = value.y;
+                w = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 zz_
+        {
+            get => new float3(z, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 bb_
+        {
+            get => new float3(z, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 pp_
+        {
+            get => new float3(z, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 zzx
+        {
+            get => new float3(z, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 bbr
+        {
+            get => new float3(z, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 pps
+        {
+            get => new float3(z, z, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 zzy
+        {
+            get => new float3(z, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 bbg
+        {
+            get => new float3(z, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 ppt
+        {
+            get => new float3(z, z, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 zzz
+        {
+            get => new float3(z, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 bbb
+        {
+            get => new float3(z, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 ppp
+        {
+            get => new float3(z, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 zzw
+        {
+            get => new float3(z, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 bba
+        {
+            get => new float3(z, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 ppq
+        {
+            get => new float3(z, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 zw_
+        {
+            get => new float3(z, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 ba_
+        {
+            get => new float3(z, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 pq_
+        {
+            get => new float3(z, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 zwx
+        {
+            get => new float3(z, w, x);
+            set
+            {
+                z = value.x;
+                w = value.y;
+                x = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 bar
+        {
+            get => new float3(z, w, x);
+            set
+            {
+                z = value.x;
+                w = value.y;
+                x = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 pqs
+        {
+            get => new float3(z, w, x);
+            set
+            {
+                z = value.x;
+                w = value.y;
+                x = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 zwy
+        {
+            get => new float3(z, w, y);
+            set
+            {
+                z = value.x;
+                w = value.y;
+                y = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 bag
+        {
+            get => new float3(z, w, y);
+            set
+            {
+                z = value.x;
+                w = value.y;
+                y = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 pqt
+        {
+            get => new float3(z, w, y);
+            set
+            {
+                z = value.x;
+                w = value.y;
+                y = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 zwz
+        {
+            get => new float3(z, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 bab
+        {
+            get => new float3(z, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 pqp
+        {
+            get => new float3(z, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 zww
+        {
+            get => new float3(z, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 baa
+        {
+            get => new float3(z, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 pqq
+        {
+            get => new float3(z, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 w__
+        {
+            get => new float3(w, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 a__
+        {
+            get => new float3(w, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 q__
+        {
+            get => new float3(w, 0f, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 w_x
+        {
+            get => new float3(w, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 a_r
+        {
+            get => new float3(w, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 q_s
+        {
+            get => new float3(w, 0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 w_y
+        {
+            get => new float3(w, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 a_g
+        {
+            get => new float3(w, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 q_t
+        {
+            get => new float3(w, 0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 w_z
+        {
+            get => new float3(w, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 a_b
+        {
+            get => new float3(w, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 q_p
+        {
+            get => new float3(w, 0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 w_w
+        {
+            get => new float3(w, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 a_a
+        {
+            get => new float3(w, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 q_q
+        {
+            get => new float3(w, 0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 wx_
+        {
+            get => new float3(w, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 ar_
+        {
+            get => new float3(w, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 qs_
+        {
+            get => new float3(w, x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 wxx
+        {
+            get => new float3(w, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 arr
+        {
+            get => new float3(w, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 qss
+        {
+            get => new float3(w, x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 wxy
+        {
+            get => new float3(w, x, y);
+            set
+            {
+                w = value.x;
+                x = value.y;
+                y = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 arg
+        {
+            get => new float3(w, x, y);
+            set
+            {
+                w = value.x;
+                x = value.y;
+                y = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 qst
+        {
+            get => new float3(w, x, y);
+            set
+            {
+                w = value.x;
+                x = value.y;
+                y = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 wxz
+        {
+            get => new float3(w, x, z);
+            set
+            {
+                w = value.x;
+                x = value.y;
+                z = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 arb
+        {
+            get => new float3(w, x, z);
+            set
+            {
+                w = value.x;
+                x = value.y;
+                z = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 qsp
+        {
+            get => new float3(w, x, z);
+            set
+            {
+                w = value.x;
+                x = value.y;
+                z = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 wxw
+        {
+            get => new float3(w, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 ara
+        {
+            get => new float3(w, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 qsq
+        {
+            get => new float3(w, x, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 wy_
+        {
+            get => new float3(w, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 ag_
+        {
+            get => new float3(w, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 qt_
+        {
+            get => new float3(w, y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 wyx
+        {
+            get => new float3(w, y, x);
+            set
+            {
+                w = value.x;
+                y = value.y;
+                x = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 agr
+        {
+            get => new float3(w, y, x);
+            set
+            {
+                w = value.x;
+                y = value.y;
+                x = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 qts
+        {
+            get => new float3(w, y, x);
+            set
+            {
+                w = value.x;
+                y = value.y;
+                x = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 wyy
+        {
+            get => new float3(w, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 agg
+        {
+            get => new float3(w, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 qtt
+        {
+            get => new float3(w, y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 wyz
+        {
+            get => new float3(w, y, z);
+            set
+            {
+                w = value.x;
+                y = value.y;
+                z = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 agb
+        {
+            get => new float3(w, y, z);
+            set
+            {
+                w = value.x;
+                y = value.y;
+                z = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 qtp
+        {
+            get => new float3(w, y, z);
+            set
+            {
+                w = value.x;
+                y = value.y;
+                z = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 wyw
+        {
+            get => new float3(w, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 aga
+        {
+            get => new float3(w, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 qtq
+        {
+            get => new float3(w, y, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 wz_
+        {
+            get => new float3(w, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 ab_
+        {
+            get => new float3(w, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 qp_
+        {
+            get => new float3(w, z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 wzx
+        {
+            get => new float3(w, z, x);
+            set
+            {
+                w = value.x;
+                z = value.y;
+                x = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 abr
+        {
+            get => new float3(w, z, x);
+            set
+            {
+                w = value.x;
+                z = value.y;
+                x = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 qps
+        {
+            get => new float3(w, z, x);
+            set
+            {
+                w = value.x;
+                z = value.y;
+                x = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 wzy
+        {
+            get => new float3(w, z, y);
+            set
+            {
+                w = value.x;
+                z = value.y;
+                y = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 abg
+        {
+            get => new float3(w, z, y);
+            set
+            {
+                w = value.x;
+                z = value.y;
+                y = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 qpt
+        {
+            get => new float3(w, z, y);
+            set
+            {
+                w = value.x;
+                z = value.y;
+                y = value.z;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 wzz
+        {
+            get => new float3(w, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 abb
+        {
+            get => new float3(w, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 qpp
+        {
+            get => new float3(w, z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 wzw
+        {
+            get => new float3(w, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 aba
+        {
+            get => new float3(w, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 qpq
+        {
+            get => new float3(w, z, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 ww_
+        {
+            get => new float3(w, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 aa_
+        {
+            get => new float3(w, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 qq_
+        {
+            get => new float3(w, w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 wwx
+        {
+            get => new float3(w, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 aar
+        {
+            get => new float3(w, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 qqs
+        {
+            get => new float3(w, w, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 wwy
+        {
+            get => new float3(w, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 aag
+        {
+            get => new float3(w, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 qqt
+        {
+            get => new float3(w, w, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 wwz
+        {
+            get => new float3(w, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 aab
+        {
+            get => new float3(w, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 qqp
+        {
+            get => new float3(w, w, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 www
+        {
+            get => new float3(w, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 aaa
+        {
+            get => new float3(w, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float3 qqq
+        {
+            get => new float3(w, w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float2 _x
+        {
+            get => new float2(0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float2 _r
+        {
+            get => new float2(0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float2 _s
+        {
+            get => new float2(0f, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float2 _y
+        {
+            get => new float2(0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float2 _g
+        {
+            get => new float2(0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float2 _t
+        {
+            get => new float2(0f, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float2 _z
+        {
+            get => new float2(0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float2 _b
+        {
+            get => new float2(0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float2 _p
+        {
+            get => new float2(0f, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float2 _w
+        {
+            get => new float2(0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float2 _a
+        {
+            get => new float2(0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float2 _q
+        {
+            get => new float2(0f, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float2 x_
+        {
+            get => new float2(x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float2 r_
+        {
+            get => new float2(x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float2 s_
+        {
+            get => new float2(x, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float2 xx
+        {
+            get => new float2(x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float2 rr
+        {
+            get => new float2(x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float2 ss
+        {
+            get => new float2(x, x);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float2 xy
+        {
+            get => new float2(x, y);
+            set
+            {
+                x = value.x;
+                y = value.y;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float2 rg
+        {
+            get => new float2(x, y);
+            set
+            {
+                x = value.x;
+                y = value.y;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float2 st
+        {
+            get => new float2(x, y);
+            set
+            {
+                x = value.x;
+                y = value.y;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float2 xz
+        {
+            get => new float2(x, z);
+            set
+            {
+                x = value.x;
+                z = value.y;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float2 rb
+        {
+            get => new float2(x, z);
+            set
+            {
+                x = value.x;
+                z = value.y;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float2 sp
+        {
+            get => new float2(x, z);
+            set
+            {
+                x = value.x;
+                z = value.y;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float2 xw
+        {
+            get => new float2(x, w);
+            set
+            {
+                x = value.x;
+                w = value.y;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float2 ra
+        {
+            get => new float2(x, w);
+            set
+            {
+                x = value.x;
+                w = value.y;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float2 sq
+        {
+            get => new float2(x, w);
+            set
+            {
+                x = value.x;
+                w = value.y;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float2 y_
+        {
+            get => new float2(y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float2 g_
+        {
+            get => new float2(y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float2 t_
+        {
+            get => new float2(y, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float2 yx
+        {
+            get => new float2(y, x);
+            set
+            {
+                y = value.x;
+                x = value.y;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float2 gr
+        {
+            get => new float2(y, x);
+            set
+            {
+                y = value.x;
+                x = value.y;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float2 ts
+        {
+            get => new float2(y, x);
+            set
+            {
+                y = value.x;
+                x = value.y;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float2 yy
+        {
+            get => new float2(y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float2 gg
+        {
+            get => new float2(y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float2 tt
+        {
+            get => new float2(y, y);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float2 yz
+        {
+            get => new float2(y, z);
+            set
+            {
+                y = value.x;
+                z = value.y;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float2 gb
+        {
+            get => new float2(y, z);
+            set
+            {
+                y = value.x;
+                z = value.y;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float2 tp
+        {
+            get => new float2(y, z);
+            set
+            {
+                y = value.x;
+                z = value.y;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float2 yw
+        {
+            get => new float2(y, w);
+            set
+            {
+                y = value.x;
+                w = value.y;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float2 ga
+        {
+            get => new float2(y, w);
+            set
+            {
+                y = value.x;
+                w = value.y;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float2 tq
+        {
+            get => new float2(y, w);
+            set
+            {
+                y = value.x;
+                w = value.y;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float2 z_
+        {
+            get => new float2(z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float2 b_
+        {
+            get => new float2(z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float2 p_
+        {
+            get => new float2(z, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float2 zx
+        {
+            get => new float2(z, x);
+            set
+            {
+                z = value.x;
+                x = value.y;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float2 br
+        {
+            get => new float2(z, x);
+            set
+            {
+                z = value.x;
+                x = value.y;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float2 ps
+        {
+            get => new float2(z, x);
+            set
+            {
+                z = value.x;
+                x = value.y;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float2 zy
+        {
+            get => new float2(z, y);
+            set
+            {
+                z = value.x;
+                y = value.y;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float2 bg
+        {
+            get => new float2(z, y);
+            set
+            {
+                z = value.x;
+                y = value.y;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float2 pt
+        {
+            get => new float2(z, y);
+            set
+            {
+                z = value.x;
+                y = value.y;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float2 zz
+        {
+            get => new float2(z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float2 bb
+        {
+            get => new float2(z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float2 pp
+        {
+            get => new float2(z, z);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float2 zw
+        {
+            get => new float2(z, w);
+            set
+            {
+                z = value.x;
+                w = value.y;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float2 ba
+        {
+            get => new float2(z, w);
+            set
+            {
+                z = value.x;
+                w = value.y;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float2 pq
+        {
+            get => new float2(z, w);
+            set
+            {
+                z = value.x;
+                w = value.y;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float2 w_
+        {
+            get => new float2(w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float2 a_
+        {
+            get => new float2(w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float2 q_
+        {
+            get => new float2(w, 0f);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float2 wx
+        {
+            get => new float2(w, x);
+            set
+            {
+                w = value.x;
+                x = value.y;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float2 ar
+        {
+            get => new float2(w, x);
+            set
+            {
+                w = value.x;
+                x = value.y;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float2 qs
+        {
+            get => new float2(w, x);
+            set
+            {
+                w = value.x;
+                x = value.y;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float2 wy
+        {
+            get => new float2(w, y);
+            set
+            {
+                w = value.x;
+                y = value.y;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float2 ag
+        {
+            get => new float2(w, y);
+            set
+            {
+                w = value.x;
+                y = value.y;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float2 qt
+        {
+            get => new float2(w, y);
+            set
+            {
+                w = value.x;
+                y = value.y;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float2 wz
+        {
+            get => new float2(w, z);
+            set
+            {
+                w = value.x;
+                z = value.y;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float2 ab
+        {
+            get => new float2(w, z);
+            set
+            {
+                w = value.x;
+                z = value.y;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float2 qp
+        {
+            get => new float2(w, z);
+            set
+            {
+                w = value.x;
+                z = value.y;
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float2 ww
+        {
+            get => new float2(w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float2 aa
+        {
+            get => new float2(w, w);
+        }
+
+        /// <summary>
+        /// Gets or sets the specified subset of components.
+        /// </summary>
+        [DebuggerBrowsable(DebuggerBrowsableState.Never)]
+        public float2 qq
+        {
+            get => new float2(w, w);
+        }
+
+        #endregion
+
+    }
+}
