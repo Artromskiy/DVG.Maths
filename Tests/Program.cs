@@ -1,6 +1,6 @@
 using System;
 
-namespace KibiHex.Tests
+namespace DVG.Maths.Tests
 {
     internal static class Program
     {

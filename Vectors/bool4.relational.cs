@@ -4,7 +4,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Runtime.CompilerServices;
 
-namespace KibiHex
+namespace DVG.Maths
 {
     public partial struct bool4
     {

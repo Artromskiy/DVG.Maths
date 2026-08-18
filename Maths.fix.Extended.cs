@@ -1,6 +1,6 @@
 ﻿using System.Runtime.CompilerServices;
 
-namespace KibiHex
+namespace DVG.Maths
 {
     public static partial class Maths
     {
@@ -60,4 +60,3 @@ namespace KibiHex
         public static fix Repeat(fix t, fix length) => Clamp(t - (Floor(t / length) * length), 0, length);
     }
 }
-

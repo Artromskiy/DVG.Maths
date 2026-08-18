@@ -5,7 +5,7 @@ using System.Globalization;
 using System.Runtime.CompilerServices;
 using System.Runtime.Serialization;
 
-namespace KibiHex
+namespace DVG.Maths
 {
     [DebuggerDisplay("Value = {ToString()}")]
     [DataContract]
@@ -182,4 +182,3 @@ namespace KibiHex
 
     }
 }
-

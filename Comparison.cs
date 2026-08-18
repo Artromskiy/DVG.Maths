@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace KibiHex
+namespace DVG.Maths
 {
     public static class Comparison
     {
@@ -62,4 +62,3 @@ namespace KibiHex
         }
     }
 }
-

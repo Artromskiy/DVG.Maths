@@ -3,7 +3,7 @@
 #nullable enable
 using System.Runtime.CompilerServices;
 
-namespace KibiHex
+namespace DVG.Maths
 {
     public static partial class maths
     {

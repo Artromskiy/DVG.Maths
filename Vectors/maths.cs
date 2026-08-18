@@ -2,7 +2,7 @@
 #pragma warning disable IDE1006
 #nullable enable
 
-namespace KibiHex
+namespace DVG.Maths
 {
     public static partial class maths
     {

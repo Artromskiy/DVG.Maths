@@ -1,8 +1,8 @@
-# KibiHex.Maths
+# DVG.Maths
 
 A lightweight, engine-independent mathematics library for .NET.
 
-KibiHex.Maths provides scalar math utilities, fixed-point arithmetic, strongly typed vectors, extensive swizzling, and an optional shader-like API. It does not depend on Unity, `System.Numerics`, or a particular game engine.
+DVG.Maths provides scalar math utilities, fixed-point arithmetic, strongly typed vectors, extensive swizzling, and an optional shader-like API. It does not depend on Unity, `System.Numerics`, or a particular game engine.
 
 The runtime library targets `netstandard2.1`; its code generator is a separate .NET console application.
 
@@ -21,7 +21,7 @@ The runtime library targets `netstandard2.1`; its code generator is a separate .
 
 ## Vector types
 
-KibiHex.Maths includes 18 vector types:
+DVG.Maths includes 18 vector types:
 
 | Scalar | 2D | 3D | 4D |
 | --- | --- | --- | --- |
@@ -35,7 +35,7 @@ KibiHex.Maths includes 18 vector types:
 Vectors provide component constructors, scalar constructors, dimension conversions, indexing, parsing, equality, comparison, and the operators appropriate for their scalar type.
 
 ```csharp
-using KibiHex;
+using DVG.Maths;
 
 var position = new float3(10f, 20f, 30f);
 var offset = new float3(1f, 0f, -2f);
@@ -59,7 +59,7 @@ It supports:
 - constants such as `Zero`, `One`, `Pi`, `E`, `MinValue`, and `MaxValue`
 
 ```csharp
-using KibiHex;
+using DVG.Maths;
 
 fix speed = (fix)1.5f;
 fix time = (fix)2;
@@ -125,7 +125,7 @@ Integer vectors additionally provide dot products, component sums, remainder, bi
 `Maths` is the regular PascalCase scalar API. It remains intentionally separate from generated vector overloads.
 
 ```csharp
-using KibiHex;
+using DVG.Maths;
 
 float angle = Maths.Radians(90f);
 float wave = Maths.Sin(angle);
@@ -139,8 +139,8 @@ It includes common interpolation, trigonometric, exponential, logarithmic, round
 The generated lowercase `maths` class forwards scalar calls to `Maths` and adds vector overloads. Import it statically to write compact shader-like expressions without naming the class at each call:
 
 ```csharp
-using KibiHex;
-using static KibiHex.maths;
+using DVG.Maths;
+using static DVG.Maths.maths;
 
 float3 a = new float3(0f, 0f, 0f);
 float3 b = new float3(10f, 5f, 2f);
@@ -150,7 +150,7 @@ float3 normal = normalize(b - a);
 float alignment = dot(normal, new float3(0f, 1f, 0f));
 ```
 
-Both styles use the same implementations. Choose `Maths` and vector methods for conventional C#, or `using static KibiHex.maths` for concise mathematical code.
+Both styles use the same implementations. Choose `Maths` and vector methods for conventional C#, or `using static DVG.Maths.maths` for concise mathematical code.
 
 ## Generated source layout
 
@@ -167,7 +167,7 @@ float3.relational.cs
 float3.swizzles.cs
 ```
 
-The declarative generator lives in the sibling `KibiHex.MathsGen` project. Running it with the vector output directory rewrites all generated files:
+The declarative generator lives in the sibling `DVG.MathsGen` project. Running it with the vector output directory rewrites all generated files:
 
 ```bash
 dotnet run --project ../MathsGen/KibiHex.MathsGen.csproj -- ./Vectors
@@ -199,7 +199,7 @@ To reference the project directly:
 Then import the library namespace:
 
 ```csharp
-using KibiHex;
+using DVG.Maths;
 ```
 
 ## Design goals
@@ -212,4 +212,4 @@ using KibiHex;
 - compatibility with engine, tooling, client, and server projects
 - familiar syntax without preserving a dependency on any shader language
 
-KibiHex.Maths is intended as a practical mathematical foundation for simulations, games, custom engines, ECS code, physics, procedural systems, and server-side logic.
+DVG.Maths is intended as a practical mathematical foundation for simulations, games, custom engines, ECS code, physics, procedural systems, and server-side logic.

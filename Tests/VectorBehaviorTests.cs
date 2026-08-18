@@ -2,7 +2,7 @@ using System;
 using System.Globalization;
 using System.Threading;
 
-namespace KibiHex.Tests
+namespace DVG.Maths.Tests
 {
     internal static class VectorBehaviorTests
     {
