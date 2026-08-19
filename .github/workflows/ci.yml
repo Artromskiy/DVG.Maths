@@ -1,33 +1,9 @@
-name: Build, tests and benchmarks
+name: Build and tests
 
 on:
   pull_request:
   push:
     branches: [main]
-  workflow_dispatch:
-    inputs:
-      run_benchmarks:
-        description: Run registered BenchmarkDotNet projects
-        required: true
-        default: false
-        type: boolean
-      filter:
-        description: BenchmarkDotNet filter
-        required: true
-        default: "*"
-        type: string
-      warmup_count:
-        required: true
-        default: 3
-        type: number
-      iteration_count:
-        required: true
-        default: 5
-        type: number
-      launch_count:
-        required: true
-        default: 1
-        type: number
 
 permissions:
   contents: read
@@ -73,41 +49,3 @@ jobs:
           for project in "${projects[@]}"; do
             dotnet run --project "$project" -c Release -- --list flat --filter '*'
           done
-
-  benchmarks:
-    if: github.event_name == 'workflow_dispatch' && inputs.run_benchmarks
-    runs-on: ubuntu-24.04
-    timeout-minutes: 360
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v7
-      - name: Install .NET 8
-        uses: actions/setup-dotnet@v6
-        with:
-          dotnet-version: 8.0.x
-      - name: Run registered benchmarks
-        shell: bash
-        run: |
-          mkdir -p artifacts/benchmarks
-          mapfile -t projects < <(find . -type f -name '*.Benchmarks.csproj' | sort)
-          if [ ${#projects[@]} -eq 0 ]; then
-            echo 'No *.Benchmarks.csproj is registered.' >> "$GITHUB_STEP_SUMMARY"
-            exit 0
-          fi
-          for project in "${projects[@]}"; do
-            dotnet run --project "$project" -c Release -- \
-              --filter '${{ inputs.filter }}' \
-              --warmupCount '${{ inputs.warmup_count }}' \
-              --iterationCount '${{ inputs.iteration_count }}' \
-              --launchCount '${{ inputs.launch_count }}' \
-              --exporters json csv markdown github \
-              --artifacts artifacts/benchmarks
-          done
-      - name: Upload benchmark artifacts
-        if: always()
-        uses: actions/upload-artifact@v7
-        with:
-          name: delta-maths-benchmarks-${{ github.run_number }}
-          path: artifacts/benchmarks
-          if-no-files-found: warn
-          retention-days: 30

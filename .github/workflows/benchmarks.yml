@@ -1,15 +1,23 @@
-name: Delta.Maths version comparison
+name: Delta.Maths benchmarks
 
 on:
   workflow_dispatch:
     inputs:
+      suite:
+        description: Benchmark suite to run
+        required: true
+        default: performance
+        type: choice
+        options:
+          - performance
+          - version-comparison
       baseline_ref:
-        description: Baseline branch, tag, or commit; empty uses the candidate parent
+        description: Baseline branch, tag, or commit; used by version-comparison
         required: false
         default: ''
         type: string
       candidate_ref:
-        description: Candidate branch, tag, or commit; empty uses the selected workflow revision
+        description: Candidate branch, tag, or commit; empty uses this workflow revision
         required: false
         default: ''
         type: string
@@ -38,22 +46,142 @@ permissions:
   contents: read
 
 concurrency:
-  group: delta-maths-version-${{ inputs.baseline_ref }}-${{ inputs.candidate_ref }}-${{ github.ref }}
+  group: delta-maths-benchmarks-${{ inputs.suite }}-${{ inputs.baseline_ref }}-${{ inputs.candidate_ref }}-${{ github.ref }}
   cancel-in-progress: false
 
 env:
   DOTNET_CLI_TELEMETRY_OPTOUT: 1
   DOTNET_NOLOGO: 1
-  NUGET_PACKAGES: ${{ github.workspace }}/.nuget/packages
-  HARNESS_ROOT: ${{ github.workspace }}/harness
-  BASELINE_ROOT: ${{ github.workspace }}/baseline
-  CANDIDATE_ROOT: ${{ github.workspace }}/candidate
 
 jobs:
-  compare:
-    name: Compare Delta.Maths refs
+  performance:
+    if: inputs.suite == 'performance'
+    name: Standalone Delta.Maths performance
     runs-on: ubuntu-24.04
     timeout-minutes: 360
+    env:
+      NUGET_PACKAGES: ${{ github.workspace }}/.nuget/packages
+    steps:
+      - name: Checkout selected revision
+        uses: actions/checkout@v7
+
+      - name: Install .NET 8
+        uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: 8.0.x
+
+      - name: Cache NuGet packages
+        uses: actions/cache@v6
+        with:
+          path: ${{ env.NUGET_PACKAGES }}
+          key: delta-maths-performance-${{ runner.os }}-${{ hashFiles('**/*.csproj') }}
+          restore-keys: |
+            delta-maths-performance-${{ runner.os }}-
+
+      - name: Restore
+        run: |
+          dotnet restore Delta.Maths.csproj \
+            --disable-parallel --disable-build-servers --ignore-failed-sources \
+            -m:1 -p:NuGetAudit=false
+          dotnet restore Tests/Delta.Maths.Tests.csproj \
+            --disable-parallel --disable-build-servers --ignore-failed-sources \
+            -m:1 -p:NuGetAudit=false
+          dotnet restore Benchmarks/Delta.Maths.Benchmarks.csproj \
+            --disable-parallel --disable-build-servers --ignore-failed-sources \
+            -m:1 -p:NuGetAudit=false
+
+      - name: Build library, tests, and benchmarks
+        run: |
+          dotnet build Delta.Maths.csproj -c Release --no-restore
+          dotnet build Tests/Delta.Maths.Tests.csproj -c Release --no-restore
+          dotnet build Benchmarks/Delta.Maths.Benchmarks.csproj -c Release --no-restore
+
+      - name: Run correctness executable
+        run: dotnet run --project Tests/Delta.Maths.Tests.csproj -c Release --no-build --no-restore
+
+      - name: Record runner
+        env:
+          BENCHMARK_FILTER: ${{ inputs.filter }}
+          BENCHMARK_WARMUP_COUNT: ${{ inputs.warmup_count }}
+          BENCHMARK_ITERATION_COUNT: ${{ inputs.iteration_count }}
+          BENCHMARK_LAUNCH_COUNT: ${{ inputs.launch_count }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts/performance
+          {
+            echo "suite=performance"
+            echo "commit=${GITHUB_SHA}"
+            echo "warmup_count=$BENCHMARK_WARMUP_COUNT"
+            echo "iteration_count=$BENCHMARK_ITERATION_COUNT"
+            echo "launch_count=$BENCHMARK_LAUNCH_COUNT"
+            echo "filter=$BENCHMARK_FILTER"
+            uname -a
+            dotnet --info
+          } > artifacts/performance/runner.txt
+
+      - name: Run standalone performance suite
+        env:
+          BENCHMARK_FILTER: ${{ inputs.filter }}
+          BENCHMARK_WARMUP_COUNT: ${{ inputs.warmup_count }}
+          BENCHMARK_ITERATION_COUNT: ${{ inputs.iteration_count }}
+          BENCHMARK_LAUNCH_COUNT: ${{ inputs.launch_count }}
+        run: |
+          dotnet Benchmarks/bin/Release/net8.0/Delta.Maths.Benchmarks.dll \
+            --filter "$BENCHMARK_FILTER" \
+            --warmupCount "$BENCHMARK_WARMUP_COUNT" \
+            --iterationCount "$BENCHMARK_ITERATION_COUNT" \
+            --launchCount "$BENCHMARK_LAUNCH_COUNT" \
+            --exporters json csv markdown github \
+            --artifacts artifacts/performance
+
+      - name: Add performance to workflow summary
+        if: always()
+        env:
+          BENCHMARK_FILTER: ${{ inputs.filter }}
+          BENCHMARK_WARMUP_COUNT: ${{ inputs.warmup_count }}
+          BENCHMARK_ITERATION_COUNT: ${{ inputs.iteration_count }}
+          BENCHMARK_LAUNCH_COUNT: ${{ inputs.launch_count }}
+        shell: bash
+        run: |
+          {
+            echo "## Delta.Maths standalone performance"
+            echo
+            echo "Commit: [${GITHUB_SHA}](https://github.com/${{ github.repository }}/commit/${GITHUB_SHA})"
+            echo
+            echo "This suite measures Delta.Maths only; it does not compare another implementation or revision."
+            echo
+            echo "Parameters: warmup=$BENCHMARK_WARMUP_COUNT, iterations=$BENCHMARK_ITERATION_COUNT, launches=$BENCHMARK_LAUNCH_COUNT, filter=\`$BENCHMARK_FILTER\`"
+            echo
+            if compgen -G 'artifacts/performance/*-report-github.md' > /dev/null; then
+              for report in artifacts/performance/*-report-github.md; do
+                cat "$report"
+                echo
+              done
+            else
+              echo "BenchmarkDotNet did not produce a GitHub markdown report. Full artifacts are uploaded below."
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload performance artifacts
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: delta-maths-performance-${{ runner.arch }}-${{ github.run_number }}
+          path: artifacts/performance
+          if-no-files-found: warn
+          retention-days: 30
+
+  version-comparison:
+    if: inputs.suite == 'version-comparison'
+    name: Compare two Delta.Maths revisions
+    runs-on: ubuntu-24.04
+    timeout-minutes: 360
+    env:
+      NUGET_PACKAGES: ${{ github.workspace }}/.nuget/packages
+      HARNESS_ROOT: ${{ github.workspace }}/harness
+      BASELINE_ROOT: ${{ github.workspace }}/baseline
+      CANDIDATE_ROOT: ${{ github.workspace }}/candidate
     steps:
       - name: Checkout benchmark harness
         uses: actions/checkout@v7
@@ -186,30 +314,40 @@ jobs:
           CANDIDATE_SHA: ${{ steps.version-refs.outputs.candidate_sha }}
           BASELINE_SUBJECT: ${{ steps.version-refs.outputs.baseline_subject }}
           CANDIDATE_SUBJECT: ${{ steps.version-refs.outputs.candidate_subject }}
+          BENCHMARK_FILTER: ${{ inputs.filter }}
+          BENCHMARK_WARMUP_COUNT: ${{ inputs.warmup_count }}
+          BENCHMARK_ITERATION_COUNT: ${{ inputs.iteration_count }}
+          BENCHMARK_LAUNCH_COUNT: ${{ inputs.launch_count }}
         run: |
           set -euo pipefail
           mkdir -p artifacts/version-comparison
           {
+            echo "suite=version-comparison"
             echo "baseline_sha=$BASELINE_SHA"
             echo "baseline_subject=$BASELINE_SUBJECT"
             echo "candidate_sha=$CANDIDATE_SHA"
             echo "candidate_subject=$CANDIDATE_SUBJECT"
-            echo "warmup_count=${{ inputs.warmup_count }}"
-            echo "iteration_count=${{ inputs.iteration_count }}"
-            echo "launch_count=${{ inputs.launch_count }}"
-            echo "filter=${{ inputs.filter }}"
+            echo "warmup_count=$BENCHMARK_WARMUP_COUNT"
+            echo "iteration_count=$BENCHMARK_ITERATION_COUNT"
+            echo "launch_count=$BENCHMARK_LAUNCH_COUNT"
+            echo "filter=$BENCHMARK_FILTER"
             uname -a
             dotnet --info
           } > artifacts/version-comparison/runner.txt
 
-      - name: Run full version benchmark suite
+      - name: Run version comparison suite
         working-directory: harness
+        env:
+          BENCHMARK_FILTER: ${{ inputs.filter }}
+          BENCHMARK_WARMUP_COUNT: ${{ inputs.warmup_count }}
+          BENCHMARK_ITERATION_COUNT: ${{ inputs.iteration_count }}
+          BENCHMARK_LAUNCH_COUNT: ${{ inputs.launch_count }}
         run: |
           dotnet VersionBenchmarks/bin/Release/net8.0/Delta.Maths.VersionBenchmarks.dll \
-            --filter '${{ inputs.filter }}' \
-            --warmupCount '${{ inputs.warmup_count }}' \
-            --iterationCount '${{ inputs.iteration_count }}' \
-            --launchCount '${{ inputs.launch_count }}' \
+            --filter "$BENCHMARK_FILTER" \
+            --warmupCount "$BENCHMARK_WARMUP_COUNT" \
+            --iterationCount "$BENCHMARK_ITERATION_COUNT" \
+            --launchCount "$BENCHMARK_LAUNCH_COUNT" \
             --exporters json csv markdown github \
             --artifacts artifacts/version-comparison
 
@@ -222,6 +360,10 @@ jobs:
           CANDIDATE_SHA: ${{ steps.version-refs.outputs.candidate_sha }}
           BASELINE_SUBJECT: ${{ steps.version-refs.outputs.baseline_subject }}
           CANDIDATE_SUBJECT: ${{ steps.version-refs.outputs.candidate_subject }}
+          BENCHMARK_FILTER: ${{ inputs.filter }}
+          BENCHMARK_WARMUP_COUNT: ${{ inputs.warmup_count }}
+          BENCHMARK_ITERATION_COUNT: ${{ inputs.iteration_count }}
+          BENCHMARK_LAUNCH_COUNT: ${{ inputs.launch_count }}
         run: |
           {
             echo "## Delta.Maths version comparison"
@@ -230,7 +372,7 @@ jobs:
             echo
             echo "Candidate: [$CANDIDATE_SHA](https://github.com/${{ github.repository }}/commit/$CANDIDATE_SHA) — $CANDIDATE_SUBJECT"
             echo
-            echo "Parameters: warmup=${{ inputs.warmup_count }}, iterations=${{ inputs.iteration_count }}, launches=${{ inputs.launch_count }}, filter=\`${{ inputs.filter }}\`"
+            echo "Parameters: warmup=$BENCHMARK_WARMUP_COUNT, iterations=$BENCHMARK_ITERATION_COUNT, launches=$BENCHMARK_LAUNCH_COUNT, filter=\`$BENCHMARK_FILTER\`"
             echo
             if compgen -G 'artifacts/version-comparison/*-report-github.md' > /dev/null; then
               for report in artifacts/version-comparison/*-report-github.md; do
@@ -242,7 +384,7 @@ jobs:
             fi
           } >> "$GITHUB_STEP_SUMMARY"
 
-      - name: Upload version benchmark artifacts
+      - name: Upload version comparison artifacts
         if: always()
         uses: actions/upload-artifact@v7
         with:

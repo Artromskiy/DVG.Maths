@@ -242,9 +242,16 @@ Delta.Maths is intended as a practical mathematical foundation for simulations, 
 The GitHub Actions workflow is [`.github/workflows/ci.yml`](.github/workflows/ci.yml).
 Pull requests and pushes to `main` build in Release, run correctness tests, and
 perform BenchmarkDotNet discovery only; they do not record performance numbers.
-Measured benchmarks run only from **Actions → Build, tests and benchmarks → Run
-workflow** with `run_benchmarks=true`. Results are uploaded from
-`artifacts/benchmarks` for 30 days.
+Measured benchmarks run manually from **Actions → Delta.Maths benchmarks → Run
+workflow**. The `suite` selector has two modes:
+
+- `performance` runs the standalone Delta.Maths suite on the selected revision;
+  it does not compare another implementation or revision;
+- `version-comparison` checks out two revisions and runs the regression suite with
+  BenchmarkDotNet baseline/candidate ratios.
+
+Both modes accept warmup, iteration, launch, and filter parameters. Results are
+uploaded as separate artifacts for 30 days.
 
 Repository conventions:
 
@@ -274,6 +281,16 @@ Run discovery locally with:
 dotnet run --project Benchmarks/Delta.Maths.Benchmarks.csproj -c Release -- --list flat
 ```
 
+Run the standalone suite locally with the same parameters used by the manual
+workflow:
+
+```bash
+dotnet build Benchmarks/Delta.Maths.Benchmarks.csproj -c Release
+dotnet Benchmarks/bin/Release/net8.0/Delta.Maths.Benchmarks.dll \
+  --filter '*' --warmupCount 3 --iterationCount 5 --launchCount 1 \
+  --exporters json csv markdown github --artifacts artifacts/performance
+```
+
 ### Comparing two Delta.Maths revisions
 
 The separate [`VersionBenchmarks/Delta.Maths.VersionBenchmarks.csproj`](VersionBenchmarks/Delta.Maths.VersionBenchmarks.csproj)
@@ -281,12 +298,17 @@ suite compares two API-compatible runtime revisions in one BenchmarkDotNet
 process. Baseline and candidate are compiled into different assembly names and
 loaded through extern aliases; the ordinary `Benchmarks` project is unchanged.
 
-The manual [version workflow](.github/workflows/version-benchmarks.yml) accepts
+The manual [benchmark workflow](.github/workflows/benchmarks.yml) accepts
 branches, tags, full SHAs, and short SHAs. An empty `candidate_ref` means the
 revision selected when the workflow is dispatched. An empty `baseline_ref`
 means the first parent of that resolved candidate. The workflow resolves both
 values to full commit SHAs before checkout, then records commit links and
 subjects in the job summary.
+
+Choose `suite=performance` when you need a thick runtime profile of the current
+math implementation. Choose `suite=version-comparison` when you need to find a
+regression between two API-compatible commits. The comparison uses separate
+baseline and candidate checkouts and does not run automatically on pushes.
 
 This comparison is valid only when both revisions expose the same public API.
 An API-incompatible revision fails during the adapter restore/build with a
