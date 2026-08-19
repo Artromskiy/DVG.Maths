@@ -82,6 +82,10 @@ float4.operators.cs
 float4.relational.cs
 float4.swizzles.cs
 float4.trigonometry.cs
+float4x4.common.cs
+float4x4.cs
+float4x4.geometry.cs
+float4x4.operators.cs
 int2.common.cs
 int2.cs
 int2.geometry.cs
@@ -102,6 +106,11 @@ int4.relational.cs
 int4.swizzles.cs
 maths.cs
 maths.vectors.cs
+quaternion.common.cs
+quaternion.cs
+quaternion.geometry.cs
+quaternion.operators.cs
+shader-contract.json
 uint2.common.cs
 uint2.cs
 uint2.geometry.cs

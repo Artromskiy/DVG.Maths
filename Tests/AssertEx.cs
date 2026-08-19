@@ -1,6 +1,6 @@
 using System;
 
-namespace DVG.Maths.Tests
+namespace Delta.Maths.Tests
 {
     internal static class AssertEx
     {
@@ -33,6 +33,14 @@ namespace DVG.Maths.Tests
             Near(expected.x, actual.x, tolerance);
             Near(expected.y, actual.y, tolerance);
             Near(expected.z, actual.z, tolerance);
+        }
+
+        public static void Near(float4 expected, float4 actual, float tolerance = 0.0001f)
+        {
+            Near(expected.x, actual.x, tolerance);
+            Near(expected.y, actual.y, tolerance);
+            Near(expected.z, actual.z, tolerance);
+            Near(expected.w, actual.w, tolerance);
         }
 
         public static void Near(float2 expected, float2 actual, float tolerance = 0.0001f)

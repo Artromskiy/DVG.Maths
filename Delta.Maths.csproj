@@ -1,11 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.1</TargetFramework>
+    <TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
     <LangVersion>9.0</LangVersion>
     <Nullable>enable</Nullable>
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
-    <RootNamespace>DVG.Maths</RootNamespace>
+    <AssemblyName>Delta.Maths</AssemblyName>
+    <PackageId>Delta.Maths</PackageId>
+    <RootNamespace>Delta.Maths</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

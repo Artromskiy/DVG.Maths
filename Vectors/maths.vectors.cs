@@ -3,7 +3,7 @@
 #nullable enable
 using System.Runtime.CompilerServices;
 
-namespace DVG.Maths
+namespace Delta.Maths
 {
     public static partial class maths
     {
@@ -3112,5 +3112,95 @@ namespace DVG.Maths
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static fix4 smoothDamp(fix4 source, fix4 target, ref fix4 velocity, fix smoothTime, fix deltaTime) => fix4.SmoothDamp(source, target, ref velocity, smoothTime, deltaTime);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float4x4 transpose(float4x4 value) => float4x4.Transpose(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float determinant(float4x4 value) => float4x4.Determinant(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool tryInverse(float4x4 value, out float4x4 result) => float4x4.TryInverse(value, out result);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float4x4 inverse(float4x4 value) => float4x4.Inverse(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float4x4 createTranslation(float3 translation) => float4x4.CreateTranslation(translation);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float4x4 createScale(float3 scale) => float4x4.CreateScale(scale);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float4x4 createScale(float scale) => float4x4.CreateScale(scale);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float4x4 createFromQuaternion(quaternion rotation) => float4x4.CreateFromQuaternion(rotation);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float4x4 createTRS(float3 translation, quaternion rotation, float3 scale) => float4x4.CreateTRS(translation, rotation, scale);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float4x4 multiply(float4x4 left, float4x4 right) => float4x4.Multiply(left, right);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float3 transformPoint(float4x4 matrix, float3 point) => float4x4.TransformPoint(matrix, point);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float3 transformDirection(float4x4 matrix, float3 direction) => float4x4.TransformDirection(matrix, direction);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float4x4 createLookTo(float3 eye, float3 direction, float3 up) => float4x4.CreateLookTo(eye, direction, up);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float4x4 createPerspectiveFieldOfViewLeftHanded(float fieldOfView, float aspectRatio, float nearPlaneDistance, float farPlaneDistance) => float4x4.CreatePerspectiveFieldOfViewLeftHanded(fieldOfView, aspectRatio, nearPlaneDistance, farPlaneDistance);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool decompose(float4x4 value, out float3 scale, out quaternion rotation, out float3 translation) => float4x4.Decompose(value, out scale, out rotation, out translation);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float dot(quaternion left, quaternion right) => quaternion.Dot(left, right);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float lengthSquared(quaternion value) => quaternion.LengthSquared(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static quaternion normalize(quaternion value) => quaternion.Normalize(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static quaternion normalizeSafe(quaternion value) => quaternion.NormalizeSafe(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static quaternion conjugate(quaternion value) => quaternion.Conjugate(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool tryInverse(quaternion value, out quaternion result) => quaternion.TryInverse(value, out result);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static quaternion inverse(quaternion value) => quaternion.Inverse(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static quaternion lerp(quaternion start, quaternion end, float amount) => quaternion.Lerp(start, end, amount);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static quaternion slerp(quaternion start, quaternion end, float amount) => quaternion.Slerp(start, end, amount);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static quaternion createFromAxisAngle(float3 axis, float angle) => quaternion.CreateFromAxisAngle(axis, angle);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static quaternion createFromYawPitchRoll(float yaw, float pitch, float roll) => quaternion.CreateFromYawPitchRoll(yaw, pitch, roll);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float3 rotate(quaternion rotation, float3 value) => quaternion.Rotate(rotation, value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static quaternion createFromRotationMatrix(float4x4 matrix) => quaternion.CreateFromRotationMatrix(matrix);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float4x4 toRotationMatrix(quaternion rotation) => quaternion.ToRotationMatrix(rotation);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void toAxisAngle(quaternion rotation, out float3 axis, out float angle) => quaternion.ToAxisAngle(rotation, out axis, out angle);
     }
 }

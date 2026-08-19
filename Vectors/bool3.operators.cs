@@ -4,7 +4,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Runtime.CompilerServices;
 
-namespace DVG.Maths
+namespace Delta.Maths
 {
     public partial struct bool3
     {

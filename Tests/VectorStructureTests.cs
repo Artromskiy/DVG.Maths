@@ -2,7 +2,7 @@ using System;
 using System.Linq;
 using System.Reflection;
 
-namespace DVG.Maths.Tests
+namespace Delta.Maths.Tests
 {
     internal static class VectorStructureTests
     {
@@ -107,7 +107,7 @@ namespace DVG.Maths.Tests
         }
 
         private static Type VectorType(string scalar, int dimension) =>
-            typeof(float2).Assembly.GetType("DVG.Maths." + scalar + dimension, throwOnError: true)!;
+            typeof(float2).Assembly.GetType("Delta.Maths." + scalar + dimension, throwOnError: true)!;
 
         private static Type ScalarType(string scalar) => scalar switch
         {

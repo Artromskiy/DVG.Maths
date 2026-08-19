@@ -1,6 +1,6 @@
 using System;
 
-namespace DVG.Maths.Tests
+namespace Delta.Maths.Tests
 {
     internal static class Program
     {
@@ -19,6 +19,12 @@ namespace DVG.Maths.Tests
                 ("lowercase maths forwards scalar and vector APIs", VectorBehaviorTests.ShaderStyleFacade),
                 ("fixed-point vectors participate in maths", VectorBehaviorTests.FixedPoint),
                 ("scalar regressions stay fixed", VectorBehaviorTests.ScalarRegressions),
+                ("matrix and quaternion layout is stable", MatrixQuaternionTests.Layout),
+                ("matrix algebra and decomposition are safe", MatrixQuaternionTests.MatrixAlgebra),
+                ("matrix-vector and matrix composition semantics", MatrixQuaternionTests.MatrixVectorSemantics),
+                ("quaternion algebra and conversions are stable", MatrixQuaternionTests.QuaternionAlgebra),
+                ("matrix look/projection conventions", MatrixQuaternionTests.MatrixLookProjectionSemantics),
+                ("shader contract manifest metadata", MatrixQuaternionTests.ShaderContractManifest),
             };
 
             var failures = 0;

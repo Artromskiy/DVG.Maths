@@ -2,7 +2,7 @@ using System;
 using System.Globalization;
 using System.Threading;
 
-namespace DVG.Maths.Tests
+namespace Delta.Maths.Tests
 {
     internal static class VectorBehaviorTests
     {

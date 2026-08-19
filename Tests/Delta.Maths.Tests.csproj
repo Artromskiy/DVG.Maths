@@ -5,9 +5,11 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>disable</ImplicitUsings>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <RootNamespace>DVG.Maths.Tests</RootNamespace>
+    <AssemblyName>Delta.Maths.Tests</AssemblyName>
+    <PackageId>Delta.Maths.Tests</PackageId>
+    <RootNamespace>Delta.Maths.Tests</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="../KibiHex.Maths.csproj" />
+    <ProjectReference Include="../Delta.Maths.csproj" />
   </ItemGroup>
 </Project>

@@ -4,7 +4,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Runtime.CompilerServices;
 
-namespace DVG.Maths
+namespace Delta.Maths
 {
     /// <summary>A vector of type int with 2 components.</summary>
     [Serializable]

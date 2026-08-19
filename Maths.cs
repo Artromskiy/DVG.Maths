@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.CompilerServices;
 
-namespace DVG.Maths
+namespace Delta.Maths
 {
 	public static partial class Maths
 	{
@@ -116,19 +116,19 @@ namespace DVG.Maths
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static double Acos(double d) => Math.Acos(d);
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static double Acosh(double d) => Math.Acosh(d);
+		public static double Acosh(double d) => MathCompat.Acosh(d);
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static double Asin(double d) => Math.Asin(d);
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static double Asinh(double d) => Math.Asinh(d);
+		public static double Asinh(double d) => MathCompat.Asinh(d);
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static double Atan(double d) => Math.Atan(d);
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static double Atan2(double y, double x) => Math.Atan2(y, x);
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static double Atanh(double d) => Math.Atanh(d);
+		public static double Atanh(double d) => MathCompat.Atanh(d);
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static double Cbrt(double d) => Math.Cbrt(d);
+		public static double Cbrt(double d) => MathCompat.Cbrt(d);
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static double Ceil(double a) => Math.Ceiling(a);
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
