@@ -138,6 +138,7 @@ namespace Delta.Maths.Tests
         {
             using var document = JsonDocument.Parse(File.ReadAllText(FindShaderContractManifestPath()));
             var root = document.RootElement;
+            AssertEx.Equal("1.1.0", root.GetProperty("schemaVersion").GetString());
             AssertEx.Equal("Delta.Maths", root.GetProperty("namespace").GetString());
 
             var types = root.GetProperty("types").EnumerateArray().ToArray();
@@ -168,6 +169,18 @@ namespace Delta.Maths.Tests
             AssertEx.Equal(16, quaternionType.GetProperty("alignment").GetInt32());
             AssertEx.Equal("std430", quaternionType.GetProperty("requiredCapability").GetString());
 
+            AssertEx.True(types.Where(type => type.GetProperty("mapping").GetString() != "Unsupported").All(type => type.GetProperty("stages").EnumerateArray().Select(stage => stage.GetString())
+                .SequenceEqual(new[] { "vertex", "fragment", "compute" })));
+            var float3Type = types.Single(type => type.GetProperty("clrName").GetString() == "float3");
+            var float3Constructors = float3Type.GetProperty("constructors").EnumerateArray().ToArray();
+            AssertEx.True(float3Constructors.Any(constructor =>
+                constructor.GetProperty("parameterClrNames").EnumerateArray().Select(parameter => parameter.GetString())
+                    .SequenceEqual(new[] { "float", "float", "float" })));
+            var float3Swizzles = float3Type.GetProperty("swizzles").EnumerateArray().ToArray();
+            var xySwizzle = float3Swizzles.Single(swizzle => swizzle.GetProperty("name").GetString() == "xy");
+            AssertEx.Equal("float2", xySwizzle.GetProperty("clrTypeName").GetString());
+            AssertEx.True(xySwizzle.GetProperty("writable").GetBoolean());
+
             var functions = root.GetProperty("functions").EnumerateArray().ToArray();
             AssertEx.True(functions.All(function => !string.IsNullOrWhiteSpace(function.GetProperty("typeClrName").GetString())));
             AssertEx.True(functions.All(function => !string.IsNullOrWhiteSpace(function.GetProperty("clrName").GetString())));
@@ -175,9 +188,27 @@ namespace Delta.Maths.Tests
             AssertEx.True(functions.All(function => function.TryGetProperty("parameterClrNames", out var parameters)
                 && parameters.ValueKind == JsonValueKind.Array));
             AssertEx.True(functions.All(function => !string.IsNullOrWhiteSpace(function.GetProperty("returnClrName").GetString())));
+            AssertEx.True(functions.All(function => !string.IsNullOrWhiteSpace(function.GetProperty("identity").GetString())));
             var identities = functions.Select(function =>
                 $"{function.GetProperty("typeClrName").GetString()}.{function.GetProperty("clrName").GetString()}({string.Join(",", function.GetProperty("parameterClrNames").EnumerateArray().Select(parameter => parameter.GetString()))}):{function.GetProperty("returnClrName").GetString()}").ToArray();
             AssertEx.Equal(identities.Length, identities.Distinct(StringComparer.Ordinal).Count());
+            AssertEx.True(functions.All(function =>
+            {
+                var mapping = function.GetProperty("mapping").GetString();
+                var stages = function.GetProperty("stages").EnumerateArray().ToArray();
+                if (mapping == "Unsupported")
+                    return stages.Length == 0 && function.GetProperty("shaderZone").ValueKind == JsonValueKind.Null;
+                return !string.IsNullOrWhiteSpace(function.GetProperty("glslName").GetString())
+                    && function.GetProperty("shaderZone").GetString() == "Delta.Maths"
+                    && stages.Length == 3
+                    && function.GetProperty("parameterGlslTypes").GetArrayLength()
+                        == function.GetProperty("parameterClrNames").GetArrayLength();
+            }));
+            AssertEx.True(functions.All(function =>
+                function.GetProperty("identity").GetString() ==
+                $"{function.GetProperty("typeClrName").GetString()}.{function.GetProperty("clrName").GetString()}({string.Join(",", function.GetProperty("parameterClrNames").EnumerateArray().Select(parameter => parameter.GetString()))}):{function.GetProperty("returnClrName").GetString()}"));
+            AssertEx.True(functions.All(function => function.GetProperty("glslName").ValueKind != JsonValueKind.String
+                || function.GetProperty("glslName").GetString() != "fwidth"));
 
             var createTrs = functions.FirstOrDefault(
                 function => function.GetProperty("typeClrName").GetString() == "float4x4"
@@ -206,13 +237,34 @@ namespace Delta.Maths.Tests
             AssertEx.Equal("delta_quaternionMultiply", quaternionMultiply.GetProperty("glslName").GetString());
             AssertEx.Equal("Helper", quaternionMultiply.GetProperty("mapping").GetString());
 
-            var quaternionRotate = FindFunction(functions, "quaternion", "op_Multiply", "quaternion", "float3");
+            var quaternionRotate = FindFunction(functions, "quaternion", "Rotate", "quaternion", "float3");
             AssertEx.Equal("delta_quaternionRotate", quaternionRotate.GetProperty("glslName").GetString());
             AssertEx.Equal("Helper", quaternionRotate.GetProperty("mapping").GetString());
 
             var quaternionNormalize = FindFunction(functions, "quaternion", "Normalize", "quaternion");
-            AssertEx.Equal("normalize", quaternionNormalize.GetProperty("glslName").GetString());
-            AssertEx.Equal("Builtin", quaternionNormalize.GetProperty("mapping").GetString());
+            AssertEx.Equal("delta_quaternionNormalize", quaternionNormalize.GetProperty("glslName").GetString());
+            AssertEx.Equal("Helper", quaternionNormalize.GetProperty("mapping").GetString());
+
+            AssertFunction(functions, "float4x4", "Multiply", "*", "Builtin", "float4x4", "float4x4");
+
+            AssertFunction(functions, "float3", "Min", "min", "Builtin", "float3", "float3");
+            AssertFunction(functions, "float3", "Max", "max", "Builtin", "float3", "float3");
+            AssertFunction(functions, "float3", "Clamp", "clamp", "Builtin", "float3", "float", "float");
+            AssertFunction(functions, "float3", "Lerp", "mix", "Builtin", "float3", "float3", "float");
+            AssertFunction(functions, "float3", "SmoothStep", "smoothstep", "Builtin", "float", "float", "float3");
+            AssertFunction(functions, "float3", "Step", "step", "Builtin", "float", "float3");
+            AssertFunction(functions, "float3", "Dot", "dot", "Builtin", "float3", "float3");
+            AssertFunction(functions, "float3", "Length", "length", "Builtin", "float3");
+            AssertFunction(functions, "float3", "Normalize", "normalize", "Builtin", "float3");
+            AssertFunction(functions, "float3", "Select", "delta_select", "Helper", "float3", "float3", "bool3");
+        }
+
+        private static void AssertFunction(JsonElement[] functions, string typeName, string clrName,
+            string glslName, string mapping, params string[] parameterNames)
+        {
+            var function = FindFunction(functions, typeName, clrName, parameterNames);
+            AssertEx.Equal(glslName, function.GetProperty("glslName").GetString());
+            AssertEx.Equal(mapping, function.GetProperty("mapping").GetString());
         }
 
         private static JsonElement FindFunction(JsonElement[] functions, string typeName, string clrName, params string[] parameterNames)

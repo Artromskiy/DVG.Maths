@@ -174,6 +174,18 @@ The types expose identity, construction/access, matrix/vector operators, transla
 
 `System.Numerics.Matrix4x4` is a row/column-compatible type with a different convention, so conversion is explicit and not a drop-in field copy. The test suite contains explicit conversion helpers and left/right semantic checks for migration safety.
 
+## Generated shader contract
+
+`Vectors/shader-contract.json` is generated from the same declarations as the C# API. It is the only source Shad should use to register Delta.Maths symbols; do not infer GLSL names by matching CLR names.
+
+Each type and function has a stable identity, CLR and GLSL types, `mapping` (`Builtin`, `Helper`, or `Unsupported`), required capability, shader zone, and stage list. Register only `Builtin` and `Helper` entries. `Unsupported` entries are intentional diagnostics for runtime members that do not have a safe GLSL lowering.
+
+The current shader-safe type set is `float2/3/4` → `vec2/3/4`, `int2/3/4` → `ivec2/3/4`, `uint2/3/4` → `uvec2/3/4`, `bool2/3/4` → `bvec2/3/4`, `float4x4` → column-major `mat4`, and `quaternion` → `vec4`. `double*` and `fix*` remain unsupported for GLSL 460.
+
+The supported vector operations include arithmetic operators, `min`, `max`, `clamp`, `abs`, `mix`, `smoothstep`, `step`, `dot`, `length`, `distance`, `normalize`, `faceforward`, `reflect`, `cross` for `float3`, `equal`, `notEqual`, `any`, `all`, and the `delta_select` helper for vector masks. Constructors and standard `xyzw`/`rgba`/`stpq` swizzles are emitted as type metadata; C# underscore swizzles are deliberately not shader symbols. Matrix and quaternion helpers are emitted with their exact `delta_*` identities.
+
+All current mapped entries are legal in vertex, fragment, and compute stages and belong to the `Delta.Maths` zone. Shader-only operations such as `fwidth` are not faked as CPU functions and must be registered separately by Shad in its intrinsic zone.
+
 ## Generated source layout
 
 Vector source is generated as partial structs. Each concern has its own file:
