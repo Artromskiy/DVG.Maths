@@ -94,6 +94,7 @@ namespace Delta.Maths.Tests
             var axisSign = float3.Dot(recoveredAxis, axis) < 0f ? -1f : 1f;
             AssertEx.Near(axis, recoveredAxis * axisSign, 0.0002f);
             AssertEx.Near(Maths.Radians(90f), recoveredAngle * axisSign, 0.0002f);
+            AssertQuaternionEquivalent(rotation, quaternion.CreateFromAxisAngle(recoveredAxis, recoveredAngle), 0.0002f);
         }
 
         public static void MatrixLookProjectionSemantics()
@@ -137,11 +138,22 @@ namespace Delta.Maths.Tests
         {
             using var document = JsonDocument.Parse(File.ReadAllText(FindShaderContractManifestPath()));
             var root = document.RootElement;
+            AssertEx.Equal("Delta.Maths", root.GetProperty("namespace").GetString());
 
             var types = root.GetProperty("types").EnumerateArray().ToArray();
-            AssertEx.True(types.Any(type => type.GetProperty("clrName").GetString() == "float4x4"));
-            AssertEx.True(types.Any(type => type.GetProperty("clrName").GetString() == "quaternion"));
-            AssertEx.True(types.Any(type => type.GetProperty("glslName").GetString() == "mat4"));
+            var matrixType = types.Single(type => type.GetProperty("clrName").GetString() == "float4x4");
+            AssertEx.Equal("mat4", matrixType.GetProperty("glslName").GetString());
+            AssertEx.Equal("Builtin", matrixType.GetProperty("mapping").GetString());
+            AssertEx.True(matrixType.GetProperty("columnMajor").GetBoolean());
+            AssertEx.Equal(16, matrixType.GetProperty("alignment").GetInt32());
+            AssertEx.Equal(16, matrixType.GetProperty("matrixStride").GetInt32());
+            AssertEx.Equal("std430", matrixType.GetProperty("requiredCapability").GetString());
+
+            var quaternionType = types.Single(type => type.GetProperty("clrName").GetString() == "quaternion");
+            AssertEx.Equal("vec4", quaternionType.GetProperty("glslName").GetString());
+            AssertEx.Equal("Builtin", quaternionType.GetProperty("mapping").GetString());
+            AssertEx.Equal(16, quaternionType.GetProperty("alignment").GetInt32());
+            AssertEx.Equal("std430", quaternionType.GetProperty("requiredCapability").GetString());
 
             var functions = root.GetProperty("functions").EnumerateArray().ToArray();
             AssertEx.True(functions.All(function => !string.IsNullOrWhiteSpace(function.GetProperty("typeClrName").GetString())));
@@ -153,6 +165,33 @@ namespace Delta.Maths.Tests
             AssertEx.True(createTrs.ValueKind != JsonValueKind.Undefined);
             AssertEx.Equal("Helper", createTrs.GetProperty("mapping").GetString());
             AssertEx.Equal("matrix", createTrs.GetProperty("requiredCapability").GetString());
+
+            var transformPoint = functions.FirstOrDefault(
+                function => function.GetProperty("typeClrName").GetString() == "float4x4"
+                    && function.GetProperty("clrName").GetString() == "TransformPoint");
+            AssertEx.True(transformPoint.ValueKind != JsonValueKind.Undefined);
+            AssertEx.Equal("delta_transformPoint", transformPoint.GetProperty("glslName").GetString());
+            AssertEx.Equal("Helper", transformPoint.GetProperty("mapping").GetString());
+        }
+
+        public static void Glsl460Conformance()
+        {
+            // GLSL's mat4 * vec4 uses four column vectors and a column vector operand.
+            var matrix = new float4x4(
+                new float4(1f, 2f, 3f, 4f),
+                new float4(5f, 6f, 7f, 8f),
+                new float4(9f, 10f, 11f, 12f),
+                new float4(13f, 14f, 15f, 16f));
+            var vector = new float4(1f, 2f, 3f, 1f);
+
+            AssertEx.Near(new float4(51f, 58f, 65f, 72f), matrix * vector);
+            AssertEx.Near(new float3(5f, 7f, 9f), new float3(1f, 2f, 3f) + new float3(4f, 5f, 6f));
+            AssertEx.Near(matrix.c0, matrix.GetColumn(0));
+            AssertEx.Near(matrix.c3, matrix.GetColumn(3));
+
+            var translation = float4x4.CreateTranslation(new float3(4f, -2f, 7f));
+            AssertEx.Near(new float4(5f, 0f, 10f, 1f), translation * new float4(1f, 2f, 3f, 1f));
+            AssertEx.Near(new float4(2f, 4f, 6f, 0f), translation * new float4(2f, 4f, 6f, 0f));
         }
 
         private static string FindShaderContractManifestPath()

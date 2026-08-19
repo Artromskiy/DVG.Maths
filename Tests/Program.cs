@@ -24,6 +24,7 @@ namespace Delta.Maths.Tests
                 ("matrix-vector and matrix composition semantics", MatrixQuaternionTests.MatrixVectorSemantics),
                 ("quaternion algebra and conversions are stable", MatrixQuaternionTests.QuaternionAlgebra),
                 ("matrix look/projection conventions", MatrixQuaternionTests.MatrixLookProjectionSemantics),
+                ("GLSL 460 vector and matrix reference semantics", MatrixQuaternionTests.Glsl460Conformance),
                 ("shader contract manifest metadata", MatrixQuaternionTests.ShaderContractManifest),
             };
 

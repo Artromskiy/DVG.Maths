@@ -61,7 +61,7 @@ namespace Delta.Maths
             var normalized = NormalizeSafe(rotation);
             angle = 2f * Maths.Acos(Maths.Clamp(normalized.w, -1f, 1f));
             var scale = Maths.Sqrt(Maths.Max(1e-20f, 1f - normalized.w * normalized.w));
-            axis = scale <= 1e-10f ? new float3(1f, 0f, 0f) : new float3(normalized.x / scale, normalized.y / scale, normalized.z / scale);
+            axis = scale <= 1e-10f ? new float3(1f, 0f, 0f) : new float3(-normalized.x / scale, -normalized.y / scale, -normalized.z / scale);
         }
     }
 }

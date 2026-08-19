@@ -235,3 +235,33 @@ using Delta.Maths;
 - familiar syntax without preserving a dependency on any shader language
 
 Delta.Maths is intended as a practical mathematical foundation for simulations, games, custom engines, ECS code, physics, procedural systems, and server-side logic.
+
+
+## CI, tests, and benchmarks
+
+The GitHub Actions workflow is [`.github/workflows/ci.yml`](.github/workflows/ci.yml).
+Pull requests and pushes to `main` build in Release, run correctness tests, and
+perform BenchmarkDotNet discovery only; they do not record performance numbers.
+Measured benchmarks run only from **Actions → Build, tests and benchmarks → Run
+workflow** with `run_benchmarks=true`. Results are uploaded from
+`artifacts/benchmarks` for 30 days.
+
+Repository conventions:
+
+- correctness projects are named `*.Tests.csproj`; projects using
+  `Microsoft.NET.Test.Sdk` run through `dotnet test`, while custom executable
+  harnesses must be listed explicitly in the workflow and return a non-zero exit
+  code on failure;
+- BenchmarkDotNet projects are named `*.Benchmarks.csproj`; this filename is how
+  the workflow discovers them;
+- their entry point must forward CLI arguments with
+  `BenchmarkSwitcher.FromAssembly(typeof(Program).Assembly).Run(args)`;
+- mark the Delta implementation with `[Benchmark(Baseline = true)]` within every
+  comparable benchmark category; use exactly one baseline per category;
+- add sibling repositories to the checkout steps whenever a
+  `ProjectReference` escapes this repository.
+
+A benchmark added without the naming convention or without CLI argument
+forwarding is not registered and must not be treated as CI coverage. Shared
+GitHub runners are suitable for comparisons within one run, not for small
+cross-run regression claims.
