@@ -159,6 +159,13 @@ namespace Delta.Maths.Tests
             AssertEx.True(functions.All(function => !string.IsNullOrWhiteSpace(function.GetProperty("typeClrName").GetString())));
             AssertEx.True(functions.All(function => !string.IsNullOrWhiteSpace(function.GetProperty("clrName").GetString())));
             AssertEx.True(functions.All(function => !string.IsNullOrWhiteSpace(function.GetProperty("mathsName").GetString())));
+            AssertEx.True(functions.All(function => function.TryGetProperty("parameterClrNames", out var parameters)
+                && parameters.ValueKind == JsonValueKind.Array));
+            AssertEx.True(functions.All(function => !string.IsNullOrWhiteSpace(function.GetProperty("returnClrName").GetString())));
+            var identities = functions.Select(function =>
+                $"{function.GetProperty("typeClrName").GetString()}.{function.GetProperty("clrName").GetString()}({string.Join(",", function.GetProperty("parameterClrNames").EnumerateArray().Select(parameter => parameter.GetString()))}):{function.GetProperty("returnClrName").GetString()}").ToArray();
+            AssertEx.Equal(identities.Length, identities.Distinct(StringComparer.Ordinal).Count());
+
             var createTrs = functions.FirstOrDefault(
                 function => function.GetProperty("typeClrName").GetString() == "float4x4"
                     && function.GetProperty("clrName").GetString() == "CreateTRS");
@@ -172,6 +179,34 @@ namespace Delta.Maths.Tests
             AssertEx.True(transformPoint.ValueKind != JsonValueKind.Undefined);
             AssertEx.Equal("delta_transformPoint", transformPoint.GetProperty("glslName").GetString());
             AssertEx.Equal("Helper", transformPoint.GetProperty("mapping").GetString());
+
+            var matrixMultiply = FindFunction(functions, "float4x4", "op_Multiply", "float4x4", "float4x4");
+            AssertEx.Equal("*", matrixMultiply.GetProperty("glslName").GetString());
+            AssertEx.Equal("Builtin", matrixMultiply.GetProperty("mapping").GetString());
+            AssertEx.Equal("matrix", matrixMultiply.GetProperty("requiredCapability").GetString());
+
+            var matrixVectorMultiply = FindFunction(functions, "float4x4", "op_Multiply", "float4x4", "float4");
+            AssertEx.Equal("*", matrixVectorMultiply.GetProperty("glslName").GetString());
+            AssertEx.Equal("Builtin", matrixVectorMultiply.GetProperty("mapping").GetString());
+
+            var quaternionMultiply = FindFunction(functions, "quaternion", "op_Multiply", "quaternion", "quaternion");
+            AssertEx.Equal("delta_quaternionMultiply", quaternionMultiply.GetProperty("glslName").GetString());
+            AssertEx.Equal("Helper", quaternionMultiply.GetProperty("mapping").GetString());
+
+            var quaternionRotate = FindFunction(functions, "quaternion", "op_Multiply", "quaternion", "float3");
+            AssertEx.Equal("delta_quaternionRotate", quaternionRotate.GetProperty("glslName").GetString());
+            AssertEx.Equal("Helper", quaternionRotate.GetProperty("mapping").GetString());
+
+            var quaternionNormalize = FindFunction(functions, "quaternion", "Normalize", "quaternion");
+            AssertEx.Equal("normalize", quaternionNormalize.GetProperty("glslName").GetString());
+            AssertEx.Equal("Builtin", quaternionNormalize.GetProperty("mapping").GetString());
+        }
+
+        private static JsonElement FindFunction(JsonElement[] functions, string typeName, string clrName, params string[] parameterNames)
+        {
+            return functions.Single(function => function.GetProperty("typeClrName").GetString() == typeName
+                && function.GetProperty("clrName").GetString() == clrName
+                && function.GetProperty("parameterClrNames").EnumerateArray().Select(parameter => parameter.GetString()).SequenceEqual(parameterNames));
         }
 
         public static void Glsl460Conformance()
