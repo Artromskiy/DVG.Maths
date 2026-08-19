@@ -234,9 +234,14 @@ namespace Delta.Maths.Tests
             var directory = new DirectoryInfo(AppContext.BaseDirectory);
             while (directory is not null)
             {
-                var candidate = Path.Combine(directory.FullName, "Maths", "Vectors", "shader-contract.json");
-                if (File.Exists(candidate))
-                    return candidate;
+                var candidates = new[]
+                {
+                    Path.Combine(directory.FullName, "Maths", "Vectors", "shader-contract.json"),
+                    Path.Combine(directory.FullName, "Vectors", "shader-contract.json"),
+                };
+                foreach (var candidate in candidates)
+                    if (File.Exists(candidate))
+                        return candidate;
                 directory = directory.Parent;
             }
             throw new FileNotFoundException("shader-contract.json was not found near the repository.");
