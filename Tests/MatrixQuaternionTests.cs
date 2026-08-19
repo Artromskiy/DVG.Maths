@@ -141,6 +141,19 @@ namespace Delta.Maths.Tests
             AssertEx.Equal("Delta.Maths", root.GetProperty("namespace").GetString());
 
             var types = root.GetProperty("types").EnumerateArray().ToArray();
+            AssertVectorType(types, "float2", "vec2", 8);
+            AssertVectorType(types, "float3", "vec3", 16);
+            AssertVectorType(types, "float4", "vec4", 16);
+            AssertVectorType(types, "int2", "ivec2", 8);
+            AssertVectorType(types, "int3", "ivec3", 16);
+            AssertVectorType(types, "int4", "ivec4", 16);
+            AssertVectorType(types, "uint2", "uvec2", 8);
+            AssertVectorType(types, "uint3", "uvec3", 16);
+            AssertVectorType(types, "uint4", "uvec4", 16);
+            AssertVectorType(types, "bool2", "bvec2", 8);
+            AssertVectorType(types, "bool3", "bvec3", 16);
+            AssertVectorType(types, "bool4", "bvec4", 16);
+
             var matrixType = types.Single(type => type.GetProperty("clrName").GetString() == "float4x4");
             AssertEx.Equal("mat4", matrixType.GetProperty("glslName").GetString());
             AssertEx.Equal("Builtin", matrixType.GetProperty("mapping").GetString());
@@ -207,6 +220,15 @@ namespace Delta.Maths.Tests
             return functions.Single(function => function.GetProperty("typeClrName").GetString() == typeName
                 && function.GetProperty("clrName").GetString() == clrName
                 && function.GetProperty("parameterClrNames").EnumerateArray().Select(parameter => parameter.GetString()).SequenceEqual(parameterNames));
+        }
+
+        private static void AssertVectorType(JsonElement[] types, string clrName, string glslName, int alignment)
+        {
+            var type = types.Single(item => item.GetProperty("clrName").GetString() == clrName);
+            AssertEx.Equal(glslName, type.GetProperty("glslName").GetString());
+            AssertEx.Equal("Builtin", type.GetProperty("mapping").GetString());
+            AssertEx.Equal(alignment, type.GetProperty("alignment").GetInt32());
+            AssertEx.Equal("std430", type.GetProperty("requiredCapability").GetString());
         }
 
         public static void Glsl460Conformance()

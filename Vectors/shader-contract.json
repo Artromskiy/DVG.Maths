@@ -4,30 +4,30 @@
   "types": [
     {
       "clrName": "bool2",
-      "glslName": null,
-      "mapping": "Unsupported",
+      "glslName": "bvec2",
+      "mapping": "Builtin",
       "columnMajor": null,
-      "alignment": null,
+      "alignment": 8,
       "matrixStride": null,
-      "requiredCapability": null
+      "requiredCapability": "std430"
     },
     {
       "clrName": "bool3",
-      "glslName": null,
-      "mapping": "Unsupported",
+      "glslName": "bvec3",
+      "mapping": "Builtin",
       "columnMajor": null,
-      "alignment": null,
+      "alignment": 16,
       "matrixStride": null,
-      "requiredCapability": null
+      "requiredCapability": "std430"
     },
     {
       "clrName": "bool4",
-      "glslName": null,
-      "mapping": "Unsupported",
+      "glslName": "bvec4",
+      "mapping": "Builtin",
       "columnMajor": null,
-      "alignment": null,
+      "alignment": 16,
       "matrixStride": null,
-      "requiredCapability": null
+      "requiredCapability": "std430"
     },
     {
       "clrName": "double2",
@@ -85,30 +85,30 @@
     },
     {
       "clrName": "float2",
-      "glslName": null,
-      "mapping": "Unsupported",
+      "glslName": "vec2",
+      "mapping": "Builtin",
       "columnMajor": null,
-      "alignment": null,
+      "alignment": 8,
       "matrixStride": null,
-      "requiredCapability": null
+      "requiredCapability": "std430"
     },
     {
       "clrName": "float3",
-      "glslName": null,
-      "mapping": "Unsupported",
+      "glslName": "vec3",
+      "mapping": "Builtin",
       "columnMajor": null,
-      "alignment": null,
+      "alignment": 16,
       "matrixStride": null,
-      "requiredCapability": null
+      "requiredCapability": "std430"
     },
     {
       "clrName": "float4",
-      "glslName": null,
-      "mapping": "Unsupported",
+      "glslName": "vec4",
+      "mapping": "Builtin",
       "columnMajor": null,
-      "alignment": null,
+      "alignment": 16,
       "matrixStride": null,
-      "requiredCapability": null
+      "requiredCapability": "std430"
     },
     {
       "clrName": "float4x4",
@@ -121,30 +121,30 @@
     },
     {
       "clrName": "int2",
-      "glslName": null,
-      "mapping": "Unsupported",
+      "glslName": "ivec2",
+      "mapping": "Builtin",
       "columnMajor": null,
-      "alignment": null,
+      "alignment": 8,
       "matrixStride": null,
-      "requiredCapability": null
+      "requiredCapability": "std430"
     },
     {
       "clrName": "int3",
-      "glslName": null,
-      "mapping": "Unsupported",
+      "glslName": "ivec3",
+      "mapping": "Builtin",
       "columnMajor": null,
-      "alignment": null,
+      "alignment": 16,
       "matrixStride": null,
-      "requiredCapability": null
+      "requiredCapability": "std430"
     },
     {
       "clrName": "int4",
-      "glslName": null,
-      "mapping": "Unsupported",
+      "glslName": "ivec4",
+      "mapping": "Builtin",
       "columnMajor": null,
-      "alignment": null,
+      "alignment": 16,
       "matrixStride": null,
-      "requiredCapability": null
+      "requiredCapability": "std430"
     },
     {
       "clrName": "quaternion",
@@ -157,30 +157,30 @@
     },
     {
       "clrName": "uint2",
-      "glslName": null,
-      "mapping": "Unsupported",
+      "glslName": "uvec2",
+      "mapping": "Builtin",
       "columnMajor": null,
-      "alignment": null,
+      "alignment": 8,
       "matrixStride": null,
-      "requiredCapability": null
+      "requiredCapability": "std430"
     },
     {
       "clrName": "uint3",
-      "glslName": null,
-      "mapping": "Unsupported",
+      "glslName": "uvec3",
+      "mapping": "Builtin",
       "columnMajor": null,
-      "alignment": null,
+      "alignment": 16,
       "matrixStride": null,
-      "requiredCapability": null
+      "requiredCapability": "std430"
     },
     {
       "clrName": "uint4",
-      "glslName": null,
-      "mapping": "Unsupported",
+      "glslName": "uvec4",
+      "mapping": "Builtin",
       "columnMajor": null,
-      "alignment": null,
+      "alignment": 16,
       "matrixStride": null,
-      "requiredCapability": null
+      "requiredCapability": "std430"
     }
   ],
   "functions": [
