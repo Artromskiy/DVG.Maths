@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <AssemblyName>Delta.Maths.VersionAdapter.Candidate</AssemblyName>
+    <RootNamespace>Delta.Maths.VersionAdapter</RootNamespace>
+    <LangVersion>latest</LangVersion>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+  </PropertyGroup>
+
+  <Target Name="ValidateCandidateRoot" BeforeTargets="PrepareForBuild">
+    <Error Condition="'$(CandidateRoot)' == ''" Text="CandidateRoot is required. Pass -p:CandidateRoot=/path/to/candidate/checkout." />
+    <Error Condition="!Exists('$(CandidateRoot)/Delta.Maths.csproj')" Text="CandidateRoot does not contain Delta.Maths.csproj: $(CandidateRoot)" />
+  </Target>
+
+  <ItemGroup>
+    <Compile Include="../MathsScenario.cs" Link="MathsScenario.cs" />
+    <ProjectReference Include="../../Shared/Delta.Maths.VersionBenchmarks.Shared.csproj" />
+    <ProjectReference Include="$(CandidateRoot)/Delta.Maths.csproj"
+                      Aliases="mathsRuntime"
+                      SetTargetFramework="TargetFramework=netstandard2.1"
+                      AdditionalProperties="AssemblyName=Delta.Maths.VersionCandidate" />
+  </ItemGroup>
+
+</Project>

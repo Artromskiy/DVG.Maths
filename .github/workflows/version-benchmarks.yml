@@ -1,0 +1,252 @@
+name: Delta.Maths version comparison
+
+on:
+  workflow_dispatch:
+    inputs:
+      baseline_ref:
+        description: Baseline branch, tag, or commit; empty uses the candidate parent
+        required: false
+        default: ''
+        type: string
+      candidate_ref:
+        description: Candidate branch, tag, or commit; empty uses the selected workflow revision
+        required: false
+        default: ''
+        type: string
+      warmup_count:
+        description: BenchmarkDotNet warmup iterations
+        required: true
+        default: 3
+        type: number
+      iteration_count:
+        description: BenchmarkDotNet measured iterations
+        required: true
+        default: 5
+        type: number
+      launch_count:
+        description: BenchmarkDotNet process launches
+        required: true
+        default: 1
+        type: number
+      filter:
+        description: BenchmarkDotNet filter
+        required: true
+        default: '*'
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: delta-maths-version-${{ inputs.baseline_ref }}-${{ inputs.candidate_ref }}-${{ github.ref }}
+  cancel-in-progress: false
+
+env:
+  DOTNET_CLI_TELEMETRY_OPTOUT: 1
+  DOTNET_NOLOGO: 1
+  NUGET_PACKAGES: ${{ github.workspace }}/.nuget/packages
+  HARNESS_ROOT: ${{ github.workspace }}/harness
+  BASELINE_ROOT: ${{ github.workspace }}/baseline
+  CANDIDATE_ROOT: ${{ github.workspace }}/candidate
+
+jobs:
+  compare:
+    name: Compare Delta.Maths refs
+    runs-on: ubuntu-24.04
+    timeout-minutes: 360
+    steps:
+      - name: Checkout benchmark harness
+        uses: actions/checkout@v7
+        with:
+          path: harness
+          fetch-depth: 0
+
+      - name: Resolve refs to full commit SHAs
+        id: version-refs
+        shell: bash
+        env:
+          BASELINE_REF_INPUT: ${{ inputs.baseline_ref }}
+          CANDIDATE_REF_INPUT: ${{ inputs.candidate_ref }}
+        run: |
+          set -euo pipefail
+
+          resolve_ref() {
+            local requested="$1"
+            local candidate
+            local resolved
+
+            if [ -z "$requested" ]; then
+              git -C "$HARNESS_ROOT" rev-parse --verify HEAD
+              return
+            fi
+
+            for candidate in "$requested" "refs/remotes/origin/$requested" "refs/tags/$requested"; do
+              if resolved="$(git -C "$HARNESS_ROOT" rev-parse --verify --end-of-options "${candidate}^{commit}" 2>/dev/null)"; then
+                printf '%s\n' "$resolved"
+                return
+              fi
+            done
+
+            echo "::error::Cannot resolve git ref '$requested' in the harness repository." >&2
+            return 1
+          }
+
+          require_full_sha() {
+            local name="$1"
+            local value="$2"
+            if [[ ! "$value" =~ ^[0-9a-f]{40}$ ]]; then
+              echo "::error::$name did not resolve to a full commit SHA: $value" >&2
+              return 1
+            fi
+          }
+
+          candidate_sha="$(resolve_ref "$CANDIDATE_REF_INPUT")"
+          if [ -n "$BASELINE_REF_INPUT" ]; then
+            baseline_sha="$(resolve_ref "$BASELINE_REF_INPUT")"
+          else
+            baseline_sha="$(git -C "$HARNESS_ROOT" rev-parse --verify --end-of-options "${candidate_sha}^")"
+          fi
+          require_full_sha baseline_sha "$baseline_sha"
+          require_full_sha candidate_sha "$candidate_sha"
+
+          baseline_subject="$(git -C "$HARNESS_ROOT" show -s --format=%s "$baseline_sha")"
+          candidate_subject="$(git -C "$HARNESS_ROOT" show -s --format=%s "$candidate_sha")"
+          echo "baseline_sha=$baseline_sha" >> "$GITHUB_OUTPUT"
+          echo "candidate_sha=$candidate_sha" >> "$GITHUB_OUTPUT"
+          echo "baseline_subject=$baseline_subject" >> "$GITHUB_OUTPUT"
+          echo "candidate_subject=$candidate_subject" >> "$GITHUB_OUTPUT"
+          echo "Resolved baseline $baseline_sha -> candidate $candidate_sha"
+
+      - name: Checkout baseline
+        uses: actions/checkout@v7
+        with:
+          ref: ${{ steps.version-refs.outputs.baseline_sha }}
+          path: baseline
+          fetch-depth: 1
+
+      - name: Checkout candidate
+        uses: actions/checkout@v7
+        with:
+          ref: ${{ steps.version-refs.outputs.candidate_sha }}
+          path: candidate
+          fetch-depth: 1
+
+      - name: Install .NET 8
+        uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: 8.0.x
+
+      - name: Cache NuGet packages
+        uses: actions/cache@v6
+        with:
+          path: ${{ env.NUGET_PACKAGES }}
+          key: delta-maths-version-${{ runner.os }}-${{ steps.version-refs.outputs.baseline_sha }}-${{ steps.version-refs.outputs.candidate_sha }}-${{ hashFiles('harness/VersionBenchmarks/**/*.csproj') }}
+          restore-keys: |
+            delta-maths-version-${{ runner.os }}-
+
+      - name: Restore and build baseline and candidate libraries
+        shell: bash
+        run: |
+          set -euo pipefail
+          for root in "$BASELINE_ROOT" "$CANDIDATE_ROOT"; do
+            dotnet restore "$root/Delta.Maths.csproj" \
+              --disable-parallel --disable-build-servers --ignore-failed-sources \
+              -m:1 -p:NuGetAudit=false
+            dotnet build "$root/Delta.Maths.csproj" -c Release \
+              --no-restore --disable-build-servers -m:1 /p:UseSharedCompilation=false
+          done
+
+      - name: Restore and build version benchmark harness
+        working-directory: harness
+        run: |
+          dotnet restore VersionBenchmarks/Delta.Maths.VersionBenchmarks.csproj \
+            --disable-parallel --disable-build-servers --ignore-failed-sources \
+            -m:1 -p:NuGetAudit=false \
+            -p:BaselineRoot="$BASELINE_ROOT" \
+            -p:CandidateRoot="$CANDIDATE_ROOT"
+          dotnet build VersionBenchmarks/Delta.Maths.VersionBenchmarks.csproj \
+            -c Release --no-restore --disable-build-servers -m:1 \
+            /p:UseSharedCompilation=false \
+            -p:BaselineRoot="$BASELINE_ROOT" \
+            -p:CandidateRoot="$CANDIDATE_ROOT"
+
+      - name: Run contract smoke and discovery
+        working-directory: harness
+        run: |
+          set -euo pipefail
+          dotnet VersionBenchmarks/bin/Release/net8.0/Delta.Maths.VersionBenchmarks.dll smoke
+          dotnet VersionBenchmarks/bin/Release/net8.0/Delta.Maths.VersionBenchmarks.dll \
+            --list flat --filter '*'
+
+      - name: Record resolved versions and runner
+        working-directory: harness
+        shell: bash
+        env:
+          BASELINE_SHA: ${{ steps.version-refs.outputs.baseline_sha }}
+          CANDIDATE_SHA: ${{ steps.version-refs.outputs.candidate_sha }}
+          BASELINE_SUBJECT: ${{ steps.version-refs.outputs.baseline_subject }}
+          CANDIDATE_SUBJECT: ${{ steps.version-refs.outputs.candidate_subject }}
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts/version-comparison
+          {
+            echo "baseline_sha=$BASELINE_SHA"
+            echo "baseline_subject=$BASELINE_SUBJECT"
+            echo "candidate_sha=$CANDIDATE_SHA"
+            echo "candidate_subject=$CANDIDATE_SUBJECT"
+            echo "warmup_count=${{ inputs.warmup_count }}"
+            echo "iteration_count=${{ inputs.iteration_count }}"
+            echo "launch_count=${{ inputs.launch_count }}"
+            echo "filter=${{ inputs.filter }}"
+            uname -a
+            dotnet --info
+          } > artifacts/version-comparison/runner.txt
+
+      - name: Run full version benchmark suite
+        working-directory: harness
+        run: |
+          dotnet VersionBenchmarks/bin/Release/net8.0/Delta.Maths.VersionBenchmarks.dll \
+            --filter '${{ inputs.filter }}' \
+            --warmupCount '${{ inputs.warmup_count }}' \
+            --iterationCount '${{ inputs.iteration_count }}' \
+            --launchCount '${{ inputs.launch_count }}' \
+            --exporters json csv markdown github \
+            --artifacts artifacts/version-comparison
+
+      - name: Add comparison to workflow summary
+        if: always()
+        working-directory: harness
+        shell: bash
+        env:
+          BASELINE_SHA: ${{ steps.version-refs.outputs.baseline_sha }}
+          CANDIDATE_SHA: ${{ steps.version-refs.outputs.candidate_sha }}
+          BASELINE_SUBJECT: ${{ steps.version-refs.outputs.baseline_subject }}
+          CANDIDATE_SUBJECT: ${{ steps.version-refs.outputs.candidate_subject }}
+        run: |
+          {
+            echo "## Delta.Maths version comparison"
+            echo
+            echo "Baseline: [$BASELINE_SHA](https://github.com/${{ github.repository }}/commit/$BASELINE_SHA) — $BASELINE_SUBJECT"
+            echo
+            echo "Candidate: [$CANDIDATE_SHA](https://github.com/${{ github.repository }}/commit/$CANDIDATE_SHA) — $CANDIDATE_SUBJECT"
+            echo
+            echo "Parameters: warmup=${{ inputs.warmup_count }}, iterations=${{ inputs.iteration_count }}, launches=${{ inputs.launch_count }}, filter=\`${{ inputs.filter }}\`"
+            echo
+            if compgen -G 'artifacts/version-comparison/*-report-github.md' > /dev/null; then
+              for report in artifacts/version-comparison/*-report-github.md; do
+                cat "$report"
+                echo
+              done
+            else
+              echo "BenchmarkDotNet did not produce a GitHub markdown report. Full artifacts are uploaded below."
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload version benchmark artifacts
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: delta-maths-version-${{ runner.arch }}-${{ github.run_number }}
+          path: harness/artifacts/version-comparison
+          if-no-files-found: warn
+          retention-days: 30

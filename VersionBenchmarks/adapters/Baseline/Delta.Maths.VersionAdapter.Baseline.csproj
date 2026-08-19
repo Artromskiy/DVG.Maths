@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <AssemblyName>Delta.Maths.VersionAdapter.Baseline</AssemblyName>
+    <RootNamespace>Delta.Maths.VersionAdapter</RootNamespace>
+    <LangVersion>latest</LangVersion>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+  </PropertyGroup>
+
+  <Target Name="ValidateBaselineRoot" BeforeTargets="PrepareForBuild">
+    <Error Condition="'$(BaselineRoot)' == ''" Text="BaselineRoot is required. Pass -p:BaselineRoot=/path/to/baseline/checkout." />
+    <Error Condition="!Exists('$(BaselineRoot)/Delta.Maths.csproj')" Text="BaselineRoot does not contain Delta.Maths.csproj: $(BaselineRoot)" />
+  </Target>
+
+  <ItemGroup>
+    <Compile Include="../MathsScenario.cs" Link="MathsScenario.cs" />
+    <ProjectReference Include="../../Shared/Delta.Maths.VersionBenchmarks.Shared.csproj" />
+    <ProjectReference Include="$(BaselineRoot)/Delta.Maths.csproj"
+                      Aliases="mathsRuntime"
+                      SetTargetFramework="TargetFramework=netstandard2.1"
+                      AdditionalProperties="AssemblyName=Delta.Maths.VersionBaseline" />
+  </ItemGroup>
+
+</Project>

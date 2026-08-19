@@ -265,3 +265,54 @@ A benchmark added without the naming convention or without CLI argument
 forwarding is not registered and must not be treated as CI coverage. Shared
 GitHub runners are suitable for comparisons within one run, not for small
 cross-run regression claims.
+
+The initial standalone math suite measures individual Delta.Maths operations and is in
+[`Benchmarks/Delta.Maths.Benchmarks.csproj`](Benchmarks/Delta.Maths.Benchmarks.csproj).
+Run discovery locally with:
+
+```bash
+dotnet run --project Benchmarks/Delta.Maths.Benchmarks.csproj -c Release -- --list flat
+```
+
+### Comparing two Delta.Maths revisions
+
+The separate [`VersionBenchmarks/Delta.Maths.VersionBenchmarks.csproj`](VersionBenchmarks/Delta.Maths.VersionBenchmarks.csproj)
+suite compares two API-compatible runtime revisions in one BenchmarkDotNet
+process. Baseline and candidate are compiled into different assembly names and
+loaded through extern aliases; the ordinary `Benchmarks` project is unchanged.
+
+The manual [version workflow](.github/workflows/version-benchmarks.yml) accepts
+branches, tags, full SHAs, and short SHAs. An empty `candidate_ref` means the
+revision selected when the workflow is dispatched. An empty `baseline_ref`
+means the first parent of that resolved candidate. The workflow resolves both
+values to full commit SHAs before checkout, then records commit links and
+subjects in the job summary.
+
+This comparison is valid only when both revisions expose the same public API.
+An API-incompatible revision fails during the adapter restore/build with a
+version-specific error rather than producing a misleading timing report.
+
+For a local run, place two checkouts in `BASELINE_ROOT` and `CANDIDATE_ROOT`,
+then run:
+
+```bash
+dotnet restore VersionBenchmarks/Delta.Maths.VersionBenchmarks.csproj \
+  --disable-parallel --disable-build-servers -m:1 \
+  -p:BaselineRoot="$BASELINE_ROOT" -p:CandidateRoot="$CANDIDATE_ROOT"
+dotnet build VersionBenchmarks/Delta.Maths.VersionBenchmarks.csproj -c Release \
+  --no-restore --disable-build-servers -m:1 /p:UseSharedCompilation=false \
+  -p:BaselineRoot="$BASELINE_ROOT" -p:CandidateRoot="$CANDIDATE_ROOT"
+dotnet VersionBenchmarks/bin/Release/net8.0/Delta.Maths.VersionBenchmarks.dll \
+  --filter '*' --warmupCount 3 --iterationCount 5 --launchCount 1 \
+  --exporters json csv markdown github --artifacts artifacts/version-comparison
+```
+
+The report contains `Mean`, `Error`, `Ratio`, `Allocated`, and full JSON/CSV/
+Markdown exports. The workflow uploads the complete `artifacts/version-comparison`
+directory for download from the Actions run. The local `benchmark-smoke` mode
+measures only one 256-element vector-add pair:
+
+```bash
+dotnet VersionBenchmarks/bin/Release/net8.0/Delta.Maths.VersionBenchmarks.dll \
+  benchmark-smoke --filter '*VersionBenchmarkSmokeBenchmarks*'
+```

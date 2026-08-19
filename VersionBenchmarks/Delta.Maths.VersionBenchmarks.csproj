@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>Delta.Maths.VersionBenchmarks</RootNamespace>
+    <AssemblyName>Delta.Maths.VersionBenchmarks</AssemblyName>
+    <LangVersion>latest</LangVersion>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <CandidateRoot Condition="'$(CandidateRoot)' == ''">$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..'))</CandidateRoot>
+  </PropertyGroup>
+
+  <Target Name="ValidateVersionRoots" BeforeTargets="PrepareForBuild">
+    <Error Condition="'$(BaselineRoot)' == ''" Text="BaselineRoot is required. Pass -p:BaselineRoot=/path/to/baseline/checkout." />
+    <Error Condition="!Exists('$(BaselineRoot)/Delta.Maths.csproj')" Text="BaselineRoot does not contain Delta.Maths.csproj: $(BaselineRoot)" />
+    <Error Condition="!Exists('$(CandidateRoot)/Delta.Maths.csproj')" Text="CandidateRoot does not contain Delta.Maths.csproj: $(CandidateRoot)" />
+  </Target>
+
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="VersionBenchmarks.cs" />
+    <ProjectReference Include="Shared/Delta.Maths.VersionBenchmarks.Shared.csproj" />
+    <ProjectReference Include="adapters/Baseline/Delta.Maths.VersionAdapter.Baseline.csproj"
+                      Aliases="baselineAdapter"
+                      AdditionalProperties="BaselineRoot=$(BaselineRoot)" />
+    <ProjectReference Include="adapters/Candidate/Delta.Maths.VersionAdapter.Candidate.csproj"
+                      Aliases="candidateAdapter"
+                      AdditionalProperties="CandidateRoot=$(CandidateRoot)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AssemblyMetadata Include="Delta.Maths.BaselineRoot" Value="$(BaselineRoot)" />
+    <AssemblyMetadata Include="Delta.Maths.CandidateRoot" Value="$(CandidateRoot)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BenchmarkDotNet" Version="0.13.12" />
+  </ItemGroup>
+
+</Project>
