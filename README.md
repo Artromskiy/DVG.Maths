@@ -1,352 +1,53 @@
 # Delta.Maths
 
-A lightweight, engine-independent mathematics library for .NET.
+Portable, engine-independent mathematics for .NET. Runtime targets
+`netstandard2.0` and `netstandard2.1` and has no Unity, renderer, or
+`System.Numerics` dependency.
 
-Delta.Maths provides scalar math utilities, fixed-point arithmetic, strongly typed vectors, extensive swizzling, and an optional shader-like API. It does not depend on Unity, `System.Numerics`, or a particular game engine.
+## API
 
-The runtime library targets `netstandard2.0` and `netstandard2.1`; its code generator is a separate .NET console application.
-
-## Features
-
-- `float`, `double`, `int`, `uint`, and deterministic `fix` mathematics
-- 2D, 3D, and 4D vectors
-- boolean vectors and mask operations
-- arithmetic, remainder, bitwise, boolean, comparison, increment, and conversion operators
-- geometry, interpolation, rounding, trigonometric, exponential, and classification functions
-- `xyzw`, `rgba`, and `stpq` swizzles
-- zero-inserting underscore swizzles
-- generator-first `float4x4` and `quaternion` types
-- column-major matrix storage suitable for four-`float4` GPU layouts
-- conventional C# and shader-like API styles
-- generated vector implementation split into readable partial files
-- no engine dependencies
-
-## Vector types
-
-Delta.Maths includes 18 vector types:
-
-| Scalar | 2D | 3D | 4D |
-| --- | --- | --- | --- |
-| `bool` | `bool2` | `bool3` | `bool4` |
-| `int` | `int2` | `int3` | `int4` |
-| `uint` | `uint2` | `uint3` | `uint4` |
-| `float` | `float2` | `float3` | `float4` |
-| `double` | `double2` | `double3` | `double4` |
-| `fix` | `fix2` | `fix3` | `fix4` |
-
-Vectors provide component constructors, scalar constructors, dimension conversions, indexing, parsing, equality, comparison, and the operators appropriate for their scalar type.
-
-```csharp
-using Delta.Maths;
-
-var position = new float3(10f, 20f, 30f);
-var offset = new float3(1f, 0f, -2f);
-var result = position + offset;
-
-float x = result[0];
-float3 copy = float3.Parse("11, 20, 28");
-```
-
-## Fixed-point arithmetic
-
-`fix` is a signed 16.16 fixed-point number intended for simulations where repeatable numeric behaviour is more important than floating-point range.
-
-It supports:
-
-- arithmetic and comparison operators
-- bitwise and shift operators
-- conversion to and from common numeric types
-- parsing and formatting
-- scalar and vector math functions
-- constants such as `Zero`, `One`, `Pi`, `E`, `MinValue`, and `MaxValue`
-
-```csharp
-using Delta.Maths;
-
-fix speed = (fix)1.5f;
-fix time = (fix)2;
-fix distance = speed * time;
-
-var direction = fix3.Normalize(new fix3(3, 0, 4));
-```
-
-## Swizzling
-
-Every vector supports shader-style swizzles using the `xyzw`, `rgba`, and `stpq` alphabets.
-
-```csharp
-var value = new float3(3f, 1f, 5f);
-
-float2 xy = value.xy;       // (3, 1)
-float3 yzx = value.yzx;     // (1, 5, 3)
-float4 xxxx = value.xxxx;   // (3, 3, 3, 3)
-
-value.xy = new float2(8f, 9f);
-```
-
-An underscore inserts the scalar type's default value:
-
-```csharp
-float3 value = new float3(3f, 1f, 5f);
-float3 padded = value._xy; // (0, 3, 1)
-```
-
-Only swizzles with distinct writable components have setters. Repeated and underscore components are read-only.
-
-## Vector mathematics
-
-Floating-point and fixed-point vectors provide functions including:
-
-- `Length`, `SqrLength`
-- `Distance`, `SqrDistance`
-- `Dot` and three-dimensional `Cross`
-- `Normalize`
-- `FaceForward`, `Reflect`, `Refract`
-- `ClampLength`, `MoveTowards`, `SmoothDamp`
-- `Clamp`, `Abs`, `Sign`, `Min`, `Max`
-- `Lerp`, `InvLerp`
-- `Sqrt`, `InverseSqrt`
-- exponential functions where supported by the scalar type
-
-The functions are available directly on their vector type:
-
-```csharp
-float3 from = new float3(0f, 0f, 0f);
-float3 to = new float3(10f, 5f, 0f);
-
-float distance = float3.Distance(from, to);
-float3 halfway = float3.Lerp(from, to, 0.5f);
-float3 direction = float3.Normalize(to - from);
-float3 safeDirection = float3.NormalizeSafe(float3.zero);
-```
-
-Integer vectors additionally provide dot products, component sums, remainder, bitwise, complement, and shift operators. Boolean vectors provide component-wise `!`, `&`, `|`, and `^`, plus `Any` and `All`.
-
-## `Maths`: conventional C# API
-
-`Maths` is the regular PascalCase scalar API. It remains intentionally separate from generated vector overloads.
-
-```csharp
-using Delta.Maths;
-
-float angle = Maths.Radians(90f);
-float wave = Maths.Sin(angle);
-float value = Maths.Clamp(wave, 0f, 1f);
-```
-
-It includes common interpolation, trigonometric, exponential, logarithmic, rounding, and mapping helpers for supported scalar types.
-
-## `maths`: shader-like API
-
-The generated lowercase `maths` class forwards scalar calls to `Maths` and adds vector overloads. Import it statically to write compact shader-like expressions without naming the class at each call:
+- scalar utilities and deterministic 16.16 `fix`;
+- `bool/int/uint/float/double/fix` vectors in 2D, 3D, and 4D;
+- operators, conversions, geometry, interpolation, trigonometry and swizzles;
+- generator-owned `float4x4` and `quaternion`;
+- conventional `Maths.*` and shader-like lowercase `maths.*` APIs.
 
 ```csharp
 using Delta.Maths;
 using static Delta.Maths.maths;
 
-float3 a = new float3(0f, 0f, 0f);
-float3 b = new float3(10f, 5f, 2f);
-
-float3 point = lerp(a, b, 0.25f);
-float3 normal = normalize(b - a);
-float alignment = dot(normal, new float3(0f, 1f, 0f));
+var direction = normalize(new float3(1f, 2f, 3f));
+var transform = float4x4.CreateTRS(position, rotation, scale);
 ```
 
-Both styles use the same implementations. Choose `Maths` and vector methods for conventional C#, or `using static Delta.Maths.maths` for concise mathematical code.
+`float4x4` is column-major as four sequential `float4` columns. Translation is
+stored in `c3.xyz`; column vectors are used and `T * R * S` applies scale,
+rotation, then translation. This convention is shared by CPU code, GLSL and
+std430 layouts.
 
-## Matrices and quaternions
+## Shader contract
 
-`float4x4` is stored sequentially as four public `float4` columns: `c0`, `c1`, `c2`, and `c3`. Its size is 64 bytes, with column offsets 0, 16, 32, and 48 bytes. This is the direct representation expected by a column-major GLSL `mat4` in a std430 buffer.
+`Vectors/shader-contract.json` is generated from the same declarations as the
+C# API and is the only symbol/layout source for DeltaShader. Register only
+entries marked `Builtin` or `Helper`; `Unsupported` is intentional.
 
-The library uses column vectors and puts translation in `c3.xyz` (`M14`, `M24`, `M34`). Matrix multiplication is written from right to left: `translation * rotation * scale` applies scale, then rotation, then translation. `CreateTRS` follows this rule for a left-handed, column-vector math model.
+Shader-safe types currently include `bool/int/uint/float` vectors,
+`float4x4 -> mat4`, and `quaternion -> vec4`. `double` and `fix` remain CPU-only.
+GPU-only intrinsics such as `fwidth` stay in DeltaShader.
 
-```csharp
-var rotation = quaternion.CreateFromAxisAngle(new float3(0f, 1f, 0f), Maths.Radians(90f));
-var transform = float4x4.CreateTRS(
-    new float3(4f, -2f, 7f), rotation, new float3(2f, 3f, 4f));
+## Generate, build, test
 
-float3 worldPoint = float4x4.TransformPoint(transform, new float3(1f, 0f, 0f));
-bool invertible = float4x4.TryInverse(transform, out var inverse);
-bool decomposed = float4x4.Decompose(transform, out var scale, out var orientation, out var position);
-```
-
-The types expose identity, construction/access, matrix/vector operators, translation/scale/rotation/TRS builders, transpose, determinant, safe inverse, decomposition, look-to and left-handed perspective helpers. `quaternion` also exposes Hamilton multiplication, safe normalization, conjugate/inverse, vector rotation, axis-angle and yaw/pitch/roll construction, interpolation, and matrix conversion.
-
-`System.Numerics.Matrix4x4` is a row/column-compatible type with a different convention, so conversion is explicit and not a drop-in field copy. The test suite contains explicit conversion helpers and left/right semantic checks for migration safety.
-
-## Generated shader contract
-
-`Vectors/shader-contract.json` is generated from the same declarations as the C# API. It is the only source Shad should use to register Delta.Maths symbols; do not infer GLSL names by matching CLR names.
-
-Each type and function has a stable identity, CLR and GLSL types, `mapping` (`Builtin`, `Helper`, or `Unsupported`), required capability, shader zone, and stage list. Register only `Builtin` and `Helper` entries. `Unsupported` entries are intentional diagnostics for runtime members that do not have a safe GLSL lowering.
-
-The current shader-safe type set is `float2/3/4` → `vec2/3/4`, `int2/3/4` → `ivec2/3/4`, `uint2/3/4` → `uvec2/3/4`, `bool2/3/4` → `bvec2/3/4`, `float4x4` → column-major `mat4`, and `quaternion` → `vec4`. `double*` and `fix*` remain unsupported for GLSL 460.
-
-The supported vector operations include arithmetic operators, `min`, `max`, `clamp`, `abs`, `mix`, `smoothstep`, `step`, `dot`, `length`, `distance`, `normalize`, `faceforward`, `reflect`, `cross` for `float3`, `equal`, `notEqual`, `any`, `all`, and the `delta_select` helper for vector masks. Constructors and standard `xyzw`/`rgba`/`stpq` swizzles are emitted as type metadata; C# underscore swizzles are deliberately not shader symbols. Matrix and quaternion helpers are emitted with their exact `delta_*` identities.
-
-All current mapped entries are legal in vertex, fragment, and compute stages and belong to the `Delta.Maths` zone. Shader-only operations such as `fwidth` are not faked as CPU functions and must be registered separately by Shad in its intrinsic zone.
-
-## Generated source layout
-
-Vector source is generated as partial structs. Each concern has its own file:
-
-```text
-float3.cs
-float3.operators.cs
-float3.common.cs
-float3.geometry.cs
-float3.trigonometry.cs
-float3.exponential.cs
-float3.relational.cs
-float3.swizzles.cs
-```
-
-The declarative generator lives in the sibling `Delta.MathsGen` project. Running it with the vector output directory rewrites all generated files:
+From the Furnace workspace:
 
 ```bash
-dotnet run --project ../MathsGen/Delta.MathsGen.csproj -- ./Vectors
+dotnet MathsGen/bin/Release/net8.0/Delta.MathsGen.dll Maths/Vectors
+dotnet build Maths/Delta.Maths.csproj -c Release -f netstandard2.0 \
+  --disable-build-servers -m:1 /p:UseSharedCompilation=false
+dotnet build Maths/Delta.Maths.csproj -c Release -f netstandard2.1 \
+  --disable-build-servers -m:1 /p:UseSharedCompilation=false
+dotnet run --project Maths/Tests/Delta.Maths.Tests.csproj -c Release
 ```
 
-The generator also creates:
-
-- `maths.cs` from the public scalar methods of `Maths`
-- `maths.vectors.cs` from vector declarations marked for the shader-like API
-
-## Building
-
-```bash
-dotnet build Delta.Maths.csproj
-```
-
-The repository also contains an offline, dependency-free test executable:
-
-```bash
-dotnet run --project Tests/Delta.Maths.Tests.csproj --no-restore
-```
-
-To reference the project directly:
-
-```xml
-<ProjectReference Include="path/to/Maths/Delta.Maths.csproj" />
-```
-
-Then import the library namespace:
-
-```csharp
-using Delta.Maths;
-```
-
-## Design goals
-
-- predictable numeric behaviour
-- a small and portable runtime
-- explicit, strongly typed vector APIs
-- readable generated C#
-- easy extension with new scalar and composite types
-- compatibility with engine, tooling, client, and server projects
-- familiar syntax without preserving a dependency on any shader language
-
-Delta.Maths is intended as a practical mathematical foundation for simulations, games, custom engines, ECS code, physics, procedural systems, and server-side logic.
-
-
-## CI, tests, and benchmarks
-
-The GitHub Actions workflow is [`.github/workflows/ci.yml`](.github/workflows/ci.yml).
-Pull requests and pushes to `main` build in Release, run correctness tests, and
-perform BenchmarkDotNet discovery only; they do not record performance numbers.
-Measured benchmarks run manually from **Actions → Delta.Maths benchmarks → Run
-workflow**. The `suite` selector has two modes:
-
-- `performance` runs the standalone Delta.Maths suite on the selected revision;
-  it does not compare another implementation or revision;
-- `version-comparison` checks out two revisions and runs the regression suite with
-  BenchmarkDotNet baseline/candidate ratios.
-
-Both modes accept warmup, iteration, launch, and filter parameters. Results are
-uploaded as separate artifacts for 30 days.
-
-Repository conventions:
-
-- correctness projects are named `*.Tests.csproj`; projects using
-  `Microsoft.NET.Test.Sdk` run through `dotnet test`, while custom executable
-  harnesses must be listed explicitly in the workflow and return a non-zero exit
-  code on failure;
-- BenchmarkDotNet projects are named `*.Benchmarks.csproj`; this filename is how
-  the workflow discovers them;
-- their entry point must forward CLI arguments with
-  `BenchmarkSwitcher.FromAssembly(typeof(Program).Assembly).Run(args)`;
-- mark the Delta implementation with `[Benchmark(Baseline = true)]` within every
-  comparable benchmark category; use exactly one baseline per category;
-- add sibling repositories to the checkout steps whenever a
-  `ProjectReference` escapes this repository.
-
-A benchmark added without the naming convention or without CLI argument
-forwarding is not registered and must not be treated as CI coverage. Shared
-GitHub runners are suitable for comparisons within one run, not for small
-cross-run regression claims.
-
-The initial standalone math suite measures individual Delta.Maths operations and is in
-[`Benchmarks/Delta.Maths.Benchmarks.csproj`](Benchmarks/Delta.Maths.Benchmarks.csproj).
-Run discovery locally with:
-
-```bash
-dotnet run --project Benchmarks/Delta.Maths.Benchmarks.csproj -c Release -- --list flat
-```
-
-Run the standalone suite locally with the same parameters used by the manual
-workflow:
-
-```bash
-dotnet build Benchmarks/Delta.Maths.Benchmarks.csproj -c Release
-dotnet Benchmarks/bin/Release/net8.0/Delta.Maths.Benchmarks.dll \
-  --filter '*' --warmupCount 3 --iterationCount 5 --launchCount 1 \
-  --exporters json csv markdown github --artifacts artifacts/performance
-```
-
-### Comparing two Delta.Maths revisions
-
-The separate [`VersionBenchmarks/Delta.Maths.VersionBenchmarks.csproj`](VersionBenchmarks/Delta.Maths.VersionBenchmarks.csproj)
-suite compares two API-compatible runtime revisions in one BenchmarkDotNet
-process. Baseline and candidate are compiled into different assembly names and
-loaded through extern aliases; the ordinary `Benchmarks` project is unchanged.
-
-The manual [benchmark workflow](.github/workflows/benchmarks.yml) accepts
-branches, tags, full SHAs, and short SHAs. An empty `candidate_ref` means the
-revision selected when the workflow is dispatched. An empty `baseline_ref`
-means the first parent of that resolved candidate. The workflow resolves both
-values to full commit SHAs before checkout, then records commit links and
-subjects in the job summary.
-
-Choose `suite=performance` when you need a thick runtime profile of the current
-math implementation. Choose `suite=version-comparison` when you need to find a
-regression between two API-compatible commits. The comparison uses separate
-baseline and candidate checkouts and does not run automatically on pushes.
-
-This comparison is valid only when both revisions expose the same public API.
-An API-incompatible revision fails during the adapter restore/build with a
-version-specific error rather than producing a misleading timing report.
-
-For a local run, place two checkouts in `BASELINE_ROOT` and `CANDIDATE_ROOT`,
-then run:
-
-```bash
-dotnet restore VersionBenchmarks/Delta.Maths.VersionBenchmarks.csproj \
-  --disable-parallel --disable-build-servers -m:1 \
-  -p:BaselineRoot="$BASELINE_ROOT" -p:CandidateRoot="$CANDIDATE_ROOT"
-dotnet build VersionBenchmarks/Delta.Maths.VersionBenchmarks.csproj -c Release \
-  --no-restore --disable-build-servers -m:1 /p:UseSharedCompilation=false \
-  -p:BaselineRoot="$BASELINE_ROOT" -p:CandidateRoot="$CANDIDATE_ROOT"
-dotnet VersionBenchmarks/bin/Release/net8.0/Delta.Maths.VersionBenchmarks.dll \
-  --filter '*' --warmupCount 3 --iterationCount 5 --launchCount 1 \
-  --exporters json csv markdown github --artifacts artifacts/version-comparison
-```
-
-The report contains `Mean`, `Error`, `Ratio`, `Allocated`, and full JSON/CSV/
-Markdown exports. The workflow uploads the complete `artifacts/version-comparison`
-directory for download from the Actions run. The local `benchmark-smoke` mode
-measures only one 256-element vector-add pair:
-
-```bash
-dotnet VersionBenchmarks/bin/Release/net8.0/Delta.Maths.VersionBenchmarks.dll \
-  benchmark-smoke --filter '*VersionBenchmarkSmokeBenchmarks*'
-```
+Generated files begin with `// <auto-generated />` and must not be edited
+directly. Version-comparison benchmarks are manual GitHub Actions jobs; see the
+workspace README for the common benchmark policy.
