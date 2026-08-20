@@ -171,6 +171,21 @@ namespace Delta.Maths.Tests
 
             AssertEx.True(types.Where(type => type.GetProperty("mapping").GetString() != "Unsupported").All(type => type.GetProperty("stages").EnumerateArray().Select(stage => stage.GetString())
                 .SequenceEqual(new[] { "vertex", "fragment", "compute" })));
+            AssertEx.True(types.Where(type => type.GetProperty("mapping").GetString() != "Unsupported").All(type =>
+                !string.IsNullOrWhiteSpace(type.GetProperty("shaderZone").GetString())
+                && !string.IsNullOrWhiteSpace(type.GetProperty("glslName").GetString())
+                && type.GetProperty("requiredCapability").GetString() == "std430"
+                && type.GetProperty("alignment").ValueKind == JsonValueKind.Number));
+            AssertEx.Equal(16, types.Single(type => type.GetProperty("clrName").GetString() == "float3")
+                .GetProperty("alignment").GetInt32());
+            AssertEx.Equal(16, types.Single(type => type.GetProperty("clrName").GetString() == "float4")
+                .GetProperty("alignment").GetInt32());
+            AssertEx.Equal(16, types.Single(type => type.GetProperty("clrName").GetString() == "int3")
+                .GetProperty("alignment").GetInt32());
+            AssertEx.Equal(16, types.Single(type => type.GetProperty("clrName").GetString() == "uint3")
+                .GetProperty("alignment").GetInt32());
+            AssertEx.Equal(16, types.Single(type => type.GetProperty("clrName").GetString() == "bool3")
+                .GetProperty("alignment").GetInt32());
             var float3Type = types.Single(type => type.GetProperty("clrName").GetString() == "float3");
             var float3Constructors = float3Type.GetProperty("constructors").EnumerateArray().ToArray();
             AssertEx.True(float3Constructors.Any(constructor =>
