@@ -14,3 +14,9 @@ git -C Maths diff --check
 
 Do not run version benchmarks during ordinary review. Use the manual workflow
 only when the user asks for a version comparison.
+
+## Code metrics
+
+Run the manual GitHub Actions `Code metrics` workflow when maintainability
+evidence is needed. It enables CA1501/CA1502/CA1505/CA1506 as report-only
+diagnostics and uploads the SARIF, build log and exit summary as artifacts.
