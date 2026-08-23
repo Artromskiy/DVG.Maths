@@ -9,15 +9,15 @@ public class FixedPointBenchmarks
     [Params(256, 4096, 65536)]
     public int Count { get; set; }
 
-    private fix[] _left = null!;
-    private fix[] _right = null!;
-    private fix[] _positive = null!;
-    private fix2[] _left2 = null!;
-    private fix2[] _right2 = null!;
-    private fix3[] _left3 = null!;
-    private fix3[] _right3 = null!;
-    private fix4[] _left4 = null!;
-    private fix4[] _right4 = null!;
+    private fix[] _left = [];
+    private fix[] _right = [];
+    private fix[] _positive = [];
+    private fix2[] _left2 = [];
+    private fix2[] _right2 = [];
+    private fix3[] _left3 = [];
+    private fix3[] _right3 = [];
+    private fix4[] _left4 = [];
+    private fix4[] _right4 = [];
 
     [GlobalSetup]
     public void Setup()

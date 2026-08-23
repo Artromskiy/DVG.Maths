@@ -9,11 +9,11 @@ public class VectorGeometryBenchmarks
     [Params(256, 4096, 65536)]
     public int Count { get; set; }
 
-    private float3[] _left = null!;
-    private float3[] _right = null!;
-    private float3[] _onto = null!;
-    private float3[] _source = null!;
-    private float3[] _target = null!;
+    private float3[] _left = [];
+    private float3[] _right = [];
+    private float3[] _onto = [];
+    private float3[] _source = [];
+    private float3[] _target = [];
 
     [GlobalSetup]
     public void Setup()

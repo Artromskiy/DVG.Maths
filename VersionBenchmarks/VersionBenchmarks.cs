@@ -11,14 +11,17 @@ namespace Delta.Maths.VersionBenchmarks;
 
 public abstract class VersionBenchmarkBase
 {
-    protected IMathsScenario Baseline = null!;
-    protected IMathsScenario Candidate = null!;
+    private IMathsScenario? _baseline;
+    private IMathsScenario? _candidate;
+
+    protected IMathsScenario Baseline => _baseline ?? throw new InvalidOperationException("Baseline scenario was not initialized.");
+    protected IMathsScenario Candidate => _candidate ?? throw new InvalidOperationException("Candidate scenario was not initialized.");
 
     protected void Initialize(int count, MathsWorkload workload)
     {
         var inputs = MathsInputs.Create(count);
-        Baseline = new BaselineMathsScenario(inputs.Clone());
-        Candidate = new CandidateMathsScenario(inputs.Clone());
+        _baseline = new BaselineMathsScenario(inputs.Clone());
+        _candidate = new CandidateMathsScenario(inputs.Clone());
         VersionBenchmarkSmoke.RequireEquivalent(Baseline, Candidate, workload);
     }
 }

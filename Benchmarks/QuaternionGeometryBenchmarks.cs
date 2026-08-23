@@ -9,14 +9,14 @@ public class QuaternionGeometryBenchmarks
     [Params(256, 4096, 65536)]
     public int Count { get; set; }
 
-    private quaternion[] _quaternions = null!;
-    private quaternion[] _otherQuaternions = null!;
-    private float3[] _axes = null!;
-    private float[] _angles = null!;
-    private float4x4[] _rotationMatrices = null!;
-    private float[] _yaws = null!;
-    private float[] _pitches = null!;
-    private float[] _rolls = null!;
+    private quaternion[] _quaternions = [];
+    private quaternion[] _otherQuaternions = [];
+    private float3[] _axes = [];
+    private float[] _angles = [];
+    private float4x4[] _rotationMatrices = [];
+    private float[] _yaws = [];
+    private float[] _pitches = [];
+    private float[] _rolls = [];
 
     [GlobalSetup]
     public void Setup()

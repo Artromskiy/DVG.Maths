@@ -9,12 +9,12 @@ public class MatrixBenchmarks
     [Params(256, 4096, 65536)]
     public int Count { get; set; }
 
-    private float3[] _translations = null!;
-    private quaternion[] _rotations = null!;
-    private float3[] _scales = null!;
-    private float3[] _points = null!;
-    private float4x4[] _matrices = null!;
-    private float4x4[] _rightMatrices = null!;
+    private float3[] _translations = [];
+    private quaternion[] _rotations = [];
+    private float3[] _scales = [];
+    private float3[] _points = [];
+    private float4x4[] _matrices = [];
+    private float4x4[] _rightMatrices = [];
 
     [GlobalSetup]
     public void Setup()

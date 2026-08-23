@@ -9,9 +9,9 @@ public class VectorBenchmarks
     [Params(256, 4096, 65536)]
     public int Count { get; set; }
 
-    private float3[] _left = null!;
-    private float3[] _right = null!;
-    private float3[] _values = null!;
+    private float3[] _left = [];
+    private float3[] _right = [];
+    private float3[] _values = [];
 
     [GlobalSetup]
     public void Setup()

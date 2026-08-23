@@ -9,8 +9,8 @@ public class SwizzleBenchmarks
     [Params(256, 4096, 65536)]
     public int Count { get; set; }
 
-    private float3[] _float3Values = null!;
-    private float4[] _float4Values = null!;
+    private float3[] _float3Values = [];
+    private float4[] _float4Values = [];
 
     [GlobalSetup]
     public void Setup()

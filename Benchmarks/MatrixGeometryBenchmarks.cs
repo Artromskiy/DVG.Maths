@@ -9,13 +9,13 @@ public class MatrixGeometryBenchmarks
     [Params(256, 4096, 65536)]
     public int Count { get; set; }
 
-    private float3[] _translations = null!;
-    private float3[] _scales = null!;
-    private float3[] _directions = null!;
-    private float3[] _ups = null!;
-    private float3[] _lookAt = null!;
-    private quaternion[] _rotations = null!;
-    private float4x4[] _matrices = null!;
+    private float3[] _translations = [];
+    private float3[] _scales = [];
+    private float3[] _directions = [];
+    private float3[] _ups = [];
+    private float3[] _lookAt = [];
+    private quaternion[] _rotations = [];
+    private float4x4[] _matrices = [];
 
     [GlobalSetup]
     public void Setup()

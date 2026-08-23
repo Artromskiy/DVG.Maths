@@ -9,12 +9,12 @@ public class LayoutBenchmarks
     [Params(256, 4096, 65536)]
     public int Count { get; set; }
 
-    private float3[] _float3Values = null!;
-    private float3[] _float3Destination = null!;
-    private float4[] _float4Values = null!;
-    private float4[] _float4Destination = null!;
-    private float4x4[] _matrixValues = null!;
-    private float4x4[] _matrixDestination = null!;
+    private float3[] _float3Values = [];
+    private float3[] _float3Destination = [];
+    private float4[] _float4Values = [];
+    private float4[] _float4Destination = [];
+    private float4x4[] _matrixValues = [];
+    private float4x4[] _matrixDestination = [];
 
     [GlobalSetup]
     public void Setup()

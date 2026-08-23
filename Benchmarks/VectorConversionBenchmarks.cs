@@ -9,10 +9,10 @@ public class VectorConversionBenchmarks
     [Params(256, 4096, 65536)]
     public int Count { get; set; }
 
-    private float[] _values = null!;
-    private float2[] _float2Values = null!;
-    private float3[] _float3Values = null!;
-    private float4[] _float4Values = null!;
+    private float[] _values = [];
+    private float2[] _float2Values = [];
+    private float3[] _float3Values = [];
+    private float4[] _float4Values = [];
 
     [GlobalSetup]
     public void Setup()

@@ -9,10 +9,10 @@ public class ScalarBenchmarks
     [Params(256, 4096, 65536)]
     public int Count { get; set; }
 
-    private float[] _values = null!;
-    private float[] _otherValues = null!;
-    private float[] _positiveValues = null!;
-    private float[] _atanDenominators = null!;
+    private float[] _values = [];
+    private float[] _otherValues = [];
+    private float[] _positiveValues = [];
+    private float[] _atanDenominators = [];
 
     [GlobalSetup]
     public void Setup()

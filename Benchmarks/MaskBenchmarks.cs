@@ -9,16 +9,16 @@ public class MaskBenchmarks
     [Params(256, 4096, 65536)]
     public int Count { get; set; }
 
-    private bool3[] _bool3A = null!;
-    private bool3[] _bool3B = null!;
-    private bool3[] _bool3Mask = null!;
-    private bool4[] _bool4A = null!;
-    private bool4[] _bool4B = null!;
-    private bool4[] _bool4Mask = null!;
-    private float3[] _float3A = null!;
-    private float3[] _float3B = null!;
-    private float4[] _float4A = null!;
-    private float4[] _float4B = null!;
+    private bool3[] _bool3A = [];
+    private bool3[] _bool3B = [];
+    private bool3[] _bool3Mask = [];
+    private bool4[] _bool4A = [];
+    private bool4[] _bool4B = [];
+    private bool4[] _bool4Mask = [];
+    private float3[] _float3A = [];
+    private float3[] _float3B = [];
+    private float4[] _float4A = [];
+    private float4[] _float4B = [];
 
     [GlobalSetup]
     public void Setup()

@@ -9,10 +9,10 @@ public class QuaternionBenchmarks
     [Params(256, 4096, 65536)]
     public int Count { get; set; }
 
-    private quaternion[] _left = null!;
-    private quaternion[] _right = null!;
-    private quaternion[] _rotations = null!;
-    private float3[] _vectors = null!;
+    private quaternion[] _left = [];
+    private quaternion[] _right = [];
+    private quaternion[] _rotations = [];
+    private float3[] _vectors = [];
 
     [GlobalSetup]
     public void Setup()
