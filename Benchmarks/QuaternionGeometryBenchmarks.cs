@@ -1,5 +1,4 @@
 using BenchmarkDotNet.Attributes;
-using Delta.Maths;
 
 namespace Delta.Maths.Benchmarks;
 
@@ -30,7 +29,7 @@ public class QuaternionGeometryBenchmarks
         _pitches = new float[Count];
         _rolls = new float[Count];
 
-        var random = new Random(59);
+        var random = new DeterministicRandom(59);
         for (var i = 0; i < Count; i++)
         {
             _axes[i] = float3.NormalizeSafe(NextVector(random, 1f));
@@ -89,7 +88,10 @@ public class QuaternionGeometryBenchmarks
     {
         var sum = 0f;
         for (var i = 0; i < Count; i++)
+        {
             sum += quaternion.ToRotationMatrix(_quaternions[i]).M44;
+        }
+
         return sum;
     }
 
@@ -132,7 +134,7 @@ public class QuaternionGeometryBenchmarks
         return sum;
     }
 
-    private static float3 NextVector(Random random, float range) => new(
+    private static float3 NextVector(DeterministicRandom random, float range) => new(
         random.NextSingle() * range * 2f - range,
         random.NextSingle() * range * 2f - range,
         random.NextSingle() * range * 2f - range);

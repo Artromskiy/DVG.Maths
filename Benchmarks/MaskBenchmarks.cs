@@ -1,5 +1,4 @@
 using BenchmarkDotNet.Attributes;
-using Delta.Maths;
 
 namespace Delta.Maths.Benchmarks;
 
@@ -34,7 +33,7 @@ public class MaskBenchmarks
         _float4A = new float4[Count];
         _float4B = new float4[Count];
 
-        var random = new Random(61);
+        var random = new DeterministicRandom(61);
         for (var i = 0; i < Count; i++)
         {
             _bool3A[i] = new bool3(RandomBoolean(random), RandomBoolean(random), RandomBoolean(random));
@@ -134,7 +133,10 @@ public class MaskBenchmarks
     {
         var sum = 0f;
         for (var i = 0; i < Count; i++)
+        {
             sum += bool3.Any(_bool3A[i]) ? 1f : 0f;
+        }
+
         return sum;
     }
 
@@ -144,7 +146,10 @@ public class MaskBenchmarks
     {
         var sum = 0f;
         for (var i = 0; i < Count; i++)
+        {
             sum += bool3.All(_bool3A[i]) ? 1f : 0f;
+        }
+
         return sum;
     }
 
@@ -154,7 +159,10 @@ public class MaskBenchmarks
     {
         var sum = 0f;
         for (var i = 0; i < Count; i++)
+        {
             sum += bool4.Any(_bool4A[i]) ? 1f : 0f;
+        }
+
         return sum;
     }
 
@@ -164,9 +172,12 @@ public class MaskBenchmarks
     {
         var sum = 0f;
         for (var i = 0; i < Count; i++)
+        {
             sum += bool4.All(_bool4A[i]) ? 1f : 0f;
+        }
+
         return sum;
     }
 
-    private static bool RandomBoolean(Random random) => random.Next(0, 2) == 1;
+    private static bool RandomBoolean(DeterministicRandom random) => random.Next(0, 2) == 1;
 }

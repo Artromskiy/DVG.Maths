@@ -1,5 +1,4 @@
 using BenchmarkDotNet.Attributes;
-using Delta.Maths;
 
 namespace Delta.Maths.Benchmarks;
 
@@ -26,7 +25,7 @@ public class MatrixBenchmarks
         _matrices = new float4x4[Count];
         _rightMatrices = new float4x4[Count];
 
-        var random = new Random(23);
+        var random = new DeterministicRandom(23);
         for (var i = 0; i < Count; i++)
         {
             _translations[i] = NextVector(random, 10f);
@@ -94,14 +93,17 @@ public class MatrixBenchmarks
         for (var i = 0; i < Count; i++)
         {
             if (!float4x4.TryInverse(_matrices[i], out var inverse))
+            {
                 continue;
+            }
+
             sum += inverse.M11 + inverse.M22 + inverse.M33 + inverse.M14 + inverse.M24 + inverse.M34;
         }
 
         return sum;
     }
 
-    private static float3 NextVector(Random random, float range) => new(
+    private static float3 NextVector(DeterministicRandom random, float range) => new(
         random.NextSingle() * range * 2f - range,
         random.NextSingle() * range * 2f - range,
         random.NextSingle() * range * 2f - range);

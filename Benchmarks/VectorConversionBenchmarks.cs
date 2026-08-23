@@ -1,5 +1,4 @@
 using BenchmarkDotNet.Attributes;
-using Delta.Maths;
 
 namespace Delta.Maths.Benchmarks;
 
@@ -22,7 +21,7 @@ public class VectorConversionBenchmarks
         _float3Values = new float3[Count];
         _float4Values = new float4[Count];
 
-        var random = new Random(47);
+        var random = new DeterministicRandom(47);
         for (var i = 0; i < Count; i++)
         {
             _values[i] = random.NextSingle() * 20f - 10f;

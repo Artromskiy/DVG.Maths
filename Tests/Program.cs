@@ -1,4 +1,6 @@
 using System;
+using System.IO;
+using System.Text.Json;
 
 namespace Delta.Maths.Tests
 {
@@ -36,16 +38,46 @@ namespace Delta.Maths.Tests
                     test.Run();
                     Console.WriteLine("PASS " + test.Name);
                 }
-                catch (Exception exception)
+                catch (InvalidOperationException exception)
                 {
                     failures++;
-                    Console.Error.WriteLine("FAIL " + test.Name);
-                    Console.Error.WriteLine(exception);
+                    ReportFailure(test.Name, exception);
+                }
+                catch (ArgumentException exception)
+                {
+                    failures++;
+                    ReportFailure(test.Name, exception);
+                }
+                catch (FormatException exception)
+                {
+                    failures++;
+                    ReportFailure(test.Name, exception);
+                }
+                catch (IOException exception)
+                {
+                    failures++;
+                    ReportFailure(test.Name, exception);
+                }
+                catch (JsonException exception)
+                {
+                    failures++;
+                    ReportFailure(test.Name, exception);
+                }
+                catch (NotSupportedException exception)
+                {
+                    failures++;
+                    ReportFailure(test.Name, exception);
                 }
             }
 
             Console.WriteLine($"{tests.Length - failures}/{tests.Length} tests passed.");
             return failures == 0 ? 0 : 1;
+        }
+
+        private static void ReportFailure(string name, Exception exception)
+        {
+            Console.Error.WriteLine("FAIL " + name);
+            Console.Error.WriteLine(exception);
         }
     }
 }

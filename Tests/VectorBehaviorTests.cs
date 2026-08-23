@@ -54,9 +54,9 @@ namespace Delta.Maths.Tests
                 Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo("ru-RU");
                 var value = new float3(1.5f, -2.25f, 3.75f);
                 AssertEx.Equal("1.5, -2.25, 3.75", value.ToString());
-                AssertEx.Equal(value, float3.Parse(value.ToString()));
-                AssertEx.Equal(value, float3.Parse("[1.5, -2.25, 3.75]"));
-                AssertEx.Throws<FormatException>(() => float3.Parse("1, 2"));
+                AssertEx.Equal(value, float3.Parse(value.ToString(), CultureInfo.InvariantCulture));
+                AssertEx.Equal(value, float3.Parse("[1.5, -2.25, 3.75]", CultureInfo.InvariantCulture));
+                AssertEx.Throws<FormatException>(() => float3.Parse("1, 2", CultureInfo.InvariantCulture));
             }
             finally
             {

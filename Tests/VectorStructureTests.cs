@@ -8,16 +8,20 @@ namespace Delta.Maths.Tests
     {
         private static readonly string[] Scalars = ["bool", "int", "uint", "float", "double", "fix"];
         private static readonly string[] Components = ["x", "y", "z", "w"];
+        private static readonly int[] Dimensions = [2, 3, 4];
 
         public static void CoreApi()
         {
             foreach (var scalarName in Scalars)
-                foreach (var dimension in new[] { 2, 3, 4 })
+            {
+                foreach (var dimension in Dimensions)
                 {
                     var type = VectorType(scalarName, dimension);
                     var scalar = ScalarType(scalarName);
                     for (var index = 0; index < dimension; index++)
+                    {
                         AssertEx.Equal(scalar, type.GetField(Components[index])?.FieldType, $"Missing {type.Name}.{Components[index]}.");
+                    }
 
                     AssertEx.Equal(type, type.GetField("zero")?.FieldType);
                     AssertEx.True(type.GetConstructor(Enumerable.Repeat(scalar, dimension).ToArray()) != null);
@@ -35,6 +39,7 @@ namespace Delta.Maths.Tests
                     AssertEx.True(operators.Contains("op_Equality"));
                     AssertEx.True(operators.Contains("op_Inequality"));
                 }
+            }
         }
 
         private static void ValidateSwizzles(Type type, string scalarName, int dimension)
@@ -43,7 +48,10 @@ namespace Delta.Maths.Tests
                 .Where(property => property.Name is not "Count" and not "Item").ToArray();
             var expectedCount = 2 * dimension;
             foreach (var length in new[] { 2, 3, 4 })
+            {
                 expectedCount += 3 * ((int)Math.Pow(dimension + 1, length) - 1);
+            }
+
             AssertEx.Equal(expectedCount, swizzles.Length, $"Unexpected swizzle count on {type.Name}.");
 
             foreach (var property in swizzles)
@@ -56,7 +64,7 @@ namespace Delta.Maths.Tests
                 }
 
                 AssertEx.Equal(VectorType(scalarName, property.Name.Length), property.PropertyType);
-                var writable = !property.Name.Contains('_') && property.Name.Distinct().Count() == property.Name.Length;
+                var writable = !property.Name.Contains('_', StringComparison.Ordinal) && property.Name.Distinct().Count() == property.Name.Length;
                 AssertEx.Equal(writable, property.CanWrite, $"Unexpected setter on {type.Name}.{property.Name}.");
             }
         }
@@ -64,13 +72,16 @@ namespace Delta.Maths.Tests
         public static void CapabilityApi()
         {
             foreach (var scalarName in Scalars)
-                foreach (var dimension in new[] { 2, 3, 4 })
+            {
+                foreach (var dimension in Dimensions)
                 {
                     var type = VectorType(scalarName, dimension);
                     Require(type, "Select", "Equal", "NotEqual");
 
                     if (scalarName == "bool")
+                    {
                         Require(type, "Any", "All");
+                    }
                     else
                     {
                         Require(type, "Min", "Max", "Clamp", "LessThan", "GreaterThan");
@@ -78,36 +89,55 @@ namespace Delta.Maths.Tests
                     }
 
                     if (scalarName is "int" or "float" or "double" or "fix")
+                    {
                         Require(type, "Abs", "Sign");
+                    }
 
                     if (scalarName is "float" or "double" or "fix")
+                    {
                         Require(type, "Length", "Distance", "Normalize", "NormalizeSafe", "Reflect", "Refract", "ProjectSafe");
+                    }
 
                     if (scalarName is "float" or "double")
+                    {
                         Require(type, "Sin", "Atan2", "Exp", "Log10", "IsNaN", "IsFinite");
+                    }
 
                     if (scalarName == "fix")
+                    {
                         Require(type, "Sin", "Atan2", "Sqrt", "InverseSqrt", "Fract");
+                    }
 
                     if (dimension == 3 && scalarName is "float" or "double" or "fix")
+                    {
                         Require(type, "Cross");
+                    }
                 }
+            }
 
             var mathsMethods = typeof(maths).GetMethods(BindingFlags.Public | BindingFlags.Static);
-            foreach (var type in Scalars.SelectMany(scalar => new[] { 2, 3, 4 }.Select(dimension => VectorType(scalar, dimension))))
+            foreach (var type in Scalars.SelectMany(scalar => Dimensions.Select(dimension => VectorType(scalar, dimension))))
+            {
                 AssertEx.True(mathsMethods.Any(method => method.Name == "select" && method.GetParameters().FirstOrDefault()?.ParameterType == type),
                     $"Missing maths.select overload for {type.Name}.");
+            }
         }
 
         private static void Require(Type type, params string[] names)
         {
             var available = type.GetMethods(BindingFlags.Public | BindingFlags.Static).Select(method => method.Name).ToHashSet();
             foreach (var name in names)
+            {
                 AssertEx.True(available.Contains(name), $"Missing {type.Name}.{name}.");
+            }
         }
 
-        private static Type VectorType(string scalar, int dimension) =>
-            typeof(float2).Assembly.GetType("Delta.Maths." + scalar + dimension, throwOnError: true)!;
+        private static Type VectorType(string scalar, int dimension)
+        {
+            var typeName = "Delta.Maths." + scalar + dimension;
+            var type = typeof(float2).Assembly.GetType(typeName, throwOnError: false);
+            return type ?? throw new InvalidOperationException($"Missing generated vector type '{typeName}'.");
+        }
 
         private static Type ScalarType(string scalar) => scalar switch
         {

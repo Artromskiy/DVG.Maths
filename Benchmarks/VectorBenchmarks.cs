@@ -1,5 +1,4 @@
 using BenchmarkDotNet.Attributes;
-using Delta.Maths;
 
 namespace Delta.Maths.Benchmarks;
 
@@ -20,7 +19,7 @@ public class VectorBenchmarks
         _right = new float3[Count];
         _values = new float3[Count];
 
-        var random = new Random(17);
+        var random = new DeterministicRandom(17);
         for (var i = 0; i < Count; i++)
         {
             _left[i] = NextVector(random);
@@ -49,7 +48,9 @@ public class VectorBenchmarks
     {
         var sum = 0f;
         for (var i = 0; i < Count; i++)
+        {
             sum += float3.Dot(_left[i], _right[i]);
+        }
 
         return sum;
     }
@@ -96,7 +97,7 @@ public class VectorBenchmarks
         return sum;
     }
 
-    private static float3 NextVector(Random random) => new(
+    private static float3 NextVector(DeterministicRandom random) => new(
         random.NextSingle() * 20f - 10f,
         random.NextSingle() * 20f - 10f,
         random.NextSingle() * 20f - 10f);

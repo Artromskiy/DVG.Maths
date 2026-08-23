@@ -1,5 +1,4 @@
 using BenchmarkDotNet.Attributes;
-using Delta.Maths;
 
 namespace Delta.Maths.Benchmarks;
 
@@ -22,7 +21,7 @@ public class ScalarBenchmarks
         _positiveValues = new float[Count];
         _atanDenominators = new float[Count];
 
-        var random = new Random(31);
+        var random = new DeterministicRandom(31);
         for (var i = 0; i < Count; i++)
         {
             _values[i] = random.NextSingle() * 2f - 1f;
@@ -30,7 +29,9 @@ public class ScalarBenchmarks
             _positiveValues[i] = random.NextSingle() + 0.0001f;
             _atanDenominators[i] = random.NextSingle() * 2f - 1f;
             if (MathF.Abs(_atanDenominators[i]) < 0.0001f)
+            {
                 _atanDenominators[i] = 0.0001f;
+            }
         }
     }
 
@@ -40,7 +41,9 @@ public class ScalarBenchmarks
     {
         var sum = 0f;
         for (var i = 0; i < Count; i++)
+        {
             sum += Maths.Sin(_values[i]);
+        }
 
         return sum;
     }
@@ -51,7 +54,9 @@ public class ScalarBenchmarks
     {
         var sum = 0f;
         for (var i = 0; i < Count; i++)
+        {
             sum += Maths.Cos(_values[i]);
+        }
 
         return sum;
     }
@@ -62,7 +67,9 @@ public class ScalarBenchmarks
     {
         var sum = 0f;
         for (var i = 0; i < Count; i++)
+        {
             sum += Maths.Sqrt(_positiveValues[i]);
+        }
 
         return sum;
     }
@@ -73,7 +80,9 @@ public class ScalarBenchmarks
     {
         var sum = 0f;
         for (var i = 0; i < Count; i++)
+        {
             sum += Maths.InverseSqrt(_positiveValues[i]);
+        }
 
         return sum;
     }
@@ -84,7 +93,9 @@ public class ScalarBenchmarks
     {
         var sum = 0f;
         for (var i = 0; i < Count; i++)
+        {
             sum += Maths.Lerp(_values[i], _otherValues[i], 0.35f);
+        }
 
         return sum;
     }
@@ -95,7 +106,9 @@ public class ScalarBenchmarks
     {
         var sum = 0f;
         for (var i = 0; i < Count; i++)
+        {
             sum += Maths.Clamp(_values[i], -0.25f, 0.25f);
+        }
 
         return sum;
     }
@@ -106,7 +119,9 @@ public class ScalarBenchmarks
     {
         var sum = 0f;
         for (var i = 0; i < Count; i++)
+        {
             sum += Maths.Atan2(_values[i], _atanDenominators[i]);
+        }
 
         return sum;
     }

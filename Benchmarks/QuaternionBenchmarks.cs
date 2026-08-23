@@ -1,5 +1,4 @@
 using BenchmarkDotNet.Attributes;
-using Delta.Maths;
 
 namespace Delta.Maths.Benchmarks;
 
@@ -22,7 +21,7 @@ public class QuaternionBenchmarks
         _rotations = new quaternion[Count];
         _vectors = new float3[Count];
 
-        var random = new Random(29);
+        var random = new DeterministicRandom(29);
         for (var i = 0; i < Count; i++)
         {
             _left[i] = NextRotation(random);
@@ -91,7 +90,7 @@ public class QuaternionBenchmarks
         return sum;
     }
 
-    private static quaternion NextRotation(Random random) => quaternion.CreateFromYawPitchRoll(
+    private static quaternion NextRotation(DeterministicRandom random) => quaternion.CreateFromYawPitchRoll(
         random.NextSingle() * 2f - 1f,
         random.NextSingle() * 2f - 1f,
         random.NextSingle() * 2f - 1f);

@@ -1,5 +1,4 @@
 using BenchmarkDotNet.Attributes;
-using Delta.Maths;
 
 namespace Delta.Maths.Benchmarks;
 
@@ -28,7 +27,7 @@ public class MatrixGeometryBenchmarks
         _rotations = new quaternion[Count];
         _matrices = new float4x4[Count];
 
-        var random = new Random(53);
+        var random = new DeterministicRandom(53);
         for (var i = 0; i < Count; i++)
         {
             _translations[i] = NextVector(random, 10f);
@@ -105,7 +104,10 @@ public class MatrixGeometryBenchmarks
     {
         var sum = 0f;
         for (var i = 0; i < Count; i++)
+        {
             sum += float4x4.Determinant(_matrices[i]);
+        }
+
         return sum;
     }
 
@@ -117,7 +119,9 @@ public class MatrixGeometryBenchmarks
         for (var i = 0; i < Count; i++)
         {
             if (float4x4.Decompose(_matrices[i], out var scale, out var rotation, out var translation))
+            {
                 sum += scale.x + scale.y + scale.z + rotation.x + translation.x;
+            }
         }
         return sum;
     }
@@ -148,7 +152,7 @@ public class MatrixGeometryBenchmarks
         return sum;
     }
 
-    private static float3 NextVector(Random random, float range) => new(
+    private static float3 NextVector(DeterministicRandom random, float range) => new(
         random.NextSingle() * range * 2f - range,
         random.NextSingle() * range * 2f - range,
         random.NextSingle() * range * 2f - range);

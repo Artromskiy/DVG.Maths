@@ -1,5 +1,4 @@
 using BenchmarkDotNet.Attributes;
-using Delta.Maths;
 
 namespace Delta.Maths.Benchmarks;
 
@@ -26,7 +25,7 @@ public class LayoutBenchmarks
         _matrixValues = new float4x4[Count];
         _matrixDestination = new float4x4[Count];
 
-        var random = new Random(73);
+        var random = new DeterministicRandom(73);
         for (var i = 0; i < Count; i++)
         {
             _float3Values[i] = new float3(

@@ -1,5 +1,4 @@
 using BenchmarkDotNet.Attributes;
-using Delta.Maths;
 
 namespace Delta.Maths.Benchmarks;
 
@@ -18,7 +17,7 @@ public class SwizzleBenchmarks
         _float3Values = new float3[Count];
         _float4Values = new float4[Count];
 
-        var random = new Random(43);
+        var random = new DeterministicRandom(43);
         for (var i = 0; i < Count; i++)
         {
             _float3Values[i] = NextVector3(random, 20f);
@@ -93,7 +92,7 @@ public class SwizzleBenchmarks
         return sum;
     }
 
-    private static float3 NextVector3(Random random, float range) => new(
+    private static float3 NextVector3(DeterministicRandom random, float range) => new(
         random.NextSingle() * range * 2f - range,
         random.NextSingle() * range * 2f - range,
         random.NextSingle() * range * 2f - range);

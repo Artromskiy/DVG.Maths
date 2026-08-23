@@ -1,5 +1,4 @@
 using BenchmarkDotNet.Attributes;
-using Delta.Maths;
 
 namespace Delta.Maths.Benchmarks;
 
@@ -32,7 +31,7 @@ public class FixedPointBenchmarks
         _left4 = new fix4[Count];
         _right4 = new fix4[Count];
 
-        var random = new Random(67);
+        var random = new DeterministicRandom(67);
         for (var i = 0; i < Count; i++)
         {
             _left[i] = NextScalar(random);
@@ -53,7 +52,10 @@ public class FixedPointBenchmarks
     {
         var sum = 0f;
         for (var i = 0; i < Count; i++)
+        {
             sum += (float)(_left[i] + _right[i]);
+        }
+
         return sum;
     }
 
@@ -63,7 +65,10 @@ public class FixedPointBenchmarks
     {
         var sum = 0f;
         for (var i = 0; i < Count; i++)
+        {
             sum += (float)(_left[i] - _right[i]);
+        }
+
         return sum;
     }
 
@@ -73,7 +78,10 @@ public class FixedPointBenchmarks
     {
         var sum = 0f;
         for (var i = 0; i < Count; i++)
+        {
             sum += (float)(_left[i] * _right[i]);
+        }
+
         return sum;
     }
 
@@ -83,7 +91,10 @@ public class FixedPointBenchmarks
     {
         var sum = 0f;
         for (var i = 0; i < Count; i++)
+        {
             sum += (float)(_left[i] / _right[i]);
+        }
+
         return sum;
     }
 
@@ -93,7 +104,10 @@ public class FixedPointBenchmarks
     {
         var sum = 0f;
         for (var i = 0; i < Count; i++)
+        {
             sum += (float)Maths.Abs(_left[i]);
+        }
+
         return sum;
     }
 
@@ -103,7 +117,10 @@ public class FixedPointBenchmarks
     {
         var sum = 0f;
         for (var i = 0; i < Count; i++)
+        {
             sum += (float)Maths.Sqrt(_positive[i]);
+        }
+
         return sum;
     }
 
@@ -113,7 +130,10 @@ public class FixedPointBenchmarks
     {
         var sum = 0f;
         for (var i = 0; i < Count; i++)
+        {
             sum += (float)Maths.InverseSqrt(_positive[i]);
+        }
+
         return sum;
     }
 
@@ -136,7 +156,10 @@ public class FixedPointBenchmarks
     {
         var sum = 0f;
         for (var i = 0; i < Count; i++)
+        {
             sum += (float)fix2.Dot(_left2[i], _right2[i]);
+        }
+
         return sum;
     }
 
@@ -146,7 +169,10 @@ public class FixedPointBenchmarks
     {
         var sum = 0f;
         for (var i = 0; i < Count; i++)
+        {
             sum += (float)fix2.Length(_left2[i]);
+        }
+
         return sum;
     }
 
@@ -182,7 +208,10 @@ public class FixedPointBenchmarks
     {
         var sum = 0f;
         for (var i = 0; i < Count; i++)
+        {
             sum += (float)fix3.Length(_left3[i]);
+        }
+
         return sum;
     }
 
@@ -218,13 +247,16 @@ public class FixedPointBenchmarks
     {
         var sum = 0f;
         for (var i = 0; i < Count; i++)
+        {
             sum += (float)fix4.Length(_left4[i]);
+        }
+
         return sum;
     }
 
-    private static fix NextScalar(Random random) => (fix)(random.NextSingle() * 10f - 5f);
+    private static fix NextScalar(DeterministicRandom random) => (fix)(random.NextSingle() * 10f - 5f);
 
-    private static fix NextNonZeroScalar(Random random)
+    private static fix NextNonZeroScalar(DeterministicRandom random)
     {
         var value = NextScalar(random);
         return Maths.Abs(value) < (fix)0.25f ? (fix)0.25f : value;

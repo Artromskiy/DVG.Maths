@@ -163,10 +163,10 @@ namespace Delta.Maths
             return rv;
         }
 
-        private static readonly fix _atanCoeff1 = new fix(0x00003240); // 0.1963;
-        private static readonly fix _atanCoeff2 = new fix(0x0000FB50); // 0.9817
-        private static readonly fix _piDiv4 = new fix(0x0000C90F); // pi / 4
-        private static readonly fix _threePiDiv4 = new fix(0x00025B2F); // 3 * pi / 4
+        private static readonly fix _atanCoeff1 = new(0x00003240); // 0.1963;
+        private static readonly fix _atanCoeff2 = new(0x0000FB50); // 0.9817
+        private static readonly fix _piDiv4 = new(0x0000C90F); // pi / 4
+        private static readonly fix _threePiDiv4 = new(0x00025B2F); // 3 * pi / 4
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static fix Atan2(fix inY, fix inX)

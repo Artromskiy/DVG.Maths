@@ -9,6 +9,9 @@ namespace Delta.Maths.Tests
 {
     internal static class MatrixQuaternionTests
     {
+        private static readonly string[] AllShaderStages = ["vertex", "fragment", "compute"];
+        private static readonly string[] Float3Parameters = ["float", "float", "float"];
+
         public static void Layout()
         {
             AssertEx.Equal(64, Marshal.SizeOf<float4x4>());
@@ -171,7 +174,7 @@ namespace Delta.Maths.Tests
             AssertEx.Equal("std430", quaternionType.GetProperty("requiredCapability").GetString());
 
             AssertEx.True(types.Where(type => type.GetProperty("mapping").GetString() != "Unsupported").All(type => type.GetProperty("stages").EnumerateArray().Select(stage => stage.GetString())
-                .SequenceEqual(new[] { "vertex", "fragment", "compute" })));
+                .SequenceEqual(AllShaderStages)));
             AssertEx.True(types.Where(type => type.GetProperty("mapping").GetString() != "Unsupported").All(type =>
                 !string.IsNullOrWhiteSpace(type.GetProperty("shaderZone").GetString())
                 && !string.IsNullOrWhiteSpace(type.GetProperty("glslName").GetString())
@@ -203,7 +206,7 @@ namespace Delta.Maths.Tests
             var float3Constructors = float3Type.GetProperty("constructors").EnumerateArray().ToArray();
             AssertEx.True(float3Constructors.Any(constructor =>
                 constructor.GetProperty("parameterClrNames").EnumerateArray().Select(parameter => parameter.GetString())
-                    .SequenceEqual(new[] { "float", "float", "float" })));
+                    .SequenceEqual(Float3Parameters)));
             var float3Swizzles = float3Type.GetProperty("swizzles").EnumerateArray().ToArray();
             var xySwizzle = float3Swizzles.Single(swizzle => swizzle.GetProperty("name").GetString() == "xy");
             AssertEx.Equal("float2", xySwizzle.GetProperty("clrTypeName").GetString());
@@ -225,7 +228,10 @@ namespace Delta.Maths.Tests
                 var mapping = function.GetProperty("mapping").GetString();
                 var stages = function.GetProperty("stages").EnumerateArray().ToArray();
                 if (mapping == "Unsupported")
+                {
                     return stages.Length == 0 && function.GetProperty("shaderZone").ValueKind == JsonValueKind.Null;
+                }
+
                 return !string.IsNullOrWhiteSpace(function.GetProperty("glslName").GetString())
                     && function.GetProperty("shaderZone").GetString() == "Delta.Maths"
                     && stages.Length == 3
@@ -342,8 +348,13 @@ namespace Delta.Maths.Tests
                     Path.Combine(directory.FullName, "Vectors", "shader-contract.json"),
                 };
                 foreach (var candidate in candidates)
+                {
                     if (File.Exists(candidate))
+                    {
                         return candidate;
+                    }
+                }
+
                 directory = directory.Parent;
             }
             throw new FileNotFoundException("shader-contract.json was not found near the repository.");
