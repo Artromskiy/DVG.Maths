@@ -1,4 +1,4 @@
-﻿using System.Runtime.CompilerServices;
+using System.Runtime.CompilerServices;
 
 namespace Delta.Maths
 {
@@ -114,12 +114,18 @@ namespace Delta.Maths
             var tempAngle = inAngle % (fix.Pi << 1);
 
             if (tempAngle < fix.Zero)
+            {
                 tempAngle += fix.Pi << 1;
+            }
 
             if (tempAngle > fix.Pi)
+            {
                 tempAngle -= (fix.Pi << 1);
+            }
             else if (tempAngle < -fix.Pi)
+            {
                 tempAngle += (fix.Pi << 1);
+            }
 
             fix tempAngleSq = tempAngle * tempAngle;
 
@@ -147,7 +153,9 @@ namespace Delta.Maths
         public static fix Asin(fix x)
         {
             if (x > fix.One || x < -fix.One)
+            {
                 return fix.Zero;
+            }
 
             var rv = fix.One - (x * x);
             rv = x / Sqrt(rv);

@@ -1,4 +1,4 @@
-﻿#pragma warning disable IDE1006
+#pragma warning disable IDE1006
 using System;
 using System.Diagnostics;
 using System.Globalization;
@@ -104,7 +104,10 @@ namespace Delta.Maths
             long product = (long)x.raw * y.raw;
             long upper = product >> 47;
             if (upper != 0 && upper != -1)
+            {
                 throw new OverflowException();
+            }
+
             product += (product >> 63) | 0x8000L;
             return new fix((int)(product >> 16));
         }
@@ -113,13 +116,17 @@ namespace Delta.Maths
         public static fix operator /(fix x, fix y)
         {
             if (0 == y.raw)
+            {
                 throw new InvalidOperationException();
+            }
 
             long scaled = ((long)x.raw << 16);
             long result = scaled / y.raw;
 
             if (result > MaxValue.raw || result < MinValue.raw)
+            {
                 throw new OverflowException();
+            }
 
             return new fix((int)result);
         }

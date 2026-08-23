@@ -12,29 +12,29 @@ namespace Delta.Maths.Tests
         public static void CoreApi()
         {
             foreach (var scalarName in Scalars)
-            foreach (var dimension in new[] { 2, 3, 4 })
-            {
-                var type = VectorType(scalarName, dimension);
-                var scalar = ScalarType(scalarName);
-                for (var index = 0; index < dimension; index++)
-                    AssertEx.Equal(scalar, type.GetField(Components[index])?.FieldType, $"Missing {type.Name}.{Components[index]}.");
+                foreach (var dimension in new[] { 2, 3, 4 })
+                {
+                    var type = VectorType(scalarName, dimension);
+                    var scalar = ScalarType(scalarName);
+                    for (var index = 0; index < dimension; index++)
+                        AssertEx.Equal(scalar, type.GetField(Components[index])?.FieldType, $"Missing {type.Name}.{Components[index]}.");
 
-                AssertEx.Equal(type, type.GetField("zero")?.FieldType);
-                AssertEx.True(type.GetConstructor(Enumerable.Repeat(scalar, dimension).ToArray()) != null);
-                AssertEx.True(type.GetConstructor([scalar]) != null);
-                AssertEx.True(type.GetProperty("Item") != null);
-                AssertEx.True(type.GetProperty("Count") != null);
-                AssertEx.True(type.GetMethod("Parse", BindingFlags.Public | BindingFlags.Static, [typeof(string)]) != null);
-                AssertEx.True(type.GetProperty("xy") != null);
-                AssertEx.True(type.GetProperty("yx")?.CanWrite == true);
-                AssertEx.True(type.GetProperty("xx")?.CanWrite == false);
-                ValidateSwizzles(type, scalarName, dimension);
+                    AssertEx.Equal(type, type.GetField("zero")?.FieldType);
+                    AssertEx.True(type.GetConstructor(Enumerable.Repeat(scalar, dimension).ToArray()) != null);
+                    AssertEx.True(type.GetConstructor([scalar]) != null);
+                    AssertEx.True(type.GetProperty("Item") != null);
+                    AssertEx.True(type.GetProperty("Count") != null);
+                    AssertEx.True(type.GetMethod("Parse", BindingFlags.Public | BindingFlags.Static, [typeof(string)]) != null);
+                    AssertEx.True(type.GetProperty("xy") != null);
+                    AssertEx.True(type.GetProperty("yx")?.CanWrite == true);
+                    AssertEx.True(type.GetProperty("xx")?.CanWrite == false);
+                    ValidateSwizzles(type, scalarName, dimension);
 
-                var operators = type.GetMethods(BindingFlags.Public | BindingFlags.Static)
-                    .Where(method => method.IsSpecialName).Select(method => method.Name).ToArray();
-                AssertEx.True(operators.Contains("op_Equality"));
-                AssertEx.True(operators.Contains("op_Inequality"));
-            }
+                    var operators = type.GetMethods(BindingFlags.Public | BindingFlags.Static)
+                        .Where(method => method.IsSpecialName).Select(method => method.Name).ToArray();
+                    AssertEx.True(operators.Contains("op_Equality"));
+                    AssertEx.True(operators.Contains("op_Inequality"));
+                }
         }
 
         private static void ValidateSwizzles(Type type, string scalarName, int dimension)
@@ -64,34 +64,34 @@ namespace Delta.Maths.Tests
         public static void CapabilityApi()
         {
             foreach (var scalarName in Scalars)
-            foreach (var dimension in new[] { 2, 3, 4 })
-            {
-                var type = VectorType(scalarName, dimension);
-                Require(type, "Select", "Equal", "NotEqual");
-
-                if (scalarName == "bool")
-                    Require(type, "Any", "All");
-                else
+                foreach (var dimension in new[] { 2, 3, 4 })
                 {
-                    Require(type, "Min", "Max", "Clamp", "LessThan", "GreaterThan");
-                    Require(type, "Dot", "SqrLength", "Sum");
+                    var type = VectorType(scalarName, dimension);
+                    Require(type, "Select", "Equal", "NotEqual");
+
+                    if (scalarName == "bool")
+                        Require(type, "Any", "All");
+                    else
+                    {
+                        Require(type, "Min", "Max", "Clamp", "LessThan", "GreaterThan");
+                        Require(type, "Dot", "SqrLength", "Sum");
+                    }
+
+                    if (scalarName is "int" or "float" or "double" or "fix")
+                        Require(type, "Abs", "Sign");
+
+                    if (scalarName is "float" or "double" or "fix")
+                        Require(type, "Length", "Distance", "Normalize", "NormalizeSafe", "Reflect", "Refract", "ProjectSafe");
+
+                    if (scalarName is "float" or "double")
+                        Require(type, "Sin", "Atan2", "Exp", "Log10", "IsNaN", "IsFinite");
+
+                    if (scalarName == "fix")
+                        Require(type, "Sin", "Atan2", "Sqrt", "InverseSqrt", "Fract");
+
+                    if (dimension == 3 && scalarName is "float" or "double" or "fix")
+                        Require(type, "Cross");
                 }
-
-                if (scalarName is "int" or "float" or "double" or "fix")
-                    Require(type, "Abs", "Sign");
-
-                if (scalarName is "float" or "double" or "fix")
-                    Require(type, "Length", "Distance", "Normalize", "NormalizeSafe", "Reflect", "Refract", "ProjectSafe");
-
-                if (scalarName is "float" or "double")
-                    Require(type, "Sin", "Atan2", "Exp", "Log10", "IsNaN", "IsFinite");
-
-                if (scalarName == "fix")
-                    Require(type, "Sin", "Atan2", "Sqrt", "InverseSqrt", "Fract");
-
-                if (dimension == 3 && scalarName is "float" or "double" or "fix")
-                    Require(type, "Cross");
-            }
 
             var mathsMethods = typeof(maths).GetMethods(BindingFlags.Public | BindingFlags.Static);
             foreach (var type in Scalars.SelectMany(scalar => new[] { 2, 3, 4 }.Select(dimension => VectorType(scalar, dimension))))

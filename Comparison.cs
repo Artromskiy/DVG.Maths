@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace Delta.Maths
 {
@@ -11,10 +11,16 @@ namespace Delta.Maths
             where T2 : IComparable<T2>
         {
             int result = t11.CompareTo(t12);
-            if (result != 0) return result;
+            if (result != 0)
+            {
+                return result;
+            }
 
             result = t21.CompareTo(t22);
-            if (result != 0) return result;
+            if (result != 0)
+            {
+                return result;
+            }
 
             return 0;
         }
@@ -27,13 +33,22 @@ namespace Delta.Maths
             where T3 : IComparable<T3>
         {
             int result = t11.CompareTo(t12);
-            if (result != 0) return result;
+            if (result != 0)
+            {
+                return result;
+            }
 
             result = t21.CompareTo(t22);
-            if (result != 0) return result;
+            if (result != 0)
+            {
+                return result;
+            }
 
             result = t31.CompareTo(t32);
-            if (result != 0) return result;
+            if (result != 0)
+            {
+                return result;
+            }
 
             return 0;
         }
@@ -47,16 +62,28 @@ namespace Delta.Maths
             where T4 : IComparable<T4>
         {
             int result = t11.CompareTo(t12);
-            if (result != 0) return result;
+            if (result != 0)
+            {
+                return result;
+            }
 
             result = t21.CompareTo(t22);
-            if (result != 0) return result;
+            if (result != 0)
+            {
+                return result;
+            }
 
             result = t31.CompareTo(t32);
-            if (result != 0) return result;
+            if (result != 0)
+            {
+                return result;
+            }
 
             result = t41.CompareTo(t42);
-            if (result != 0) return result;
+            if (result != 0)
+            {
+                return result;
+            }
 
             return 0;
         }
