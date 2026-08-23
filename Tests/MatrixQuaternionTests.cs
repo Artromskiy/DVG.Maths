@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.Json;
@@ -176,6 +177,18 @@ namespace Delta.Maths.Tests
                 && !string.IsNullOrWhiteSpace(type.GetProperty("glslName").GetString())
                 && type.GetProperty("requiredCapability").GetString() == "std430"
                 && type.GetProperty("alignment").ValueKind == JsonValueKind.Number));
+            var knownCapabilities = new HashSet<string>(StringComparer.Ordinal)
+            {
+                "std430",
+                "vector",
+                "matrix",
+                "quaternion",
+            };
+            AssertEx.True(types.All(type => type.GetProperty("requiredCapability").ValueKind == JsonValueKind.Null
+                || type.GetProperty("requiredCapability").GetString() is { } capability
+                && knownCapabilities.Contains(capability)));
+            AssertEx.True(types.All(type => type.GetProperty("shaderZone").ValueKind == JsonValueKind.Null
+                || type.GetProperty("shaderZone").GetString() == "Delta.Maths"));
             AssertEx.Equal(16, types.Single(type => type.GetProperty("clrName").GetString() == "float3")
                 .GetProperty("alignment").GetInt32());
             AssertEx.Equal(16, types.Single(type => type.GetProperty("clrName").GetString() == "float4")
