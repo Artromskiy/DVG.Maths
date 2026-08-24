@@ -1,8 +1,12 @@
 # Maths workflow
 
-From the workspace root, regenerate first when declarations changed:
+From the workspace root, regenerate first when declarations changed. Never run
+an unverified stale generator binary:
 
 ```bash
+dotnet build MathsGen/Delta.MathsGen.csproj -c Release \
+  --disable-build-servers -m:1 /p:UseSharedCompilation=false
+dotnet MathsGen/bin/Release/net8.0/Delta.MathsGen.dll Maths/Vectors
 dotnet MathsGen/bin/Release/net8.0/Delta.MathsGen.dll Maths/Vectors
 dotnet build Maths/Delta.Maths.csproj -c Release -f netstandard2.0 \
   --disable-build-servers -m:1 /p:UseSharedCompilation=false
@@ -11,6 +15,10 @@ dotnet build Maths/Delta.Maths.csproj -c Release -f netstandard2.1 \
 dotnet run --project Maths/Tests/Delta.Maths.Tests.csproj -c Release
 git -C Maths diff --check
 ```
+
+The second generation must produce no additional diff. Inspect
+`.delta-generated-files` and `Vectors/shader-contract.json` for ABI/layout
+changes before consumer verification.
 
 Do not run version benchmarks during ordinary review. Use the manual workflow
 only when the user asks for a version comparison.

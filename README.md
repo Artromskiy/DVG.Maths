@@ -22,8 +22,10 @@ in `c3.xyz`; column vectors are used and `T * R * S` applies scale, rotation,
 then translation. CPU code, GLSL and std430 share this convention.
 
 `Vectors/shader-contract.json` is generated from the same declarations and is
-the only Maths symbol/layout source for DeltaShader. `double` and `fix` remain
-CPU-only; GPU-only intrinsics stay in DeltaShader.
+the committed generated Maths ABI consumed and validated by DeltaShader.
+MathsGen owns its declarations/generation; neither Maths nor DeltaShader
+recreates it. `double` and `fix` remain CPU-only; GPU-only intrinsics stay
+in DeltaShader.
 
 See [WORKFLOW.md](WORKFLOW.md) for generation/build/test commands,
 [TODO.md](TODO.md) for selected work and [AGENTS.md](AGENTS.md) for routing.
