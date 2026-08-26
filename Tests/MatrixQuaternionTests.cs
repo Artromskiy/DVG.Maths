@@ -293,6 +293,32 @@ namespace Delta.Maths.Tests
             AssertFunction(functions, "float3", "Normalize", "normalize", "Builtin", "float3");
             AssertFunction(functions, "float3", "Select", "delta_select", "Helper", "float3", "float3", "bool3");
 
+            AssertFunction(functions, "float3", "Fract", "fract", "Builtin", "float3");
+            AssertFunction(functions, "float3", "InverseSqrt", "inversesqrt", "Builtin", "float3");
+            AssertFunction(functions, "float3", "Radians", "radians", "Builtin", "float3");
+            AssertFunction(functions, "float3", "Degrees", "degrees", "Builtin", "float3");
+            AssertFunction(functions, "float3", "Atan2", "atan", "Builtin", "float3", "float3");
+            AssertFunction(functions, "float3", "Atan2", "atan", "Builtin", "float3", "float");
+            AssertUnsupportedFunction(functions, "float3", "Atan2", "float", "float3");
+            AssertFunction(functions, "float3", "Reflect", "reflect", "Builtin", "float3", "float3");
+            AssertFunction(functions, "float3", "Refract", "refract", "Builtin", "float3", "float3", "float");
+            AssertFunction(functions, "float3", "FaceForward", "faceforward", "Builtin", "float3", "float3", "float3");
+            AssertFunction(functions, "float3", "Clamp", "clamp", "Builtin", "float3", "float3", "float3");
+            AssertFunction(functions, "float3", "Min", "min", "Builtin", "float3", "float");
+            AssertFunction(functions, "float3", "Max", "max", "Builtin", "float3", "float");
+            AssertUnsupportedFunction(functions, "float3", "Min", "float", "float3");
+            AssertUnsupportedFunction(functions, "float3", "Max", "float", "float3");
+            AssertFunction(functions, "float3", "Truncate", "trunc", "Builtin", "float3");
+            AssertFunction(functions, "float3", "RoundEven", "roundEven", "Builtin", "float3");
+
+            AssertFunction(functions, "maths", "fract", "fract", "Builtin", "float");
+            AssertFunction(functions, "maths", "inverseSqrt", "inversesqrt", "Builtin", "float");
+            AssertFunction(functions, "maths", "radians", "radians", "Builtin", "float");
+            AssertFunction(functions, "maths", "degrees", "degrees", "Builtin", "float");
+            AssertFunction(functions, "maths", "atan2", "atan", "Builtin", "float", "float");
+            AssertFunction(functions, "maths", "roundEven", "roundEven", "Builtin", "float");
+            AssertFunction(functions, "maths", "truncate", "trunc", "Builtin", "float");
+
             var scalarMod = FindFunction(functions, "maths", "mod", "float", "float");
             AssertEx.Equal("maths.mod(float,float):float", scalarMod.GetProperty("identity").GetString());
             AssertEx.Equal("mod", scalarMod.GetProperty("glslName").GetString());
@@ -325,6 +351,14 @@ namespace Delta.Maths.Tests
             var function = FindFunction(functions, typeName, clrName, parameterNames);
             AssertEx.Equal(glslName, function.GetProperty("glslName").GetString());
             AssertEx.Equal(mapping, function.GetProperty("mapping").GetString());
+        }
+
+        private static void AssertUnsupportedFunction(JsonElement[] functions, string typeName, string clrName,
+            params string[] parameterNames)
+        {
+            var function = FindFunction(functions, typeName, clrName, parameterNames);
+            AssertEx.Equal("Unsupported", function.GetProperty("mapping").GetString());
+            AssertEx.True(function.GetProperty("glslName").ValueKind == JsonValueKind.Null);
         }
 
         private static JsonElement FindFunction(JsonElement[] functions, string typeName, string clrName, params string[] parameterNames)

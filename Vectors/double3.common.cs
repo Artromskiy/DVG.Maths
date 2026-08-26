@@ -134,6 +134,11 @@ namespace Delta.Maths
             return new(DeltaMaths.Round(value.x), DeltaMaths.Round(value.y), DeltaMaths.Round(value.z));
         }
 
+        public static double3 RoundEven(double3 value)
+        {
+            return new(DeltaMaths.RoundEven(value.x), DeltaMaths.RoundEven(value.y), DeltaMaths.RoundEven(value.z));
+        }
+
         public static double3 Truncate(double3 value)
         {
             return new(DeltaMaths.Truncate(value.x), DeltaMaths.Truncate(value.y), DeltaMaths.Truncate(value.z));

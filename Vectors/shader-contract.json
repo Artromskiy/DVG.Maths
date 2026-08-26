@@ -57972,6 +57972,25 @@
       "requiredCapability": null
     },
     {
+      "identity": "double2.RoundEven(double2):double2",
+      "typeClrName": "double2",
+      "clrName": "RoundEven",
+      "mathsName": "roundEven",
+      "parameterClrNames": [
+        "double2"
+      ],
+      "parameterGlslTypes": [
+        null
+      ],
+      "returnClrName": "double2",
+      "returnGlslType": null,
+      "glslName": null,
+      "mapping": "Unsupported",
+      "shaderZone": null,
+      "stages": [],
+      "requiredCapability": null
+    },
+    {
       "identity": "double2.Saturate(double2):double2",
       "typeClrName": "double2",
       "clrName": "Saturate",
@@ -60842,6 +60861,25 @@
       "requiredCapability": null
     },
     {
+      "identity": "double3.RoundEven(double3):double3",
+      "typeClrName": "double3",
+      "clrName": "RoundEven",
+      "mathsName": "roundEven",
+      "parameterClrNames": [
+        "double3"
+      ],
+      "parameterGlslTypes": [
+        null
+      ],
+      "returnClrName": "double3",
+      "returnGlslType": null,
+      "glslName": null,
+      "mapping": "Unsupported",
+      "shaderZone": null,
+      "stages": [],
+      "requiredCapability": null
+    },
+    {
       "identity": "double3.Saturate(double3):double3",
       "typeClrName": "double3",
       "clrName": "Saturate",
@@ -63676,6 +63714,25 @@
       "typeClrName": "double4",
       "clrName": "Round",
       "mathsName": "round",
+      "parameterClrNames": [
+        "double4"
+      ],
+      "parameterGlslTypes": [
+        null
+      ],
+      "returnClrName": "double4",
+      "returnGlslType": null,
+      "glslName": null,
+      "mapping": "Unsupported",
+      "shaderZone": null,
+      "stages": [],
+      "requiredCapability": null
+    },
+    {
+      "identity": "double4.RoundEven(double4):double4",
+      "typeClrName": "double4",
+      "clrName": "RoundEven",
+      "mathsName": "roundEven",
       "parameterClrNames": [
         "double4"
       ],
@@ -72509,11 +72566,15 @@
       ],
       "returnClrName": "float2",
       "returnGlslType": "vec2",
-      "glslName": null,
-      "mapping": "Unsupported",
-      "shaderZone": null,
-      "stages": [],
-      "requiredCapability": null
+      "glslName": "atan",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
     },
     {
       "identity": "float2.Atan2(float,float2):float2",
@@ -72551,11 +72612,15 @@
       ],
       "returnClrName": "float2",
       "returnGlslType": "vec2",
-      "glslName": null,
-      "mapping": "Unsupported",
-      "shaderZone": null,
-      "stages": [],
-      "requiredCapability": null
+      "glslName": "atan",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
     },
     {
       "identity": "float2.Atan2(float2,float2):float2",
@@ -72572,11 +72637,15 @@
       ],
       "returnClrName": "float2",
       "returnGlslType": "vec2",
-      "glslName": null,
-      "mapping": "Unsupported",
-      "shaderZone": null,
-      "stages": [],
-      "requiredCapability": null
+      "glslName": "atan",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
     },
     {
       "identity": "float2.Atanh(float2):float2",
@@ -72629,11 +72698,15 @@
       ],
       "returnClrName": "float2",
       "returnGlslType": "vec2",
-      "glslName": null,
-      "mapping": "Unsupported",
-      "shaderZone": null,
-      "stages": [],
-      "requiredCapability": null
+      "glslName": "ceil",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
     },
     {
       "identity": "float2.Clamp(float2,float,float):float2",
@@ -72780,11 +72853,15 @@
       ],
       "returnClrName": "float2",
       "returnGlslType": "vec2",
-      "glslName": null,
-      "mapping": "Unsupported",
-      "shaderZone": null,
-      "stages": [],
-      "requiredCapability": null
+      "glslName": "degrees",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
     },
     {
       "identity": "float2.Distance(float2,float2):float",
@@ -73019,11 +73096,15 @@
       ],
       "returnClrName": "float2",
       "returnGlslType": "vec2",
-      "glslName": null,
-      "mapping": "Unsupported",
-      "shaderZone": null,
-      "stages": [],
-      "requiredCapability": null
+      "glslName": "floor",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
     },
     {
       "identity": "float2.Fma(float2,float2,float2):float2",
@@ -73061,11 +73142,15 @@
       ],
       "returnClrName": "float2",
       "returnGlslType": "vec2",
-      "glslName": null,
-      "mapping": "Unsupported",
-      "shaderZone": null,
-      "stages": [],
-      "requiredCapability": null
+      "glslName": "fract",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
     },
     {
       "identity": "float2.GetHashCode():int",
@@ -73267,11 +73352,15 @@
       ],
       "returnClrName": "float2",
       "returnGlslType": "vec2",
-      "glslName": null,
-      "mapping": "Unsupported",
-      "shaderZone": null,
-      "stages": [],
-      "requiredCapability": null
+      "glslName": "inversesqrt",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
     },
     {
       "identity": "float2.IsFinite(float2):bool2",
@@ -73605,15 +73694,11 @@
       ],
       "returnClrName": "float2",
       "returnGlslType": "vec2",
-      "glslName": "max",
-      "mapping": "Builtin",
-      "shaderZone": "DeltaMaths",
-      "stages": [
-        "vertex",
-        "fragment",
-        "compute"
-      ],
-      "requiredCapability": "vector"
+      "glslName": null,
+      "mapping": "Unsupported",
+      "shaderZone": null,
+      "stages": [],
+      "requiredCapability": null
     },
     {
       "identity": "float2.Max(float2,float):float2",
@@ -73680,15 +73765,11 @@
       ],
       "returnClrName": "float2",
       "returnGlslType": "vec2",
-      "glslName": "min",
-      "mapping": "Builtin",
-      "shaderZone": "DeltaMaths",
-      "stages": [
-        "vertex",
-        "fragment",
-        "compute"
-      ],
-      "requiredCapability": "vector"
+      "glslName": null,
+      "mapping": "Unsupported",
+      "shaderZone": null,
+      "stages": [],
+      "requiredCapability": null
     },
     {
       "identity": "float2.Min(float2,float):float2",
@@ -74101,11 +74182,15 @@
       ],
       "returnClrName": "float2",
       "returnGlslType": "vec2",
-      "glslName": null,
-      "mapping": "Unsupported",
-      "shaderZone": null,
-      "stages": [],
-      "requiredCapability": null
+      "glslName": "radians",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
     },
     {
       "identity": "float2.Reflect(float2,float2):float2",
@@ -74149,11 +74234,15 @@
       ],
       "returnClrName": "float2",
       "returnGlslType": "vec2",
-      "glslName": null,
-      "mapping": "Unsupported",
-      "shaderZone": null,
-      "stages": [],
-      "requiredCapability": null
+      "glslName": "refract",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
     },
     {
       "identity": "float2.Remap(float2,float2,float2,float2,float2):float2",
@@ -74195,11 +74284,38 @@
       ],
       "returnClrName": "float2",
       "returnGlslType": "vec2",
-      "glslName": null,
-      "mapping": "Unsupported",
-      "shaderZone": null,
-      "stages": [],
-      "requiredCapability": null
+      "glslName": "round",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "float2.RoundEven(float2):float2",
+      "typeClrName": "float2",
+      "clrName": "RoundEven",
+      "mathsName": "roundEven",
+      "parameterClrNames": [
+        "float2"
+      ],
+      "parameterGlslTypes": [
+        "vec2"
+      ],
+      "returnClrName": "float2",
+      "returnGlslType": "vec2",
+      "glslName": "roundEven",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
     },
     {
       "identity": "float2.Saturate(float2):float2",
@@ -74625,11 +74741,15 @@
       ],
       "returnClrName": "float2",
       "returnGlslType": "vec2",
-      "glslName": null,
-      "mapping": "Unsupported",
-      "shaderZone": null,
-      "stages": [],
-      "requiredCapability": null
+      "glslName": "trunc",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
     },
     {
       "identity": "float2.op_Addition(float,float2):float2",
@@ -75560,11 +75680,15 @@
       ],
       "returnClrName": "float3",
       "returnGlslType": "vec3",
-      "glslName": null,
-      "mapping": "Unsupported",
-      "shaderZone": null,
-      "stages": [],
-      "requiredCapability": null
+      "glslName": "atan",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
     },
     {
       "identity": "float3.Atan2(float,float3):float3",
@@ -75602,11 +75726,15 @@
       ],
       "returnClrName": "float3",
       "returnGlslType": "vec3",
-      "glslName": null,
-      "mapping": "Unsupported",
-      "shaderZone": null,
-      "stages": [],
-      "requiredCapability": null
+      "glslName": "atan",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
     },
     {
       "identity": "float3.Atan2(float3,float3):float3",
@@ -75623,11 +75751,15 @@
       ],
       "returnClrName": "float3",
       "returnGlslType": "vec3",
-      "glslName": null,
-      "mapping": "Unsupported",
-      "shaderZone": null,
-      "stages": [],
-      "requiredCapability": null
+      "glslName": "atan",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
     },
     {
       "identity": "float3.Atanh(float3):float3",
@@ -75680,11 +75812,15 @@
       ],
       "returnClrName": "float3",
       "returnGlslType": "vec3",
-      "glslName": null,
-      "mapping": "Unsupported",
-      "shaderZone": null,
-      "stages": [],
-      "requiredCapability": null
+      "glslName": "ceil",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
     },
     {
       "identity": "float3.Clamp(float3,float,float):float3",
@@ -75856,11 +75992,15 @@
       ],
       "returnClrName": "float3",
       "returnGlslType": "vec3",
-      "glslName": null,
-      "mapping": "Unsupported",
-      "shaderZone": null,
-      "stages": [],
-      "requiredCapability": null
+      "glslName": "degrees",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
     },
     {
       "identity": "float3.Distance(float3,float3):float",
@@ -76095,11 +76235,15 @@
       ],
       "returnClrName": "float3",
       "returnGlslType": "vec3",
-      "glslName": null,
-      "mapping": "Unsupported",
-      "shaderZone": null,
-      "stages": [],
-      "requiredCapability": null
+      "glslName": "floor",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
     },
     {
       "identity": "float3.Fma(float3,float3,float3):float3",
@@ -76137,11 +76281,15 @@
       ],
       "returnClrName": "float3",
       "returnGlslType": "vec3",
-      "glslName": null,
-      "mapping": "Unsupported",
-      "shaderZone": null,
-      "stages": [],
-      "requiredCapability": null
+      "glslName": "fract",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
     },
     {
       "identity": "float3.GetHashCode():int",
@@ -76343,11 +76491,15 @@
       ],
       "returnClrName": "float3",
       "returnGlslType": "vec3",
-      "glslName": null,
-      "mapping": "Unsupported",
-      "shaderZone": null,
-      "stages": [],
-      "requiredCapability": null
+      "glslName": "inversesqrt",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
     },
     {
       "identity": "float3.IsFinite(float3):bool3",
@@ -76681,15 +76833,11 @@
       ],
       "returnClrName": "float3",
       "returnGlslType": "vec3",
-      "glslName": "max",
-      "mapping": "Builtin",
-      "shaderZone": "DeltaMaths",
-      "stages": [
-        "vertex",
-        "fragment",
-        "compute"
-      ],
-      "requiredCapability": "vector"
+      "glslName": null,
+      "mapping": "Unsupported",
+      "shaderZone": null,
+      "stages": [],
+      "requiredCapability": null
     },
     {
       "identity": "float3.Max(float3,float):float3",
@@ -76756,15 +76904,11 @@
       ],
       "returnClrName": "float3",
       "returnGlslType": "vec3",
-      "glslName": "min",
-      "mapping": "Builtin",
-      "shaderZone": "DeltaMaths",
-      "stages": [
-        "vertex",
-        "fragment",
-        "compute"
-      ],
-      "requiredCapability": "vector"
+      "glslName": null,
+      "mapping": "Unsupported",
+      "shaderZone": null,
+      "stages": [],
+      "requiredCapability": null
     },
     {
       "identity": "float3.Min(float3,float):float3",
@@ -77177,11 +77321,15 @@
       ],
       "returnClrName": "float3",
       "returnGlslType": "vec3",
-      "glslName": null,
-      "mapping": "Unsupported",
-      "shaderZone": null,
-      "stages": [],
-      "requiredCapability": null
+      "glslName": "radians",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
     },
     {
       "identity": "float3.Reflect(float3,float3):float3",
@@ -77225,11 +77373,15 @@
       ],
       "returnClrName": "float3",
       "returnGlslType": "vec3",
-      "glslName": null,
-      "mapping": "Unsupported",
-      "shaderZone": null,
-      "stages": [],
-      "requiredCapability": null
+      "glslName": "refract",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
     },
     {
       "identity": "float3.Remap(float3,float3,float3,float3,float3):float3",
@@ -77271,11 +77423,38 @@
       ],
       "returnClrName": "float3",
       "returnGlslType": "vec3",
-      "glslName": null,
-      "mapping": "Unsupported",
-      "shaderZone": null,
-      "stages": [],
-      "requiredCapability": null
+      "glslName": "round",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "float3.RoundEven(float3):float3",
+      "typeClrName": "float3",
+      "clrName": "RoundEven",
+      "mathsName": "roundEven",
+      "parameterClrNames": [
+        "float3"
+      ],
+      "parameterGlslTypes": [
+        "vec3"
+      ],
+      "returnClrName": "float3",
+      "returnGlslType": "vec3",
+      "glslName": "roundEven",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
     },
     {
       "identity": "float3.Saturate(float3):float3",
@@ -77701,11 +77880,15 @@
       ],
       "returnClrName": "float3",
       "returnGlslType": "vec3",
-      "glslName": null,
-      "mapping": "Unsupported",
-      "shaderZone": null,
-      "stages": [],
-      "requiredCapability": null
+      "glslName": "trunc",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
     },
     {
       "identity": "float3.op_Addition(float,float3):float3",
@@ -78636,11 +78819,15 @@
       ],
       "returnClrName": "float4",
       "returnGlslType": "vec4",
-      "glslName": null,
-      "mapping": "Unsupported",
-      "shaderZone": null,
-      "stages": [],
-      "requiredCapability": null
+      "glslName": "atan",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
     },
     {
       "identity": "float4.Atan2(float,float4):float4",
@@ -78678,11 +78865,15 @@
       ],
       "returnClrName": "float4",
       "returnGlslType": "vec4",
-      "glslName": null,
-      "mapping": "Unsupported",
-      "shaderZone": null,
-      "stages": [],
-      "requiredCapability": null
+      "glslName": "atan",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
     },
     {
       "identity": "float4.Atan2(float4,float4):float4",
@@ -78699,11 +78890,15 @@
       ],
       "returnClrName": "float4",
       "returnGlslType": "vec4",
-      "glslName": null,
-      "mapping": "Unsupported",
-      "shaderZone": null,
-      "stages": [],
-      "requiredCapability": null
+      "glslName": "atan",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
     },
     {
       "identity": "float4.Atanh(float4):float4",
@@ -78756,11 +78951,15 @@
       ],
       "returnClrName": "float4",
       "returnGlslType": "vec4",
-      "glslName": null,
-      "mapping": "Unsupported",
-      "shaderZone": null,
-      "stages": [],
-      "requiredCapability": null
+      "glslName": "ceil",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
     },
     {
       "identity": "float4.Clamp(float4,float,float):float4",
@@ -78907,11 +79106,15 @@
       ],
       "returnClrName": "float4",
       "returnGlslType": "vec4",
-      "glslName": null,
-      "mapping": "Unsupported",
-      "shaderZone": null,
-      "stages": [],
-      "requiredCapability": null
+      "glslName": "degrees",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
     },
     {
       "identity": "float4.Distance(float4,float4):float",
@@ -79146,11 +79349,15 @@
       ],
       "returnClrName": "float4",
       "returnGlslType": "vec4",
-      "glslName": null,
-      "mapping": "Unsupported",
-      "shaderZone": null,
-      "stages": [],
-      "requiredCapability": null
+      "glslName": "floor",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
     },
     {
       "identity": "float4.Fma(float4,float4,float4):float4",
@@ -79188,11 +79395,15 @@
       ],
       "returnClrName": "float4",
       "returnGlslType": "vec4",
-      "glslName": null,
-      "mapping": "Unsupported",
-      "shaderZone": null,
-      "stages": [],
-      "requiredCapability": null
+      "glslName": "fract",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
     },
     {
       "identity": "float4.GetHashCode():int",
@@ -79394,11 +79605,15 @@
       ],
       "returnClrName": "float4",
       "returnGlslType": "vec4",
-      "glslName": null,
-      "mapping": "Unsupported",
-      "shaderZone": null,
-      "stages": [],
-      "requiredCapability": null
+      "glslName": "inversesqrt",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
     },
     {
       "identity": "float4.IsFinite(float4):bool4",
@@ -79732,15 +79947,11 @@
       ],
       "returnClrName": "float4",
       "returnGlslType": "vec4",
-      "glslName": "max",
-      "mapping": "Builtin",
-      "shaderZone": "DeltaMaths",
-      "stages": [
-        "vertex",
-        "fragment",
-        "compute"
-      ],
-      "requiredCapability": "vector"
+      "glslName": null,
+      "mapping": "Unsupported",
+      "shaderZone": null,
+      "stages": [],
+      "requiredCapability": null
     },
     {
       "identity": "float4.Max(float4,float):float4",
@@ -79807,15 +80018,11 @@
       ],
       "returnClrName": "float4",
       "returnGlslType": "vec4",
-      "glslName": "min",
-      "mapping": "Builtin",
-      "shaderZone": "DeltaMaths",
-      "stages": [
-        "vertex",
-        "fragment",
-        "compute"
-      ],
-      "requiredCapability": "vector"
+      "glslName": null,
+      "mapping": "Unsupported",
+      "shaderZone": null,
+      "stages": [],
+      "requiredCapability": null
     },
     {
       "identity": "float4.Min(float4,float):float4",
@@ -80228,11 +80435,15 @@
       ],
       "returnClrName": "float4",
       "returnGlslType": "vec4",
-      "glslName": null,
-      "mapping": "Unsupported",
-      "shaderZone": null,
-      "stages": [],
-      "requiredCapability": null
+      "glslName": "radians",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
     },
     {
       "identity": "float4.Reflect(float4,float4):float4",
@@ -80276,11 +80487,15 @@
       ],
       "returnClrName": "float4",
       "returnGlslType": "vec4",
-      "glslName": null,
-      "mapping": "Unsupported",
-      "shaderZone": null,
-      "stages": [],
-      "requiredCapability": null
+      "glslName": "refract",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
     },
     {
       "identity": "float4.Remap(float4,float4,float4,float4,float4):float4",
@@ -80322,11 +80537,38 @@
       ],
       "returnClrName": "float4",
       "returnGlslType": "vec4",
-      "glslName": null,
-      "mapping": "Unsupported",
-      "shaderZone": null,
-      "stages": [],
-      "requiredCapability": null
+      "glslName": "round",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "float4.RoundEven(float4):float4",
+      "typeClrName": "float4",
+      "clrName": "RoundEven",
+      "mathsName": "roundEven",
+      "parameterClrNames": [
+        "float4"
+      ],
+      "parameterGlslTypes": [
+        "vec4"
+      ],
+      "returnClrName": "float4",
+      "returnGlslType": "vec4",
+      "glslName": "roundEven",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
     },
     {
       "identity": "float4.Saturate(float4):float4",
@@ -80752,11 +80994,15 @@
       ],
       "returnClrName": "float4",
       "returnGlslType": "vec4",
-      "glslName": null,
-      "mapping": "Unsupported",
-      "shaderZone": null,
-      "stages": [],
-      "requiredCapability": null
+      "glslName": "trunc",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
     },
     {
       "identity": "float4.op_Addition(float,float4):float4",
@@ -82686,15 +82932,11 @@
       ],
       "returnClrName": "int2",
       "returnGlslType": "ivec2",
-      "glslName": "max",
-      "mapping": "Builtin",
-      "shaderZone": "DeltaMaths",
-      "stages": [
-        "vertex",
-        "fragment",
-        "compute"
-      ],
-      "requiredCapability": "vector"
+      "glslName": null,
+      "mapping": "Unsupported",
+      "shaderZone": null,
+      "stages": [],
+      "requiredCapability": null
     },
     {
       "identity": "int2.Max(int2,int):int2",
@@ -82761,15 +83003,11 @@
       ],
       "returnClrName": "int2",
       "returnGlslType": "ivec2",
-      "glslName": "min",
-      "mapping": "Builtin",
-      "shaderZone": "DeltaMaths",
-      "stages": [
-        "vertex",
-        "fragment",
-        "compute"
-      ],
-      "requiredCapability": "vector"
+      "glslName": null,
+      "mapping": "Unsupported",
+      "shaderZone": null,
+      "stages": [],
+      "requiredCapability": null
     },
     {
       "identity": "int2.Min(int2,int):int2",
@@ -84644,15 +84882,11 @@
       ],
       "returnClrName": "int3",
       "returnGlslType": "ivec3",
-      "glslName": "max",
-      "mapping": "Builtin",
-      "shaderZone": "DeltaMaths",
-      "stages": [
-        "vertex",
-        "fragment",
-        "compute"
-      ],
-      "requiredCapability": "vector"
+      "glslName": null,
+      "mapping": "Unsupported",
+      "shaderZone": null,
+      "stages": [],
+      "requiredCapability": null
     },
     {
       "identity": "int3.Max(int3,int):int3",
@@ -84719,15 +84953,11 @@
       ],
       "returnClrName": "int3",
       "returnGlslType": "ivec3",
-      "glslName": "min",
-      "mapping": "Builtin",
-      "shaderZone": "DeltaMaths",
-      "stages": [
-        "vertex",
-        "fragment",
-        "compute"
-      ],
-      "requiredCapability": "vector"
+      "glslName": null,
+      "mapping": "Unsupported",
+      "shaderZone": null,
+      "stages": [],
+      "requiredCapability": null
     },
     {
       "identity": "int3.Min(int3,int):int3",
@@ -86602,15 +86832,11 @@
       ],
       "returnClrName": "int4",
       "returnGlslType": "ivec4",
-      "glslName": "max",
-      "mapping": "Builtin",
-      "shaderZone": "DeltaMaths",
-      "stages": [
-        "vertex",
-        "fragment",
-        "compute"
-      ],
-      "requiredCapability": "vector"
+      "glslName": null,
+      "mapping": "Unsupported",
+      "shaderZone": null,
+      "stages": [],
+      "requiredCapability": null
     },
     {
       "identity": "int4.Max(int4,int):int4",
@@ -86677,15 +86903,11 @@
       ],
       "returnClrName": "int4",
       "returnGlslType": "ivec4",
-      "glslName": "min",
-      "mapping": "Builtin",
-      "shaderZone": "DeltaMaths",
-      "stages": [
-        "vertex",
-        "fragment",
-        "compute"
-      ],
-      "requiredCapability": "vector"
+      "glslName": null,
+      "mapping": "Unsupported",
+      "shaderZone": null,
+      "stages": [],
+      "requiredCapability": null
     },
     {
       "identity": "int4.Min(int4,int):int4",
@@ -89145,15 +89367,11 @@
       ],
       "returnClrName": "uint2",
       "returnGlslType": "uvec2",
-      "glslName": "max",
-      "mapping": "Builtin",
-      "shaderZone": "DeltaMaths",
-      "stages": [
-        "vertex",
-        "fragment",
-        "compute"
-      ],
-      "requiredCapability": "vector"
+      "glslName": null,
+      "mapping": "Unsupported",
+      "shaderZone": null,
+      "stages": [],
+      "requiredCapability": null
     },
     {
       "identity": "uint2.Max(uint2,uint):uint2",
@@ -89220,15 +89438,11 @@
       ],
       "returnClrName": "uint2",
       "returnGlslType": "uvec2",
-      "glslName": "min",
-      "mapping": "Builtin",
-      "shaderZone": "DeltaMaths",
-      "stages": [
-        "vertex",
-        "fragment",
-        "compute"
-      ],
-      "requiredCapability": "vector"
+      "glslName": null,
+      "mapping": "Unsupported",
+      "shaderZone": null,
+      "stages": [],
+      "requiredCapability": null
     },
     {
       "identity": "uint2.Min(uint2,uint):uint2",
@@ -91019,15 +91233,11 @@
       ],
       "returnClrName": "uint3",
       "returnGlslType": "uvec3",
-      "glslName": "max",
-      "mapping": "Builtin",
-      "shaderZone": "DeltaMaths",
-      "stages": [
-        "vertex",
-        "fragment",
-        "compute"
-      ],
-      "requiredCapability": "vector"
+      "glslName": null,
+      "mapping": "Unsupported",
+      "shaderZone": null,
+      "stages": [],
+      "requiredCapability": null
     },
     {
       "identity": "uint3.Max(uint3,uint):uint3",
@@ -91094,15 +91304,11 @@
       ],
       "returnClrName": "uint3",
       "returnGlslType": "uvec3",
-      "glslName": "min",
-      "mapping": "Builtin",
-      "shaderZone": "DeltaMaths",
-      "stages": [
-        "vertex",
-        "fragment",
-        "compute"
-      ],
-      "requiredCapability": "vector"
+      "glslName": null,
+      "mapping": "Unsupported",
+      "shaderZone": null,
+      "stages": [],
+      "requiredCapability": null
     },
     {
       "identity": "uint3.Min(uint3,uint):uint3",
@@ -92893,15 +93099,11 @@
       ],
       "returnClrName": "uint4",
       "returnGlslType": "uvec4",
-      "glslName": "max",
-      "mapping": "Builtin",
-      "shaderZone": "DeltaMaths",
-      "stages": [
-        "vertex",
-        "fragment",
-        "compute"
-      ],
-      "requiredCapability": "vector"
+      "glslName": null,
+      "mapping": "Unsupported",
+      "shaderZone": null,
+      "stages": [],
+      "requiredCapability": null
     },
     {
       "identity": "uint4.Max(uint4,uint):uint4",
@@ -92968,15 +93170,11 @@
       ],
       "returnClrName": "uint4",
       "returnGlslType": "uvec4",
-      "glslName": "min",
-      "mapping": "Builtin",
-      "shaderZone": "DeltaMaths",
-      "stages": [
-        "vertex",
-        "fragment",
-        "compute"
-      ],
-      "requiredCapability": "vector"
+      "glslName": null,
+      "mapping": "Unsupported",
+      "shaderZone": null,
+      "stages": [],
+      "requiredCapability": null
     },
     {
       "identity": "uint4.Min(uint4,uint):uint4",
@@ -94287,6 +94485,838 @@
       "requiredCapability": "vector"
     },
     {
+      "identity": "maths.all(bool2):bool",
+      "typeClrName": "maths",
+      "clrName": "all",
+      "mathsName": "all",
+      "parameterClrNames": [
+        "bool2"
+      ],
+      "parameterGlslTypes": [
+        "bvec2"
+      ],
+      "returnClrName": "bool",
+      "returnGlslType": "bool",
+      "glslName": "all",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.any(bool2):bool",
+      "typeClrName": "maths",
+      "clrName": "any",
+      "mathsName": "any",
+      "parameterClrNames": [
+        "bool2"
+      ],
+      "parameterGlslTypes": [
+        "bvec2"
+      ],
+      "returnClrName": "bool",
+      "returnGlslType": "bool",
+      "glslName": "any",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.equal(bool2,bool2):bool2",
+      "typeClrName": "maths",
+      "clrName": "equal",
+      "mathsName": "equal",
+      "parameterClrNames": [
+        "bool2",
+        "bool2"
+      ],
+      "parameterGlslTypes": [
+        "bvec2",
+        "bvec2"
+      ],
+      "returnClrName": "bool2",
+      "returnGlslType": "bvec2",
+      "glslName": "equal",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.notEqual(bool2,bool2):bool2",
+      "typeClrName": "maths",
+      "clrName": "notEqual",
+      "mathsName": "notEqual",
+      "parameterClrNames": [
+        "bool2",
+        "bool2"
+      ],
+      "parameterGlslTypes": [
+        "bvec2",
+        "bvec2"
+      ],
+      "returnClrName": "bool2",
+      "returnGlslType": "bvec2",
+      "glslName": "notEqual",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.all(bool3):bool",
+      "typeClrName": "maths",
+      "clrName": "all",
+      "mathsName": "all",
+      "parameterClrNames": [
+        "bool3"
+      ],
+      "parameterGlslTypes": [
+        "bvec3"
+      ],
+      "returnClrName": "bool",
+      "returnGlslType": "bool",
+      "glslName": "all",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.any(bool3):bool",
+      "typeClrName": "maths",
+      "clrName": "any",
+      "mathsName": "any",
+      "parameterClrNames": [
+        "bool3"
+      ],
+      "parameterGlslTypes": [
+        "bvec3"
+      ],
+      "returnClrName": "bool",
+      "returnGlslType": "bool",
+      "glslName": "any",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.equal(bool3,bool3):bool3",
+      "typeClrName": "maths",
+      "clrName": "equal",
+      "mathsName": "equal",
+      "parameterClrNames": [
+        "bool3",
+        "bool3"
+      ],
+      "parameterGlslTypes": [
+        "bvec3",
+        "bvec3"
+      ],
+      "returnClrName": "bool3",
+      "returnGlslType": "bvec3",
+      "glslName": "equal",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.notEqual(bool3,bool3):bool3",
+      "typeClrName": "maths",
+      "clrName": "notEqual",
+      "mathsName": "notEqual",
+      "parameterClrNames": [
+        "bool3",
+        "bool3"
+      ],
+      "parameterGlslTypes": [
+        "bvec3",
+        "bvec3"
+      ],
+      "returnClrName": "bool3",
+      "returnGlslType": "bvec3",
+      "glslName": "notEqual",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.all(bool4):bool",
+      "typeClrName": "maths",
+      "clrName": "all",
+      "mathsName": "all",
+      "parameterClrNames": [
+        "bool4"
+      ],
+      "parameterGlslTypes": [
+        "bvec4"
+      ],
+      "returnClrName": "bool",
+      "returnGlslType": "bool",
+      "glslName": "all",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.any(bool4):bool",
+      "typeClrName": "maths",
+      "clrName": "any",
+      "mathsName": "any",
+      "parameterClrNames": [
+        "bool4"
+      ],
+      "parameterGlslTypes": [
+        "bvec4"
+      ],
+      "returnClrName": "bool",
+      "returnGlslType": "bool",
+      "glslName": "any",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.equal(bool4,bool4):bool4",
+      "typeClrName": "maths",
+      "clrName": "equal",
+      "mathsName": "equal",
+      "parameterClrNames": [
+        "bool4",
+        "bool4"
+      ],
+      "parameterGlslTypes": [
+        "bvec4",
+        "bvec4"
+      ],
+      "returnClrName": "bool4",
+      "returnGlslType": "bvec4",
+      "glslName": "equal",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.notEqual(bool4,bool4):bool4",
+      "typeClrName": "maths",
+      "clrName": "notEqual",
+      "mathsName": "notEqual",
+      "parameterClrNames": [
+        "bool4",
+        "bool4"
+      ],
+      "parameterGlslTypes": [
+        "bvec4",
+        "bvec4"
+      ],
+      "returnClrName": "bool4",
+      "returnGlslType": "bvec4",
+      "glslName": "notEqual",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.abs(float2):float2",
+      "typeClrName": "maths",
+      "clrName": "abs",
+      "mathsName": "abs",
+      "parameterClrNames": [
+        "float2"
+      ],
+      "parameterGlslTypes": [
+        "vec2"
+      ],
+      "returnClrName": "float2",
+      "returnGlslType": "vec2",
+      "glslName": "abs",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.atan(float2):float2",
+      "typeClrName": "maths",
+      "clrName": "atan",
+      "mathsName": "atan",
+      "parameterClrNames": [
+        "float2"
+      ],
+      "parameterGlslTypes": [
+        "vec2"
+      ],
+      "returnClrName": "float2",
+      "returnGlslType": "vec2",
+      "glslName": "atan",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.atan2(float2,float):float2",
+      "typeClrName": "maths",
+      "clrName": "atan2",
+      "mathsName": "atan2",
+      "parameterClrNames": [
+        "float2",
+        "float"
+      ],
+      "parameterGlslTypes": [
+        "vec2",
+        "float"
+      ],
+      "returnClrName": "float2",
+      "returnGlslType": "vec2",
+      "glslName": "atan",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.atan2(float2,float2):float2",
+      "typeClrName": "maths",
+      "clrName": "atan2",
+      "mathsName": "atan2",
+      "parameterClrNames": [
+        "float2",
+        "float2"
+      ],
+      "parameterGlslTypes": [
+        "vec2",
+        "vec2"
+      ],
+      "returnClrName": "float2",
+      "returnGlslType": "vec2",
+      "glslName": "atan",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.ceil(float2):float2",
+      "typeClrName": "maths",
+      "clrName": "ceil",
+      "mathsName": "ceil",
+      "parameterClrNames": [
+        "float2"
+      ],
+      "parameterGlslTypes": [
+        "vec2"
+      ],
+      "returnClrName": "float2",
+      "returnGlslType": "vec2",
+      "glslName": "ceil",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.clamp(float2,float,float):float2",
+      "typeClrName": "maths",
+      "clrName": "clamp",
+      "mathsName": "clamp",
+      "parameterClrNames": [
+        "float2",
+        "float",
+        "float"
+      ],
+      "parameterGlslTypes": [
+        "vec2",
+        "float",
+        "float"
+      ],
+      "returnClrName": "float2",
+      "returnGlslType": "vec2",
+      "glslName": "clamp",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.clamp(float2,float2,float2):float2",
+      "typeClrName": "maths",
+      "clrName": "clamp",
+      "mathsName": "clamp",
+      "parameterClrNames": [
+        "float2",
+        "float2",
+        "float2"
+      ],
+      "parameterGlslTypes": [
+        "vec2",
+        "vec2",
+        "vec2"
+      ],
+      "returnClrName": "float2",
+      "returnGlslType": "vec2",
+      "glslName": "clamp",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.degrees(float2):float2",
+      "typeClrName": "maths",
+      "clrName": "degrees",
+      "mathsName": "degrees",
+      "parameterClrNames": [
+        "float2"
+      ],
+      "parameterGlslTypes": [
+        "vec2"
+      ],
+      "returnClrName": "float2",
+      "returnGlslType": "vec2",
+      "glslName": "degrees",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.distance(float2,float2):float",
+      "typeClrName": "maths",
+      "clrName": "distance",
+      "mathsName": "distance",
+      "parameterClrNames": [
+        "float2",
+        "float2"
+      ],
+      "parameterGlslTypes": [
+        "vec2",
+        "vec2"
+      ],
+      "returnClrName": "float",
+      "returnGlslType": "float",
+      "glslName": "distance",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.dot(float2,float2):float",
+      "typeClrName": "maths",
+      "clrName": "dot",
+      "mathsName": "dot",
+      "parameterClrNames": [
+        "float2",
+        "float2"
+      ],
+      "parameterGlslTypes": [
+        "vec2",
+        "vec2"
+      ],
+      "returnClrName": "float",
+      "returnGlslType": "float",
+      "glslName": "dot",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.equal(float2,float2):bool2",
+      "typeClrName": "maths",
+      "clrName": "equal",
+      "mathsName": "equal",
+      "parameterClrNames": [
+        "float2",
+        "float2"
+      ],
+      "parameterGlslTypes": [
+        "vec2",
+        "vec2"
+      ],
+      "returnClrName": "bool2",
+      "returnGlslType": "bvec2",
+      "glslName": "equal",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.faceForward(float2,float2,float2):float2",
+      "typeClrName": "maths",
+      "clrName": "faceForward",
+      "mathsName": "faceForward",
+      "parameterClrNames": [
+        "float2",
+        "float2",
+        "float2"
+      ],
+      "parameterGlslTypes": [
+        "vec2",
+        "vec2",
+        "vec2"
+      ],
+      "returnClrName": "float2",
+      "returnGlslType": "vec2",
+      "glslName": "faceforward",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.floor(float2):float2",
+      "typeClrName": "maths",
+      "clrName": "floor",
+      "mathsName": "floor",
+      "parameterClrNames": [
+        "float2"
+      ],
+      "parameterGlslTypes": [
+        "vec2"
+      ],
+      "returnClrName": "float2",
+      "returnGlslType": "vec2",
+      "glslName": "floor",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.fract(float2):float2",
+      "typeClrName": "maths",
+      "clrName": "fract",
+      "mathsName": "fract",
+      "parameterClrNames": [
+        "float2"
+      ],
+      "parameterGlslTypes": [
+        "vec2"
+      ],
+      "returnClrName": "float2",
+      "returnGlslType": "vec2",
+      "glslName": "fract",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.inverseSqrt(float2):float2",
+      "typeClrName": "maths",
+      "clrName": "inverseSqrt",
+      "mathsName": "inverseSqrt",
+      "parameterClrNames": [
+        "float2"
+      ],
+      "parameterGlslTypes": [
+        "vec2"
+      ],
+      "returnClrName": "float2",
+      "returnGlslType": "vec2",
+      "glslName": "inversesqrt",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.length(float2):float",
+      "typeClrName": "maths",
+      "clrName": "length",
+      "mathsName": "length",
+      "parameterClrNames": [
+        "float2"
+      ],
+      "parameterGlslTypes": [
+        "vec2"
+      ],
+      "returnClrName": "float",
+      "returnGlslType": "float",
+      "glslName": "length",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.lerp(float2,float2,float):float2",
+      "typeClrName": "maths",
+      "clrName": "lerp",
+      "mathsName": "lerp",
+      "parameterClrNames": [
+        "float2",
+        "float2",
+        "float"
+      ],
+      "parameterGlslTypes": [
+        "vec2",
+        "vec2",
+        "float"
+      ],
+      "returnClrName": "float2",
+      "returnGlslType": "vec2",
+      "glslName": "mix",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.lerp(float2,float2,float2):float2",
+      "typeClrName": "maths",
+      "clrName": "lerp",
+      "mathsName": "lerp",
+      "parameterClrNames": [
+        "float2",
+        "float2",
+        "float2"
+      ],
+      "parameterGlslTypes": [
+        "vec2",
+        "vec2",
+        "vec2"
+      ],
+      "returnClrName": "float2",
+      "returnGlslType": "vec2",
+      "glslName": "mix",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.max(float2,float):float2",
+      "typeClrName": "maths",
+      "clrName": "max",
+      "mathsName": "max",
+      "parameterClrNames": [
+        "float2",
+        "float"
+      ],
+      "parameterGlslTypes": [
+        "vec2",
+        "float"
+      ],
+      "returnClrName": "float2",
+      "returnGlslType": "vec2",
+      "glslName": "max",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.max(float2,float2):float2",
+      "typeClrName": "maths",
+      "clrName": "max",
+      "mathsName": "max",
+      "parameterClrNames": [
+        "float2",
+        "float2"
+      ],
+      "parameterGlslTypes": [
+        "vec2",
+        "vec2"
+      ],
+      "returnClrName": "float2",
+      "returnGlslType": "vec2",
+      "glslName": "max",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.min(float2,float):float2",
+      "typeClrName": "maths",
+      "clrName": "min",
+      "mathsName": "min",
+      "parameterClrNames": [
+        "float2",
+        "float"
+      ],
+      "parameterGlslTypes": [
+        "vec2",
+        "float"
+      ],
+      "returnClrName": "float2",
+      "returnGlslType": "vec2",
+      "glslName": "min",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.min(float2,float2):float2",
+      "typeClrName": "maths",
+      "clrName": "min",
+      "mathsName": "min",
+      "parameterClrNames": [
+        "float2",
+        "float2"
+      ],
+      "parameterGlslTypes": [
+        "vec2",
+        "vec2"
+      ],
+      "returnClrName": "float2",
+      "returnGlslType": "vec2",
+      "glslName": "min",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
       "identity": "maths.mod(float2,float):float2",
       "typeClrName": "maths",
       "clrName": "mod",
@@ -94327,6 +95357,898 @@
       "returnClrName": "float2",
       "returnGlslType": "vec2",
       "glslName": "mod",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.normalize(float2):float2",
+      "typeClrName": "maths",
+      "clrName": "normalize",
+      "mathsName": "normalize",
+      "parameterClrNames": [
+        "float2"
+      ],
+      "parameterGlslTypes": [
+        "vec2"
+      ],
+      "returnClrName": "float2",
+      "returnGlslType": "vec2",
+      "glslName": "normalize",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.notEqual(float2,float2):bool2",
+      "typeClrName": "maths",
+      "clrName": "notEqual",
+      "mathsName": "notEqual",
+      "parameterClrNames": [
+        "float2",
+        "float2"
+      ],
+      "parameterGlslTypes": [
+        "vec2",
+        "vec2"
+      ],
+      "returnClrName": "bool2",
+      "returnGlslType": "bvec2",
+      "glslName": "notEqual",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.radians(float2):float2",
+      "typeClrName": "maths",
+      "clrName": "radians",
+      "mathsName": "radians",
+      "parameterClrNames": [
+        "float2"
+      ],
+      "parameterGlslTypes": [
+        "vec2"
+      ],
+      "returnClrName": "float2",
+      "returnGlslType": "vec2",
+      "glslName": "radians",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.reflect(float2,float2):float2",
+      "typeClrName": "maths",
+      "clrName": "reflect",
+      "mathsName": "reflect",
+      "parameterClrNames": [
+        "float2",
+        "float2"
+      ],
+      "parameterGlslTypes": [
+        "vec2",
+        "vec2"
+      ],
+      "returnClrName": "float2",
+      "returnGlslType": "vec2",
+      "glslName": "reflect",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.refract(float2,float2,float):float2",
+      "typeClrName": "maths",
+      "clrName": "refract",
+      "mathsName": "refract",
+      "parameterClrNames": [
+        "float2",
+        "float2",
+        "float"
+      ],
+      "parameterGlslTypes": [
+        "vec2",
+        "vec2",
+        "float"
+      ],
+      "returnClrName": "float2",
+      "returnGlslType": "vec2",
+      "glslName": "refract",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.round(float2):float2",
+      "typeClrName": "maths",
+      "clrName": "round",
+      "mathsName": "round",
+      "parameterClrNames": [
+        "float2"
+      ],
+      "parameterGlslTypes": [
+        "vec2"
+      ],
+      "returnClrName": "float2",
+      "returnGlslType": "vec2",
+      "glslName": "round",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.roundEven(float2):float2",
+      "typeClrName": "maths",
+      "clrName": "roundEven",
+      "mathsName": "roundEven",
+      "parameterClrNames": [
+        "float2"
+      ],
+      "parameterGlslTypes": [
+        "vec2"
+      ],
+      "returnClrName": "float2",
+      "returnGlslType": "vec2",
+      "glslName": "roundEven",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.select(float2,float2,bool2):float2",
+      "typeClrName": "maths",
+      "clrName": "select",
+      "mathsName": "select",
+      "parameterClrNames": [
+        "float2",
+        "float2",
+        "bool2"
+      ],
+      "parameterGlslTypes": [
+        "vec2",
+        "vec2",
+        "bvec2"
+      ],
+      "returnClrName": "float2",
+      "returnGlslType": "vec2",
+      "glslName": "delta_select",
+      "mapping": "Helper",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.smoothStep(float,float,float2):float2",
+      "typeClrName": "maths",
+      "clrName": "smoothStep",
+      "mathsName": "smoothStep",
+      "parameterClrNames": [
+        "float",
+        "float",
+        "float2"
+      ],
+      "parameterGlslTypes": [
+        "float",
+        "float",
+        "vec2"
+      ],
+      "returnClrName": "float2",
+      "returnGlslType": "vec2",
+      "glslName": "smoothstep",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.smoothStep(float2,float2,float2):float2",
+      "typeClrName": "maths",
+      "clrName": "smoothStep",
+      "mathsName": "smoothStep",
+      "parameterClrNames": [
+        "float2",
+        "float2",
+        "float2"
+      ],
+      "parameterGlslTypes": [
+        "vec2",
+        "vec2",
+        "vec2"
+      ],
+      "returnClrName": "float2",
+      "returnGlslType": "vec2",
+      "glslName": "smoothstep",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.step(float,float2):float2",
+      "typeClrName": "maths",
+      "clrName": "step",
+      "mathsName": "step",
+      "parameterClrNames": [
+        "float",
+        "float2"
+      ],
+      "parameterGlslTypes": [
+        "float",
+        "vec2"
+      ],
+      "returnClrName": "float2",
+      "returnGlslType": "vec2",
+      "glslName": "step",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.step(float2,float2):float2",
+      "typeClrName": "maths",
+      "clrName": "step",
+      "mathsName": "step",
+      "parameterClrNames": [
+        "float2",
+        "float2"
+      ],
+      "parameterGlslTypes": [
+        "vec2",
+        "vec2"
+      ],
+      "returnClrName": "float2",
+      "returnGlslType": "vec2",
+      "glslName": "step",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.truncate(float2):float2",
+      "typeClrName": "maths",
+      "clrName": "truncate",
+      "mathsName": "truncate",
+      "parameterClrNames": [
+        "float2"
+      ],
+      "parameterGlslTypes": [
+        "vec2"
+      ],
+      "returnClrName": "float2",
+      "returnGlslType": "vec2",
+      "glslName": "trunc",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.abs(float3):float3",
+      "typeClrName": "maths",
+      "clrName": "abs",
+      "mathsName": "abs",
+      "parameterClrNames": [
+        "float3"
+      ],
+      "parameterGlslTypes": [
+        "vec3"
+      ],
+      "returnClrName": "float3",
+      "returnGlslType": "vec3",
+      "glslName": "abs",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.atan(float3):float3",
+      "typeClrName": "maths",
+      "clrName": "atan",
+      "mathsName": "atan",
+      "parameterClrNames": [
+        "float3"
+      ],
+      "parameterGlslTypes": [
+        "vec3"
+      ],
+      "returnClrName": "float3",
+      "returnGlslType": "vec3",
+      "glslName": "atan",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.atan2(float3,float):float3",
+      "typeClrName": "maths",
+      "clrName": "atan2",
+      "mathsName": "atan2",
+      "parameterClrNames": [
+        "float3",
+        "float"
+      ],
+      "parameterGlslTypes": [
+        "vec3",
+        "float"
+      ],
+      "returnClrName": "float3",
+      "returnGlslType": "vec3",
+      "glslName": "atan",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.atan2(float3,float3):float3",
+      "typeClrName": "maths",
+      "clrName": "atan2",
+      "mathsName": "atan2",
+      "parameterClrNames": [
+        "float3",
+        "float3"
+      ],
+      "parameterGlslTypes": [
+        "vec3",
+        "vec3"
+      ],
+      "returnClrName": "float3",
+      "returnGlslType": "vec3",
+      "glslName": "atan",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.ceil(float3):float3",
+      "typeClrName": "maths",
+      "clrName": "ceil",
+      "mathsName": "ceil",
+      "parameterClrNames": [
+        "float3"
+      ],
+      "parameterGlslTypes": [
+        "vec3"
+      ],
+      "returnClrName": "float3",
+      "returnGlslType": "vec3",
+      "glslName": "ceil",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.clamp(float3,float,float):float3",
+      "typeClrName": "maths",
+      "clrName": "clamp",
+      "mathsName": "clamp",
+      "parameterClrNames": [
+        "float3",
+        "float",
+        "float"
+      ],
+      "parameterGlslTypes": [
+        "vec3",
+        "float",
+        "float"
+      ],
+      "returnClrName": "float3",
+      "returnGlslType": "vec3",
+      "glslName": "clamp",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.clamp(float3,float3,float3):float3",
+      "typeClrName": "maths",
+      "clrName": "clamp",
+      "mathsName": "clamp",
+      "parameterClrNames": [
+        "float3",
+        "float3",
+        "float3"
+      ],
+      "parameterGlslTypes": [
+        "vec3",
+        "vec3",
+        "vec3"
+      ],
+      "returnClrName": "float3",
+      "returnGlslType": "vec3",
+      "glslName": "clamp",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.cross(float3,float3):float3",
+      "typeClrName": "maths",
+      "clrName": "cross",
+      "mathsName": "cross",
+      "parameterClrNames": [
+        "float3",
+        "float3"
+      ],
+      "parameterGlslTypes": [
+        "vec3",
+        "vec3"
+      ],
+      "returnClrName": "float3",
+      "returnGlslType": "vec3",
+      "glslName": "cross",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.degrees(float3):float3",
+      "typeClrName": "maths",
+      "clrName": "degrees",
+      "mathsName": "degrees",
+      "parameterClrNames": [
+        "float3"
+      ],
+      "parameterGlslTypes": [
+        "vec3"
+      ],
+      "returnClrName": "float3",
+      "returnGlslType": "vec3",
+      "glslName": "degrees",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.distance(float3,float3):float",
+      "typeClrName": "maths",
+      "clrName": "distance",
+      "mathsName": "distance",
+      "parameterClrNames": [
+        "float3",
+        "float3"
+      ],
+      "parameterGlslTypes": [
+        "vec3",
+        "vec3"
+      ],
+      "returnClrName": "float",
+      "returnGlslType": "float",
+      "glslName": "distance",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.dot(float3,float3):float",
+      "typeClrName": "maths",
+      "clrName": "dot",
+      "mathsName": "dot",
+      "parameterClrNames": [
+        "float3",
+        "float3"
+      ],
+      "parameterGlslTypes": [
+        "vec3",
+        "vec3"
+      ],
+      "returnClrName": "float",
+      "returnGlslType": "float",
+      "glslName": "dot",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.equal(float3,float3):bool3",
+      "typeClrName": "maths",
+      "clrName": "equal",
+      "mathsName": "equal",
+      "parameterClrNames": [
+        "float3",
+        "float3"
+      ],
+      "parameterGlslTypes": [
+        "vec3",
+        "vec3"
+      ],
+      "returnClrName": "bool3",
+      "returnGlslType": "bvec3",
+      "glslName": "equal",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.faceForward(float3,float3,float3):float3",
+      "typeClrName": "maths",
+      "clrName": "faceForward",
+      "mathsName": "faceForward",
+      "parameterClrNames": [
+        "float3",
+        "float3",
+        "float3"
+      ],
+      "parameterGlslTypes": [
+        "vec3",
+        "vec3",
+        "vec3"
+      ],
+      "returnClrName": "float3",
+      "returnGlslType": "vec3",
+      "glslName": "faceforward",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.floor(float3):float3",
+      "typeClrName": "maths",
+      "clrName": "floor",
+      "mathsName": "floor",
+      "parameterClrNames": [
+        "float3"
+      ],
+      "parameterGlslTypes": [
+        "vec3"
+      ],
+      "returnClrName": "float3",
+      "returnGlslType": "vec3",
+      "glslName": "floor",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.fract(float3):float3",
+      "typeClrName": "maths",
+      "clrName": "fract",
+      "mathsName": "fract",
+      "parameterClrNames": [
+        "float3"
+      ],
+      "parameterGlslTypes": [
+        "vec3"
+      ],
+      "returnClrName": "float3",
+      "returnGlslType": "vec3",
+      "glslName": "fract",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.inverseSqrt(float3):float3",
+      "typeClrName": "maths",
+      "clrName": "inverseSqrt",
+      "mathsName": "inverseSqrt",
+      "parameterClrNames": [
+        "float3"
+      ],
+      "parameterGlslTypes": [
+        "vec3"
+      ],
+      "returnClrName": "float3",
+      "returnGlslType": "vec3",
+      "glslName": "inversesqrt",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.length(float3):float",
+      "typeClrName": "maths",
+      "clrName": "length",
+      "mathsName": "length",
+      "parameterClrNames": [
+        "float3"
+      ],
+      "parameterGlslTypes": [
+        "vec3"
+      ],
+      "returnClrName": "float",
+      "returnGlslType": "float",
+      "glslName": "length",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.lerp(float3,float3,float):float3",
+      "typeClrName": "maths",
+      "clrName": "lerp",
+      "mathsName": "lerp",
+      "parameterClrNames": [
+        "float3",
+        "float3",
+        "float"
+      ],
+      "parameterGlslTypes": [
+        "vec3",
+        "vec3",
+        "float"
+      ],
+      "returnClrName": "float3",
+      "returnGlslType": "vec3",
+      "glslName": "mix",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.lerp(float3,float3,float3):float3",
+      "typeClrName": "maths",
+      "clrName": "lerp",
+      "mathsName": "lerp",
+      "parameterClrNames": [
+        "float3",
+        "float3",
+        "float3"
+      ],
+      "parameterGlslTypes": [
+        "vec3",
+        "vec3",
+        "vec3"
+      ],
+      "returnClrName": "float3",
+      "returnGlslType": "vec3",
+      "glslName": "mix",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.max(float3,float):float3",
+      "typeClrName": "maths",
+      "clrName": "max",
+      "mathsName": "max",
+      "parameterClrNames": [
+        "float3",
+        "float"
+      ],
+      "parameterGlslTypes": [
+        "vec3",
+        "float"
+      ],
+      "returnClrName": "float3",
+      "returnGlslType": "vec3",
+      "glslName": "max",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.max(float3,float3):float3",
+      "typeClrName": "maths",
+      "clrName": "max",
+      "mathsName": "max",
+      "parameterClrNames": [
+        "float3",
+        "float3"
+      ],
+      "parameterGlslTypes": [
+        "vec3",
+        "vec3"
+      ],
+      "returnClrName": "float3",
+      "returnGlslType": "vec3",
+      "glslName": "max",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.min(float3,float):float3",
+      "typeClrName": "maths",
+      "clrName": "min",
+      "mathsName": "min",
+      "parameterClrNames": [
+        "float3",
+        "float"
+      ],
+      "parameterGlslTypes": [
+        "vec3",
+        "float"
+      ],
+      "returnClrName": "float3",
+      "returnGlslType": "vec3",
+      "glslName": "min",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.min(float3,float3):float3",
+      "typeClrName": "maths",
+      "clrName": "min",
+      "mathsName": "min",
+      "parameterClrNames": [
+        "float3",
+        "float3"
+      ],
+      "parameterGlslTypes": [
+        "vec3",
+        "vec3"
+      ],
+      "returnClrName": "float3",
+      "returnGlslType": "vec3",
+      "glslName": "min",
       "mapping": "Builtin",
       "shaderZone": "DeltaMaths",
       "stages": [
@@ -94387,6 +96309,873 @@
       "requiredCapability": "vector"
     },
     {
+      "identity": "maths.normalize(float3):float3",
+      "typeClrName": "maths",
+      "clrName": "normalize",
+      "mathsName": "normalize",
+      "parameterClrNames": [
+        "float3"
+      ],
+      "parameterGlslTypes": [
+        "vec3"
+      ],
+      "returnClrName": "float3",
+      "returnGlslType": "vec3",
+      "glslName": "normalize",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.notEqual(float3,float3):bool3",
+      "typeClrName": "maths",
+      "clrName": "notEqual",
+      "mathsName": "notEqual",
+      "parameterClrNames": [
+        "float3",
+        "float3"
+      ],
+      "parameterGlslTypes": [
+        "vec3",
+        "vec3"
+      ],
+      "returnClrName": "bool3",
+      "returnGlslType": "bvec3",
+      "glslName": "notEqual",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.radians(float3):float3",
+      "typeClrName": "maths",
+      "clrName": "radians",
+      "mathsName": "radians",
+      "parameterClrNames": [
+        "float3"
+      ],
+      "parameterGlslTypes": [
+        "vec3"
+      ],
+      "returnClrName": "float3",
+      "returnGlslType": "vec3",
+      "glslName": "radians",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.reflect(float3,float3):float3",
+      "typeClrName": "maths",
+      "clrName": "reflect",
+      "mathsName": "reflect",
+      "parameterClrNames": [
+        "float3",
+        "float3"
+      ],
+      "parameterGlslTypes": [
+        "vec3",
+        "vec3"
+      ],
+      "returnClrName": "float3",
+      "returnGlslType": "vec3",
+      "glslName": "reflect",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.refract(float3,float3,float):float3",
+      "typeClrName": "maths",
+      "clrName": "refract",
+      "mathsName": "refract",
+      "parameterClrNames": [
+        "float3",
+        "float3",
+        "float"
+      ],
+      "parameterGlslTypes": [
+        "vec3",
+        "vec3",
+        "float"
+      ],
+      "returnClrName": "float3",
+      "returnGlslType": "vec3",
+      "glslName": "refract",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.round(float3):float3",
+      "typeClrName": "maths",
+      "clrName": "round",
+      "mathsName": "round",
+      "parameterClrNames": [
+        "float3"
+      ],
+      "parameterGlslTypes": [
+        "vec3"
+      ],
+      "returnClrName": "float3",
+      "returnGlslType": "vec3",
+      "glslName": "round",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.roundEven(float3):float3",
+      "typeClrName": "maths",
+      "clrName": "roundEven",
+      "mathsName": "roundEven",
+      "parameterClrNames": [
+        "float3"
+      ],
+      "parameterGlslTypes": [
+        "vec3"
+      ],
+      "returnClrName": "float3",
+      "returnGlslType": "vec3",
+      "glslName": "roundEven",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.select(float3,float3,bool3):float3",
+      "typeClrName": "maths",
+      "clrName": "select",
+      "mathsName": "select",
+      "parameterClrNames": [
+        "float3",
+        "float3",
+        "bool3"
+      ],
+      "parameterGlslTypes": [
+        "vec3",
+        "vec3",
+        "bvec3"
+      ],
+      "returnClrName": "float3",
+      "returnGlslType": "vec3",
+      "glslName": "delta_select",
+      "mapping": "Helper",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.smoothStep(float,float,float3):float3",
+      "typeClrName": "maths",
+      "clrName": "smoothStep",
+      "mathsName": "smoothStep",
+      "parameterClrNames": [
+        "float",
+        "float",
+        "float3"
+      ],
+      "parameterGlslTypes": [
+        "float",
+        "float",
+        "vec3"
+      ],
+      "returnClrName": "float3",
+      "returnGlslType": "vec3",
+      "glslName": "smoothstep",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.smoothStep(float3,float3,float3):float3",
+      "typeClrName": "maths",
+      "clrName": "smoothStep",
+      "mathsName": "smoothStep",
+      "parameterClrNames": [
+        "float3",
+        "float3",
+        "float3"
+      ],
+      "parameterGlslTypes": [
+        "vec3",
+        "vec3",
+        "vec3"
+      ],
+      "returnClrName": "float3",
+      "returnGlslType": "vec3",
+      "glslName": "smoothstep",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.step(float,float3):float3",
+      "typeClrName": "maths",
+      "clrName": "step",
+      "mathsName": "step",
+      "parameterClrNames": [
+        "float",
+        "float3"
+      ],
+      "parameterGlslTypes": [
+        "float",
+        "vec3"
+      ],
+      "returnClrName": "float3",
+      "returnGlslType": "vec3",
+      "glslName": "step",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.step(float3,float3):float3",
+      "typeClrName": "maths",
+      "clrName": "step",
+      "mathsName": "step",
+      "parameterClrNames": [
+        "float3",
+        "float3"
+      ],
+      "parameterGlslTypes": [
+        "vec3",
+        "vec3"
+      ],
+      "returnClrName": "float3",
+      "returnGlslType": "vec3",
+      "glslName": "step",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.truncate(float3):float3",
+      "typeClrName": "maths",
+      "clrName": "truncate",
+      "mathsName": "truncate",
+      "parameterClrNames": [
+        "float3"
+      ],
+      "parameterGlslTypes": [
+        "vec3"
+      ],
+      "returnClrName": "float3",
+      "returnGlslType": "vec3",
+      "glslName": "trunc",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.abs(float4):float4",
+      "typeClrName": "maths",
+      "clrName": "abs",
+      "mathsName": "abs",
+      "parameterClrNames": [
+        "float4"
+      ],
+      "parameterGlslTypes": [
+        "vec4"
+      ],
+      "returnClrName": "float4",
+      "returnGlslType": "vec4",
+      "glslName": "abs",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.atan(float4):float4",
+      "typeClrName": "maths",
+      "clrName": "atan",
+      "mathsName": "atan",
+      "parameterClrNames": [
+        "float4"
+      ],
+      "parameterGlslTypes": [
+        "vec4"
+      ],
+      "returnClrName": "float4",
+      "returnGlslType": "vec4",
+      "glslName": "atan",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.atan2(float4,float):float4",
+      "typeClrName": "maths",
+      "clrName": "atan2",
+      "mathsName": "atan2",
+      "parameterClrNames": [
+        "float4",
+        "float"
+      ],
+      "parameterGlslTypes": [
+        "vec4",
+        "float"
+      ],
+      "returnClrName": "float4",
+      "returnGlslType": "vec4",
+      "glslName": "atan",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.atan2(float4,float4):float4",
+      "typeClrName": "maths",
+      "clrName": "atan2",
+      "mathsName": "atan2",
+      "parameterClrNames": [
+        "float4",
+        "float4"
+      ],
+      "parameterGlslTypes": [
+        "vec4",
+        "vec4"
+      ],
+      "returnClrName": "float4",
+      "returnGlslType": "vec4",
+      "glslName": "atan",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.ceil(float4):float4",
+      "typeClrName": "maths",
+      "clrName": "ceil",
+      "mathsName": "ceil",
+      "parameterClrNames": [
+        "float4"
+      ],
+      "parameterGlslTypes": [
+        "vec4"
+      ],
+      "returnClrName": "float4",
+      "returnGlslType": "vec4",
+      "glslName": "ceil",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.clamp(float4,float,float):float4",
+      "typeClrName": "maths",
+      "clrName": "clamp",
+      "mathsName": "clamp",
+      "parameterClrNames": [
+        "float4",
+        "float",
+        "float"
+      ],
+      "parameterGlslTypes": [
+        "vec4",
+        "float",
+        "float"
+      ],
+      "returnClrName": "float4",
+      "returnGlslType": "vec4",
+      "glslName": "clamp",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.clamp(float4,float4,float4):float4",
+      "typeClrName": "maths",
+      "clrName": "clamp",
+      "mathsName": "clamp",
+      "parameterClrNames": [
+        "float4",
+        "float4",
+        "float4"
+      ],
+      "parameterGlslTypes": [
+        "vec4",
+        "vec4",
+        "vec4"
+      ],
+      "returnClrName": "float4",
+      "returnGlslType": "vec4",
+      "glslName": "clamp",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.degrees(float4):float4",
+      "typeClrName": "maths",
+      "clrName": "degrees",
+      "mathsName": "degrees",
+      "parameterClrNames": [
+        "float4"
+      ],
+      "parameterGlslTypes": [
+        "vec4"
+      ],
+      "returnClrName": "float4",
+      "returnGlslType": "vec4",
+      "glslName": "degrees",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.distance(float4,float4):float",
+      "typeClrName": "maths",
+      "clrName": "distance",
+      "mathsName": "distance",
+      "parameterClrNames": [
+        "float4",
+        "float4"
+      ],
+      "parameterGlslTypes": [
+        "vec4",
+        "vec4"
+      ],
+      "returnClrName": "float",
+      "returnGlslType": "float",
+      "glslName": "distance",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.dot(float4,float4):float",
+      "typeClrName": "maths",
+      "clrName": "dot",
+      "mathsName": "dot",
+      "parameterClrNames": [
+        "float4",
+        "float4"
+      ],
+      "parameterGlslTypes": [
+        "vec4",
+        "vec4"
+      ],
+      "returnClrName": "float",
+      "returnGlslType": "float",
+      "glslName": "dot",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.equal(float4,float4):bool4",
+      "typeClrName": "maths",
+      "clrName": "equal",
+      "mathsName": "equal",
+      "parameterClrNames": [
+        "float4",
+        "float4"
+      ],
+      "parameterGlslTypes": [
+        "vec4",
+        "vec4"
+      ],
+      "returnClrName": "bool4",
+      "returnGlslType": "bvec4",
+      "glslName": "equal",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.faceForward(float4,float4,float4):float4",
+      "typeClrName": "maths",
+      "clrName": "faceForward",
+      "mathsName": "faceForward",
+      "parameterClrNames": [
+        "float4",
+        "float4",
+        "float4"
+      ],
+      "parameterGlslTypes": [
+        "vec4",
+        "vec4",
+        "vec4"
+      ],
+      "returnClrName": "float4",
+      "returnGlslType": "vec4",
+      "glslName": "faceforward",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.floor(float4):float4",
+      "typeClrName": "maths",
+      "clrName": "floor",
+      "mathsName": "floor",
+      "parameterClrNames": [
+        "float4"
+      ],
+      "parameterGlslTypes": [
+        "vec4"
+      ],
+      "returnClrName": "float4",
+      "returnGlslType": "vec4",
+      "glslName": "floor",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.fract(float4):float4",
+      "typeClrName": "maths",
+      "clrName": "fract",
+      "mathsName": "fract",
+      "parameterClrNames": [
+        "float4"
+      ],
+      "parameterGlslTypes": [
+        "vec4"
+      ],
+      "returnClrName": "float4",
+      "returnGlslType": "vec4",
+      "glslName": "fract",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.inverseSqrt(float4):float4",
+      "typeClrName": "maths",
+      "clrName": "inverseSqrt",
+      "mathsName": "inverseSqrt",
+      "parameterClrNames": [
+        "float4"
+      ],
+      "parameterGlslTypes": [
+        "vec4"
+      ],
+      "returnClrName": "float4",
+      "returnGlslType": "vec4",
+      "glslName": "inversesqrt",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.length(float4):float",
+      "typeClrName": "maths",
+      "clrName": "length",
+      "mathsName": "length",
+      "parameterClrNames": [
+        "float4"
+      ],
+      "parameterGlslTypes": [
+        "vec4"
+      ],
+      "returnClrName": "float",
+      "returnGlslType": "float",
+      "glslName": "length",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.lerp(float4,float4,float):float4",
+      "typeClrName": "maths",
+      "clrName": "lerp",
+      "mathsName": "lerp",
+      "parameterClrNames": [
+        "float4",
+        "float4",
+        "float"
+      ],
+      "parameterGlslTypes": [
+        "vec4",
+        "vec4",
+        "float"
+      ],
+      "returnClrName": "float4",
+      "returnGlslType": "vec4",
+      "glslName": "mix",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.lerp(float4,float4,float4):float4",
+      "typeClrName": "maths",
+      "clrName": "lerp",
+      "mathsName": "lerp",
+      "parameterClrNames": [
+        "float4",
+        "float4",
+        "float4"
+      ],
+      "parameterGlslTypes": [
+        "vec4",
+        "vec4",
+        "vec4"
+      ],
+      "returnClrName": "float4",
+      "returnGlslType": "vec4",
+      "glslName": "mix",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.max(float4,float):float4",
+      "typeClrName": "maths",
+      "clrName": "max",
+      "mathsName": "max",
+      "parameterClrNames": [
+        "float4",
+        "float"
+      ],
+      "parameterGlslTypes": [
+        "vec4",
+        "float"
+      ],
+      "returnClrName": "float4",
+      "returnGlslType": "vec4",
+      "glslName": "max",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.max(float4,float4):float4",
+      "typeClrName": "maths",
+      "clrName": "max",
+      "mathsName": "max",
+      "parameterClrNames": [
+        "float4",
+        "float4"
+      ],
+      "parameterGlslTypes": [
+        "vec4",
+        "vec4"
+      ],
+      "returnClrName": "float4",
+      "returnGlslType": "vec4",
+      "glslName": "max",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.min(float4,float):float4",
+      "typeClrName": "maths",
+      "clrName": "min",
+      "mathsName": "min",
+      "parameterClrNames": [
+        "float4",
+        "float"
+      ],
+      "parameterGlslTypes": [
+        "vec4",
+        "float"
+      ],
+      "returnClrName": "float4",
+      "returnGlslType": "vec4",
+      "glslName": "min",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.min(float4,float4):float4",
+      "typeClrName": "maths",
+      "clrName": "min",
+      "mathsName": "min",
+      "parameterClrNames": [
+        "float4",
+        "float4"
+      ],
+      "parameterGlslTypes": [
+        "vec4",
+        "vec4"
+      ],
+      "returnClrName": "float4",
+      "returnGlslType": "vec4",
+      "glslName": "min",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
       "identity": "maths.mod(float4,float):float4",
       "typeClrName": "maths",
       "clrName": "mod",
@@ -94437,6 +97226,2397 @@
       "requiredCapability": "vector"
     },
     {
+      "identity": "maths.normalize(float4):float4",
+      "typeClrName": "maths",
+      "clrName": "normalize",
+      "mathsName": "normalize",
+      "parameterClrNames": [
+        "float4"
+      ],
+      "parameterGlslTypes": [
+        "vec4"
+      ],
+      "returnClrName": "float4",
+      "returnGlslType": "vec4",
+      "glslName": "normalize",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.notEqual(float4,float4):bool4",
+      "typeClrName": "maths",
+      "clrName": "notEqual",
+      "mathsName": "notEqual",
+      "parameterClrNames": [
+        "float4",
+        "float4"
+      ],
+      "parameterGlslTypes": [
+        "vec4",
+        "vec4"
+      ],
+      "returnClrName": "bool4",
+      "returnGlslType": "bvec4",
+      "glslName": "notEqual",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.radians(float4):float4",
+      "typeClrName": "maths",
+      "clrName": "radians",
+      "mathsName": "radians",
+      "parameterClrNames": [
+        "float4"
+      ],
+      "parameterGlslTypes": [
+        "vec4"
+      ],
+      "returnClrName": "float4",
+      "returnGlslType": "vec4",
+      "glslName": "radians",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.reflect(float4,float4):float4",
+      "typeClrName": "maths",
+      "clrName": "reflect",
+      "mathsName": "reflect",
+      "parameterClrNames": [
+        "float4",
+        "float4"
+      ],
+      "parameterGlslTypes": [
+        "vec4",
+        "vec4"
+      ],
+      "returnClrName": "float4",
+      "returnGlslType": "vec4",
+      "glslName": "reflect",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.refract(float4,float4,float):float4",
+      "typeClrName": "maths",
+      "clrName": "refract",
+      "mathsName": "refract",
+      "parameterClrNames": [
+        "float4",
+        "float4",
+        "float"
+      ],
+      "parameterGlslTypes": [
+        "vec4",
+        "vec4",
+        "float"
+      ],
+      "returnClrName": "float4",
+      "returnGlslType": "vec4",
+      "glslName": "refract",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.round(float4):float4",
+      "typeClrName": "maths",
+      "clrName": "round",
+      "mathsName": "round",
+      "parameterClrNames": [
+        "float4"
+      ],
+      "parameterGlslTypes": [
+        "vec4"
+      ],
+      "returnClrName": "float4",
+      "returnGlslType": "vec4",
+      "glslName": "round",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.roundEven(float4):float4",
+      "typeClrName": "maths",
+      "clrName": "roundEven",
+      "mathsName": "roundEven",
+      "parameterClrNames": [
+        "float4"
+      ],
+      "parameterGlslTypes": [
+        "vec4"
+      ],
+      "returnClrName": "float4",
+      "returnGlslType": "vec4",
+      "glslName": "roundEven",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.select(float4,float4,bool4):float4",
+      "typeClrName": "maths",
+      "clrName": "select",
+      "mathsName": "select",
+      "parameterClrNames": [
+        "float4",
+        "float4",
+        "bool4"
+      ],
+      "parameterGlslTypes": [
+        "vec4",
+        "vec4",
+        "bvec4"
+      ],
+      "returnClrName": "float4",
+      "returnGlslType": "vec4",
+      "glslName": "delta_select",
+      "mapping": "Helper",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.smoothStep(float,float,float4):float4",
+      "typeClrName": "maths",
+      "clrName": "smoothStep",
+      "mathsName": "smoothStep",
+      "parameterClrNames": [
+        "float",
+        "float",
+        "float4"
+      ],
+      "parameterGlslTypes": [
+        "float",
+        "float",
+        "vec4"
+      ],
+      "returnClrName": "float4",
+      "returnGlslType": "vec4",
+      "glslName": "smoothstep",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.smoothStep(float4,float4,float4):float4",
+      "typeClrName": "maths",
+      "clrName": "smoothStep",
+      "mathsName": "smoothStep",
+      "parameterClrNames": [
+        "float4",
+        "float4",
+        "float4"
+      ],
+      "parameterGlslTypes": [
+        "vec4",
+        "vec4",
+        "vec4"
+      ],
+      "returnClrName": "float4",
+      "returnGlslType": "vec4",
+      "glslName": "smoothstep",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.step(float,float4):float4",
+      "typeClrName": "maths",
+      "clrName": "step",
+      "mathsName": "step",
+      "parameterClrNames": [
+        "float",
+        "float4"
+      ],
+      "parameterGlslTypes": [
+        "float",
+        "vec4"
+      ],
+      "returnClrName": "float4",
+      "returnGlslType": "vec4",
+      "glslName": "step",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.step(float4,float4):float4",
+      "typeClrName": "maths",
+      "clrName": "step",
+      "mathsName": "step",
+      "parameterClrNames": [
+        "float4",
+        "float4"
+      ],
+      "parameterGlslTypes": [
+        "vec4",
+        "vec4"
+      ],
+      "returnClrName": "float4",
+      "returnGlslType": "vec4",
+      "glslName": "step",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.truncate(float4):float4",
+      "typeClrName": "maths",
+      "clrName": "truncate",
+      "mathsName": "truncate",
+      "parameterClrNames": [
+        "float4"
+      ],
+      "parameterGlslTypes": [
+        "vec4"
+      ],
+      "returnClrName": "float4",
+      "returnGlslType": "vec4",
+      "glslName": "trunc",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.createFromQuaternion(quaternion):float4x4",
+      "typeClrName": "maths",
+      "clrName": "createFromQuaternion",
+      "mathsName": "createFromQuaternion",
+      "parameterClrNames": [
+        "quaternion"
+      ],
+      "parameterGlslTypes": [
+        "vec4"
+      ],
+      "returnClrName": "float4x4",
+      "returnGlslType": "mat4",
+      "glslName": "delta_createFromQuaternion",
+      "mapping": "Helper",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "matrix"
+    },
+    {
+      "identity": "maths.createLookTo(float3,float3,float3):float4x4",
+      "typeClrName": "maths",
+      "clrName": "createLookTo",
+      "mathsName": "createLookTo",
+      "parameterClrNames": [
+        "float3",
+        "float3",
+        "float3"
+      ],
+      "parameterGlslTypes": [
+        "vec3",
+        "vec3",
+        "vec3"
+      ],
+      "returnClrName": "float4x4",
+      "returnGlslType": "mat4",
+      "glslName": "delta_createLookTo",
+      "mapping": "Helper",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "matrix"
+    },
+    {
+      "identity": "maths.createPerspectiveFieldOfViewLeftHanded(float,float,float,float):float4x4",
+      "typeClrName": "maths",
+      "clrName": "createPerspectiveFieldOfViewLeftHanded",
+      "mathsName": "createPerspectiveFieldOfViewLeftHanded",
+      "parameterClrNames": [
+        "float",
+        "float",
+        "float",
+        "float"
+      ],
+      "parameterGlslTypes": [
+        "float",
+        "float",
+        "float",
+        "float"
+      ],
+      "returnClrName": "float4x4",
+      "returnGlslType": "mat4",
+      "glslName": "delta_createPerspectiveFovLH",
+      "mapping": "Helper",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "matrix"
+    },
+    {
+      "identity": "maths.createScale(float):float4x4",
+      "typeClrName": "maths",
+      "clrName": "createScale",
+      "mathsName": "createScale",
+      "parameterClrNames": [
+        "float"
+      ],
+      "parameterGlslTypes": [
+        "float"
+      ],
+      "returnClrName": "float4x4",
+      "returnGlslType": "mat4",
+      "glslName": "delta_createScale",
+      "mapping": "Helper",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "matrix"
+    },
+    {
+      "identity": "maths.createScale(float3):float4x4",
+      "typeClrName": "maths",
+      "clrName": "createScale",
+      "mathsName": "createScale",
+      "parameterClrNames": [
+        "float3"
+      ],
+      "parameterGlslTypes": [
+        "vec3"
+      ],
+      "returnClrName": "float4x4",
+      "returnGlslType": "mat4",
+      "glslName": "delta_createScale",
+      "mapping": "Helper",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "matrix"
+    },
+    {
+      "identity": "maths.createTRS(float3,quaternion,float3):float4x4",
+      "typeClrName": "maths",
+      "clrName": "createTRS",
+      "mathsName": "createTRS",
+      "parameterClrNames": [
+        "float3",
+        "quaternion",
+        "float3"
+      ],
+      "parameterGlslTypes": [
+        "vec3",
+        "vec4",
+        "vec3"
+      ],
+      "returnClrName": "float4x4",
+      "returnGlslType": "mat4",
+      "glslName": "delta_createTRS",
+      "mapping": "Helper",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "matrix"
+    },
+    {
+      "identity": "maths.createTranslation(float3):float4x4",
+      "typeClrName": "maths",
+      "clrName": "createTranslation",
+      "mathsName": "createTranslation",
+      "parameterClrNames": [
+        "float3"
+      ],
+      "parameterGlslTypes": [
+        "vec3"
+      ],
+      "returnClrName": "float4x4",
+      "returnGlslType": "mat4",
+      "glslName": "delta_createTranslation",
+      "mapping": "Helper",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "matrix"
+    },
+    {
+      "identity": "maths.determinant(float4x4):float",
+      "typeClrName": "maths",
+      "clrName": "determinant",
+      "mathsName": "determinant",
+      "parameterClrNames": [
+        "float4x4"
+      ],
+      "parameterGlslTypes": [
+        "mat4"
+      ],
+      "returnClrName": "float",
+      "returnGlslType": "float",
+      "glslName": "determinant",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "matrix"
+    },
+    {
+      "identity": "maths.inverse(float4x4):float4x4",
+      "typeClrName": "maths",
+      "clrName": "inverse",
+      "mathsName": "inverse",
+      "parameterClrNames": [
+        "float4x4"
+      ],
+      "parameterGlslTypes": [
+        "mat4"
+      ],
+      "returnClrName": "float4x4",
+      "returnGlslType": "mat4",
+      "glslName": "inverse",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "matrix"
+    },
+    {
+      "identity": "maths.multiply(float4x4,float4x4):float4x4",
+      "typeClrName": "maths",
+      "clrName": "multiply",
+      "mathsName": "multiply",
+      "parameterClrNames": [
+        "float4x4",
+        "float4x4"
+      ],
+      "parameterGlslTypes": [
+        "mat4",
+        "mat4"
+      ],
+      "returnClrName": "float4x4",
+      "returnGlslType": "mat4",
+      "glslName": "*",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "matrix"
+    },
+    {
+      "identity": "maths.transformDirection(float4x4,float3):float3",
+      "typeClrName": "maths",
+      "clrName": "transformDirection",
+      "mathsName": "transformDirection",
+      "parameterClrNames": [
+        "float4x4",
+        "float3"
+      ],
+      "parameterGlslTypes": [
+        "mat4",
+        "vec3"
+      ],
+      "returnClrName": "float3",
+      "returnGlslType": "vec3",
+      "glslName": "delta_transformDirection",
+      "mapping": "Helper",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "matrix"
+    },
+    {
+      "identity": "maths.transformPoint(float4x4,float3):float3",
+      "typeClrName": "maths",
+      "clrName": "transformPoint",
+      "mathsName": "transformPoint",
+      "parameterClrNames": [
+        "float4x4",
+        "float3"
+      ],
+      "parameterGlslTypes": [
+        "mat4",
+        "vec3"
+      ],
+      "returnClrName": "float3",
+      "returnGlslType": "vec3",
+      "glslName": "delta_transformPoint",
+      "mapping": "Helper",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "matrix"
+    },
+    {
+      "identity": "maths.transpose(float4x4):float4x4",
+      "typeClrName": "maths",
+      "clrName": "transpose",
+      "mathsName": "transpose",
+      "parameterClrNames": [
+        "float4x4"
+      ],
+      "parameterGlslTypes": [
+        "mat4"
+      ],
+      "returnClrName": "float4x4",
+      "returnGlslType": "mat4",
+      "glslName": "transpose",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "matrix"
+    },
+    {
+      "identity": "maths.abs(int2):int2",
+      "typeClrName": "maths",
+      "clrName": "abs",
+      "mathsName": "abs",
+      "parameterClrNames": [
+        "int2"
+      ],
+      "parameterGlslTypes": [
+        "ivec2"
+      ],
+      "returnClrName": "int2",
+      "returnGlslType": "ivec2",
+      "glslName": "abs",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.clamp(int2,int,int):int2",
+      "typeClrName": "maths",
+      "clrName": "clamp",
+      "mathsName": "clamp",
+      "parameterClrNames": [
+        "int2",
+        "int",
+        "int"
+      ],
+      "parameterGlslTypes": [
+        "ivec2",
+        "int",
+        "int"
+      ],
+      "returnClrName": "int2",
+      "returnGlslType": "ivec2",
+      "glslName": "clamp",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.clamp(int2,int2,int2):int2",
+      "typeClrName": "maths",
+      "clrName": "clamp",
+      "mathsName": "clamp",
+      "parameterClrNames": [
+        "int2",
+        "int2",
+        "int2"
+      ],
+      "parameterGlslTypes": [
+        "ivec2",
+        "ivec2",
+        "ivec2"
+      ],
+      "returnClrName": "int2",
+      "returnGlslType": "ivec2",
+      "glslName": "clamp",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.equal(int2,int2):bool2",
+      "typeClrName": "maths",
+      "clrName": "equal",
+      "mathsName": "equal",
+      "parameterClrNames": [
+        "int2",
+        "int2"
+      ],
+      "parameterGlslTypes": [
+        "ivec2",
+        "ivec2"
+      ],
+      "returnClrName": "bool2",
+      "returnGlslType": "bvec2",
+      "glslName": "equal",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.max(int2,int):int2",
+      "typeClrName": "maths",
+      "clrName": "max",
+      "mathsName": "max",
+      "parameterClrNames": [
+        "int2",
+        "int"
+      ],
+      "parameterGlslTypes": [
+        "ivec2",
+        "int"
+      ],
+      "returnClrName": "int2",
+      "returnGlslType": "ivec2",
+      "glslName": "max",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.max(int2,int2):int2",
+      "typeClrName": "maths",
+      "clrName": "max",
+      "mathsName": "max",
+      "parameterClrNames": [
+        "int2",
+        "int2"
+      ],
+      "parameterGlslTypes": [
+        "ivec2",
+        "ivec2"
+      ],
+      "returnClrName": "int2",
+      "returnGlslType": "ivec2",
+      "glslName": "max",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.min(int2,int):int2",
+      "typeClrName": "maths",
+      "clrName": "min",
+      "mathsName": "min",
+      "parameterClrNames": [
+        "int2",
+        "int"
+      ],
+      "parameterGlslTypes": [
+        "ivec2",
+        "int"
+      ],
+      "returnClrName": "int2",
+      "returnGlslType": "ivec2",
+      "glslName": "min",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.min(int2,int2):int2",
+      "typeClrName": "maths",
+      "clrName": "min",
+      "mathsName": "min",
+      "parameterClrNames": [
+        "int2",
+        "int2"
+      ],
+      "parameterGlslTypes": [
+        "ivec2",
+        "ivec2"
+      ],
+      "returnClrName": "int2",
+      "returnGlslType": "ivec2",
+      "glslName": "min",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.notEqual(int2,int2):bool2",
+      "typeClrName": "maths",
+      "clrName": "notEqual",
+      "mathsName": "notEqual",
+      "parameterClrNames": [
+        "int2",
+        "int2"
+      ],
+      "parameterGlslTypes": [
+        "ivec2",
+        "ivec2"
+      ],
+      "returnClrName": "bool2",
+      "returnGlslType": "bvec2",
+      "glslName": "notEqual",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.select(int2,int2,bool2):int2",
+      "typeClrName": "maths",
+      "clrName": "select",
+      "mathsName": "select",
+      "parameterClrNames": [
+        "int2",
+        "int2",
+        "bool2"
+      ],
+      "parameterGlslTypes": [
+        "ivec2",
+        "ivec2",
+        "bvec2"
+      ],
+      "returnClrName": "int2",
+      "returnGlslType": "ivec2",
+      "glslName": "delta_select",
+      "mapping": "Helper",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.abs(int3):int3",
+      "typeClrName": "maths",
+      "clrName": "abs",
+      "mathsName": "abs",
+      "parameterClrNames": [
+        "int3"
+      ],
+      "parameterGlslTypes": [
+        "ivec3"
+      ],
+      "returnClrName": "int3",
+      "returnGlslType": "ivec3",
+      "glslName": "abs",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.clamp(int3,int,int):int3",
+      "typeClrName": "maths",
+      "clrName": "clamp",
+      "mathsName": "clamp",
+      "parameterClrNames": [
+        "int3",
+        "int",
+        "int"
+      ],
+      "parameterGlslTypes": [
+        "ivec3",
+        "int",
+        "int"
+      ],
+      "returnClrName": "int3",
+      "returnGlslType": "ivec3",
+      "glslName": "clamp",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.clamp(int3,int3,int3):int3",
+      "typeClrName": "maths",
+      "clrName": "clamp",
+      "mathsName": "clamp",
+      "parameterClrNames": [
+        "int3",
+        "int3",
+        "int3"
+      ],
+      "parameterGlslTypes": [
+        "ivec3",
+        "ivec3",
+        "ivec3"
+      ],
+      "returnClrName": "int3",
+      "returnGlslType": "ivec3",
+      "glslName": "clamp",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.equal(int3,int3):bool3",
+      "typeClrName": "maths",
+      "clrName": "equal",
+      "mathsName": "equal",
+      "parameterClrNames": [
+        "int3",
+        "int3"
+      ],
+      "parameterGlslTypes": [
+        "ivec3",
+        "ivec3"
+      ],
+      "returnClrName": "bool3",
+      "returnGlslType": "bvec3",
+      "glslName": "equal",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.max(int3,int):int3",
+      "typeClrName": "maths",
+      "clrName": "max",
+      "mathsName": "max",
+      "parameterClrNames": [
+        "int3",
+        "int"
+      ],
+      "parameterGlslTypes": [
+        "ivec3",
+        "int"
+      ],
+      "returnClrName": "int3",
+      "returnGlslType": "ivec3",
+      "glslName": "max",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.max(int3,int3):int3",
+      "typeClrName": "maths",
+      "clrName": "max",
+      "mathsName": "max",
+      "parameterClrNames": [
+        "int3",
+        "int3"
+      ],
+      "parameterGlslTypes": [
+        "ivec3",
+        "ivec3"
+      ],
+      "returnClrName": "int3",
+      "returnGlslType": "ivec3",
+      "glslName": "max",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.min(int3,int):int3",
+      "typeClrName": "maths",
+      "clrName": "min",
+      "mathsName": "min",
+      "parameterClrNames": [
+        "int3",
+        "int"
+      ],
+      "parameterGlslTypes": [
+        "ivec3",
+        "int"
+      ],
+      "returnClrName": "int3",
+      "returnGlslType": "ivec3",
+      "glslName": "min",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.min(int3,int3):int3",
+      "typeClrName": "maths",
+      "clrName": "min",
+      "mathsName": "min",
+      "parameterClrNames": [
+        "int3",
+        "int3"
+      ],
+      "parameterGlslTypes": [
+        "ivec3",
+        "ivec3"
+      ],
+      "returnClrName": "int3",
+      "returnGlslType": "ivec3",
+      "glslName": "min",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.notEqual(int3,int3):bool3",
+      "typeClrName": "maths",
+      "clrName": "notEqual",
+      "mathsName": "notEqual",
+      "parameterClrNames": [
+        "int3",
+        "int3"
+      ],
+      "parameterGlslTypes": [
+        "ivec3",
+        "ivec3"
+      ],
+      "returnClrName": "bool3",
+      "returnGlslType": "bvec3",
+      "glslName": "notEqual",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.select(int3,int3,bool3):int3",
+      "typeClrName": "maths",
+      "clrName": "select",
+      "mathsName": "select",
+      "parameterClrNames": [
+        "int3",
+        "int3",
+        "bool3"
+      ],
+      "parameterGlslTypes": [
+        "ivec3",
+        "ivec3",
+        "bvec3"
+      ],
+      "returnClrName": "int3",
+      "returnGlslType": "ivec3",
+      "glslName": "delta_select",
+      "mapping": "Helper",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.abs(int4):int4",
+      "typeClrName": "maths",
+      "clrName": "abs",
+      "mathsName": "abs",
+      "parameterClrNames": [
+        "int4"
+      ],
+      "parameterGlslTypes": [
+        "ivec4"
+      ],
+      "returnClrName": "int4",
+      "returnGlslType": "ivec4",
+      "glslName": "abs",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.clamp(int4,int,int):int4",
+      "typeClrName": "maths",
+      "clrName": "clamp",
+      "mathsName": "clamp",
+      "parameterClrNames": [
+        "int4",
+        "int",
+        "int"
+      ],
+      "parameterGlslTypes": [
+        "ivec4",
+        "int",
+        "int"
+      ],
+      "returnClrName": "int4",
+      "returnGlslType": "ivec4",
+      "glslName": "clamp",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.clamp(int4,int4,int4):int4",
+      "typeClrName": "maths",
+      "clrName": "clamp",
+      "mathsName": "clamp",
+      "parameterClrNames": [
+        "int4",
+        "int4",
+        "int4"
+      ],
+      "parameterGlslTypes": [
+        "ivec4",
+        "ivec4",
+        "ivec4"
+      ],
+      "returnClrName": "int4",
+      "returnGlslType": "ivec4",
+      "glslName": "clamp",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.equal(int4,int4):bool4",
+      "typeClrName": "maths",
+      "clrName": "equal",
+      "mathsName": "equal",
+      "parameterClrNames": [
+        "int4",
+        "int4"
+      ],
+      "parameterGlslTypes": [
+        "ivec4",
+        "ivec4"
+      ],
+      "returnClrName": "bool4",
+      "returnGlslType": "bvec4",
+      "glslName": "equal",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.max(int4,int):int4",
+      "typeClrName": "maths",
+      "clrName": "max",
+      "mathsName": "max",
+      "parameterClrNames": [
+        "int4",
+        "int"
+      ],
+      "parameterGlslTypes": [
+        "ivec4",
+        "int"
+      ],
+      "returnClrName": "int4",
+      "returnGlslType": "ivec4",
+      "glslName": "max",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.max(int4,int4):int4",
+      "typeClrName": "maths",
+      "clrName": "max",
+      "mathsName": "max",
+      "parameterClrNames": [
+        "int4",
+        "int4"
+      ],
+      "parameterGlslTypes": [
+        "ivec4",
+        "ivec4"
+      ],
+      "returnClrName": "int4",
+      "returnGlslType": "ivec4",
+      "glslName": "max",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.min(int4,int):int4",
+      "typeClrName": "maths",
+      "clrName": "min",
+      "mathsName": "min",
+      "parameterClrNames": [
+        "int4",
+        "int"
+      ],
+      "parameterGlslTypes": [
+        "ivec4",
+        "int"
+      ],
+      "returnClrName": "int4",
+      "returnGlslType": "ivec4",
+      "glslName": "min",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.min(int4,int4):int4",
+      "typeClrName": "maths",
+      "clrName": "min",
+      "mathsName": "min",
+      "parameterClrNames": [
+        "int4",
+        "int4"
+      ],
+      "parameterGlslTypes": [
+        "ivec4",
+        "ivec4"
+      ],
+      "returnClrName": "int4",
+      "returnGlslType": "ivec4",
+      "glslName": "min",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.notEqual(int4,int4):bool4",
+      "typeClrName": "maths",
+      "clrName": "notEqual",
+      "mathsName": "notEqual",
+      "parameterClrNames": [
+        "int4",
+        "int4"
+      ],
+      "parameterGlslTypes": [
+        "ivec4",
+        "ivec4"
+      ],
+      "returnClrName": "bool4",
+      "returnGlslType": "bvec4",
+      "glslName": "notEqual",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.select(int4,int4,bool4):int4",
+      "typeClrName": "maths",
+      "clrName": "select",
+      "mathsName": "select",
+      "parameterClrNames": [
+        "int4",
+        "int4",
+        "bool4"
+      ],
+      "parameterGlslTypes": [
+        "ivec4",
+        "ivec4",
+        "bvec4"
+      ],
+      "returnClrName": "int4",
+      "returnGlslType": "ivec4",
+      "glslName": "delta_select",
+      "mapping": "Helper",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.conjugate(quaternion):quaternion",
+      "typeClrName": "maths",
+      "clrName": "conjugate",
+      "mathsName": "conjugate",
+      "parameterClrNames": [
+        "quaternion"
+      ],
+      "parameterGlslTypes": [
+        "vec4"
+      ],
+      "returnClrName": "quaternion",
+      "returnGlslType": "vec4",
+      "glslName": "delta_quaternionConjugate",
+      "mapping": "Helper",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "quaternion"
+    },
+    {
+      "identity": "maths.createFromAxisAngle(float3,float):quaternion",
+      "typeClrName": "maths",
+      "clrName": "createFromAxisAngle",
+      "mathsName": "createFromAxisAngle",
+      "parameterClrNames": [
+        "float3",
+        "float"
+      ],
+      "parameterGlslTypes": [
+        "vec3",
+        "float"
+      ],
+      "returnClrName": "quaternion",
+      "returnGlslType": "vec4",
+      "glslName": "delta_quaternionFromAxisAngle",
+      "mapping": "Helper",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "quaternion"
+    },
+    {
+      "identity": "maths.createFromRotationMatrix(float4x4):quaternion",
+      "typeClrName": "maths",
+      "clrName": "createFromRotationMatrix",
+      "mathsName": "createFromRotationMatrix",
+      "parameterClrNames": [
+        "float4x4"
+      ],
+      "parameterGlslTypes": [
+        "mat4"
+      ],
+      "returnClrName": "quaternion",
+      "returnGlslType": "vec4",
+      "glslName": "delta_quaternionFromMatrix",
+      "mapping": "Helper",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "quaternion"
+    },
+    {
+      "identity": "maths.createFromYawPitchRoll(float,float,float):quaternion",
+      "typeClrName": "maths",
+      "clrName": "createFromYawPitchRoll",
+      "mathsName": "createFromYawPitchRoll",
+      "parameterClrNames": [
+        "float",
+        "float",
+        "float"
+      ],
+      "parameterGlslTypes": [
+        "float",
+        "float",
+        "float"
+      ],
+      "returnClrName": "quaternion",
+      "returnGlslType": "vec4",
+      "glslName": "delta_quaternionFromYawPitchRoll",
+      "mapping": "Helper",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "quaternion"
+    },
+    {
+      "identity": "maths.inverse(quaternion):quaternion",
+      "typeClrName": "maths",
+      "clrName": "inverse",
+      "mathsName": "inverse",
+      "parameterClrNames": [
+        "quaternion"
+      ],
+      "parameterGlslTypes": [
+        "vec4"
+      ],
+      "returnClrName": "quaternion",
+      "returnGlslType": "vec4",
+      "glslName": "delta_quaternionInverse",
+      "mapping": "Helper",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "quaternion"
+    },
+    {
+      "identity": "maths.lerp(quaternion,quaternion,float):quaternion",
+      "typeClrName": "maths",
+      "clrName": "lerp",
+      "mathsName": "lerp",
+      "parameterClrNames": [
+        "quaternion",
+        "quaternion",
+        "float"
+      ],
+      "parameterGlslTypes": [
+        "vec4",
+        "vec4",
+        "float"
+      ],
+      "returnClrName": "quaternion",
+      "returnGlslType": "vec4",
+      "glslName": "delta_quaternionLerp",
+      "mapping": "Helper",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "quaternion"
+    },
+    {
+      "identity": "maths.normalize(quaternion):quaternion",
+      "typeClrName": "maths",
+      "clrName": "normalize",
+      "mathsName": "normalize",
+      "parameterClrNames": [
+        "quaternion"
+      ],
+      "parameterGlslTypes": [
+        "vec4"
+      ],
+      "returnClrName": "quaternion",
+      "returnGlslType": "vec4",
+      "glslName": "delta_quaternionNormalize",
+      "mapping": "Helper",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "quaternion"
+    },
+    {
+      "identity": "maths.rotate(quaternion,float3):float3",
+      "typeClrName": "maths",
+      "clrName": "rotate",
+      "mathsName": "rotate",
+      "parameterClrNames": [
+        "quaternion",
+        "float3"
+      ],
+      "parameterGlslTypes": [
+        "vec4",
+        "vec3"
+      ],
+      "returnClrName": "float3",
+      "returnGlslType": "vec3",
+      "glslName": "delta_quaternionRotate",
+      "mapping": "Helper",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "quaternion"
+    },
+    {
+      "identity": "maths.slerp(quaternion,quaternion,float):quaternion",
+      "typeClrName": "maths",
+      "clrName": "slerp",
+      "mathsName": "slerp",
+      "parameterClrNames": [
+        "quaternion",
+        "quaternion",
+        "float"
+      ],
+      "parameterGlslTypes": [
+        "vec4",
+        "vec4",
+        "float"
+      ],
+      "returnClrName": "quaternion",
+      "returnGlslType": "vec4",
+      "glslName": "delta_quaternionSlerp",
+      "mapping": "Helper",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "quaternion"
+    },
+    {
+      "identity": "maths.toRotationMatrix(quaternion):float4x4",
+      "typeClrName": "maths",
+      "clrName": "toRotationMatrix",
+      "mathsName": "toRotationMatrix",
+      "parameterClrNames": [
+        "quaternion"
+      ],
+      "parameterGlslTypes": [
+        "vec4"
+      ],
+      "returnClrName": "float4x4",
+      "returnGlslType": "mat4",
+      "glslName": "delta_quaternionToMatrix",
+      "mapping": "Helper",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "quaternion"
+    },
+    {
+      "identity": "maths.clamp(uint2,uint,uint):uint2",
+      "typeClrName": "maths",
+      "clrName": "clamp",
+      "mathsName": "clamp",
+      "parameterClrNames": [
+        "uint2",
+        "uint",
+        "uint"
+      ],
+      "parameterGlslTypes": [
+        "uvec2",
+        "uint",
+        "uint"
+      ],
+      "returnClrName": "uint2",
+      "returnGlslType": "uvec2",
+      "glslName": "clamp",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.clamp(uint2,uint2,uint2):uint2",
+      "typeClrName": "maths",
+      "clrName": "clamp",
+      "mathsName": "clamp",
+      "parameterClrNames": [
+        "uint2",
+        "uint2",
+        "uint2"
+      ],
+      "parameterGlslTypes": [
+        "uvec2",
+        "uvec2",
+        "uvec2"
+      ],
+      "returnClrName": "uint2",
+      "returnGlslType": "uvec2",
+      "glslName": "clamp",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.equal(uint2,uint2):bool2",
+      "typeClrName": "maths",
+      "clrName": "equal",
+      "mathsName": "equal",
+      "parameterClrNames": [
+        "uint2",
+        "uint2"
+      ],
+      "parameterGlslTypes": [
+        "uvec2",
+        "uvec2"
+      ],
+      "returnClrName": "bool2",
+      "returnGlslType": "bvec2",
+      "glslName": "equal",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.max(uint2,uint):uint2",
+      "typeClrName": "maths",
+      "clrName": "max",
+      "mathsName": "max",
+      "parameterClrNames": [
+        "uint2",
+        "uint"
+      ],
+      "parameterGlslTypes": [
+        "uvec2",
+        "uint"
+      ],
+      "returnClrName": "uint2",
+      "returnGlslType": "uvec2",
+      "glslName": "max",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.max(uint2,uint2):uint2",
+      "typeClrName": "maths",
+      "clrName": "max",
+      "mathsName": "max",
+      "parameterClrNames": [
+        "uint2",
+        "uint2"
+      ],
+      "parameterGlslTypes": [
+        "uvec2",
+        "uvec2"
+      ],
+      "returnClrName": "uint2",
+      "returnGlslType": "uvec2",
+      "glslName": "max",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.min(uint2,uint):uint2",
+      "typeClrName": "maths",
+      "clrName": "min",
+      "mathsName": "min",
+      "parameterClrNames": [
+        "uint2",
+        "uint"
+      ],
+      "parameterGlslTypes": [
+        "uvec2",
+        "uint"
+      ],
+      "returnClrName": "uint2",
+      "returnGlslType": "uvec2",
+      "glslName": "min",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.min(uint2,uint2):uint2",
+      "typeClrName": "maths",
+      "clrName": "min",
+      "mathsName": "min",
+      "parameterClrNames": [
+        "uint2",
+        "uint2"
+      ],
+      "parameterGlslTypes": [
+        "uvec2",
+        "uvec2"
+      ],
+      "returnClrName": "uint2",
+      "returnGlslType": "uvec2",
+      "glslName": "min",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.notEqual(uint2,uint2):bool2",
+      "typeClrName": "maths",
+      "clrName": "notEqual",
+      "mathsName": "notEqual",
+      "parameterClrNames": [
+        "uint2",
+        "uint2"
+      ],
+      "parameterGlslTypes": [
+        "uvec2",
+        "uvec2"
+      ],
+      "returnClrName": "bool2",
+      "returnGlslType": "bvec2",
+      "glslName": "notEqual",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.select(uint2,uint2,bool2):uint2",
+      "typeClrName": "maths",
+      "clrName": "select",
+      "mathsName": "select",
+      "parameterClrNames": [
+        "uint2",
+        "uint2",
+        "bool2"
+      ],
+      "parameterGlslTypes": [
+        "uvec2",
+        "uvec2",
+        "bvec2"
+      ],
+      "returnClrName": "uint2",
+      "returnGlslType": "uvec2",
+      "glslName": "delta_select",
+      "mapping": "Helper",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.clamp(uint3,uint,uint):uint3",
+      "typeClrName": "maths",
+      "clrName": "clamp",
+      "mathsName": "clamp",
+      "parameterClrNames": [
+        "uint3",
+        "uint",
+        "uint"
+      ],
+      "parameterGlslTypes": [
+        "uvec3",
+        "uint",
+        "uint"
+      ],
+      "returnClrName": "uint3",
+      "returnGlslType": "uvec3",
+      "glslName": "clamp",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.clamp(uint3,uint3,uint3):uint3",
+      "typeClrName": "maths",
+      "clrName": "clamp",
+      "mathsName": "clamp",
+      "parameterClrNames": [
+        "uint3",
+        "uint3",
+        "uint3"
+      ],
+      "parameterGlslTypes": [
+        "uvec3",
+        "uvec3",
+        "uvec3"
+      ],
+      "returnClrName": "uint3",
+      "returnGlslType": "uvec3",
+      "glslName": "clamp",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.equal(uint3,uint3):bool3",
+      "typeClrName": "maths",
+      "clrName": "equal",
+      "mathsName": "equal",
+      "parameterClrNames": [
+        "uint3",
+        "uint3"
+      ],
+      "parameterGlslTypes": [
+        "uvec3",
+        "uvec3"
+      ],
+      "returnClrName": "bool3",
+      "returnGlslType": "bvec3",
+      "glslName": "equal",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.max(uint3,uint):uint3",
+      "typeClrName": "maths",
+      "clrName": "max",
+      "mathsName": "max",
+      "parameterClrNames": [
+        "uint3",
+        "uint"
+      ],
+      "parameterGlslTypes": [
+        "uvec3",
+        "uint"
+      ],
+      "returnClrName": "uint3",
+      "returnGlslType": "uvec3",
+      "glslName": "max",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.max(uint3,uint3):uint3",
+      "typeClrName": "maths",
+      "clrName": "max",
+      "mathsName": "max",
+      "parameterClrNames": [
+        "uint3",
+        "uint3"
+      ],
+      "parameterGlslTypes": [
+        "uvec3",
+        "uvec3"
+      ],
+      "returnClrName": "uint3",
+      "returnGlslType": "uvec3",
+      "glslName": "max",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.min(uint3,uint):uint3",
+      "typeClrName": "maths",
+      "clrName": "min",
+      "mathsName": "min",
+      "parameterClrNames": [
+        "uint3",
+        "uint"
+      ],
+      "parameterGlslTypes": [
+        "uvec3",
+        "uint"
+      ],
+      "returnClrName": "uint3",
+      "returnGlslType": "uvec3",
+      "glslName": "min",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.min(uint3,uint3):uint3",
+      "typeClrName": "maths",
+      "clrName": "min",
+      "mathsName": "min",
+      "parameterClrNames": [
+        "uint3",
+        "uint3"
+      ],
+      "parameterGlslTypes": [
+        "uvec3",
+        "uvec3"
+      ],
+      "returnClrName": "uint3",
+      "returnGlslType": "uvec3",
+      "glslName": "min",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.notEqual(uint3,uint3):bool3",
+      "typeClrName": "maths",
+      "clrName": "notEqual",
+      "mathsName": "notEqual",
+      "parameterClrNames": [
+        "uint3",
+        "uint3"
+      ],
+      "parameterGlslTypes": [
+        "uvec3",
+        "uvec3"
+      ],
+      "returnClrName": "bool3",
+      "returnGlslType": "bvec3",
+      "glslName": "notEqual",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.select(uint3,uint3,bool3):uint3",
+      "typeClrName": "maths",
+      "clrName": "select",
+      "mathsName": "select",
+      "parameterClrNames": [
+        "uint3",
+        "uint3",
+        "bool3"
+      ],
+      "parameterGlslTypes": [
+        "uvec3",
+        "uvec3",
+        "bvec3"
+      ],
+      "returnClrName": "uint3",
+      "returnGlslType": "uvec3",
+      "glslName": "delta_select",
+      "mapping": "Helper",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.clamp(uint4,uint,uint):uint4",
+      "typeClrName": "maths",
+      "clrName": "clamp",
+      "mathsName": "clamp",
+      "parameterClrNames": [
+        "uint4",
+        "uint",
+        "uint"
+      ],
+      "parameterGlslTypes": [
+        "uvec4",
+        "uint",
+        "uint"
+      ],
+      "returnClrName": "uint4",
+      "returnGlslType": "uvec4",
+      "glslName": "clamp",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.clamp(uint4,uint4,uint4):uint4",
+      "typeClrName": "maths",
+      "clrName": "clamp",
+      "mathsName": "clamp",
+      "parameterClrNames": [
+        "uint4",
+        "uint4",
+        "uint4"
+      ],
+      "parameterGlslTypes": [
+        "uvec4",
+        "uvec4",
+        "uvec4"
+      ],
+      "returnClrName": "uint4",
+      "returnGlslType": "uvec4",
+      "glslName": "clamp",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.equal(uint4,uint4):bool4",
+      "typeClrName": "maths",
+      "clrName": "equal",
+      "mathsName": "equal",
+      "parameterClrNames": [
+        "uint4",
+        "uint4"
+      ],
+      "parameterGlslTypes": [
+        "uvec4",
+        "uvec4"
+      ],
+      "returnClrName": "bool4",
+      "returnGlslType": "bvec4",
+      "glslName": "equal",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.max(uint4,uint):uint4",
+      "typeClrName": "maths",
+      "clrName": "max",
+      "mathsName": "max",
+      "parameterClrNames": [
+        "uint4",
+        "uint"
+      ],
+      "parameterGlslTypes": [
+        "uvec4",
+        "uint"
+      ],
+      "returnClrName": "uint4",
+      "returnGlslType": "uvec4",
+      "glslName": "max",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.max(uint4,uint4):uint4",
+      "typeClrName": "maths",
+      "clrName": "max",
+      "mathsName": "max",
+      "parameterClrNames": [
+        "uint4",
+        "uint4"
+      ],
+      "parameterGlslTypes": [
+        "uvec4",
+        "uvec4"
+      ],
+      "returnClrName": "uint4",
+      "returnGlslType": "uvec4",
+      "glslName": "max",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.min(uint4,uint):uint4",
+      "typeClrName": "maths",
+      "clrName": "min",
+      "mathsName": "min",
+      "parameterClrNames": [
+        "uint4",
+        "uint"
+      ],
+      "parameterGlslTypes": [
+        "uvec4",
+        "uint"
+      ],
+      "returnClrName": "uint4",
+      "returnGlslType": "uvec4",
+      "glslName": "min",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.min(uint4,uint4):uint4",
+      "typeClrName": "maths",
+      "clrName": "min",
+      "mathsName": "min",
+      "parameterClrNames": [
+        "uint4",
+        "uint4"
+      ],
+      "parameterGlslTypes": [
+        "uvec4",
+        "uvec4"
+      ],
+      "returnClrName": "uint4",
+      "returnGlslType": "uvec4",
+      "glslName": "min",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.notEqual(uint4,uint4):bool4",
+      "typeClrName": "maths",
+      "clrName": "notEqual",
+      "mathsName": "notEqual",
+      "parameterClrNames": [
+        "uint4",
+        "uint4"
+      ],
+      "parameterGlslTypes": [
+        "uvec4",
+        "uvec4"
+      ],
+      "returnClrName": "bool4",
+      "returnGlslType": "bvec4",
+      "glslName": "notEqual",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.select(uint4,uint4,bool4):uint4",
+      "typeClrName": "maths",
+      "clrName": "select",
+      "mathsName": "select",
+      "parameterClrNames": [
+        "uint4",
+        "uint4",
+        "bool4"
+      ],
+      "parameterGlslTypes": [
+        "uvec4",
+        "uvec4",
+        "bvec4"
+      ],
+      "returnClrName": "uint4",
+      "returnGlslType": "uvec4",
+      "glslName": "delta_select",
+      "mapping": "Helper",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.step(float,float):float",
+      "typeClrName": "maths",
+      "clrName": "step",
+      "mathsName": "step",
+      "parameterClrNames": [
+        "float",
+        "float"
+      ],
+      "parameterGlslTypes": [
+        "float",
+        "float"
+      ],
+      "returnClrName": "float",
+      "returnGlslType": "float",
+      "glslName": "step",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "scalar"
+    },
+    {
+      "identity": "maths.fract(float):float",
+      "typeClrName": "maths",
+      "clrName": "fract",
+      "mathsName": "fract",
+      "parameterClrNames": [
+        "float"
+      ],
+      "parameterGlslTypes": [
+        "float"
+      ],
+      "returnClrName": "float",
+      "returnGlslType": "float",
+      "glslName": "fract",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "scalar"
+    },
+    {
       "identity": "maths.mod(float,float):float",
       "typeClrName": "maths",
       "clrName": "mod",
@@ -94452,6 +99632,342 @@
       "returnClrName": "float",
       "returnGlslType": "float",
       "glslName": "mod",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "scalar"
+    },
+    {
+      "identity": "maths.smoothStep(float,float,float):float",
+      "typeClrName": "maths",
+      "clrName": "smoothStep",
+      "mathsName": "smoothStep",
+      "parameterClrNames": [
+        "float",
+        "float",
+        "float"
+      ],
+      "parameterGlslTypes": [
+        "float",
+        "float",
+        "float"
+      ],
+      "returnClrName": "float",
+      "returnGlslType": "float",
+      "glslName": "smoothstep",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "scalar"
+    },
+    {
+      "identity": "maths.radians(float):float",
+      "typeClrName": "maths",
+      "clrName": "radians",
+      "mathsName": "radians",
+      "parameterClrNames": [
+        "float"
+      ],
+      "parameterGlslTypes": [
+        "float"
+      ],
+      "returnClrName": "float",
+      "returnGlslType": "float",
+      "glslName": "radians",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "scalar"
+    },
+    {
+      "identity": "maths.degrees(float):float",
+      "typeClrName": "maths",
+      "clrName": "degrees",
+      "mathsName": "degrees",
+      "parameterClrNames": [
+        "float"
+      ],
+      "parameterGlslTypes": [
+        "float"
+      ],
+      "returnClrName": "float",
+      "returnGlslType": "float",
+      "glslName": "degrees",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "scalar"
+    },
+    {
+      "identity": "maths.roundEven(float):float",
+      "typeClrName": "maths",
+      "clrName": "roundEven",
+      "mathsName": "roundEven",
+      "parameterClrNames": [
+        "float"
+      ],
+      "parameterGlslTypes": [
+        "float"
+      ],
+      "returnClrName": "float",
+      "returnGlslType": "float",
+      "glslName": "roundEven",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "scalar"
+    },
+    {
+      "identity": "maths.inverseSqrt(float):float",
+      "typeClrName": "maths",
+      "clrName": "inverseSqrt",
+      "mathsName": "inverseSqrt",
+      "parameterClrNames": [
+        "float"
+      ],
+      "parameterGlslTypes": [
+        "float"
+      ],
+      "returnClrName": "float",
+      "returnGlslType": "float",
+      "glslName": "inversesqrt",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "scalar"
+    },
+    {
+      "identity": "maths.atan(float):float",
+      "typeClrName": "maths",
+      "clrName": "atan",
+      "mathsName": "atan",
+      "parameterClrNames": [
+        "float"
+      ],
+      "parameterGlslTypes": [
+        "float"
+      ],
+      "returnClrName": "float",
+      "returnGlslType": "float",
+      "glslName": "atan",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "scalar"
+    },
+    {
+      "identity": "maths.atan2(float,float):float",
+      "typeClrName": "maths",
+      "clrName": "atan2",
+      "mathsName": "atan2",
+      "parameterClrNames": [
+        "float",
+        "float"
+      ],
+      "parameterGlslTypes": [
+        "float",
+        "float"
+      ],
+      "returnClrName": "float",
+      "returnGlslType": "float",
+      "glslName": "atan",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "scalar"
+    },
+    {
+      "identity": "maths.ceil(float):float",
+      "typeClrName": "maths",
+      "clrName": "ceil",
+      "mathsName": "ceil",
+      "parameterClrNames": [
+        "float"
+      ],
+      "parameterGlslTypes": [
+        "float"
+      ],
+      "returnClrName": "float",
+      "returnGlslType": "float",
+      "glslName": "ceil",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "scalar"
+    },
+    {
+      "identity": "maths.clamp(float,float,float):float",
+      "typeClrName": "maths",
+      "clrName": "clamp",
+      "mathsName": "clamp",
+      "parameterClrNames": [
+        "float",
+        "float",
+        "float"
+      ],
+      "parameterGlslTypes": [
+        "float",
+        "float",
+        "float"
+      ],
+      "returnClrName": "float",
+      "returnGlslType": "float",
+      "glslName": "clamp",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "scalar"
+    },
+    {
+      "identity": "maths.floor(float):float",
+      "typeClrName": "maths",
+      "clrName": "floor",
+      "mathsName": "floor",
+      "parameterClrNames": [
+        "float"
+      ],
+      "parameterGlslTypes": [
+        "float"
+      ],
+      "returnClrName": "float",
+      "returnGlslType": "float",
+      "glslName": "floor",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "scalar"
+    },
+    {
+      "identity": "maths.max(float,float):float",
+      "typeClrName": "maths",
+      "clrName": "max",
+      "mathsName": "max",
+      "parameterClrNames": [
+        "float",
+        "float"
+      ],
+      "parameterGlslTypes": [
+        "float",
+        "float"
+      ],
+      "returnClrName": "float",
+      "returnGlslType": "float",
+      "glslName": "max",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "scalar"
+    },
+    {
+      "identity": "maths.min(float,float):float",
+      "typeClrName": "maths",
+      "clrName": "min",
+      "mathsName": "min",
+      "parameterClrNames": [
+        "float",
+        "float"
+      ],
+      "parameterGlslTypes": [
+        "float",
+        "float"
+      ],
+      "returnClrName": "float",
+      "returnGlslType": "float",
+      "glslName": "min",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "scalar"
+    },
+    {
+      "identity": "maths.round(float):float",
+      "typeClrName": "maths",
+      "clrName": "round",
+      "mathsName": "round",
+      "parameterClrNames": [
+        "float"
+      ],
+      "parameterGlslTypes": [
+        "float"
+      ],
+      "returnClrName": "float",
+      "returnGlslType": "float",
+      "glslName": "round",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "scalar"
+    },
+    {
+      "identity": "maths.truncate(float):float",
+      "typeClrName": "maths",
+      "clrName": "truncate",
+      "mathsName": "truncate",
+      "parameterClrNames": [
+        "float"
+      ],
+      "parameterGlslTypes": [
+        "float"
+      ],
+      "returnClrName": "float",
+      "returnGlslType": "float",
+      "glslName": "trunc",
       "mapping": "Builtin",
       "shaderZone": "DeltaMaths",
       "stages": [

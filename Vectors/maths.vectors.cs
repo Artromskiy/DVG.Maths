@@ -852,6 +852,9 @@ namespace Delta.Maths
         public static float2 round(float2 value) => float2.Round(value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float2 roundEven(float2 value) => float2.RoundEven(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float2 truncate(float2 value) => float2.Truncate(value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -1141,6 +1144,9 @@ namespace Delta.Maths
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float3 round(float3 value) => float3.Round(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float3 roundEven(float3 value) => float3.RoundEven(value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float3 truncate(float3 value) => float3.Truncate(value);
@@ -1437,6 +1443,9 @@ namespace Delta.Maths
         public static float4 round(float4 value) => float4.Round(value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float4 roundEven(float4 value) => float4.RoundEven(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float4 truncate(float4 value) => float4.Truncate(value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -1722,6 +1731,9 @@ namespace Delta.Maths
         public static double2 round(double2 value) => double2.Round(value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double2 roundEven(double2 value) => double2.RoundEven(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double2 truncate(double2 value) => double2.Truncate(value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -2005,6 +2017,9 @@ namespace Delta.Maths
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double3 round(double3 value) => double3.Round(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double3 roundEven(double3 value) => double3.RoundEven(value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double3 truncate(double3 value) => double3.Truncate(value);
@@ -2293,6 +2308,9 @@ namespace Delta.Maths
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double4 round(double4 value) => double4.Round(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double4 roundEven(double4 value) => double4.RoundEven(value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double4 truncate(double4 value) => double4.Truncate(value);

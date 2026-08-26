@@ -125,6 +125,18 @@ namespace Delta.Maths.Tests
                 float3.Mod(new float3(-0.25f, 1.25f, 2.5f), 1f));
             AssertEx.Equal(new float3(0.75f, 0.25f, 0.5f),
                 maths.mod(new float3(-0.25f, 1.25f, 2.5f), 1f));
+            AssertEx.Equal(new float3(0.75f, 0.25f, 0.5f),
+                maths.fract(new float3(-0.25f, 1.25f, 2.5f)));
+            AssertEx.Near(new float3(0.5f, 0.25f, 2f),
+                maths.inverseSqrt(new float3(4f, 16f, 0.25f)));
+            AssertEx.Near(new float3(MathF.PI, MathF.PI / 2f, 0f),
+                maths.radians(new float3(180f, 90f, 0f)));
+            AssertEx.Near(new float3(180f, 90f, 0f),
+                maths.degrees(new float3(MathF.PI, MathF.PI / 2f, 0f)));
+            AssertEx.Near(new float3(MathF.PI / 2f, 0f, -MathF.PI / 2f),
+                maths.atan2(new float3(1f, 0f, -1f), new float3(0f, 1f, 0f)));
+            AssertEx.Equal(new float3(2f, 2f, -2f),
+                maths.roundEven(new float3(1.5f, 2.5f, -1.5f)));
             AssertEx.Equal(float3.Dot(new float3(1, 2, 3), new float3(4, 5, 6)),
                 maths.dot(new float3(1, 2, 3), new float3(4, 5, 6)));
             AssertEx.Equal(new float3(-1, 20, -3),
