@@ -134,7 +134,7 @@ namespace Delta.Maths.Tests
 
         private static Type VectorType(string scalar, int dimension)
         {
-            var typeName = "DeltaMaths." + scalar + dimension;
+            var typeName = "Delta.Maths." + scalar + dimension;
             var type = typeof(float2).Assembly.GetType(typeName, throwOnError: false);
             return type ?? throw new InvalidOperationException($"Missing generated vector type '{typeName}'.");
         }

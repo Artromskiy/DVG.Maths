@@ -143,7 +143,7 @@ namespace Delta.Maths.Tests
             using var document = JsonDocument.Parse(File.ReadAllText(FindShaderContractManifestPath()));
             var root = document.RootElement;
             AssertEx.Equal("1.1.0", root.GetProperty("schemaVersion").GetString());
-            AssertEx.Equal("DeltaMaths", root.GetProperty("namespace").GetString());
+            AssertEx.Equal("Delta.Maths", root.GetProperty("namespace").GetString());
 
             var types = root.GetProperty("types").EnumerateArray().ToArray();
             AssertVectorType(types, "float2", "vec2", 8);
@@ -291,6 +291,15 @@ namespace Delta.Maths.Tests
             AssertFunction(functions, "float3", "Length", "length", "Builtin", "float3");
             AssertFunction(functions, "float3", "Normalize", "normalize", "Builtin", "float3");
             AssertFunction(functions, "float3", "Select", "delta_select", "Helper", "float3", "float3", "bool3");
+
+            foreach (var vectorName in new[] { "float2", "float3", "float4" })
+            {
+                AssertFunction(functions, vectorName, "op_Modulus", "mod", "Builtin", vectorName, vectorName);
+                AssertFunction(functions, vectorName, "op_Modulus", "mod", "Builtin", vectorName, "float");
+                var scalarLeftModulus = FindFunction(functions, vectorName, "op_Modulus", "float", vectorName);
+                AssertEx.Equal("Unsupported", scalarLeftModulus.GetProperty("mapping").GetString());
+                AssertEx.True(scalarLeftModulus.GetProperty("glslName").ValueKind == JsonValueKind.Null);
+            }
         }
 
         private static void AssertFunction(JsonElement[] functions, string typeName, string clrName,
