@@ -1,7 +1,7 @@
 using System;
 using System.Runtime.CompilerServices;
 
-namespace DeltaMaths
+namespace Delta.Maths
 {
     public static partial class DeltaMaths
     {

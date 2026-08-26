@@ -10,8 +10,8 @@ swizzles, generated `float4x4` and `quaternion`, plus conventional `DeltaMaths.*
 and shader-like lowercase `maths.*` entry points.
 
 ```csharp
-using DeltaMaths;
-using static DeltaMaths.maths;
+using Delta.Maths;
+using static Delta.Maths.maths;
 
 var direction = normalize(new float3(1f, 2f, 3f));
 var transform = float4x4.CreateTRS(position, rotation, scale);

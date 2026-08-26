@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text.Json;
 using System.Runtime.InteropServices;
 
-namespace DeltaMaths.Tests
+namespace Delta.Maths.Tests
 {
     internal static class MatrixQuaternionTests
     {

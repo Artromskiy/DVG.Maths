@@ -1,59 +1,59 @@
 extern alias mathsRuntime;
 
-using DeltaMaths.VersionBenchmarks.Shared;
-using DeltaMaths = mathsRuntime::DeltaMaths;
+using Delta.Maths.VersionBenchmarks.Shared;
+using Delta.Maths = mathsRuntime::Delta.Maths;
 
-namespace DeltaMaths.VersionAdapter;
+namespace Delta.Maths.VersionAdapter;
 
 public sealed class DeltaMathsScenario : IDeltaMathsScenario
 {
     private readonly DeltaMathsInputs _inputs;
-    private readonly DeltaMaths.float2[] _float2A;
-    private readonly DeltaMaths.float2[] _float2B;
-    private readonly DeltaMaths.float3[] _float3A;
-    private readonly DeltaMaths.float3[] _float3B;
-    private readonly DeltaMaths.float3[] _points;
-    private readonly DeltaMaths.float4[] _float4A;
-    private readonly DeltaMaths.float4[] _float4B;
-    private readonly DeltaMaths.quaternion[] _quaternionsA;
-    private readonly DeltaMaths.quaternion[] _quaternionsB;
-    private readonly DeltaMaths.float4x4[] _matricesA;
-    private readonly DeltaMaths.float4x4[] _matricesB;
-    private readonly DeltaMaths.float3[] _transformTranslations;
-    private readonly DeltaMaths.float3[] _transformScales;
-    private readonly DeltaMaths.float3[] _transformPoints;
-    private readonly DeltaMaths.quaternion[] _transformRotations;
-    private readonly DeltaMaths.float3[] _layoutFloat3;
-    private readonly DeltaMaths.float4[] _layoutFloat4;
-    private readonly DeltaMaths.float4x4[] _layoutMatrices;
-    private readonly DeltaMaths.float3[] _layoutFloat3Destination;
-    private readonly DeltaMaths.float4[] _layoutFloat4Destination;
-    private readonly DeltaMaths.float4x4[] _layoutMatrixDestination;
+    private readonly Delta.Maths.float2[] _float2A;
+    private readonly Delta.Maths.float2[] _float2B;
+    private readonly Delta.Maths.float3[] _float3A;
+    private readonly Delta.Maths.float3[] _float3B;
+    private readonly Delta.Maths.float3[] _points;
+    private readonly Delta.Maths.float4[] _float4A;
+    private readonly Delta.Maths.float4[] _float4B;
+    private readonly Delta.Maths.quaternion[] _quaternionsA;
+    private readonly Delta.Maths.quaternion[] _quaternionsB;
+    private readonly Delta.Maths.float4x4[] _matricesA;
+    private readonly Delta.Maths.float4x4[] _matricesB;
+    private readonly Delta.Maths.float3[] _transformTranslations;
+    private readonly Delta.Maths.float3[] _transformScales;
+    private readonly Delta.Maths.float3[] _transformPoints;
+    private readonly Delta.Maths.quaternion[] _transformRotations;
+    private readonly Delta.Maths.float3[] _layoutFloat3;
+    private readonly Delta.Maths.float4[] _layoutFloat4;
+    private readonly Delta.Maths.float4x4[] _layoutMatrices;
+    private readonly Delta.Maths.float3[] _layoutFloat3Destination;
+    private readonly Delta.Maths.float4[] _layoutFloat4Destination;
+    private readonly Delta.Maths.float4x4[] _layoutMatrixDestination;
 
     public DeltaMathsScenario(DeltaMathsInputs inputs)
     {
         _inputs = inputs;
-        _float2A = new DeltaMaths.float2[inputs.Count];
-        _float2B = new DeltaMaths.float2[inputs.Count];
-        _float3A = new DeltaMaths.float3[inputs.Count];
-        _float3B = new DeltaMaths.float3[inputs.Count];
-        _points = new DeltaMaths.float3[inputs.Count];
-        _float4A = new DeltaMaths.float4[inputs.Count];
-        _float4B = new DeltaMaths.float4[inputs.Count];
-        _quaternionsA = new DeltaMaths.quaternion[inputs.Count];
-        _quaternionsB = new DeltaMaths.quaternion[inputs.Count];
-        _matricesA = new DeltaMaths.float4x4[inputs.Count];
-        _matricesB = new DeltaMaths.float4x4[inputs.Count];
-        _transformTranslations = new DeltaMaths.float3[inputs.Count];
-        _transformScales = new DeltaMaths.float3[inputs.Count];
-        _transformPoints = new DeltaMaths.float3[inputs.Count];
-        _transformRotations = new DeltaMaths.quaternion[inputs.Count];
-        _layoutFloat3 = new DeltaMaths.float3[inputs.Count];
-        _layoutFloat4 = new DeltaMaths.float4[inputs.Count];
-        _layoutMatrices = new DeltaMaths.float4x4[inputs.Count];
-        _layoutFloat3Destination = new DeltaMaths.float3[inputs.Count];
-        _layoutFloat4Destination = new DeltaMaths.float4[inputs.Count];
-        _layoutMatrixDestination = new DeltaMaths.float4x4[inputs.Count];
+        _float2A = new Delta.Maths.float2[inputs.Count];
+        _float2B = new Delta.Maths.float2[inputs.Count];
+        _float3A = new Delta.Maths.float3[inputs.Count];
+        _float3B = new Delta.Maths.float3[inputs.Count];
+        _points = new Delta.Maths.float3[inputs.Count];
+        _float4A = new Delta.Maths.float4[inputs.Count];
+        _float4B = new Delta.Maths.float4[inputs.Count];
+        _quaternionsA = new Delta.Maths.quaternion[inputs.Count];
+        _quaternionsB = new Delta.Maths.quaternion[inputs.Count];
+        _matricesA = new Delta.Maths.float4x4[inputs.Count];
+        _matricesB = new Delta.Maths.float4x4[inputs.Count];
+        _transformTranslations = new Delta.Maths.float3[inputs.Count];
+        _transformScales = new Delta.Maths.float3[inputs.Count];
+        _transformPoints = new Delta.Maths.float3[inputs.Count];
+        _transformRotations = new Delta.Maths.quaternion[inputs.Count];
+        _layoutFloat3 = new Delta.Maths.float3[inputs.Count];
+        _layoutFloat4 = new Delta.Maths.float4[inputs.Count];
+        _layoutMatrices = new Delta.Maths.float4x4[inputs.Count];
+        _layoutFloat3Destination = new Delta.Maths.float3[inputs.Count];
+        _layoutFloat4Destination = new Delta.Maths.float4[inputs.Count];
+        _layoutMatrixDestination = new Delta.Maths.float4x4[inputs.Count];
 
         for (var i = 0; i < inputs.Count; i++)
         {
@@ -64,14 +64,14 @@ public sealed class DeltaMathsScenario : IDeltaMathsScenario
             _points[i] = ToFloat3(inputs.Points[i]);
             _float4A[i] = ToFloat4(inputs.Float4A[i]);
             _float4B[i] = ToFloat4(inputs.Float4B[i]);
-            _quaternionsA[i] = DeltaMaths.quaternion.CreateFromYawPitchRoll(inputs.YawA[i], inputs.PitchA[i], inputs.RollA[i]);
-            _quaternionsB[i] = DeltaMaths.quaternion.CreateFromYawPitchRoll(inputs.YawB[i], inputs.PitchB[i], inputs.RollB[i]);
+            _quaternionsA[i] = Delta.Maths.quaternion.CreateFromYawPitchRoll(inputs.YawA[i], inputs.PitchA[i], inputs.RollA[i]);
+            _quaternionsB[i] = Delta.Maths.quaternion.CreateFromYawPitchRoll(inputs.YawB[i], inputs.PitchB[i], inputs.RollB[i]);
             _matricesA[i] = ToMatrix(inputs.MatrixA[i]);
             _matricesB[i] = ToMatrix(inputs.MatrixB[i]);
             _transformTranslations[i] = ToFloat3(inputs.TransformTranslations[i]);
             _transformScales[i] = ToFloat3(inputs.TransformScales[i]);
             _transformPoints[i] = ToFloat3(inputs.TransformPoints[i]);
-            _transformRotations[i] = DeltaMaths.quaternion.CreateFromYawPitchRoll(
+            _transformRotations[i] = Delta.Maths.quaternion.CreateFromYawPitchRoll(
                 inputs.TransformYaw[i], inputs.TransformPitch[i], inputs.TransformRoll[i]);
             _layoutFloat3[i] = ToFloat3(inputs.LayoutFloat3[i]);
             _layoutFloat4[i] = ToFloat4(inputs.LayoutFloat4[i]);
@@ -147,7 +147,7 @@ public sealed class DeltaMathsScenario : IDeltaMathsScenario
     {
         var sum = 0f;
         for (var i = 0; i < _inputs.Count; i++)
-            sum += DeltaMaths.float3.Dot(_float3A[i], _float3B[i]);
+            sum += Delta.Maths.float3.Dot(_float3A[i], _float3B[i]);
         return sum;
     }
 
@@ -156,7 +156,7 @@ public sealed class DeltaMathsScenario : IDeltaMathsScenario
         var sum = 0f;
         for (var i = 0; i < _inputs.Count; i++)
         {
-            var value = DeltaMaths.float3.Cross(_float3A[i], _float3B[i]);
+            var value = Delta.Maths.float3.Cross(_float3A[i], _float3B[i]);
             sum += value.x + 3f * value.y + 7f * value.z;
         }
         return sum;
@@ -167,7 +167,7 @@ public sealed class DeltaMathsScenario : IDeltaMathsScenario
         var sum = 0f;
         for (var i = 0; i < _inputs.Count; i++)
         {
-            var value = DeltaMaths.float3.Normalize(_float3A[i]);
+            var value = Delta.Maths.float3.Normalize(_float3A[i]);
             sum += value.x + 3f * value.y + 7f * value.z;
         }
         return sum;
@@ -196,7 +196,7 @@ public sealed class DeltaMathsScenario : IDeltaMathsScenario
     {
         var sum = 0f;
         for (var i = 0; i < _inputs.Count; i++)
-            sum += QuaternionChecksum(DeltaMaths.quaternion.NormalizeSafe(_quaternionsA[i]));
+            sum += QuaternionChecksum(Delta.Maths.quaternion.NormalizeSafe(_quaternionsA[i]));
         return sum;
     }
 
@@ -213,7 +213,7 @@ public sealed class DeltaMathsScenario : IDeltaMathsScenario
         var sum = 0f;
         for (var i = 0; i < _inputs.Count; i++)
         {
-            var value = _matricesA[i] * new DeltaMaths.float4(_points[i], 1f);
+            var value = _matricesA[i] * new Delta.Maths.float4(_points[i], 1f);
             sum += value.x + 3f * value.y + 7f * value.z + 11f * value.w;
         }
         return sum;
@@ -224,7 +224,7 @@ public sealed class DeltaMathsScenario : IDeltaMathsScenario
         var sum = 0f;
         for (var i = 0; i < _inputs.Count; i++)
         {
-            var value = DeltaMaths.float4x4.CreateTRS(
+            var value = Delta.Maths.float4x4.CreateTRS(
                 _transformTranslations[i], _transformRotations[i], _transformScales[i]);
             sum += MatrixChecksum(value);
         }
@@ -236,9 +236,9 @@ public sealed class DeltaMathsScenario : IDeltaMathsScenario
         var sum = 0f;
         for (var i = 0; i < _inputs.Count; i++)
         {
-            var matrix = DeltaMaths.float4x4.CreateTRS(
+            var matrix = Delta.Maths.float4x4.CreateTRS(
                 _transformTranslations[i], _transformRotations[i], _transformScales[i]);
-            var value = DeltaMaths.float4x4.TransformPoint(matrix, _transformPoints[i]);
+            var value = Delta.Maths.float4x4.TransformPoint(matrix, _transformPoints[i]);
             sum += value.x + 3f * value.y + 7f * value.z;
         }
         return sum;
@@ -248,7 +248,7 @@ public sealed class DeltaMathsScenario : IDeltaMathsScenario
     {
         var sum = 0f;
         for (var i = 0; i < _inputs.Count; i++)
-            sum += DeltaMaths.DeltaMaths.Sin(_inputs.ScalarA[i]);
+            sum += Delta.Maths.DeltaMaths.Sin(_inputs.ScalarA[i]);
         return sum;
     }
 
@@ -256,7 +256,7 @@ public sealed class DeltaMathsScenario : IDeltaMathsScenario
     {
         var sum = 0f;
         for (var i = 0; i < _inputs.Count; i++)
-            sum += DeltaMaths.DeltaMaths.Cos(_inputs.ScalarA[i]);
+            sum += Delta.Maths.DeltaMaths.Cos(_inputs.ScalarA[i]);
         return sum;
     }
 
@@ -264,7 +264,7 @@ public sealed class DeltaMathsScenario : IDeltaMathsScenario
     {
         var sum = 0f;
         for (var i = 0; i < _inputs.Count; i++)
-            sum += DeltaMaths.DeltaMaths.Sqrt(_inputs.Positive[i]);
+            sum += Delta.Maths.DeltaMaths.Sqrt(_inputs.Positive[i]);
         return sum;
     }
 
@@ -272,7 +272,7 @@ public sealed class DeltaMathsScenario : IDeltaMathsScenario
     {
         var sum = 0f;
         for (var i = 0; i < _inputs.Count; i++)
-            sum += DeltaMaths.DeltaMaths.InverseSqrt(_inputs.Positive[i]);
+            sum += Delta.Maths.DeltaMaths.InverseSqrt(_inputs.Positive[i]);
         return sum;
     }
 
@@ -280,7 +280,7 @@ public sealed class DeltaMathsScenario : IDeltaMathsScenario
     {
         var sum = 0f;
         for (var i = 0; i < _inputs.Count; i++)
-            sum += DeltaMaths.DeltaMaths.Lerp(_inputs.ScalarA[i], _inputs.ScalarB[i], 0.35f);
+            sum += Delta.Maths.DeltaMaths.Lerp(_inputs.ScalarA[i], _inputs.ScalarB[i], 0.35f);
         return sum;
     }
 
@@ -288,7 +288,7 @@ public sealed class DeltaMathsScenario : IDeltaMathsScenario
     {
         var sum = 0f;
         for (var i = 0; i < _inputs.Count; i++)
-            sum += DeltaMaths.DeltaMaths.Clamp(_inputs.ScalarA[i], -0.25f, 0.25f);
+            sum += Delta.Maths.DeltaMaths.Clamp(_inputs.ScalarA[i], -0.25f, 0.25f);
         return sum;
     }
 
@@ -296,7 +296,7 @@ public sealed class DeltaMathsScenario : IDeltaMathsScenario
     {
         var sum = 0f;
         for (var i = 0; i < _inputs.Count; i++)
-            sum += DeltaMaths.DeltaMaths.Atan2(_inputs.ScalarA[i], _inputs.ScalarB[i]);
+            sum += Delta.Maths.DeltaMaths.Atan2(_inputs.ScalarA[i], _inputs.ScalarB[i]);
         return sum;
     }
 
@@ -366,20 +366,20 @@ public sealed class DeltaMathsScenario : IDeltaMathsScenario
         return sum;
     }
 
-    private static DeltaMaths.float2 ToFloat2(InputFloat2 value) => new(value.X, value.Y);
-    private static DeltaMaths.float3 ToFloat3(InputFloat3 value) => new(value.X, value.Y, value.Z);
-    private static DeltaMaths.float4 ToFloat4(InputFloat4 value) => new(value.X, value.Y, value.Z, value.W);
+    private static Delta.Maths.float2 ToFloat2(InputFloat2 value) => new(value.X, value.Y);
+    private static Delta.Maths.float3 ToFloat3(InputFloat3 value) => new(value.X, value.Y, value.Z);
+    private static Delta.Maths.float4 ToFloat4(InputFloat4 value) => new(value.X, value.Y, value.Z, value.W);
 
-    private static DeltaMaths.float4x4 ToMatrix(InputMatrix4x4 value) => new(
+    private static Delta.Maths.float4x4 ToMatrix(InputMatrix4x4 value) => new(
         value.M11, value.M12, value.M13, value.M14,
         value.M21, value.M22, value.M23, value.M24,
         value.M31, value.M32, value.M33, value.M34,
         value.M41, value.M42, value.M43, value.M44);
 
-    private static float QuaternionChecksum(DeltaMaths.quaternion value) =>
+    private static float QuaternionChecksum(Delta.Maths.quaternion value) =>
         value.x + 3f * value.y + 7f * value.z + 11f * value.w;
 
-    private static float MatrixChecksum(DeltaMaths.float4x4 value) =>
+    private static float MatrixChecksum(Delta.Maths.float4x4 value) =>
         value.M11 + 2f * value.M12 + 3f * value.M13 + 5f * value.M14
         + 7f * value.M21 + 11f * value.M22 + 13f * value.M23 + 17f * value.M24
         + 19f * value.M31 + 23f * value.M32 + 29f * value.M33 + 31f * value.M34

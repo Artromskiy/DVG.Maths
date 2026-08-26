@@ -1,4 +1,4 @@
-namespace DeltaMaths.Benchmarks;
+namespace Delta.Maths.Benchmarks;
 
 internal sealed class DeterministicRandom
 {

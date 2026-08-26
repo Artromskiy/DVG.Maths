@@ -1,4 +1,4 @@
-namespace DeltaMaths.VersionBenchmarks.Shared;
+namespace Delta.Maths.VersionBenchmarks.Shared;
 
 public readonly struct InputFloat2
 {

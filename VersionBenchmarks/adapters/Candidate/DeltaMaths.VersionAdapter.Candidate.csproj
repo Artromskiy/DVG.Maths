@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <AssemblyName>DeltaMaths.VersionAdapter.Candidate</AssemblyName>
-    <RootNamespace>DeltaMaths.VersionAdapter</RootNamespace>
+    <RootNamespace>Delta.Maths.VersionAdapter</RootNamespace>
     <LangVersion>latest</LangVersion>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>

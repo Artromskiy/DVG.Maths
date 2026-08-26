@@ -7,7 +7,7 @@
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
     <AssemblyName>DeltaMaths</AssemblyName>
     <PackageId>DeltaMaths</PackageId>
-    <RootNamespace>DeltaMaths</RootNamespace>
+    <RootNamespace>Delta.Maths</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

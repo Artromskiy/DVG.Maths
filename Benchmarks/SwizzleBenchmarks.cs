@@ -1,6 +1,6 @@
 using BenchmarkDotNet.Attributes;
 
-namespace DeltaMaths.Benchmarks;
+namespace Delta.Maths.Benchmarks;
 
 [MemoryDiagnoser]
 public class SwizzleBenchmarks

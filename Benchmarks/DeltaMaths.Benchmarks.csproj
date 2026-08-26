@@ -9,7 +9,7 @@
     <!-- BenchmarkDotNet discovers public members by reflection; this executable is not a documented library surface. -->
     <NoWarn>$(NoWarn);CS1591</NoWarn>
     <AssemblyName>DeltaMaths.Benchmarks</AssemblyName>
-    <RootNamespace>DeltaMaths.Benchmarks</RootNamespace>
+    <RootNamespace>Delta.Maths.Benchmarks</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

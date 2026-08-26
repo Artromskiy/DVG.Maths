@@ -2,7 +2,7 @@ using System;
 using System.Linq;
 using System.Reflection;
 
-namespace DeltaMaths.Tests
+namespace Delta.Maths.Tests
 {
     internal static class VectorStructureTests
     {

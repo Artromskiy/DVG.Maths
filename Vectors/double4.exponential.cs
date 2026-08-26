@@ -4,7 +4,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Runtime.CompilerServices;
 
-namespace DeltaMaths
+namespace Delta.Maths
 {
     public partial struct double4
     {

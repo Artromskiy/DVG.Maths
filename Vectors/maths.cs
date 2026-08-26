@@ -2,7 +2,7 @@
 #pragma warning disable IDE1006
 #nullable enable
 
-namespace DeltaMaths
+namespace Delta.Maths
 {
     public static partial class maths
     {

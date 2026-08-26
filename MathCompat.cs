@@ -1,6 +1,6 @@
 using System;
 
-namespace DeltaMaths
+namespace Delta.Maths
 {
     // Keeps the public DeltaMaths facade available on netstandard2.0, where MathF
     // and several newer System.Math members are not part of the contract.

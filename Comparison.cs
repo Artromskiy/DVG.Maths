@@ -1,6 +1,6 @@
 using System;
 
-namespace DeltaMaths
+namespace Delta.Maths
 {
     public static class Comparison
     {
