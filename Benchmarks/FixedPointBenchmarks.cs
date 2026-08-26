@@ -1,6 +1,6 @@
 using BenchmarkDotNet.Attributes;
 
-namespace Delta.Maths.Benchmarks;
+namespace DeltaMaths.Benchmarks;
 
 [MemoryDiagnoser]
 public class FixedPointBenchmarks
@@ -36,7 +36,7 @@ public class FixedPointBenchmarks
         {
             _left[i] = NextScalar(random);
             _right[i] = NextNonZeroScalar(random);
-            _positive[i] = Maths.Abs(_left[i]) + (fix)0.01f;
+            _positive[i] = DeltaMaths.Abs(_left[i]) + (fix)0.01f;
             _left2[i] = new fix2(NextScalar(random), NextScalar(random));
             _right2[i] = new fix2(NextScalar(random), NextScalar(random));
             _left3[i] = new fix3(NextScalar(random), NextScalar(random), NextScalar(random));
@@ -105,7 +105,7 @@ public class FixedPointBenchmarks
         var sum = 0f;
         for (var i = 0; i < Count; i++)
         {
-            sum += (float)Maths.Abs(_left[i]);
+            sum += (float)DeltaMaths.Abs(_left[i]);
         }
 
         return sum;
@@ -118,7 +118,7 @@ public class FixedPointBenchmarks
         var sum = 0f;
         for (var i = 0; i < Count; i++)
         {
-            sum += (float)Maths.Sqrt(_positive[i]);
+            sum += (float)DeltaMaths.Sqrt(_positive[i]);
         }
 
         return sum;
@@ -131,7 +131,7 @@ public class FixedPointBenchmarks
         var sum = 0f;
         for (var i = 0; i < Count; i++)
         {
-            sum += (float)Maths.InverseSqrt(_positive[i]);
+            sum += (float)DeltaMaths.InverseSqrt(_positive[i]);
         }
 
         return sum;
@@ -259,6 +259,6 @@ public class FixedPointBenchmarks
     private static fix NextNonZeroScalar(DeterministicRandom random)
     {
         var value = NextScalar(random);
-        return Maths.Abs(value) < (fix)0.25f ? (fix)0.25f : value;
+        return DeltaMaths.Abs(value) < (fix)0.25f ? (fix)0.25f : value;
     }
 }

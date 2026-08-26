@@ -4,54 +4,54 @@ using System;
 using System.Runtime.InteropServices;
 using System.Runtime.CompilerServices;
 
-namespace Delta.Maths
+namespace DeltaMaths
 {
     public partial struct fix2
     {
 
         public static fix2 Sin(fix2 value)
         {
-            return new(Maths.Sin(value.x), Maths.Sin(value.y));
+            return new(DeltaMaths.Sin(value.x), DeltaMaths.Sin(value.y));
         }
 
         public static fix2 Cos(fix2 value)
         {
-            return new(Maths.Cos(value.x), Maths.Cos(value.y));
+            return new(DeltaMaths.Cos(value.x), DeltaMaths.Cos(value.y));
         }
 
         public static fix2 Tan(fix2 value)
         {
-            return new(Maths.Tan(value.x), Maths.Tan(value.y));
+            return new(DeltaMaths.Tan(value.x), DeltaMaths.Tan(value.y));
         }
 
         public static fix2 Asin(fix2 value)
         {
-            return new(Maths.Asin(value.x), Maths.Asin(value.y));
+            return new(DeltaMaths.Asin(value.x), DeltaMaths.Asin(value.y));
         }
 
         public static fix2 Acos(fix2 value)
         {
-            return new(Maths.Acos(value.x), Maths.Acos(value.y));
+            return new(DeltaMaths.Acos(value.x), DeltaMaths.Acos(value.y));
         }
 
         public static fix2 Atan(fix2 value)
         {
-            return new(Maths.Atan(value.x), Maths.Atan(value.y));
+            return new(DeltaMaths.Atan(value.x), DeltaMaths.Atan(value.y));
         }
 
         public static fix2 Atan2(fix2 y, fix2 x)
         {
-            return new(Maths.Atan2(y.x, x.x), Maths.Atan2(y.y, x.y));
+            return new(DeltaMaths.Atan2(y.x, x.x), DeltaMaths.Atan2(y.y, x.y));
         }
 
         public static fix2 Atan2(fix2 y, fix x)
         {
-            return new(Maths.Atan2(y.x, x), Maths.Atan2(y.y, x));
+            return new(DeltaMaths.Atan2(y.x, x), DeltaMaths.Atan2(y.y, x));
         }
 
         public static fix2 Atan2(fix y, fix2 x)
         {
-            return new(Maths.Atan2(y, x.x), Maths.Atan2(y, x.y));
+            return new(DeltaMaths.Atan2(y, x.x), DeltaMaths.Atan2(y, x.y));
         }
     }
 }

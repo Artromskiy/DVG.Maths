@@ -5,19 +5,19 @@ using System.Reflection;
 using BenchmarkDotNet.Configs;
 using BenchmarkDotNet.Jobs;
 using BenchmarkDotNet.Running;
-using Delta.Maths.VersionBenchmarks.Shared;
+using DeltaMaths.VersionBenchmarks.Shared;
 
-using BaselineMathsScenario = baselineAdapter::Delta.Maths.VersionAdapter.MathsScenario;
-using CandidateMathsScenario = candidateAdapter::Delta.Maths.VersionAdapter.MathsScenario;
+using BaselineDeltaMathsScenario = baselineAdapter::DeltaMaths.VersionAdapter.DeltaMathsScenario;
+using CandidateDeltaMathsScenario = candidateAdapter::DeltaMaths.VersionAdapter.DeltaMathsScenario;
 
-namespace Delta.Maths.VersionBenchmarks;
+namespace DeltaMaths.VersionBenchmarks;
 
 public static class Program
 {
     public static void Main(string[] args)
     {
-        var baselineRoot = ResolveVersionRoot("BASELINE_ROOT", "Delta.Maths.BaselineRoot");
-        var candidateRoot = ResolveVersionRoot("CANDIDATE_ROOT", "Delta.Maths.CandidateRoot");
+        var baselineRoot = ResolveVersionRoot("BASELINE_ROOT", "DeltaMaths.BaselineRoot");
+        var candidateRoot = ResolveVersionRoot("CANDIDATE_ROOT", "DeltaMaths.CandidateRoot");
 
         VersionBenchmarkSmoke.Run();
         if (args.Length > 0 && string.Equals(args[0], "smoke", StringComparison.OrdinalIgnoreCase))
@@ -76,22 +76,22 @@ internal static class VersionBenchmarkSmoke
 {
     public static void Run()
     {
-        var inputs = MathsInputs.Create(32);
-        var baseline = new BaselineMathsScenario(inputs.Clone());
-        var candidate = new CandidateMathsScenario(inputs.Clone());
+        var inputs = DeltaMathsInputs.Create(32);
+        var baseline = new BaselineDeltaMathsScenario(inputs.Clone());
+        var candidate = new CandidateDeltaMathsScenario(inputs.Clone());
 
-        foreach (var workload in Enum.GetValues<MathsWorkload>())
+        foreach (var workload in Enum.GetValues<DeltaMathsWorkload>())
             RequireEquivalent(baseline.Run(workload), candidate.Run(workload), workload);
 
-        Console.WriteLine($"Version comparison smoke passed: {Enum.GetValues<MathsWorkload>().Length} Maths workloads.");
+        Console.WriteLine($"Version comparison smoke passed: {Enum.GetValues<DeltaMathsWorkload>().Length} DeltaMaths workloads.");
     }
 
-    public static void RequireEquivalent(IMathsScenario baseline, IMathsScenario candidate, MathsWorkload workload)
+    public static void RequireEquivalent(IDeltaMathsScenario baseline, IDeltaMathsScenario candidate, DeltaMathsWorkload workload)
     {
         RequireEquivalent(baseline.Run(workload), candidate.Run(workload), workload);
     }
 
-    private static void RequireEquivalent(float baseline, float candidate, MathsWorkload workload)
+    private static void RequireEquivalent(float baseline, float candidate, DeltaMathsWorkload workload)
     {
         var difference = MathF.Abs(baseline - candidate);
         var scale = MathF.Max(1f, MathF.Max(MathF.Abs(baseline), MathF.Abs(candidate)));

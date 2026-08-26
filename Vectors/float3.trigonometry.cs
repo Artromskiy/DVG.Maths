@@ -4,84 +4,84 @@ using System;
 using System.Runtime.InteropServices;
 using System.Runtime.CompilerServices;
 
-namespace Delta.Maths
+namespace DeltaMaths
 {
     public partial struct float3
     {
 
         public static float3 Sin(float3 value)
         {
-            return new(Maths.Sin(value.x), Maths.Sin(value.y), Maths.Sin(value.z));
+            return new(DeltaMaths.Sin(value.x), DeltaMaths.Sin(value.y), DeltaMaths.Sin(value.z));
         }
 
         public static float3 Cos(float3 value)
         {
-            return new(Maths.Cos(value.x), Maths.Cos(value.y), Maths.Cos(value.z));
+            return new(DeltaMaths.Cos(value.x), DeltaMaths.Cos(value.y), DeltaMaths.Cos(value.z));
         }
 
         public static float3 Tan(float3 value)
         {
-            return new(Maths.Tan(value.x), Maths.Tan(value.y), Maths.Tan(value.z));
+            return new(DeltaMaths.Tan(value.x), DeltaMaths.Tan(value.y), DeltaMaths.Tan(value.z));
         }
 
         public static float3 Asin(float3 value)
         {
-            return new(Maths.Asin(value.x), Maths.Asin(value.y), Maths.Asin(value.z));
+            return new(DeltaMaths.Asin(value.x), DeltaMaths.Asin(value.y), DeltaMaths.Asin(value.z));
         }
 
         public static float3 Acos(float3 value)
         {
-            return new(Maths.Acos(value.x), Maths.Acos(value.y), Maths.Acos(value.z));
+            return new(DeltaMaths.Acos(value.x), DeltaMaths.Acos(value.y), DeltaMaths.Acos(value.z));
         }
 
         public static float3 Atan(float3 value)
         {
-            return new(Maths.Atan(value.x), Maths.Atan(value.y), Maths.Atan(value.z));
+            return new(DeltaMaths.Atan(value.x), DeltaMaths.Atan(value.y), DeltaMaths.Atan(value.z));
         }
 
         public static float3 Atan2(float3 y, float3 x)
         {
-            return new(Maths.Atan2(y.x, x.x), Maths.Atan2(y.y, x.y), Maths.Atan2(y.z, x.z));
+            return new(DeltaMaths.Atan2(y.x, x.x), DeltaMaths.Atan2(y.y, x.y), DeltaMaths.Atan2(y.z, x.z));
         }
 
         public static float3 Atan2(float3 y, float x)
         {
-            return new(Maths.Atan2(y.x, x), Maths.Atan2(y.y, x), Maths.Atan2(y.z, x));
+            return new(DeltaMaths.Atan2(y.x, x), DeltaMaths.Atan2(y.y, x), DeltaMaths.Atan2(y.z, x));
         }
 
         public static float3 Atan2(float y, float3 x)
         {
-            return new(Maths.Atan2(y, x.x), Maths.Atan2(y, x.y), Maths.Atan2(y, x.z));
+            return new(DeltaMaths.Atan2(y, x.x), DeltaMaths.Atan2(y, x.y), DeltaMaths.Atan2(y, x.z));
         }
 
         public static float3 Sinh(float3 value)
         {
-            return new(Maths.Sinh(value.x), Maths.Sinh(value.y), Maths.Sinh(value.z));
+            return new(DeltaMaths.Sinh(value.x), DeltaMaths.Sinh(value.y), DeltaMaths.Sinh(value.z));
         }
 
         public static float3 Cosh(float3 value)
         {
-            return new(Maths.Cosh(value.x), Maths.Cosh(value.y), Maths.Cosh(value.z));
+            return new(DeltaMaths.Cosh(value.x), DeltaMaths.Cosh(value.y), DeltaMaths.Cosh(value.z));
         }
 
         public static float3 Tanh(float3 value)
         {
-            return new(Maths.Tanh(value.x), Maths.Tanh(value.y), Maths.Tanh(value.z));
+            return new(DeltaMaths.Tanh(value.x), DeltaMaths.Tanh(value.y), DeltaMaths.Tanh(value.z));
         }
 
         public static float3 Asinh(float3 value)
         {
-            return new(Maths.Asinh(value.x), Maths.Asinh(value.y), Maths.Asinh(value.z));
+            return new(DeltaMaths.Asinh(value.x), DeltaMaths.Asinh(value.y), DeltaMaths.Asinh(value.z));
         }
 
         public static float3 Acosh(float3 value)
         {
-            return new(Maths.Acosh(value.x), Maths.Acosh(value.y), Maths.Acosh(value.z));
+            return new(DeltaMaths.Acosh(value.x), DeltaMaths.Acosh(value.y), DeltaMaths.Acosh(value.z));
         }
 
         public static float3 Atanh(float3 value)
         {
-            return new(Maths.Atanh(value.x), Maths.Atanh(value.y), Maths.Atanh(value.z));
+            return new(DeltaMaths.Atanh(value.x), DeltaMaths.Atanh(value.y), DeltaMaths.Atanh(value.z));
         }
     }
 }

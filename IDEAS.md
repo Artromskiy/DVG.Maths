@@ -1,4 +1,4 @@
-# Maths ideas
+# DeltaMaths ideas
 
 Not active work:
 

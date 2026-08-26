@@ -2,7 +2,7 @@ using System;
 using System.IO;
 using System.Text.Json;
 
-namespace Delta.Maths.Tests
+namespace DeltaMaths.Tests
 {
     internal static class Program
     {
@@ -15,7 +15,7 @@ namespace Delta.Maths.Tests
                 ("constructors and swizzles compose components", VectorBehaviorTests.ConstructorsAndSwizzles),
                 ("arithmetic, masks, and conversions are component-wise", VectorBehaviorTests.OperatorsAndConversions),
                 ("parsing and formatting round-trip invariantly", VectorBehaviorTests.ParsingAndFormatting),
-                ("common component-wise maths works", VectorBehaviorTests.CommonMaths),
+                ("common component-wise maths works", VectorBehaviorTests.CommonDeltaMaths),
                 ("geometry matches established vector cases", VectorBehaviorTests.Geometry),
                 ("normalization handles zero and tiny inputs", VectorBehaviorTests.Normalization),
                 ("lowercase maths forwards scalar and vector APIs", VectorBehaviorTests.ShaderStyleFacade),

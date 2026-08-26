@@ -1,9 +1,9 @@
 using System;
 using System.Runtime.CompilerServices;
 
-namespace Delta.Maths
+namespace DeltaMaths
 {
-    public static partial class Maths
+    public static partial class DeltaMaths
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float Lerp(float edge0, float edge1, float value) => edge0 + ((edge1 - edge0) * value);

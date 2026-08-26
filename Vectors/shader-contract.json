@@ -1,12 +1,12 @@
 {
   "schemaVersion": "1.1.0",
-  "namespace": "Delta.Maths",
+  "namespace": "DeltaMaths",
   "types": [
     {
       "clrName": "bool2",
       "glslName": "bvec2",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -600,7 +600,7 @@
       "clrName": "bool3",
       "glslName": "bvec3",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -2832,7 +2832,7 @@
       "clrName": "bool4",
       "glslName": "bvec4",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -27174,7 +27174,7 @@
       "clrName": "float2",
       "glslName": "vec2",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -27768,7 +27768,7 @@
       "clrName": "float3",
       "glslName": "vec3",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -30000,7 +30000,7 @@
       "clrName": "float4",
       "glslName": "vec4",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -36238,7 +36238,7 @@
       "clrName": "float4x4",
       "glslName": "mat4",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -36310,7 +36310,7 @@
       "clrName": "int2",
       "glslName": "ivec2",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -36904,7 +36904,7 @@
       "clrName": "int3",
       "glslName": "ivec3",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -39136,7 +39136,7 @@
       "clrName": "int4",
       "glslName": "ivec4",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -45374,7 +45374,7 @@
       "clrName": "quaternion",
       "glslName": "vec4",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -45416,7 +45416,7 @@
       "clrName": "uint2",
       "glslName": "uvec2",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -46010,7 +46010,7 @@
       "clrName": "uint3",
       "glslName": "uvec3",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -48242,7 +48242,7 @@
       "clrName": "uint4",
       "glslName": "uvec4",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -54493,7 +54493,7 @@
       "returnGlslType": "bool",
       "glslName": "all",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -54516,7 +54516,7 @@
       "returnGlslType": "bool",
       "glslName": "any",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -54602,7 +54602,7 @@
       "returnGlslType": "bvec2",
       "glslName": "equal",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -54722,7 +54722,7 @@
       "returnGlslType": "bvec2",
       "glslName": "notEqual",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -55098,7 +55098,7 @@
       "returnGlslType": "bool",
       "glslName": "all",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -55121,7 +55121,7 @@
       "returnGlslType": "bool",
       "glslName": "any",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -55207,7 +55207,7 @@
       "returnGlslType": "bvec3",
       "glslName": "equal",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -55327,7 +55327,7 @@
       "returnGlslType": "bvec3",
       "glslName": "notEqual",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -55703,7 +55703,7 @@
       "returnGlslType": "bool",
       "glslName": "all",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -55726,7 +55726,7 @@
       "returnGlslType": "bool",
       "glslName": "any",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -55812,7 +55812,7 @@
       "returnGlslType": "bvec4",
       "glslName": "equal",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -55932,7 +55932,7 @@
       "returnGlslType": "bvec4",
       "glslName": "notEqual",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -72412,7 +72412,7 @@
       "returnGlslType": "vec2",
       "glslName": "abs",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -72654,7 +72654,7 @@
       "returnGlslType": "vec2",
       "glslName": "clamp",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -72681,7 +72681,7 @@
       "returnGlslType": "vec2",
       "glslName": "clamp",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -72803,7 +72803,7 @@
       "returnGlslType": "float",
       "glslName": "distance",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -72828,7 +72828,7 @@
       "returnGlslType": "float",
       "glslName": "dot",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -72895,7 +72895,7 @@
       "returnGlslType": "bvec2",
       "glslName": "equal",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -72998,7 +72998,7 @@
       "returnGlslType": "vec2",
       "glslName": "faceforward",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -73345,7 +73345,7 @@
       "returnGlslType": "float",
       "glslName": "length",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -73372,7 +73372,7 @@
       "returnGlslType": "vec2",
       "glslName": "mix",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -73399,7 +73399,7 @@
       "returnGlslType": "vec2",
       "glslName": "mix",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -73607,7 +73607,7 @@
       "returnGlslType": "vec2",
       "glslName": "max",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -73632,7 +73632,7 @@
       "returnGlslType": "vec2",
       "glslName": "max",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -73657,7 +73657,7 @@
       "returnGlslType": "vec2",
       "glslName": "max",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -73682,7 +73682,7 @@
       "returnGlslType": "vec2",
       "glslName": "min",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -73707,7 +73707,7 @@
       "returnGlslType": "vec2",
       "glslName": "min",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -73732,7 +73732,7 @@
       "returnGlslType": "vec2",
       "glslName": "min",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -73778,7 +73778,7 @@
       "returnGlslType": "vec2",
       "glslName": "normalize",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -73885,7 +73885,7 @@
       "returnGlslType": "bvec2",
       "glslName": "notEqual",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -74074,7 +74074,7 @@
       "returnGlslType": "vec2",
       "glslName": "reflect",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -74235,7 +74235,7 @@
       "returnGlslType": "vec2",
       "glslName": "delta_select",
       "mapping": "Helper",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -74346,7 +74346,7 @@
       "returnGlslType": "vec2",
       "glslName": "smoothstep",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -74373,7 +74373,7 @@
       "returnGlslType": "vec2",
       "glslName": "smoothstep",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -74457,7 +74457,7 @@
       "returnGlslType": "vec2",
       "glslName": "step",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -74482,7 +74482,7 @@
       "returnGlslType": "vec2",
       "glslName": "step",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -74598,7 +74598,7 @@
       "returnGlslType": "vec2",
       "glslName": "\u002B",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -74623,7 +74623,7 @@
       "returnGlslType": "vec2",
       "glslName": "\u002B",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -74648,7 +74648,7 @@
       "returnGlslType": "vec2",
       "glslName": "\u002B",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -74692,7 +74692,7 @@
       "returnGlslType": "vec2",
       "glslName": "/",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -74717,7 +74717,7 @@
       "returnGlslType": "vec2",
       "glslName": "/",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -74742,7 +74742,7 @@
       "returnGlslType": "vec2",
       "glslName": "/",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -75219,7 +75219,7 @@
       "returnGlslType": "vec2",
       "glslName": "*",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -75244,7 +75244,7 @@
       "returnGlslType": "vec2",
       "glslName": "*",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -75269,7 +75269,7 @@
       "returnGlslType": "vec2",
       "glslName": "*",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -75294,7 +75294,7 @@
       "returnGlslType": "vec2",
       "glslName": "-",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -75319,7 +75319,7 @@
       "returnGlslType": "vec2",
       "glslName": "-",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -75344,7 +75344,7 @@
       "returnGlslType": "vec2",
       "glslName": "-",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -75367,7 +75367,7 @@
       "returnGlslType": "vec2",
       "glslName": "-",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -75390,7 +75390,7 @@
       "returnGlslType": "vec2",
       "glslName": "\u002B",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -75413,7 +75413,7 @@
       "returnGlslType": "vec3",
       "glslName": "abs",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -75655,7 +75655,7 @@
       "returnGlslType": "vec3",
       "glslName": "clamp",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -75682,7 +75682,7 @@
       "returnGlslType": "vec3",
       "glslName": "clamp",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -75785,7 +75785,7 @@
       "returnGlslType": "vec3",
       "glslName": "cross",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -75829,7 +75829,7 @@
       "returnGlslType": "float",
       "glslName": "distance",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -75854,7 +75854,7 @@
       "returnGlslType": "float",
       "glslName": "dot",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -75921,7 +75921,7 @@
       "returnGlslType": "bvec3",
       "glslName": "equal",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -76024,7 +76024,7 @@
       "returnGlslType": "vec3",
       "glslName": "faceforward",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -76371,7 +76371,7 @@
       "returnGlslType": "float",
       "glslName": "length",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -76398,7 +76398,7 @@
       "returnGlslType": "vec3",
       "glslName": "mix",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -76425,7 +76425,7 @@
       "returnGlslType": "vec3",
       "glslName": "mix",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -76633,7 +76633,7 @@
       "returnGlslType": "vec3",
       "glslName": "max",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -76658,7 +76658,7 @@
       "returnGlslType": "vec3",
       "glslName": "max",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -76683,7 +76683,7 @@
       "returnGlslType": "vec3",
       "glslName": "max",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -76708,7 +76708,7 @@
       "returnGlslType": "vec3",
       "glslName": "min",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -76733,7 +76733,7 @@
       "returnGlslType": "vec3",
       "glslName": "min",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -76758,7 +76758,7 @@
       "returnGlslType": "vec3",
       "glslName": "min",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -76804,7 +76804,7 @@
       "returnGlslType": "vec3",
       "glslName": "normalize",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -76911,7 +76911,7 @@
       "returnGlslType": "bvec3",
       "glslName": "notEqual",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -77100,7 +77100,7 @@
       "returnGlslType": "vec3",
       "glslName": "reflect",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -77261,7 +77261,7 @@
       "returnGlslType": "vec3",
       "glslName": "delta_select",
       "mapping": "Helper",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -77372,7 +77372,7 @@
       "returnGlslType": "vec3",
       "glslName": "smoothstep",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -77399,7 +77399,7 @@
       "returnGlslType": "vec3",
       "glslName": "smoothstep",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -77483,7 +77483,7 @@
       "returnGlslType": "vec3",
       "glslName": "step",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -77508,7 +77508,7 @@
       "returnGlslType": "vec3",
       "glslName": "step",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -77624,7 +77624,7 @@
       "returnGlslType": "vec3",
       "glslName": "\u002B",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -77649,7 +77649,7 @@
       "returnGlslType": "vec3",
       "glslName": "\u002B",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -77674,7 +77674,7 @@
       "returnGlslType": "vec3",
       "glslName": "\u002B",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -77718,7 +77718,7 @@
       "returnGlslType": "vec3",
       "glslName": "/",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -77743,7 +77743,7 @@
       "returnGlslType": "vec3",
       "glslName": "/",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -77768,7 +77768,7 @@
       "returnGlslType": "vec3",
       "glslName": "/",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -78245,7 +78245,7 @@
       "returnGlslType": "vec3",
       "glslName": "*",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -78270,7 +78270,7 @@
       "returnGlslType": "vec3",
       "glslName": "*",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -78295,7 +78295,7 @@
       "returnGlslType": "vec3",
       "glslName": "*",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -78320,7 +78320,7 @@
       "returnGlslType": "vec3",
       "glslName": "-",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -78345,7 +78345,7 @@
       "returnGlslType": "vec3",
       "glslName": "-",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -78370,7 +78370,7 @@
       "returnGlslType": "vec3",
       "glslName": "-",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -78393,7 +78393,7 @@
       "returnGlslType": "vec3",
       "glslName": "-",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -78416,7 +78416,7 @@
       "returnGlslType": "vec3",
       "glslName": "\u002B",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -78439,7 +78439,7 @@
       "returnGlslType": "vec4",
       "glslName": "abs",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -78681,7 +78681,7 @@
       "returnGlslType": "vec4",
       "glslName": "clamp",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -78708,7 +78708,7 @@
       "returnGlslType": "vec4",
       "glslName": "clamp",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -78830,7 +78830,7 @@
       "returnGlslType": "float",
       "glslName": "distance",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -78855,7 +78855,7 @@
       "returnGlslType": "float",
       "glslName": "dot",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -78922,7 +78922,7 @@
       "returnGlslType": "bvec4",
       "glslName": "equal",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -79025,7 +79025,7 @@
       "returnGlslType": "vec4",
       "glslName": "faceforward",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -79372,7 +79372,7 @@
       "returnGlslType": "float",
       "glslName": "length",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -79399,7 +79399,7 @@
       "returnGlslType": "vec4",
       "glslName": "mix",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -79426,7 +79426,7 @@
       "returnGlslType": "vec4",
       "glslName": "mix",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -79634,7 +79634,7 @@
       "returnGlslType": "vec4",
       "glslName": "max",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -79659,7 +79659,7 @@
       "returnGlslType": "vec4",
       "glslName": "max",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -79684,7 +79684,7 @@
       "returnGlslType": "vec4",
       "glslName": "max",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -79709,7 +79709,7 @@
       "returnGlslType": "vec4",
       "glslName": "min",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -79734,7 +79734,7 @@
       "returnGlslType": "vec4",
       "glslName": "min",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -79759,7 +79759,7 @@
       "returnGlslType": "vec4",
       "glslName": "min",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -79805,7 +79805,7 @@
       "returnGlslType": "vec4",
       "glslName": "normalize",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -79912,7 +79912,7 @@
       "returnGlslType": "bvec4",
       "glslName": "notEqual",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -80101,7 +80101,7 @@
       "returnGlslType": "vec4",
       "glslName": "reflect",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -80262,7 +80262,7 @@
       "returnGlslType": "vec4",
       "glslName": "delta_select",
       "mapping": "Helper",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -80373,7 +80373,7 @@
       "returnGlslType": "vec4",
       "glslName": "smoothstep",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -80400,7 +80400,7 @@
       "returnGlslType": "vec4",
       "glslName": "smoothstep",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -80484,7 +80484,7 @@
       "returnGlslType": "vec4",
       "glslName": "step",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -80509,7 +80509,7 @@
       "returnGlslType": "vec4",
       "glslName": "step",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -80625,7 +80625,7 @@
       "returnGlslType": "vec4",
       "glslName": "\u002B",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -80650,7 +80650,7 @@
       "returnGlslType": "vec4",
       "glslName": "\u002B",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -80675,7 +80675,7 @@
       "returnGlslType": "vec4",
       "glslName": "\u002B",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -80719,7 +80719,7 @@
       "returnGlslType": "vec4",
       "glslName": "/",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -80744,7 +80744,7 @@
       "returnGlslType": "vec4",
       "glslName": "/",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -80769,7 +80769,7 @@
       "returnGlslType": "vec4",
       "glslName": "/",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -81246,7 +81246,7 @@
       "returnGlslType": "vec4",
       "glslName": "*",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -81271,7 +81271,7 @@
       "returnGlslType": "vec4",
       "glslName": "*",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -81296,7 +81296,7 @@
       "returnGlslType": "vec4",
       "glslName": "*",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -81321,7 +81321,7 @@
       "returnGlslType": "vec4",
       "glslName": "-",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -81346,7 +81346,7 @@
       "returnGlslType": "vec4",
       "glslName": "-",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -81371,7 +81371,7 @@
       "returnGlslType": "vec4",
       "glslName": "-",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -81394,7 +81394,7 @@
       "returnGlslType": "vec4",
       "glslName": "-",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -81417,7 +81417,7 @@
       "returnGlslType": "vec4",
       "glslName": "\u002B",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -81440,7 +81440,7 @@
       "returnGlslType": "mat4",
       "glslName": "delta_createFromQuaternion",
       "mapping": "Helper",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -81467,7 +81467,7 @@
       "returnGlslType": "mat4",
       "glslName": "delta_createLookTo",
       "mapping": "Helper",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -81496,7 +81496,7 @@
       "returnGlslType": "mat4",
       "glslName": "delta_createPerspectiveFovLH",
       "mapping": "Helper",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -81519,7 +81519,7 @@
       "returnGlslType": "mat4",
       "glslName": "delta_createScale",
       "mapping": "Helper",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -81542,7 +81542,7 @@
       "returnGlslType": "mat4",
       "glslName": "delta_createScale",
       "mapping": "Helper",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -81569,7 +81569,7 @@
       "returnGlslType": "mat4",
       "glslName": "delta_createTRS",
       "mapping": "Helper",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -81592,7 +81592,7 @@
       "returnGlslType": "mat4",
       "glslName": "delta_createTranslation",
       "mapping": "Helper",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -81640,7 +81640,7 @@
       "returnGlslType": "float",
       "glslName": "determinant",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -81817,7 +81817,7 @@
       "returnGlslType": "mat4",
       "glslName": "inverse",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -81842,7 +81842,7 @@
       "returnGlslType": "vec4",
       "glslName": "*",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -81867,7 +81867,7 @@
       "returnGlslType": "mat4",
       "glslName": "*",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -81892,7 +81892,7 @@
       "returnGlslType": "mat4",
       "glslName": "*",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -81955,7 +81955,7 @@
       "returnGlslType": "vec3",
       "glslName": "delta_transformDirection",
       "mapping": "Helper",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -81980,7 +81980,7 @@
       "returnGlslType": "vec3",
       "glslName": "delta_transformPoint",
       "mapping": "Helper",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -82003,7 +82003,7 @@
       "returnGlslType": "mat4",
       "glslName": "transpose",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -82047,7 +82047,7 @@
       "returnGlslType": "ivec2",
       "glslName": "abs",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -82074,7 +82074,7 @@
       "returnGlslType": "ivec2",
       "glslName": "clamp",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -82101,7 +82101,7 @@
       "returnGlslType": "ivec2",
       "glslName": "clamp",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -82208,7 +82208,7 @@
       "returnGlslType": "bvec2",
       "glslName": "equal",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -82538,7 +82538,7 @@
       "returnGlslType": "ivec2",
       "glslName": "max",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -82563,7 +82563,7 @@
       "returnGlslType": "ivec2",
       "glslName": "max",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -82588,7 +82588,7 @@
       "returnGlslType": "ivec2",
       "glslName": "max",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -82613,7 +82613,7 @@
       "returnGlslType": "ivec2",
       "glslName": "min",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -82638,7 +82638,7 @@
       "returnGlslType": "ivec2",
       "glslName": "min",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -82663,7 +82663,7 @@
       "returnGlslType": "ivec2",
       "glslName": "min",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -82730,7 +82730,7 @@
       "returnGlslType": "bvec2",
       "glslName": "notEqual",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -82862,7 +82862,7 @@
       "returnGlslType": "ivec2",
       "glslName": "delta_select",
       "mapping": "Helper",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -82959,7 +82959,7 @@
       "returnGlslType": "ivec2",
       "glslName": "\u002B",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -82984,7 +82984,7 @@
       "returnGlslType": "ivec2",
       "glslName": "\u002B",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -83009,7 +83009,7 @@
       "returnGlslType": "ivec2",
       "glslName": "\u002B",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -83179,7 +83179,7 @@
       "returnGlslType": "ivec2",
       "glslName": "/",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -83204,7 +83204,7 @@
       "returnGlslType": "ivec2",
       "glslName": "/",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -83229,7 +83229,7 @@
       "returnGlslType": "ivec2",
       "glslName": "/",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -83790,7 +83790,7 @@
       "returnGlslType": "ivec2",
       "glslName": "*",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -83815,7 +83815,7 @@
       "returnGlslType": "ivec2",
       "glslName": "*",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -83840,7 +83840,7 @@
       "returnGlslType": "ivec2",
       "glslName": "*",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -83886,7 +83886,7 @@
       "returnGlslType": "ivec2",
       "glslName": "-",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -83911,7 +83911,7 @@
       "returnGlslType": "ivec2",
       "glslName": "-",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -83936,7 +83936,7 @@
       "returnGlslType": "ivec2",
       "glslName": "-",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -83959,7 +83959,7 @@
       "returnGlslType": "ivec2",
       "glslName": "-",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -83982,7 +83982,7 @@
       "returnGlslType": "ivec2",
       "glslName": "\u002B",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -84005,7 +84005,7 @@
       "returnGlslType": "ivec3",
       "glslName": "abs",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -84032,7 +84032,7 @@
       "returnGlslType": "ivec3",
       "glslName": "clamp",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -84059,7 +84059,7 @@
       "returnGlslType": "ivec3",
       "glslName": "clamp",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -84166,7 +84166,7 @@
       "returnGlslType": "bvec3",
       "glslName": "equal",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -84496,7 +84496,7 @@
       "returnGlslType": "ivec3",
       "glslName": "max",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -84521,7 +84521,7 @@
       "returnGlslType": "ivec3",
       "glslName": "max",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -84546,7 +84546,7 @@
       "returnGlslType": "ivec3",
       "glslName": "max",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -84571,7 +84571,7 @@
       "returnGlslType": "ivec3",
       "glslName": "min",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -84596,7 +84596,7 @@
       "returnGlslType": "ivec3",
       "glslName": "min",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -84621,7 +84621,7 @@
       "returnGlslType": "ivec3",
       "glslName": "min",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -84688,7 +84688,7 @@
       "returnGlslType": "bvec3",
       "glslName": "notEqual",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -84820,7 +84820,7 @@
       "returnGlslType": "ivec3",
       "glslName": "delta_select",
       "mapping": "Helper",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -84917,7 +84917,7 @@
       "returnGlslType": "ivec3",
       "glslName": "\u002B",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -84942,7 +84942,7 @@
       "returnGlslType": "ivec3",
       "glslName": "\u002B",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -84967,7 +84967,7 @@
       "returnGlslType": "ivec3",
       "glslName": "\u002B",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -85137,7 +85137,7 @@
       "returnGlslType": "ivec3",
       "glslName": "/",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -85162,7 +85162,7 @@
       "returnGlslType": "ivec3",
       "glslName": "/",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -85187,7 +85187,7 @@
       "returnGlslType": "ivec3",
       "glslName": "/",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -85748,7 +85748,7 @@
       "returnGlslType": "ivec3",
       "glslName": "*",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -85773,7 +85773,7 @@
       "returnGlslType": "ivec3",
       "glslName": "*",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -85798,7 +85798,7 @@
       "returnGlslType": "ivec3",
       "glslName": "*",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -85844,7 +85844,7 @@
       "returnGlslType": "ivec3",
       "glslName": "-",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -85869,7 +85869,7 @@
       "returnGlslType": "ivec3",
       "glslName": "-",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -85894,7 +85894,7 @@
       "returnGlslType": "ivec3",
       "glslName": "-",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -85917,7 +85917,7 @@
       "returnGlslType": "ivec3",
       "glslName": "-",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -85940,7 +85940,7 @@
       "returnGlslType": "ivec3",
       "glslName": "\u002B",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -85963,7 +85963,7 @@
       "returnGlslType": "ivec4",
       "glslName": "abs",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -85990,7 +85990,7 @@
       "returnGlslType": "ivec4",
       "glslName": "clamp",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -86017,7 +86017,7 @@
       "returnGlslType": "ivec4",
       "glslName": "clamp",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -86124,7 +86124,7 @@
       "returnGlslType": "bvec4",
       "glslName": "equal",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -86454,7 +86454,7 @@
       "returnGlslType": "ivec4",
       "glslName": "max",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -86479,7 +86479,7 @@
       "returnGlslType": "ivec4",
       "glslName": "max",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -86504,7 +86504,7 @@
       "returnGlslType": "ivec4",
       "glslName": "max",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -86529,7 +86529,7 @@
       "returnGlslType": "ivec4",
       "glslName": "min",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -86554,7 +86554,7 @@
       "returnGlslType": "ivec4",
       "glslName": "min",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -86579,7 +86579,7 @@
       "returnGlslType": "ivec4",
       "glslName": "min",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -86646,7 +86646,7 @@
       "returnGlslType": "bvec4",
       "glslName": "notEqual",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -86778,7 +86778,7 @@
       "returnGlslType": "ivec4",
       "glslName": "delta_select",
       "mapping": "Helper",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -86875,7 +86875,7 @@
       "returnGlslType": "ivec4",
       "glslName": "\u002B",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -86900,7 +86900,7 @@
       "returnGlslType": "ivec4",
       "glslName": "\u002B",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -86925,7 +86925,7 @@
       "returnGlslType": "ivec4",
       "glslName": "\u002B",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -87095,7 +87095,7 @@
       "returnGlslType": "ivec4",
       "glslName": "/",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -87120,7 +87120,7 @@
       "returnGlslType": "ivec4",
       "glslName": "/",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -87145,7 +87145,7 @@
       "returnGlslType": "ivec4",
       "glslName": "/",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -87706,7 +87706,7 @@
       "returnGlslType": "ivec4",
       "glslName": "*",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -87731,7 +87731,7 @@
       "returnGlslType": "ivec4",
       "glslName": "*",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -87756,7 +87756,7 @@
       "returnGlslType": "ivec4",
       "glslName": "*",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -87802,7 +87802,7 @@
       "returnGlslType": "ivec4",
       "glslName": "-",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -87827,7 +87827,7 @@
       "returnGlslType": "ivec4",
       "glslName": "-",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -87852,7 +87852,7 @@
       "returnGlslType": "ivec4",
       "glslName": "-",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -87875,7 +87875,7 @@
       "returnGlslType": "ivec4",
       "glslName": "-",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -87898,7 +87898,7 @@
       "returnGlslType": "ivec4",
       "glslName": "\u002B",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -87942,7 +87942,7 @@
       "returnGlslType": "vec4",
       "glslName": "delta_quaternionConjugate",
       "mapping": "Helper",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -87967,7 +87967,7 @@
       "returnGlslType": "vec4",
       "glslName": "delta_quaternionFromAxisAngle",
       "mapping": "Helper",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -87990,7 +87990,7 @@
       "returnGlslType": "vec4",
       "glslName": "delta_quaternionFromMatrix",
       "mapping": "Helper",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -88017,7 +88017,7 @@
       "returnGlslType": "vec4",
       "glslName": "delta_quaternionFromYawPitchRoll",
       "mapping": "Helper",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -88177,7 +88177,7 @@
       "returnGlslType": "vec4",
       "glslName": "delta_quaternionInverse",
       "mapping": "Helper",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -88223,7 +88223,7 @@
       "returnGlslType": "vec4",
       "glslName": "delta_quaternionLerp",
       "mapping": "Helper",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -88290,7 +88290,7 @@
       "returnGlslType": "vec4",
       "glslName": "delta_quaternionMultiply",
       "mapping": "Helper",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -88332,7 +88332,7 @@
       "returnGlslType": "vec4",
       "glslName": "delta_quaternionNormalize",
       "mapping": "Helper",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -88376,7 +88376,7 @@
       "returnGlslType": "vec3",
       "glslName": "delta_quaternionRotate",
       "mapping": "Helper",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -88403,7 +88403,7 @@
       "returnGlslType": "vec4",
       "glslName": "delta_quaternionSlerp",
       "mapping": "Helper",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -88470,7 +88470,7 @@
       "returnGlslType": "mat4",
       "glslName": "delta_quaternionToMatrix",
       "mapping": "Helper",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -88533,7 +88533,7 @@
       "returnGlslType": "uvec2",
       "glslName": "clamp",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -88560,7 +88560,7 @@
       "returnGlslType": "uvec2",
       "glslName": "clamp",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -88667,7 +88667,7 @@
       "returnGlslType": "bvec2",
       "glslName": "equal",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -88997,7 +88997,7 @@
       "returnGlslType": "uvec2",
       "glslName": "max",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -89022,7 +89022,7 @@
       "returnGlslType": "uvec2",
       "glslName": "max",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -89047,7 +89047,7 @@
       "returnGlslType": "uvec2",
       "glslName": "max",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -89072,7 +89072,7 @@
       "returnGlslType": "uvec2",
       "glslName": "min",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -89097,7 +89097,7 @@
       "returnGlslType": "uvec2",
       "glslName": "min",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -89122,7 +89122,7 @@
       "returnGlslType": "uvec2",
       "glslName": "min",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -89189,7 +89189,7 @@
       "returnGlslType": "bvec2",
       "glslName": "notEqual",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -89321,7 +89321,7 @@
       "returnGlslType": "uvec2",
       "glslName": "delta_select",
       "mapping": "Helper",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -89399,7 +89399,7 @@
       "returnGlslType": "uvec2",
       "glslName": "\u002B",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -89424,7 +89424,7 @@
       "returnGlslType": "uvec2",
       "glslName": "\u002B",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -89449,7 +89449,7 @@
       "returnGlslType": "uvec2",
       "glslName": "\u002B",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -89619,7 +89619,7 @@
       "returnGlslType": "uvec2",
       "glslName": "/",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -89644,7 +89644,7 @@
       "returnGlslType": "uvec2",
       "glslName": "/",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -89669,7 +89669,7 @@
       "returnGlslType": "uvec2",
       "glslName": "/",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -90211,7 +90211,7 @@
       "returnGlslType": "uvec2",
       "glslName": "*",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -90236,7 +90236,7 @@
       "returnGlslType": "uvec2",
       "glslName": "*",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -90261,7 +90261,7 @@
       "returnGlslType": "uvec2",
       "glslName": "*",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -90307,7 +90307,7 @@
       "returnGlslType": "uvec2",
       "glslName": "-",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -90332,7 +90332,7 @@
       "returnGlslType": "uvec2",
       "glslName": "-",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -90357,7 +90357,7 @@
       "returnGlslType": "uvec2",
       "glslName": "-",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -90380,7 +90380,7 @@
       "returnGlslType": "uvec2",
       "glslName": "\u002B",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -90407,7 +90407,7 @@
       "returnGlslType": "uvec3",
       "glslName": "clamp",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -90434,7 +90434,7 @@
       "returnGlslType": "uvec3",
       "glslName": "clamp",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -90541,7 +90541,7 @@
       "returnGlslType": "bvec3",
       "glslName": "equal",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -90871,7 +90871,7 @@
       "returnGlslType": "uvec3",
       "glslName": "max",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -90896,7 +90896,7 @@
       "returnGlslType": "uvec3",
       "glslName": "max",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -90921,7 +90921,7 @@
       "returnGlslType": "uvec3",
       "glslName": "max",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -90946,7 +90946,7 @@
       "returnGlslType": "uvec3",
       "glslName": "min",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -90971,7 +90971,7 @@
       "returnGlslType": "uvec3",
       "glslName": "min",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -90996,7 +90996,7 @@
       "returnGlslType": "uvec3",
       "glslName": "min",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -91063,7 +91063,7 @@
       "returnGlslType": "bvec3",
       "glslName": "notEqual",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -91195,7 +91195,7 @@
       "returnGlslType": "uvec3",
       "glslName": "delta_select",
       "mapping": "Helper",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -91273,7 +91273,7 @@
       "returnGlslType": "uvec3",
       "glslName": "\u002B",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -91298,7 +91298,7 @@
       "returnGlslType": "uvec3",
       "glslName": "\u002B",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -91323,7 +91323,7 @@
       "returnGlslType": "uvec3",
       "glslName": "\u002B",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -91493,7 +91493,7 @@
       "returnGlslType": "uvec3",
       "glslName": "/",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -91518,7 +91518,7 @@
       "returnGlslType": "uvec3",
       "glslName": "/",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -91543,7 +91543,7 @@
       "returnGlslType": "uvec3",
       "glslName": "/",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -92085,7 +92085,7 @@
       "returnGlslType": "uvec3",
       "glslName": "*",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -92110,7 +92110,7 @@
       "returnGlslType": "uvec3",
       "glslName": "*",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -92135,7 +92135,7 @@
       "returnGlslType": "uvec3",
       "glslName": "*",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -92181,7 +92181,7 @@
       "returnGlslType": "uvec3",
       "glslName": "-",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -92206,7 +92206,7 @@
       "returnGlslType": "uvec3",
       "glslName": "-",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -92231,7 +92231,7 @@
       "returnGlslType": "uvec3",
       "glslName": "-",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -92254,7 +92254,7 @@
       "returnGlslType": "uvec3",
       "glslName": "\u002B",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -92281,7 +92281,7 @@
       "returnGlslType": "uvec4",
       "glslName": "clamp",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -92308,7 +92308,7 @@
       "returnGlslType": "uvec4",
       "glslName": "clamp",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -92415,7 +92415,7 @@
       "returnGlslType": "bvec4",
       "glslName": "equal",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -92745,7 +92745,7 @@
       "returnGlslType": "uvec4",
       "glslName": "max",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -92770,7 +92770,7 @@
       "returnGlslType": "uvec4",
       "glslName": "max",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -92795,7 +92795,7 @@
       "returnGlslType": "uvec4",
       "glslName": "max",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -92820,7 +92820,7 @@
       "returnGlslType": "uvec4",
       "glslName": "min",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -92845,7 +92845,7 @@
       "returnGlslType": "uvec4",
       "glslName": "min",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -92870,7 +92870,7 @@
       "returnGlslType": "uvec4",
       "glslName": "min",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -92937,7 +92937,7 @@
       "returnGlslType": "bvec4",
       "glslName": "notEqual",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -93069,7 +93069,7 @@
       "returnGlslType": "uvec4",
       "glslName": "delta_select",
       "mapping": "Helper",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -93147,7 +93147,7 @@
       "returnGlslType": "uvec4",
       "glslName": "\u002B",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -93172,7 +93172,7 @@
       "returnGlslType": "uvec4",
       "glslName": "\u002B",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -93197,7 +93197,7 @@
       "returnGlslType": "uvec4",
       "glslName": "\u002B",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -93367,7 +93367,7 @@
       "returnGlslType": "uvec4",
       "glslName": "/",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -93392,7 +93392,7 @@
       "returnGlslType": "uvec4",
       "glslName": "/",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -93417,7 +93417,7 @@
       "returnGlslType": "uvec4",
       "glslName": "/",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -93959,7 +93959,7 @@
       "returnGlslType": "uvec4",
       "glslName": "*",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -93984,7 +93984,7 @@
       "returnGlslType": "uvec4",
       "glslName": "*",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -94009,7 +94009,7 @@
       "returnGlslType": "uvec4",
       "glslName": "*",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -94055,7 +94055,7 @@
       "returnGlslType": "uvec4",
       "glslName": "-",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -94080,7 +94080,7 @@
       "returnGlslType": "uvec4",
       "glslName": "-",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -94105,7 +94105,7 @@
       "returnGlslType": "uvec4",
       "glslName": "-",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",
@@ -94128,7 +94128,7 @@
       "returnGlslType": "uvec4",
       "glslName": "\u002B",
       "mapping": "Builtin",
-      "shaderZone": "Delta.Maths",
+      "shaderZone": "DeltaMaths",
       "stages": [
         "vertex",
         "fragment",

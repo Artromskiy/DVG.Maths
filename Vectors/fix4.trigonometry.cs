@@ -4,54 +4,54 @@ using System;
 using System.Runtime.InteropServices;
 using System.Runtime.CompilerServices;
 
-namespace Delta.Maths
+namespace DeltaMaths
 {
     public partial struct fix4
     {
 
         public static fix4 Sin(fix4 value)
         {
-            return new(Maths.Sin(value.x), Maths.Sin(value.y), Maths.Sin(value.z), Maths.Sin(value.w));
+            return new(DeltaMaths.Sin(value.x), DeltaMaths.Sin(value.y), DeltaMaths.Sin(value.z), DeltaMaths.Sin(value.w));
         }
 
         public static fix4 Cos(fix4 value)
         {
-            return new(Maths.Cos(value.x), Maths.Cos(value.y), Maths.Cos(value.z), Maths.Cos(value.w));
+            return new(DeltaMaths.Cos(value.x), DeltaMaths.Cos(value.y), DeltaMaths.Cos(value.z), DeltaMaths.Cos(value.w));
         }
 
         public static fix4 Tan(fix4 value)
         {
-            return new(Maths.Tan(value.x), Maths.Tan(value.y), Maths.Tan(value.z), Maths.Tan(value.w));
+            return new(DeltaMaths.Tan(value.x), DeltaMaths.Tan(value.y), DeltaMaths.Tan(value.z), DeltaMaths.Tan(value.w));
         }
 
         public static fix4 Asin(fix4 value)
         {
-            return new(Maths.Asin(value.x), Maths.Asin(value.y), Maths.Asin(value.z), Maths.Asin(value.w));
+            return new(DeltaMaths.Asin(value.x), DeltaMaths.Asin(value.y), DeltaMaths.Asin(value.z), DeltaMaths.Asin(value.w));
         }
 
         public static fix4 Acos(fix4 value)
         {
-            return new(Maths.Acos(value.x), Maths.Acos(value.y), Maths.Acos(value.z), Maths.Acos(value.w));
+            return new(DeltaMaths.Acos(value.x), DeltaMaths.Acos(value.y), DeltaMaths.Acos(value.z), DeltaMaths.Acos(value.w));
         }
 
         public static fix4 Atan(fix4 value)
         {
-            return new(Maths.Atan(value.x), Maths.Atan(value.y), Maths.Atan(value.z), Maths.Atan(value.w));
+            return new(DeltaMaths.Atan(value.x), DeltaMaths.Atan(value.y), DeltaMaths.Atan(value.z), DeltaMaths.Atan(value.w));
         }
 
         public static fix4 Atan2(fix4 y, fix4 x)
         {
-            return new(Maths.Atan2(y.x, x.x), Maths.Atan2(y.y, x.y), Maths.Atan2(y.z, x.z), Maths.Atan2(y.w, x.w));
+            return new(DeltaMaths.Atan2(y.x, x.x), DeltaMaths.Atan2(y.y, x.y), DeltaMaths.Atan2(y.z, x.z), DeltaMaths.Atan2(y.w, x.w));
         }
 
         public static fix4 Atan2(fix4 y, fix x)
         {
-            return new(Maths.Atan2(y.x, x), Maths.Atan2(y.y, x), Maths.Atan2(y.z, x), Maths.Atan2(y.w, x));
+            return new(DeltaMaths.Atan2(y.x, x), DeltaMaths.Atan2(y.y, x), DeltaMaths.Atan2(y.z, x), DeltaMaths.Atan2(y.w, x));
         }
 
         public static fix4 Atan2(fix y, fix4 x)
         {
-            return new(Maths.Atan2(y, x.x), Maths.Atan2(y, x.y), Maths.Atan2(y, x.z), Maths.Atan2(y, x.w));
+            return new(DeltaMaths.Atan2(y, x.x), DeltaMaths.Atan2(y, x.y), DeltaMaths.Atan2(y, x.z), DeltaMaths.Atan2(y, x.w));
         }
     }
 }

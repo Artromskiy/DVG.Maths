@@ -1,6 +1,6 @@
 using BenchmarkDotNet.Attributes;
 
-namespace Delta.Maths.Benchmarks;
+namespace DeltaMaths.Benchmarks;
 
 [MemoryDiagnoser]
 public class VectorGeometryBenchmarks

@@ -4,7 +4,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Runtime.CompilerServices;
 
-namespace Delta.Maths
+namespace DeltaMaths
 {
     public partial struct float4x4
     {
@@ -37,7 +37,7 @@ namespace Delta.Maths
             var c23 = -minor(value.M11, value.M12, value.M14, value.M31, value.M32, value.M34, value.M41, value.M42, value.M44);
             var c24 = minor(value.M11, value.M12, value.M13, value.M31, value.M32, value.M33, value.M41, value.M42, value.M43);
             var determinant = value.M11 * c11 + value.M12 * c12 + value.M13 * c13 + value.M14 * c14;
-            if (Maths.Abs(determinant) <= 1e-8f)
+            if (DeltaMaths.Abs(determinant) <= 1e-8f)
             {
                 result = default;
                 return false;

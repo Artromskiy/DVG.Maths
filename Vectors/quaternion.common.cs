@@ -4,7 +4,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Runtime.CompilerServices;
 
-namespace Delta.Maths
+namespace DeltaMaths
 {
     public partial struct quaternion
     {
@@ -21,13 +21,13 @@ namespace Delta.Maths
 
         public static quaternion Normalize(quaternion value)
         {
-            return value / Maths.Sqrt(LengthSquared(value));
+            return value / DeltaMaths.Sqrt(LengthSquared(value));
         }
 
         public static quaternion NormalizeSafe(quaternion value)
         {
             var lengthSquared = LengthSquared(value);
-            return lengthSquared <= 1e-20f ? identity : value / Maths.Sqrt(lengthSquared);
+            return lengthSquared <= 1e-20f ? identity : value / DeltaMaths.Sqrt(lengthSquared);
         }
 
         public static quaternion Conjugate(quaternion value)
@@ -59,10 +59,10 @@ namespace Delta.Maths
             var dot = Dot(start, end);
             if (dot < 0f) { end = -end; dot = -dot; }
             if (dot > 0.9995f) return Lerp(start, end, amount);
-            dot = Maths.Clamp(dot, -1f, 1f);
-            var angle = Maths.Acos(dot);
-            var scale = 1f / Maths.Sin(angle);
-            return start * (Maths.Sin((1f - amount) * angle) * scale) + end * (Maths.Sin(amount * angle) * scale);
+            dot = DeltaMaths.Clamp(dot, -1f, 1f);
+            var angle = DeltaMaths.Acos(dot);
+            var scale = 1f / DeltaMaths.Sin(angle);
+            return start * (DeltaMaths.Sin((1f - amount) * angle) * scale) + end * (DeltaMaths.Sin(amount * angle) * scale);
         }
     }
 }

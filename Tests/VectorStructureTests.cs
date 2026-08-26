@@ -2,7 +2,7 @@ using System;
 using System.Linq;
 using System.Reflection;
 
-namespace Delta.Maths.Tests
+namespace DeltaMaths.Tests
 {
     internal static class VectorStructureTests
     {
@@ -134,7 +134,7 @@ namespace Delta.Maths.Tests
 
         private static Type VectorType(string scalar, int dimension)
         {
-            var typeName = "Delta.Maths." + scalar + dimension;
+            var typeName = "DeltaMaths." + scalar + dimension;
             var type = typeof(float2).Assembly.GetType(typeName, throwOnError: false);
             return type ?? throw new InvalidOperationException($"Missing generated vector type '{typeName}'.");
         }

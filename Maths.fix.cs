@@ -1,8 +1,8 @@
 using System.Runtime.CompilerServices;
 
-namespace Delta.Maths
+namespace DeltaMaths
 {
-    public static partial class Maths
+    public static partial class DeltaMaths
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static fix Sign(fix x) => Sign(x.raw);

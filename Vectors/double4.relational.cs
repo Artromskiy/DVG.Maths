@@ -4,7 +4,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Runtime.CompilerServices;
 
-namespace Delta.Maths
+namespace DeltaMaths
 {
     public partial struct double4
     {
@@ -116,17 +116,17 @@ namespace Delta.Maths
 
         public static bool4 IsNaN(double4 value)
         {
-            return new(Maths.IsNaN(value.x), Maths.IsNaN(value.y), Maths.IsNaN(value.z), Maths.IsNaN(value.w));
+            return new(DeltaMaths.IsNaN(value.x), DeltaMaths.IsNaN(value.y), DeltaMaths.IsNaN(value.z), DeltaMaths.IsNaN(value.w));
         }
 
         public static bool4 IsInfinity(double4 value)
         {
-            return new(Maths.IsInfinity(value.x), Maths.IsInfinity(value.y), Maths.IsInfinity(value.z), Maths.IsInfinity(value.w));
+            return new(DeltaMaths.IsInfinity(value.x), DeltaMaths.IsInfinity(value.y), DeltaMaths.IsInfinity(value.z), DeltaMaths.IsInfinity(value.w));
         }
 
         public static bool4 IsFinite(double4 value)
         {
-            return new(Maths.IsFinite(value.x), Maths.IsFinite(value.y), Maths.IsFinite(value.z), Maths.IsFinite(value.w));
+            return new(DeltaMaths.IsFinite(value.x), DeltaMaths.IsFinite(value.y), DeltaMaths.IsFinite(value.z), DeltaMaths.IsFinite(value.w));
         }
     }
 }

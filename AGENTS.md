@@ -1,4 +1,4 @@
-# Maths agent guide
+# DeltaMaths agent guide
 
 Scope: portable engine-independent runtime maths and its generated shader
 symbol/layout contract.
@@ -7,7 +7,7 @@ symbol/layout contract.
 - [TODO.md](TODO.md) — selected work.
 - [IDEAS.md](IDEAS.md) — deferred research only.
 - [WORKFLOW.md](WORKFLOW.md) — generation, target builds and tests.
-- [../MathsGen/AGENTS.md](../MathsGen/AGENTS.md) — required for generated API
+- [../DeltaMathsGen/AGENTS.md](../DeltaMathsGen/AGENTS.md) — required for generated API
   changes; [../DeltaShader/AGENTS.md](../DeltaShader/AGENTS.md) — required when
   shader-visible identities or layouts change.
 - [../HIGH_PRIORITY_TODO.md](../HIGH_PRIORITY_TODO.md) — deterministic

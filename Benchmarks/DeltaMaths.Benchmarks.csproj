@@ -8,12 +8,12 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <!-- BenchmarkDotNet discovers public members by reflection; this executable is not a documented library surface. -->
     <NoWarn>$(NoWarn);CS1591</NoWarn>
-    <AssemblyName>Delta.Maths.Benchmarks</AssemblyName>
-    <RootNamespace>Delta.Maths.Benchmarks</RootNamespace>
+    <AssemblyName>DeltaMaths.Benchmarks</AssemblyName>
+    <RootNamespace>DeltaMaths.Benchmarks</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Delta.Maths.csproj" SetTargetFramework="TargetFramework=netstandard2.1" />
+    <ProjectReference Include="..\DeltaMaths.csproj" SetTargetFramework="TargetFramework=netstandard2.1" />
     <PackageReference Include="BenchmarkDotNet" Version="0.13.12" />
   </ItemGroup>
 

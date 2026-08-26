@@ -4,7 +4,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Runtime.CompilerServices;
 
-namespace Delta.Maths
+namespace DeltaMaths
 {
     public partial struct float4x4
     {
@@ -69,7 +69,7 @@ namespace Delta.Maths
 
         public static float4x4 CreatePerspectiveFieldOfViewLeftHanded(float fieldOfView, float aspectRatio, float nearPlaneDistance, float farPlaneDistance)
         {
-            var yScale = 1f / Maths.Tan(fieldOfView * 0.5f);
+            var yScale = 1f / DeltaMaths.Tan(fieldOfView * 0.5f);
             var xScale = yScale / aspectRatio;
             var range = farPlaneDistance / (farPlaneDistance - nearPlaneDistance);
             return new float4x4(xScale, 0f, 0f, 0f, 0f, yScale, 0f, 0f, 0f, 0f, range, -nearPlaneDistance * range, 0f, 0f, 1f, 0f);

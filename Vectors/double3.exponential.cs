@@ -4,64 +4,64 @@ using System;
 using System.Runtime.InteropServices;
 using System.Runtime.CompilerServices;
 
-namespace Delta.Maths
+namespace DeltaMaths
 {
     public partial struct double3
     {
 
         public static double3 Exp(double3 value)
         {
-            return new(Maths.Exp(value.x), Maths.Exp(value.y), Maths.Exp(value.z));
+            return new(DeltaMaths.Exp(value.x), DeltaMaths.Exp(value.y), DeltaMaths.Exp(value.z));
         }
 
         public static double3 Exp2(double3 value)
         {
-            return new(Maths.Exp2(value.x), Maths.Exp2(value.y), Maths.Exp2(value.z));
+            return new(DeltaMaths.Exp2(value.x), DeltaMaths.Exp2(value.y), DeltaMaths.Exp2(value.z));
         }
 
         public static double3 Log(double3 value)
         {
-            return new(Maths.Log(value.x), Maths.Log(value.y), Maths.Log(value.z));
+            return new(DeltaMaths.Log(value.x), DeltaMaths.Log(value.y), DeltaMaths.Log(value.z));
         }
 
         public static double3 Log2(double3 value)
         {
-            return new(Maths.Log2(value.x), Maths.Log2(value.y), Maths.Log2(value.z));
+            return new(DeltaMaths.Log2(value.x), DeltaMaths.Log2(value.y), DeltaMaths.Log2(value.z));
         }
 
         public static double3 Log10(double3 value)
         {
-            return new(Maths.Log10(value.x), Maths.Log10(value.y), Maths.Log10(value.z));
+            return new(DeltaMaths.Log10(value.x), DeltaMaths.Log10(value.y), DeltaMaths.Log10(value.z));
         }
 
         public static double3 Sqrt(double3 value)
         {
-            return new(Maths.Sqrt(value.x), Maths.Sqrt(value.y), Maths.Sqrt(value.z));
+            return new(DeltaMaths.Sqrt(value.x), DeltaMaths.Sqrt(value.y), DeltaMaths.Sqrt(value.z));
         }
 
         public static double3 InverseSqrt(double3 value)
         {
-            return new(Maths.InverseSqrt(value.x), Maths.InverseSqrt(value.y), Maths.InverseSqrt(value.z));
+            return new(DeltaMaths.InverseSqrt(value.x), DeltaMaths.InverseSqrt(value.y), DeltaMaths.InverseSqrt(value.z));
         }
 
         public static double3 Cbrt(double3 value)
         {
-            return new(Maths.Cbrt(value.x), Maths.Cbrt(value.y), Maths.Cbrt(value.z));
+            return new(DeltaMaths.Cbrt(value.x), DeltaMaths.Cbrt(value.y), DeltaMaths.Cbrt(value.z));
         }
 
         public static double3 Pow(double3 a, double3 b)
         {
-            return new(Maths.Pow(a.x, b.x), Maths.Pow(a.y, b.y), Maths.Pow(a.z, b.z));
+            return new(DeltaMaths.Pow(a.x, b.x), DeltaMaths.Pow(a.y, b.y), DeltaMaths.Pow(a.z, b.z));
         }
 
         public static double3 Pow(double3 a, double b)
         {
-            return new(Maths.Pow(a.x, b), Maths.Pow(a.y, b), Maths.Pow(a.z, b));
+            return new(DeltaMaths.Pow(a.x, b), DeltaMaths.Pow(a.y, b), DeltaMaths.Pow(a.z, b));
         }
 
         public static double3 Pow(double a, double3 b)
         {
-            return new(Maths.Pow(a, b.x), Maths.Pow(a, b.y), Maths.Pow(a, b.z));
+            return new(DeltaMaths.Pow(a, b.x), DeltaMaths.Pow(a, b.y), DeltaMaths.Pow(a, b.z));
         }
     }
 }

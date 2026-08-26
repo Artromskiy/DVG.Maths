@@ -4,7 +4,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Runtime.CompilerServices;
 
-namespace Delta.Maths
+namespace DeltaMaths
 {
     public partial struct double3
     {
@@ -21,7 +21,7 @@ namespace Delta.Maths
 
         public static double Length(double3 value)
         {
-            return Maths.Sqrt(SqrLength(value));
+            return DeltaMaths.Sqrt(SqrLength(value));
         }
 
         public static double Distance(double3 a, double3 b)
@@ -42,13 +42,13 @@ namespace Delta.Maths
         public static double3 NormalizeSafe(double3 value)
         {
             var sqrLength = SqrLength(value);
-            return sqrLength <= 2.2250738585072014E-308 ? zero : value * Maths.InverseSqrt(sqrLength);
+            return sqrLength <= 2.2250738585072014E-308 ? zero : value * DeltaMaths.InverseSqrt(sqrLength);
         }
 
         public static double3 NormalizeSafe(double3 value, double3 fallback)
         {
             var sqrLength = SqrLength(value);
-            return sqrLength <= 2.2250738585072014E-308 ? fallback : value * Maths.InverseSqrt(sqrLength);
+            return sqrLength <= 2.2250738585072014E-308 ? fallback : value * DeltaMaths.InverseSqrt(sqrLength);
         }
 
         public static double3 FaceForward(double3 N, double3 I, double3 Nref)
@@ -66,7 +66,7 @@ namespace Delta.Maths
             var dNI = Dot(N, I);
             var k = 1 - eta * eta * (1 - dNI * dNI);
             if (k < 0) return zero;
-            return eta * I - (eta * dNI + Maths.Sqrt(k)) * N;
+            return eta * I - (eta * dNI + DeltaMaths.Sqrt(k)) * N;
         }
 
         public static double3 Project(double3 value, double3 onto)
@@ -82,28 +82,28 @@ namespace Delta.Maths
 
         public static double3 ClampLength(double3 value, double maxLength)
         {
-            maxLength = Maths.Max(maxLength, 0);
+            maxLength = DeltaMaths.Max(maxLength, 0);
             var sqrLength = SqrLength(value);
             if (sqrLength > maxLength * maxLength)
             {
-                return value * maxLength * Maths.InverseSqrt(sqrLength);
+                return value * maxLength * DeltaMaths.InverseSqrt(sqrLength);
             }
             return value;
         }
 
         public static double3 MoveTowards(double3 current, double3 target, double maxDelta)
         {
-            maxDelta = Maths.Max(maxDelta, 0);
+            maxDelta = DeltaMaths.Max(maxDelta, 0);
             var delta = target - current;
             var sqrDistance = SqrLength(delta);
             if (sqrDistance == 0 || sqrDistance <= maxDelta * maxDelta)
                 return target;
-            return current + delta * maxDelta * Maths.InverseSqrt(sqrDistance);
+            return current + delta * maxDelta * DeltaMaths.InverseSqrt(sqrDistance);
         }
 
         public static double3 SmoothDamp(double3 source, double3 target, ref double3 velocity, double smoothTime, double deltaTime)
         {
-            return new(Maths.SmoothDamp(source.x, target.x, ref velocity.x, smoothTime, deltaTime), Maths.SmoothDamp(source.y, target.y, ref velocity.y, smoothTime, deltaTime), Maths.SmoothDamp(source.z, target.z, ref velocity.z, smoothTime, deltaTime));
+            return new(DeltaMaths.SmoothDamp(source.x, target.x, ref velocity.x, smoothTime, deltaTime), DeltaMaths.SmoothDamp(source.y, target.y, ref velocity.y, smoothTime, deltaTime), DeltaMaths.SmoothDamp(source.z, target.z, ref velocity.z, smoothTime, deltaTime));
         }
 
         public static double3 Cross(double3 a, double3 b)

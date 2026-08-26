@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
-    <AssemblyName>Delta.Maths.VersionAdapter.Baseline</AssemblyName>
-    <RootNamespace>Delta.Maths.VersionAdapter</RootNamespace>
+    <AssemblyName>DeltaMaths.VersionAdapter.Baseline</AssemblyName>
+    <RootNamespace>DeltaMaths.VersionAdapter</RootNamespace>
     <LangVersion>latest</LangVersion>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
@@ -12,16 +12,16 @@
 
   <Target Name="ValidateBaselineRoot" BeforeTargets="PrepareForBuild">
     <Error Condition="'$(BaselineRoot)' == ''" Text="BaselineRoot is required. Pass -p:BaselineRoot=/path/to/baseline/checkout." />
-    <Error Condition="!Exists('$(BaselineRoot)/Delta.Maths.csproj')" Text="BaselineRoot does not contain Delta.Maths.csproj: $(BaselineRoot)" />
+    <Error Condition="!Exists('$(BaselineRoot)/DeltaMaths.csproj')" Text="BaselineRoot does not contain DeltaMaths.csproj: $(BaselineRoot)" />
   </Target>
 
   <ItemGroup>
-    <Compile Include="../MathsScenario.cs" Link="MathsScenario.cs" />
-    <ProjectReference Include="../../Shared/Delta.Maths.VersionBenchmarks.Shared.csproj" />
-    <ProjectReference Include="$(BaselineRoot)/Delta.Maths.csproj"
+    <Compile Include="../DeltaMathsScenario.cs" Link="DeltaMathsScenario.cs" />
+    <ProjectReference Include="../../Shared/DeltaMaths.VersionBenchmarks.Shared.csproj" />
+    <ProjectReference Include="$(BaselineRoot)/DeltaMaths.csproj"
                       Aliases="mathsRuntime"
                       SetTargetFramework="TargetFramework=netstandard2.1"
-                      AdditionalProperties="AssemblyName=Delta.Maths.VersionBaseline" />
+                      AdditionalProperties="AssemblyName=DeltaMaths.VersionBaseline" />
   </ItemGroup>
 
 </Project>

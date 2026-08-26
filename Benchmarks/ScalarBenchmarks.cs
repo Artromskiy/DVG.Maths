@@ -1,6 +1,6 @@
 using BenchmarkDotNet.Attributes;
 
-namespace Delta.Maths.Benchmarks;
+namespace DeltaMaths.Benchmarks;
 
 [MemoryDiagnoser]
 public class ScalarBenchmarks
@@ -42,7 +42,7 @@ public class ScalarBenchmarks
         var sum = 0f;
         for (var i = 0; i < Count; i++)
         {
-            sum += Maths.Sin(_values[i]);
+            sum += DeltaMaths.Sin(_values[i]);
         }
 
         return sum;
@@ -55,7 +55,7 @@ public class ScalarBenchmarks
         var sum = 0f;
         for (var i = 0; i < Count; i++)
         {
-            sum += Maths.Cos(_values[i]);
+            sum += DeltaMaths.Cos(_values[i]);
         }
 
         return sum;
@@ -68,7 +68,7 @@ public class ScalarBenchmarks
         var sum = 0f;
         for (var i = 0; i < Count; i++)
         {
-            sum += Maths.Sqrt(_positiveValues[i]);
+            sum += DeltaMaths.Sqrt(_positiveValues[i]);
         }
 
         return sum;
@@ -81,7 +81,7 @@ public class ScalarBenchmarks
         var sum = 0f;
         for (var i = 0; i < Count; i++)
         {
-            sum += Maths.InverseSqrt(_positiveValues[i]);
+            sum += DeltaMaths.InverseSqrt(_positiveValues[i]);
         }
 
         return sum;
@@ -94,7 +94,7 @@ public class ScalarBenchmarks
         var sum = 0f;
         for (var i = 0; i < Count; i++)
         {
-            sum += Maths.Lerp(_values[i], _otherValues[i], 0.35f);
+            sum += DeltaMaths.Lerp(_values[i], _otherValues[i], 0.35f);
         }
 
         return sum;
@@ -107,7 +107,7 @@ public class ScalarBenchmarks
         var sum = 0f;
         for (var i = 0; i < Count; i++)
         {
-            sum += Maths.Clamp(_values[i], -0.25f, 0.25f);
+            sum += DeltaMaths.Clamp(_values[i], -0.25f, 0.25f);
         }
 
         return sum;
@@ -120,7 +120,7 @@ public class ScalarBenchmarks
         var sum = 0f;
         for (var i = 0; i < Count; i++)
         {
-            sum += Maths.Atan2(_values[i], _atanDenominators[i]);
+            sum += DeltaMaths.Atan2(_values[i], _atanDenominators[i]);
         }
 
         return sum;

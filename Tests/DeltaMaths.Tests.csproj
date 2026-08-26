@@ -6,12 +6,12 @@
     <ImplicitUsings>disable</ImplicitUsings>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <AssemblyName>Delta.Maths.Tests</AssemblyName>
-    <PackageId>Delta.Maths.Tests</PackageId>
-    <RootNamespace>Delta.Maths.Tests</RootNamespace>
+    <AssemblyName>DeltaMaths.Tests</AssemblyName>
+    <PackageId>DeltaMaths.Tests</PackageId>
+    <RootNamespace>DeltaMaths.Tests</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="../Delta.Maths.csproj">
+    <ProjectReference Include="../DeltaMaths.csproj">
       <SetTargetFramework>TargetFramework=netstandard2.1</SetTargetFramework>
     </ProjectReference>
   </ItemGroup>

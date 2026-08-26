@@ -1,4 +1,4 @@
-namespace Delta.Maths.VersionBenchmarks.Shared;
+namespace DeltaMaths.VersionBenchmarks.Shared;
 
 public readonly struct InputFloat2
 {
@@ -56,9 +56,9 @@ public readonly struct InputMatrix4x4
     public float M44 { get; }
 }
 
-public sealed class MathsInputs
+public sealed class DeltaMathsInputs
 {
-    private MathsInputs(int count)
+    private DeltaMathsInputs(int count)
     {
         Count = count;
         ScalarA = new float[count];
@@ -119,9 +119,9 @@ public sealed class MathsInputs
     public InputFloat4[] LayoutFloat4 { get; }
     public InputMatrix4x4[] LayoutMatrices { get; }
 
-    public static MathsInputs Create(int count, int seed = 101)
+    public static DeltaMathsInputs Create(int count, int seed = 101)
     {
-        var inputs = new MathsInputs(count);
+        var inputs = new DeltaMathsInputs(count);
         var random = new Random(seed);
         for (var i = 0; i < count; i++)
         {
@@ -164,9 +164,9 @@ public sealed class MathsInputs
         return inputs;
     }
 
-    public MathsInputs Clone()
+    public DeltaMathsInputs Clone()
     {
-        var clone = new MathsInputs(Count);
+        var clone = new DeltaMathsInputs(Count);
         Array.Copy(ScalarA, clone.ScalarA, Count);
         Array.Copy(ScalarB, clone.ScalarB, Count);
         Array.Copy(Positive, clone.Positive, Count);

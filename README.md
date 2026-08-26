@@ -1,4 +1,4 @@
-# Delta.Maths
+# DeltaMaths
 
 Portable engine-independent mathematics for .NET. Runtime targets
 `netstandard2.0` and `netstandard2.1` and has no Unity, renderer or
@@ -6,12 +6,12 @@ Portable engine-independent mathematics for .NET. Runtime targets
 
 The API includes scalar utilities and deterministic 16.16 `fix`,
 `bool/int/uint/float/double/fix` vectors, geometry/interpolation/trigonometry,
-swizzles, generated `float4x4` and `quaternion`, plus conventional `Maths.*`
+swizzles, generated `float4x4` and `quaternion`, plus conventional `DeltaMaths.*`
 and shader-like lowercase `maths.*` entry points.
 
 ```csharp
-using Delta.Maths;
-using static Delta.Maths.maths;
+using DeltaMaths;
+using static DeltaMaths.maths;
 
 var direction = normalize(new float3(1f, 2f, 3f));
 var transform = float4x4.CreateTRS(position, rotation, scale);
@@ -22,8 +22,8 @@ in `c3.xyz`; column vectors are used and `T * R * S` applies scale, rotation,
 then translation. CPU code, GLSL and std430 share this convention.
 
 `Vectors/shader-contract.json` is generated from the same declarations and is
-the committed generated Maths ABI consumed and validated by DeltaShader.
-MathsGen owns its declarations/generation; neither Maths nor DeltaShader
+the committed generated DeltaMaths ABI consumed and validated by DeltaShader.
+DeltaMathsGen owns its declarations/generation; neither DeltaMaths nor DeltaShader
 recreates it. `double` and `fix` remain CPU-only; GPU-only intrinsics stay
 in DeltaShader.
 

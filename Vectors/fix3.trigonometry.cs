@@ -4,54 +4,54 @@ using System;
 using System.Runtime.InteropServices;
 using System.Runtime.CompilerServices;
 
-namespace Delta.Maths
+namespace DeltaMaths
 {
     public partial struct fix3
     {
 
         public static fix3 Sin(fix3 value)
         {
-            return new(Maths.Sin(value.x), Maths.Sin(value.y), Maths.Sin(value.z));
+            return new(DeltaMaths.Sin(value.x), DeltaMaths.Sin(value.y), DeltaMaths.Sin(value.z));
         }
 
         public static fix3 Cos(fix3 value)
         {
-            return new(Maths.Cos(value.x), Maths.Cos(value.y), Maths.Cos(value.z));
+            return new(DeltaMaths.Cos(value.x), DeltaMaths.Cos(value.y), DeltaMaths.Cos(value.z));
         }
 
         public static fix3 Tan(fix3 value)
         {
-            return new(Maths.Tan(value.x), Maths.Tan(value.y), Maths.Tan(value.z));
+            return new(DeltaMaths.Tan(value.x), DeltaMaths.Tan(value.y), DeltaMaths.Tan(value.z));
         }
 
         public static fix3 Asin(fix3 value)
         {
-            return new(Maths.Asin(value.x), Maths.Asin(value.y), Maths.Asin(value.z));
+            return new(DeltaMaths.Asin(value.x), DeltaMaths.Asin(value.y), DeltaMaths.Asin(value.z));
         }
 
         public static fix3 Acos(fix3 value)
         {
-            return new(Maths.Acos(value.x), Maths.Acos(value.y), Maths.Acos(value.z));
+            return new(DeltaMaths.Acos(value.x), DeltaMaths.Acos(value.y), DeltaMaths.Acos(value.z));
         }
 
         public static fix3 Atan(fix3 value)
         {
-            return new(Maths.Atan(value.x), Maths.Atan(value.y), Maths.Atan(value.z));
+            return new(DeltaMaths.Atan(value.x), DeltaMaths.Atan(value.y), DeltaMaths.Atan(value.z));
         }
 
         public static fix3 Atan2(fix3 y, fix3 x)
         {
-            return new(Maths.Atan2(y.x, x.x), Maths.Atan2(y.y, x.y), Maths.Atan2(y.z, x.z));
+            return new(DeltaMaths.Atan2(y.x, x.x), DeltaMaths.Atan2(y.y, x.y), DeltaMaths.Atan2(y.z, x.z));
         }
 
         public static fix3 Atan2(fix3 y, fix x)
         {
-            return new(Maths.Atan2(y.x, x), Maths.Atan2(y.y, x), Maths.Atan2(y.z, x));
+            return new(DeltaMaths.Atan2(y.x, x), DeltaMaths.Atan2(y.y, x), DeltaMaths.Atan2(y.z, x));
         }
 
         public static fix3 Atan2(fix y, fix3 x)
         {
-            return new(Maths.Atan2(y, x.x), Maths.Atan2(y, x.y), Maths.Atan2(y, x.z));
+            return new(DeltaMaths.Atan2(y, x.x), DeltaMaths.Atan2(y, x.y), DeltaMaths.Atan2(y, x.z));
         }
     }
 }

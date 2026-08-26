@@ -4,64 +4,64 @@ using System;
 using System.Runtime.InteropServices;
 using System.Runtime.CompilerServices;
 
-namespace Delta.Maths
+namespace DeltaMaths
 {
     public partial struct float4
     {
 
         public static float4 Exp(float4 value)
         {
-            return new(Maths.Exp(value.x), Maths.Exp(value.y), Maths.Exp(value.z), Maths.Exp(value.w));
+            return new(DeltaMaths.Exp(value.x), DeltaMaths.Exp(value.y), DeltaMaths.Exp(value.z), DeltaMaths.Exp(value.w));
         }
 
         public static float4 Exp2(float4 value)
         {
-            return new(Maths.Exp2(value.x), Maths.Exp2(value.y), Maths.Exp2(value.z), Maths.Exp2(value.w));
+            return new(DeltaMaths.Exp2(value.x), DeltaMaths.Exp2(value.y), DeltaMaths.Exp2(value.z), DeltaMaths.Exp2(value.w));
         }
 
         public static float4 Log(float4 value)
         {
-            return new(Maths.Log(value.x), Maths.Log(value.y), Maths.Log(value.z), Maths.Log(value.w));
+            return new(DeltaMaths.Log(value.x), DeltaMaths.Log(value.y), DeltaMaths.Log(value.z), DeltaMaths.Log(value.w));
         }
 
         public static float4 Log2(float4 value)
         {
-            return new(Maths.Log2(value.x), Maths.Log2(value.y), Maths.Log2(value.z), Maths.Log2(value.w));
+            return new(DeltaMaths.Log2(value.x), DeltaMaths.Log2(value.y), DeltaMaths.Log2(value.z), DeltaMaths.Log2(value.w));
         }
 
         public static float4 Log10(float4 value)
         {
-            return new(Maths.Log10(value.x), Maths.Log10(value.y), Maths.Log10(value.z), Maths.Log10(value.w));
+            return new(DeltaMaths.Log10(value.x), DeltaMaths.Log10(value.y), DeltaMaths.Log10(value.z), DeltaMaths.Log10(value.w));
         }
 
         public static float4 Sqrt(float4 value)
         {
-            return new(Maths.Sqrt(value.x), Maths.Sqrt(value.y), Maths.Sqrt(value.z), Maths.Sqrt(value.w));
+            return new(DeltaMaths.Sqrt(value.x), DeltaMaths.Sqrt(value.y), DeltaMaths.Sqrt(value.z), DeltaMaths.Sqrt(value.w));
         }
 
         public static float4 InverseSqrt(float4 value)
         {
-            return new(Maths.InverseSqrt(value.x), Maths.InverseSqrt(value.y), Maths.InverseSqrt(value.z), Maths.InverseSqrt(value.w));
+            return new(DeltaMaths.InverseSqrt(value.x), DeltaMaths.InverseSqrt(value.y), DeltaMaths.InverseSqrt(value.z), DeltaMaths.InverseSqrt(value.w));
         }
 
         public static float4 Cbrt(float4 value)
         {
-            return new(Maths.Cbrt(value.x), Maths.Cbrt(value.y), Maths.Cbrt(value.z), Maths.Cbrt(value.w));
+            return new(DeltaMaths.Cbrt(value.x), DeltaMaths.Cbrt(value.y), DeltaMaths.Cbrt(value.z), DeltaMaths.Cbrt(value.w));
         }
 
         public static float4 Pow(float4 a, float4 b)
         {
-            return new(Maths.Pow(a.x, b.x), Maths.Pow(a.y, b.y), Maths.Pow(a.z, b.z), Maths.Pow(a.w, b.w));
+            return new(DeltaMaths.Pow(a.x, b.x), DeltaMaths.Pow(a.y, b.y), DeltaMaths.Pow(a.z, b.z), DeltaMaths.Pow(a.w, b.w));
         }
 
         public static float4 Pow(float4 a, float b)
         {
-            return new(Maths.Pow(a.x, b), Maths.Pow(a.y, b), Maths.Pow(a.z, b), Maths.Pow(a.w, b));
+            return new(DeltaMaths.Pow(a.x, b), DeltaMaths.Pow(a.y, b), DeltaMaths.Pow(a.z, b), DeltaMaths.Pow(a.w, b));
         }
 
         public static float4 Pow(float a, float4 b)
         {
-            return new(Maths.Pow(a, b.x), Maths.Pow(a, b.y), Maths.Pow(a, b.z), Maths.Pow(a, b.w));
+            return new(DeltaMaths.Pow(a, b.x), DeltaMaths.Pow(a, b.y), DeltaMaths.Pow(a, b.z), DeltaMaths.Pow(a, b.w));
         }
     }
 }

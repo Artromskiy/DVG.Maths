@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text.Json;
 using System.Runtime.InteropServices;
 
-namespace Delta.Maths.Tests
+namespace DeltaMaths.Tests
 {
     internal static class MatrixQuaternionTests
     {
@@ -33,7 +33,7 @@ namespace Delta.Maths.Tests
         public static void MatrixAlgebra()
         {
             var translation = new float3(4f, -2f, 7f);
-            var rotation = quaternion.CreateFromAxisAngle(new float3(0f, 1f, 0f), Maths.Radians(90f));
+            var rotation = quaternion.CreateFromAxisAngle(new float3(0f, 1f, 0f), DeltaMaths.Radians(90f));
             var scale = new float3(2f, 3f, 4f);
             var matrix = float4x4.CreateTRS(translation, rotation, scale);
 
@@ -87,7 +87,7 @@ namespace Delta.Maths.Tests
         public static void QuaternionAlgebra()
         {
             var axis = new float3(0f, 1f, 0f);
-            var rotation = quaternion.CreateFromAxisAngle(axis, Maths.Radians(90f));
+            var rotation = quaternion.CreateFromAxisAngle(axis, DeltaMaths.Radians(90f));
             AssertEx.Near(new float3(0f, 0f, 1f), rotation * new float3(1f, 0f, 0f), 0.0002f);
             AssertEx.Equal(quaternion.identity, quaternion.NormalizeSafe(new quaternion(0f, 0f, 0f, 0f)));
             AssertEx.True(!quaternion.TryInverse(new quaternion(0f, 0f, 0f, 0f), out _));
@@ -97,7 +97,7 @@ namespace Delta.Maths.Tests
             quaternion.ToAxisAngle(rotation, out var recoveredAxis, out var recoveredAngle);
             var axisSign = float3.Dot(recoveredAxis, axis) < 0f ? -1f : 1f;
             AssertEx.Near(axis, recoveredAxis * axisSign, 0.0002f);
-            AssertEx.Near(Maths.Radians(90f), recoveredAngle * axisSign, 0.0002f);
+            AssertEx.Near(DeltaMaths.Radians(90f), recoveredAngle * axisSign, 0.0002f);
             AssertQuaternionEquivalent(rotation, quaternion.CreateFromAxisAngle(recoveredAxis, recoveredAngle), 0.0002f);
         }
 
@@ -122,7 +122,7 @@ namespace Delta.Maths.Tests
             AssertEx.Near(0f, lookTo.M43);
             AssertEx.Near(1f, lookTo.M44);
 
-            var projection = float4x4.CreatePerspectiveFieldOfViewLeftHanded(Maths.Radians(60f), 1.6f, 0.1f, 100f);
+            var projection = float4x4.CreatePerspectiveFieldOfViewLeftHanded(DeltaMaths.Radians(60f), 1.6f, 0.1f, 100f);
             var near = 0.1f;
             var far = 100f;
             var range = far / (far - near);
@@ -143,7 +143,7 @@ namespace Delta.Maths.Tests
             using var document = JsonDocument.Parse(File.ReadAllText(FindShaderContractManifestPath()));
             var root = document.RootElement;
             AssertEx.Equal("1.1.0", root.GetProperty("schemaVersion").GetString());
-            AssertEx.Equal("Delta.Maths", root.GetProperty("namespace").GetString());
+            AssertEx.Equal("DeltaMaths", root.GetProperty("namespace").GetString());
 
             var types = root.GetProperty("types").EnumerateArray().ToArray();
             AssertVectorType(types, "float2", "vec2", 8);
@@ -191,7 +191,7 @@ namespace Delta.Maths.Tests
                 || type.GetProperty("requiredCapability").GetString() is { } capability
                 && knownCapabilities.Contains(capability)));
             AssertEx.True(types.All(type => type.GetProperty("shaderZone").ValueKind == JsonValueKind.Null
-                || type.GetProperty("shaderZone").GetString() == "Delta.Maths"));
+                || type.GetProperty("shaderZone").GetString() == "DeltaMaths"));
             AssertEx.Equal(16, types.Single(type => type.GetProperty("clrName").GetString() == "float3")
                 .GetProperty("alignment").GetInt32());
             AssertEx.Equal(16, types.Single(type => type.GetProperty("clrName").GetString() == "float4")
@@ -233,7 +233,7 @@ namespace Delta.Maths.Tests
                 }
 
                 return !string.IsNullOrWhiteSpace(function.GetProperty("glslName").GetString())
-                    && function.GetProperty("shaderZone").GetString() == "Delta.Maths"
+                    && function.GetProperty("shaderZone").GetString() == "DeltaMaths"
                     && stages.Length == 3
                     && function.GetProperty("parameterGlslTypes").GetArrayLength()
                         == function.GetProperty("parameterClrNames").GetArrayLength();
@@ -344,7 +344,7 @@ namespace Delta.Maths.Tests
             {
                 var candidates = new[]
                 {
-                    Path.Combine(directory.FullName, "Maths", "Vectors", "shader-contract.json"),
+                    Path.Combine(directory.FullName, "DeltaMaths", "Vectors", "shader-contract.json"),
                     Path.Combine(directory.FullName, "Vectors", "shader-contract.json"),
                 };
                 foreach (var candidate in candidates)
@@ -383,7 +383,7 @@ namespace Delta.Maths.Tests
         private static void AssertQuaternionEquivalent(quaternion expected, quaternion actual, float tolerance)
         {
             var dot = quaternion.Dot(expected, actual);
-            AssertEx.True(Maths.Abs(Maths.Abs(dot) - 1f) <= tolerance, $"Expected equivalent rotations, dot={dot}.");
+            AssertEx.True(DeltaMaths.Abs(DeltaMaths.Abs(dot) - 1f) <= tolerance, $"Expected equivalent rotations, dot={dot}.");
         }
 
         private static float3 Float4ToPoint(float4 point)

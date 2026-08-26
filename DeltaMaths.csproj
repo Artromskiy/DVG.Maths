@@ -5,9 +5,9 @@
     <LangVersion>9.0</LangVersion>
     <Nullable>enable</Nullable>
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
-    <AssemblyName>Delta.Maths</AssemblyName>
-    <PackageId>Delta.Maths</PackageId>
-    <RootNamespace>Delta.Maths</RootNamespace>
+    <AssemblyName>DeltaMaths</AssemblyName>
+    <PackageId>DeltaMaths</PackageId>
+    <RootNamespace>DeltaMaths</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

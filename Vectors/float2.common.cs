@@ -4,59 +4,59 @@ using System;
 using System.Runtime.InteropServices;
 using System.Runtime.CompilerServices;
 
-namespace Delta.Maths
+namespace DeltaMaths
 {
     public partial struct float2
     {
 
         public static float2 Min(float2 a, float2 b)
         {
-            return new(Maths.Min(a.x, b.x), Maths.Min(a.y, b.y));
+            return new(DeltaMaths.Min(a.x, b.x), DeltaMaths.Min(a.y, b.y));
         }
 
         public static float2 Min(float2 a, float b)
         {
-            return new(Maths.Min(a.x, b), Maths.Min(a.y, b));
+            return new(DeltaMaths.Min(a.x, b), DeltaMaths.Min(a.y, b));
         }
 
         public static float2 Min(float a, float2 b)
         {
-            return new(Maths.Min(a, b.x), Maths.Min(a, b.y));
+            return new(DeltaMaths.Min(a, b.x), DeltaMaths.Min(a, b.y));
         }
 
         public static float2 Max(float2 a, float2 b)
         {
-            return new(Maths.Max(a.x, b.x), Maths.Max(a.y, b.y));
+            return new(DeltaMaths.Max(a.x, b.x), DeltaMaths.Max(a.y, b.y));
         }
 
         public static float2 Max(float2 a, float b)
         {
-            return new(Maths.Max(a.x, b), Maths.Max(a.y, b));
+            return new(DeltaMaths.Max(a.x, b), DeltaMaths.Max(a.y, b));
         }
 
         public static float2 Max(float a, float2 b)
         {
-            return new(Maths.Max(a, b.x), Maths.Max(a, b.y));
+            return new(DeltaMaths.Max(a, b.x), DeltaMaths.Max(a, b.y));
         }
 
         public static float2 Clamp(float2 value, float min, float max)
         {
-            return new(Maths.Clamp(value.x, min, max), Maths.Clamp(value.y, min, max));
+            return new(DeltaMaths.Clamp(value.x, min, max), DeltaMaths.Clamp(value.y, min, max));
         }
 
         public static float2 Clamp(float2 value, float2 min, float2 max)
         {
-            return new(Maths.Clamp(value.x, min.x, max.x), Maths.Clamp(value.y, min.y, max.y));
+            return new(DeltaMaths.Clamp(value.x, min.x, max.x), DeltaMaths.Clamp(value.y, min.y, max.y));
         }
 
         public static float2 Abs(float2 value)
         {
-            return new(Maths.Abs(value.x), Maths.Abs(value.y));
+            return new(DeltaMaths.Abs(value.x), DeltaMaths.Abs(value.y));
         }
 
         public static float2 Sign(float2 value)
         {
-            return new(Maths.Sign(value.x), Maths.Sign(value.y));
+            return new(DeltaMaths.Sign(value.x), DeltaMaths.Sign(value.y));
         }
 
         public static float Sum(float2 value)
@@ -66,92 +66,92 @@ namespace Delta.Maths
 
         public static float2 Lerp(float2 a, float2 b, float t)
         {
-            return new(Maths.Lerp(a.x, b.x, t), Maths.Lerp(a.y, b.y, t));
+            return new(DeltaMaths.Lerp(a.x, b.x, t), DeltaMaths.Lerp(a.y, b.y, t));
         }
 
         public static float2 Lerp(float2 a, float2 b, float2 t)
         {
-            return new(Maths.Lerp(a.x, b.x, t.x), Maths.Lerp(a.y, b.y, t.y));
+            return new(DeltaMaths.Lerp(a.x, b.x, t.x), DeltaMaths.Lerp(a.y, b.y, t.y));
         }
 
         public static float2 InvLerp(float2 edge0, float2 edge1, float2 value)
         {
-            return new(Maths.InvLerp(edge0.x, edge1.x, value.x), Maths.InvLerp(edge0.y, edge1.y, value.y));
+            return new(DeltaMaths.InvLerp(edge0.x, edge1.x, value.x), DeltaMaths.InvLerp(edge0.y, edge1.y, value.y));
         }
 
         public static float2 InvLerp(float2 edge0, float2 edge1, float value)
         {
-            return new(Maths.InvLerp(edge0.x, edge1.x, value), Maths.InvLerp(edge0.y, edge1.y, value));
+            return new(DeltaMaths.InvLerp(edge0.x, edge1.x, value), DeltaMaths.InvLerp(edge0.y, edge1.y, value));
         }
 
         public static float2 SmoothStep(float2 edge0, float2 edge1, float2 value)
         {
-            return new(Maths.SmoothStep(edge0.x, edge1.x, value.x), Maths.SmoothStep(edge0.y, edge1.y, value.y));
+            return new(DeltaMaths.SmoothStep(edge0.x, edge1.x, value.x), DeltaMaths.SmoothStep(edge0.y, edge1.y, value.y));
         }
 
         public static float2 SmoothStep(float edge0, float edge1, float2 value)
         {
-            return new(Maths.SmoothStep(edge0, edge1, value.x), Maths.SmoothStep(edge0, edge1, value.y));
+            return new(DeltaMaths.SmoothStep(edge0, edge1, value.x), DeltaMaths.SmoothStep(edge0, edge1, value.y));
         }
 
         public static float2 Step(float2 edge, float2 value)
         {
-            return new(Maths.Step(edge.x, value.x), Maths.Step(edge.y, value.y));
+            return new(DeltaMaths.Step(edge.x, value.x), DeltaMaths.Step(edge.y, value.y));
         }
 
         public static float2 Step(float edge, float2 value)
         {
-            return new(Maths.Step(edge, value.x), Maths.Step(edge, value.y));
+            return new(DeltaMaths.Step(edge, value.x), DeltaMaths.Step(edge, value.y));
         }
 
         public static float2 Saturate(float2 value)
         {
-            return new(Maths.Saturate(value.x), Maths.Saturate(value.y));
+            return new(DeltaMaths.Saturate(value.x), DeltaMaths.Saturate(value.y));
         }
 
         public static float2 Fma(float2 a, float2 b, float2 c)
         {
-            return new(Maths.Fma(a.x, b.x, c.x), Maths.Fma(a.y, b.y, c.y));
+            return new(DeltaMaths.Fma(a.x, b.x, c.x), DeltaMaths.Fma(a.y, b.y, c.y));
         }
 
         public static float2 Remap(float2 value, float2 sourceFrom, float2 sourceTo, float2 targetFrom, float2 targetTo)
         {
-            return new(Maths.Remap(value.x, sourceFrom.x, sourceTo.x, targetFrom.x, targetTo.x), Maths.Remap(value.y, sourceFrom.y, sourceTo.y, targetFrom.y, targetTo.y));
+            return new(DeltaMaths.Remap(value.x, sourceFrom.x, sourceTo.x, targetFrom.x, targetTo.x), DeltaMaths.Remap(value.y, sourceFrom.y, sourceTo.y, targetFrom.y, targetTo.y));
         }
 
         public static float2 Floor(float2 value)
         {
-            return new(Maths.Floor(value.x), Maths.Floor(value.y));
+            return new(DeltaMaths.Floor(value.x), DeltaMaths.Floor(value.y));
         }
 
         public static float2 Ceil(float2 value)
         {
-            return new(Maths.Ceil(value.x), Maths.Ceil(value.y));
+            return new(DeltaMaths.Ceil(value.x), DeltaMaths.Ceil(value.y));
         }
 
         public static float2 Round(float2 value)
         {
-            return new(Maths.Round(value.x), Maths.Round(value.y));
+            return new(DeltaMaths.Round(value.x), DeltaMaths.Round(value.y));
         }
 
         public static float2 Truncate(float2 value)
         {
-            return new(Maths.Truncate(value.x), Maths.Truncate(value.y));
+            return new(DeltaMaths.Truncate(value.x), DeltaMaths.Truncate(value.y));
         }
 
         public static float2 Fract(float2 value)
         {
-            return new(Maths.Fract(value.x), Maths.Fract(value.y));
+            return new(DeltaMaths.Fract(value.x), DeltaMaths.Fract(value.y));
         }
 
         public static float2 Radians(float2 value)
         {
-            return new(Maths.Radians(value.x), Maths.Radians(value.y));
+            return new(DeltaMaths.Radians(value.x), DeltaMaths.Radians(value.y));
         }
 
         public static float2 Degrees(float2 value)
         {
-            return new(Maths.Degrees(value.x), Maths.Degrees(value.y));
+            return new(DeltaMaths.Degrees(value.x), DeltaMaths.Degrees(value.y));
         }
     }
 }

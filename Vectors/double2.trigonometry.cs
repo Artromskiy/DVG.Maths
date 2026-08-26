@@ -4,84 +4,84 @@ using System;
 using System.Runtime.InteropServices;
 using System.Runtime.CompilerServices;
 
-namespace Delta.Maths
+namespace DeltaMaths
 {
     public partial struct double2
     {
 
         public static double2 Sin(double2 value)
         {
-            return new(Maths.Sin(value.x), Maths.Sin(value.y));
+            return new(DeltaMaths.Sin(value.x), DeltaMaths.Sin(value.y));
         }
 
         public static double2 Cos(double2 value)
         {
-            return new(Maths.Cos(value.x), Maths.Cos(value.y));
+            return new(DeltaMaths.Cos(value.x), DeltaMaths.Cos(value.y));
         }
 
         public static double2 Tan(double2 value)
         {
-            return new(Maths.Tan(value.x), Maths.Tan(value.y));
+            return new(DeltaMaths.Tan(value.x), DeltaMaths.Tan(value.y));
         }
 
         public static double2 Asin(double2 value)
         {
-            return new(Maths.Asin(value.x), Maths.Asin(value.y));
+            return new(DeltaMaths.Asin(value.x), DeltaMaths.Asin(value.y));
         }
 
         public static double2 Acos(double2 value)
         {
-            return new(Maths.Acos(value.x), Maths.Acos(value.y));
+            return new(DeltaMaths.Acos(value.x), DeltaMaths.Acos(value.y));
         }
 
         public static double2 Atan(double2 value)
         {
-            return new(Maths.Atan(value.x), Maths.Atan(value.y));
+            return new(DeltaMaths.Atan(value.x), DeltaMaths.Atan(value.y));
         }
 
         public static double2 Atan2(double2 y, double2 x)
         {
-            return new(Maths.Atan2(y.x, x.x), Maths.Atan2(y.y, x.y));
+            return new(DeltaMaths.Atan2(y.x, x.x), DeltaMaths.Atan2(y.y, x.y));
         }
 
         public static double2 Atan2(double2 y, double x)
         {
-            return new(Maths.Atan2(y.x, x), Maths.Atan2(y.y, x));
+            return new(DeltaMaths.Atan2(y.x, x), DeltaMaths.Atan2(y.y, x));
         }
 
         public static double2 Atan2(double y, double2 x)
         {
-            return new(Maths.Atan2(y, x.x), Maths.Atan2(y, x.y));
+            return new(DeltaMaths.Atan2(y, x.x), DeltaMaths.Atan2(y, x.y));
         }
 
         public static double2 Sinh(double2 value)
         {
-            return new(Maths.Sinh(value.x), Maths.Sinh(value.y));
+            return new(DeltaMaths.Sinh(value.x), DeltaMaths.Sinh(value.y));
         }
 
         public static double2 Cosh(double2 value)
         {
-            return new(Maths.Cosh(value.x), Maths.Cosh(value.y));
+            return new(DeltaMaths.Cosh(value.x), DeltaMaths.Cosh(value.y));
         }
 
         public static double2 Tanh(double2 value)
         {
-            return new(Maths.Tanh(value.x), Maths.Tanh(value.y));
+            return new(DeltaMaths.Tanh(value.x), DeltaMaths.Tanh(value.y));
         }
 
         public static double2 Asinh(double2 value)
         {
-            return new(Maths.Asinh(value.x), Maths.Asinh(value.y));
+            return new(DeltaMaths.Asinh(value.x), DeltaMaths.Asinh(value.y));
         }
 
         public static double2 Acosh(double2 value)
         {
-            return new(Maths.Acosh(value.x), Maths.Acosh(value.y));
+            return new(DeltaMaths.Acosh(value.x), DeltaMaths.Acosh(value.y));
         }
 
         public static double2 Atanh(double2 value)
         {
-            return new(Maths.Atanh(value.x), Maths.Atanh(value.y));
+            return new(DeltaMaths.Atanh(value.x), DeltaMaths.Atanh(value.y));
         }
     }
 }

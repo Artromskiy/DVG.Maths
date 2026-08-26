@@ -4,19 +4,19 @@ using System;
 using System.Runtime.InteropServices;
 using System.Runtime.CompilerServices;
 
-namespace Delta.Maths
+namespace DeltaMaths
 {
     public partial struct fix2
     {
 
         public static fix2 Sqrt(fix2 value)
         {
-            return new(Maths.Sqrt(value.x), Maths.Sqrt(value.y));
+            return new(DeltaMaths.Sqrt(value.x), DeltaMaths.Sqrt(value.y));
         }
 
         public static fix2 InverseSqrt(fix2 value)
         {
-            return new(Maths.InverseSqrt(value.x), Maths.InverseSqrt(value.y));
+            return new(DeltaMaths.InverseSqrt(value.x), DeltaMaths.InverseSqrt(value.y));
         }
     }
 }

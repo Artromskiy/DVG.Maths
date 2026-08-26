@@ -2,7 +2,7 @@ using System;
 using System.Globalization;
 using System.Threading;
 
-namespace Delta.Maths.Tests
+namespace DeltaMaths.Tests
 {
     internal static class VectorBehaviorTests
     {
@@ -70,7 +70,7 @@ namespace Delta.Maths.Tests
             AssertEx.Throws<ArgumentOutOfRangeException>(() => _ = indexed[3]);
         }
 
-        public static void CommonMaths()
+        public static void CommonDeltaMaths()
         {
             AssertEx.Equal(new int3(1, 3, 2), int3.Min(new int3(1, 9, 2), new int3(5, 3, 8)));
             AssertEx.Equal(new int3(0, 5, 10), int3.Clamp(new int3(-1, 5, 12), 0, 10));
@@ -118,7 +118,7 @@ namespace Delta.Maths.Tests
 
         public static void ShaderStyleFacade()
         {
-            AssertEx.Equal(Maths.Sin(0.5f), maths.sin(0.5f));
+            AssertEx.Equal(DeltaMaths.Sin(0.5f), maths.sin(0.5f));
             AssertEx.Equal(float3.Dot(new float3(1, 2, 3), new float3(4, 5, 6)),
                 maths.dot(new float3(1, 2, 3), new float3(4, 5, 6)));
             AssertEx.Equal(new float3(-1, 20, -3),
@@ -142,11 +142,11 @@ namespace Delta.Maths.Tests
 
         public static void ScalarRegressions()
         {
-            AssertEx.Near(180.0, Maths.Degrees(Math.PI));
-            AssertEx.Near(Math.PI, Maths.Radians(180.0));
-            AssertEx.Near(2f, Maths.Log10(100f));
-            AssertEx.Equal(0f, Maths.Saturate(-1f));
-            AssertEx.Equal(1f, Maths.Step(0f, 0f));
+            AssertEx.Near(180.0, DeltaMaths.Degrees(Math.PI));
+            AssertEx.Near(Math.PI, DeltaMaths.Radians(180.0));
+            AssertEx.Near(2f, DeltaMaths.Log10(100f));
+            AssertEx.Equal(0f, DeltaMaths.Saturate(-1f));
+            AssertEx.Equal(1f, DeltaMaths.Step(0f, 0f));
         }
     }
 }

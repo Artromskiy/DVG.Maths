@@ -4,59 +4,59 @@ using System;
 using System.Runtime.InteropServices;
 using System.Runtime.CompilerServices;
 
-namespace Delta.Maths
+namespace DeltaMaths
 {
     public partial struct int4
     {
 
         public static int4 Min(int4 a, int4 b)
         {
-            return new(Maths.Min(a.x, b.x), Maths.Min(a.y, b.y), Maths.Min(a.z, b.z), Maths.Min(a.w, b.w));
+            return new(DeltaMaths.Min(a.x, b.x), DeltaMaths.Min(a.y, b.y), DeltaMaths.Min(a.z, b.z), DeltaMaths.Min(a.w, b.w));
         }
 
         public static int4 Min(int4 a, int b)
         {
-            return new(Maths.Min(a.x, b), Maths.Min(a.y, b), Maths.Min(a.z, b), Maths.Min(a.w, b));
+            return new(DeltaMaths.Min(a.x, b), DeltaMaths.Min(a.y, b), DeltaMaths.Min(a.z, b), DeltaMaths.Min(a.w, b));
         }
 
         public static int4 Min(int a, int4 b)
         {
-            return new(Maths.Min(a, b.x), Maths.Min(a, b.y), Maths.Min(a, b.z), Maths.Min(a, b.w));
+            return new(DeltaMaths.Min(a, b.x), DeltaMaths.Min(a, b.y), DeltaMaths.Min(a, b.z), DeltaMaths.Min(a, b.w));
         }
 
         public static int4 Max(int4 a, int4 b)
         {
-            return new(Maths.Max(a.x, b.x), Maths.Max(a.y, b.y), Maths.Max(a.z, b.z), Maths.Max(a.w, b.w));
+            return new(DeltaMaths.Max(a.x, b.x), DeltaMaths.Max(a.y, b.y), DeltaMaths.Max(a.z, b.z), DeltaMaths.Max(a.w, b.w));
         }
 
         public static int4 Max(int4 a, int b)
         {
-            return new(Maths.Max(a.x, b), Maths.Max(a.y, b), Maths.Max(a.z, b), Maths.Max(a.w, b));
+            return new(DeltaMaths.Max(a.x, b), DeltaMaths.Max(a.y, b), DeltaMaths.Max(a.z, b), DeltaMaths.Max(a.w, b));
         }
 
         public static int4 Max(int a, int4 b)
         {
-            return new(Maths.Max(a, b.x), Maths.Max(a, b.y), Maths.Max(a, b.z), Maths.Max(a, b.w));
+            return new(DeltaMaths.Max(a, b.x), DeltaMaths.Max(a, b.y), DeltaMaths.Max(a, b.z), DeltaMaths.Max(a, b.w));
         }
 
         public static int4 Clamp(int4 value, int min, int max)
         {
-            return new(Maths.Clamp(value.x, min, max), Maths.Clamp(value.y, min, max), Maths.Clamp(value.z, min, max), Maths.Clamp(value.w, min, max));
+            return new(DeltaMaths.Clamp(value.x, min, max), DeltaMaths.Clamp(value.y, min, max), DeltaMaths.Clamp(value.z, min, max), DeltaMaths.Clamp(value.w, min, max));
         }
 
         public static int4 Clamp(int4 value, int4 min, int4 max)
         {
-            return new(Maths.Clamp(value.x, min.x, max.x), Maths.Clamp(value.y, min.y, max.y), Maths.Clamp(value.z, min.z, max.z), Maths.Clamp(value.w, min.w, max.w));
+            return new(DeltaMaths.Clamp(value.x, min.x, max.x), DeltaMaths.Clamp(value.y, min.y, max.y), DeltaMaths.Clamp(value.z, min.z, max.z), DeltaMaths.Clamp(value.w, min.w, max.w));
         }
 
         public static int4 Abs(int4 value)
         {
-            return new(Maths.Abs(value.x), Maths.Abs(value.y), Maths.Abs(value.z), Maths.Abs(value.w));
+            return new(DeltaMaths.Abs(value.x), DeltaMaths.Abs(value.y), DeltaMaths.Abs(value.z), DeltaMaths.Abs(value.w));
         }
 
         public static int4 Sign(int4 value)
         {
-            return new(Maths.Sign(value.x), Maths.Sign(value.y), Maths.Sign(value.z), Maths.Sign(value.w));
+            return new(DeltaMaths.Sign(value.x), DeltaMaths.Sign(value.y), DeltaMaths.Sign(value.z), DeltaMaths.Sign(value.w));
         }
 
         public static int Sum(int4 value)

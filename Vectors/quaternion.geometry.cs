@@ -4,7 +4,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Runtime.CompilerServices;
 
-namespace Delta.Maths
+namespace DeltaMaths
 {
     public partial struct quaternion
     {
@@ -13,8 +13,8 @@ namespace Delta.Maths
         {
             var normalizedAxis = float3.NormalizeSafe(axis);
             var halfAngle = angle * 0.5f;
-            var sine = Maths.Sin(halfAngle);
-            return new quaternion(-normalizedAxis.x * sine, -normalizedAxis.y * sine, -normalizedAxis.z * sine, Maths.Cos(halfAngle));
+            var sine = DeltaMaths.Sin(halfAngle);
+            return new quaternion(-normalizedAxis.x * sine, -normalizedAxis.y * sine, -normalizedAxis.z * sine, DeltaMaths.Cos(halfAngle));
         }
 
         public static quaternion CreateFromYawPitchRoll(float yaw, float pitch, float roll)
@@ -22,12 +22,12 @@ namespace Delta.Maths
             var halfRoll = roll * 0.5f;
             var halfPitch = pitch * 0.5f;
             var halfYaw = yaw * 0.5f;
-            var sinRoll = Maths.Sin(halfRoll);
-            var cosRoll = Maths.Cos(halfRoll);
-            var sinPitch = Maths.Sin(halfPitch);
-            var cosPitch = Maths.Cos(halfPitch);
-            var sinYaw = Maths.Sin(halfYaw);
-            var cosYaw = Maths.Cos(halfYaw);
+            var sinRoll = DeltaMaths.Sin(halfRoll);
+            var cosRoll = DeltaMaths.Cos(halfRoll);
+            var sinPitch = DeltaMaths.Sin(halfPitch);
+            var cosPitch = DeltaMaths.Cos(halfPitch);
+            var sinYaw = DeltaMaths.Sin(halfYaw);
+            var cosYaw = DeltaMaths.Cos(halfYaw);
             return new quaternion(
                 -(cosYaw * sinPitch * cosRoll + sinYaw * cosPitch * sinRoll),
                 -(sinYaw * cosPitch * cosRoll - cosYaw * sinPitch * sinRoll),
@@ -45,10 +45,10 @@ namespace Delta.Maths
         public static quaternion CreateFromRotationMatrix(float4x4 matrix)
         {
             var trace = matrix.M11 + matrix.M22 + matrix.M33;
-            if (trace > 0f) { var s = Maths.Sqrt(trace + 1f) * 2f; return new quaternion((matrix.M32 - matrix.M23) / s, (matrix.M13 - matrix.M31) / s, (matrix.M21 - matrix.M12) / s, 0.25f * s); }
-            if (matrix.M11 > matrix.M22 && matrix.M11 > matrix.M33) { var s = Maths.Sqrt(1f + matrix.M11 - matrix.M22 - matrix.M33) * 2f; return new quaternion(0.25f * s, (matrix.M12 + matrix.M21) / s, (matrix.M13 + matrix.M31) / s, (matrix.M32 - matrix.M23) / s); }
-            if (matrix.M22 > matrix.M33) { var s = Maths.Sqrt(1f + matrix.M22 - matrix.M11 - matrix.M33) * 2f; return new quaternion((matrix.M12 + matrix.M21) / s, 0.25f * s, (matrix.M23 + matrix.M32) / s, (matrix.M13 - matrix.M31) / s); }
-            { var s = Maths.Sqrt(1f + matrix.M33 - matrix.M11 - matrix.M22) * 2f; return new quaternion((matrix.M13 + matrix.M31) / s, (matrix.M23 + matrix.M32) / s, 0.25f * s, (matrix.M21 - matrix.M12) / s); }
+            if (trace > 0f) { var s = DeltaMaths.Sqrt(trace + 1f) * 2f; return new quaternion((matrix.M32 - matrix.M23) / s, (matrix.M13 - matrix.M31) / s, (matrix.M21 - matrix.M12) / s, 0.25f * s); }
+            if (matrix.M11 > matrix.M22 && matrix.M11 > matrix.M33) { var s = DeltaMaths.Sqrt(1f + matrix.M11 - matrix.M22 - matrix.M33) * 2f; return new quaternion(0.25f * s, (matrix.M12 + matrix.M21) / s, (matrix.M13 + matrix.M31) / s, (matrix.M32 - matrix.M23) / s); }
+            if (matrix.M22 > matrix.M33) { var s = DeltaMaths.Sqrt(1f + matrix.M22 - matrix.M11 - matrix.M33) * 2f; return new quaternion((matrix.M12 + matrix.M21) / s, 0.25f * s, (matrix.M23 + matrix.M32) / s, (matrix.M13 - matrix.M31) / s); }
+            { var s = DeltaMaths.Sqrt(1f + matrix.M33 - matrix.M11 - matrix.M22) * 2f; return new quaternion((matrix.M13 + matrix.M31) / s, (matrix.M23 + matrix.M32) / s, 0.25f * s, (matrix.M21 - matrix.M12) / s); }
         }
 
         public static float4x4 ToRotationMatrix(quaternion rotation)
@@ -59,8 +59,8 @@ namespace Delta.Maths
         public static void ToAxisAngle(quaternion rotation, out float3 axis, out float angle)
         {
             var normalized = NormalizeSafe(rotation);
-            angle = 2f * Maths.Acos(Maths.Clamp(normalized.w, -1f, 1f));
-            var scale = Maths.Sqrt(Maths.Max(1e-20f, 1f - normalized.w * normalized.w));
+            angle = 2f * DeltaMaths.Acos(DeltaMaths.Clamp(normalized.w, -1f, 1f));
+            var scale = DeltaMaths.Sqrt(DeltaMaths.Max(1e-20f, 1f - normalized.w * normalized.w));
             axis = scale <= 1e-10f ? new float3(1f, 0f, 0f) : new float3(-normalized.x / scale, -normalized.y / scale, -normalized.z / scale);
         }
     }

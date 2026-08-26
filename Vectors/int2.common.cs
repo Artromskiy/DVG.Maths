@@ -4,59 +4,59 @@ using System;
 using System.Runtime.InteropServices;
 using System.Runtime.CompilerServices;
 
-namespace Delta.Maths
+namespace DeltaMaths
 {
     public partial struct int2
     {
 
         public static int2 Min(int2 a, int2 b)
         {
-            return new(Maths.Min(a.x, b.x), Maths.Min(a.y, b.y));
+            return new(DeltaMaths.Min(a.x, b.x), DeltaMaths.Min(a.y, b.y));
         }
 
         public static int2 Min(int2 a, int b)
         {
-            return new(Maths.Min(a.x, b), Maths.Min(a.y, b));
+            return new(DeltaMaths.Min(a.x, b), DeltaMaths.Min(a.y, b));
         }
 
         public static int2 Min(int a, int2 b)
         {
-            return new(Maths.Min(a, b.x), Maths.Min(a, b.y));
+            return new(DeltaMaths.Min(a, b.x), DeltaMaths.Min(a, b.y));
         }
 
         public static int2 Max(int2 a, int2 b)
         {
-            return new(Maths.Max(a.x, b.x), Maths.Max(a.y, b.y));
+            return new(DeltaMaths.Max(a.x, b.x), DeltaMaths.Max(a.y, b.y));
         }
 
         public static int2 Max(int2 a, int b)
         {
-            return new(Maths.Max(a.x, b), Maths.Max(a.y, b));
+            return new(DeltaMaths.Max(a.x, b), DeltaMaths.Max(a.y, b));
         }
 
         public static int2 Max(int a, int2 b)
         {
-            return new(Maths.Max(a, b.x), Maths.Max(a, b.y));
+            return new(DeltaMaths.Max(a, b.x), DeltaMaths.Max(a, b.y));
         }
 
         public static int2 Clamp(int2 value, int min, int max)
         {
-            return new(Maths.Clamp(value.x, min, max), Maths.Clamp(value.y, min, max));
+            return new(DeltaMaths.Clamp(value.x, min, max), DeltaMaths.Clamp(value.y, min, max));
         }
 
         public static int2 Clamp(int2 value, int2 min, int2 max)
         {
-            return new(Maths.Clamp(value.x, min.x, max.x), Maths.Clamp(value.y, min.y, max.y));
+            return new(DeltaMaths.Clamp(value.x, min.x, max.x), DeltaMaths.Clamp(value.y, min.y, max.y));
         }
 
         public static int2 Abs(int2 value)
         {
-            return new(Maths.Abs(value.x), Maths.Abs(value.y));
+            return new(DeltaMaths.Abs(value.x), DeltaMaths.Abs(value.y));
         }
 
         public static int2 Sign(int2 value)
         {
-            return new(Maths.Sign(value.x), Maths.Sign(value.y));
+            return new(DeltaMaths.Sign(value.x), DeltaMaths.Sign(value.y));
         }
 
         public static int Sum(int2 value)

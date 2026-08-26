@@ -1,13 +1,13 @@
 extern alias mathsRuntime;
 
-using Delta.Maths.VersionBenchmarks.Shared;
-using DeltaMaths = mathsRuntime::Delta.Maths;
+using DeltaMaths.VersionBenchmarks.Shared;
+using DeltaMaths = mathsRuntime::DeltaMaths;
 
-namespace Delta.Maths.VersionAdapter;
+namespace DeltaMaths.VersionAdapter;
 
-public sealed class MathsScenario : IMathsScenario
+public sealed class DeltaMathsScenario : IDeltaMathsScenario
 {
-    private readonly MathsInputs _inputs;
+    private readonly DeltaMathsInputs _inputs;
     private readonly DeltaMaths.float2[] _float2A;
     private readonly DeltaMaths.float2[] _float2B;
     private readonly DeltaMaths.float3[] _float3A;
@@ -30,7 +30,7 @@ public sealed class MathsScenario : IMathsScenario
     private readonly DeltaMaths.float4[] _layoutFloat4Destination;
     private readonly DeltaMaths.float4x4[] _layoutMatrixDestination;
 
-    public MathsScenario(MathsInputs inputs)
+    public DeltaMathsScenario(DeltaMathsInputs inputs)
     {
         _inputs = inputs;
         _float2A = new DeltaMaths.float2[inputs.Count];
@@ -79,34 +79,34 @@ public sealed class MathsScenario : IMathsScenario
         }
     }
 
-    public float Run(MathsWorkload workload) => workload switch
+    public float Run(DeltaMathsWorkload workload) => workload switch
     {
-        MathsWorkload.Float2Add => Float2Add(),
-        MathsWorkload.Float3Add => Float3Add(),
-        MathsWorkload.Float4Add => Float4Add(),
-        MathsWorkload.Float3Dot => Float3Dot(),
-        MathsWorkload.Float3Cross => Float3Cross(),
-        MathsWorkload.Float3Normalize => Float3Normalize(),
-        MathsWorkload.QuaternionMultiply => QuaternionMultiply(),
-        MathsWorkload.QuaternionRotate => QuaternionRotate(),
-        MathsWorkload.QuaternionNormalize => QuaternionNormalize(),
-        MathsWorkload.MatrixMultiply => MatrixMultiply(),
-        MathsWorkload.MatrixVector => MatrixVector(),
-        MathsWorkload.MatrixCreateTRS => MatrixCreateTRS(),
-        MathsWorkload.MatrixTransformPoint => MatrixTransformPoint(),
-        MathsWorkload.ScalarSin => ScalarSin(),
-        MathsWorkload.ScalarCos => ScalarCos(),
-        MathsWorkload.ScalarSqrt => ScalarSqrt(),
-        MathsWorkload.ScalarInverseSqrt => ScalarInverseSqrt(),
-        MathsWorkload.ScalarLerp => ScalarLerp(),
-        MathsWorkload.ScalarClamp => ScalarClamp(),
-        MathsWorkload.ScalarAtan2 => ScalarAtan2(),
-        MathsWorkload.LayoutReadFloat3 => LayoutReadFloat3(),
-        MathsWorkload.LayoutWriteFloat3 => LayoutWriteFloat3(),
-        MathsWorkload.LayoutReadFloat4 => LayoutReadFloat4(),
-        MathsWorkload.LayoutWriteFloat4 => LayoutWriteFloat4(),
-        MathsWorkload.LayoutReadFloat4x4 => LayoutReadFloat4x4(),
-        MathsWorkload.LayoutWriteFloat4x4 => LayoutWriteFloat4x4(),
+        DeltaMathsWorkload.Float2Add => Float2Add(),
+        DeltaMathsWorkload.Float3Add => Float3Add(),
+        DeltaMathsWorkload.Float4Add => Float4Add(),
+        DeltaMathsWorkload.Float3Dot => Float3Dot(),
+        DeltaMathsWorkload.Float3Cross => Float3Cross(),
+        DeltaMathsWorkload.Float3Normalize => Float3Normalize(),
+        DeltaMathsWorkload.QuaternionMultiply => QuaternionMultiply(),
+        DeltaMathsWorkload.QuaternionRotate => QuaternionRotate(),
+        DeltaMathsWorkload.QuaternionNormalize => QuaternionNormalize(),
+        DeltaMathsWorkload.MatrixMultiply => MatrixMultiply(),
+        DeltaMathsWorkload.MatrixVector => MatrixVector(),
+        DeltaMathsWorkload.MatrixCreateTRS => MatrixCreateTRS(),
+        DeltaMathsWorkload.MatrixTransformPoint => MatrixTransformPoint(),
+        DeltaMathsWorkload.ScalarSin => ScalarSin(),
+        DeltaMathsWorkload.ScalarCos => ScalarCos(),
+        DeltaMathsWorkload.ScalarSqrt => ScalarSqrt(),
+        DeltaMathsWorkload.ScalarInverseSqrt => ScalarInverseSqrt(),
+        DeltaMathsWorkload.ScalarLerp => ScalarLerp(),
+        DeltaMathsWorkload.ScalarClamp => ScalarClamp(),
+        DeltaMathsWorkload.ScalarAtan2 => ScalarAtan2(),
+        DeltaMathsWorkload.LayoutReadFloat3 => LayoutReadFloat3(),
+        DeltaMathsWorkload.LayoutWriteFloat3 => LayoutWriteFloat3(),
+        DeltaMathsWorkload.LayoutReadFloat4 => LayoutReadFloat4(),
+        DeltaMathsWorkload.LayoutWriteFloat4 => LayoutWriteFloat4(),
+        DeltaMathsWorkload.LayoutReadFloat4x4 => LayoutReadFloat4x4(),
+        DeltaMathsWorkload.LayoutWriteFloat4x4 => LayoutWriteFloat4x4(),
         _ => throw new ArgumentOutOfRangeException(nameof(workload), workload, null)
     };
 
@@ -248,7 +248,7 @@ public sealed class MathsScenario : IMathsScenario
     {
         var sum = 0f;
         for (var i = 0; i < _inputs.Count; i++)
-            sum += DeltaMaths.Maths.Sin(_inputs.ScalarA[i]);
+            sum += DeltaMaths.DeltaMaths.Sin(_inputs.ScalarA[i]);
         return sum;
     }
 
@@ -256,7 +256,7 @@ public sealed class MathsScenario : IMathsScenario
     {
         var sum = 0f;
         for (var i = 0; i < _inputs.Count; i++)
-            sum += DeltaMaths.Maths.Cos(_inputs.ScalarA[i]);
+            sum += DeltaMaths.DeltaMaths.Cos(_inputs.ScalarA[i]);
         return sum;
     }
 
@@ -264,7 +264,7 @@ public sealed class MathsScenario : IMathsScenario
     {
         var sum = 0f;
         for (var i = 0; i < _inputs.Count; i++)
-            sum += DeltaMaths.Maths.Sqrt(_inputs.Positive[i]);
+            sum += DeltaMaths.DeltaMaths.Sqrt(_inputs.Positive[i]);
         return sum;
     }
 
@@ -272,7 +272,7 @@ public sealed class MathsScenario : IMathsScenario
     {
         var sum = 0f;
         for (var i = 0; i < _inputs.Count; i++)
-            sum += DeltaMaths.Maths.InverseSqrt(_inputs.Positive[i]);
+            sum += DeltaMaths.DeltaMaths.InverseSqrt(_inputs.Positive[i]);
         return sum;
     }
 
@@ -280,7 +280,7 @@ public sealed class MathsScenario : IMathsScenario
     {
         var sum = 0f;
         for (var i = 0; i < _inputs.Count; i++)
-            sum += DeltaMaths.Maths.Lerp(_inputs.ScalarA[i], _inputs.ScalarB[i], 0.35f);
+            sum += DeltaMaths.DeltaMaths.Lerp(_inputs.ScalarA[i], _inputs.ScalarB[i], 0.35f);
         return sum;
     }
 
@@ -288,7 +288,7 @@ public sealed class MathsScenario : IMathsScenario
     {
         var sum = 0f;
         for (var i = 0; i < _inputs.Count; i++)
-            sum += DeltaMaths.Maths.Clamp(_inputs.ScalarA[i], -0.25f, 0.25f);
+            sum += DeltaMaths.DeltaMaths.Clamp(_inputs.ScalarA[i], -0.25f, 0.25f);
         return sum;
     }
 
@@ -296,7 +296,7 @@ public sealed class MathsScenario : IMathsScenario
     {
         var sum = 0f;
         for (var i = 0; i < _inputs.Count; i++)
-            sum += DeltaMaths.Maths.Atan2(_inputs.ScalarA[i], _inputs.ScalarB[i]);
+            sum += DeltaMaths.DeltaMaths.Atan2(_inputs.ScalarA[i], _inputs.ScalarB[i]);
         return sum;
     }
 

@@ -4,59 +4,59 @@ using System;
 using System.Runtime.InteropServices;
 using System.Runtime.CompilerServices;
 
-namespace Delta.Maths
+namespace DeltaMaths
 {
     public partial struct fix4
     {
 
         public static fix4 Min(fix4 a, fix4 b)
         {
-            return new(Maths.Min(a.x, b.x), Maths.Min(a.y, b.y), Maths.Min(a.z, b.z), Maths.Min(a.w, b.w));
+            return new(DeltaMaths.Min(a.x, b.x), DeltaMaths.Min(a.y, b.y), DeltaMaths.Min(a.z, b.z), DeltaMaths.Min(a.w, b.w));
         }
 
         public static fix4 Min(fix4 a, fix b)
         {
-            return new(Maths.Min(a.x, b), Maths.Min(a.y, b), Maths.Min(a.z, b), Maths.Min(a.w, b));
+            return new(DeltaMaths.Min(a.x, b), DeltaMaths.Min(a.y, b), DeltaMaths.Min(a.z, b), DeltaMaths.Min(a.w, b));
         }
 
         public static fix4 Min(fix a, fix4 b)
         {
-            return new(Maths.Min(a, b.x), Maths.Min(a, b.y), Maths.Min(a, b.z), Maths.Min(a, b.w));
+            return new(DeltaMaths.Min(a, b.x), DeltaMaths.Min(a, b.y), DeltaMaths.Min(a, b.z), DeltaMaths.Min(a, b.w));
         }
 
         public static fix4 Max(fix4 a, fix4 b)
         {
-            return new(Maths.Max(a.x, b.x), Maths.Max(a.y, b.y), Maths.Max(a.z, b.z), Maths.Max(a.w, b.w));
+            return new(DeltaMaths.Max(a.x, b.x), DeltaMaths.Max(a.y, b.y), DeltaMaths.Max(a.z, b.z), DeltaMaths.Max(a.w, b.w));
         }
 
         public static fix4 Max(fix4 a, fix b)
         {
-            return new(Maths.Max(a.x, b), Maths.Max(a.y, b), Maths.Max(a.z, b), Maths.Max(a.w, b));
+            return new(DeltaMaths.Max(a.x, b), DeltaMaths.Max(a.y, b), DeltaMaths.Max(a.z, b), DeltaMaths.Max(a.w, b));
         }
 
         public static fix4 Max(fix a, fix4 b)
         {
-            return new(Maths.Max(a, b.x), Maths.Max(a, b.y), Maths.Max(a, b.z), Maths.Max(a, b.w));
+            return new(DeltaMaths.Max(a, b.x), DeltaMaths.Max(a, b.y), DeltaMaths.Max(a, b.z), DeltaMaths.Max(a, b.w));
         }
 
         public static fix4 Clamp(fix4 value, fix min, fix max)
         {
-            return new(Maths.Clamp(value.x, min, max), Maths.Clamp(value.y, min, max), Maths.Clamp(value.z, min, max), Maths.Clamp(value.w, min, max));
+            return new(DeltaMaths.Clamp(value.x, min, max), DeltaMaths.Clamp(value.y, min, max), DeltaMaths.Clamp(value.z, min, max), DeltaMaths.Clamp(value.w, min, max));
         }
 
         public static fix4 Clamp(fix4 value, fix4 min, fix4 max)
         {
-            return new(Maths.Clamp(value.x, min.x, max.x), Maths.Clamp(value.y, min.y, max.y), Maths.Clamp(value.z, min.z, max.z), Maths.Clamp(value.w, min.w, max.w));
+            return new(DeltaMaths.Clamp(value.x, min.x, max.x), DeltaMaths.Clamp(value.y, min.y, max.y), DeltaMaths.Clamp(value.z, min.z, max.z), DeltaMaths.Clamp(value.w, min.w, max.w));
         }
 
         public static fix4 Abs(fix4 value)
         {
-            return new(Maths.Abs(value.x), Maths.Abs(value.y), Maths.Abs(value.z), Maths.Abs(value.w));
+            return new(DeltaMaths.Abs(value.x), DeltaMaths.Abs(value.y), DeltaMaths.Abs(value.z), DeltaMaths.Abs(value.w));
         }
 
         public static fix4 Sign(fix4 value)
         {
-            return new(Maths.Sign(value.x), Maths.Sign(value.y), Maths.Sign(value.z), Maths.Sign(value.w));
+            return new(DeltaMaths.Sign(value.x), DeltaMaths.Sign(value.y), DeltaMaths.Sign(value.z), DeltaMaths.Sign(value.w));
         }
 
         public static fix Sum(fix4 value)
@@ -66,92 +66,92 @@ namespace Delta.Maths
 
         public static fix4 Lerp(fix4 a, fix4 b, fix t)
         {
-            return new(Maths.Lerp(a.x, b.x, t), Maths.Lerp(a.y, b.y, t), Maths.Lerp(a.z, b.z, t), Maths.Lerp(a.w, b.w, t));
+            return new(DeltaMaths.Lerp(a.x, b.x, t), DeltaMaths.Lerp(a.y, b.y, t), DeltaMaths.Lerp(a.z, b.z, t), DeltaMaths.Lerp(a.w, b.w, t));
         }
 
         public static fix4 Lerp(fix4 a, fix4 b, fix4 t)
         {
-            return new(Maths.Lerp(a.x, b.x, t.x), Maths.Lerp(a.y, b.y, t.y), Maths.Lerp(a.z, b.z, t.z), Maths.Lerp(a.w, b.w, t.w));
+            return new(DeltaMaths.Lerp(a.x, b.x, t.x), DeltaMaths.Lerp(a.y, b.y, t.y), DeltaMaths.Lerp(a.z, b.z, t.z), DeltaMaths.Lerp(a.w, b.w, t.w));
         }
 
         public static fix4 InvLerp(fix4 edge0, fix4 edge1, fix4 value)
         {
-            return new(Maths.InvLerp(edge0.x, edge1.x, value.x), Maths.InvLerp(edge0.y, edge1.y, value.y), Maths.InvLerp(edge0.z, edge1.z, value.z), Maths.InvLerp(edge0.w, edge1.w, value.w));
+            return new(DeltaMaths.InvLerp(edge0.x, edge1.x, value.x), DeltaMaths.InvLerp(edge0.y, edge1.y, value.y), DeltaMaths.InvLerp(edge0.z, edge1.z, value.z), DeltaMaths.InvLerp(edge0.w, edge1.w, value.w));
         }
 
         public static fix4 InvLerp(fix4 edge0, fix4 edge1, fix value)
         {
-            return new(Maths.InvLerp(edge0.x, edge1.x, value), Maths.InvLerp(edge0.y, edge1.y, value), Maths.InvLerp(edge0.z, edge1.z, value), Maths.InvLerp(edge0.w, edge1.w, value));
+            return new(DeltaMaths.InvLerp(edge0.x, edge1.x, value), DeltaMaths.InvLerp(edge0.y, edge1.y, value), DeltaMaths.InvLerp(edge0.z, edge1.z, value), DeltaMaths.InvLerp(edge0.w, edge1.w, value));
         }
 
         public static fix4 SmoothStep(fix4 edge0, fix4 edge1, fix4 value)
         {
-            return new(Maths.SmoothStep(edge0.x, edge1.x, value.x), Maths.SmoothStep(edge0.y, edge1.y, value.y), Maths.SmoothStep(edge0.z, edge1.z, value.z), Maths.SmoothStep(edge0.w, edge1.w, value.w));
+            return new(DeltaMaths.SmoothStep(edge0.x, edge1.x, value.x), DeltaMaths.SmoothStep(edge0.y, edge1.y, value.y), DeltaMaths.SmoothStep(edge0.z, edge1.z, value.z), DeltaMaths.SmoothStep(edge0.w, edge1.w, value.w));
         }
 
         public static fix4 SmoothStep(fix edge0, fix edge1, fix4 value)
         {
-            return new(Maths.SmoothStep(edge0, edge1, value.x), Maths.SmoothStep(edge0, edge1, value.y), Maths.SmoothStep(edge0, edge1, value.z), Maths.SmoothStep(edge0, edge1, value.w));
+            return new(DeltaMaths.SmoothStep(edge0, edge1, value.x), DeltaMaths.SmoothStep(edge0, edge1, value.y), DeltaMaths.SmoothStep(edge0, edge1, value.z), DeltaMaths.SmoothStep(edge0, edge1, value.w));
         }
 
         public static fix4 Step(fix4 edge, fix4 value)
         {
-            return new(Maths.Step(edge.x, value.x), Maths.Step(edge.y, value.y), Maths.Step(edge.z, value.z), Maths.Step(edge.w, value.w));
+            return new(DeltaMaths.Step(edge.x, value.x), DeltaMaths.Step(edge.y, value.y), DeltaMaths.Step(edge.z, value.z), DeltaMaths.Step(edge.w, value.w));
         }
 
         public static fix4 Step(fix edge, fix4 value)
         {
-            return new(Maths.Step(edge, value.x), Maths.Step(edge, value.y), Maths.Step(edge, value.z), Maths.Step(edge, value.w));
+            return new(DeltaMaths.Step(edge, value.x), DeltaMaths.Step(edge, value.y), DeltaMaths.Step(edge, value.z), DeltaMaths.Step(edge, value.w));
         }
 
         public static fix4 Saturate(fix4 value)
         {
-            return new(Maths.Saturate(value.x), Maths.Saturate(value.y), Maths.Saturate(value.z), Maths.Saturate(value.w));
+            return new(DeltaMaths.Saturate(value.x), DeltaMaths.Saturate(value.y), DeltaMaths.Saturate(value.z), DeltaMaths.Saturate(value.w));
         }
 
         public static fix4 Fma(fix4 a, fix4 b, fix4 c)
         {
-            return new(Maths.Fma(a.x, b.x, c.x), Maths.Fma(a.y, b.y, c.y), Maths.Fma(a.z, b.z, c.z), Maths.Fma(a.w, b.w, c.w));
+            return new(DeltaMaths.Fma(a.x, b.x, c.x), DeltaMaths.Fma(a.y, b.y, c.y), DeltaMaths.Fma(a.z, b.z, c.z), DeltaMaths.Fma(a.w, b.w, c.w));
         }
 
         public static fix4 Remap(fix4 value, fix4 sourceFrom, fix4 sourceTo, fix4 targetFrom, fix4 targetTo)
         {
-            return new(Maths.Remap(value.x, sourceFrom.x, sourceTo.x, targetFrom.x, targetTo.x), Maths.Remap(value.y, sourceFrom.y, sourceTo.y, targetFrom.y, targetTo.y), Maths.Remap(value.z, sourceFrom.z, sourceTo.z, targetFrom.z, targetTo.z), Maths.Remap(value.w, sourceFrom.w, sourceTo.w, targetFrom.w, targetTo.w));
+            return new(DeltaMaths.Remap(value.x, sourceFrom.x, sourceTo.x, targetFrom.x, targetTo.x), DeltaMaths.Remap(value.y, sourceFrom.y, sourceTo.y, targetFrom.y, targetTo.y), DeltaMaths.Remap(value.z, sourceFrom.z, sourceTo.z, targetFrom.z, targetTo.z), DeltaMaths.Remap(value.w, sourceFrom.w, sourceTo.w, targetFrom.w, targetTo.w));
         }
 
         public static fix4 Floor(fix4 value)
         {
-            return new(Maths.Floor(value.x), Maths.Floor(value.y), Maths.Floor(value.z), Maths.Floor(value.w));
+            return new(DeltaMaths.Floor(value.x), DeltaMaths.Floor(value.y), DeltaMaths.Floor(value.z), DeltaMaths.Floor(value.w));
         }
 
         public static fix4 Ceil(fix4 value)
         {
-            return new(Maths.Ceil(value.x), Maths.Ceil(value.y), Maths.Ceil(value.z), Maths.Ceil(value.w));
+            return new(DeltaMaths.Ceil(value.x), DeltaMaths.Ceil(value.y), DeltaMaths.Ceil(value.z), DeltaMaths.Ceil(value.w));
         }
 
         public static fix4 Round(fix4 value)
         {
-            return new(Maths.Round(value.x), Maths.Round(value.y), Maths.Round(value.z), Maths.Round(value.w));
+            return new(DeltaMaths.Round(value.x), DeltaMaths.Round(value.y), DeltaMaths.Round(value.z), DeltaMaths.Round(value.w));
         }
 
         public static fix4 Truncate(fix4 value)
         {
-            return new(Maths.Truncate(value.x), Maths.Truncate(value.y), Maths.Truncate(value.z), Maths.Truncate(value.w));
+            return new(DeltaMaths.Truncate(value.x), DeltaMaths.Truncate(value.y), DeltaMaths.Truncate(value.z), DeltaMaths.Truncate(value.w));
         }
 
         public static fix4 Fract(fix4 value)
         {
-            return new(Maths.Fract(value.x), Maths.Fract(value.y), Maths.Fract(value.z), Maths.Fract(value.w));
+            return new(DeltaMaths.Fract(value.x), DeltaMaths.Fract(value.y), DeltaMaths.Fract(value.z), DeltaMaths.Fract(value.w));
         }
 
         public static fix4 Radians(fix4 value)
         {
-            return new(Maths.Radians(value.x), Maths.Radians(value.y), Maths.Radians(value.z), Maths.Radians(value.w));
+            return new(DeltaMaths.Radians(value.x), DeltaMaths.Radians(value.y), DeltaMaths.Radians(value.z), DeltaMaths.Radians(value.w));
         }
 
         public static fix4 Degrees(fix4 value)
         {
-            return new(Maths.Degrees(value.x), Maths.Degrees(value.y), Maths.Degrees(value.z), Maths.Degrees(value.w));
+            return new(DeltaMaths.Degrees(value.x), DeltaMaths.Degrees(value.y), DeltaMaths.Degrees(value.z), DeltaMaths.Degrees(value.w));
         }
     }
 }

@@ -4,64 +4,64 @@ using System;
 using System.Runtime.InteropServices;
 using System.Runtime.CompilerServices;
 
-namespace Delta.Maths
+namespace DeltaMaths
 {
     public partial struct float2
     {
 
         public static float2 Exp(float2 value)
         {
-            return new(Maths.Exp(value.x), Maths.Exp(value.y));
+            return new(DeltaMaths.Exp(value.x), DeltaMaths.Exp(value.y));
         }
 
         public static float2 Exp2(float2 value)
         {
-            return new(Maths.Exp2(value.x), Maths.Exp2(value.y));
+            return new(DeltaMaths.Exp2(value.x), DeltaMaths.Exp2(value.y));
         }
 
         public static float2 Log(float2 value)
         {
-            return new(Maths.Log(value.x), Maths.Log(value.y));
+            return new(DeltaMaths.Log(value.x), DeltaMaths.Log(value.y));
         }
 
         public static float2 Log2(float2 value)
         {
-            return new(Maths.Log2(value.x), Maths.Log2(value.y));
+            return new(DeltaMaths.Log2(value.x), DeltaMaths.Log2(value.y));
         }
 
         public static float2 Log10(float2 value)
         {
-            return new(Maths.Log10(value.x), Maths.Log10(value.y));
+            return new(DeltaMaths.Log10(value.x), DeltaMaths.Log10(value.y));
         }
 
         public static float2 Sqrt(float2 value)
         {
-            return new(Maths.Sqrt(value.x), Maths.Sqrt(value.y));
+            return new(DeltaMaths.Sqrt(value.x), DeltaMaths.Sqrt(value.y));
         }
 
         public static float2 InverseSqrt(float2 value)
         {
-            return new(Maths.InverseSqrt(value.x), Maths.InverseSqrt(value.y));
+            return new(DeltaMaths.InverseSqrt(value.x), DeltaMaths.InverseSqrt(value.y));
         }
 
         public static float2 Cbrt(float2 value)
         {
-            return new(Maths.Cbrt(value.x), Maths.Cbrt(value.y));
+            return new(DeltaMaths.Cbrt(value.x), DeltaMaths.Cbrt(value.y));
         }
 
         public static float2 Pow(float2 a, float2 b)
         {
-            return new(Maths.Pow(a.x, b.x), Maths.Pow(a.y, b.y));
+            return new(DeltaMaths.Pow(a.x, b.x), DeltaMaths.Pow(a.y, b.y));
         }
 
         public static float2 Pow(float2 a, float b)
         {
-            return new(Maths.Pow(a.x, b), Maths.Pow(a.y, b));
+            return new(DeltaMaths.Pow(a.x, b), DeltaMaths.Pow(a.y, b));
         }
 
         public static float2 Pow(float a, float2 b)
         {
-            return new(Maths.Pow(a, b.x), Maths.Pow(a, b.y));
+            return new(DeltaMaths.Pow(a, b.x), DeltaMaths.Pow(a, b.y));
         }
     }
 }

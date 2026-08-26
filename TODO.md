@@ -1,6 +1,6 @@
-# Maths TODO
+# DeltaMaths TODO
 
-Consumer requests that add a generated type or function start in MathsGen and
+Consumer requests that add a generated type or function start in DeltaMathsGen and
 include shader-contract tests when the symbol is GPU-visible. The committed
 `shader-contract.json` is generated ABI consumed by DeltaShader, not a
-contract that Maths or Shader recreates independently.
+contract that DeltaMaths or Shader recreates independently.

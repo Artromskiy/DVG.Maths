@@ -4,7 +4,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Runtime.CompilerServices;
 
-namespace Delta.Maths
+namespace DeltaMaths
 {
     /// <summary>A column-major 4x4 matrix represented by four float4 columns.</summary>
     [Serializable]

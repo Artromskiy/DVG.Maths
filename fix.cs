@@ -5,7 +5,7 @@ using System.Globalization;
 using System.Runtime.CompilerServices;
 using System.Runtime.Serialization;
 
-namespace Delta.Maths
+namespace DeltaMaths
 {
     [DebuggerDisplay("Value = {ToString()}")]
     [DataContract]

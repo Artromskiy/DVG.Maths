@@ -1,6 +1,6 @@
-namespace Delta.Maths.VersionBenchmarks.Shared;
+namespace DeltaMaths.VersionBenchmarks.Shared;
 
-public enum MathsWorkload
+public enum DeltaMathsWorkload
 {
     Float2Add,
     Float3Add,
@@ -30,7 +30,7 @@ public enum MathsWorkload
     LayoutWriteFloat4x4
 }
 
-public interface IMathsScenario
+public interface IDeltaMathsScenario
 {
-    float Run(MathsWorkload workload);
+    float Run(DeltaMathsWorkload workload);
 }

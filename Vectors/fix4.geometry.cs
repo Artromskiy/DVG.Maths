@@ -4,7 +4,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Runtime.CompilerServices;
 
-namespace Delta.Maths
+namespace DeltaMaths
 {
     public partial struct fix4
     {
@@ -21,7 +21,7 @@ namespace Delta.Maths
 
         public static fix Length(fix4 value)
         {
-            return Maths.Sqrt(SqrLength(value));
+            return DeltaMaths.Sqrt(SqrLength(value));
         }
 
         public static fix Distance(fix4 a, fix4 b)
@@ -42,13 +42,13 @@ namespace Delta.Maths
         public static fix4 NormalizeSafe(fix4 value)
         {
             var sqrLength = SqrLength(value);
-            return sqrLength <= 0 ? zero : value * Maths.InverseSqrt(sqrLength);
+            return sqrLength <= 0 ? zero : value * DeltaMaths.InverseSqrt(sqrLength);
         }
 
         public static fix4 NormalizeSafe(fix4 value, fix4 fallback)
         {
             var sqrLength = SqrLength(value);
-            return sqrLength <= 0 ? fallback : value * Maths.InverseSqrt(sqrLength);
+            return sqrLength <= 0 ? fallback : value * DeltaMaths.InverseSqrt(sqrLength);
         }
 
         public static fix4 FaceForward(fix4 N, fix4 I, fix4 Nref)
@@ -66,7 +66,7 @@ namespace Delta.Maths
             var dNI = Dot(N, I);
             var k = 1 - eta * eta * (1 - dNI * dNI);
             if (k < 0) return zero;
-            return eta * I - (eta * dNI + Maths.Sqrt(k)) * N;
+            return eta * I - (eta * dNI + DeltaMaths.Sqrt(k)) * N;
         }
 
         public static fix4 Project(fix4 value, fix4 onto)
@@ -82,28 +82,28 @@ namespace Delta.Maths
 
         public static fix4 ClampLength(fix4 value, fix maxLength)
         {
-            maxLength = Maths.Max(maxLength, 0);
+            maxLength = DeltaMaths.Max(maxLength, 0);
             var sqrLength = SqrLength(value);
             if (sqrLength > maxLength * maxLength)
             {
-                return value * maxLength * Maths.InverseSqrt(sqrLength);
+                return value * maxLength * DeltaMaths.InverseSqrt(sqrLength);
             }
             return value;
         }
 
         public static fix4 MoveTowards(fix4 current, fix4 target, fix maxDelta)
         {
-            maxDelta = Maths.Max(maxDelta, 0);
+            maxDelta = DeltaMaths.Max(maxDelta, 0);
             var delta = target - current;
             var sqrDistance = SqrLength(delta);
             if (sqrDistance == 0 || sqrDistance <= maxDelta * maxDelta)
                 return target;
-            return current + delta * maxDelta * Maths.InverseSqrt(sqrDistance);
+            return current + delta * maxDelta * DeltaMaths.InverseSqrt(sqrDistance);
         }
 
         public static fix4 SmoothDamp(fix4 source, fix4 target, ref fix4 velocity, fix smoothTime, fix deltaTime)
         {
-            return new(Maths.SmoothDamp(source.x, target.x, ref velocity.x, smoothTime, deltaTime), Maths.SmoothDamp(source.y, target.y, ref velocity.y, smoothTime, deltaTime), Maths.SmoothDamp(source.z, target.z, ref velocity.z, smoothTime, deltaTime), Maths.SmoothDamp(source.w, target.w, ref velocity.w, smoothTime, deltaTime));
+            return new(DeltaMaths.SmoothDamp(source.x, target.x, ref velocity.x, smoothTime, deltaTime), DeltaMaths.SmoothDamp(source.y, target.y, ref velocity.y, smoothTime, deltaTime), DeltaMaths.SmoothDamp(source.z, target.z, ref velocity.z, smoothTime, deltaTime), DeltaMaths.SmoothDamp(source.w, target.w, ref velocity.w, smoothTime, deltaTime));
         }
     }
 }

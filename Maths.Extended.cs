@@ -1,8 +1,8 @@
 using System.Runtime.CompilerServices;
 
-namespace Delta.Maths
+namespace DeltaMaths
 {
-    public partial class Maths
+    public partial class DeltaMaths
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float SmoothDamp(float current, float target, ref float velocity, float smoothTime, float deltaTime)
