@@ -119,6 +119,12 @@ namespace Delta.Maths.Tests
         public static void ShaderStyleFacade()
         {
             AssertEx.Equal(DeltaMaths.Sin(0.5f), maths.sin(0.5f));
+            AssertEx.Near(0.75f, DeltaMaths.Mod(-0.25f, 1f));
+            AssertEx.Near(0.75f, maths.mod(-0.25f, 1f));
+            AssertEx.Equal(new float3(0.75f, 0.25f, 0.5f),
+                float3.Mod(new float3(-0.25f, 1.25f, 2.5f), 1f));
+            AssertEx.Equal(new float3(0.75f, 0.25f, 0.5f),
+                maths.mod(new float3(-0.25f, 1.25f, 2.5f), 1f));
             AssertEx.Equal(float3.Dot(new float3(1, 2, 3), new float3(4, 5, 6)),
                 maths.dot(new float3(1, 2, 3), new float3(4, 5, 6)));
             AssertEx.Equal(new float3(-1, 20, -3),

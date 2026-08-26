@@ -61,6 +61,7 @@ namespace Delta.Maths
         public static fix fma(fix a, fix b, fix c) => DeltaMaths.Fma(a, b, c);
         public static fix inverseSqrt(fix value) => DeltaMaths.InverseSqrt(value);
         public static float lerp(float edge0, float edge1, float value) => DeltaMaths.Lerp(edge0, edge1, value);
+        public static float mod(float x, float y) => DeltaMaths.Mod(x, y);
         public static float smoothStep(float edge0, float edge1, float v) => DeltaMaths.SmoothStep(edge0, edge1, v);
         public static float radians(float degrees) => DeltaMaths.Radians(degrees);
         public static float degrees(float radians) => DeltaMaths.Degrees(radians);
@@ -70,6 +71,7 @@ namespace Delta.Maths
         public static float log2(float value) => DeltaMaths.Log2(value);
         public static float exp2(float value) => DeltaMaths.Exp2(value);
         public static double lerp(double edge0, double edge1, double value) => DeltaMaths.Lerp(edge0, edge1, value);
+        public static double mod(double x, double y) => DeltaMaths.Mod(x, y);
         public static double smoothStep(double edge0, double edge1, double v) => DeltaMaths.SmoothStep(edge0, edge1, v);
         public static double degrees(double radians) => DeltaMaths.Degrees(radians);
         public static double radians(double degrees) => DeltaMaths.Radians(degrees);

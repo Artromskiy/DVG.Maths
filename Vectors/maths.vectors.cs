@@ -837,6 +837,12 @@ namespace Delta.Maths
         public static float2 remap(float2 value, float2 sourceFrom, float2 sourceTo, float2 targetFrom, float2 targetTo) => float2.Remap(value, sourceFrom, sourceTo, targetFrom, targetTo);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float2 mod(float2 x, float2 y) => float2.Mod(x, y);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float2 mod(float2 x, float y) => float2.Mod(x, y);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float2 floor(float2 value) => float2.Floor(value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -1120,6 +1126,12 @@ namespace Delta.Maths
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float3 remap(float3 value, float3 sourceFrom, float3 sourceTo, float3 targetFrom, float3 targetTo) => float3.Remap(value, sourceFrom, sourceTo, targetFrom, targetTo);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float3 mod(float3 x, float3 y) => float3.Mod(x, y);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float3 mod(float3 x, float y) => float3.Mod(x, y);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float3 floor(float3 value) => float3.Floor(value);
@@ -1408,6 +1420,12 @@ namespace Delta.Maths
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float4 remap(float4 value, float4 sourceFrom, float4 sourceTo, float4 targetFrom, float4 targetTo) => float4.Remap(value, sourceFrom, sourceTo, targetFrom, targetTo);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float4 mod(float4 x, float4 y) => float4.Mod(x, y);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float4 mod(float4 x, float y) => float4.Mod(x, y);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float4 floor(float4 value) => float4.Floor(value);

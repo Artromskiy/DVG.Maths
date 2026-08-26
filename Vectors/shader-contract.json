@@ -73741,6 +73741,56 @@
       "requiredCapability": "vector"
     },
     {
+      "identity": "float2.Mod(float2,float):float2",
+      "typeClrName": "float2",
+      "clrName": "Mod",
+      "mathsName": "mod",
+      "parameterClrNames": [
+        "float2",
+        "float"
+      ],
+      "parameterGlslTypes": [
+        "vec2",
+        "float"
+      ],
+      "returnClrName": "float2",
+      "returnGlslType": "vec2",
+      "glslName": "mod",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "float2.Mod(float2,float2):float2",
+      "typeClrName": "float2",
+      "clrName": "Mod",
+      "mathsName": "mod",
+      "parameterClrNames": [
+        "float2",
+        "float2"
+      ],
+      "parameterGlslTypes": [
+        "vec2",
+        "vec2"
+      ],
+      "returnClrName": "float2",
+      "returnGlslType": "vec2",
+      "glslName": "mod",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
       "identity": "float2.MoveTowards(float2,float2,float):float2",
       "typeClrName": "float2",
       "clrName": "MoveTowards",
@@ -75175,15 +75225,11 @@
       ],
       "returnClrName": "float2",
       "returnGlslType": "vec2",
-      "glslName": "mod",
-      "mapping": "Builtin",
-      "shaderZone": "DeltaMaths",
-      "stages": [
-        "vertex",
-        "fragment",
-        "compute"
-      ],
-      "requiredCapability": "vector"
+      "glslName": null,
+      "mapping": "Unsupported",
+      "shaderZone": null,
+      "stages": [],
+      "requiredCapability": null
     },
     {
       "identity": "float2.op_Modulus(float2,float2):float2",
@@ -75200,15 +75246,11 @@
       ],
       "returnClrName": "float2",
       "returnGlslType": "vec2",
-      "glslName": "mod",
-      "mapping": "Builtin",
-      "shaderZone": "DeltaMaths",
-      "stages": [
-        "vertex",
-        "fragment",
-        "compute"
-      ],
-      "requiredCapability": "vector"
+      "glslName": null,
+      "mapping": "Unsupported",
+      "shaderZone": null,
+      "stages": [],
+      "requiredCapability": null
     },
     {
       "identity": "float2.op_Multiply(float,float2):float2",
@@ -76775,6 +76817,56 @@
       "requiredCapability": "vector"
     },
     {
+      "identity": "float3.Mod(float3,float):float3",
+      "typeClrName": "float3",
+      "clrName": "Mod",
+      "mathsName": "mod",
+      "parameterClrNames": [
+        "float3",
+        "float"
+      ],
+      "parameterGlslTypes": [
+        "vec3",
+        "float"
+      ],
+      "returnClrName": "float3",
+      "returnGlslType": "vec3",
+      "glslName": "mod",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "float3.Mod(float3,float3):float3",
+      "typeClrName": "float3",
+      "clrName": "Mod",
+      "mathsName": "mod",
+      "parameterClrNames": [
+        "float3",
+        "float3"
+      ],
+      "parameterGlslTypes": [
+        "vec3",
+        "vec3"
+      ],
+      "returnClrName": "float3",
+      "returnGlslType": "vec3",
+      "glslName": "mod",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
       "identity": "float3.MoveTowards(float3,float3,float):float3",
       "typeClrName": "float3",
       "clrName": "MoveTowards",
@@ -78209,15 +78301,11 @@
       ],
       "returnClrName": "float3",
       "returnGlslType": "vec3",
-      "glslName": "mod",
-      "mapping": "Builtin",
-      "shaderZone": "DeltaMaths",
-      "stages": [
-        "vertex",
-        "fragment",
-        "compute"
-      ],
-      "requiredCapability": "vector"
+      "glslName": null,
+      "mapping": "Unsupported",
+      "shaderZone": null,
+      "stages": [],
+      "requiredCapability": null
     },
     {
       "identity": "float3.op_Modulus(float3,float3):float3",
@@ -78234,15 +78322,11 @@
       ],
       "returnClrName": "float3",
       "returnGlslType": "vec3",
-      "glslName": "mod",
-      "mapping": "Builtin",
-      "shaderZone": "DeltaMaths",
-      "stages": [
-        "vertex",
-        "fragment",
-        "compute"
-      ],
-      "requiredCapability": "vector"
+      "glslName": null,
+      "mapping": "Unsupported",
+      "shaderZone": null,
+      "stages": [],
+      "requiredCapability": null
     },
     {
       "identity": "float3.op_Multiply(float,float3):float3",
@@ -79784,6 +79868,56 @@
       "requiredCapability": "vector"
     },
     {
+      "identity": "float4.Mod(float4,float):float4",
+      "typeClrName": "float4",
+      "clrName": "Mod",
+      "mathsName": "mod",
+      "parameterClrNames": [
+        "float4",
+        "float"
+      ],
+      "parameterGlslTypes": [
+        "vec4",
+        "float"
+      ],
+      "returnClrName": "float4",
+      "returnGlslType": "vec4",
+      "glslName": "mod",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
+      "identity": "float4.Mod(float4,float4):float4",
+      "typeClrName": "float4",
+      "clrName": "Mod",
+      "mathsName": "mod",
+      "parameterClrNames": [
+        "float4",
+        "float4"
+      ],
+      "parameterGlslTypes": [
+        "vec4",
+        "vec4"
+      ],
+      "returnClrName": "float4",
+      "returnGlslType": "vec4",
+      "glslName": "mod",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "vector"
+    },
+    {
       "identity": "float4.MoveTowards(float4,float4,float):float4",
       "typeClrName": "float4",
       "clrName": "MoveTowards",
@@ -81218,15 +81352,11 @@
       ],
       "returnClrName": "float4",
       "returnGlslType": "vec4",
-      "glslName": "mod",
-      "mapping": "Builtin",
-      "shaderZone": "DeltaMaths",
-      "stages": [
-        "vertex",
-        "fragment",
-        "compute"
-      ],
-      "requiredCapability": "vector"
+      "glslName": null,
+      "mapping": "Unsupported",
+      "shaderZone": null,
+      "stages": [],
+      "requiredCapability": null
     },
     {
       "identity": "float4.op_Modulus(float4,float4):float4",
@@ -81243,15 +81373,11 @@
       ],
       "returnClrName": "float4",
       "returnGlslType": "vec4",
-      "glslName": "mod",
-      "mapping": "Builtin",
-      "shaderZone": "DeltaMaths",
-      "stages": [
-        "vertex",
-        "fragment",
-        "compute"
-      ],
-      "requiredCapability": "vector"
+      "glslName": null,
+      "mapping": "Unsupported",
+      "shaderZone": null,
+      "stages": [],
+      "requiredCapability": null
     },
     {
       "identity": "float4.op_Multiply(float,float4):float4",
@@ -94159,6 +94285,31 @@
         "compute"
       ],
       "requiredCapability": "vector"
+    },
+    {
+      "identity": "maths.mod(float,float):float",
+      "typeClrName": "maths",
+      "clrName": "mod",
+      "mathsName": "mod",
+      "parameterClrNames": [
+        "float",
+        "float"
+      ],
+      "parameterGlslTypes": [
+        "float",
+        "float"
+      ],
+      "returnClrName": "float",
+      "returnGlslType": "float",
+      "glslName": "mod",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "scalar"
     }
   ]
 }

@@ -186,6 +186,7 @@ namespace Delta.Maths.Tests
                 "vector",
                 "matrix",
                 "quaternion",
+                "scalar",
             };
             AssertEx.True(types.All(type => type.GetProperty("requiredCapability").ValueKind == JsonValueKind.Null
                 || type.GetProperty("requiredCapability").GetString() is { } capability
@@ -292,13 +293,27 @@ namespace Delta.Maths.Tests
             AssertFunction(functions, "float3", "Normalize", "normalize", "Builtin", "float3");
             AssertFunction(functions, "float3", "Select", "delta_select", "Helper", "float3", "float3", "bool3");
 
+            var scalarMod = FindFunction(functions, "maths", "mod", "float", "float");
+            AssertEx.Equal("maths.mod(float,float):float", scalarMod.GetProperty("identity").GetString());
+            AssertEx.Equal("mod", scalarMod.GetProperty("glslName").GetString());
+            AssertEx.Equal("Builtin", scalarMod.GetProperty("mapping").GetString());
+            AssertEx.Equal("scalar", scalarMod.GetProperty("requiredCapability").GetString());
+
             foreach (var vectorName in new[] { "float2", "float3", "float4" })
             {
-                AssertFunction(functions, vectorName, "op_Modulus", "mod", "Builtin", vectorName, vectorName);
-                AssertFunction(functions, vectorName, "op_Modulus", "mod", "Builtin", vectorName, "float");
-                var scalarLeftModulus = FindFunction(functions, vectorName, "op_Modulus", "float", vectorName);
-                AssertEx.Equal("Unsupported", scalarLeftModulus.GetProperty("mapping").GetString());
-                AssertEx.True(scalarLeftModulus.GetProperty("glslName").ValueKind == JsonValueKind.Null);
+                AssertFunction(functions, vectorName, "Mod", "mod", "Builtin", vectorName, vectorName);
+                AssertFunction(functions, vectorName, "Mod", "mod", "Builtin", vectorName, "float");
+                foreach (var parameters in new[]
+                {
+                    new[] { vectorName, vectorName },
+                    new[] { vectorName, "float" },
+                    new[] { "float", vectorName },
+                })
+                {
+                    var scalarLeftModulus = FindFunction(functions, vectorName, "op_Modulus", parameters);
+                    AssertEx.Equal("Unsupported", scalarLeftModulus.GetProperty("mapping").GetString());
+                    AssertEx.True(scalarLeftModulus.GetProperty("glslName").ValueKind == JsonValueKind.Null);
+                }
             }
         }
 
