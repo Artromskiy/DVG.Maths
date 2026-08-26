@@ -303,6 +303,8 @@ namespace Delta.Maths.Tests
             {
                 AssertFunction(functions, vectorName, "Mod", "mod", "Builtin", vectorName, vectorName);
                 AssertFunction(functions, vectorName, "Mod", "mod", "Builtin", vectorName, "float");
+                AssertFunction(functions, "maths", "mod", "mod", "Builtin", vectorName, vectorName);
+                AssertFunction(functions, "maths", "mod", "mod", "Builtin", vectorName, "float");
                 foreach (var parameters in new[]
                 {
                     new[] { vectorName, vectorName },
