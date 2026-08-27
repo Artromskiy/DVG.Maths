@@ -31,5 +31,9 @@ DeltaMathsGen owns its declarations/generation; neither DeltaMaths nor DeltaShad
 recreates it. `double` and `fix` remain CPU-only; GPU-only intrinsics stay
 in DeltaShader.
 
+See [CPU_GPU_CONFORMANCE.md](CPU_GPU_CONFORMANCE.md) for the cross-project
+CPU/Shader/Vulkan correctness protocol. Its bundles are test tooling, not part
+of the runtime DeltaMaths API.
+
 See [WORKFLOW.md](WORKFLOW.md) for generation/build/test commands,
 [TODO.md](TODO.md) for selected work and [AGENTS.md](AGENTS.md) for routing.

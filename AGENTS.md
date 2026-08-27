@@ -7,6 +7,8 @@ symbol/layout contract.
 - [TODO.md](TODO.md) — selected work.
 - [IDEAS.md](IDEAS.md) — deferred research only.
 - [WORKFLOW.md](WORKFLOW.md) — generation, target builds and tests.
+- [CPU_GPU_CONFORMANCE.md](CPU_GPU_CONFORMANCE.md) — authoritative CPU/Shader/Vulkan
+  differential-conformance protocol and ownership split.
 - [../DeltaMathsGen/AGENTS.md](../DeltaMathsGen/AGENTS.md) — required for generated API
   changes; [../DeltaShader/AGENTS.md](../DeltaShader/AGENTS.md) — required when
   shader-visible identities or layouts change.
