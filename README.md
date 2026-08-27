@@ -1,13 +1,17 @@
 # DeltaMaths
 
 Portable engine-independent mathematics for .NET. Runtime targets
-`netstandard2.0` and `netstandard2.1` and has no Unity, renderer or
-`System.Numerics` dependency.
+`netstandard2.0`, `netstandard2.1`, `net8.0` and `net10.0`, and has no Unity,
+renderer or `System.Numerics` dependency.
 
 The API includes scalar utilities and deterministic 16.16 `fix`,
 `bool/int/uint/float/double/fix` vectors, geometry/interpolation/trigonometry,
 swizzles, generated `float4x4` and `quaternion`, plus conventional `DeltaMaths.*`
 and shader-like lowercase `maths.*` entry points.
+
+`fix` stores a signed 16.16 value. Its public `raw` field is intentionally
+retained as a narrow ABI and serialization escape hatch for existing
+integrations; ordinary code should use the typed conversions and operators.
 
 ```csharp
 using Delta.Maths;

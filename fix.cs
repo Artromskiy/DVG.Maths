@@ -7,11 +7,23 @@ using System.Runtime.Serialization;
 
 namespace Delta.Maths
 {
+    /// <summary>A signed 16.16 fixed-point value.</summary>
+    /// <remarks>
+    /// The public <see cref="raw"/> field is an intentional ABI and
+    /// serialization escape hatch for existing integrations. Normal code
+    /// should use conversions and operators so the fixed-point scale remains
+    /// apparent. The field is kept public for source and binary compatibility.
+    /// </remarks>
     [DebuggerDisplay("Value = {ToString()}")]
     [DataContract]
     [Serializable]
     public partial struct fix : IEquatable<fix>, IComparable<fix>
     {
+        /// <summary>
+        /// The signed two's-complement value in 16.16 fixed-point units.
+        /// Use this field only at explicit serialization or native ABI
+        /// boundaries; its value is already scaled by 65536.
+        /// </summary>
         [DataMember(Order = 0)]
         public int raw;
 
@@ -175,7 +187,7 @@ namespace Delta.Maths
         public readonly int CompareTo(fix other) => raw.CompareTo(other.raw);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public override readonly bool Equals(object obj) => obj is fix other && Equals(other);
+        public override readonly bool Equals(object? obj) => obj is fix other && Equals(other);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public override readonly int GetHashCode() => raw;
