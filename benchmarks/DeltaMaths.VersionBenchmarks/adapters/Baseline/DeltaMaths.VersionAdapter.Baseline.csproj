@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <AssemblyName>DeltaMaths.VersionAdapter.Baseline</AssemblyName>
+    <RootNamespace>Delta.Maths.VersionAdapter</RootNamespace>
+    <LangVersion>latest</LangVersion>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <BaselineMathsProject Condition="Exists('$(BaselineRoot)/src/DeltaMaths/DeltaMaths.csproj')">$(BaselineRoot)/src/DeltaMaths/DeltaMaths.csproj</BaselineMathsProject>
+    <BaselineMathsProject Condition="'$(BaselineMathsProject)' == '' And Exists('$(BaselineRoot)/DeltaMaths.csproj')">$(BaselineRoot)/DeltaMaths.csproj</BaselineMathsProject>
+  </PropertyGroup>
+
+  <Target Name="ValidateBaselineRoot" BeforeTargets="PrepareForBuild">
+    <Error Condition="'$(BaselineRoot)' == ''" Text="BaselineRoot is required. Pass -p:BaselineRoot=/path/to/baseline/checkout." />
+    <Error Condition="'$(BaselineMathsProject)' == ''" Text="BaselineRoot does not contain a DeltaMaths project in src/DeltaMaths/ or the legacy root location: $(BaselineRoot)" />
+  </Target>
+
+  <ItemGroup>
+    <Compile Include="../MathsScenario.cs" Link="MathsScenario.cs" />
+    <ProjectReference Include="../../Shared/DeltaMaths.VersionBenchmarks.Shared.csproj" />
+    <ProjectReference Include="$(BaselineMathsProject)"
+                      Aliases="mathsRuntime"
+                      SetTargetFramework="TargetFramework=netstandard2.1"
+                      AdditionalProperties="AssemblyName=DeltaMaths.VersionBaseline" />
+  </ItemGroup>
+
+</Project>

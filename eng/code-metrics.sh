@@ -13,7 +13,7 @@ case "$error_log" in
 esac
 mkdir -p "$(dirname "$error_log")"
 
-exec dotnet build DeltaMaths.csproj \
+exec dotnet build src/DeltaMaths/DeltaMaths.csproj \
     -c Release \
     --no-restore \
     --disable-build-servers \

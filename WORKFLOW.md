@@ -10,30 +10,30 @@ Furnace project standard. Before restore/build or a structural handoff, run:
 ```
 
 The gate checks the mandatory top-level directories, rejects unexpected
-tracked top-level folders, requires src/DeltaMaths/ as the primary source
-project, and requires source siblings to use the src/DeltaMaths.<Area>/ form.
-samples/ contains runnable examples; probes/ contains bounded
+top-level folders, requires `src/DeltaMaths/` as the primary source project,
+and requires source siblings to use the `src/DeltaMaths.<Area>/` form.
+`samples/` contains runnable examples; `probes/` contains bounded
 headless/compiler/contract checks. Empty mandatory domains stay tracked with
-.gitkeep.
+`.gitkeep`.
 
-From the workspace root, regenerate first when declarations changed. Never run
-an unverified stale generator binary:
+From the DeltaMaths repository root, regenerate first when declarations
+changed. Never run an unverified stale generator binary:
 
 ```bash
-dotnet build DeltaMathsGen/DeltaMathsGen.csproj -c Release \
+dotnet build ../DeltaMathsGen/src/DeltaMathsGen/DeltaMathsGen.csproj -c Release \
   --disable-build-servers -m:1 /p:UseSharedCompilation=false
-dotnet DeltaMathsGen/bin/Release/net8.0/DeltaMathsGen.dll DeltaMaths/Vectors
-dotnet DeltaMathsGen/bin/Release/net8.0/DeltaMathsGen.dll DeltaMaths/Vectors
-dotnet build DeltaMaths/DeltaMaths.csproj -c Release -f netstandard2.0 \
+dotnet ../DeltaMathsGen/src/DeltaMathsGen/bin/Release/net8.0/DeltaMathsGen.dll src/DeltaMaths/Vectors
+dotnet ../DeltaMathsGen/src/DeltaMathsGen/bin/Release/net8.0/DeltaMathsGen.dll src/DeltaMaths/Vectors
+dotnet build src/DeltaMaths/DeltaMaths.csproj -c Release -f netstandard2.0 \
   --disable-build-servers -m:1 /p:UseSharedCompilation=false
-dotnet build DeltaMaths/DeltaMaths.csproj -c Release -f netstandard2.1 \
+dotnet build src/DeltaMaths/DeltaMaths.csproj -c Release -f netstandard2.1 \
   --disable-build-servers -m:1 /p:UseSharedCompilation=false
-dotnet run --project DeltaMaths/Tests/DeltaMaths.Tests.csproj -c Release
-git -C DeltaMaths diff --check
+dotnet run --project tests/DeltaMaths.Tests/DeltaMaths.Tests.csproj -c Release
+git diff --check
 ```
 
 The second generation must produce no additional diff. Inspect
-`.delta-generated-files` and `Vectors/shader-contract.json` for ABI/layout
+`.delta-generated-files` and `src/DeltaMaths/Vectors/shader-contract.json` for ABI/layout
 changes before consumer verification.
 
 Do not run version benchmarks during ordinary review. Use the manual workflow

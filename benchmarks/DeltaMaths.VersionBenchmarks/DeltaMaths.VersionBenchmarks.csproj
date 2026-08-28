@@ -1,0 +1,46 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>Delta.Maths.VersionBenchmarks</RootNamespace>
+    <AssemblyName>DeltaMaths.VersionBenchmarks</AssemblyName>
+    <LangVersion>latest</LangVersion>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <CandidateRoot Condition="'$(CandidateRoot)' == ''">$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)../..'))</CandidateRoot>
+    <BaselineMathsProject Condition="Exists('$(BaselineRoot)/src/DeltaMaths/DeltaMaths.csproj')">$(BaselineRoot)/src/DeltaMaths/DeltaMaths.csproj</BaselineMathsProject>
+    <BaselineMathsProject Condition="'$(BaselineMathsProject)' == '' And Exists('$(BaselineRoot)/DeltaMaths.csproj')">$(BaselineRoot)/DeltaMaths.csproj</BaselineMathsProject>
+    <CandidateMathsProject Condition="Exists('$(CandidateRoot)/src/DeltaMaths/DeltaMaths.csproj')">$(CandidateRoot)/src/DeltaMaths/DeltaMaths.csproj</CandidateMathsProject>
+    <CandidateMathsProject Condition="'$(CandidateMathsProject)' == '' And Exists('$(CandidateRoot)/DeltaMaths.csproj')">$(CandidateRoot)/DeltaMaths.csproj</CandidateMathsProject>
+  </PropertyGroup>
+
+  <Target Name="ValidateVersionRoots" BeforeTargets="PrepareForBuild">
+    <Error Condition="'$(BaselineRoot)' == ''" Text="BaselineRoot is required. Pass -p:BaselineRoot=/path/to/baseline/checkout." />
+    <Error Condition="'$(BaselineMathsProject)' == ''" Text="BaselineRoot does not contain a DeltaMaths project in src/DeltaMaths/ or the legacy root location: $(BaselineRoot)" />
+    <Error Condition="'$(CandidateMathsProject)' == ''" Text="CandidateRoot does not contain a DeltaMaths project in src/DeltaMaths/ or the legacy root location: $(CandidateRoot)" />
+  </Target>
+
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="VersionBenchmarks.cs" />
+    <ProjectReference Include="Shared/DeltaMaths.VersionBenchmarks.Shared.csproj" />
+    <ProjectReference Include="adapters/Baseline/DeltaMaths.VersionAdapter.Baseline.csproj"
+                      Aliases="baselineAdapter"
+                      AdditionalProperties="BaselineRoot=$(BaselineRoot)" />
+    <ProjectReference Include="adapters/Candidate/DeltaMaths.VersionAdapter.Candidate.csproj"
+                      Aliases="candidateAdapter"
+                      AdditionalProperties="CandidateRoot=$(CandidateRoot)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AssemblyMetadata Include="DeltaMaths.BaselineRoot" Value="$(BaselineRoot)" />
+    <AssemblyMetadata Include="DeltaMaths.CandidateRoot" Value="$(CandidateRoot)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BenchmarkDotNet" Version="0.13.12" />
+  </ItemGroup>
+
+</Project>
