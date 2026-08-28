@@ -9,6 +9,7 @@ internal static class MathConformanceTests
         MatrixSemantics();
         QuaternionSemantics();
         ShaderContractConformance.Run();
+        ShaderContractBundleConformance.Run();
     }
 
     private static void VectorOperations()

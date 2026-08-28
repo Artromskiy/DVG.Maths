@@ -9,18 +9,42 @@ internal static class ShaderContractConformance
 
     public static void Run()
     {
-        using var document = JsonDocument.Parse(LoadManifest());
-        var functions = ReadSupportedFunctions(document.RootElement);
-        ValidateCaseCoverage(functions);
+        var manifest = LoadContractManifest();
+        ValidateCaseCoverage(manifest.SupportedFunctions);
 
-        var runner = new ContractCaseRunner(functions, typeof(float2).Assembly);
+        var runner = new ContractCaseRunner(manifest.SupportedFunctions, typeof(float2).Assembly);
         GeneratedShaderContractCases.RunAll(runner);
 
-        if (runner.ExecutedCount != functions.Count)
+        if (runner.ExecutedCount != manifest.SupportedFunctions.Count)
         {
             throw new InvalidOperationException(
-                $"Contract execution count mismatch: expected {functions.Count}, got {runner.ExecutedCount}.");
+                $"Contract execution count mismatch: expected {manifest.SupportedFunctions.Count}, got {runner.ExecutedCount}.");
         }
+    }
+
+    internal static ContractManifest LoadContractManifest()
+    {
+        using var document = JsonDocument.Parse(LoadManifest());
+        var functions = ReadSupportedFunctions(document.RootElement);
+        var allFunctions = document.RootElement.GetProperty("functions");
+        var unsupportedCount = 0;
+
+        foreach (var function in allFunctions.EnumerateArray())
+        {
+            if (string.Equals(function.GetProperty("mapping").GetString(), "Unsupported", StringComparison.Ordinal))
+            {
+                unsupportedCount++;
+            }
+        }
+
+        return new ContractManifest(
+            document.RootElement.GetProperty("schemaVersion").GetString()
+                ?? throw new InvalidOperationException("The contract has no schema version."),
+            document.RootElement.GetProperty("namespace").GetString()
+                ?? throw new InvalidOperationException("The contract has no namespace."),
+            allFunctions.GetArrayLength(),
+            unsupportedCount,
+            functions);
     }
 
     private static string LoadManifest()
@@ -69,7 +93,13 @@ internal static class ShaderContractConformance
                     element.GetProperty("returnClrName").GetString()
                         ?? throw new InvalidOperationException("A contract function has no return type."),
                     mapping
-                        ?? throw new InvalidOperationException("A contract function has no mapping.")));
+                        ?? throw new InvalidOperationException("A contract function has no mapping."),
+                    element.TryGetProperty("requiredCapability", out var capabilityElement)
+                        ? capabilityElement.GetString()
+                        : null,
+                    element.TryGetProperty("stages", out var stagesElement)
+                        ? ReadStrings(stagesElement)
+                        : Array.Empty<string>()));
         }
 
         return functions;
@@ -135,7 +165,24 @@ internal sealed record ContractFunction(
     string MethodName,
     string[] ParameterTypeNames,
     string ReturnTypeName,
-    string Mapping);
+    string Mapping,
+    string? RequiredCapability,
+    string[] Stages);
+
+internal sealed record ContractManifest(
+    string SchemaVersion,
+    string Namespace,
+    int TotalFunctionCount,
+    int UnsupportedFunctionCount,
+    IReadOnlyList<ContractFunction> SupportedFunctions);
+
+internal sealed record ContractInvocation(
+    ContractFunction Function,
+    MethodInfo Method,
+    ParameterInfo[] Parameters,
+    object?[] InputArguments,
+    object?[] Arguments,
+    object? Result);
 
 internal sealed class ContractCaseRunner
 {
@@ -152,20 +199,33 @@ internal sealed class ContractCaseRunner
 
     public void Run(string identity)
     {
+        var invocation = Evaluate(identity);
+        ContractCaseRunner.ValidateResult(invocation.Function, invocation.Result);
+        ExecutedCount++;
+    }
+
+    internal ContractInvocation Evaluate(string identity)
+    {
         if (!_functions.TryGetValue(identity, out var function))
         {
             throw new InvalidOperationException($"Conformance case is not supported by the manifest: {identity}");
         }
 
-        var method = ResolveMethod(function);
-        var arguments = CreateArguments(function, method.GetParameters());
-        var result = Invoke(function, method, arguments);
-
-        ValidateResult(function, result);
-        ExecutedCount++;
+        return Evaluate(function);
     }
 
-    private MethodInfo ResolveMethod(ContractFunction function)
+    internal ContractInvocation Evaluate(ContractFunction function)
+    {
+        var method = ResolveMethod(function);
+        var parameters = method.GetParameters();
+        var arguments = CreateArguments(function, parameters);
+        var inputArguments = (object?[])arguments.Clone();
+        var result = Invoke(function, method, arguments);
+
+        return new ContractInvocation(function, method, parameters, inputArguments, arguments, result);
+    }
+
+    internal MethodInfo ResolveMethod(ContractFunction function)
     {
         var owner = _mathAssembly.GetType($"Delta.Maths.{function.OwnerTypeName}")
             ?? throw new InvalidOperationException(
@@ -213,7 +273,7 @@ internal sealed class ContractCaseRunner
         return true;
     }
 
-    private static string TypeName(Type type)
+    internal static string TypeName(Type type)
     {
         if (type == typeof(bool))
         {
@@ -243,7 +303,7 @@ internal sealed class ContractCaseRunner
         return type.Name;
     }
 
-    private static object?[] CreateArguments(ContractFunction function, ParameterInfo[] parameters)
+    internal static object?[] CreateArguments(ContractFunction function, ParameterInfo[] parameters)
     {
         var arguments = new object?[parameters.Length];
         for (var index = 0; index < parameters.Length; index++)
@@ -453,7 +513,7 @@ internal sealed class ContractCaseRunner
             || function.MethodName.Contains("Log", StringComparison.OrdinalIgnoreCase);
     }
 
-    private object? Invoke(ContractFunction function, MethodInfo method, object?[] arguments)
+    internal object? Invoke(ContractFunction function, MethodInfo method, object?[] arguments)
     {
         try
         {
@@ -474,7 +534,7 @@ internal sealed class ContractCaseRunner
         }
     }
 
-    private static void ValidateResult(ContractFunction function, object? result)
+    internal static void ValidateResult(ContractFunction function, object? result)
     {
         if (result is null)
         {

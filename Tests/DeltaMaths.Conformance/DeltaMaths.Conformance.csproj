@@ -21,5 +21,7 @@
     <None Include="../../Vectors/shader-contract.json"
           Link="shader-contract.json"
           CopyToOutputDirectory="PreserveNewest" />
+    <None Include="shader-conformance.json"
+          CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 </Project>
