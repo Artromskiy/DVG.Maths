@@ -263,6 +263,20 @@ namespace Delta.Maths.Tests
             AssertEx.Equal("*", matrixMultiply.GetProperty("glslName").GetString());
             AssertEx.Equal("Builtin", matrixMultiply.GetProperty("mapping").GetString());
             AssertEx.Equal("matrix", matrixMultiply.GetProperty("requiredCapability").GetString());
+            AssertEx.True(!HasFunction(functions, "float4x4", "Multiply", "float4x4", "float4x4"));
+            AssertEx.True(!HasFunction(functions, "maths", "multiply", "float4x4", "float4x4"));
+            AssertEx.True(!typeof(float4x4).GetMethods().Any(method =>
+            {
+                if (method.Name != "Multiply")
+                {
+                    return false;
+                }
+
+                var parameters = method.GetParameters();
+                return parameters.Length == 2
+                    && parameters[0].ParameterType == typeof(float4x4)
+                    && parameters[1].ParameterType == typeof(float4x4);
+            }));
 
             var matrixVectorMultiply = FindFunction(functions, "float4x4", "op_Multiply", "float4x4", "float4");
             AssertEx.Equal("*", matrixVectorMultiply.GetProperty("glslName").GetString());
@@ -279,8 +293,6 @@ namespace Delta.Maths.Tests
             var quaternionNormalize = FindFunction(functions, "quaternion", "Normalize", "quaternion");
             AssertEx.Equal("delta_quaternionNormalize", quaternionNormalize.GetProperty("glslName").GetString());
             AssertEx.Equal("Helper", quaternionNormalize.GetProperty("mapping").GetString());
-
-            AssertFunction(functions, "float4x4", "Multiply", "*", "Builtin", "float4x4", "float4x4");
 
             AssertFunction(functions, "float3", "Min", "min", "Builtin", "float3", "float3");
             AssertFunction(functions, "float3", "Max", "max", "Builtin", "float3", "float3");
@@ -364,6 +376,13 @@ namespace Delta.Maths.Tests
         private static JsonElement FindFunction(JsonElement[] functions, string typeName, string clrName, params string[] parameterNames)
         {
             return functions.Single(function => function.GetProperty("typeClrName").GetString() == typeName
+                && function.GetProperty("clrName").GetString() == clrName
+                && function.GetProperty("parameterClrNames").EnumerateArray().Select(parameter => parameter.GetString()).SequenceEqual(parameterNames));
+        }
+
+        private static bool HasFunction(JsonElement[] functions, string typeName, string clrName, params string[] parameterNames)
+        {
+            return functions.Any(function => function.GetProperty("typeClrName").GetString() == typeName
                 && function.GetProperty("clrName").GetString() == clrName
                 && function.GetProperty("parameterClrNames").EnumerateArray().Select(parameter => parameter.GetString()).SequenceEqual(parameterNames));
         }

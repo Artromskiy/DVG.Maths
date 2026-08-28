@@ -82247,31 +82247,6 @@
       "requiredCapability": "matrix"
     },
     {
-      "identity": "float4x4.Multiply(float4x4,float4x4):float4x4",
-      "typeClrName": "float4x4",
-      "clrName": "Multiply",
-      "mathsName": "multiply",
-      "parameterClrNames": [
-        "float4x4",
-        "float4x4"
-      ],
-      "parameterGlslTypes": [
-        "mat4",
-        "mat4"
-      ],
-      "returnClrName": "float4x4",
-      "returnGlslType": "mat4",
-      "glslName": "*",
-      "mapping": "Builtin",
-      "shaderZone": "DeltaMaths",
-      "stages": [
-        "vertex",
-        "fragment",
-        "compute"
-      ],
-      "requiredCapability": "matrix"
-    },
-    {
       "identity": "float4x4.op_Multiply(float4x4,float4x4):float4x4",
       "typeClrName": "float4x4",
       "clrName": "op_Multiply",
@@ -97760,31 +97735,6 @@
       "returnClrName": "float4x4",
       "returnGlslType": "mat4",
       "glslName": "inverse",
-      "mapping": "Builtin",
-      "shaderZone": "DeltaMaths",
-      "stages": [
-        "vertex",
-        "fragment",
-        "compute"
-      ],
-      "requiredCapability": "matrix"
-    },
-    {
-      "identity": "maths.multiply(float4x4,float4x4):float4x4",
-      "typeClrName": "maths",
-      "clrName": "multiply",
-      "mathsName": "multiply",
-      "parameterClrNames": [
-        "float4x4",
-        "float4x4"
-      ],
-      "parameterGlslTypes": [
-        "mat4",
-        "mat4"
-      ],
-      "returnClrName": "float4x4",
-      "returnGlslType": "mat4",
-      "glslName": "*",
       "mapping": "Builtin",
       "shaderZone": "DeltaMaths",
       "stages": [

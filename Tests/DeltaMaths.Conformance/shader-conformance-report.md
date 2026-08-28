@@ -7,9 +7,9 @@ result are stored as canonical hexadecimal words.
 
 | Manifest accounting | Count |
 |---|---:|
-| Manifest functions | 2103 |
-| Supported (`Builtin` or `Helper`) | 551 |
-| CPU cases | 551 |
+| Manifest functions | 2101 |
+| Supported (`Builtin` or `Helper`) | 549 |
+| CPU cases | 549 |
 | Explicitly excluded supported cases | 0 |
 | Unsupported manifest functions | 1552 |
 
@@ -21,4 +21,4 @@ CPU/Shader/Render disposition. `cpu=ready` means exact CLR evaluation only;
 
 The checked-in bundle is validated during the normal Conformance run. Repeated
 generation is deterministic and currently produces SHA-256
-`4a574aa4ea99c2ceb4293bb4d3154dcfa6ea7ef8c9315d14a30c8b8e04ae6c64`.
+`e930094496588265d3ba4856408afd67ef122d76fd98b22de9ff70583a320306`.

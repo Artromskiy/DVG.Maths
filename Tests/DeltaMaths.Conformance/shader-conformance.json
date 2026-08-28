@@ -5,9 +5,9 @@
   "manifestSchemaVersion": "1.1.0",
   "shaderContract": "Vectors/shader-contract.json",
   "coverage": {
-    "manifestFunctionCount": 2103,
-    "supportedCount": 551,
-    "caseCount": 551,
+    "manifestFunctionCount": 2101,
+    "supportedCount": 549,
+    "caseCount": 549,
     "excludedCount": 0,
     "unsupportedManifestCount": 1552
   },
@@ -10131,104 +10131,6 @@
           "bf000000",
           "3fa00000",
           "40000000"
-        ]
-      },
-      "comparison": {
-        "name": "FloatBasic",
-        "absoluteTolerance": 1E-05,
-        "relativeTolerance": 1E-05,
-        "maxUlps": 4
-      },
-      "requiredCapabilities": [
-        "matrix"
-      ],
-      "stages": [
-        "vertex",
-        "fragment",
-        "compute"
-      ],
-      "disposition": {
-        "cpu": "ready",
-        "shader": "pending",
-        "render": "pending"
-      }
-    },
-    {
-      "id": "float4x4.Multiply(float4x4,float4x4):float4x4::nominal-0",
-      "operation": {
-        "identity": "float4x4.Multiply(float4x4,float4x4):float4x4",
-        "ownerTypeName": "float4x4",
-        "methodName": "Multiply",
-        "parameterTypeNames": [
-          "float4x4",
-          "float4x4"
-        ],
-        "returnTypeName": "float4x4",
-        "mapping": "Builtin"
-      },
-      "inputs": [
-        {
-          "type": "float4x4",
-          "words": [
-            "3f800000",
-            "00000000",
-            "00000000",
-            "00000000",
-            "00000000",
-            "3f800000",
-            "00000000",
-            "00000000",
-            "00000000",
-            "00000000",
-            "3f800000",
-            "00000000",
-            "00000000",
-            "00000000",
-            "00000000",
-            "3f800000"
-          ]
-        },
-        {
-          "type": "float4x4",
-          "words": [
-            "3f800000",
-            "00000000",
-            "00000000",
-            "00000000",
-            "00000000",
-            "3f800000",
-            "00000000",
-            "00000000",
-            "00000000",
-            "00000000",
-            "3f800000",
-            "00000000",
-            "00000000",
-            "00000000",
-            "00000000",
-            "3f800000"
-          ]
-        }
-      ],
-      "expected": {
-        "type": "float4x4",
-        "words": [
-          "3f800000",
-          "00000000",
-          "00000000",
-          "00000000",
-          "00000000",
-          "3f800000",
-          "00000000",
-          "00000000",
-          "00000000",
-          "00000000",
-          "3f800000",
-          "00000000",
-          "00000000",
-          "00000000",
-          "00000000",
-          "3f800000"
         ]
       },
       "comparison": {
@@ -26954,104 +26856,6 @@
           "80000000",
           "00000000",
           "80000000",
-          "3f800000"
-        ]
-      },
-      "comparison": {
-        "name": "FloatBasic",
-        "absoluteTolerance": 1E-05,
-        "relativeTolerance": 1E-05,
-        "maxUlps": 4
-      },
-      "requiredCapabilities": [
-        "matrix"
-      ],
-      "stages": [
-        "vertex",
-        "fragment",
-        "compute"
-      ],
-      "disposition": {
-        "cpu": "ready",
-        "shader": "pending",
-        "render": "pending"
-      }
-    },
-    {
-      "id": "maths.multiply(float4x4,float4x4):float4x4::nominal-0",
-      "operation": {
-        "identity": "maths.multiply(float4x4,float4x4):float4x4",
-        "ownerTypeName": "maths",
-        "methodName": "multiply",
-        "parameterTypeNames": [
-          "float4x4",
-          "float4x4"
-        ],
-        "returnTypeName": "float4x4",
-        "mapping": "Builtin"
-      },
-      "inputs": [
-        {
-          "type": "float4x4",
-          "words": [
-            "3f800000",
-            "00000000",
-            "00000000",
-            "00000000",
-            "00000000",
-            "3f800000",
-            "00000000",
-            "00000000",
-            "00000000",
-            "00000000",
-            "3f800000",
-            "00000000",
-            "00000000",
-            "00000000",
-            "00000000",
-            "3f800000"
-          ]
-        },
-        {
-          "type": "float4x4",
-          "words": [
-            "3f800000",
-            "00000000",
-            "00000000",
-            "00000000",
-            "00000000",
-            "3f800000",
-            "00000000",
-            "00000000",
-            "00000000",
-            "00000000",
-            "3f800000",
-            "00000000",
-            "00000000",
-            "00000000",
-            "00000000",
-            "3f800000"
-          ]
-        }
-      ],
-      "expected": {
-        "type": "float4x4",
-        "words": [
-          "3f800000",
-          "00000000",
-          "00000000",
-          "00000000",
-          "00000000",
-          "3f800000",
-          "00000000",
-          "00000000",
-          "00000000",
-          "00000000",
-          "3f800000",
-          "00000000",
-          "00000000",
-          "00000000",
-          "00000000",
           "3f800000"
         ]
       },

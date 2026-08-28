@@ -3177,9 +3177,6 @@ namespace Delta.Maths
         public static float4x4 createTRS(float3 translation, quaternion rotation, float3 scale) => float4x4.CreateTRS(translation, rotation, scale);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float4x4 multiply(float4x4 left, float4x4 right) => float4x4.Multiply(left, right);
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float3 transformPoint(float4x4 matrix, float3 point) => float4x4.TransformPoint(matrix, point);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

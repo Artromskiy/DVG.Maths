@@ -9,11 +9,6 @@ namespace Delta.Maths
     public partial struct float4x4
     {
 
-        public static float4x4 Multiply(float4x4 left, float4x4 right)
-        {
-            return left * right;
-        }
-
         public static float4x4 operator *(float4x4 left, float4x4 right)
         {
             return new float4x4(left * right.c0, left * right.c1, left * right.c2, left * right.c3);
