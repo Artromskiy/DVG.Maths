@@ -298,7 +298,7 @@ namespace Delta.Maths.Tests
             AssertFunction(functions, "float3", "Max", "max", "Builtin", "float3", "float3");
             AssertFunction(functions, "float3", "Clamp", "clamp", "Builtin", "float3", "float", "float");
             AssertFunction(functions, "float3", "Lerp", "mix", "Builtin", "float3", "float3", "float");
-            AssertFunction(functions, "float3", "SmoothStep", "smoothstep", "Builtin", "float", "float", "float3");
+            AssertFunction(functions, "float3", "Smoothstep", "smoothstep", "Builtin", "float", "float", "float3");
             AssertFunction(functions, "float3", "Step", "step", "Builtin", "float", "float3");
             AssertFunction(functions, "float3", "Dot", "dot", "Builtin", "float3", "float3");
             AssertFunction(functions, "float3", "Length", "length", "Builtin", "float3");

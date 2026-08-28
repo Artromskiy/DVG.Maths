@@ -11,6 +11,9 @@
     <RootNamespace>Delta.Maths.Tests</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="DeltaMaths.Conformance/**/*.cs" />
+    <Compile Remove="**/bin/**/*.cs" />
+    <Compile Remove="**/obj/**/*.cs" />
     <ProjectReference Include="../DeltaMaths.csproj">
       <SetTargetFramework>TargetFramework=netstandard2.1</SetTargetFramework>
     </ProjectReference>

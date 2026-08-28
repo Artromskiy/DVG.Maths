@@ -57,12 +57,12 @@ namespace Delta.Maths
         public static fix atan(fix x) => DeltaMaths.Atan(x);
         public static fix acos(fix x) => DeltaMaths.Acos(x);
         public static fix lerp(fix edge0, fix edge1, fix value) => DeltaMaths.Lerp(edge0, edge1, value);
-        public static fix smoothStep(fix edge0, fix edge1, fix v) => DeltaMaths.SmoothStep(edge0, edge1, v);
+        public static fix smoothstep(fix edge0, fix edge1, fix v) => DeltaMaths.Smoothstep(edge0, edge1, v);
         public static fix fma(fix a, fix b, fix c) => DeltaMaths.Fma(a, b, c);
         public static fix inverseSqrt(fix value) => DeltaMaths.InverseSqrt(value);
         public static float lerp(float edge0, float edge1, float value) => DeltaMaths.Lerp(edge0, edge1, value);
         public static float mod(float x, float y) => DeltaMaths.Mod(x, y);
-        public static float smoothStep(float edge0, float edge1, float v) => DeltaMaths.SmoothStep(edge0, edge1, v);
+        public static float smoothstep(float edge0, float edge1, float v) => DeltaMaths.Smoothstep(edge0, edge1, v);
         public static float radians(float degrees) => DeltaMaths.Radians(degrees);
         public static float degrees(float radians) => DeltaMaths.Degrees(radians);
         public static float fma(float a, float b, float c) => DeltaMaths.Fma(a, b, c);
@@ -72,7 +72,7 @@ namespace Delta.Maths
         public static float exp2(float value) => DeltaMaths.Exp2(value);
         public static double lerp(double edge0, double edge1, double value) => DeltaMaths.Lerp(edge0, edge1, value);
         public static double mod(double x, double y) => DeltaMaths.Mod(x, y);
-        public static double smoothStep(double edge0, double edge1, double v) => DeltaMaths.SmoothStep(edge0, edge1, v);
+        public static double smoothstep(double edge0, double edge1, double v) => DeltaMaths.Smoothstep(edge0, edge1, v);
         public static double degrees(double radians) => DeltaMaths.Degrees(radians);
         public static double radians(double degrees) => DeltaMaths.Radians(degrees);
         public static double fma(double a, double b, double c) => DeltaMaths.Fma(a, b, c);

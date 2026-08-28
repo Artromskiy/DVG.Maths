@@ -435,7 +435,7 @@ internal sealed class ContractCaseRunner
             };
         }
 
-        if (function.MethodName.Contains("SmoothStep", StringComparison.Ordinal))
+        if (function.MethodName.Contains("Smoothstep", StringComparison.Ordinal))
         {
             return parameterIndex switch
             {

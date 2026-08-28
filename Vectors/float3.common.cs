@@ -84,14 +84,14 @@ namespace Delta.Maths
             return new(DeltaMaths.InvLerp(edge0.x, edge1.x, value), DeltaMaths.InvLerp(edge0.y, edge1.y, value), DeltaMaths.InvLerp(edge0.z, edge1.z, value));
         }
 
-        public static float3 SmoothStep(float3 edge0, float3 edge1, float3 value)
+        public static float3 Smoothstep(float3 edge0, float3 edge1, float3 value)
         {
-            return new(DeltaMaths.SmoothStep(edge0.x, edge1.x, value.x), DeltaMaths.SmoothStep(edge0.y, edge1.y, value.y), DeltaMaths.SmoothStep(edge0.z, edge1.z, value.z));
+            return new(DeltaMaths.Smoothstep(edge0.x, edge1.x, value.x), DeltaMaths.Smoothstep(edge0.y, edge1.y, value.y), DeltaMaths.Smoothstep(edge0.z, edge1.z, value.z));
         }
 
-        public static float3 SmoothStep(float edge0, float edge1, float3 value)
+        public static float3 Smoothstep(float edge0, float edge1, float3 value)
         {
-            return new(DeltaMaths.SmoothStep(edge0, edge1, value.x), DeltaMaths.SmoothStep(edge0, edge1, value.y), DeltaMaths.SmoothStep(edge0, edge1, value.z));
+            return new(DeltaMaths.Smoothstep(edge0, edge1, value.x), DeltaMaths.Smoothstep(edge0, edge1, value.y), DeltaMaths.Smoothstep(edge0, edge1, value.z));
         }
 
         public static float3 Step(float3 edge, float3 value)

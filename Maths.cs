@@ -10,7 +10,7 @@ namespace Delta.Maths
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float Mod(float x, float y) => x - (y * MathF.Floor(x / y));
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float SmoothStep(float edge0, float edge1, float v)
+        public static float Smoothstep(float edge0, float edge1, float v)
         {
             float x = Clamp((v - edge0) / (edge1 - edge0), 0, 1);
             return x * x * (3.0f - 2.0f * x);
@@ -36,7 +36,7 @@ namespace Delta.Maths
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double Mod(double x, double y) => x - (y * Math.Floor(x / y));
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static double SmoothStep(double edge0, double edge1, double v)
+        public static double Smoothstep(double edge0, double edge1, double v)
         {
             double x = Clamp((v - edge0) / (edge1 - edge0), 0, 1);
             return x * x * (3.0f - 2.0f * x);

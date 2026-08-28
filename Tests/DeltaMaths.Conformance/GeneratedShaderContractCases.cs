@@ -54,8 +54,8 @@ internal static class GeneratedShaderContractCases
         "float2.Round(float2):float2",
         "float2.RoundEven(float2):float2",
         "float2.Select(float2,float2,bool2):float2",
-        "float2.SmoothStep(float,float,float2):float2",
-        "float2.SmoothStep(float2,float2,float2):float2",
+        "float2.Smoothstep(float,float,float2):float2",
+        "float2.Smoothstep(float2,float2,float2):float2",
         "float2.Step(float,float2):float2",
         "float2.Step(float2,float2):float2",
         "float2.Truncate(float2):float2",
@@ -106,8 +106,8 @@ internal static class GeneratedShaderContractCases
         "float3.Round(float3):float3",
         "float3.RoundEven(float3):float3",
         "float3.Select(float3,float3,bool3):float3",
-        "float3.SmoothStep(float,float,float3):float3",
-        "float3.SmoothStep(float3,float3,float3):float3",
+        "float3.Smoothstep(float,float,float3):float3",
+        "float3.Smoothstep(float3,float3,float3):float3",
         "float3.Step(float,float3):float3",
         "float3.Step(float3,float3):float3",
         "float3.Truncate(float3):float3",
@@ -157,8 +157,8 @@ internal static class GeneratedShaderContractCases
         "float4.Round(float4):float4",
         "float4.RoundEven(float4):float4",
         "float4.Select(float4,float4,bool4):float4",
-        "float4.SmoothStep(float,float,float4):float4",
-        "float4.SmoothStep(float4,float4,float4):float4",
+        "float4.Smoothstep(float,float,float4):float4",
+        "float4.Smoothstep(float4,float4,float4):float4",
         "float4.Step(float,float4):float4",
         "float4.Step(float4,float4):float4",
         "float4.Truncate(float4):float4",
@@ -383,8 +383,8 @@ internal static class GeneratedShaderContractCases
         "maths.round(float2):float2",
         "maths.roundEven(float2):float2",
         "maths.select(float2,float2,bool2):float2",
-        "maths.smoothStep(float,float,float2):float2",
-        "maths.smoothStep(float2,float2,float2):float2",
+        "maths.smoothstep(float,float,float2):float2",
+        "maths.smoothstep(float2,float2,float2):float2",
         "maths.step(float,float2):float2",
         "maths.step(float2,float2):float2",
         "maths.truncate(float2):float2",
@@ -421,8 +421,8 @@ internal static class GeneratedShaderContractCases
         "maths.round(float3):float3",
         "maths.roundEven(float3):float3",
         "maths.select(float3,float3,bool3):float3",
-        "maths.smoothStep(float,float,float3):float3",
-        "maths.smoothStep(float3,float3,float3):float3",
+        "maths.smoothstep(float,float,float3):float3",
+        "maths.smoothstep(float3,float3,float3):float3",
         "maths.step(float,float3):float3",
         "maths.step(float3,float3):float3",
         "maths.truncate(float3):float3",
@@ -458,8 +458,8 @@ internal static class GeneratedShaderContractCases
         "maths.round(float4):float4",
         "maths.roundEven(float4):float4",
         "maths.select(float4,float4,bool4):float4",
-        "maths.smoothStep(float,float,float4):float4",
-        "maths.smoothStep(float4,float4,float4):float4",
+        "maths.smoothstep(float,float,float4):float4",
+        "maths.smoothstep(float4,float4,float4):float4",
         "maths.step(float,float4):float4",
         "maths.step(float4,float4):float4",
         "maths.truncate(float4):float4",
@@ -545,7 +545,7 @@ internal static class GeneratedShaderContractCases
         "maths.step(float,float):float",
         "maths.fract(float):float",
         "maths.mod(float,float):float",
-        "maths.smoothStep(float,float,float):float",
+        "maths.smoothstep(float,float,float):float",
         "maths.radians(float):float",
         "maths.degrees(float):float",
         "maths.roundEven(float):float",
@@ -1336,12 +1336,12 @@ internal static class GeneratedShaderContractCases
 
     private static void Case0044(ContractCaseRunner runner)
     {
-        runner.Run("float2.SmoothStep(float,float,float2):float2");
+        runner.Run("float2.Smoothstep(float,float,float2):float2");
     }
 
     private static void Case0045(ContractCaseRunner runner)
     {
-        runner.Run("float2.SmoothStep(float2,float2,float2):float2");
+        runner.Run("float2.Smoothstep(float2,float2,float2):float2");
     }
 
     private static void Case0046(ContractCaseRunner runner)
@@ -1596,12 +1596,12 @@ internal static class GeneratedShaderContractCases
 
     private static void Case0096(ContractCaseRunner runner)
     {
-        runner.Run("float3.SmoothStep(float,float,float3):float3");
+        runner.Run("float3.Smoothstep(float,float,float3):float3");
     }
 
     private static void Case0097(ContractCaseRunner runner)
     {
-        runner.Run("float3.SmoothStep(float3,float3,float3):float3");
+        runner.Run("float3.Smoothstep(float3,float3,float3):float3");
     }
 
     private static void Case0098(ContractCaseRunner runner)
@@ -1851,12 +1851,12 @@ internal static class GeneratedShaderContractCases
 
     private static void Case0147(ContractCaseRunner runner)
     {
-        runner.Run("float4.SmoothStep(float,float,float4):float4");
+        runner.Run("float4.Smoothstep(float,float,float4):float4");
     }
 
     private static void Case0148(ContractCaseRunner runner)
     {
-        runner.Run("float4.SmoothStep(float4,float4,float4):float4");
+        runner.Run("float4.Smoothstep(float4,float4,float4):float4");
     }
 
     private static void Case0149(ContractCaseRunner runner)
@@ -2981,12 +2981,12 @@ internal static class GeneratedShaderContractCases
 
     private static void Case0373(ContractCaseRunner runner)
     {
-        runner.Run("maths.smoothStep(float,float,float2):float2");
+        runner.Run("maths.smoothstep(float,float,float2):float2");
     }
 
     private static void Case0374(ContractCaseRunner runner)
     {
-        runner.Run("maths.smoothStep(float2,float2,float2):float2");
+        runner.Run("maths.smoothstep(float2,float2,float2):float2");
     }
 
     private static void Case0375(ContractCaseRunner runner)
@@ -3171,12 +3171,12 @@ internal static class GeneratedShaderContractCases
 
     private static void Case0411(ContractCaseRunner runner)
     {
-        runner.Run("maths.smoothStep(float,float,float3):float3");
+        runner.Run("maths.smoothstep(float,float,float3):float3");
     }
 
     private static void Case0412(ContractCaseRunner runner)
     {
-        runner.Run("maths.smoothStep(float3,float3,float3):float3");
+        runner.Run("maths.smoothstep(float3,float3,float3):float3");
     }
 
     private static void Case0413(ContractCaseRunner runner)
@@ -3356,12 +3356,12 @@ internal static class GeneratedShaderContractCases
 
     private static void Case0448(ContractCaseRunner runner)
     {
-        runner.Run("maths.smoothStep(float,float,float4):float4");
+        runner.Run("maths.smoothstep(float,float,float4):float4");
     }
 
     private static void Case0449(ContractCaseRunner runner)
     {
-        runner.Run("maths.smoothStep(float4,float4,float4):float4");
+        runner.Run("maths.smoothstep(float4,float4,float4):float4");
     }
 
     private static void Case0450(ContractCaseRunner runner)
@@ -3791,7 +3791,7 @@ internal static class GeneratedShaderContractCases
 
     private static void Case0535(ContractCaseRunner runner)
     {
-        runner.Run("maths.smoothStep(float,float,float):float");
+        runner.Run("maths.smoothstep(float,float,float):float");
     }
 
     private static void Case0536(ContractCaseRunner runner)

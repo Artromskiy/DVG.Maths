@@ -58163,10 +58163,10 @@
       "requiredCapability": null
     },
     {
-      "identity": "double2.SmoothStep(double,double,double2):double2",
+      "identity": "double2.Smoothstep(double,double,double2):double2",
       "typeClrName": "double2",
-      "clrName": "SmoothStep",
-      "mathsName": "smoothStep",
+      "clrName": "Smoothstep",
+      "mathsName": "smoothstep",
       "parameterClrNames": [
         "double",
         "double",
@@ -58186,10 +58186,10 @@
       "requiredCapability": null
     },
     {
-      "identity": "double2.SmoothStep(double2,double2,double2):double2",
+      "identity": "double2.Smoothstep(double2,double2,double2):double2",
       "typeClrName": "double2",
-      "clrName": "SmoothStep",
-      "mathsName": "smoothStep",
+      "clrName": "Smoothstep",
+      "mathsName": "smoothstep",
       "parameterClrNames": [
         "double2",
         "double2",
@@ -61052,10 +61052,10 @@
       "requiredCapability": null
     },
     {
-      "identity": "double3.SmoothStep(double,double,double3):double3",
+      "identity": "double3.Smoothstep(double,double,double3):double3",
       "typeClrName": "double3",
-      "clrName": "SmoothStep",
-      "mathsName": "smoothStep",
+      "clrName": "Smoothstep",
+      "mathsName": "smoothstep",
       "parameterClrNames": [
         "double",
         "double",
@@ -61075,10 +61075,10 @@
       "requiredCapability": null
     },
     {
-      "identity": "double3.SmoothStep(double3,double3,double3):double3",
+      "identity": "double3.Smoothstep(double3,double3,double3):double3",
       "typeClrName": "double3",
-      "clrName": "SmoothStep",
-      "mathsName": "smoothStep",
+      "clrName": "Smoothstep",
+      "mathsName": "smoothstep",
       "parameterClrNames": [
         "double3",
         "double3",
@@ -63920,10 +63920,10 @@
       "requiredCapability": null
     },
     {
-      "identity": "double4.SmoothStep(double,double,double4):double4",
+      "identity": "double4.Smoothstep(double,double,double4):double4",
       "typeClrName": "double4",
-      "clrName": "SmoothStep",
-      "mathsName": "smoothStep",
+      "clrName": "Smoothstep",
+      "mathsName": "smoothstep",
       "parameterClrNames": [
         "double",
         "double",
@@ -63943,10 +63943,10 @@
       "requiredCapability": null
     },
     {
-      "identity": "double4.SmoothStep(double4,double4,double4):double4",
+      "identity": "double4.Smoothstep(double4,double4,double4):double4",
       "typeClrName": "double4",
-      "clrName": "SmoothStep",
-      "mathsName": "smoothStep",
+      "clrName": "Smoothstep",
+      "mathsName": "smoothstep",
       "parameterClrNames": [
         "double4",
         "double4",
@@ -66440,10 +66440,10 @@
       "requiredCapability": null
     },
     {
-      "identity": "fix2.SmoothStep(fix,fix,fix2):fix2",
+      "identity": "fix2.Smoothstep(fix,fix,fix2):fix2",
       "typeClrName": "fix2",
-      "clrName": "SmoothStep",
-      "mathsName": "smoothStep",
+      "clrName": "Smoothstep",
+      "mathsName": "smoothstep",
       "parameterClrNames": [
         "fix",
         "fix",
@@ -66463,10 +66463,10 @@
       "requiredCapability": null
     },
     {
-      "identity": "fix2.SmoothStep(fix2,fix2,fix2):fix2",
+      "identity": "fix2.Smoothstep(fix2,fix2,fix2):fix2",
       "typeClrName": "fix2",
-      "clrName": "SmoothStep",
-      "mathsName": "smoothStep",
+      "clrName": "Smoothstep",
+      "mathsName": "smoothstep",
       "parameterClrNames": [
         "fix2",
         "fix2",
@@ -68966,10 +68966,10 @@
       "requiredCapability": null
     },
     {
-      "identity": "fix3.SmoothStep(fix,fix,fix3):fix3",
+      "identity": "fix3.Smoothstep(fix,fix,fix3):fix3",
       "typeClrName": "fix3",
-      "clrName": "SmoothStep",
-      "mathsName": "smoothStep",
+      "clrName": "Smoothstep",
+      "mathsName": "smoothstep",
       "parameterClrNames": [
         "fix",
         "fix",
@@ -68989,10 +68989,10 @@
       "requiredCapability": null
     },
     {
-      "identity": "fix3.SmoothStep(fix3,fix3,fix3):fix3",
+      "identity": "fix3.Smoothstep(fix3,fix3,fix3):fix3",
       "typeClrName": "fix3",
-      "clrName": "SmoothStep",
-      "mathsName": "smoothStep",
+      "clrName": "Smoothstep",
+      "mathsName": "smoothstep",
       "parameterClrNames": [
         "fix3",
         "fix3",
@@ -71471,10 +71471,10 @@
       "requiredCapability": null
     },
     {
-      "identity": "fix4.SmoothStep(fix,fix,fix4):fix4",
+      "identity": "fix4.Smoothstep(fix,fix,fix4):fix4",
       "typeClrName": "fix4",
-      "clrName": "SmoothStep",
-      "mathsName": "smoothStep",
+      "clrName": "Smoothstep",
+      "mathsName": "smoothstep",
       "parameterClrNames": [
         "fix",
         "fix",
@@ -71494,10 +71494,10 @@
       "requiredCapability": null
     },
     {
-      "identity": "fix4.SmoothStep(fix4,fix4,fix4):fix4",
+      "identity": "fix4.Smoothstep(fix4,fix4,fix4):fix4",
       "typeClrName": "fix4",
-      "clrName": "SmoothStep",
-      "mathsName": "smoothStep",
+      "clrName": "Smoothstep",
+      "mathsName": "smoothstep",
       "parameterClrNames": [
         "fix4",
         "fix4",
@@ -74494,10 +74494,10 @@
       "requiredCapability": null
     },
     {
-      "identity": "float2.SmoothStep(float,float,float2):float2",
+      "identity": "float2.Smoothstep(float,float,float2):float2",
       "typeClrName": "float2",
-      "clrName": "SmoothStep",
-      "mathsName": "smoothStep",
+      "clrName": "Smoothstep",
+      "mathsName": "smoothstep",
       "parameterClrNames": [
         "float",
         "float",
@@ -74521,10 +74521,10 @@
       "requiredCapability": "vector"
     },
     {
-      "identity": "float2.SmoothStep(float2,float2,float2):float2",
+      "identity": "float2.Smoothstep(float2,float2,float2):float2",
       "typeClrName": "float2",
-      "clrName": "SmoothStep",
-      "mathsName": "smoothStep",
+      "clrName": "Smoothstep",
+      "mathsName": "smoothstep",
       "parameterClrNames": [
         "float2",
         "float2",
@@ -77633,10 +77633,10 @@
       "requiredCapability": null
     },
     {
-      "identity": "float3.SmoothStep(float,float,float3):float3",
+      "identity": "float3.Smoothstep(float,float,float3):float3",
       "typeClrName": "float3",
-      "clrName": "SmoothStep",
-      "mathsName": "smoothStep",
+      "clrName": "Smoothstep",
+      "mathsName": "smoothstep",
       "parameterClrNames": [
         "float",
         "float",
@@ -77660,10 +77660,10 @@
       "requiredCapability": "vector"
     },
     {
-      "identity": "float3.SmoothStep(float3,float3,float3):float3",
+      "identity": "float3.Smoothstep(float3,float3,float3):float3",
       "typeClrName": "float3",
-      "clrName": "SmoothStep",
-      "mathsName": "smoothStep",
+      "clrName": "Smoothstep",
+      "mathsName": "smoothstep",
       "parameterClrNames": [
         "float3",
         "float3",
@@ -80747,10 +80747,10 @@
       "requiredCapability": null
     },
     {
-      "identity": "float4.SmoothStep(float,float,float4):float4",
+      "identity": "float4.Smoothstep(float,float,float4):float4",
       "typeClrName": "float4",
-      "clrName": "SmoothStep",
-      "mathsName": "smoothStep",
+      "clrName": "Smoothstep",
+      "mathsName": "smoothstep",
       "parameterClrNames": [
         "float",
         "float",
@@ -80774,10 +80774,10 @@
       "requiredCapability": "vector"
     },
     {
-      "identity": "float4.SmoothStep(float4,float4,float4):float4",
+      "identity": "float4.Smoothstep(float4,float4,float4):float4",
       "typeClrName": "float4",
-      "clrName": "SmoothStep",
-      "mathsName": "smoothStep",
+      "clrName": "Smoothstep",
+      "mathsName": "smoothstep",
       "parameterClrNames": [
         "float4",
         "float4",
@@ -95538,10 +95538,10 @@
       "requiredCapability": "vector"
     },
     {
-      "identity": "maths.smoothStep(float,float,float2):float2",
+      "identity": "maths.smoothstep(float,float,float2):float2",
       "typeClrName": "maths",
-      "clrName": "smoothStep",
-      "mathsName": "smoothStep",
+      "clrName": "smoothstep",
+      "mathsName": "smoothstep",
       "parameterClrNames": [
         "float",
         "float",
@@ -95565,10 +95565,10 @@
       "requiredCapability": "vector"
     },
     {
-      "identity": "maths.smoothStep(float2,float2,float2):float2",
+      "identity": "maths.smoothstep(float2,float2,float2):float2",
       "typeClrName": "maths",
-      "clrName": "smoothStep",
-      "mathsName": "smoothStep",
+      "clrName": "smoothstep",
+      "mathsName": "smoothstep",
       "parameterClrNames": [
         "float2",
         "float2",
@@ -96480,10 +96480,10 @@
       "requiredCapability": "vector"
     },
     {
-      "identity": "maths.smoothStep(float,float,float3):float3",
+      "identity": "maths.smoothstep(float,float,float3):float3",
       "typeClrName": "maths",
-      "clrName": "smoothStep",
-      "mathsName": "smoothStep",
+      "clrName": "smoothstep",
+      "mathsName": "smoothstep",
       "parameterClrNames": [
         "float",
         "float",
@@ -96507,10 +96507,10 @@
       "requiredCapability": "vector"
     },
     {
-      "identity": "maths.smoothStep(float3,float3,float3):float3",
+      "identity": "maths.smoothstep(float3,float3,float3):float3",
       "typeClrName": "maths",
-      "clrName": "smoothStep",
-      "mathsName": "smoothStep",
+      "clrName": "smoothstep",
+      "mathsName": "smoothstep",
       "parameterClrNames": [
         "float3",
         "float3",
@@ -97397,10 +97397,10 @@
       "requiredCapability": "vector"
     },
     {
-      "identity": "maths.smoothStep(float,float,float4):float4",
+      "identity": "maths.smoothstep(float,float,float4):float4",
       "typeClrName": "maths",
-      "clrName": "smoothStep",
-      "mathsName": "smoothStep",
+      "clrName": "smoothstep",
+      "mathsName": "smoothstep",
       "parameterClrNames": [
         "float",
         "float",
@@ -97424,10 +97424,10 @@
       "requiredCapability": "vector"
     },
     {
-      "identity": "maths.smoothStep(float4,float4,float4):float4",
+      "identity": "maths.smoothstep(float4,float4,float4):float4",
       "typeClrName": "maths",
-      "clrName": "smoothStep",
-      "mathsName": "smoothStep",
+      "clrName": "smoothstep",
+      "mathsName": "smoothstep",
       "parameterClrNames": [
         "float4",
         "float4",
@@ -99592,10 +99592,10 @@
       "requiredCapability": "scalar"
     },
     {
-      "identity": "maths.smoothStep(float,float,float):float",
+      "identity": "maths.smoothstep(float,float,float):float",
       "typeClrName": "maths",
-      "clrName": "smoothStep",
-      "mathsName": "smoothStep",
+      "clrName": "smoothstep",
+      "mathsName": "smoothstep",
       "parameterClrNames": [
         "float",
         "float",

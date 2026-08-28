@@ -215,7 +215,7 @@ namespace Delta.Maths
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static fix SmoothStep(fix edge0, fix edge1, fix v)
+        public static fix Smoothstep(fix edge0, fix edge1, fix v)
         {
             fix x = Clamp((v - edge0) / (edge1 - edge0), 0, 1);
             return x * x * (3 - 2 * x);

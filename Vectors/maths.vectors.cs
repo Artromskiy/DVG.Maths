@@ -816,10 +816,10 @@ namespace Delta.Maths
         public static float2 invLerp(float2 edge0, float2 edge1, float value) => float2.InvLerp(edge0, edge1, value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float2 smoothStep(float2 edge0, float2 edge1, float2 value) => float2.SmoothStep(edge0, edge1, value);
+        public static float2 smoothstep(float2 edge0, float2 edge1, float2 value) => float2.Smoothstep(edge0, edge1, value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float2 smoothStep(float edge0, float edge1, float2 value) => float2.SmoothStep(edge0, edge1, value);
+        public static float2 smoothstep(float edge0, float edge1, float2 value) => float2.Smoothstep(edge0, edge1, value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float2 step(float2 edge, float2 value) => float2.Step(edge, value);
@@ -1110,10 +1110,10 @@ namespace Delta.Maths
         public static float3 invLerp(float3 edge0, float3 edge1, float value) => float3.InvLerp(edge0, edge1, value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float3 smoothStep(float3 edge0, float3 edge1, float3 value) => float3.SmoothStep(edge0, edge1, value);
+        public static float3 smoothstep(float3 edge0, float3 edge1, float3 value) => float3.Smoothstep(edge0, edge1, value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float3 smoothStep(float edge0, float edge1, float3 value) => float3.SmoothStep(edge0, edge1, value);
+        public static float3 smoothstep(float edge0, float edge1, float3 value) => float3.Smoothstep(edge0, edge1, value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float3 step(float3 edge, float3 value) => float3.Step(edge, value);
@@ -1407,10 +1407,10 @@ namespace Delta.Maths
         public static float4 invLerp(float4 edge0, float4 edge1, float value) => float4.InvLerp(edge0, edge1, value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float4 smoothStep(float4 edge0, float4 edge1, float4 value) => float4.SmoothStep(edge0, edge1, value);
+        public static float4 smoothstep(float4 edge0, float4 edge1, float4 value) => float4.Smoothstep(edge0, edge1, value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float4 smoothStep(float edge0, float edge1, float4 value) => float4.SmoothStep(edge0, edge1, value);
+        public static float4 smoothstep(float edge0, float edge1, float4 value) => float4.Smoothstep(edge0, edge1, value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float4 step(float4 edge, float4 value) => float4.Step(edge, value);
@@ -1701,10 +1701,10 @@ namespace Delta.Maths
         public static double2 invLerp(double2 edge0, double2 edge1, double value) => double2.InvLerp(edge0, edge1, value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static double2 smoothStep(double2 edge0, double2 edge1, double2 value) => double2.SmoothStep(edge0, edge1, value);
+        public static double2 smoothstep(double2 edge0, double2 edge1, double2 value) => double2.Smoothstep(edge0, edge1, value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static double2 smoothStep(double edge0, double edge1, double2 value) => double2.SmoothStep(edge0, edge1, value);
+        public static double2 smoothstep(double edge0, double edge1, double2 value) => double2.Smoothstep(edge0, edge1, value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double2 step(double2 edge, double2 value) => double2.Step(edge, value);
@@ -1989,10 +1989,10 @@ namespace Delta.Maths
         public static double3 invLerp(double3 edge0, double3 edge1, double value) => double3.InvLerp(edge0, edge1, value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static double3 smoothStep(double3 edge0, double3 edge1, double3 value) => double3.SmoothStep(edge0, edge1, value);
+        public static double3 smoothstep(double3 edge0, double3 edge1, double3 value) => double3.Smoothstep(edge0, edge1, value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static double3 smoothStep(double edge0, double edge1, double3 value) => double3.SmoothStep(edge0, edge1, value);
+        public static double3 smoothstep(double edge0, double edge1, double3 value) => double3.Smoothstep(edge0, edge1, value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double3 step(double3 edge, double3 value) => double3.Step(edge, value);
@@ -2280,10 +2280,10 @@ namespace Delta.Maths
         public static double4 invLerp(double4 edge0, double4 edge1, double value) => double4.InvLerp(edge0, edge1, value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static double4 smoothStep(double4 edge0, double4 edge1, double4 value) => double4.SmoothStep(edge0, edge1, value);
+        public static double4 smoothstep(double4 edge0, double4 edge1, double4 value) => double4.Smoothstep(edge0, edge1, value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static double4 smoothStep(double edge0, double edge1, double4 value) => double4.SmoothStep(edge0, edge1, value);
+        public static double4 smoothstep(double edge0, double edge1, double4 value) => double4.Smoothstep(edge0, edge1, value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double4 step(double4 edge, double4 value) => double4.Step(edge, value);
@@ -2568,10 +2568,10 @@ namespace Delta.Maths
         public static fix2 invLerp(fix2 edge0, fix2 edge1, fix value) => fix2.InvLerp(edge0, edge1, value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static fix2 smoothStep(fix2 edge0, fix2 edge1, fix2 value) => fix2.SmoothStep(edge0, edge1, value);
+        public static fix2 smoothstep(fix2 edge0, fix2 edge1, fix2 value) => fix2.Smoothstep(edge0, edge1, value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static fix2 smoothStep(fix edge0, fix edge1, fix2 value) => fix2.SmoothStep(edge0, edge1, value);
+        public static fix2 smoothstep(fix edge0, fix edge1, fix2 value) => fix2.Smoothstep(edge0, edge1, value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static fix2 step(fix2 edge, fix2 value) => fix2.Step(edge, value);
@@ -2799,10 +2799,10 @@ namespace Delta.Maths
         public static fix3 invLerp(fix3 edge0, fix3 edge1, fix value) => fix3.InvLerp(edge0, edge1, value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static fix3 smoothStep(fix3 edge0, fix3 edge1, fix3 value) => fix3.SmoothStep(edge0, edge1, value);
+        public static fix3 smoothstep(fix3 edge0, fix3 edge1, fix3 value) => fix3.Smoothstep(edge0, edge1, value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static fix3 smoothStep(fix edge0, fix edge1, fix3 value) => fix3.SmoothStep(edge0, edge1, value);
+        public static fix3 smoothstep(fix edge0, fix edge1, fix3 value) => fix3.Smoothstep(edge0, edge1, value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static fix3 step(fix3 edge, fix3 value) => fix3.Step(edge, value);
@@ -3033,10 +3033,10 @@ namespace Delta.Maths
         public static fix4 invLerp(fix4 edge0, fix4 edge1, fix value) => fix4.InvLerp(edge0, edge1, value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static fix4 smoothStep(fix4 edge0, fix4 edge1, fix4 value) => fix4.SmoothStep(edge0, edge1, value);
+        public static fix4 smoothstep(fix4 edge0, fix4 edge1, fix4 value) => fix4.Smoothstep(edge0, edge1, value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static fix4 smoothStep(fix edge0, fix edge1, fix4 value) => fix4.SmoothStep(edge0, edge1, value);
+        public static fix4 smoothstep(fix edge0, fix edge1, fix4 value) => fix4.Smoothstep(edge0, edge1, value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static fix4 step(fix4 edge, fix4 value) => fix4.Step(edge, value);

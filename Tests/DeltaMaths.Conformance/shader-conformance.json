@@ -2396,11 +2396,11 @@
       }
     },
     {
-      "id": "float2.SmoothStep(float,float,float2):float2::nominal-0",
+      "id": "float2.Smoothstep(float,float,float2):float2::nominal-0",
       "operation": {
-        "identity": "float2.SmoothStep(float,float,float2):float2",
+        "identity": "float2.Smoothstep(float,float,float2):float2",
         "ownerTypeName": "float2",
-        "methodName": "SmoothStep",
+        "methodName": "Smoothstep",
         "parameterTypeNames": [
           "float",
           "float",
@@ -2458,11 +2458,11 @@
       }
     },
     {
-      "id": "float2.SmoothStep(float2,float2,float2):float2::nominal-0",
+      "id": "float2.Smoothstep(float2,float2,float2):float2::nominal-0",
       "operation": {
-        "identity": "float2.SmoothStep(float2,float2,float2):float2",
+        "identity": "float2.Smoothstep(float2,float2,float2):float2",
         "ownerTypeName": "float2",
-        "methodName": "SmoothStep",
+        "methodName": "Smoothstep",
         "parameterTypeNames": [
           "float2",
           "float2",
@@ -5321,11 +5321,11 @@
       }
     },
     {
-      "id": "float3.SmoothStep(float,float,float3):float3::nominal-0",
+      "id": "float3.Smoothstep(float,float,float3):float3::nominal-0",
       "operation": {
-        "identity": "float3.SmoothStep(float,float,float3):float3",
+        "identity": "float3.Smoothstep(float,float,float3):float3",
         "ownerTypeName": "float3",
-        "methodName": "SmoothStep",
+        "methodName": "Smoothstep",
         "parameterTypeNames": [
           "float",
           "float",
@@ -5385,11 +5385,11 @@
       }
     },
     {
-      "id": "float3.SmoothStep(float3,float3,float3):float3::nominal-0",
+      "id": "float3.Smoothstep(float3,float3,float3):float3::nominal-0",
       "operation": {
-        "identity": "float3.SmoothStep(float3,float3,float3):float3",
+        "identity": "float3.Smoothstep(float3,float3,float3):float3",
         "ownerTypeName": "float3",
-        "methodName": "SmoothStep",
+        "methodName": "Smoothstep",
         "parameterTypeNames": [
           "float3",
           "float3",
@@ -8312,11 +8312,11 @@
       }
     },
     {
-      "id": "float4.SmoothStep(float,float,float4):float4::nominal-0",
+      "id": "float4.Smoothstep(float,float,float4):float4::nominal-0",
       "operation": {
-        "identity": "float4.SmoothStep(float,float,float4):float4",
+        "identity": "float4.Smoothstep(float,float,float4):float4",
         "ownerTypeName": "float4",
-        "methodName": "SmoothStep",
+        "methodName": "Smoothstep",
         "parameterTypeNames": [
           "float",
           "float",
@@ -8378,11 +8378,11 @@
       }
     },
     {
-      "id": "float4.SmoothStep(float4,float4,float4):float4::nominal-0",
+      "id": "float4.Smoothstep(float4,float4,float4):float4::nominal-0",
       "operation": {
-        "identity": "float4.SmoothStep(float4,float4,float4):float4",
+        "identity": "float4.Smoothstep(float4,float4,float4):float4",
         "ownerTypeName": "float4",
-        "methodName": "SmoothStep",
+        "methodName": "Smoothstep",
         "parameterTypeNames": [
           "float4",
           "float4",
@@ -21572,11 +21572,11 @@
       }
     },
     {
-      "id": "maths.smoothStep(float,float,float2):float2::nominal-0",
+      "id": "maths.smoothstep(float,float,float2):float2::nominal-0",
       "operation": {
-        "identity": "maths.smoothStep(float,float,float2):float2",
+        "identity": "maths.smoothstep(float,float,float2):float2",
         "ownerTypeName": "maths",
-        "methodName": "smoothStep",
+        "methodName": "smoothstep",
         "parameterTypeNames": [
           "float",
           "float",
@@ -21589,7 +21589,7 @@
         {
           "type": "float",
           "words": [
-            "3f000000"
+            "3f400000"
           ]
         },
         {
@@ -21609,7 +21609,7 @@
       "expected": {
         "type": "float2",
         "words": [
-          "3f800000",
+          "00000000",
           "00000000"
         ]
       },
@@ -21634,11 +21634,11 @@
       }
     },
     {
-      "id": "maths.smoothStep(float2,float2,float2):float2::nominal-0",
+      "id": "maths.smoothstep(float2,float2,float2):float2::nominal-0",
       "operation": {
-        "identity": "maths.smoothStep(float2,float2,float2):float2",
+        "identity": "maths.smoothstep(float2,float2,float2):float2",
         "ownerTypeName": "maths",
-        "methodName": "smoothStep",
+        "methodName": "smoothstep",
         "parameterTypeNames": [
           "float2",
           "float2",
@@ -23737,11 +23737,11 @@
       }
     },
     {
-      "id": "maths.smoothStep(float,float,float3):float3::nominal-0",
+      "id": "maths.smoothstep(float,float,float3):float3::nominal-0",
       "operation": {
-        "identity": "maths.smoothStep(float,float,float3):float3",
+        "identity": "maths.smoothstep(float,float,float3):float3",
         "ownerTypeName": "maths",
-        "methodName": "smoothStep",
+        "methodName": "smoothstep",
         "parameterTypeNames": [
           "float",
           "float",
@@ -23754,7 +23754,7 @@
         {
           "type": "float",
           "words": [
-            "3f000000"
+            "3f400000"
           ]
         },
         {
@@ -23775,7 +23775,7 @@
       "expected": {
         "type": "float3",
         "words": [
-          "3f800000",
+          "00000000",
           "00000000",
           "3f800000"
         ]
@@ -23801,11 +23801,11 @@
       }
     },
     {
-      "id": "maths.smoothStep(float3,float3,float3):float3::nominal-0",
+      "id": "maths.smoothstep(float3,float3,float3):float3::nominal-0",
       "operation": {
-        "identity": "maths.smoothStep(float3,float3,float3):float3",
+        "identity": "maths.smoothstep(float3,float3,float3):float3",
         "ownerTypeName": "maths",
-        "methodName": "smoothStep",
+        "methodName": "smoothstep",
         "parameterTypeNames": [
           "float3",
           "float3",
@@ -25936,11 +25936,11 @@
       }
     },
     {
-      "id": "maths.smoothStep(float,float,float4):float4::nominal-0",
+      "id": "maths.smoothstep(float,float,float4):float4::nominal-0",
       "operation": {
-        "identity": "maths.smoothStep(float,float,float4):float4",
+        "identity": "maths.smoothstep(float,float,float4):float4",
         "ownerTypeName": "maths",
-        "methodName": "smoothStep",
+        "methodName": "smoothstep",
         "parameterTypeNames": [
           "float",
           "float",
@@ -25953,7 +25953,7 @@
         {
           "type": "float",
           "words": [
-            "3f000000"
+            "3f400000"
           ]
         },
         {
@@ -25975,7 +25975,7 @@
       "expected": {
         "type": "float4",
         "words": [
-          "3f800000",
+          "00000000",
           "00000000",
           "3f800000",
           "3f800000"
@@ -26002,11 +26002,11 @@
       }
     },
     {
-      "id": "maths.smoothStep(float4,float4,float4):float4::nominal-0",
+      "id": "maths.smoothstep(float4,float4,float4):float4::nominal-0",
       "operation": {
-        "identity": "maths.smoothStep(float4,float4,float4):float4",
+        "identity": "maths.smoothstep(float4,float4,float4):float4",
         "ownerTypeName": "maths",
-        "methodName": "smoothStep",
+        "methodName": "smoothstep",
         "parameterTypeNames": [
           "float4",
           "float4",
@@ -31305,11 +31305,11 @@
       }
     },
     {
-      "id": "maths.smoothStep(float,float,float):float::nominal-0",
+      "id": "maths.smoothstep(float,float,float):float::nominal-0",
       "operation": {
-        "identity": "maths.smoothStep(float,float,float):float",
+        "identity": "maths.smoothstep(float,float,float):float",
         "ownerTypeName": "maths",
-        "methodName": "smoothStep",
+        "methodName": "smoothstep",
         "parameterTypeNames": [
           "float",
           "float",
@@ -31322,7 +31322,7 @@
         {
           "type": "float",
           "words": [
-            "3f000000"
+            "3f400000"
           ]
         },
         {
@@ -31341,7 +31341,7 @@
       "expected": {
         "type": "float",
         "words": [
-          "3f800000"
+          "00000000"
         ]
       },
       "comparison": {
