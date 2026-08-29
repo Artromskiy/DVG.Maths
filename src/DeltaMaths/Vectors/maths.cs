@@ -155,5 +155,21 @@ namespace Delta.Maths
         public static fix smoothDampAngle(fix current, fix target, ref fix velocity, fix smoothTime, fix deltaTime) => DeltaMaths.SmoothDampAngle(current, target, ref velocity, smoothTime, deltaTime);
         public static fix deltaAngle(fix current, fix target) => DeltaMaths.DeltaAngle(current, target);
         public static fix repeat(fix t, fix length) => DeltaMaths.Repeat(t, length);
+        public static uint uaddCarry(uint x, uint y, out uint carry) => DeltaMaths.UaddCarry(x, y, out carry);
+        public static uint usubBorrow(uint x, uint y, out uint borrow) => DeltaMaths.UsubBorrow(x, y, out borrow);
+        public static void umulExtended(uint x, uint y, out uint msb, out uint lsb) => DeltaMaths.UmulExtended(x, y, out msb, out lsb);
+        public static void imulExtended(int x, int y, out int msb, out int lsb) => DeltaMaths.ImulExtended(x, y, out msb, out lsb);
+        public static int bitCount(int value) => DeltaMaths.BitCount(value);
+        public static int bitCount(uint value) => DeltaMaths.BitCount(value);
+        public static int findLSB(int value) => DeltaMaths.FindLSB(value);
+        public static int findLSB(uint value) => DeltaMaths.FindLSB(value);
+        public static int findMSB(int value) => DeltaMaths.FindMSB(value);
+        public static int findMSB(uint value) => DeltaMaths.FindMSB(value);
+        public static int bitfieldReverse(int value) => DeltaMaths.BitfieldReverse(value);
+        public static uint bitfieldReverse(uint value) => DeltaMaths.BitfieldReverse(value);
+        public static int bitfieldExtract(int value, int offset, int bits) => DeltaMaths.BitfieldExtract(value, offset, bits);
+        public static uint bitfieldExtract(uint value, int offset, int bits) => DeltaMaths.BitfieldExtract(value, offset, bits);
+        public static int bitfieldInsert(int baseValue, int insert, int offset, int bits) => DeltaMaths.BitfieldInsert(baseValue, insert, offset, bits);
+        public static uint bitfieldInsert(uint baseValue, uint insert, int offset, int bits) => DeltaMaths.BitfieldInsert(baseValue, insert, offset, bits);
     }
 }

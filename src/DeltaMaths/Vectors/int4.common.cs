@@ -63,5 +63,45 @@ namespace Delta.Maths
         {
             return value.x + value.y + value.z + value.w;
         }
+
+        public static int4 BitCount(int4 value)
+        {
+            return new(DeltaMaths.BitCount(value.x), DeltaMaths.BitCount(value.y), DeltaMaths.BitCount(value.z), DeltaMaths.BitCount(value.w));
+        }
+
+        public static int4 FindLSB(int4 value)
+        {
+            return new(DeltaMaths.FindLSB(value.x), DeltaMaths.FindLSB(value.y), DeltaMaths.FindLSB(value.z), DeltaMaths.FindLSB(value.w));
+        }
+
+        public static int4 FindMSB(int4 value)
+        {
+            return new(DeltaMaths.FindMSB(value.x), DeltaMaths.FindMSB(value.y), DeltaMaths.FindMSB(value.z), DeltaMaths.FindMSB(value.w));
+        }
+
+        public static int4 BitfieldReverse(int4 value)
+        {
+            return new(DeltaMaths.BitfieldReverse(value.x), DeltaMaths.BitfieldReverse(value.y), DeltaMaths.BitfieldReverse(value.z), DeltaMaths.BitfieldReverse(value.w));
+        }
+
+        public static int4 BitfieldExtract(int4 value, int offset, int bits)
+        {
+            return new(DeltaMaths.BitfieldExtract(value.x, offset, bits), DeltaMaths.BitfieldExtract(value.y, offset, bits), DeltaMaths.BitfieldExtract(value.z, offset, bits), DeltaMaths.BitfieldExtract(value.w, offset, bits));
+        }
+
+        public static int4 BitfieldInsert(int4 baseValue, int4 insert, int offset, int bits)
+        {
+            return new(DeltaMaths.BitfieldInsert(baseValue.x, insert.x, offset, bits), DeltaMaths.BitfieldInsert(baseValue.y, insert.y, offset, bits), DeltaMaths.BitfieldInsert(baseValue.z, insert.z, offset, bits), DeltaMaths.BitfieldInsert(baseValue.w, insert.w, offset, bits));
+        }
+
+        public static void ImulExtended(int4 a, int4 b, out int4 msb, out int4 lsb)
+        {
+            DeltaMaths.ImulExtended(a.x, b.x, out var msbx, out var lsbx);
+            DeltaMaths.ImulExtended(a.y, b.y, out var msby, out var lsby);
+            DeltaMaths.ImulExtended(a.z, b.z, out var msbz, out var lsbz);
+            DeltaMaths.ImulExtended(a.w, b.w, out var msbw, out var lsbw);
+            msb = new(msbx, msby, msbz, msbw);
+            lsb = new(lsbx, lsby, lsbz, lsbw);
+        }
     }
 }

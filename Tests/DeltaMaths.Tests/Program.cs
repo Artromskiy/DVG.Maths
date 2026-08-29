@@ -16,6 +16,7 @@ namespace Delta.Maths.Tests
                 ("arithmetic, masks, and conversions are component-wise", VectorBehaviorTests.OperatorsAndConversions),
                 ("parsing and formatting round-trip invariantly", VectorBehaviorTests.ParsingAndFormatting),
                 ("common component-wise maths works", VectorBehaviorTests.CommonDeltaMaths),
+                ("integer shader operations follow GLSL bit semantics", VectorBehaviorTests.IntegerShaderOperations),
                 ("geometry matches established vector cases", VectorBehaviorTests.Geometry),
                 ("normalization handles zero and tiny inputs", VectorBehaviorTests.Normalization),
                 ("lowercase maths forwards scalar and vector APIs", VectorBehaviorTests.ShaderStyleFacade),

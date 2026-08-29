@@ -53,5 +53,59 @@ namespace Delta.Maths
         {
             return value.x + value.y;
         }
+
+        public static int2 BitCount(uint2 value)
+        {
+            return new(DeltaMaths.BitCount(value.x), DeltaMaths.BitCount(value.y));
+        }
+
+        public static int2 FindLSB(uint2 value)
+        {
+            return new(DeltaMaths.FindLSB(value.x), DeltaMaths.FindLSB(value.y));
+        }
+
+        public static int2 FindMSB(uint2 value)
+        {
+            return new(DeltaMaths.FindMSB(value.x), DeltaMaths.FindMSB(value.y));
+        }
+
+        public static uint2 BitfieldReverse(uint2 value)
+        {
+            return new(DeltaMaths.BitfieldReverse(value.x), DeltaMaths.BitfieldReverse(value.y));
+        }
+
+        public static uint2 BitfieldExtract(uint2 value, int offset, int bits)
+        {
+            return new(DeltaMaths.BitfieldExtract(value.x, offset, bits), DeltaMaths.BitfieldExtract(value.y, offset, bits));
+        }
+
+        public static uint2 BitfieldInsert(uint2 baseValue, uint2 insert, int offset, int bits)
+        {
+            return new(DeltaMaths.BitfieldInsert(baseValue.x, insert.x, offset, bits), DeltaMaths.BitfieldInsert(baseValue.y, insert.y, offset, bits));
+        }
+
+        public static uint2 UaddCarry(uint2 a, uint2 b, out uint2 carry)
+        {
+            var resultx = DeltaMaths.UaddCarry(a.x, b.x, out var carryx);
+            var resulty = DeltaMaths.UaddCarry(a.y, b.y, out var carryy);
+            carry = new(carryx, carryy);
+            return new(resultx, resulty);
+        }
+
+        public static uint2 UsubBorrow(uint2 a, uint2 b, out uint2 borrow)
+        {
+            var resultx = DeltaMaths.UsubBorrow(a.x, b.x, out var borrowx);
+            var resulty = DeltaMaths.UsubBorrow(a.y, b.y, out var borrowy);
+            borrow = new(borrowx, borrowy);
+            return new(resultx, resulty);
+        }
+
+        public static void UmulExtended(uint2 a, uint2 b, out uint2 msb, out uint2 lsb)
+        {
+            DeltaMaths.UmulExtended(a.x, b.x, out var msbx, out var lsbx);
+            DeltaMaths.UmulExtended(a.y, b.y, out var msby, out var lsby);
+            msb = new(msbx, msby);
+            lsb = new(lsbx, lsby);
+        }
     }
 }

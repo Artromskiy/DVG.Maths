@@ -324,6 +324,9 @@ namespace Delta.Maths.Tests
             AssertEx.True(functions.All(function => !string.IsNullOrWhiteSpace(function.GetProperty("mathsName").GetString())));
             AssertEx.True(functions.All(function => function.TryGetProperty("parameterClrNames", out var parameters)
                 && parameters.ValueKind == JsonValueKind.Array));
+            AssertEx.True(functions.All(function => function.TryGetProperty("parameterModifiers", out var modifiers)
+                && modifiers.ValueKind == JsonValueKind.Array
+                && modifiers.GetArrayLength() == function.GetProperty("parameterClrNames").GetArrayLength()));
             AssertEx.True(functions.All(function => !string.IsNullOrWhiteSpace(function.GetProperty("returnClrName").GetString())));
             AssertEx.True(functions.All(function => !string.IsNullOrWhiteSpace(function.GetProperty("identity").GetString())));
             var identities = functions.Select(function =>
@@ -498,6 +501,38 @@ namespace Delta.Maths.Tests
             AssertEx.Equal("Builtin", scalarMod.GetProperty("mapping").GetString());
             AssertEx.Equal("scalar", scalarMod.GetProperty("requiredCapability").GetString());
 
+            AssertFunction(functions, "maths", "uaddCarry", "uaddCarry", "Builtin", "uint", "uint", "uint");
+            AssertShaderSignature(functions, "maths", "uaddCarry", ["uint", "uint", "uint"], "uint", "uint", "uint", "uint");
+            var scalarCarry = FindFunction(functions, "maths", "uaddCarry", "uint", "uint", "uint");
+            AssertEx.True(scalarCarry.GetProperty("parameterModifiers").EnumerateArray().Select(value => value.GetString())
+                .SequenceEqual(["none", "none", "out"]));
+            AssertFunction(functions, "maths", "usubBorrow", "usubBorrow", "Builtin", "uint", "uint", "uint");
+            AssertFunction(functions, "maths", "umulExtended", "umulExtended", "Builtin", "uint", "uint", "uint", "uint");
+            AssertShaderSignature(functions, "maths", "umulExtended", ["uint", "uint", "uint", "uint"], "void", "uint", "uint", "uint", "uint");
+            AssertFunction(functions, "maths", "imulExtended", "imulExtended", "Builtin", "int", "int", "int", "int");
+            AssertFunction(functions, "maths", "bitCount", "bitCount", "Builtin", "uint");
+            AssertFunction(functions, "maths", "bitCount", "bitCount", "Builtin", "int");
+            AssertFunction(functions, "maths", "findLSB", "findLSB", "Builtin", "uint");
+            AssertFunction(functions, "maths", "findMSB", "findMSB", "Builtin", "int");
+            AssertFunction(functions, "maths", "bitfieldExtract", "bitfieldExtract", "Builtin", "uint", "int", "int");
+            AssertFunction(functions, "maths", "bitfieldInsert", "bitfieldInsert", "Builtin", "int", "int", "int", "int");
+
+            foreach (var valueType in new[] { "int", "uint" })
+            {
+                foreach (var dimension in new[] { 2, 3, 4 })
+                {
+                    var vectorName = valueType + dimension;
+                    var glslVector = (valueType == "int" ? "ivec" : "uvec") + dimension;
+                    var intGlslVector = "ivec" + dimension;
+                    AssertFunction(functions, vectorName, "BitCount", "bitCount", "Builtin", vectorName);
+                    AssertShaderSignature(functions, vectorName, "BitCount", [glslVector], intGlslVector, vectorName);
+                    AssertFunction(functions, "maths", "bitCount", "bitCount", "Builtin", vectorName);
+                    AssertFunction(functions, vectorName, "BitfieldExtract", "bitfieldExtract", "Builtin", vectorName, "int", "int");
+                    AssertFunction(functions, vectorName, "BitfieldInsert", "bitfieldInsert", "Builtin", vectorName, vectorName, "int", "int");
+                    AssertIntegerOperator(functions, vectorName);
+                }
+            }
+
             foreach (var vectorName in new[] { "float2", "float3", "float4" })
             {
                 AssertFunction(functions, vectorName, "Mod", "mod", "Builtin", vectorName, vectorName);
@@ -516,6 +551,17 @@ namespace Delta.Maths.Tests
                     AssertEx.True(scalarLeftModulus.GetProperty("glslName").ValueKind == JsonValueKind.Null);
                 }
             }
+        }
+
+        private static void AssertIntegerOperator(JsonElement[] functions, string vectorName)
+        {
+            AssertFunction(functions, vectorName, "op_Modulus", "%", "Builtin", vectorName, vectorName);
+            AssertFunction(functions, vectorName, "op_OnesComplement", "~", "Builtin", vectorName);
+            AssertFunction(functions, vectorName, "op_LeftShift", "<<", "Builtin", vectorName, "int");
+            AssertFunction(functions, vectorName, "op_RightShift", ">>", "Builtin", vectorName, "int");
+            AssertFunction(functions, vectorName, "op_BitwiseAnd", "&", "Builtin", vectorName, vectorName);
+            AssertFunction(functions, vectorName, "op_BitwiseOr", "|", "Builtin", vectorName, vectorName);
+            AssertFunction(functions, vectorName, "op_ExclusiveOr", "^", "Builtin", vectorName, vectorName);
         }
 
         private static void AssertFunction(JsonElement[] functions, string typeName, string clrName,

@@ -63,5 +63,44 @@ namespace Delta.Maths
         {
             return value.x + value.y + value.z;
         }
+
+        public static int3 BitCount(int3 value)
+        {
+            return new(DeltaMaths.BitCount(value.x), DeltaMaths.BitCount(value.y), DeltaMaths.BitCount(value.z));
+        }
+
+        public static int3 FindLSB(int3 value)
+        {
+            return new(DeltaMaths.FindLSB(value.x), DeltaMaths.FindLSB(value.y), DeltaMaths.FindLSB(value.z));
+        }
+
+        public static int3 FindMSB(int3 value)
+        {
+            return new(DeltaMaths.FindMSB(value.x), DeltaMaths.FindMSB(value.y), DeltaMaths.FindMSB(value.z));
+        }
+
+        public static int3 BitfieldReverse(int3 value)
+        {
+            return new(DeltaMaths.BitfieldReverse(value.x), DeltaMaths.BitfieldReverse(value.y), DeltaMaths.BitfieldReverse(value.z));
+        }
+
+        public static int3 BitfieldExtract(int3 value, int offset, int bits)
+        {
+            return new(DeltaMaths.BitfieldExtract(value.x, offset, bits), DeltaMaths.BitfieldExtract(value.y, offset, bits), DeltaMaths.BitfieldExtract(value.z, offset, bits));
+        }
+
+        public static int3 BitfieldInsert(int3 baseValue, int3 insert, int offset, int bits)
+        {
+            return new(DeltaMaths.BitfieldInsert(baseValue.x, insert.x, offset, bits), DeltaMaths.BitfieldInsert(baseValue.y, insert.y, offset, bits), DeltaMaths.BitfieldInsert(baseValue.z, insert.z, offset, bits));
+        }
+
+        public static void ImulExtended(int3 a, int3 b, out int3 msb, out int3 lsb)
+        {
+            DeltaMaths.ImulExtended(a.x, b.x, out var msbx, out var lsbx);
+            DeltaMaths.ImulExtended(a.y, b.y, out var msby, out var lsby);
+            DeltaMaths.ImulExtended(a.z, b.z, out var msbz, out var lsbz);
+            msb = new(msbx, msby, msbz);
+            lsb = new(lsbx, lsby, lsbz);
+        }
     }
 }

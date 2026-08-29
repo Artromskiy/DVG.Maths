@@ -95,6 +95,7 @@ internal static class ShaderContractConformance
                     element.GetProperty("clrName").GetString()
                         ?? throw new InvalidOperationException("A contract function has no CLR name."),
                     ReadStrings(element.GetProperty("parameterClrNames")),
+                    ReadStrings(element.GetProperty("parameterModifiers")),
                     element.GetProperty("returnClrName").GetString()
                         ?? throw new InvalidOperationException("A contract function has no return type."),
                     mapping
@@ -169,6 +170,7 @@ internal sealed record ContractFunction(
     string OwnerTypeName,
     string MethodName,
     string[] ParameterTypeNames,
+    string[] ParameterModifiers,
     string ReturnTypeName,
     string Mapping,
     string? RequiredCapability,
@@ -260,6 +262,11 @@ internal sealed class ContractCaseRunner
         }
 
         var parameters = method.GetParameters();
+        if (function.ParameterModifiers.Length != parameters.Length)
+        {
+            return false;
+        }
+
         for (var index = 0; index < parameters.Length; index++)
         {
             var parameterType = parameters[index].ParameterType;
@@ -273,6 +280,14 @@ internal sealed class ContractCaseRunner
             {
                 return false;
             }
+
+            var modifier = parameters[index].IsOut
+                ? "out"
+                : parameters[index].ParameterType.IsByRef ? "ref" : "none";
+            if (!string.Equals(modifier, function.ParameterModifiers[index], StringComparison.Ordinal))
+            {
+                return false;
+            }
         }
 
         return true;
@@ -280,6 +295,11 @@ internal sealed class ContractCaseRunner
 
     internal static string TypeName(Type type)
     {
+        if (type == typeof(void))
+        {
+            return "void";
+        }
+
         if (type == typeof(bool))
         {
             return "bool";
@@ -625,7 +645,7 @@ internal sealed class ContractCaseRunner
             var result = method.Invoke(null, arguments);
             if (method.ReturnType == typeof(void))
             {
-                throw new InvalidOperationException($"Void contract function is not a calculation: {function.Identity}");
+                return arguments;
             }
 
             return result;

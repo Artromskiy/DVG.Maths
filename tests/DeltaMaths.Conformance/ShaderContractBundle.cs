@@ -307,6 +307,11 @@ internal static class CanonicalValueEncoder
 {
     internal static CanonicalValue Encode(Type type, object? value)
     {
+        if (type == typeof(void))
+        {
+            return new CanonicalValue("void", Array.Empty<string>());
+        }
+
         if (value is null)
         {
             throw new InvalidOperationException($"Cannot encode a null value of type '{type.FullName}'.");

@@ -210,6 +210,27 @@ namespace Delta.Maths
         public static int sum(int2 value) => int2.Sum(value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static int2 bitCount(int2 value) => int2.BitCount(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static int2 findLSB(int2 value) => int2.FindLSB(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static int2 findMSB(int2 value) => int2.FindMSB(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static int2 bitfieldReverse(int2 value) => int2.BitfieldReverse(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static int2 bitfieldExtract(int2 value, int offset, int bits) => int2.BitfieldExtract(value, offset, bits);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static int2 bitfieldInsert(int2 baseValue, int2 insert, int offset, int bits) => int2.BitfieldInsert(baseValue, insert, offset, bits);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void imulExtended(int2 a, int2 b, out int2 msb, out int2 lsb) => int2.ImulExtended(a, b, out msb, out lsb);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static int3 select(int3 falseValue, int3 trueValue, bool3 mask) => int3.Select(falseValue, trueValue, mask);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -310,6 +331,27 @@ namespace Delta.Maths
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static int sum(int3 value) => int3.Sum(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static int3 bitCount(int3 value) => int3.BitCount(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static int3 findLSB(int3 value) => int3.FindLSB(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static int3 findMSB(int3 value) => int3.FindMSB(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static int3 bitfieldReverse(int3 value) => int3.BitfieldReverse(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static int3 bitfieldExtract(int3 value, int offset, int bits) => int3.BitfieldExtract(value, offset, bits);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static int3 bitfieldInsert(int3 baseValue, int3 insert, int offset, int bits) => int3.BitfieldInsert(baseValue, insert, offset, bits);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void imulExtended(int3 a, int3 b, out int3 msb, out int3 lsb) => int3.ImulExtended(a, b, out msb, out lsb);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static int4 select(int4 falseValue, int4 trueValue, bool4 mask) => int4.Select(falseValue, trueValue, mask);
@@ -414,6 +456,27 @@ namespace Delta.Maths
         public static int sum(int4 value) => int4.Sum(value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static int4 bitCount(int4 value) => int4.BitCount(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static int4 findLSB(int4 value) => int4.FindLSB(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static int4 findMSB(int4 value) => int4.FindMSB(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static int4 bitfieldReverse(int4 value) => int4.BitfieldReverse(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static int4 bitfieldExtract(int4 value, int offset, int bits) => int4.BitfieldExtract(value, offset, bits);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static int4 bitfieldInsert(int4 baseValue, int4 insert, int offset, int bits) => int4.BitfieldInsert(baseValue, insert, offset, bits);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void imulExtended(int4 a, int4 b, out int4 msb, out int4 lsb) => int4.ImulExtended(a, b, out msb, out lsb);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint2 select(uint2 falseValue, uint2 trueValue, bool2 mask) => uint2.Select(falseValue, trueValue, mask);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -508,6 +571,33 @@ namespace Delta.Maths
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint sum(uint2 value) => uint2.Sum(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static int2 bitCount(uint2 value) => uint2.BitCount(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static int2 findLSB(uint2 value) => uint2.FindLSB(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static int2 findMSB(uint2 value) => uint2.FindMSB(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static uint2 bitfieldReverse(uint2 value) => uint2.BitfieldReverse(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static uint2 bitfieldExtract(uint2 value, int offset, int bits) => uint2.BitfieldExtract(value, offset, bits);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static uint2 bitfieldInsert(uint2 baseValue, uint2 insert, int offset, int bits) => uint2.BitfieldInsert(baseValue, insert, offset, bits);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static uint2 uaddCarry(uint2 a, uint2 b, out uint2 carry) => uint2.UaddCarry(a, b, out carry);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static uint2 usubBorrow(uint2 a, uint2 b, out uint2 borrow) => uint2.UsubBorrow(a, b, out borrow);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void umulExtended(uint2 a, uint2 b, out uint2 msb, out uint2 lsb) => uint2.UmulExtended(a, b, out msb, out lsb);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint3 select(uint3 falseValue, uint3 trueValue, bool3 mask) => uint3.Select(falseValue, trueValue, mask);
@@ -606,6 +696,33 @@ namespace Delta.Maths
         public static uint sum(uint3 value) => uint3.Sum(value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static int3 bitCount(uint3 value) => uint3.BitCount(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static int3 findLSB(uint3 value) => uint3.FindLSB(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static int3 findMSB(uint3 value) => uint3.FindMSB(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static uint3 bitfieldReverse(uint3 value) => uint3.BitfieldReverse(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static uint3 bitfieldExtract(uint3 value, int offset, int bits) => uint3.BitfieldExtract(value, offset, bits);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static uint3 bitfieldInsert(uint3 baseValue, uint3 insert, int offset, int bits) => uint3.BitfieldInsert(baseValue, insert, offset, bits);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static uint3 uaddCarry(uint3 a, uint3 b, out uint3 carry) => uint3.UaddCarry(a, b, out carry);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static uint3 usubBorrow(uint3 a, uint3 b, out uint3 borrow) => uint3.UsubBorrow(a, b, out borrow);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void umulExtended(uint3 a, uint3 b, out uint3 msb, out uint3 lsb) => uint3.UmulExtended(a, b, out msb, out lsb);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint4 select(uint4 falseValue, uint4 trueValue, bool4 mask) => uint4.Select(falseValue, trueValue, mask);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -700,6 +817,33 @@ namespace Delta.Maths
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint sum(uint4 value) => uint4.Sum(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static int4 bitCount(uint4 value) => uint4.BitCount(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static int4 findLSB(uint4 value) => uint4.FindLSB(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static int4 findMSB(uint4 value) => uint4.FindMSB(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static uint4 bitfieldReverse(uint4 value) => uint4.BitfieldReverse(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static uint4 bitfieldExtract(uint4 value, int offset, int bits) => uint4.BitfieldExtract(value, offset, bits);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static uint4 bitfieldInsert(uint4 baseValue, uint4 insert, int offset, int bits) => uint4.BitfieldInsert(baseValue, insert, offset, bits);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static uint4 uaddCarry(uint4 a, uint4 b, out uint4 carry) => uint4.UaddCarry(a, b, out carry);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static uint4 usubBorrow(uint4 a, uint4 b, out uint4 borrow) => uint4.UsubBorrow(a, b, out borrow);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static void umulExtended(uint4 a, uint4 b, out uint4 msb, out uint4 lsb) => uint4.UmulExtended(a, b, out msb, out lsb);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float2 select(float2 falseValue, float2 trueValue, bool2 mask) => float2.Select(falseValue, trueValue, mask);

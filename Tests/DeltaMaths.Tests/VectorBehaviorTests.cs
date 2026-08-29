@@ -83,6 +83,49 @@ namespace Delta.Maths.Tests
             AssertEx.Equal(new bool3(true, false, true), float3.IsFinite(new float3(1, float.PositiveInfinity, 2)));
         }
 
+        public static void IntegerShaderOperations()
+        {
+            var sum = DeltaMaths.UaddCarry(uint.MaxValue, 1u, out var carry);
+            AssertEx.Equal(0u, sum);
+            AssertEx.Equal(1u, carry);
+            AssertEx.Equal(0u, maths.uaddCarry(uint.MaxValue, 1u, out carry));
+            AssertEx.Equal(1u, carry);
+
+            var difference = DeltaMaths.UsubBorrow(0u, 1u, out var borrow);
+            AssertEx.Equal(uint.MaxValue, difference);
+            AssertEx.Equal(1u, borrow);
+
+            DeltaMaths.UmulExtended(uint.MaxValue, 2u, out var unsignedMsb, out var unsignedLsb);
+            AssertEx.Equal(1u, unsignedMsb);
+            AssertEx.Equal(0xfffffffeu, unsignedLsb);
+            DeltaMaths.ImulExtended(-2, 3, out var signedMsb, out var signedLsb);
+            AssertEx.Equal(-1, signedMsb);
+            AssertEx.Equal(-6, signedLsb);
+
+            AssertEx.Equal(32, DeltaMaths.BitCount(uint.MaxValue));
+            AssertEx.Equal(4, DeltaMaths.BitCount(0x0f0u));
+            AssertEx.Equal(4, DeltaMaths.FindLSB(0x10u));
+            AssertEx.Equal(-1, DeltaMaths.FindLSB(0u));
+            AssertEx.Equal(4, DeltaMaths.FindMSB(0x10u));
+            AssertEx.Equal(0, DeltaMaths.FindMSB(-2));
+            AssertEx.Equal(-1, DeltaMaths.FindMSB(-1));
+            AssertEx.Equal(0xb0000000u, DeltaMaths.BitfieldReverse(0x0du));
+
+            AssertEx.Equal(0x0fu, DeltaMaths.BitfieldExtract(0xf0u, 4, 4));
+            AssertEx.Equal(-4, DeltaMaths.BitfieldExtract(-8, 1, 3));
+            AssertEx.Equal(0xffff0050u, DeltaMaths.BitfieldInsert(0xffff0000u, 5u, 4, 4));
+            AssertEx.Equal(0u, DeltaMaths.BitfieldExtract(uint.MaxValue, -1, 4));
+            AssertEx.Equal(uint.MaxValue, DeltaMaths.BitfieldInsert(uint.MaxValue, 0u, 32, 1));
+
+            var vectorSum = uint3.UaddCarry(new uint3(uint.MaxValue, 2u, 3u), new uint3(1u, 4u, 5u), out var vectorCarry);
+            AssertEx.Equal(new uint3(0u, 6u, 8u), vectorSum);
+            AssertEx.Equal(new uint3(1u, 0u, 0u), vectorCarry);
+            AssertEx.Equal(new int3(32, 0, 2), maths.bitCount(new int3(-1, 0, 3)));
+            AssertEx.Equal(new int3(0, -1, 3), maths.findMSB(new int3(-2, 0, 8)));
+            AssertEx.Equal(new uint3(0x50u, 0x60u, 0x70u),
+                maths.bitfieldInsert(new uint3(0u, 0u, 0u), new uint3(5u, 6u, 7u), 4, 4));
+        }
+
         public static void Geometry()
         {
             // Cases adapted from Unity.Mathematics' official TestMath suite.

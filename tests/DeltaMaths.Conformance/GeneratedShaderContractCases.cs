@@ -6,7 +6,7 @@ namespace Delta.Maths.Conformance;
 
 internal static class GeneratedShaderContractCases
 {
-    internal const int Count = 893;
+    internal const int Count = 1095;
 
     internal static readonly string[] Identities =
     [
@@ -407,75 +407,141 @@ internal static class GeneratedShaderContractCases
         "float4x4.TransformPoint(float4x4,float3):float3",
         "float4x4.Transpose(float4x4):float4x4",
         "int2.Abs(int2):int2",
+        "int2.BitCount(int2):int2",
+        "int2.BitfieldExtract(int2,int,int):int2",
+        "int2.BitfieldInsert(int2,int2,int,int):int2",
+        "int2.BitfieldReverse(int2):int2",
         "int2.Clamp(int2,int,int):int2",
         "int2.Clamp(int2,int2,int2):int2",
         "int2.Equal(int2,int2):bool2",
+        "int2.FindLSB(int2):int2",
+        "int2.FindMSB(int2):int2",
+        "int2.ImulExtended(int2,int2,int2,int2):void",
         "int2.Max(int2,int):int2",
         "int2.Max(int2,int2):int2",
         "int2.Min(int2,int):int2",
         "int2.Min(int2,int2):int2",
         "int2.NotEqual(int2,int2):bool2",
+        "int2.op_OnesComplement(int2):int2",
         "int2.Select(int2,int2,bool2):int2",
         "int2.Sign(int2):int2",
         "int2.op_Addition(int,int2):int2",
         "int2.op_Addition(int2,int):int2",
         "int2.op_Addition(int2,int2):int2",
+        "int2.op_BitwiseAnd(int,int2):int2",
+        "int2.op_BitwiseAnd(int2,int):int2",
+        "int2.op_BitwiseAnd(int2,int2):int2",
+        "int2.op_BitwiseOr(int,int2):int2",
+        "int2.op_BitwiseOr(int2,int):int2",
+        "int2.op_BitwiseOr(int2,int2):int2",
         "int2.op_Division(int,int2):int2",
         "int2.op_Division(int2,int):int2",
         "int2.op_Division(int2,int2):int2",
+        "int2.op_ExclusiveOr(int,int2):int2",
+        "int2.op_ExclusiveOr(int2,int):int2",
+        "int2.op_ExclusiveOr(int2,int2):int2",
+        "int2.op_LeftShift(int2,int):int2",
+        "int2.op_Modulus(int,int2):int2",
+        "int2.op_Modulus(int2,int):int2",
+        "int2.op_Modulus(int2,int2):int2",
         "int2.op_Multiply(int,int2):int2",
         "int2.op_Multiply(int2,int):int2",
         "int2.op_Multiply(int2,int2):int2",
+        "int2.op_RightShift(int2,int):int2",
         "int2.op_Subtraction(int,int2):int2",
         "int2.op_Subtraction(int2,int):int2",
         "int2.op_Subtraction(int2,int2):int2",
         "int2.op_UnaryNegation(int2):int2",
         "int2.op_UnaryPlus(int2):int2",
         "int3.Abs(int3):int3",
+        "int3.BitCount(int3):int3",
+        "int3.BitfieldExtract(int3,int,int):int3",
+        "int3.BitfieldInsert(int3,int3,int,int):int3",
+        "int3.BitfieldReverse(int3):int3",
         "int3.Clamp(int3,int,int):int3",
         "int3.Clamp(int3,int3,int3):int3",
         "int3.Equal(int3,int3):bool3",
+        "int3.FindLSB(int3):int3",
+        "int3.FindMSB(int3):int3",
+        "int3.ImulExtended(int3,int3,int3,int3):void",
         "int3.Max(int3,int):int3",
         "int3.Max(int3,int3):int3",
         "int3.Min(int3,int):int3",
         "int3.Min(int3,int3):int3",
         "int3.NotEqual(int3,int3):bool3",
+        "int3.op_OnesComplement(int3):int3",
         "int3.Select(int3,int3,bool3):int3",
         "int3.Sign(int3):int3",
         "int3.op_Addition(int,int3):int3",
         "int3.op_Addition(int3,int):int3",
         "int3.op_Addition(int3,int3):int3",
+        "int3.op_BitwiseAnd(int,int3):int3",
+        "int3.op_BitwiseAnd(int3,int):int3",
+        "int3.op_BitwiseAnd(int3,int3):int3",
+        "int3.op_BitwiseOr(int,int3):int3",
+        "int3.op_BitwiseOr(int3,int):int3",
+        "int3.op_BitwiseOr(int3,int3):int3",
         "int3.op_Division(int,int3):int3",
         "int3.op_Division(int3,int):int3",
         "int3.op_Division(int3,int3):int3",
+        "int3.op_ExclusiveOr(int,int3):int3",
+        "int3.op_ExclusiveOr(int3,int):int3",
+        "int3.op_ExclusiveOr(int3,int3):int3",
+        "int3.op_LeftShift(int3,int):int3",
+        "int3.op_Modulus(int,int3):int3",
+        "int3.op_Modulus(int3,int):int3",
+        "int3.op_Modulus(int3,int3):int3",
         "int3.op_Multiply(int,int3):int3",
         "int3.op_Multiply(int3,int):int3",
         "int3.op_Multiply(int3,int3):int3",
+        "int3.op_RightShift(int3,int):int3",
         "int3.op_Subtraction(int,int3):int3",
         "int3.op_Subtraction(int3,int):int3",
         "int3.op_Subtraction(int3,int3):int3",
         "int3.op_UnaryNegation(int3):int3",
         "int3.op_UnaryPlus(int3):int3",
         "int4.Abs(int4):int4",
+        "int4.BitCount(int4):int4",
+        "int4.BitfieldExtract(int4,int,int):int4",
+        "int4.BitfieldInsert(int4,int4,int,int):int4",
+        "int4.BitfieldReverse(int4):int4",
         "int4.Clamp(int4,int,int):int4",
         "int4.Clamp(int4,int4,int4):int4",
         "int4.Equal(int4,int4):bool4",
+        "int4.FindLSB(int4):int4",
+        "int4.FindMSB(int4):int4",
+        "int4.ImulExtended(int4,int4,int4,int4):void",
         "int4.Max(int4,int):int4",
         "int4.Max(int4,int4):int4",
         "int4.Min(int4,int):int4",
         "int4.Min(int4,int4):int4",
         "int4.NotEqual(int4,int4):bool4",
+        "int4.op_OnesComplement(int4):int4",
         "int4.Select(int4,int4,bool4):int4",
         "int4.Sign(int4):int4",
         "int4.op_Addition(int,int4):int4",
         "int4.op_Addition(int4,int):int4",
         "int4.op_Addition(int4,int4):int4",
+        "int4.op_BitwiseAnd(int,int4):int4",
+        "int4.op_BitwiseAnd(int4,int):int4",
+        "int4.op_BitwiseAnd(int4,int4):int4",
+        "int4.op_BitwiseOr(int,int4):int4",
+        "int4.op_BitwiseOr(int4,int):int4",
+        "int4.op_BitwiseOr(int4,int4):int4",
         "int4.op_Division(int,int4):int4",
         "int4.op_Division(int4,int):int4",
         "int4.op_Division(int4,int4):int4",
+        "int4.op_ExclusiveOr(int,int4):int4",
+        "int4.op_ExclusiveOr(int4,int):int4",
+        "int4.op_ExclusiveOr(int4,int4):int4",
+        "int4.op_LeftShift(int4,int):int4",
+        "int4.op_Modulus(int,int4):int4",
+        "int4.op_Modulus(int4,int):int4",
+        "int4.op_Modulus(int4,int4):int4",
         "int4.op_Multiply(int,int4):int4",
         "int4.op_Multiply(int4,int):int4",
         "int4.op_Multiply(int4,int4):int4",
+        "int4.op_RightShift(int4,int):int4",
         "int4.op_Subtraction(int,int4):int4",
         "int4.op_Subtraction(int4,int):int4",
         "int4.op_Subtraction(int4,int4):int4",
@@ -492,68 +558,140 @@ internal static class GeneratedShaderContractCases
         "quaternion.Rotate(quaternion,float3):float3",
         "quaternion.Slerp(quaternion,quaternion,float):quaternion",
         "quaternion.ToRotationMatrix(quaternion):float4x4",
+        "uint2.BitCount(uint2):int2",
+        "uint2.BitfieldExtract(uint2,int,int):uint2",
+        "uint2.BitfieldInsert(uint2,uint2,int,int):uint2",
+        "uint2.BitfieldReverse(uint2):uint2",
         "uint2.Clamp(uint2,uint,uint):uint2",
         "uint2.Clamp(uint2,uint2,uint2):uint2",
         "uint2.Equal(uint2,uint2):bool2",
+        "uint2.FindLSB(uint2):int2",
+        "uint2.FindMSB(uint2):int2",
         "uint2.Max(uint2,uint):uint2",
         "uint2.Max(uint2,uint2):uint2",
         "uint2.Min(uint2,uint):uint2",
         "uint2.Min(uint2,uint2):uint2",
         "uint2.NotEqual(uint2,uint2):bool2",
+        "uint2.op_OnesComplement(uint2):uint2",
         "uint2.Select(uint2,uint2,bool2):uint2",
+        "uint2.UaddCarry(uint2,uint2,uint2):uint2",
+        "uint2.UmulExtended(uint2,uint2,uint2,uint2):void",
+        "uint2.UsubBorrow(uint2,uint2,uint2):uint2",
         "uint2.op_Addition(uint,uint2):uint2",
         "uint2.op_Addition(uint2,uint):uint2",
         "uint2.op_Addition(uint2,uint2):uint2",
+        "uint2.op_BitwiseAnd(uint,uint2):uint2",
+        "uint2.op_BitwiseAnd(uint2,uint):uint2",
+        "uint2.op_BitwiseAnd(uint2,uint2):uint2",
+        "uint2.op_BitwiseOr(uint,uint2):uint2",
+        "uint2.op_BitwiseOr(uint2,uint):uint2",
+        "uint2.op_BitwiseOr(uint2,uint2):uint2",
         "uint2.op_Division(uint,uint2):uint2",
         "uint2.op_Division(uint2,uint):uint2",
         "uint2.op_Division(uint2,uint2):uint2",
+        "uint2.op_ExclusiveOr(uint,uint2):uint2",
+        "uint2.op_ExclusiveOr(uint2,uint):uint2",
+        "uint2.op_ExclusiveOr(uint2,uint2):uint2",
+        "uint2.op_LeftShift(uint2,int):uint2",
+        "uint2.op_Modulus(uint,uint2):uint2",
+        "uint2.op_Modulus(uint2,uint):uint2",
+        "uint2.op_Modulus(uint2,uint2):uint2",
         "uint2.op_Multiply(uint,uint2):uint2",
         "uint2.op_Multiply(uint2,uint):uint2",
         "uint2.op_Multiply(uint2,uint2):uint2",
+        "uint2.op_RightShift(uint2,int):uint2",
         "uint2.op_Subtraction(uint,uint2):uint2",
         "uint2.op_Subtraction(uint2,uint):uint2",
         "uint2.op_Subtraction(uint2,uint2):uint2",
         "uint2.op_UnaryPlus(uint2):uint2",
+        "uint3.BitCount(uint3):int3",
+        "uint3.BitfieldExtract(uint3,int,int):uint3",
+        "uint3.BitfieldInsert(uint3,uint3,int,int):uint3",
+        "uint3.BitfieldReverse(uint3):uint3",
         "uint3.Clamp(uint3,uint,uint):uint3",
         "uint3.Clamp(uint3,uint3,uint3):uint3",
         "uint3.Equal(uint3,uint3):bool3",
+        "uint3.FindLSB(uint3):int3",
+        "uint3.FindMSB(uint3):int3",
         "uint3.Max(uint3,uint):uint3",
         "uint3.Max(uint3,uint3):uint3",
         "uint3.Min(uint3,uint):uint3",
         "uint3.Min(uint3,uint3):uint3",
         "uint3.NotEqual(uint3,uint3):bool3",
+        "uint3.op_OnesComplement(uint3):uint3",
         "uint3.Select(uint3,uint3,bool3):uint3",
+        "uint3.UaddCarry(uint3,uint3,uint3):uint3",
+        "uint3.UmulExtended(uint3,uint3,uint3,uint3):void",
+        "uint3.UsubBorrow(uint3,uint3,uint3):uint3",
         "uint3.op_Addition(uint,uint3):uint3",
         "uint3.op_Addition(uint3,uint):uint3",
         "uint3.op_Addition(uint3,uint3):uint3",
+        "uint3.op_BitwiseAnd(uint,uint3):uint3",
+        "uint3.op_BitwiseAnd(uint3,uint):uint3",
+        "uint3.op_BitwiseAnd(uint3,uint3):uint3",
+        "uint3.op_BitwiseOr(uint,uint3):uint3",
+        "uint3.op_BitwiseOr(uint3,uint):uint3",
+        "uint3.op_BitwiseOr(uint3,uint3):uint3",
         "uint3.op_Division(uint,uint3):uint3",
         "uint3.op_Division(uint3,uint):uint3",
         "uint3.op_Division(uint3,uint3):uint3",
+        "uint3.op_ExclusiveOr(uint,uint3):uint3",
+        "uint3.op_ExclusiveOr(uint3,uint):uint3",
+        "uint3.op_ExclusiveOr(uint3,uint3):uint3",
+        "uint3.op_LeftShift(uint3,int):uint3",
+        "uint3.op_Modulus(uint,uint3):uint3",
+        "uint3.op_Modulus(uint3,uint):uint3",
+        "uint3.op_Modulus(uint3,uint3):uint3",
         "uint3.op_Multiply(uint,uint3):uint3",
         "uint3.op_Multiply(uint3,uint):uint3",
         "uint3.op_Multiply(uint3,uint3):uint3",
+        "uint3.op_RightShift(uint3,int):uint3",
         "uint3.op_Subtraction(uint,uint3):uint3",
         "uint3.op_Subtraction(uint3,uint):uint3",
         "uint3.op_Subtraction(uint3,uint3):uint3",
         "uint3.op_UnaryPlus(uint3):uint3",
+        "uint4.BitCount(uint4):int4",
+        "uint4.BitfieldExtract(uint4,int,int):uint4",
+        "uint4.BitfieldInsert(uint4,uint4,int,int):uint4",
+        "uint4.BitfieldReverse(uint4):uint4",
         "uint4.Clamp(uint4,uint,uint):uint4",
         "uint4.Clamp(uint4,uint4,uint4):uint4",
         "uint4.Equal(uint4,uint4):bool4",
+        "uint4.FindLSB(uint4):int4",
+        "uint4.FindMSB(uint4):int4",
         "uint4.Max(uint4,uint):uint4",
         "uint4.Max(uint4,uint4):uint4",
         "uint4.Min(uint4,uint):uint4",
         "uint4.Min(uint4,uint4):uint4",
         "uint4.NotEqual(uint4,uint4):bool4",
+        "uint4.op_OnesComplement(uint4):uint4",
         "uint4.Select(uint4,uint4,bool4):uint4",
+        "uint4.UaddCarry(uint4,uint4,uint4):uint4",
+        "uint4.UmulExtended(uint4,uint4,uint4,uint4):void",
+        "uint4.UsubBorrow(uint4,uint4,uint4):uint4",
         "uint4.op_Addition(uint,uint4):uint4",
         "uint4.op_Addition(uint4,uint):uint4",
         "uint4.op_Addition(uint4,uint4):uint4",
+        "uint4.op_BitwiseAnd(uint,uint4):uint4",
+        "uint4.op_BitwiseAnd(uint4,uint):uint4",
+        "uint4.op_BitwiseAnd(uint4,uint4):uint4",
+        "uint4.op_BitwiseOr(uint,uint4):uint4",
+        "uint4.op_BitwiseOr(uint4,uint):uint4",
+        "uint4.op_BitwiseOr(uint4,uint4):uint4",
         "uint4.op_Division(uint,uint4):uint4",
         "uint4.op_Division(uint4,uint):uint4",
         "uint4.op_Division(uint4,uint4):uint4",
+        "uint4.op_ExclusiveOr(uint,uint4):uint4",
+        "uint4.op_ExclusiveOr(uint4,uint):uint4",
+        "uint4.op_ExclusiveOr(uint4,uint4):uint4",
+        "uint4.op_LeftShift(uint4,int):uint4",
+        "uint4.op_Modulus(uint,uint4):uint4",
+        "uint4.op_Modulus(uint4,uint):uint4",
+        "uint4.op_Modulus(uint4,uint4):uint4",
         "uint4.op_Multiply(uint,uint4):uint4",
         "uint4.op_Multiply(uint4,uint):uint4",
         "uint4.op_Multiply(uint4,uint4):uint4",
+        "uint4.op_RightShift(uint4,int):uint4",
         "uint4.op_Subtraction(uint,uint4):uint4",
         "uint4.op_Subtraction(uint4,uint):uint4",
         "uint4.op_Subtraction(uint4,uint4):uint4",
@@ -796,9 +934,16 @@ internal static class GeneratedShaderContractCases
         "maths.transformPoint(float4x4,float3):float3",
         "maths.transpose(float4x4):float4x4",
         "maths.abs(int2):int2",
+        "maths.bitCount(int2):int2",
+        "maths.bitfieldExtract(int2,int,int):int2",
+        "maths.bitfieldInsert(int2,int2,int,int):int2",
+        "maths.bitfieldReverse(int2):int2",
         "maths.clamp(int2,int,int):int2",
         "maths.clamp(int2,int2,int2):int2",
         "maths.equal(int2,int2):bool2",
+        "maths.findLSB(int2):int2",
+        "maths.findMSB(int2):int2",
+        "maths.imulExtended(int2,int2,int2,int2):void",
         "maths.max(int2,int):int2",
         "maths.max(int2,int2):int2",
         "maths.min(int2,int):int2",
@@ -807,9 +952,16 @@ internal static class GeneratedShaderContractCases
         "maths.select(int2,int2,bool2):int2",
         "maths.sign(int2):int2",
         "maths.abs(int3):int3",
+        "maths.bitCount(int3):int3",
+        "maths.bitfieldExtract(int3,int,int):int3",
+        "maths.bitfieldInsert(int3,int3,int,int):int3",
+        "maths.bitfieldReverse(int3):int3",
         "maths.clamp(int3,int,int):int3",
         "maths.clamp(int3,int3,int3):int3",
         "maths.equal(int3,int3):bool3",
+        "maths.findLSB(int3):int3",
+        "maths.findMSB(int3):int3",
+        "maths.imulExtended(int3,int3,int3,int3):void",
         "maths.max(int3,int):int3",
         "maths.max(int3,int3):int3",
         "maths.min(int3,int):int3",
@@ -818,9 +970,16 @@ internal static class GeneratedShaderContractCases
         "maths.select(int3,int3,bool3):int3",
         "maths.sign(int3):int3",
         "maths.abs(int4):int4",
+        "maths.bitCount(int4):int4",
+        "maths.bitfieldExtract(int4,int,int):int4",
+        "maths.bitfieldInsert(int4,int4,int,int):int4",
+        "maths.bitfieldReverse(int4):int4",
         "maths.clamp(int4,int,int):int4",
         "maths.clamp(int4,int4,int4):int4",
         "maths.equal(int4,int4):bool4",
+        "maths.findLSB(int4):int4",
+        "maths.findMSB(int4):int4",
+        "maths.imulExtended(int4,int4,int4,int4):void",
         "maths.max(int4,int):int4",
         "maths.max(int4,int4):int4",
         "maths.min(int4,int):int4",
@@ -838,33 +997,60 @@ internal static class GeneratedShaderContractCases
         "maths.rotate(quaternion,float3):float3",
         "maths.slerp(quaternion,quaternion,float):quaternion",
         "maths.toRotationMatrix(quaternion):float4x4",
+        "maths.bitCount(uint2):int2",
+        "maths.bitfieldExtract(uint2,int,int):uint2",
+        "maths.bitfieldInsert(uint2,uint2,int,int):uint2",
+        "maths.bitfieldReverse(uint2):uint2",
         "maths.clamp(uint2,uint,uint):uint2",
         "maths.clamp(uint2,uint2,uint2):uint2",
         "maths.equal(uint2,uint2):bool2",
+        "maths.findLSB(uint2):int2",
+        "maths.findMSB(uint2):int2",
         "maths.max(uint2,uint):uint2",
         "maths.max(uint2,uint2):uint2",
         "maths.min(uint2,uint):uint2",
         "maths.min(uint2,uint2):uint2",
         "maths.notEqual(uint2,uint2):bool2",
         "maths.select(uint2,uint2,bool2):uint2",
+        "maths.uaddCarry(uint2,uint2,uint2):uint2",
+        "maths.umulExtended(uint2,uint2,uint2,uint2):void",
+        "maths.usubBorrow(uint2,uint2,uint2):uint2",
+        "maths.bitCount(uint3):int3",
+        "maths.bitfieldExtract(uint3,int,int):uint3",
+        "maths.bitfieldInsert(uint3,uint3,int,int):uint3",
+        "maths.bitfieldReverse(uint3):uint3",
         "maths.clamp(uint3,uint,uint):uint3",
         "maths.clamp(uint3,uint3,uint3):uint3",
         "maths.equal(uint3,uint3):bool3",
+        "maths.findLSB(uint3):int3",
+        "maths.findMSB(uint3):int3",
         "maths.max(uint3,uint):uint3",
         "maths.max(uint3,uint3):uint3",
         "maths.min(uint3,uint):uint3",
         "maths.min(uint3,uint3):uint3",
         "maths.notEqual(uint3,uint3):bool3",
         "maths.select(uint3,uint3,bool3):uint3",
+        "maths.uaddCarry(uint3,uint3,uint3):uint3",
+        "maths.umulExtended(uint3,uint3,uint3,uint3):void",
+        "maths.usubBorrow(uint3,uint3,uint3):uint3",
+        "maths.bitCount(uint4):int4",
+        "maths.bitfieldExtract(uint4,int,int):uint4",
+        "maths.bitfieldInsert(uint4,uint4,int,int):uint4",
+        "maths.bitfieldReverse(uint4):uint4",
         "maths.clamp(uint4,uint,uint):uint4",
         "maths.clamp(uint4,uint4,uint4):uint4",
         "maths.equal(uint4,uint4):bool4",
+        "maths.findLSB(uint4):int4",
+        "maths.findMSB(uint4):int4",
         "maths.max(uint4,uint):uint4",
         "maths.max(uint4,uint4):uint4",
         "maths.min(uint4,uint):uint4",
         "maths.min(uint4,uint4):uint4",
         "maths.notEqual(uint4,uint4):bool4",
         "maths.select(uint4,uint4,bool4):uint4",
+        "maths.uaddCarry(uint4,uint4,uint4):uint4",
+        "maths.umulExtended(uint4,uint4,uint4,uint4):void",
+        "maths.usubBorrow(uint4,uint4,uint4):uint4",
         "maths.step(float,float):float",
         "maths.fract(float):float",
         "maths.isNaN(float):bool",
@@ -903,6 +1089,22 @@ internal static class GeneratedShaderContractCases
         "maths.tan(float):float",
         "maths.tanh(float):float",
         "maths.truncate(float):float",
+        "maths.uaddCarry(uint,uint,uint):uint",
+        "maths.usubBorrow(uint,uint,uint):uint",
+        "maths.umulExtended(uint,uint,uint,uint):void",
+        "maths.imulExtended(int,int,int,int):void",
+        "maths.bitCount(int):int",
+        "maths.bitCount(uint):int",
+        "maths.findLSB(int):int",
+        "maths.findLSB(uint):int",
+        "maths.findMSB(int):int",
+        "maths.findMSB(uint):int",
+        "maths.bitfieldReverse(int):int",
+        "maths.bitfieldReverse(uint):uint",
+        "maths.bitfieldExtract(int,int,int):int",
+        "maths.bitfieldExtract(uint,int,int):uint",
+        "maths.bitfieldInsert(int,int,int,int):int",
+        "maths.bitfieldInsert(uint,uint,int,int):uint",
     ];
 
     internal static void RunAll(ContractCaseRunner runner)
@@ -1800,6 +2002,208 @@ internal static class GeneratedShaderContractCases
         Case0890(runner);
         Case0891(runner);
         Case0892(runner);
+        Case0893(runner);
+        Case0894(runner);
+        Case0895(runner);
+        Case0896(runner);
+        Case0897(runner);
+        Case0898(runner);
+        Case0899(runner);
+        Case0900(runner);
+        Case0901(runner);
+        Case0902(runner);
+        Case0903(runner);
+        Case0904(runner);
+        Case0905(runner);
+        Case0906(runner);
+        Case0907(runner);
+        Case0908(runner);
+        Case0909(runner);
+        Case0910(runner);
+        Case0911(runner);
+        Case0912(runner);
+        Case0913(runner);
+        Case0914(runner);
+        Case0915(runner);
+        Case0916(runner);
+        Case0917(runner);
+        Case0918(runner);
+        Case0919(runner);
+        Case0920(runner);
+        Case0921(runner);
+        Case0922(runner);
+        Case0923(runner);
+        Case0924(runner);
+        Case0925(runner);
+        Case0926(runner);
+        Case0927(runner);
+        Case0928(runner);
+        Case0929(runner);
+        Case0930(runner);
+        Case0931(runner);
+        Case0932(runner);
+        Case0933(runner);
+        Case0934(runner);
+        Case0935(runner);
+        Case0936(runner);
+        Case0937(runner);
+        Case0938(runner);
+        Case0939(runner);
+        Case0940(runner);
+        Case0941(runner);
+        Case0942(runner);
+        Case0943(runner);
+        Case0944(runner);
+        Case0945(runner);
+        Case0946(runner);
+        Case0947(runner);
+        Case0948(runner);
+        Case0949(runner);
+        Case0950(runner);
+        Case0951(runner);
+        Case0952(runner);
+        Case0953(runner);
+        Case0954(runner);
+        Case0955(runner);
+        Case0956(runner);
+        Case0957(runner);
+        Case0958(runner);
+        Case0959(runner);
+        Case0960(runner);
+        Case0961(runner);
+        Case0962(runner);
+        Case0963(runner);
+        Case0964(runner);
+        Case0965(runner);
+        Case0966(runner);
+        Case0967(runner);
+        Case0968(runner);
+        Case0969(runner);
+        Case0970(runner);
+        Case0971(runner);
+        Case0972(runner);
+        Case0973(runner);
+        Case0974(runner);
+        Case0975(runner);
+        Case0976(runner);
+        Case0977(runner);
+        Case0978(runner);
+        Case0979(runner);
+        Case0980(runner);
+        Case0981(runner);
+        Case0982(runner);
+        Case0983(runner);
+        Case0984(runner);
+        Case0985(runner);
+        Case0986(runner);
+        Case0987(runner);
+        Case0988(runner);
+        Case0989(runner);
+        Case0990(runner);
+        Case0991(runner);
+        Case0992(runner);
+        Case0993(runner);
+        Case0994(runner);
+        Case0995(runner);
+        Case0996(runner);
+        Case0997(runner);
+        Case0998(runner);
+        Case0999(runner);
+        Case1000(runner);
+        Case1001(runner);
+        Case1002(runner);
+        Case1003(runner);
+        Case1004(runner);
+        Case1005(runner);
+        Case1006(runner);
+        Case1007(runner);
+        Case1008(runner);
+        Case1009(runner);
+        Case1010(runner);
+        Case1011(runner);
+        Case1012(runner);
+        Case1013(runner);
+        Case1014(runner);
+        Case1015(runner);
+        Case1016(runner);
+        Case1017(runner);
+        Case1018(runner);
+        Case1019(runner);
+        Case1020(runner);
+        Case1021(runner);
+        Case1022(runner);
+        Case1023(runner);
+        Case1024(runner);
+        Case1025(runner);
+        Case1026(runner);
+        Case1027(runner);
+        Case1028(runner);
+        Case1029(runner);
+        Case1030(runner);
+        Case1031(runner);
+        Case1032(runner);
+        Case1033(runner);
+        Case1034(runner);
+        Case1035(runner);
+        Case1036(runner);
+        Case1037(runner);
+        Case1038(runner);
+        Case1039(runner);
+        Case1040(runner);
+        Case1041(runner);
+        Case1042(runner);
+        Case1043(runner);
+        Case1044(runner);
+        Case1045(runner);
+        Case1046(runner);
+        Case1047(runner);
+        Case1048(runner);
+        Case1049(runner);
+        Case1050(runner);
+        Case1051(runner);
+        Case1052(runner);
+        Case1053(runner);
+        Case1054(runner);
+        Case1055(runner);
+        Case1056(runner);
+        Case1057(runner);
+        Case1058(runner);
+        Case1059(runner);
+        Case1060(runner);
+        Case1061(runner);
+        Case1062(runner);
+        Case1063(runner);
+        Case1064(runner);
+        Case1065(runner);
+        Case1066(runner);
+        Case1067(runner);
+        Case1068(runner);
+        Case1069(runner);
+        Case1070(runner);
+        Case1071(runner);
+        Case1072(runner);
+        Case1073(runner);
+        Case1074(runner);
+        Case1075(runner);
+        Case1076(runner);
+        Case1077(runner);
+        Case1078(runner);
+        Case1079(runner);
+        Case1080(runner);
+        Case1081(runner);
+        Case1082(runner);
+        Case1083(runner);
+        Case1084(runner);
+        Case1085(runner);
+        Case1086(runner);
+        Case1087(runner);
+        Case1088(runner);
+        Case1089(runner);
+        Case1090(runner);
+        Case1091(runner);
+        Case1092(runner);
+        Case1093(runner);
+        Case1094(runner);
     }
 
     private static void Case0000(ContractCaseRunner runner)
@@ -3789,2482 +4193,3492 @@ internal static class GeneratedShaderContractCases
 
     private static void Case0397(ContractCaseRunner runner)
     {
-        runner.Run("int2.Clamp(int2,int,int):int2");
+        runner.Run("int2.BitCount(int2):int2");
     }
 
     private static void Case0398(ContractCaseRunner runner)
     {
-        runner.Run("int2.Clamp(int2,int2,int2):int2");
+        runner.Run("int2.BitfieldExtract(int2,int,int):int2");
     }
 
     private static void Case0399(ContractCaseRunner runner)
     {
-        runner.Run("int2.Equal(int2,int2):bool2");
+        runner.Run("int2.BitfieldInsert(int2,int2,int,int):int2");
     }
 
     private static void Case0400(ContractCaseRunner runner)
     {
-        runner.Run("int2.Max(int2,int):int2");
+        runner.Run("int2.BitfieldReverse(int2):int2");
     }
 
     private static void Case0401(ContractCaseRunner runner)
     {
-        runner.Run("int2.Max(int2,int2):int2");
+        runner.Run("int2.Clamp(int2,int,int):int2");
     }
 
     private static void Case0402(ContractCaseRunner runner)
     {
-        runner.Run("int2.Min(int2,int):int2");
+        runner.Run("int2.Clamp(int2,int2,int2):int2");
     }
 
     private static void Case0403(ContractCaseRunner runner)
     {
-        runner.Run("int2.Min(int2,int2):int2");
+        runner.Run("int2.Equal(int2,int2):bool2");
     }
 
     private static void Case0404(ContractCaseRunner runner)
     {
-        runner.Run("int2.NotEqual(int2,int2):bool2");
+        runner.Run("int2.FindLSB(int2):int2");
     }
 
     private static void Case0405(ContractCaseRunner runner)
     {
-        runner.Run("int2.Select(int2,int2,bool2):int2");
+        runner.Run("int2.FindMSB(int2):int2");
     }
 
     private static void Case0406(ContractCaseRunner runner)
     {
-        runner.Run("int2.Sign(int2):int2");
+        runner.Run("int2.ImulExtended(int2,int2,int2,int2):void");
     }
 
     private static void Case0407(ContractCaseRunner runner)
     {
-        runner.Run("int2.op_Addition(int,int2):int2");
+        runner.Run("int2.Max(int2,int):int2");
     }
 
     private static void Case0408(ContractCaseRunner runner)
     {
-        runner.Run("int2.op_Addition(int2,int):int2");
+        runner.Run("int2.Max(int2,int2):int2");
     }
 
     private static void Case0409(ContractCaseRunner runner)
     {
-        runner.Run("int2.op_Addition(int2,int2):int2");
+        runner.Run("int2.Min(int2,int):int2");
     }
 
     private static void Case0410(ContractCaseRunner runner)
     {
-        runner.Run("int2.op_Division(int,int2):int2");
+        runner.Run("int2.Min(int2,int2):int2");
     }
 
     private static void Case0411(ContractCaseRunner runner)
     {
-        runner.Run("int2.op_Division(int2,int):int2");
+        runner.Run("int2.NotEqual(int2,int2):bool2");
     }
 
     private static void Case0412(ContractCaseRunner runner)
     {
-        runner.Run("int2.op_Division(int2,int2):int2");
+        runner.Run("int2.op_OnesComplement(int2):int2");
     }
 
     private static void Case0413(ContractCaseRunner runner)
     {
-        runner.Run("int2.op_Multiply(int,int2):int2");
+        runner.Run("int2.Select(int2,int2,bool2):int2");
     }
 
     private static void Case0414(ContractCaseRunner runner)
     {
-        runner.Run("int2.op_Multiply(int2,int):int2");
+        runner.Run("int2.Sign(int2):int2");
     }
 
     private static void Case0415(ContractCaseRunner runner)
     {
-        runner.Run("int2.op_Multiply(int2,int2):int2");
+        runner.Run("int2.op_Addition(int,int2):int2");
     }
 
     private static void Case0416(ContractCaseRunner runner)
     {
-        runner.Run("int2.op_Subtraction(int,int2):int2");
+        runner.Run("int2.op_Addition(int2,int):int2");
     }
 
     private static void Case0417(ContractCaseRunner runner)
     {
-        runner.Run("int2.op_Subtraction(int2,int):int2");
+        runner.Run("int2.op_Addition(int2,int2):int2");
     }
 
     private static void Case0418(ContractCaseRunner runner)
     {
-        runner.Run("int2.op_Subtraction(int2,int2):int2");
+        runner.Run("int2.op_BitwiseAnd(int,int2):int2");
     }
 
     private static void Case0419(ContractCaseRunner runner)
     {
-        runner.Run("int2.op_UnaryNegation(int2):int2");
+        runner.Run("int2.op_BitwiseAnd(int2,int):int2");
     }
 
     private static void Case0420(ContractCaseRunner runner)
     {
-        runner.Run("int2.op_UnaryPlus(int2):int2");
+        runner.Run("int2.op_BitwiseAnd(int2,int2):int2");
     }
 
     private static void Case0421(ContractCaseRunner runner)
     {
-        runner.Run("int3.Abs(int3):int3");
+        runner.Run("int2.op_BitwiseOr(int,int2):int2");
     }
 
     private static void Case0422(ContractCaseRunner runner)
     {
-        runner.Run("int3.Clamp(int3,int,int):int3");
+        runner.Run("int2.op_BitwiseOr(int2,int):int2");
     }
 
     private static void Case0423(ContractCaseRunner runner)
     {
-        runner.Run("int3.Clamp(int3,int3,int3):int3");
+        runner.Run("int2.op_BitwiseOr(int2,int2):int2");
     }
 
     private static void Case0424(ContractCaseRunner runner)
     {
-        runner.Run("int3.Equal(int3,int3):bool3");
+        runner.Run("int2.op_Division(int,int2):int2");
     }
 
     private static void Case0425(ContractCaseRunner runner)
     {
-        runner.Run("int3.Max(int3,int):int3");
+        runner.Run("int2.op_Division(int2,int):int2");
     }
 
     private static void Case0426(ContractCaseRunner runner)
     {
-        runner.Run("int3.Max(int3,int3):int3");
+        runner.Run("int2.op_Division(int2,int2):int2");
     }
 
     private static void Case0427(ContractCaseRunner runner)
     {
-        runner.Run("int3.Min(int3,int):int3");
+        runner.Run("int2.op_ExclusiveOr(int,int2):int2");
     }
 
     private static void Case0428(ContractCaseRunner runner)
     {
-        runner.Run("int3.Min(int3,int3):int3");
+        runner.Run("int2.op_ExclusiveOr(int2,int):int2");
     }
 
     private static void Case0429(ContractCaseRunner runner)
     {
-        runner.Run("int3.NotEqual(int3,int3):bool3");
+        runner.Run("int2.op_ExclusiveOr(int2,int2):int2");
     }
 
     private static void Case0430(ContractCaseRunner runner)
     {
-        runner.Run("int3.Select(int3,int3,bool3):int3");
+        runner.Run("int2.op_LeftShift(int2,int):int2");
     }
 
     private static void Case0431(ContractCaseRunner runner)
     {
-        runner.Run("int3.Sign(int3):int3");
+        runner.Run("int2.op_Modulus(int,int2):int2");
     }
 
     private static void Case0432(ContractCaseRunner runner)
     {
-        runner.Run("int3.op_Addition(int,int3):int3");
+        runner.Run("int2.op_Modulus(int2,int):int2");
     }
 
     private static void Case0433(ContractCaseRunner runner)
     {
-        runner.Run("int3.op_Addition(int3,int):int3");
+        runner.Run("int2.op_Modulus(int2,int2):int2");
     }
 
     private static void Case0434(ContractCaseRunner runner)
     {
-        runner.Run("int3.op_Addition(int3,int3):int3");
+        runner.Run("int2.op_Multiply(int,int2):int2");
     }
 
     private static void Case0435(ContractCaseRunner runner)
     {
-        runner.Run("int3.op_Division(int,int3):int3");
+        runner.Run("int2.op_Multiply(int2,int):int2");
     }
 
     private static void Case0436(ContractCaseRunner runner)
     {
-        runner.Run("int3.op_Division(int3,int):int3");
+        runner.Run("int2.op_Multiply(int2,int2):int2");
     }
 
     private static void Case0437(ContractCaseRunner runner)
     {
-        runner.Run("int3.op_Division(int3,int3):int3");
+        runner.Run("int2.op_RightShift(int2,int):int2");
     }
 
     private static void Case0438(ContractCaseRunner runner)
     {
-        runner.Run("int3.op_Multiply(int,int3):int3");
+        runner.Run("int2.op_Subtraction(int,int2):int2");
     }
 
     private static void Case0439(ContractCaseRunner runner)
     {
-        runner.Run("int3.op_Multiply(int3,int):int3");
+        runner.Run("int2.op_Subtraction(int2,int):int2");
     }
 
     private static void Case0440(ContractCaseRunner runner)
     {
-        runner.Run("int3.op_Multiply(int3,int3):int3");
+        runner.Run("int2.op_Subtraction(int2,int2):int2");
     }
 
     private static void Case0441(ContractCaseRunner runner)
     {
-        runner.Run("int3.op_Subtraction(int,int3):int3");
+        runner.Run("int2.op_UnaryNegation(int2):int2");
     }
 
     private static void Case0442(ContractCaseRunner runner)
     {
-        runner.Run("int3.op_Subtraction(int3,int):int3");
+        runner.Run("int2.op_UnaryPlus(int2):int2");
     }
 
     private static void Case0443(ContractCaseRunner runner)
     {
-        runner.Run("int3.op_Subtraction(int3,int3):int3");
+        runner.Run("int3.Abs(int3):int3");
     }
 
     private static void Case0444(ContractCaseRunner runner)
     {
-        runner.Run("int3.op_UnaryNegation(int3):int3");
+        runner.Run("int3.BitCount(int3):int3");
     }
 
     private static void Case0445(ContractCaseRunner runner)
     {
-        runner.Run("int3.op_UnaryPlus(int3):int3");
+        runner.Run("int3.BitfieldExtract(int3,int,int):int3");
     }
 
     private static void Case0446(ContractCaseRunner runner)
     {
-        runner.Run("int4.Abs(int4):int4");
+        runner.Run("int3.BitfieldInsert(int3,int3,int,int):int3");
     }
 
     private static void Case0447(ContractCaseRunner runner)
     {
-        runner.Run("int4.Clamp(int4,int,int):int4");
+        runner.Run("int3.BitfieldReverse(int3):int3");
     }
 
     private static void Case0448(ContractCaseRunner runner)
     {
-        runner.Run("int4.Clamp(int4,int4,int4):int4");
+        runner.Run("int3.Clamp(int3,int,int):int3");
     }
 
     private static void Case0449(ContractCaseRunner runner)
     {
-        runner.Run("int4.Equal(int4,int4):bool4");
+        runner.Run("int3.Clamp(int3,int3,int3):int3");
     }
 
     private static void Case0450(ContractCaseRunner runner)
     {
-        runner.Run("int4.Max(int4,int):int4");
+        runner.Run("int3.Equal(int3,int3):bool3");
     }
 
     private static void Case0451(ContractCaseRunner runner)
     {
-        runner.Run("int4.Max(int4,int4):int4");
+        runner.Run("int3.FindLSB(int3):int3");
     }
 
     private static void Case0452(ContractCaseRunner runner)
     {
-        runner.Run("int4.Min(int4,int):int4");
+        runner.Run("int3.FindMSB(int3):int3");
     }
 
     private static void Case0453(ContractCaseRunner runner)
     {
-        runner.Run("int4.Min(int4,int4):int4");
+        runner.Run("int3.ImulExtended(int3,int3,int3,int3):void");
     }
 
     private static void Case0454(ContractCaseRunner runner)
     {
-        runner.Run("int4.NotEqual(int4,int4):bool4");
+        runner.Run("int3.Max(int3,int):int3");
     }
 
     private static void Case0455(ContractCaseRunner runner)
     {
-        runner.Run("int4.Select(int4,int4,bool4):int4");
+        runner.Run("int3.Max(int3,int3):int3");
     }
 
     private static void Case0456(ContractCaseRunner runner)
     {
-        runner.Run("int4.Sign(int4):int4");
+        runner.Run("int3.Min(int3,int):int3");
     }
 
     private static void Case0457(ContractCaseRunner runner)
     {
-        runner.Run("int4.op_Addition(int,int4):int4");
+        runner.Run("int3.Min(int3,int3):int3");
     }
 
     private static void Case0458(ContractCaseRunner runner)
     {
-        runner.Run("int4.op_Addition(int4,int):int4");
+        runner.Run("int3.NotEqual(int3,int3):bool3");
     }
 
     private static void Case0459(ContractCaseRunner runner)
     {
-        runner.Run("int4.op_Addition(int4,int4):int4");
+        runner.Run("int3.op_OnesComplement(int3):int3");
     }
 
     private static void Case0460(ContractCaseRunner runner)
     {
-        runner.Run("int4.op_Division(int,int4):int4");
+        runner.Run("int3.Select(int3,int3,bool3):int3");
     }
 
     private static void Case0461(ContractCaseRunner runner)
     {
-        runner.Run("int4.op_Division(int4,int):int4");
+        runner.Run("int3.Sign(int3):int3");
     }
 
     private static void Case0462(ContractCaseRunner runner)
     {
-        runner.Run("int4.op_Division(int4,int4):int4");
+        runner.Run("int3.op_Addition(int,int3):int3");
     }
 
     private static void Case0463(ContractCaseRunner runner)
     {
-        runner.Run("int4.op_Multiply(int,int4):int4");
+        runner.Run("int3.op_Addition(int3,int):int3");
     }
 
     private static void Case0464(ContractCaseRunner runner)
     {
-        runner.Run("int4.op_Multiply(int4,int):int4");
+        runner.Run("int3.op_Addition(int3,int3):int3");
     }
 
     private static void Case0465(ContractCaseRunner runner)
     {
-        runner.Run("int4.op_Multiply(int4,int4):int4");
+        runner.Run("int3.op_BitwiseAnd(int,int3):int3");
     }
 
     private static void Case0466(ContractCaseRunner runner)
     {
-        runner.Run("int4.op_Subtraction(int,int4):int4");
+        runner.Run("int3.op_BitwiseAnd(int3,int):int3");
     }
 
     private static void Case0467(ContractCaseRunner runner)
     {
-        runner.Run("int4.op_Subtraction(int4,int):int4");
+        runner.Run("int3.op_BitwiseAnd(int3,int3):int3");
     }
 
     private static void Case0468(ContractCaseRunner runner)
     {
-        runner.Run("int4.op_Subtraction(int4,int4):int4");
+        runner.Run("int3.op_BitwiseOr(int,int3):int3");
     }
 
     private static void Case0469(ContractCaseRunner runner)
     {
-        runner.Run("int4.op_UnaryNegation(int4):int4");
+        runner.Run("int3.op_BitwiseOr(int3,int):int3");
     }
 
     private static void Case0470(ContractCaseRunner runner)
     {
-        runner.Run("int4.op_UnaryPlus(int4):int4");
+        runner.Run("int3.op_BitwiseOr(int3,int3):int3");
     }
 
     private static void Case0471(ContractCaseRunner runner)
     {
-        runner.Run("quaternion.Conjugate(quaternion):quaternion");
+        runner.Run("int3.op_Division(int,int3):int3");
     }
 
     private static void Case0472(ContractCaseRunner runner)
     {
-        runner.Run("quaternion.CreateFromAxisAngle(float3,float):quaternion");
+        runner.Run("int3.op_Division(int3,int):int3");
     }
 
     private static void Case0473(ContractCaseRunner runner)
     {
-        runner.Run("quaternion.CreateFromRotationMatrix(float4x4):quaternion");
+        runner.Run("int3.op_Division(int3,int3):int3");
     }
 
     private static void Case0474(ContractCaseRunner runner)
     {
-        runner.Run("quaternion.CreateFromYawPitchRoll(float,float,float):quaternion");
+        runner.Run("int3.op_ExclusiveOr(int,int3):int3");
     }
 
     private static void Case0475(ContractCaseRunner runner)
     {
-        runner.Run("quaternion.Inverse(quaternion):quaternion");
+        runner.Run("int3.op_ExclusiveOr(int3,int):int3");
     }
 
     private static void Case0476(ContractCaseRunner runner)
     {
-        runner.Run("quaternion.Lerp(quaternion,quaternion,float):quaternion");
+        runner.Run("int3.op_ExclusiveOr(int3,int3):int3");
     }
 
     private static void Case0477(ContractCaseRunner runner)
     {
-        runner.Run("quaternion.op_Multiply(quaternion,quaternion):quaternion");
+        runner.Run("int3.op_LeftShift(int3,int):int3");
     }
 
     private static void Case0478(ContractCaseRunner runner)
     {
-        runner.Run("quaternion.Normalize(quaternion):quaternion");
+        runner.Run("int3.op_Modulus(int,int3):int3");
     }
 
     private static void Case0479(ContractCaseRunner runner)
     {
-        runner.Run("quaternion.Rotate(quaternion,float3):float3");
+        runner.Run("int3.op_Modulus(int3,int):int3");
     }
 
     private static void Case0480(ContractCaseRunner runner)
     {
-        runner.Run("quaternion.Slerp(quaternion,quaternion,float):quaternion");
+        runner.Run("int3.op_Modulus(int3,int3):int3");
     }
 
     private static void Case0481(ContractCaseRunner runner)
     {
-        runner.Run("quaternion.ToRotationMatrix(quaternion):float4x4");
+        runner.Run("int3.op_Multiply(int,int3):int3");
     }
 
     private static void Case0482(ContractCaseRunner runner)
     {
-        runner.Run("uint2.Clamp(uint2,uint,uint):uint2");
+        runner.Run("int3.op_Multiply(int3,int):int3");
     }
 
     private static void Case0483(ContractCaseRunner runner)
     {
-        runner.Run("uint2.Clamp(uint2,uint2,uint2):uint2");
+        runner.Run("int3.op_Multiply(int3,int3):int3");
     }
 
     private static void Case0484(ContractCaseRunner runner)
     {
-        runner.Run("uint2.Equal(uint2,uint2):bool2");
+        runner.Run("int3.op_RightShift(int3,int):int3");
     }
 
     private static void Case0485(ContractCaseRunner runner)
     {
-        runner.Run("uint2.Max(uint2,uint):uint2");
+        runner.Run("int3.op_Subtraction(int,int3):int3");
     }
 
     private static void Case0486(ContractCaseRunner runner)
     {
-        runner.Run("uint2.Max(uint2,uint2):uint2");
+        runner.Run("int3.op_Subtraction(int3,int):int3");
     }
 
     private static void Case0487(ContractCaseRunner runner)
     {
-        runner.Run("uint2.Min(uint2,uint):uint2");
+        runner.Run("int3.op_Subtraction(int3,int3):int3");
     }
 
     private static void Case0488(ContractCaseRunner runner)
     {
-        runner.Run("uint2.Min(uint2,uint2):uint2");
+        runner.Run("int3.op_UnaryNegation(int3):int3");
     }
 
     private static void Case0489(ContractCaseRunner runner)
     {
-        runner.Run("uint2.NotEqual(uint2,uint2):bool2");
+        runner.Run("int3.op_UnaryPlus(int3):int3");
     }
 
     private static void Case0490(ContractCaseRunner runner)
     {
-        runner.Run("uint2.Select(uint2,uint2,bool2):uint2");
+        runner.Run("int4.Abs(int4):int4");
     }
 
     private static void Case0491(ContractCaseRunner runner)
     {
-        runner.Run("uint2.op_Addition(uint,uint2):uint2");
+        runner.Run("int4.BitCount(int4):int4");
     }
 
     private static void Case0492(ContractCaseRunner runner)
     {
-        runner.Run("uint2.op_Addition(uint2,uint):uint2");
+        runner.Run("int4.BitfieldExtract(int4,int,int):int4");
     }
 
     private static void Case0493(ContractCaseRunner runner)
     {
-        runner.Run("uint2.op_Addition(uint2,uint2):uint2");
+        runner.Run("int4.BitfieldInsert(int4,int4,int,int):int4");
     }
 
     private static void Case0494(ContractCaseRunner runner)
     {
-        runner.Run("uint2.op_Division(uint,uint2):uint2");
+        runner.Run("int4.BitfieldReverse(int4):int4");
     }
 
     private static void Case0495(ContractCaseRunner runner)
     {
-        runner.Run("uint2.op_Division(uint2,uint):uint2");
+        runner.Run("int4.Clamp(int4,int,int):int4");
     }
 
     private static void Case0496(ContractCaseRunner runner)
     {
-        runner.Run("uint2.op_Division(uint2,uint2):uint2");
+        runner.Run("int4.Clamp(int4,int4,int4):int4");
     }
 
     private static void Case0497(ContractCaseRunner runner)
     {
-        runner.Run("uint2.op_Multiply(uint,uint2):uint2");
+        runner.Run("int4.Equal(int4,int4):bool4");
     }
 
     private static void Case0498(ContractCaseRunner runner)
     {
-        runner.Run("uint2.op_Multiply(uint2,uint):uint2");
+        runner.Run("int4.FindLSB(int4):int4");
     }
 
     private static void Case0499(ContractCaseRunner runner)
     {
-        runner.Run("uint2.op_Multiply(uint2,uint2):uint2");
+        runner.Run("int4.FindMSB(int4):int4");
     }
 
     private static void Case0500(ContractCaseRunner runner)
     {
-        runner.Run("uint2.op_Subtraction(uint,uint2):uint2");
+        runner.Run("int4.ImulExtended(int4,int4,int4,int4):void");
     }
 
     private static void Case0501(ContractCaseRunner runner)
     {
-        runner.Run("uint2.op_Subtraction(uint2,uint):uint2");
+        runner.Run("int4.Max(int4,int):int4");
     }
 
     private static void Case0502(ContractCaseRunner runner)
     {
-        runner.Run("uint2.op_Subtraction(uint2,uint2):uint2");
+        runner.Run("int4.Max(int4,int4):int4");
     }
 
     private static void Case0503(ContractCaseRunner runner)
     {
-        runner.Run("uint2.op_UnaryPlus(uint2):uint2");
+        runner.Run("int4.Min(int4,int):int4");
     }
 
     private static void Case0504(ContractCaseRunner runner)
     {
-        runner.Run("uint3.Clamp(uint3,uint,uint):uint3");
+        runner.Run("int4.Min(int4,int4):int4");
     }
 
     private static void Case0505(ContractCaseRunner runner)
     {
-        runner.Run("uint3.Clamp(uint3,uint3,uint3):uint3");
+        runner.Run("int4.NotEqual(int4,int4):bool4");
     }
 
     private static void Case0506(ContractCaseRunner runner)
     {
-        runner.Run("uint3.Equal(uint3,uint3):bool3");
+        runner.Run("int4.op_OnesComplement(int4):int4");
     }
 
     private static void Case0507(ContractCaseRunner runner)
     {
-        runner.Run("uint3.Max(uint3,uint):uint3");
+        runner.Run("int4.Select(int4,int4,bool4):int4");
     }
 
     private static void Case0508(ContractCaseRunner runner)
     {
-        runner.Run("uint3.Max(uint3,uint3):uint3");
+        runner.Run("int4.Sign(int4):int4");
     }
 
     private static void Case0509(ContractCaseRunner runner)
     {
-        runner.Run("uint3.Min(uint3,uint):uint3");
+        runner.Run("int4.op_Addition(int,int4):int4");
     }
 
     private static void Case0510(ContractCaseRunner runner)
     {
-        runner.Run("uint3.Min(uint3,uint3):uint3");
+        runner.Run("int4.op_Addition(int4,int):int4");
     }
 
     private static void Case0511(ContractCaseRunner runner)
     {
-        runner.Run("uint3.NotEqual(uint3,uint3):bool3");
+        runner.Run("int4.op_Addition(int4,int4):int4");
     }
 
     private static void Case0512(ContractCaseRunner runner)
     {
-        runner.Run("uint3.Select(uint3,uint3,bool3):uint3");
+        runner.Run("int4.op_BitwiseAnd(int,int4):int4");
     }
 
     private static void Case0513(ContractCaseRunner runner)
     {
-        runner.Run("uint3.op_Addition(uint,uint3):uint3");
+        runner.Run("int4.op_BitwiseAnd(int4,int):int4");
     }
 
     private static void Case0514(ContractCaseRunner runner)
     {
-        runner.Run("uint3.op_Addition(uint3,uint):uint3");
+        runner.Run("int4.op_BitwiseAnd(int4,int4):int4");
     }
 
     private static void Case0515(ContractCaseRunner runner)
     {
-        runner.Run("uint3.op_Addition(uint3,uint3):uint3");
+        runner.Run("int4.op_BitwiseOr(int,int4):int4");
     }
 
     private static void Case0516(ContractCaseRunner runner)
     {
-        runner.Run("uint3.op_Division(uint,uint3):uint3");
+        runner.Run("int4.op_BitwiseOr(int4,int):int4");
     }
 
     private static void Case0517(ContractCaseRunner runner)
     {
-        runner.Run("uint3.op_Division(uint3,uint):uint3");
+        runner.Run("int4.op_BitwiseOr(int4,int4):int4");
     }
 
     private static void Case0518(ContractCaseRunner runner)
     {
-        runner.Run("uint3.op_Division(uint3,uint3):uint3");
+        runner.Run("int4.op_Division(int,int4):int4");
     }
 
     private static void Case0519(ContractCaseRunner runner)
     {
-        runner.Run("uint3.op_Multiply(uint,uint3):uint3");
+        runner.Run("int4.op_Division(int4,int):int4");
     }
 
     private static void Case0520(ContractCaseRunner runner)
     {
-        runner.Run("uint3.op_Multiply(uint3,uint):uint3");
+        runner.Run("int4.op_Division(int4,int4):int4");
     }
 
     private static void Case0521(ContractCaseRunner runner)
     {
-        runner.Run("uint3.op_Multiply(uint3,uint3):uint3");
+        runner.Run("int4.op_ExclusiveOr(int,int4):int4");
     }
 
     private static void Case0522(ContractCaseRunner runner)
     {
-        runner.Run("uint3.op_Subtraction(uint,uint3):uint3");
+        runner.Run("int4.op_ExclusiveOr(int4,int):int4");
     }
 
     private static void Case0523(ContractCaseRunner runner)
     {
-        runner.Run("uint3.op_Subtraction(uint3,uint):uint3");
+        runner.Run("int4.op_ExclusiveOr(int4,int4):int4");
     }
 
     private static void Case0524(ContractCaseRunner runner)
     {
-        runner.Run("uint3.op_Subtraction(uint3,uint3):uint3");
+        runner.Run("int4.op_LeftShift(int4,int):int4");
     }
 
     private static void Case0525(ContractCaseRunner runner)
     {
-        runner.Run("uint3.op_UnaryPlus(uint3):uint3");
+        runner.Run("int4.op_Modulus(int,int4):int4");
     }
 
     private static void Case0526(ContractCaseRunner runner)
     {
-        runner.Run("uint4.Clamp(uint4,uint,uint):uint4");
+        runner.Run("int4.op_Modulus(int4,int):int4");
     }
 
     private static void Case0527(ContractCaseRunner runner)
     {
-        runner.Run("uint4.Clamp(uint4,uint4,uint4):uint4");
+        runner.Run("int4.op_Modulus(int4,int4):int4");
     }
 
     private static void Case0528(ContractCaseRunner runner)
     {
-        runner.Run("uint4.Equal(uint4,uint4):bool4");
+        runner.Run("int4.op_Multiply(int,int4):int4");
     }
 
     private static void Case0529(ContractCaseRunner runner)
     {
-        runner.Run("uint4.Max(uint4,uint):uint4");
+        runner.Run("int4.op_Multiply(int4,int):int4");
     }
 
     private static void Case0530(ContractCaseRunner runner)
     {
-        runner.Run("uint4.Max(uint4,uint4):uint4");
+        runner.Run("int4.op_Multiply(int4,int4):int4");
     }
 
     private static void Case0531(ContractCaseRunner runner)
     {
-        runner.Run("uint4.Min(uint4,uint):uint4");
+        runner.Run("int4.op_RightShift(int4,int):int4");
     }
 
     private static void Case0532(ContractCaseRunner runner)
     {
-        runner.Run("uint4.Min(uint4,uint4):uint4");
+        runner.Run("int4.op_Subtraction(int,int4):int4");
     }
 
     private static void Case0533(ContractCaseRunner runner)
     {
-        runner.Run("uint4.NotEqual(uint4,uint4):bool4");
+        runner.Run("int4.op_Subtraction(int4,int):int4");
     }
 
     private static void Case0534(ContractCaseRunner runner)
     {
-        runner.Run("uint4.Select(uint4,uint4,bool4):uint4");
+        runner.Run("int4.op_Subtraction(int4,int4):int4");
     }
 
     private static void Case0535(ContractCaseRunner runner)
     {
-        runner.Run("uint4.op_Addition(uint,uint4):uint4");
+        runner.Run("int4.op_UnaryNegation(int4):int4");
     }
 
     private static void Case0536(ContractCaseRunner runner)
     {
-        runner.Run("uint4.op_Addition(uint4,uint):uint4");
+        runner.Run("int4.op_UnaryPlus(int4):int4");
     }
 
     private static void Case0537(ContractCaseRunner runner)
     {
-        runner.Run("uint4.op_Addition(uint4,uint4):uint4");
+        runner.Run("quaternion.Conjugate(quaternion):quaternion");
     }
 
     private static void Case0538(ContractCaseRunner runner)
     {
-        runner.Run("uint4.op_Division(uint,uint4):uint4");
+        runner.Run("quaternion.CreateFromAxisAngle(float3,float):quaternion");
     }
 
     private static void Case0539(ContractCaseRunner runner)
     {
-        runner.Run("uint4.op_Division(uint4,uint):uint4");
+        runner.Run("quaternion.CreateFromRotationMatrix(float4x4):quaternion");
     }
 
     private static void Case0540(ContractCaseRunner runner)
     {
-        runner.Run("uint4.op_Division(uint4,uint4):uint4");
+        runner.Run("quaternion.CreateFromYawPitchRoll(float,float,float):quaternion");
     }
 
     private static void Case0541(ContractCaseRunner runner)
     {
-        runner.Run("uint4.op_Multiply(uint,uint4):uint4");
+        runner.Run("quaternion.Inverse(quaternion):quaternion");
     }
 
     private static void Case0542(ContractCaseRunner runner)
     {
-        runner.Run("uint4.op_Multiply(uint4,uint):uint4");
+        runner.Run("quaternion.Lerp(quaternion,quaternion,float):quaternion");
     }
 
     private static void Case0543(ContractCaseRunner runner)
     {
-        runner.Run("uint4.op_Multiply(uint4,uint4):uint4");
+        runner.Run("quaternion.op_Multiply(quaternion,quaternion):quaternion");
     }
 
     private static void Case0544(ContractCaseRunner runner)
     {
-        runner.Run("uint4.op_Subtraction(uint,uint4):uint4");
+        runner.Run("quaternion.Normalize(quaternion):quaternion");
     }
 
     private static void Case0545(ContractCaseRunner runner)
     {
-        runner.Run("uint4.op_Subtraction(uint4,uint):uint4");
+        runner.Run("quaternion.Rotate(quaternion,float3):float3");
     }
 
     private static void Case0546(ContractCaseRunner runner)
     {
-        runner.Run("uint4.op_Subtraction(uint4,uint4):uint4");
+        runner.Run("quaternion.Slerp(quaternion,quaternion,float):quaternion");
     }
 
     private static void Case0547(ContractCaseRunner runner)
     {
-        runner.Run("uint4.op_UnaryPlus(uint4):uint4");
+        runner.Run("quaternion.ToRotationMatrix(quaternion):float4x4");
     }
 
     private static void Case0548(ContractCaseRunner runner)
     {
-        runner.Run("maths.all(bool2):bool");
+        runner.Run("uint2.BitCount(uint2):int2");
     }
 
     private static void Case0549(ContractCaseRunner runner)
     {
-        runner.Run("maths.any(bool2):bool");
+        runner.Run("uint2.BitfieldExtract(uint2,int,int):uint2");
     }
 
     private static void Case0550(ContractCaseRunner runner)
     {
-        runner.Run("maths.equal(bool2,bool2):bool2");
+        runner.Run("uint2.BitfieldInsert(uint2,uint2,int,int):uint2");
     }
 
     private static void Case0551(ContractCaseRunner runner)
     {
-        runner.Run("maths.notEqual(bool2,bool2):bool2");
+        runner.Run("uint2.BitfieldReverse(uint2):uint2");
     }
 
     private static void Case0552(ContractCaseRunner runner)
     {
-        runner.Run("maths.all(bool3):bool");
+        runner.Run("uint2.Clamp(uint2,uint,uint):uint2");
     }
 
     private static void Case0553(ContractCaseRunner runner)
     {
-        runner.Run("maths.any(bool3):bool");
+        runner.Run("uint2.Clamp(uint2,uint2,uint2):uint2");
     }
 
     private static void Case0554(ContractCaseRunner runner)
     {
-        runner.Run("maths.equal(bool3,bool3):bool3");
+        runner.Run("uint2.Equal(uint2,uint2):bool2");
     }
 
     private static void Case0555(ContractCaseRunner runner)
     {
-        runner.Run("maths.notEqual(bool3,bool3):bool3");
+        runner.Run("uint2.FindLSB(uint2):int2");
     }
 
     private static void Case0556(ContractCaseRunner runner)
     {
-        runner.Run("maths.all(bool4):bool");
+        runner.Run("uint2.FindMSB(uint2):int2");
     }
 
     private static void Case0557(ContractCaseRunner runner)
     {
-        runner.Run("maths.any(bool4):bool");
+        runner.Run("uint2.Max(uint2,uint):uint2");
     }
 
     private static void Case0558(ContractCaseRunner runner)
     {
-        runner.Run("maths.equal(bool4,bool4):bool4");
+        runner.Run("uint2.Max(uint2,uint2):uint2");
     }
 
     private static void Case0559(ContractCaseRunner runner)
     {
-        runner.Run("maths.notEqual(bool4,bool4):bool4");
+        runner.Run("uint2.Min(uint2,uint):uint2");
     }
 
     private static void Case0560(ContractCaseRunner runner)
     {
-        runner.Run("maths.abs(float2):float2");
+        runner.Run("uint2.Min(uint2,uint2):uint2");
     }
 
     private static void Case0561(ContractCaseRunner runner)
     {
-        runner.Run("maths.acos(float2):float2");
+        runner.Run("uint2.NotEqual(uint2,uint2):bool2");
     }
 
     private static void Case0562(ContractCaseRunner runner)
     {
-        runner.Run("maths.acosh(float2):float2");
+        runner.Run("uint2.op_OnesComplement(uint2):uint2");
     }
 
     private static void Case0563(ContractCaseRunner runner)
     {
-        runner.Run("maths.asin(float2):float2");
+        runner.Run("uint2.Select(uint2,uint2,bool2):uint2");
     }
 
     private static void Case0564(ContractCaseRunner runner)
     {
-        runner.Run("maths.asinh(float2):float2");
+        runner.Run("uint2.UaddCarry(uint2,uint2,uint2):uint2");
     }
 
     private static void Case0565(ContractCaseRunner runner)
     {
-        runner.Run("maths.atan(float2):float2");
+        runner.Run("uint2.UmulExtended(uint2,uint2,uint2,uint2):void");
     }
 
     private static void Case0566(ContractCaseRunner runner)
     {
-        runner.Run("maths.atan2(float2,float):float2");
+        runner.Run("uint2.UsubBorrow(uint2,uint2,uint2):uint2");
     }
 
     private static void Case0567(ContractCaseRunner runner)
     {
-        runner.Run("maths.atan2(float2,float2):float2");
+        runner.Run("uint2.op_Addition(uint,uint2):uint2");
     }
 
     private static void Case0568(ContractCaseRunner runner)
     {
-        runner.Run("maths.atanh(float2):float2");
+        runner.Run("uint2.op_Addition(uint2,uint):uint2");
     }
 
     private static void Case0569(ContractCaseRunner runner)
     {
-        runner.Run("maths.ceil(float2):float2");
+        runner.Run("uint2.op_Addition(uint2,uint2):uint2");
     }
 
     private static void Case0570(ContractCaseRunner runner)
     {
-        runner.Run("maths.clamp(float2,float,float):float2");
+        runner.Run("uint2.op_BitwiseAnd(uint,uint2):uint2");
     }
 
     private static void Case0571(ContractCaseRunner runner)
     {
-        runner.Run("maths.clamp(float2,float2,float2):float2");
+        runner.Run("uint2.op_BitwiseAnd(uint2,uint):uint2");
     }
 
     private static void Case0572(ContractCaseRunner runner)
     {
-        runner.Run("maths.cos(float2):float2");
+        runner.Run("uint2.op_BitwiseAnd(uint2,uint2):uint2");
     }
 
     private static void Case0573(ContractCaseRunner runner)
     {
-        runner.Run("maths.cosh(float2):float2");
+        runner.Run("uint2.op_BitwiseOr(uint,uint2):uint2");
     }
 
     private static void Case0574(ContractCaseRunner runner)
     {
-        runner.Run("maths.degrees(float2):float2");
+        runner.Run("uint2.op_BitwiseOr(uint2,uint):uint2");
     }
 
     private static void Case0575(ContractCaseRunner runner)
     {
-        runner.Run("maths.distance(float2,float2):float");
+        runner.Run("uint2.op_BitwiseOr(uint2,uint2):uint2");
     }
 
     private static void Case0576(ContractCaseRunner runner)
     {
-        runner.Run("maths.dot(float2,float2):float");
+        runner.Run("uint2.op_Division(uint,uint2):uint2");
     }
 
     private static void Case0577(ContractCaseRunner runner)
     {
-        runner.Run("maths.equal(float2,float2):bool2");
+        runner.Run("uint2.op_Division(uint2,uint):uint2");
     }
 
     private static void Case0578(ContractCaseRunner runner)
     {
-        runner.Run("maths.exp(float2):float2");
+        runner.Run("uint2.op_Division(uint2,uint2):uint2");
     }
 
     private static void Case0579(ContractCaseRunner runner)
     {
-        runner.Run("maths.exp2(float2):float2");
+        runner.Run("uint2.op_ExclusiveOr(uint,uint2):uint2");
     }
 
     private static void Case0580(ContractCaseRunner runner)
     {
-        runner.Run("maths.faceForward(float2,float2,float2):float2");
+        runner.Run("uint2.op_ExclusiveOr(uint2,uint):uint2");
     }
 
     private static void Case0581(ContractCaseRunner runner)
     {
-        runner.Run("maths.floor(float2):float2");
+        runner.Run("uint2.op_ExclusiveOr(uint2,uint2):uint2");
     }
 
     private static void Case0582(ContractCaseRunner runner)
     {
-        runner.Run("maths.fma(float2,float2,float2):float2");
+        runner.Run("uint2.op_LeftShift(uint2,int):uint2");
     }
 
     private static void Case0583(ContractCaseRunner runner)
     {
-        runner.Run("maths.fract(float2):float2");
+        runner.Run("uint2.op_Modulus(uint,uint2):uint2");
     }
 
     private static void Case0584(ContractCaseRunner runner)
     {
-        runner.Run("maths.inverseSqrt(float2):float2");
+        runner.Run("uint2.op_Modulus(uint2,uint):uint2");
     }
 
     private static void Case0585(ContractCaseRunner runner)
     {
-        runner.Run("maths.isInfinity(float2):bool2");
+        runner.Run("uint2.op_Modulus(uint2,uint2):uint2");
     }
 
     private static void Case0586(ContractCaseRunner runner)
     {
-        runner.Run("maths.isNaN(float2):bool2");
+        runner.Run("uint2.op_Multiply(uint,uint2):uint2");
     }
 
     private static void Case0587(ContractCaseRunner runner)
     {
-        runner.Run("maths.length(float2):float");
+        runner.Run("uint2.op_Multiply(uint2,uint):uint2");
     }
 
     private static void Case0588(ContractCaseRunner runner)
     {
-        runner.Run("maths.lerp(float2,float2,float):float2");
+        runner.Run("uint2.op_Multiply(uint2,uint2):uint2");
     }
 
     private static void Case0589(ContractCaseRunner runner)
     {
-        runner.Run("maths.lerp(float2,float2,float2):float2");
+        runner.Run("uint2.op_RightShift(uint2,int):uint2");
     }
 
     private static void Case0590(ContractCaseRunner runner)
     {
-        runner.Run("maths.log(float2):float2");
+        runner.Run("uint2.op_Subtraction(uint,uint2):uint2");
     }
 
     private static void Case0591(ContractCaseRunner runner)
     {
-        runner.Run("maths.log2(float2):float2");
+        runner.Run("uint2.op_Subtraction(uint2,uint):uint2");
     }
 
     private static void Case0592(ContractCaseRunner runner)
     {
-        runner.Run("maths.max(float2,float):float2");
+        runner.Run("uint2.op_Subtraction(uint2,uint2):uint2");
     }
 
     private static void Case0593(ContractCaseRunner runner)
     {
-        runner.Run("maths.max(float2,float2):float2");
+        runner.Run("uint2.op_UnaryPlus(uint2):uint2");
     }
 
     private static void Case0594(ContractCaseRunner runner)
     {
-        runner.Run("maths.min(float2,float):float2");
+        runner.Run("uint3.BitCount(uint3):int3");
     }
 
     private static void Case0595(ContractCaseRunner runner)
     {
-        runner.Run("maths.min(float2,float2):float2");
+        runner.Run("uint3.BitfieldExtract(uint3,int,int):uint3");
     }
 
     private static void Case0596(ContractCaseRunner runner)
     {
-        runner.Run("maths.mod(float2,float):float2");
+        runner.Run("uint3.BitfieldInsert(uint3,uint3,int,int):uint3");
     }
 
     private static void Case0597(ContractCaseRunner runner)
     {
-        runner.Run("maths.mod(float2,float2):float2");
+        runner.Run("uint3.BitfieldReverse(uint3):uint3");
     }
 
     private static void Case0598(ContractCaseRunner runner)
     {
-        runner.Run("maths.normalize(float2):float2");
+        runner.Run("uint3.Clamp(uint3,uint,uint):uint3");
     }
 
     private static void Case0599(ContractCaseRunner runner)
     {
-        runner.Run("maths.notEqual(float2,float2):bool2");
+        runner.Run("uint3.Clamp(uint3,uint3,uint3):uint3");
     }
 
     private static void Case0600(ContractCaseRunner runner)
     {
-        runner.Run("maths.packSnorm2x16(float2):uint");
+        runner.Run("uint3.Equal(uint3,uint3):bool3");
     }
 
     private static void Case0601(ContractCaseRunner runner)
     {
-        runner.Run("maths.packUnorm2x16(float2):uint");
+        runner.Run("uint3.FindLSB(uint3):int3");
     }
 
     private static void Case0602(ContractCaseRunner runner)
     {
-        runner.Run("maths.pow(float2,float2):float2");
+        runner.Run("uint3.FindMSB(uint3):int3");
     }
 
     private static void Case0603(ContractCaseRunner runner)
     {
-        runner.Run("maths.radians(float2):float2");
+        runner.Run("uint3.Max(uint3,uint):uint3");
     }
 
     private static void Case0604(ContractCaseRunner runner)
     {
-        runner.Run("maths.reflect(float2,float2):float2");
+        runner.Run("uint3.Max(uint3,uint3):uint3");
     }
 
     private static void Case0605(ContractCaseRunner runner)
     {
-        runner.Run("maths.refract(float2,float2,float):float2");
+        runner.Run("uint3.Min(uint3,uint):uint3");
     }
 
     private static void Case0606(ContractCaseRunner runner)
     {
-        runner.Run("maths.round(float2):float2");
+        runner.Run("uint3.Min(uint3,uint3):uint3");
     }
 
     private static void Case0607(ContractCaseRunner runner)
     {
-        runner.Run("maths.roundEven(float2):float2");
+        runner.Run("uint3.NotEqual(uint3,uint3):bool3");
     }
 
     private static void Case0608(ContractCaseRunner runner)
     {
-        runner.Run("maths.select(float2,float2,bool2):float2");
+        runner.Run("uint3.op_OnesComplement(uint3):uint3");
     }
 
     private static void Case0609(ContractCaseRunner runner)
     {
-        runner.Run("maths.sign(float2):float2");
+        runner.Run("uint3.Select(uint3,uint3,bool3):uint3");
     }
 
     private static void Case0610(ContractCaseRunner runner)
     {
-        runner.Run("maths.sin(float2):float2");
+        runner.Run("uint3.UaddCarry(uint3,uint3,uint3):uint3");
     }
 
     private static void Case0611(ContractCaseRunner runner)
     {
-        runner.Run("maths.sinh(float2):float2");
+        runner.Run("uint3.UmulExtended(uint3,uint3,uint3,uint3):void");
     }
 
     private static void Case0612(ContractCaseRunner runner)
     {
-        runner.Run("maths.smoothstep(float,float,float2):float2");
+        runner.Run("uint3.UsubBorrow(uint3,uint3,uint3):uint3");
     }
 
     private static void Case0613(ContractCaseRunner runner)
     {
-        runner.Run("maths.smoothstep(float2,float2,float2):float2");
+        runner.Run("uint3.op_Addition(uint,uint3):uint3");
     }
 
     private static void Case0614(ContractCaseRunner runner)
     {
-        runner.Run("maths.sqrt(float2):float2");
+        runner.Run("uint3.op_Addition(uint3,uint):uint3");
     }
 
     private static void Case0615(ContractCaseRunner runner)
     {
-        runner.Run("maths.step(float,float2):float2");
+        runner.Run("uint3.op_Addition(uint3,uint3):uint3");
     }
 
     private static void Case0616(ContractCaseRunner runner)
     {
-        runner.Run("maths.step(float2,float2):float2");
+        runner.Run("uint3.op_BitwiseAnd(uint,uint3):uint3");
     }
 
     private static void Case0617(ContractCaseRunner runner)
     {
-        runner.Run("maths.tan(float2):float2");
+        runner.Run("uint3.op_BitwiseAnd(uint3,uint):uint3");
     }
 
     private static void Case0618(ContractCaseRunner runner)
     {
-        runner.Run("maths.tanh(float2):float2");
+        runner.Run("uint3.op_BitwiseAnd(uint3,uint3):uint3");
     }
 
     private static void Case0619(ContractCaseRunner runner)
     {
-        runner.Run("maths.truncate(float2):float2");
+        runner.Run("uint3.op_BitwiseOr(uint,uint3):uint3");
     }
 
     private static void Case0620(ContractCaseRunner runner)
     {
-        runner.Run("maths.unpackSnorm2x16(uint):float2");
+        runner.Run("uint3.op_BitwiseOr(uint3,uint):uint3");
     }
 
     private static void Case0621(ContractCaseRunner runner)
     {
-        runner.Run("maths.unpackUnorm2x16(uint):float2");
+        runner.Run("uint3.op_BitwiseOr(uint3,uint3):uint3");
     }
 
     private static void Case0622(ContractCaseRunner runner)
     {
-        runner.Run("maths.determinant(float2x2):float");
+        runner.Run("uint3.op_Division(uint,uint3):uint3");
     }
 
     private static void Case0623(ContractCaseRunner runner)
     {
-        runner.Run("maths.inverse(float2x2):float2x2");
+        runner.Run("uint3.op_Division(uint3,uint):uint3");
     }
 
     private static void Case0624(ContractCaseRunner runner)
     {
-        runner.Run("maths.matrixCompMult(float2x2,float2x2):float2x2");
+        runner.Run("uint3.op_Division(uint3,uint3):uint3");
     }
 
     private static void Case0625(ContractCaseRunner runner)
     {
-        runner.Run("maths.outerProduct(float2,float2):float2x2");
+        runner.Run("uint3.op_ExclusiveOr(uint,uint3):uint3");
     }
 
     private static void Case0626(ContractCaseRunner runner)
     {
-        runner.Run("maths.transpose(float2x2):float2x2");
+        runner.Run("uint3.op_ExclusiveOr(uint3,uint):uint3");
     }
 
     private static void Case0627(ContractCaseRunner runner)
     {
-        runner.Run("maths.matrixCompMult(float2x3,float2x3):float2x3");
+        runner.Run("uint3.op_ExclusiveOr(uint3,uint3):uint3");
     }
 
     private static void Case0628(ContractCaseRunner runner)
     {
-        runner.Run("maths.outerProduct(float3,float2):float2x3");
+        runner.Run("uint3.op_LeftShift(uint3,int):uint3");
     }
 
     private static void Case0629(ContractCaseRunner runner)
     {
-        runner.Run("maths.transpose(float2x3):float3x2");
+        runner.Run("uint3.op_Modulus(uint,uint3):uint3");
     }
 
     private static void Case0630(ContractCaseRunner runner)
     {
-        runner.Run("maths.matrixCompMult(float2x4,float2x4):float2x4");
+        runner.Run("uint3.op_Modulus(uint3,uint):uint3");
     }
 
     private static void Case0631(ContractCaseRunner runner)
     {
-        runner.Run("maths.outerProduct(float4,float2):float2x4");
+        runner.Run("uint3.op_Modulus(uint3,uint3):uint3");
     }
 
     private static void Case0632(ContractCaseRunner runner)
     {
-        runner.Run("maths.transpose(float2x4):float4x2");
+        runner.Run("uint3.op_Multiply(uint,uint3):uint3");
     }
 
     private static void Case0633(ContractCaseRunner runner)
     {
-        runner.Run("maths.abs(float3):float3");
+        runner.Run("uint3.op_Multiply(uint3,uint):uint3");
     }
 
     private static void Case0634(ContractCaseRunner runner)
     {
-        runner.Run("maths.acos(float3):float3");
+        runner.Run("uint3.op_Multiply(uint3,uint3):uint3");
     }
 
     private static void Case0635(ContractCaseRunner runner)
     {
-        runner.Run("maths.acosh(float3):float3");
+        runner.Run("uint3.op_RightShift(uint3,int):uint3");
     }
 
     private static void Case0636(ContractCaseRunner runner)
     {
-        runner.Run("maths.asin(float3):float3");
+        runner.Run("uint3.op_Subtraction(uint,uint3):uint3");
     }
 
     private static void Case0637(ContractCaseRunner runner)
     {
-        runner.Run("maths.asinh(float3):float3");
+        runner.Run("uint3.op_Subtraction(uint3,uint):uint3");
     }
 
     private static void Case0638(ContractCaseRunner runner)
     {
-        runner.Run("maths.atan(float3):float3");
+        runner.Run("uint3.op_Subtraction(uint3,uint3):uint3");
     }
 
     private static void Case0639(ContractCaseRunner runner)
     {
-        runner.Run("maths.atan2(float3,float):float3");
+        runner.Run("uint3.op_UnaryPlus(uint3):uint3");
     }
 
     private static void Case0640(ContractCaseRunner runner)
     {
-        runner.Run("maths.atan2(float3,float3):float3");
+        runner.Run("uint4.BitCount(uint4):int4");
     }
 
     private static void Case0641(ContractCaseRunner runner)
     {
-        runner.Run("maths.atanh(float3):float3");
+        runner.Run("uint4.BitfieldExtract(uint4,int,int):uint4");
     }
 
     private static void Case0642(ContractCaseRunner runner)
     {
-        runner.Run("maths.ceil(float3):float3");
+        runner.Run("uint4.BitfieldInsert(uint4,uint4,int,int):uint4");
     }
 
     private static void Case0643(ContractCaseRunner runner)
     {
-        runner.Run("maths.clamp(float3,float,float):float3");
+        runner.Run("uint4.BitfieldReverse(uint4):uint4");
     }
 
     private static void Case0644(ContractCaseRunner runner)
     {
-        runner.Run("maths.clamp(float3,float3,float3):float3");
+        runner.Run("uint4.Clamp(uint4,uint,uint):uint4");
     }
 
     private static void Case0645(ContractCaseRunner runner)
     {
-        runner.Run("maths.cos(float3):float3");
+        runner.Run("uint4.Clamp(uint4,uint4,uint4):uint4");
     }
 
     private static void Case0646(ContractCaseRunner runner)
     {
-        runner.Run("maths.cosh(float3):float3");
+        runner.Run("uint4.Equal(uint4,uint4):bool4");
     }
 
     private static void Case0647(ContractCaseRunner runner)
     {
-        runner.Run("maths.cross(float3,float3):float3");
+        runner.Run("uint4.FindLSB(uint4):int4");
     }
 
     private static void Case0648(ContractCaseRunner runner)
     {
-        runner.Run("maths.degrees(float3):float3");
+        runner.Run("uint4.FindMSB(uint4):int4");
     }
 
     private static void Case0649(ContractCaseRunner runner)
     {
-        runner.Run("maths.distance(float3,float3):float");
+        runner.Run("uint4.Max(uint4,uint):uint4");
     }
 
     private static void Case0650(ContractCaseRunner runner)
     {
-        runner.Run("maths.dot(float3,float3):float");
+        runner.Run("uint4.Max(uint4,uint4):uint4");
     }
 
     private static void Case0651(ContractCaseRunner runner)
     {
-        runner.Run("maths.equal(float3,float3):bool3");
+        runner.Run("uint4.Min(uint4,uint):uint4");
     }
 
     private static void Case0652(ContractCaseRunner runner)
     {
-        runner.Run("maths.exp(float3):float3");
+        runner.Run("uint4.Min(uint4,uint4):uint4");
     }
 
     private static void Case0653(ContractCaseRunner runner)
     {
-        runner.Run("maths.exp2(float3):float3");
+        runner.Run("uint4.NotEqual(uint4,uint4):bool4");
     }
 
     private static void Case0654(ContractCaseRunner runner)
     {
-        runner.Run("maths.faceForward(float3,float3,float3):float3");
+        runner.Run("uint4.op_OnesComplement(uint4):uint4");
     }
 
     private static void Case0655(ContractCaseRunner runner)
     {
-        runner.Run("maths.floor(float3):float3");
+        runner.Run("uint4.Select(uint4,uint4,bool4):uint4");
     }
 
     private static void Case0656(ContractCaseRunner runner)
     {
-        runner.Run("maths.fma(float3,float3,float3):float3");
+        runner.Run("uint4.UaddCarry(uint4,uint4,uint4):uint4");
     }
 
     private static void Case0657(ContractCaseRunner runner)
     {
-        runner.Run("maths.fract(float3):float3");
+        runner.Run("uint4.UmulExtended(uint4,uint4,uint4,uint4):void");
     }
 
     private static void Case0658(ContractCaseRunner runner)
     {
-        runner.Run("maths.inverseSqrt(float3):float3");
+        runner.Run("uint4.UsubBorrow(uint4,uint4,uint4):uint4");
     }
 
     private static void Case0659(ContractCaseRunner runner)
     {
-        runner.Run("maths.isInfinity(float3):bool3");
+        runner.Run("uint4.op_Addition(uint,uint4):uint4");
     }
 
     private static void Case0660(ContractCaseRunner runner)
     {
-        runner.Run("maths.isNaN(float3):bool3");
+        runner.Run("uint4.op_Addition(uint4,uint):uint4");
     }
 
     private static void Case0661(ContractCaseRunner runner)
     {
-        runner.Run("maths.length(float3):float");
+        runner.Run("uint4.op_Addition(uint4,uint4):uint4");
     }
 
     private static void Case0662(ContractCaseRunner runner)
     {
-        runner.Run("maths.lerp(float3,float3,float):float3");
+        runner.Run("uint4.op_BitwiseAnd(uint,uint4):uint4");
     }
 
     private static void Case0663(ContractCaseRunner runner)
     {
-        runner.Run("maths.lerp(float3,float3,float3):float3");
+        runner.Run("uint4.op_BitwiseAnd(uint4,uint):uint4");
     }
 
     private static void Case0664(ContractCaseRunner runner)
     {
-        runner.Run("maths.log(float3):float3");
+        runner.Run("uint4.op_BitwiseAnd(uint4,uint4):uint4");
     }
 
     private static void Case0665(ContractCaseRunner runner)
     {
-        runner.Run("maths.log2(float3):float3");
+        runner.Run("uint4.op_BitwiseOr(uint,uint4):uint4");
     }
 
     private static void Case0666(ContractCaseRunner runner)
     {
-        runner.Run("maths.max(float3,float):float3");
+        runner.Run("uint4.op_BitwiseOr(uint4,uint):uint4");
     }
 
     private static void Case0667(ContractCaseRunner runner)
     {
-        runner.Run("maths.max(float3,float3):float3");
+        runner.Run("uint4.op_BitwiseOr(uint4,uint4):uint4");
     }
 
     private static void Case0668(ContractCaseRunner runner)
     {
-        runner.Run("maths.min(float3,float):float3");
+        runner.Run("uint4.op_Division(uint,uint4):uint4");
     }
 
     private static void Case0669(ContractCaseRunner runner)
     {
-        runner.Run("maths.min(float3,float3):float3");
+        runner.Run("uint4.op_Division(uint4,uint):uint4");
     }
 
     private static void Case0670(ContractCaseRunner runner)
     {
-        runner.Run("maths.mod(float3,float):float3");
+        runner.Run("uint4.op_Division(uint4,uint4):uint4");
     }
 
     private static void Case0671(ContractCaseRunner runner)
     {
-        runner.Run("maths.mod(float3,float3):float3");
+        runner.Run("uint4.op_ExclusiveOr(uint,uint4):uint4");
     }
 
     private static void Case0672(ContractCaseRunner runner)
     {
-        runner.Run("maths.normalize(float3):float3");
+        runner.Run("uint4.op_ExclusiveOr(uint4,uint):uint4");
     }
 
     private static void Case0673(ContractCaseRunner runner)
     {
-        runner.Run("maths.notEqual(float3,float3):bool3");
+        runner.Run("uint4.op_ExclusiveOr(uint4,uint4):uint4");
     }
 
     private static void Case0674(ContractCaseRunner runner)
     {
-        runner.Run("maths.pow(float3,float3):float3");
+        runner.Run("uint4.op_LeftShift(uint4,int):uint4");
     }
 
     private static void Case0675(ContractCaseRunner runner)
     {
-        runner.Run("maths.radians(float3):float3");
+        runner.Run("uint4.op_Modulus(uint,uint4):uint4");
     }
 
     private static void Case0676(ContractCaseRunner runner)
     {
-        runner.Run("maths.reflect(float3,float3):float3");
+        runner.Run("uint4.op_Modulus(uint4,uint):uint4");
     }
 
     private static void Case0677(ContractCaseRunner runner)
     {
-        runner.Run("maths.refract(float3,float3,float):float3");
+        runner.Run("uint4.op_Modulus(uint4,uint4):uint4");
     }
 
     private static void Case0678(ContractCaseRunner runner)
     {
-        runner.Run("maths.round(float3):float3");
+        runner.Run("uint4.op_Multiply(uint,uint4):uint4");
     }
 
     private static void Case0679(ContractCaseRunner runner)
     {
-        runner.Run("maths.roundEven(float3):float3");
+        runner.Run("uint4.op_Multiply(uint4,uint):uint4");
     }
 
     private static void Case0680(ContractCaseRunner runner)
     {
-        runner.Run("maths.select(float3,float3,bool3):float3");
+        runner.Run("uint4.op_Multiply(uint4,uint4):uint4");
     }
 
     private static void Case0681(ContractCaseRunner runner)
     {
-        runner.Run("maths.sign(float3):float3");
+        runner.Run("uint4.op_RightShift(uint4,int):uint4");
     }
 
     private static void Case0682(ContractCaseRunner runner)
     {
-        runner.Run("maths.sin(float3):float3");
+        runner.Run("uint4.op_Subtraction(uint,uint4):uint4");
     }
 
     private static void Case0683(ContractCaseRunner runner)
     {
-        runner.Run("maths.sinh(float3):float3");
+        runner.Run("uint4.op_Subtraction(uint4,uint):uint4");
     }
 
     private static void Case0684(ContractCaseRunner runner)
     {
-        runner.Run("maths.smoothstep(float,float,float3):float3");
+        runner.Run("uint4.op_Subtraction(uint4,uint4):uint4");
     }
 
     private static void Case0685(ContractCaseRunner runner)
     {
-        runner.Run("maths.smoothstep(float3,float3,float3):float3");
+        runner.Run("uint4.op_UnaryPlus(uint4):uint4");
     }
 
     private static void Case0686(ContractCaseRunner runner)
     {
-        runner.Run("maths.sqrt(float3):float3");
+        runner.Run("maths.all(bool2):bool");
     }
 
     private static void Case0687(ContractCaseRunner runner)
     {
-        runner.Run("maths.step(float,float3):float3");
+        runner.Run("maths.any(bool2):bool");
     }
 
     private static void Case0688(ContractCaseRunner runner)
     {
-        runner.Run("maths.step(float3,float3):float3");
+        runner.Run("maths.equal(bool2,bool2):bool2");
     }
 
     private static void Case0689(ContractCaseRunner runner)
     {
-        runner.Run("maths.tan(float3):float3");
+        runner.Run("maths.notEqual(bool2,bool2):bool2");
     }
 
     private static void Case0690(ContractCaseRunner runner)
     {
-        runner.Run("maths.tanh(float3):float3");
+        runner.Run("maths.all(bool3):bool");
     }
 
     private static void Case0691(ContractCaseRunner runner)
     {
-        runner.Run("maths.truncate(float3):float3");
+        runner.Run("maths.any(bool3):bool");
     }
 
     private static void Case0692(ContractCaseRunner runner)
     {
-        runner.Run("maths.matrixCompMult(float3x2,float3x2):float3x2");
+        runner.Run("maths.equal(bool3,bool3):bool3");
     }
 
     private static void Case0693(ContractCaseRunner runner)
     {
-        runner.Run("maths.outerProduct(float2,float3):float3x2");
+        runner.Run("maths.notEqual(bool3,bool3):bool3");
     }
 
     private static void Case0694(ContractCaseRunner runner)
     {
-        runner.Run("maths.transpose(float3x2):float2x3");
+        runner.Run("maths.all(bool4):bool");
     }
 
     private static void Case0695(ContractCaseRunner runner)
     {
-        runner.Run("maths.determinant(float3x3):float");
+        runner.Run("maths.any(bool4):bool");
     }
 
     private static void Case0696(ContractCaseRunner runner)
     {
-        runner.Run("maths.inverse(float3x3):float3x3");
+        runner.Run("maths.equal(bool4,bool4):bool4");
     }
 
     private static void Case0697(ContractCaseRunner runner)
     {
-        runner.Run("maths.matrixCompMult(float3x3,float3x3):float3x3");
+        runner.Run("maths.notEqual(bool4,bool4):bool4");
     }
 
     private static void Case0698(ContractCaseRunner runner)
     {
-        runner.Run("maths.outerProduct(float3,float3):float3x3");
+        runner.Run("maths.abs(float2):float2");
     }
 
     private static void Case0699(ContractCaseRunner runner)
     {
-        runner.Run("maths.transpose(float3x3):float3x3");
+        runner.Run("maths.acos(float2):float2");
     }
 
     private static void Case0700(ContractCaseRunner runner)
     {
-        runner.Run("maths.matrixCompMult(float3x4,float3x4):float3x4");
+        runner.Run("maths.acosh(float2):float2");
     }
 
     private static void Case0701(ContractCaseRunner runner)
     {
-        runner.Run("maths.outerProduct(float4,float3):float3x4");
+        runner.Run("maths.asin(float2):float2");
     }
 
     private static void Case0702(ContractCaseRunner runner)
     {
-        runner.Run("maths.transpose(float3x4):float4x3");
+        runner.Run("maths.asinh(float2):float2");
     }
 
     private static void Case0703(ContractCaseRunner runner)
     {
-        runner.Run("maths.abs(float4):float4");
+        runner.Run("maths.atan(float2):float2");
     }
 
     private static void Case0704(ContractCaseRunner runner)
     {
-        runner.Run("maths.acos(float4):float4");
+        runner.Run("maths.atan2(float2,float):float2");
     }
 
     private static void Case0705(ContractCaseRunner runner)
     {
-        runner.Run("maths.acosh(float4):float4");
+        runner.Run("maths.atan2(float2,float2):float2");
     }
 
     private static void Case0706(ContractCaseRunner runner)
     {
-        runner.Run("maths.asin(float4):float4");
+        runner.Run("maths.atanh(float2):float2");
     }
 
     private static void Case0707(ContractCaseRunner runner)
     {
-        runner.Run("maths.asinh(float4):float4");
+        runner.Run("maths.ceil(float2):float2");
     }
 
     private static void Case0708(ContractCaseRunner runner)
     {
-        runner.Run("maths.atan(float4):float4");
+        runner.Run("maths.clamp(float2,float,float):float2");
     }
 
     private static void Case0709(ContractCaseRunner runner)
     {
-        runner.Run("maths.atan2(float4,float):float4");
+        runner.Run("maths.clamp(float2,float2,float2):float2");
     }
 
     private static void Case0710(ContractCaseRunner runner)
     {
-        runner.Run("maths.atan2(float4,float4):float4");
+        runner.Run("maths.cos(float2):float2");
     }
 
     private static void Case0711(ContractCaseRunner runner)
     {
-        runner.Run("maths.atanh(float4):float4");
+        runner.Run("maths.cosh(float2):float2");
     }
 
     private static void Case0712(ContractCaseRunner runner)
     {
-        runner.Run("maths.ceil(float4):float4");
+        runner.Run("maths.degrees(float2):float2");
     }
 
     private static void Case0713(ContractCaseRunner runner)
     {
-        runner.Run("maths.clamp(float4,float,float):float4");
+        runner.Run("maths.distance(float2,float2):float");
     }
 
     private static void Case0714(ContractCaseRunner runner)
     {
-        runner.Run("maths.clamp(float4,float4,float4):float4");
+        runner.Run("maths.dot(float2,float2):float");
     }
 
     private static void Case0715(ContractCaseRunner runner)
     {
-        runner.Run("maths.cos(float4):float4");
+        runner.Run("maths.equal(float2,float2):bool2");
     }
 
     private static void Case0716(ContractCaseRunner runner)
     {
-        runner.Run("maths.cosh(float4):float4");
+        runner.Run("maths.exp(float2):float2");
     }
 
     private static void Case0717(ContractCaseRunner runner)
     {
-        runner.Run("maths.degrees(float4):float4");
+        runner.Run("maths.exp2(float2):float2");
     }
 
     private static void Case0718(ContractCaseRunner runner)
     {
-        runner.Run("maths.distance(float4,float4):float");
+        runner.Run("maths.faceForward(float2,float2,float2):float2");
     }
 
     private static void Case0719(ContractCaseRunner runner)
     {
-        runner.Run("maths.dot(float4,float4):float");
+        runner.Run("maths.floor(float2):float2");
     }
 
     private static void Case0720(ContractCaseRunner runner)
     {
-        runner.Run("maths.equal(float4,float4):bool4");
+        runner.Run("maths.fma(float2,float2,float2):float2");
     }
 
     private static void Case0721(ContractCaseRunner runner)
     {
-        runner.Run("maths.exp(float4):float4");
+        runner.Run("maths.fract(float2):float2");
     }
 
     private static void Case0722(ContractCaseRunner runner)
     {
-        runner.Run("maths.exp2(float4):float4");
+        runner.Run("maths.inverseSqrt(float2):float2");
     }
 
     private static void Case0723(ContractCaseRunner runner)
     {
-        runner.Run("maths.faceForward(float4,float4,float4):float4");
+        runner.Run("maths.isInfinity(float2):bool2");
     }
 
     private static void Case0724(ContractCaseRunner runner)
     {
-        runner.Run("maths.floor(float4):float4");
+        runner.Run("maths.isNaN(float2):bool2");
     }
 
     private static void Case0725(ContractCaseRunner runner)
     {
-        runner.Run("maths.fma(float4,float4,float4):float4");
+        runner.Run("maths.length(float2):float");
     }
 
     private static void Case0726(ContractCaseRunner runner)
     {
-        runner.Run("maths.fract(float4):float4");
+        runner.Run("maths.lerp(float2,float2,float):float2");
     }
 
     private static void Case0727(ContractCaseRunner runner)
     {
-        runner.Run("maths.inverseSqrt(float4):float4");
+        runner.Run("maths.lerp(float2,float2,float2):float2");
     }
 
     private static void Case0728(ContractCaseRunner runner)
     {
-        runner.Run("maths.isInfinity(float4):bool4");
+        runner.Run("maths.log(float2):float2");
     }
 
     private static void Case0729(ContractCaseRunner runner)
     {
-        runner.Run("maths.isNaN(float4):bool4");
+        runner.Run("maths.log2(float2):float2");
     }
 
     private static void Case0730(ContractCaseRunner runner)
     {
-        runner.Run("maths.length(float4):float");
+        runner.Run("maths.max(float2,float):float2");
     }
 
     private static void Case0731(ContractCaseRunner runner)
     {
-        runner.Run("maths.lerp(float4,float4,float):float4");
+        runner.Run("maths.max(float2,float2):float2");
     }
 
     private static void Case0732(ContractCaseRunner runner)
     {
-        runner.Run("maths.lerp(float4,float4,float4):float4");
+        runner.Run("maths.min(float2,float):float2");
     }
 
     private static void Case0733(ContractCaseRunner runner)
     {
-        runner.Run("maths.log(float4):float4");
+        runner.Run("maths.min(float2,float2):float2");
     }
 
     private static void Case0734(ContractCaseRunner runner)
     {
-        runner.Run("maths.log2(float4):float4");
+        runner.Run("maths.mod(float2,float):float2");
     }
 
     private static void Case0735(ContractCaseRunner runner)
     {
-        runner.Run("maths.max(float4,float):float4");
+        runner.Run("maths.mod(float2,float2):float2");
     }
 
     private static void Case0736(ContractCaseRunner runner)
     {
-        runner.Run("maths.max(float4,float4):float4");
+        runner.Run("maths.normalize(float2):float2");
     }
 
     private static void Case0737(ContractCaseRunner runner)
     {
-        runner.Run("maths.min(float4,float):float4");
+        runner.Run("maths.notEqual(float2,float2):bool2");
     }
 
     private static void Case0738(ContractCaseRunner runner)
     {
-        runner.Run("maths.min(float4,float4):float4");
+        runner.Run("maths.packSnorm2x16(float2):uint");
     }
 
     private static void Case0739(ContractCaseRunner runner)
     {
-        runner.Run("maths.mod(float4,float):float4");
+        runner.Run("maths.packUnorm2x16(float2):uint");
     }
 
     private static void Case0740(ContractCaseRunner runner)
     {
-        runner.Run("maths.mod(float4,float4):float4");
+        runner.Run("maths.pow(float2,float2):float2");
     }
 
     private static void Case0741(ContractCaseRunner runner)
     {
-        runner.Run("maths.normalize(float4):float4");
+        runner.Run("maths.radians(float2):float2");
     }
 
     private static void Case0742(ContractCaseRunner runner)
     {
-        runner.Run("maths.notEqual(float4,float4):bool4");
+        runner.Run("maths.reflect(float2,float2):float2");
     }
 
     private static void Case0743(ContractCaseRunner runner)
     {
-        runner.Run("maths.packSnorm4x8(float4):uint");
+        runner.Run("maths.refract(float2,float2,float):float2");
     }
 
     private static void Case0744(ContractCaseRunner runner)
     {
-        runner.Run("maths.packUnorm4x8(float4):uint");
+        runner.Run("maths.round(float2):float2");
     }
 
     private static void Case0745(ContractCaseRunner runner)
     {
-        runner.Run("maths.pow(float4,float4):float4");
+        runner.Run("maths.roundEven(float2):float2");
     }
 
     private static void Case0746(ContractCaseRunner runner)
     {
-        runner.Run("maths.radians(float4):float4");
+        runner.Run("maths.select(float2,float2,bool2):float2");
     }
 
     private static void Case0747(ContractCaseRunner runner)
     {
-        runner.Run("maths.reflect(float4,float4):float4");
+        runner.Run("maths.sign(float2):float2");
     }
 
     private static void Case0748(ContractCaseRunner runner)
     {
-        runner.Run("maths.refract(float4,float4,float):float4");
+        runner.Run("maths.sin(float2):float2");
     }
 
     private static void Case0749(ContractCaseRunner runner)
     {
-        runner.Run("maths.round(float4):float4");
+        runner.Run("maths.sinh(float2):float2");
     }
 
     private static void Case0750(ContractCaseRunner runner)
     {
-        runner.Run("maths.roundEven(float4):float4");
+        runner.Run("maths.smoothstep(float,float,float2):float2");
     }
 
     private static void Case0751(ContractCaseRunner runner)
     {
-        runner.Run("maths.select(float4,float4,bool4):float4");
+        runner.Run("maths.smoothstep(float2,float2,float2):float2");
     }
 
     private static void Case0752(ContractCaseRunner runner)
     {
-        runner.Run("maths.sign(float4):float4");
+        runner.Run("maths.sqrt(float2):float2");
     }
 
     private static void Case0753(ContractCaseRunner runner)
     {
-        runner.Run("maths.sin(float4):float4");
+        runner.Run("maths.step(float,float2):float2");
     }
 
     private static void Case0754(ContractCaseRunner runner)
     {
-        runner.Run("maths.sinh(float4):float4");
+        runner.Run("maths.step(float2,float2):float2");
     }
 
     private static void Case0755(ContractCaseRunner runner)
     {
-        runner.Run("maths.smoothstep(float,float,float4):float4");
+        runner.Run("maths.tan(float2):float2");
     }
 
     private static void Case0756(ContractCaseRunner runner)
     {
-        runner.Run("maths.smoothstep(float4,float4,float4):float4");
+        runner.Run("maths.tanh(float2):float2");
     }
 
     private static void Case0757(ContractCaseRunner runner)
     {
-        runner.Run("maths.sqrt(float4):float4");
+        runner.Run("maths.truncate(float2):float2");
     }
 
     private static void Case0758(ContractCaseRunner runner)
     {
-        runner.Run("maths.step(float,float4):float4");
+        runner.Run("maths.unpackSnorm2x16(uint):float2");
     }
 
     private static void Case0759(ContractCaseRunner runner)
     {
-        runner.Run("maths.step(float4,float4):float4");
+        runner.Run("maths.unpackUnorm2x16(uint):float2");
     }
 
     private static void Case0760(ContractCaseRunner runner)
     {
-        runner.Run("maths.tan(float4):float4");
+        runner.Run("maths.determinant(float2x2):float");
     }
 
     private static void Case0761(ContractCaseRunner runner)
     {
-        runner.Run("maths.tanh(float4):float4");
+        runner.Run("maths.inverse(float2x2):float2x2");
     }
 
     private static void Case0762(ContractCaseRunner runner)
     {
-        runner.Run("maths.truncate(float4):float4");
+        runner.Run("maths.matrixCompMult(float2x2,float2x2):float2x2");
     }
 
     private static void Case0763(ContractCaseRunner runner)
     {
-        runner.Run("maths.unpackSnorm4x8(uint):float4");
+        runner.Run("maths.outerProduct(float2,float2):float2x2");
     }
 
     private static void Case0764(ContractCaseRunner runner)
     {
-        runner.Run("maths.unpackUnorm4x8(uint):float4");
+        runner.Run("maths.transpose(float2x2):float2x2");
     }
 
     private static void Case0765(ContractCaseRunner runner)
     {
-        runner.Run("maths.matrixCompMult(float4x2,float4x2):float4x2");
+        runner.Run("maths.matrixCompMult(float2x3,float2x3):float2x3");
     }
 
     private static void Case0766(ContractCaseRunner runner)
     {
-        runner.Run("maths.outerProduct(float2,float4):float4x2");
+        runner.Run("maths.outerProduct(float3,float2):float2x3");
     }
 
     private static void Case0767(ContractCaseRunner runner)
     {
-        runner.Run("maths.transpose(float4x2):float2x4");
+        runner.Run("maths.transpose(float2x3):float3x2");
     }
 
     private static void Case0768(ContractCaseRunner runner)
     {
-        runner.Run("maths.matrixCompMult(float4x3,float4x3):float4x3");
+        runner.Run("maths.matrixCompMult(float2x4,float2x4):float2x4");
     }
 
     private static void Case0769(ContractCaseRunner runner)
     {
-        runner.Run("maths.outerProduct(float3,float4):float4x3");
+        runner.Run("maths.outerProduct(float4,float2):float2x4");
     }
 
     private static void Case0770(ContractCaseRunner runner)
     {
-        runner.Run("maths.transpose(float4x3):float3x4");
+        runner.Run("maths.transpose(float2x4):float4x2");
     }
 
     private static void Case0771(ContractCaseRunner runner)
     {
-        runner.Run("maths.createFromQuaternion(quaternion):float4x4");
+        runner.Run("maths.abs(float3):float3");
     }
 
     private static void Case0772(ContractCaseRunner runner)
     {
-        runner.Run("maths.createLookTo(float3,float3,float3):float4x4");
+        runner.Run("maths.acos(float3):float3");
     }
 
     private static void Case0773(ContractCaseRunner runner)
     {
-        runner.Run("maths.createPerspectiveFieldOfViewLeftHanded(float,float,float,float):float4x4");
+        runner.Run("maths.acosh(float3):float3");
     }
 
     private static void Case0774(ContractCaseRunner runner)
     {
-        runner.Run("maths.createScale(float):float4x4");
+        runner.Run("maths.asin(float3):float3");
     }
 
     private static void Case0775(ContractCaseRunner runner)
     {
-        runner.Run("maths.createScale(float3):float4x4");
+        runner.Run("maths.asinh(float3):float3");
     }
 
     private static void Case0776(ContractCaseRunner runner)
     {
-        runner.Run("maths.createTRS(float3,quaternion,float3):float4x4");
+        runner.Run("maths.atan(float3):float3");
     }
 
     private static void Case0777(ContractCaseRunner runner)
     {
-        runner.Run("maths.createTranslation(float3):float4x4");
+        runner.Run("maths.atan2(float3,float):float3");
     }
 
     private static void Case0778(ContractCaseRunner runner)
     {
-        runner.Run("maths.determinant(float4x4):float");
+        runner.Run("maths.atan2(float3,float3):float3");
     }
 
     private static void Case0779(ContractCaseRunner runner)
     {
-        runner.Run("maths.inverse(float4x4):float4x4");
+        runner.Run("maths.atanh(float3):float3");
     }
 
     private static void Case0780(ContractCaseRunner runner)
     {
-        runner.Run("maths.matrixCompMult(float4x4,float4x4):float4x4");
+        runner.Run("maths.ceil(float3):float3");
     }
 
     private static void Case0781(ContractCaseRunner runner)
     {
-        runner.Run("maths.outerProduct(float4,float4):float4x4");
+        runner.Run("maths.clamp(float3,float,float):float3");
     }
 
     private static void Case0782(ContractCaseRunner runner)
     {
-        runner.Run("maths.transformDirection(float4x4,float3):float3");
+        runner.Run("maths.clamp(float3,float3,float3):float3");
     }
 
     private static void Case0783(ContractCaseRunner runner)
     {
-        runner.Run("maths.transformPoint(float4x4,float3):float3");
+        runner.Run("maths.cos(float3):float3");
     }
 
     private static void Case0784(ContractCaseRunner runner)
     {
-        runner.Run("maths.transpose(float4x4):float4x4");
+        runner.Run("maths.cosh(float3):float3");
     }
 
     private static void Case0785(ContractCaseRunner runner)
     {
-        runner.Run("maths.abs(int2):int2");
+        runner.Run("maths.cross(float3,float3):float3");
     }
 
     private static void Case0786(ContractCaseRunner runner)
     {
-        runner.Run("maths.clamp(int2,int,int):int2");
+        runner.Run("maths.degrees(float3):float3");
     }
 
     private static void Case0787(ContractCaseRunner runner)
     {
-        runner.Run("maths.clamp(int2,int2,int2):int2");
+        runner.Run("maths.distance(float3,float3):float");
     }
 
     private static void Case0788(ContractCaseRunner runner)
     {
-        runner.Run("maths.equal(int2,int2):bool2");
+        runner.Run("maths.dot(float3,float3):float");
     }
 
     private static void Case0789(ContractCaseRunner runner)
     {
-        runner.Run("maths.max(int2,int):int2");
+        runner.Run("maths.equal(float3,float3):bool3");
     }
 
     private static void Case0790(ContractCaseRunner runner)
     {
-        runner.Run("maths.max(int2,int2):int2");
+        runner.Run("maths.exp(float3):float3");
     }
 
     private static void Case0791(ContractCaseRunner runner)
     {
-        runner.Run("maths.min(int2,int):int2");
+        runner.Run("maths.exp2(float3):float3");
     }
 
     private static void Case0792(ContractCaseRunner runner)
     {
-        runner.Run("maths.min(int2,int2):int2");
+        runner.Run("maths.faceForward(float3,float3,float3):float3");
     }
 
     private static void Case0793(ContractCaseRunner runner)
     {
-        runner.Run("maths.notEqual(int2,int2):bool2");
+        runner.Run("maths.floor(float3):float3");
     }
 
     private static void Case0794(ContractCaseRunner runner)
     {
-        runner.Run("maths.select(int2,int2,bool2):int2");
+        runner.Run("maths.fma(float3,float3,float3):float3");
     }
 
     private static void Case0795(ContractCaseRunner runner)
     {
-        runner.Run("maths.sign(int2):int2");
+        runner.Run("maths.fract(float3):float3");
     }
 
     private static void Case0796(ContractCaseRunner runner)
     {
-        runner.Run("maths.abs(int3):int3");
+        runner.Run("maths.inverseSqrt(float3):float3");
     }
 
     private static void Case0797(ContractCaseRunner runner)
     {
-        runner.Run("maths.clamp(int3,int,int):int3");
+        runner.Run("maths.isInfinity(float3):bool3");
     }
 
     private static void Case0798(ContractCaseRunner runner)
     {
-        runner.Run("maths.clamp(int3,int3,int3):int3");
+        runner.Run("maths.isNaN(float3):bool3");
     }
 
     private static void Case0799(ContractCaseRunner runner)
     {
-        runner.Run("maths.equal(int3,int3):bool3");
+        runner.Run("maths.length(float3):float");
     }
 
     private static void Case0800(ContractCaseRunner runner)
     {
-        runner.Run("maths.max(int3,int):int3");
+        runner.Run("maths.lerp(float3,float3,float):float3");
     }
 
     private static void Case0801(ContractCaseRunner runner)
     {
-        runner.Run("maths.max(int3,int3):int3");
+        runner.Run("maths.lerp(float3,float3,float3):float3");
     }
 
     private static void Case0802(ContractCaseRunner runner)
     {
-        runner.Run("maths.min(int3,int):int3");
+        runner.Run("maths.log(float3):float3");
     }
 
     private static void Case0803(ContractCaseRunner runner)
     {
-        runner.Run("maths.min(int3,int3):int3");
+        runner.Run("maths.log2(float3):float3");
     }
 
     private static void Case0804(ContractCaseRunner runner)
     {
-        runner.Run("maths.notEqual(int3,int3):bool3");
+        runner.Run("maths.max(float3,float):float3");
     }
 
     private static void Case0805(ContractCaseRunner runner)
     {
-        runner.Run("maths.select(int3,int3,bool3):int3");
+        runner.Run("maths.max(float3,float3):float3");
     }
 
     private static void Case0806(ContractCaseRunner runner)
     {
-        runner.Run("maths.sign(int3):int3");
+        runner.Run("maths.min(float3,float):float3");
     }
 
     private static void Case0807(ContractCaseRunner runner)
     {
-        runner.Run("maths.abs(int4):int4");
+        runner.Run("maths.min(float3,float3):float3");
     }
 
     private static void Case0808(ContractCaseRunner runner)
     {
-        runner.Run("maths.clamp(int4,int,int):int4");
+        runner.Run("maths.mod(float3,float):float3");
     }
 
     private static void Case0809(ContractCaseRunner runner)
     {
-        runner.Run("maths.clamp(int4,int4,int4):int4");
+        runner.Run("maths.mod(float3,float3):float3");
     }
 
     private static void Case0810(ContractCaseRunner runner)
     {
-        runner.Run("maths.equal(int4,int4):bool4");
+        runner.Run("maths.normalize(float3):float3");
     }
 
     private static void Case0811(ContractCaseRunner runner)
     {
-        runner.Run("maths.max(int4,int):int4");
+        runner.Run("maths.notEqual(float3,float3):bool3");
     }
 
     private static void Case0812(ContractCaseRunner runner)
     {
-        runner.Run("maths.max(int4,int4):int4");
+        runner.Run("maths.pow(float3,float3):float3");
     }
 
     private static void Case0813(ContractCaseRunner runner)
     {
-        runner.Run("maths.min(int4,int):int4");
+        runner.Run("maths.radians(float3):float3");
     }
 
     private static void Case0814(ContractCaseRunner runner)
     {
-        runner.Run("maths.min(int4,int4):int4");
+        runner.Run("maths.reflect(float3,float3):float3");
     }
 
     private static void Case0815(ContractCaseRunner runner)
     {
-        runner.Run("maths.notEqual(int4,int4):bool4");
+        runner.Run("maths.refract(float3,float3,float):float3");
     }
 
     private static void Case0816(ContractCaseRunner runner)
     {
-        runner.Run("maths.select(int4,int4,bool4):int4");
+        runner.Run("maths.round(float3):float3");
     }
 
     private static void Case0817(ContractCaseRunner runner)
     {
-        runner.Run("maths.sign(int4):int4");
+        runner.Run("maths.roundEven(float3):float3");
     }
 
     private static void Case0818(ContractCaseRunner runner)
     {
-        runner.Run("maths.conjugate(quaternion):quaternion");
+        runner.Run("maths.select(float3,float3,bool3):float3");
     }
 
     private static void Case0819(ContractCaseRunner runner)
     {
-        runner.Run("maths.createFromAxisAngle(float3,float):quaternion");
+        runner.Run("maths.sign(float3):float3");
     }
 
     private static void Case0820(ContractCaseRunner runner)
     {
-        runner.Run("maths.createFromRotationMatrix(float4x4):quaternion");
+        runner.Run("maths.sin(float3):float3");
     }
 
     private static void Case0821(ContractCaseRunner runner)
     {
-        runner.Run("maths.createFromYawPitchRoll(float,float,float):quaternion");
+        runner.Run("maths.sinh(float3):float3");
     }
 
     private static void Case0822(ContractCaseRunner runner)
     {
-        runner.Run("maths.inverse(quaternion):quaternion");
+        runner.Run("maths.smoothstep(float,float,float3):float3");
     }
 
     private static void Case0823(ContractCaseRunner runner)
     {
-        runner.Run("maths.lerp(quaternion,quaternion,float):quaternion");
+        runner.Run("maths.smoothstep(float3,float3,float3):float3");
     }
 
     private static void Case0824(ContractCaseRunner runner)
     {
-        runner.Run("maths.normalize(quaternion):quaternion");
+        runner.Run("maths.sqrt(float3):float3");
     }
 
     private static void Case0825(ContractCaseRunner runner)
     {
-        runner.Run("maths.rotate(quaternion,float3):float3");
+        runner.Run("maths.step(float,float3):float3");
     }
 
     private static void Case0826(ContractCaseRunner runner)
     {
-        runner.Run("maths.slerp(quaternion,quaternion,float):quaternion");
+        runner.Run("maths.step(float3,float3):float3");
     }
 
     private static void Case0827(ContractCaseRunner runner)
     {
-        runner.Run("maths.toRotationMatrix(quaternion):float4x4");
+        runner.Run("maths.tan(float3):float3");
     }
 
     private static void Case0828(ContractCaseRunner runner)
     {
-        runner.Run("maths.clamp(uint2,uint,uint):uint2");
+        runner.Run("maths.tanh(float3):float3");
     }
 
     private static void Case0829(ContractCaseRunner runner)
     {
-        runner.Run("maths.clamp(uint2,uint2,uint2):uint2");
+        runner.Run("maths.truncate(float3):float3");
     }
 
     private static void Case0830(ContractCaseRunner runner)
     {
-        runner.Run("maths.equal(uint2,uint2):bool2");
+        runner.Run("maths.matrixCompMult(float3x2,float3x2):float3x2");
     }
 
     private static void Case0831(ContractCaseRunner runner)
     {
-        runner.Run("maths.max(uint2,uint):uint2");
+        runner.Run("maths.outerProduct(float2,float3):float3x2");
     }
 
     private static void Case0832(ContractCaseRunner runner)
     {
-        runner.Run("maths.max(uint2,uint2):uint2");
+        runner.Run("maths.transpose(float3x2):float2x3");
     }
 
     private static void Case0833(ContractCaseRunner runner)
     {
-        runner.Run("maths.min(uint2,uint):uint2");
+        runner.Run("maths.determinant(float3x3):float");
     }
 
     private static void Case0834(ContractCaseRunner runner)
     {
-        runner.Run("maths.min(uint2,uint2):uint2");
+        runner.Run("maths.inverse(float3x3):float3x3");
     }
 
     private static void Case0835(ContractCaseRunner runner)
     {
-        runner.Run("maths.notEqual(uint2,uint2):bool2");
+        runner.Run("maths.matrixCompMult(float3x3,float3x3):float3x3");
     }
 
     private static void Case0836(ContractCaseRunner runner)
     {
-        runner.Run("maths.select(uint2,uint2,bool2):uint2");
+        runner.Run("maths.outerProduct(float3,float3):float3x3");
     }
 
     private static void Case0837(ContractCaseRunner runner)
     {
-        runner.Run("maths.clamp(uint3,uint,uint):uint3");
+        runner.Run("maths.transpose(float3x3):float3x3");
     }
 
     private static void Case0838(ContractCaseRunner runner)
     {
-        runner.Run("maths.clamp(uint3,uint3,uint3):uint3");
+        runner.Run("maths.matrixCompMult(float3x4,float3x4):float3x4");
     }
 
     private static void Case0839(ContractCaseRunner runner)
     {
-        runner.Run("maths.equal(uint3,uint3):bool3");
+        runner.Run("maths.outerProduct(float4,float3):float3x4");
     }
 
     private static void Case0840(ContractCaseRunner runner)
     {
-        runner.Run("maths.max(uint3,uint):uint3");
+        runner.Run("maths.transpose(float3x4):float4x3");
     }
 
     private static void Case0841(ContractCaseRunner runner)
     {
-        runner.Run("maths.max(uint3,uint3):uint3");
+        runner.Run("maths.abs(float4):float4");
     }
 
     private static void Case0842(ContractCaseRunner runner)
     {
-        runner.Run("maths.min(uint3,uint):uint3");
+        runner.Run("maths.acos(float4):float4");
     }
 
     private static void Case0843(ContractCaseRunner runner)
     {
-        runner.Run("maths.min(uint3,uint3):uint3");
+        runner.Run("maths.acosh(float4):float4");
     }
 
     private static void Case0844(ContractCaseRunner runner)
     {
-        runner.Run("maths.notEqual(uint3,uint3):bool3");
+        runner.Run("maths.asin(float4):float4");
     }
 
     private static void Case0845(ContractCaseRunner runner)
     {
-        runner.Run("maths.select(uint3,uint3,bool3):uint3");
+        runner.Run("maths.asinh(float4):float4");
     }
 
     private static void Case0846(ContractCaseRunner runner)
     {
-        runner.Run("maths.clamp(uint4,uint,uint):uint4");
+        runner.Run("maths.atan(float4):float4");
     }
 
     private static void Case0847(ContractCaseRunner runner)
     {
-        runner.Run("maths.clamp(uint4,uint4,uint4):uint4");
+        runner.Run("maths.atan2(float4,float):float4");
     }
 
     private static void Case0848(ContractCaseRunner runner)
     {
-        runner.Run("maths.equal(uint4,uint4):bool4");
+        runner.Run("maths.atan2(float4,float4):float4");
     }
 
     private static void Case0849(ContractCaseRunner runner)
     {
-        runner.Run("maths.max(uint4,uint):uint4");
+        runner.Run("maths.atanh(float4):float4");
     }
 
     private static void Case0850(ContractCaseRunner runner)
     {
-        runner.Run("maths.max(uint4,uint4):uint4");
+        runner.Run("maths.ceil(float4):float4");
     }
 
     private static void Case0851(ContractCaseRunner runner)
     {
-        runner.Run("maths.min(uint4,uint):uint4");
+        runner.Run("maths.clamp(float4,float,float):float4");
     }
 
     private static void Case0852(ContractCaseRunner runner)
     {
-        runner.Run("maths.min(uint4,uint4):uint4");
+        runner.Run("maths.clamp(float4,float4,float4):float4");
     }
 
     private static void Case0853(ContractCaseRunner runner)
     {
-        runner.Run("maths.notEqual(uint4,uint4):bool4");
+        runner.Run("maths.cos(float4):float4");
     }
 
     private static void Case0854(ContractCaseRunner runner)
     {
-        runner.Run("maths.select(uint4,uint4,bool4):uint4");
+        runner.Run("maths.cosh(float4):float4");
     }
 
     private static void Case0855(ContractCaseRunner runner)
     {
-        runner.Run("maths.step(float,float):float");
+        runner.Run("maths.degrees(float4):float4");
     }
 
     private static void Case0856(ContractCaseRunner runner)
     {
-        runner.Run("maths.fract(float):float");
+        runner.Run("maths.distance(float4,float4):float");
     }
 
     private static void Case0857(ContractCaseRunner runner)
     {
-        runner.Run("maths.isNaN(float):bool");
+        runner.Run("maths.dot(float4,float4):float");
     }
 
     private static void Case0858(ContractCaseRunner runner)
     {
-        runner.Run("maths.isInfinity(float):bool");
+        runner.Run("maths.equal(float4,float4):bool4");
     }
 
     private static void Case0859(ContractCaseRunner runner)
     {
-        runner.Run("maths.lerp(float,float,float):float");
+        runner.Run("maths.exp(float4):float4");
     }
 
     private static void Case0860(ContractCaseRunner runner)
     {
-        runner.Run("maths.mod(float,float):float");
+        runner.Run("maths.exp2(float4):float4");
     }
 
     private static void Case0861(ContractCaseRunner runner)
     {
-        runner.Run("maths.smoothstep(float,float,float):float");
+        runner.Run("maths.faceForward(float4,float4,float4):float4");
     }
 
     private static void Case0862(ContractCaseRunner runner)
     {
-        runner.Run("maths.radians(float):float");
+        runner.Run("maths.floor(float4):float4");
     }
 
     private static void Case0863(ContractCaseRunner runner)
     {
-        runner.Run("maths.degrees(float):float");
+        runner.Run("maths.fma(float4,float4,float4):float4");
     }
 
     private static void Case0864(ContractCaseRunner runner)
     {
-        runner.Run("maths.fma(float,float,float):float");
+        runner.Run("maths.fract(float4):float4");
     }
 
     private static void Case0865(ContractCaseRunner runner)
     {
-        runner.Run("maths.roundEven(float):float");
+        runner.Run("maths.inverseSqrt(float4):float4");
     }
 
     private static void Case0866(ContractCaseRunner runner)
     {
-        runner.Run("maths.inverseSqrt(float):float");
+        runner.Run("maths.isInfinity(float4):bool4");
     }
 
     private static void Case0867(ContractCaseRunner runner)
     {
-        runner.Run("maths.log2(float):float");
+        runner.Run("maths.isNaN(float4):bool4");
     }
 
     private static void Case0868(ContractCaseRunner runner)
     {
-        runner.Run("maths.exp2(float):float");
+        runner.Run("maths.length(float4):float");
     }
 
     private static void Case0869(ContractCaseRunner runner)
     {
-        runner.Run("maths.acos(float):float");
+        runner.Run("maths.lerp(float4,float4,float):float4");
     }
 
     private static void Case0870(ContractCaseRunner runner)
     {
-        runner.Run("maths.acosh(float):float");
+        runner.Run("maths.lerp(float4,float4,float4):float4");
     }
 
     private static void Case0871(ContractCaseRunner runner)
     {
-        runner.Run("maths.asin(float):float");
+        runner.Run("maths.log(float4):float4");
     }
 
     private static void Case0872(ContractCaseRunner runner)
     {
-        runner.Run("maths.asinh(float):float");
+        runner.Run("maths.log2(float4):float4");
     }
 
     private static void Case0873(ContractCaseRunner runner)
     {
-        runner.Run("maths.atan(float):float");
+        runner.Run("maths.max(float4,float):float4");
     }
 
     private static void Case0874(ContractCaseRunner runner)
     {
-        runner.Run("maths.atan2(float,float):float");
+        runner.Run("maths.max(float4,float4):float4");
     }
 
     private static void Case0875(ContractCaseRunner runner)
     {
-        runner.Run("maths.atanh(float):float");
+        runner.Run("maths.min(float4,float):float4");
     }
 
     private static void Case0876(ContractCaseRunner runner)
     {
-        runner.Run("maths.ceil(float):float");
+        runner.Run("maths.min(float4,float4):float4");
     }
 
     private static void Case0877(ContractCaseRunner runner)
     {
-        runner.Run("maths.clamp(float,float,float):float");
+        runner.Run("maths.mod(float4,float):float4");
     }
 
     private static void Case0878(ContractCaseRunner runner)
     {
-        runner.Run("maths.cos(float):float");
+        runner.Run("maths.mod(float4,float4):float4");
     }
 
     private static void Case0879(ContractCaseRunner runner)
     {
-        runner.Run("maths.cosh(float):float");
+        runner.Run("maths.normalize(float4):float4");
     }
 
     private static void Case0880(ContractCaseRunner runner)
     {
-        runner.Run("maths.exp(float):float");
+        runner.Run("maths.notEqual(float4,float4):bool4");
     }
 
     private static void Case0881(ContractCaseRunner runner)
     {
-        runner.Run("maths.floor(float):float");
+        runner.Run("maths.packSnorm4x8(float4):uint");
     }
 
     private static void Case0882(ContractCaseRunner runner)
     {
-        runner.Run("maths.log(float):float");
+        runner.Run("maths.packUnorm4x8(float4):uint");
     }
 
     private static void Case0883(ContractCaseRunner runner)
     {
-        runner.Run("maths.max(float,float):float");
+        runner.Run("maths.pow(float4,float4):float4");
     }
 
     private static void Case0884(ContractCaseRunner runner)
     {
-        runner.Run("maths.min(float,float):float");
+        runner.Run("maths.radians(float4):float4");
     }
 
     private static void Case0885(ContractCaseRunner runner)
     {
-        runner.Run("maths.pow(float,float):float");
+        runner.Run("maths.reflect(float4,float4):float4");
     }
 
     private static void Case0886(ContractCaseRunner runner)
     {
-        runner.Run("maths.round(float):float");
+        runner.Run("maths.refract(float4,float4,float):float4");
     }
 
     private static void Case0887(ContractCaseRunner runner)
     {
-        runner.Run("maths.sin(float):float");
+        runner.Run("maths.round(float4):float4");
     }
 
     private static void Case0888(ContractCaseRunner runner)
     {
-        runner.Run("maths.sinh(float):float");
+        runner.Run("maths.roundEven(float4):float4");
     }
 
     private static void Case0889(ContractCaseRunner runner)
     {
-        runner.Run("maths.sqrt(float):float");
+        runner.Run("maths.select(float4,float4,bool4):float4");
     }
 
     private static void Case0890(ContractCaseRunner runner)
     {
-        runner.Run("maths.tan(float):float");
+        runner.Run("maths.sign(float4):float4");
     }
 
     private static void Case0891(ContractCaseRunner runner)
     {
-        runner.Run("maths.tanh(float):float");
+        runner.Run("maths.sin(float4):float4");
     }
 
     private static void Case0892(ContractCaseRunner runner)
     {
+        runner.Run("maths.sinh(float4):float4");
+    }
+
+    private static void Case0893(ContractCaseRunner runner)
+    {
+        runner.Run("maths.smoothstep(float,float,float4):float4");
+    }
+
+    private static void Case0894(ContractCaseRunner runner)
+    {
+        runner.Run("maths.smoothstep(float4,float4,float4):float4");
+    }
+
+    private static void Case0895(ContractCaseRunner runner)
+    {
+        runner.Run("maths.sqrt(float4):float4");
+    }
+
+    private static void Case0896(ContractCaseRunner runner)
+    {
+        runner.Run("maths.step(float,float4):float4");
+    }
+
+    private static void Case0897(ContractCaseRunner runner)
+    {
+        runner.Run("maths.step(float4,float4):float4");
+    }
+
+    private static void Case0898(ContractCaseRunner runner)
+    {
+        runner.Run("maths.tan(float4):float4");
+    }
+
+    private static void Case0899(ContractCaseRunner runner)
+    {
+        runner.Run("maths.tanh(float4):float4");
+    }
+
+    private static void Case0900(ContractCaseRunner runner)
+    {
+        runner.Run("maths.truncate(float4):float4");
+    }
+
+    private static void Case0901(ContractCaseRunner runner)
+    {
+        runner.Run("maths.unpackSnorm4x8(uint):float4");
+    }
+
+    private static void Case0902(ContractCaseRunner runner)
+    {
+        runner.Run("maths.unpackUnorm4x8(uint):float4");
+    }
+
+    private static void Case0903(ContractCaseRunner runner)
+    {
+        runner.Run("maths.matrixCompMult(float4x2,float4x2):float4x2");
+    }
+
+    private static void Case0904(ContractCaseRunner runner)
+    {
+        runner.Run("maths.outerProduct(float2,float4):float4x2");
+    }
+
+    private static void Case0905(ContractCaseRunner runner)
+    {
+        runner.Run("maths.transpose(float4x2):float2x4");
+    }
+
+    private static void Case0906(ContractCaseRunner runner)
+    {
+        runner.Run("maths.matrixCompMult(float4x3,float4x3):float4x3");
+    }
+
+    private static void Case0907(ContractCaseRunner runner)
+    {
+        runner.Run("maths.outerProduct(float3,float4):float4x3");
+    }
+
+    private static void Case0908(ContractCaseRunner runner)
+    {
+        runner.Run("maths.transpose(float4x3):float3x4");
+    }
+
+    private static void Case0909(ContractCaseRunner runner)
+    {
+        runner.Run("maths.createFromQuaternion(quaternion):float4x4");
+    }
+
+    private static void Case0910(ContractCaseRunner runner)
+    {
+        runner.Run("maths.createLookTo(float3,float3,float3):float4x4");
+    }
+
+    private static void Case0911(ContractCaseRunner runner)
+    {
+        runner.Run("maths.createPerspectiveFieldOfViewLeftHanded(float,float,float,float):float4x4");
+    }
+
+    private static void Case0912(ContractCaseRunner runner)
+    {
+        runner.Run("maths.createScale(float):float4x4");
+    }
+
+    private static void Case0913(ContractCaseRunner runner)
+    {
+        runner.Run("maths.createScale(float3):float4x4");
+    }
+
+    private static void Case0914(ContractCaseRunner runner)
+    {
+        runner.Run("maths.createTRS(float3,quaternion,float3):float4x4");
+    }
+
+    private static void Case0915(ContractCaseRunner runner)
+    {
+        runner.Run("maths.createTranslation(float3):float4x4");
+    }
+
+    private static void Case0916(ContractCaseRunner runner)
+    {
+        runner.Run("maths.determinant(float4x4):float");
+    }
+
+    private static void Case0917(ContractCaseRunner runner)
+    {
+        runner.Run("maths.inverse(float4x4):float4x4");
+    }
+
+    private static void Case0918(ContractCaseRunner runner)
+    {
+        runner.Run("maths.matrixCompMult(float4x4,float4x4):float4x4");
+    }
+
+    private static void Case0919(ContractCaseRunner runner)
+    {
+        runner.Run("maths.outerProduct(float4,float4):float4x4");
+    }
+
+    private static void Case0920(ContractCaseRunner runner)
+    {
+        runner.Run("maths.transformDirection(float4x4,float3):float3");
+    }
+
+    private static void Case0921(ContractCaseRunner runner)
+    {
+        runner.Run("maths.transformPoint(float4x4,float3):float3");
+    }
+
+    private static void Case0922(ContractCaseRunner runner)
+    {
+        runner.Run("maths.transpose(float4x4):float4x4");
+    }
+
+    private static void Case0923(ContractCaseRunner runner)
+    {
+        runner.Run("maths.abs(int2):int2");
+    }
+
+    private static void Case0924(ContractCaseRunner runner)
+    {
+        runner.Run("maths.bitCount(int2):int2");
+    }
+
+    private static void Case0925(ContractCaseRunner runner)
+    {
+        runner.Run("maths.bitfieldExtract(int2,int,int):int2");
+    }
+
+    private static void Case0926(ContractCaseRunner runner)
+    {
+        runner.Run("maths.bitfieldInsert(int2,int2,int,int):int2");
+    }
+
+    private static void Case0927(ContractCaseRunner runner)
+    {
+        runner.Run("maths.bitfieldReverse(int2):int2");
+    }
+
+    private static void Case0928(ContractCaseRunner runner)
+    {
+        runner.Run("maths.clamp(int2,int,int):int2");
+    }
+
+    private static void Case0929(ContractCaseRunner runner)
+    {
+        runner.Run("maths.clamp(int2,int2,int2):int2");
+    }
+
+    private static void Case0930(ContractCaseRunner runner)
+    {
+        runner.Run("maths.equal(int2,int2):bool2");
+    }
+
+    private static void Case0931(ContractCaseRunner runner)
+    {
+        runner.Run("maths.findLSB(int2):int2");
+    }
+
+    private static void Case0932(ContractCaseRunner runner)
+    {
+        runner.Run("maths.findMSB(int2):int2");
+    }
+
+    private static void Case0933(ContractCaseRunner runner)
+    {
+        runner.Run("maths.imulExtended(int2,int2,int2,int2):void");
+    }
+
+    private static void Case0934(ContractCaseRunner runner)
+    {
+        runner.Run("maths.max(int2,int):int2");
+    }
+
+    private static void Case0935(ContractCaseRunner runner)
+    {
+        runner.Run("maths.max(int2,int2):int2");
+    }
+
+    private static void Case0936(ContractCaseRunner runner)
+    {
+        runner.Run("maths.min(int2,int):int2");
+    }
+
+    private static void Case0937(ContractCaseRunner runner)
+    {
+        runner.Run("maths.min(int2,int2):int2");
+    }
+
+    private static void Case0938(ContractCaseRunner runner)
+    {
+        runner.Run("maths.notEqual(int2,int2):bool2");
+    }
+
+    private static void Case0939(ContractCaseRunner runner)
+    {
+        runner.Run("maths.select(int2,int2,bool2):int2");
+    }
+
+    private static void Case0940(ContractCaseRunner runner)
+    {
+        runner.Run("maths.sign(int2):int2");
+    }
+
+    private static void Case0941(ContractCaseRunner runner)
+    {
+        runner.Run("maths.abs(int3):int3");
+    }
+
+    private static void Case0942(ContractCaseRunner runner)
+    {
+        runner.Run("maths.bitCount(int3):int3");
+    }
+
+    private static void Case0943(ContractCaseRunner runner)
+    {
+        runner.Run("maths.bitfieldExtract(int3,int,int):int3");
+    }
+
+    private static void Case0944(ContractCaseRunner runner)
+    {
+        runner.Run("maths.bitfieldInsert(int3,int3,int,int):int3");
+    }
+
+    private static void Case0945(ContractCaseRunner runner)
+    {
+        runner.Run("maths.bitfieldReverse(int3):int3");
+    }
+
+    private static void Case0946(ContractCaseRunner runner)
+    {
+        runner.Run("maths.clamp(int3,int,int):int3");
+    }
+
+    private static void Case0947(ContractCaseRunner runner)
+    {
+        runner.Run("maths.clamp(int3,int3,int3):int3");
+    }
+
+    private static void Case0948(ContractCaseRunner runner)
+    {
+        runner.Run("maths.equal(int3,int3):bool3");
+    }
+
+    private static void Case0949(ContractCaseRunner runner)
+    {
+        runner.Run("maths.findLSB(int3):int3");
+    }
+
+    private static void Case0950(ContractCaseRunner runner)
+    {
+        runner.Run("maths.findMSB(int3):int3");
+    }
+
+    private static void Case0951(ContractCaseRunner runner)
+    {
+        runner.Run("maths.imulExtended(int3,int3,int3,int3):void");
+    }
+
+    private static void Case0952(ContractCaseRunner runner)
+    {
+        runner.Run("maths.max(int3,int):int3");
+    }
+
+    private static void Case0953(ContractCaseRunner runner)
+    {
+        runner.Run("maths.max(int3,int3):int3");
+    }
+
+    private static void Case0954(ContractCaseRunner runner)
+    {
+        runner.Run("maths.min(int3,int):int3");
+    }
+
+    private static void Case0955(ContractCaseRunner runner)
+    {
+        runner.Run("maths.min(int3,int3):int3");
+    }
+
+    private static void Case0956(ContractCaseRunner runner)
+    {
+        runner.Run("maths.notEqual(int3,int3):bool3");
+    }
+
+    private static void Case0957(ContractCaseRunner runner)
+    {
+        runner.Run("maths.select(int3,int3,bool3):int3");
+    }
+
+    private static void Case0958(ContractCaseRunner runner)
+    {
+        runner.Run("maths.sign(int3):int3");
+    }
+
+    private static void Case0959(ContractCaseRunner runner)
+    {
+        runner.Run("maths.abs(int4):int4");
+    }
+
+    private static void Case0960(ContractCaseRunner runner)
+    {
+        runner.Run("maths.bitCount(int4):int4");
+    }
+
+    private static void Case0961(ContractCaseRunner runner)
+    {
+        runner.Run("maths.bitfieldExtract(int4,int,int):int4");
+    }
+
+    private static void Case0962(ContractCaseRunner runner)
+    {
+        runner.Run("maths.bitfieldInsert(int4,int4,int,int):int4");
+    }
+
+    private static void Case0963(ContractCaseRunner runner)
+    {
+        runner.Run("maths.bitfieldReverse(int4):int4");
+    }
+
+    private static void Case0964(ContractCaseRunner runner)
+    {
+        runner.Run("maths.clamp(int4,int,int):int4");
+    }
+
+    private static void Case0965(ContractCaseRunner runner)
+    {
+        runner.Run("maths.clamp(int4,int4,int4):int4");
+    }
+
+    private static void Case0966(ContractCaseRunner runner)
+    {
+        runner.Run("maths.equal(int4,int4):bool4");
+    }
+
+    private static void Case0967(ContractCaseRunner runner)
+    {
+        runner.Run("maths.findLSB(int4):int4");
+    }
+
+    private static void Case0968(ContractCaseRunner runner)
+    {
+        runner.Run("maths.findMSB(int4):int4");
+    }
+
+    private static void Case0969(ContractCaseRunner runner)
+    {
+        runner.Run("maths.imulExtended(int4,int4,int4,int4):void");
+    }
+
+    private static void Case0970(ContractCaseRunner runner)
+    {
+        runner.Run("maths.max(int4,int):int4");
+    }
+
+    private static void Case0971(ContractCaseRunner runner)
+    {
+        runner.Run("maths.max(int4,int4):int4");
+    }
+
+    private static void Case0972(ContractCaseRunner runner)
+    {
+        runner.Run("maths.min(int4,int):int4");
+    }
+
+    private static void Case0973(ContractCaseRunner runner)
+    {
+        runner.Run("maths.min(int4,int4):int4");
+    }
+
+    private static void Case0974(ContractCaseRunner runner)
+    {
+        runner.Run("maths.notEqual(int4,int4):bool4");
+    }
+
+    private static void Case0975(ContractCaseRunner runner)
+    {
+        runner.Run("maths.select(int4,int4,bool4):int4");
+    }
+
+    private static void Case0976(ContractCaseRunner runner)
+    {
+        runner.Run("maths.sign(int4):int4");
+    }
+
+    private static void Case0977(ContractCaseRunner runner)
+    {
+        runner.Run("maths.conjugate(quaternion):quaternion");
+    }
+
+    private static void Case0978(ContractCaseRunner runner)
+    {
+        runner.Run("maths.createFromAxisAngle(float3,float):quaternion");
+    }
+
+    private static void Case0979(ContractCaseRunner runner)
+    {
+        runner.Run("maths.createFromRotationMatrix(float4x4):quaternion");
+    }
+
+    private static void Case0980(ContractCaseRunner runner)
+    {
+        runner.Run("maths.createFromYawPitchRoll(float,float,float):quaternion");
+    }
+
+    private static void Case0981(ContractCaseRunner runner)
+    {
+        runner.Run("maths.inverse(quaternion):quaternion");
+    }
+
+    private static void Case0982(ContractCaseRunner runner)
+    {
+        runner.Run("maths.lerp(quaternion,quaternion,float):quaternion");
+    }
+
+    private static void Case0983(ContractCaseRunner runner)
+    {
+        runner.Run("maths.normalize(quaternion):quaternion");
+    }
+
+    private static void Case0984(ContractCaseRunner runner)
+    {
+        runner.Run("maths.rotate(quaternion,float3):float3");
+    }
+
+    private static void Case0985(ContractCaseRunner runner)
+    {
+        runner.Run("maths.slerp(quaternion,quaternion,float):quaternion");
+    }
+
+    private static void Case0986(ContractCaseRunner runner)
+    {
+        runner.Run("maths.toRotationMatrix(quaternion):float4x4");
+    }
+
+    private static void Case0987(ContractCaseRunner runner)
+    {
+        runner.Run("maths.bitCount(uint2):int2");
+    }
+
+    private static void Case0988(ContractCaseRunner runner)
+    {
+        runner.Run("maths.bitfieldExtract(uint2,int,int):uint2");
+    }
+
+    private static void Case0989(ContractCaseRunner runner)
+    {
+        runner.Run("maths.bitfieldInsert(uint2,uint2,int,int):uint2");
+    }
+
+    private static void Case0990(ContractCaseRunner runner)
+    {
+        runner.Run("maths.bitfieldReverse(uint2):uint2");
+    }
+
+    private static void Case0991(ContractCaseRunner runner)
+    {
+        runner.Run("maths.clamp(uint2,uint,uint):uint2");
+    }
+
+    private static void Case0992(ContractCaseRunner runner)
+    {
+        runner.Run("maths.clamp(uint2,uint2,uint2):uint2");
+    }
+
+    private static void Case0993(ContractCaseRunner runner)
+    {
+        runner.Run("maths.equal(uint2,uint2):bool2");
+    }
+
+    private static void Case0994(ContractCaseRunner runner)
+    {
+        runner.Run("maths.findLSB(uint2):int2");
+    }
+
+    private static void Case0995(ContractCaseRunner runner)
+    {
+        runner.Run("maths.findMSB(uint2):int2");
+    }
+
+    private static void Case0996(ContractCaseRunner runner)
+    {
+        runner.Run("maths.max(uint2,uint):uint2");
+    }
+
+    private static void Case0997(ContractCaseRunner runner)
+    {
+        runner.Run("maths.max(uint2,uint2):uint2");
+    }
+
+    private static void Case0998(ContractCaseRunner runner)
+    {
+        runner.Run("maths.min(uint2,uint):uint2");
+    }
+
+    private static void Case0999(ContractCaseRunner runner)
+    {
+        runner.Run("maths.min(uint2,uint2):uint2");
+    }
+
+    private static void Case1000(ContractCaseRunner runner)
+    {
+        runner.Run("maths.notEqual(uint2,uint2):bool2");
+    }
+
+    private static void Case1001(ContractCaseRunner runner)
+    {
+        runner.Run("maths.select(uint2,uint2,bool2):uint2");
+    }
+
+    private static void Case1002(ContractCaseRunner runner)
+    {
+        runner.Run("maths.uaddCarry(uint2,uint2,uint2):uint2");
+    }
+
+    private static void Case1003(ContractCaseRunner runner)
+    {
+        runner.Run("maths.umulExtended(uint2,uint2,uint2,uint2):void");
+    }
+
+    private static void Case1004(ContractCaseRunner runner)
+    {
+        runner.Run("maths.usubBorrow(uint2,uint2,uint2):uint2");
+    }
+
+    private static void Case1005(ContractCaseRunner runner)
+    {
+        runner.Run("maths.bitCount(uint3):int3");
+    }
+
+    private static void Case1006(ContractCaseRunner runner)
+    {
+        runner.Run("maths.bitfieldExtract(uint3,int,int):uint3");
+    }
+
+    private static void Case1007(ContractCaseRunner runner)
+    {
+        runner.Run("maths.bitfieldInsert(uint3,uint3,int,int):uint3");
+    }
+
+    private static void Case1008(ContractCaseRunner runner)
+    {
+        runner.Run("maths.bitfieldReverse(uint3):uint3");
+    }
+
+    private static void Case1009(ContractCaseRunner runner)
+    {
+        runner.Run("maths.clamp(uint3,uint,uint):uint3");
+    }
+
+    private static void Case1010(ContractCaseRunner runner)
+    {
+        runner.Run("maths.clamp(uint3,uint3,uint3):uint3");
+    }
+
+    private static void Case1011(ContractCaseRunner runner)
+    {
+        runner.Run("maths.equal(uint3,uint3):bool3");
+    }
+
+    private static void Case1012(ContractCaseRunner runner)
+    {
+        runner.Run("maths.findLSB(uint3):int3");
+    }
+
+    private static void Case1013(ContractCaseRunner runner)
+    {
+        runner.Run("maths.findMSB(uint3):int3");
+    }
+
+    private static void Case1014(ContractCaseRunner runner)
+    {
+        runner.Run("maths.max(uint3,uint):uint3");
+    }
+
+    private static void Case1015(ContractCaseRunner runner)
+    {
+        runner.Run("maths.max(uint3,uint3):uint3");
+    }
+
+    private static void Case1016(ContractCaseRunner runner)
+    {
+        runner.Run("maths.min(uint3,uint):uint3");
+    }
+
+    private static void Case1017(ContractCaseRunner runner)
+    {
+        runner.Run("maths.min(uint3,uint3):uint3");
+    }
+
+    private static void Case1018(ContractCaseRunner runner)
+    {
+        runner.Run("maths.notEqual(uint3,uint3):bool3");
+    }
+
+    private static void Case1019(ContractCaseRunner runner)
+    {
+        runner.Run("maths.select(uint3,uint3,bool3):uint3");
+    }
+
+    private static void Case1020(ContractCaseRunner runner)
+    {
+        runner.Run("maths.uaddCarry(uint3,uint3,uint3):uint3");
+    }
+
+    private static void Case1021(ContractCaseRunner runner)
+    {
+        runner.Run("maths.umulExtended(uint3,uint3,uint3,uint3):void");
+    }
+
+    private static void Case1022(ContractCaseRunner runner)
+    {
+        runner.Run("maths.usubBorrow(uint3,uint3,uint3):uint3");
+    }
+
+    private static void Case1023(ContractCaseRunner runner)
+    {
+        runner.Run("maths.bitCount(uint4):int4");
+    }
+
+    private static void Case1024(ContractCaseRunner runner)
+    {
+        runner.Run("maths.bitfieldExtract(uint4,int,int):uint4");
+    }
+
+    private static void Case1025(ContractCaseRunner runner)
+    {
+        runner.Run("maths.bitfieldInsert(uint4,uint4,int,int):uint4");
+    }
+
+    private static void Case1026(ContractCaseRunner runner)
+    {
+        runner.Run("maths.bitfieldReverse(uint4):uint4");
+    }
+
+    private static void Case1027(ContractCaseRunner runner)
+    {
+        runner.Run("maths.clamp(uint4,uint,uint):uint4");
+    }
+
+    private static void Case1028(ContractCaseRunner runner)
+    {
+        runner.Run("maths.clamp(uint4,uint4,uint4):uint4");
+    }
+
+    private static void Case1029(ContractCaseRunner runner)
+    {
+        runner.Run("maths.equal(uint4,uint4):bool4");
+    }
+
+    private static void Case1030(ContractCaseRunner runner)
+    {
+        runner.Run("maths.findLSB(uint4):int4");
+    }
+
+    private static void Case1031(ContractCaseRunner runner)
+    {
+        runner.Run("maths.findMSB(uint4):int4");
+    }
+
+    private static void Case1032(ContractCaseRunner runner)
+    {
+        runner.Run("maths.max(uint4,uint):uint4");
+    }
+
+    private static void Case1033(ContractCaseRunner runner)
+    {
+        runner.Run("maths.max(uint4,uint4):uint4");
+    }
+
+    private static void Case1034(ContractCaseRunner runner)
+    {
+        runner.Run("maths.min(uint4,uint):uint4");
+    }
+
+    private static void Case1035(ContractCaseRunner runner)
+    {
+        runner.Run("maths.min(uint4,uint4):uint4");
+    }
+
+    private static void Case1036(ContractCaseRunner runner)
+    {
+        runner.Run("maths.notEqual(uint4,uint4):bool4");
+    }
+
+    private static void Case1037(ContractCaseRunner runner)
+    {
+        runner.Run("maths.select(uint4,uint4,bool4):uint4");
+    }
+
+    private static void Case1038(ContractCaseRunner runner)
+    {
+        runner.Run("maths.uaddCarry(uint4,uint4,uint4):uint4");
+    }
+
+    private static void Case1039(ContractCaseRunner runner)
+    {
+        runner.Run("maths.umulExtended(uint4,uint4,uint4,uint4):void");
+    }
+
+    private static void Case1040(ContractCaseRunner runner)
+    {
+        runner.Run("maths.usubBorrow(uint4,uint4,uint4):uint4");
+    }
+
+    private static void Case1041(ContractCaseRunner runner)
+    {
+        runner.Run("maths.step(float,float):float");
+    }
+
+    private static void Case1042(ContractCaseRunner runner)
+    {
+        runner.Run("maths.fract(float):float");
+    }
+
+    private static void Case1043(ContractCaseRunner runner)
+    {
+        runner.Run("maths.isNaN(float):bool");
+    }
+
+    private static void Case1044(ContractCaseRunner runner)
+    {
+        runner.Run("maths.isInfinity(float):bool");
+    }
+
+    private static void Case1045(ContractCaseRunner runner)
+    {
+        runner.Run("maths.lerp(float,float,float):float");
+    }
+
+    private static void Case1046(ContractCaseRunner runner)
+    {
+        runner.Run("maths.mod(float,float):float");
+    }
+
+    private static void Case1047(ContractCaseRunner runner)
+    {
+        runner.Run("maths.smoothstep(float,float,float):float");
+    }
+
+    private static void Case1048(ContractCaseRunner runner)
+    {
+        runner.Run("maths.radians(float):float");
+    }
+
+    private static void Case1049(ContractCaseRunner runner)
+    {
+        runner.Run("maths.degrees(float):float");
+    }
+
+    private static void Case1050(ContractCaseRunner runner)
+    {
+        runner.Run("maths.fma(float,float,float):float");
+    }
+
+    private static void Case1051(ContractCaseRunner runner)
+    {
+        runner.Run("maths.roundEven(float):float");
+    }
+
+    private static void Case1052(ContractCaseRunner runner)
+    {
+        runner.Run("maths.inverseSqrt(float):float");
+    }
+
+    private static void Case1053(ContractCaseRunner runner)
+    {
+        runner.Run("maths.log2(float):float");
+    }
+
+    private static void Case1054(ContractCaseRunner runner)
+    {
+        runner.Run("maths.exp2(float):float");
+    }
+
+    private static void Case1055(ContractCaseRunner runner)
+    {
+        runner.Run("maths.acos(float):float");
+    }
+
+    private static void Case1056(ContractCaseRunner runner)
+    {
+        runner.Run("maths.acosh(float):float");
+    }
+
+    private static void Case1057(ContractCaseRunner runner)
+    {
+        runner.Run("maths.asin(float):float");
+    }
+
+    private static void Case1058(ContractCaseRunner runner)
+    {
+        runner.Run("maths.asinh(float):float");
+    }
+
+    private static void Case1059(ContractCaseRunner runner)
+    {
+        runner.Run("maths.atan(float):float");
+    }
+
+    private static void Case1060(ContractCaseRunner runner)
+    {
+        runner.Run("maths.atan2(float,float):float");
+    }
+
+    private static void Case1061(ContractCaseRunner runner)
+    {
+        runner.Run("maths.atanh(float):float");
+    }
+
+    private static void Case1062(ContractCaseRunner runner)
+    {
+        runner.Run("maths.ceil(float):float");
+    }
+
+    private static void Case1063(ContractCaseRunner runner)
+    {
+        runner.Run("maths.clamp(float,float,float):float");
+    }
+
+    private static void Case1064(ContractCaseRunner runner)
+    {
+        runner.Run("maths.cos(float):float");
+    }
+
+    private static void Case1065(ContractCaseRunner runner)
+    {
+        runner.Run("maths.cosh(float):float");
+    }
+
+    private static void Case1066(ContractCaseRunner runner)
+    {
+        runner.Run("maths.exp(float):float");
+    }
+
+    private static void Case1067(ContractCaseRunner runner)
+    {
+        runner.Run("maths.floor(float):float");
+    }
+
+    private static void Case1068(ContractCaseRunner runner)
+    {
+        runner.Run("maths.log(float):float");
+    }
+
+    private static void Case1069(ContractCaseRunner runner)
+    {
+        runner.Run("maths.max(float,float):float");
+    }
+
+    private static void Case1070(ContractCaseRunner runner)
+    {
+        runner.Run("maths.min(float,float):float");
+    }
+
+    private static void Case1071(ContractCaseRunner runner)
+    {
+        runner.Run("maths.pow(float,float):float");
+    }
+
+    private static void Case1072(ContractCaseRunner runner)
+    {
+        runner.Run("maths.round(float):float");
+    }
+
+    private static void Case1073(ContractCaseRunner runner)
+    {
+        runner.Run("maths.sin(float):float");
+    }
+
+    private static void Case1074(ContractCaseRunner runner)
+    {
+        runner.Run("maths.sinh(float):float");
+    }
+
+    private static void Case1075(ContractCaseRunner runner)
+    {
+        runner.Run("maths.sqrt(float):float");
+    }
+
+    private static void Case1076(ContractCaseRunner runner)
+    {
+        runner.Run("maths.tan(float):float");
+    }
+
+    private static void Case1077(ContractCaseRunner runner)
+    {
+        runner.Run("maths.tanh(float):float");
+    }
+
+    private static void Case1078(ContractCaseRunner runner)
+    {
         runner.Run("maths.truncate(float):float");
+    }
+
+    private static void Case1079(ContractCaseRunner runner)
+    {
+        runner.Run("maths.uaddCarry(uint,uint,uint):uint");
+    }
+
+    private static void Case1080(ContractCaseRunner runner)
+    {
+        runner.Run("maths.usubBorrow(uint,uint,uint):uint");
+    }
+
+    private static void Case1081(ContractCaseRunner runner)
+    {
+        runner.Run("maths.umulExtended(uint,uint,uint,uint):void");
+    }
+
+    private static void Case1082(ContractCaseRunner runner)
+    {
+        runner.Run("maths.imulExtended(int,int,int,int):void");
+    }
+
+    private static void Case1083(ContractCaseRunner runner)
+    {
+        runner.Run("maths.bitCount(int):int");
+    }
+
+    private static void Case1084(ContractCaseRunner runner)
+    {
+        runner.Run("maths.bitCount(uint):int");
+    }
+
+    private static void Case1085(ContractCaseRunner runner)
+    {
+        runner.Run("maths.findLSB(int):int");
+    }
+
+    private static void Case1086(ContractCaseRunner runner)
+    {
+        runner.Run("maths.findLSB(uint):int");
+    }
+
+    private static void Case1087(ContractCaseRunner runner)
+    {
+        runner.Run("maths.findMSB(int):int");
+    }
+
+    private static void Case1088(ContractCaseRunner runner)
+    {
+        runner.Run("maths.findMSB(uint):int");
+    }
+
+    private static void Case1089(ContractCaseRunner runner)
+    {
+        runner.Run("maths.bitfieldReverse(int):int");
+    }
+
+    private static void Case1090(ContractCaseRunner runner)
+    {
+        runner.Run("maths.bitfieldReverse(uint):uint");
+    }
+
+    private static void Case1091(ContractCaseRunner runner)
+    {
+        runner.Run("maths.bitfieldExtract(int,int,int):int");
+    }
+
+    private static void Case1092(ContractCaseRunner runner)
+    {
+        runner.Run("maths.bitfieldExtract(uint,int,int):uint");
+    }
+
+    private static void Case1093(ContractCaseRunner runner)
+    {
+        runner.Run("maths.bitfieldInsert(int,int,int,int):int");
+    }
+
+    private static void Case1094(ContractCaseRunner runner)
+    {
+        runner.Run("maths.bitfieldInsert(uint,uint,int,int):uint");
     }
 
 }

@@ -53,5 +53,65 @@ namespace Delta.Maths
         {
             return value.x + value.y + value.z + value.w;
         }
+
+        public static int4 BitCount(uint4 value)
+        {
+            return new(DeltaMaths.BitCount(value.x), DeltaMaths.BitCount(value.y), DeltaMaths.BitCount(value.z), DeltaMaths.BitCount(value.w));
+        }
+
+        public static int4 FindLSB(uint4 value)
+        {
+            return new(DeltaMaths.FindLSB(value.x), DeltaMaths.FindLSB(value.y), DeltaMaths.FindLSB(value.z), DeltaMaths.FindLSB(value.w));
+        }
+
+        public static int4 FindMSB(uint4 value)
+        {
+            return new(DeltaMaths.FindMSB(value.x), DeltaMaths.FindMSB(value.y), DeltaMaths.FindMSB(value.z), DeltaMaths.FindMSB(value.w));
+        }
+
+        public static uint4 BitfieldReverse(uint4 value)
+        {
+            return new(DeltaMaths.BitfieldReverse(value.x), DeltaMaths.BitfieldReverse(value.y), DeltaMaths.BitfieldReverse(value.z), DeltaMaths.BitfieldReverse(value.w));
+        }
+
+        public static uint4 BitfieldExtract(uint4 value, int offset, int bits)
+        {
+            return new(DeltaMaths.BitfieldExtract(value.x, offset, bits), DeltaMaths.BitfieldExtract(value.y, offset, bits), DeltaMaths.BitfieldExtract(value.z, offset, bits), DeltaMaths.BitfieldExtract(value.w, offset, bits));
+        }
+
+        public static uint4 BitfieldInsert(uint4 baseValue, uint4 insert, int offset, int bits)
+        {
+            return new(DeltaMaths.BitfieldInsert(baseValue.x, insert.x, offset, bits), DeltaMaths.BitfieldInsert(baseValue.y, insert.y, offset, bits), DeltaMaths.BitfieldInsert(baseValue.z, insert.z, offset, bits), DeltaMaths.BitfieldInsert(baseValue.w, insert.w, offset, bits));
+        }
+
+        public static uint4 UaddCarry(uint4 a, uint4 b, out uint4 carry)
+        {
+            var resultx = DeltaMaths.UaddCarry(a.x, b.x, out var carryx);
+            var resulty = DeltaMaths.UaddCarry(a.y, b.y, out var carryy);
+            var resultz = DeltaMaths.UaddCarry(a.z, b.z, out var carryz);
+            var resultw = DeltaMaths.UaddCarry(a.w, b.w, out var carryw);
+            carry = new(carryx, carryy, carryz, carryw);
+            return new(resultx, resulty, resultz, resultw);
+        }
+
+        public static uint4 UsubBorrow(uint4 a, uint4 b, out uint4 borrow)
+        {
+            var resultx = DeltaMaths.UsubBorrow(a.x, b.x, out var borrowx);
+            var resulty = DeltaMaths.UsubBorrow(a.y, b.y, out var borrowy);
+            var resultz = DeltaMaths.UsubBorrow(a.z, b.z, out var borrowz);
+            var resultw = DeltaMaths.UsubBorrow(a.w, b.w, out var borroww);
+            borrow = new(borrowx, borrowy, borrowz, borroww);
+            return new(resultx, resulty, resultz, resultw);
+        }
+
+        public static void UmulExtended(uint4 a, uint4 b, out uint4 msb, out uint4 lsb)
+        {
+            DeltaMaths.UmulExtended(a.x, b.x, out var msbx, out var lsbx);
+            DeltaMaths.UmulExtended(a.y, b.y, out var msby, out var lsby);
+            DeltaMaths.UmulExtended(a.z, b.z, out var msbz, out var lsbz);
+            DeltaMaths.UmulExtended(a.w, b.w, out var msbw, out var lsbw);
+            msb = new(msbx, msby, msbz, msbw);
+            lsb = new(lsbx, lsby, lsbz, lsbw);
+        }
     }
 }
