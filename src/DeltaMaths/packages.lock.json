@@ -23,6 +23,7 @@
         "contentHash": "kz0PEW2lhqygehI/d6XsPCQzD7ff7gUJaVGPVETX611eadGsA3A877GdSlU0LRVMCTH/+P3o2iDTak+S08V2+A=="
       }
     },
+    ".NETStandard,Version=v2.0/osx-arm64": {},
     ".NETStandard,Version=v2.1": {
       "System.Runtime.CompilerServices.Unsafe": {
         "type": "Direct",
@@ -31,6 +32,7 @@
         "contentHash": "2hBr6zdbIBTDE3EhK7NSVNdX58uTK6iHW/P/Axmm9sl1xoGSLqDvMtpecn226TNwHByFokYwJmt/aQQNlO5CRw=="
       }
     },
+    ".NETStandard,Version=v2.1/osx-arm64": {},
     "net10.0": {
       "System.Runtime.CompilerServices.Unsafe": {
         "type": "Direct",
@@ -39,6 +41,7 @@
         "contentHash": "2hBr6zdbIBTDE3EhK7NSVNdX58uTK6iHW/P/Axmm9sl1xoGSLqDvMtpecn226TNwHByFokYwJmt/aQQNlO5CRw=="
       }
     },
+    "net10.0/osx-arm64": {},
     "net8.0": {
       "System.Runtime.CompilerServices.Unsafe": {
         "type": "Direct",
@@ -46,6 +49,7 @@
         "resolved": "6.1.2",
         "contentHash": "2hBr6zdbIBTDE3EhK7NSVNdX58uTK6iHW/P/Axmm9sl1xoGSLqDvMtpecn226TNwHByFokYwJmt/aQQNlO5CRw=="
       }
-    }
+    },
+    "net8.0/osx-arm64": {}
   }
 }
