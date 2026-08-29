@@ -5,9 +5,9 @@
   "manifestSchemaVersion": "1.1.0",
   "shaderContract": "src/DeltaMaths/Vectors/shader-contract.json",
   "coverage": {
-    "manifestFunctionCount": 2427,
-    "supportedCount": 877,
-    "caseCount": 877,
+    "manifestFunctionCount": 2443,
+    "supportedCount": 893,
+    "caseCount": 893,
     "excludedCount": 0,
     "unsupportedManifestCount": 1550
   },
@@ -2757,6 +2757,100 @@
       }
     },
     {
+      "id": "float2.PackSnorm2x16(float2):uint::nominal-0",
+      "operation": {
+        "identity": "float2.PackSnorm2x16(float2):uint",
+        "ownerTypeName": "float2",
+        "methodName": "PackSnorm2x16",
+        "parameterTypeNames": [
+          "float2"
+        ],
+        "returnTypeName": "uint",
+        "mapping": "Builtin"
+      },
+      "inputs": [
+        {
+          "type": "float2",
+          "words": [
+            "3f400000",
+            "bf000000"
+          ]
+        }
+      ],
+      "expected": {
+        "type": "uint",
+        "words": [
+          "c0005fff"
+        ]
+      },
+      "comparison": {
+        "name": "Exact",
+        "absoluteTolerance": 0,
+        "relativeTolerance": 0,
+        "maxUlps": 0
+      },
+      "requiredCapabilities": [
+        "vector"
+      ],
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "disposition": {
+        "cpu": "ready",
+        "shader": "pending",
+        "render": "pending"
+      }
+    },
+    {
+      "id": "float2.PackUnorm2x16(float2):uint::nominal-0",
+      "operation": {
+        "identity": "float2.PackUnorm2x16(float2):uint",
+        "ownerTypeName": "float2",
+        "methodName": "PackUnorm2x16",
+        "parameterTypeNames": [
+          "float2"
+        ],
+        "returnTypeName": "uint",
+        "mapping": "Builtin"
+      },
+      "inputs": [
+        {
+          "type": "float2",
+          "words": [
+            "3f400000",
+            "bf000000"
+          ]
+        }
+      ],
+      "expected": {
+        "type": "uint",
+        "words": [
+          "0000bfff"
+        ]
+      },
+      "comparison": {
+        "name": "Exact",
+        "absoluteTolerance": 0,
+        "relativeTolerance": 0,
+        "maxUlps": 0
+      },
+      "requiredCapabilities": [
+        "vector"
+      ],
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "disposition": {
+        "cpu": "ready",
+        "shader": "pending",
+        "render": "pending"
+      }
+    },
+    {
       "id": "float2.Pow(float2,float2):float2::nominal-0",
       "operation": {
         "identity": "float2.Pow(float2,float2):float2",
@@ -3697,6 +3791,100 @@
         "absoluteTolerance": 1E-05,
         "relativeTolerance": 1E-05,
         "maxUlps": 2
+      },
+      "requiredCapabilities": [
+        "vector"
+      ],
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "disposition": {
+        "cpu": "ready",
+        "shader": "pending",
+        "render": "pending"
+      }
+    },
+    {
+      "id": "float2.UnpackSnorm2x16(uint):float2::nominal-0",
+      "operation": {
+        "identity": "float2.UnpackSnorm2x16(uint):float2",
+        "ownerTypeName": "float2",
+        "methodName": "UnpackSnorm2x16",
+        "parameterTypeNames": [
+          "uint"
+        ],
+        "returnTypeName": "float2",
+        "mapping": "Builtin"
+      },
+      "inputs": [
+        {
+          "type": "uint",
+          "words": [
+            "00000002"
+          ]
+        }
+      ],
+      "expected": {
+        "type": "float2",
+        "words": [
+          "38800100",
+          "00000000"
+        ]
+      },
+      "comparison": {
+        "name": "FloatBasic",
+        "absoluteTolerance": 1E-05,
+        "relativeTolerance": 1E-05,
+        "maxUlps": 4
+      },
+      "requiredCapabilities": [
+        "vector"
+      ],
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "disposition": {
+        "cpu": "ready",
+        "shader": "pending",
+        "render": "pending"
+      }
+    },
+    {
+      "id": "float2.UnpackUnorm2x16(uint):float2::nominal-0",
+      "operation": {
+        "identity": "float2.UnpackUnorm2x16(uint):float2",
+        "ownerTypeName": "float2",
+        "methodName": "UnpackUnorm2x16",
+        "parameterTypeNames": [
+          "uint"
+        ],
+        "returnTypeName": "float2",
+        "mapping": "Builtin"
+      },
+      "inputs": [
+        {
+          "type": "uint",
+          "words": [
+            "00000002"
+          ]
+        }
+      ],
+      "expected": {
+        "type": "float2",
+        "words": [
+          "38000080",
+          "00000000"
+        ]
+      },
+      "comparison": {
+        "name": "FloatBasic",
+        "absoluteTolerance": 1E-05,
+        "relativeTolerance": 1E-05,
+        "maxUlps": 4
       },
       "requiredCapabilities": [
         "vector"
@@ -17486,6 +17674,104 @@
       }
     },
     {
+      "id": "float4.PackSnorm4x8(float4):uint::nominal-0",
+      "operation": {
+        "identity": "float4.PackSnorm4x8(float4):uint",
+        "ownerTypeName": "float4",
+        "methodName": "PackSnorm4x8",
+        "parameterTypeNames": [
+          "float4"
+        ],
+        "returnTypeName": "uint",
+        "mapping": "Builtin"
+      },
+      "inputs": [
+        {
+          "type": "float4",
+          "words": [
+            "3f400000",
+            "bf000000",
+            "3fa00000",
+            "40000000"
+          ]
+        }
+      ],
+      "expected": {
+        "type": "uint",
+        "words": [
+          "7f7fc05f"
+        ]
+      },
+      "comparison": {
+        "name": "Exact",
+        "absoluteTolerance": 0,
+        "relativeTolerance": 0,
+        "maxUlps": 0
+      },
+      "requiredCapabilities": [
+        "vector"
+      ],
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "disposition": {
+        "cpu": "ready",
+        "shader": "pending",
+        "render": "pending"
+      }
+    },
+    {
+      "id": "float4.PackUnorm4x8(float4):uint::nominal-0",
+      "operation": {
+        "identity": "float4.PackUnorm4x8(float4):uint",
+        "ownerTypeName": "float4",
+        "methodName": "PackUnorm4x8",
+        "parameterTypeNames": [
+          "float4"
+        ],
+        "returnTypeName": "uint",
+        "mapping": "Builtin"
+      },
+      "inputs": [
+        {
+          "type": "float4",
+          "words": [
+            "3f400000",
+            "bf000000",
+            "3fa00000",
+            "40000000"
+          ]
+        }
+      ],
+      "expected": {
+        "type": "uint",
+        "words": [
+          "ffff00bf"
+        ]
+      },
+      "comparison": {
+        "name": "Exact",
+        "absoluteTolerance": 0,
+        "relativeTolerance": 0,
+        "maxUlps": 0
+      },
+      "requiredCapabilities": [
+        "vector"
+      ],
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "disposition": {
+        "cpu": "ready",
+        "shader": "pending",
+        "render": "pending"
+      }
+    },
+    {
       "id": "float4.Pow(float4,float4):float4::nominal-0",
       "operation": {
         "identity": "float4.Pow(float4,float4):float4",
@@ -18514,6 +18800,104 @@
         "absoluteTolerance": 1E-05,
         "relativeTolerance": 1E-05,
         "maxUlps": 2
+      },
+      "requiredCapabilities": [
+        "vector"
+      ],
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "disposition": {
+        "cpu": "ready",
+        "shader": "pending",
+        "render": "pending"
+      }
+    },
+    {
+      "id": "float4.UnpackSnorm4x8(uint):float4::nominal-0",
+      "operation": {
+        "identity": "float4.UnpackSnorm4x8(uint):float4",
+        "ownerTypeName": "float4",
+        "methodName": "UnpackSnorm4x8",
+        "parameterTypeNames": [
+          "uint"
+        ],
+        "returnTypeName": "float4",
+        "mapping": "Builtin"
+      },
+      "inputs": [
+        {
+          "type": "uint",
+          "words": [
+            "00000002"
+          ]
+        }
+      ],
+      "expected": {
+        "type": "float4",
+        "words": [
+          "3c810204",
+          "00000000",
+          "00000000",
+          "00000000"
+        ]
+      },
+      "comparison": {
+        "name": "FloatBasic",
+        "absoluteTolerance": 1E-05,
+        "relativeTolerance": 1E-05,
+        "maxUlps": 4
+      },
+      "requiredCapabilities": [
+        "vector"
+      ],
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "disposition": {
+        "cpu": "ready",
+        "shader": "pending",
+        "render": "pending"
+      }
+    },
+    {
+      "id": "float4.UnpackUnorm4x8(uint):float4::nominal-0",
+      "operation": {
+        "identity": "float4.UnpackUnorm4x8(uint):float4",
+        "ownerTypeName": "float4",
+        "methodName": "UnpackUnorm4x8",
+        "parameterTypeNames": [
+          "uint"
+        ],
+        "returnTypeName": "float4",
+        "mapping": "Builtin"
+      },
+      "inputs": [
+        {
+          "type": "uint",
+          "words": [
+            "00000002"
+          ]
+        }
+      ],
+      "expected": {
+        "type": "float4",
+        "words": [
+          "3c008081",
+          "00000000",
+          "00000000",
+          "00000000"
+        ]
+      },
+      "comparison": {
+        "name": "FloatBasic",
+        "absoluteTolerance": 1E-05,
+        "relativeTolerance": 1E-05,
+        "maxUlps": 4
       },
       "requiredCapabilities": [
         "vector"
@@ -35417,6 +35801,100 @@
       }
     },
     {
+      "id": "maths.packSnorm2x16(float2):uint::nominal-0",
+      "operation": {
+        "identity": "maths.packSnorm2x16(float2):uint",
+        "ownerTypeName": "maths",
+        "methodName": "packSnorm2x16",
+        "parameterTypeNames": [
+          "float2"
+        ],
+        "returnTypeName": "uint",
+        "mapping": "Builtin"
+      },
+      "inputs": [
+        {
+          "type": "float2",
+          "words": [
+            "3f400000",
+            "bf000000"
+          ]
+        }
+      ],
+      "expected": {
+        "type": "uint",
+        "words": [
+          "c0005fff"
+        ]
+      },
+      "comparison": {
+        "name": "Exact",
+        "absoluteTolerance": 0,
+        "relativeTolerance": 0,
+        "maxUlps": 0
+      },
+      "requiredCapabilities": [
+        "vector"
+      ],
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "disposition": {
+        "cpu": "ready",
+        "shader": "pending",
+        "render": "pending"
+      }
+    },
+    {
+      "id": "maths.packUnorm2x16(float2):uint::nominal-0",
+      "operation": {
+        "identity": "maths.packUnorm2x16(float2):uint",
+        "ownerTypeName": "maths",
+        "methodName": "packUnorm2x16",
+        "parameterTypeNames": [
+          "float2"
+        ],
+        "returnTypeName": "uint",
+        "mapping": "Builtin"
+      },
+      "inputs": [
+        {
+          "type": "float2",
+          "words": [
+            "3f400000",
+            "bf000000"
+          ]
+        }
+      ],
+      "expected": {
+        "type": "uint",
+        "words": [
+          "0000bfff"
+        ]
+      },
+      "comparison": {
+        "name": "Exact",
+        "absoluteTolerance": 0,
+        "relativeTolerance": 0,
+        "maxUlps": 0
+      },
+      "requiredCapabilities": [
+        "vector"
+      ],
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "disposition": {
+        "cpu": "ready",
+        "shader": "pending",
+        "render": "pending"
+      }
+    },
+    {
       "id": "maths.pow(float2,float2):float2::nominal-0",
       "operation": {
         "identity": "maths.pow(float2,float2):float2",
@@ -36357,6 +36835,100 @@
         "absoluteTolerance": 1E-05,
         "relativeTolerance": 1E-05,
         "maxUlps": 2
+      },
+      "requiredCapabilities": [
+        "vector"
+      ],
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "disposition": {
+        "cpu": "ready",
+        "shader": "pending",
+        "render": "pending"
+      }
+    },
+    {
+      "id": "maths.unpackSnorm2x16(uint):float2::nominal-0",
+      "operation": {
+        "identity": "maths.unpackSnorm2x16(uint):float2",
+        "ownerTypeName": "maths",
+        "methodName": "unpackSnorm2x16",
+        "parameterTypeNames": [
+          "uint"
+        ],
+        "returnTypeName": "float2",
+        "mapping": "Builtin"
+      },
+      "inputs": [
+        {
+          "type": "uint",
+          "words": [
+            "00000002"
+          ]
+        }
+      ],
+      "expected": {
+        "type": "float2",
+        "words": [
+          "38800100",
+          "00000000"
+        ]
+      },
+      "comparison": {
+        "name": "FloatBasic",
+        "absoluteTolerance": 1E-05,
+        "relativeTolerance": 1E-05,
+        "maxUlps": 4
+      },
+      "requiredCapabilities": [
+        "vector"
+      ],
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "disposition": {
+        "cpu": "ready",
+        "shader": "pending",
+        "render": "pending"
+      }
+    },
+    {
+      "id": "maths.unpackUnorm2x16(uint):float2::nominal-0",
+      "operation": {
+        "identity": "maths.unpackUnorm2x16(uint):float2",
+        "ownerTypeName": "maths",
+        "methodName": "unpackUnorm2x16",
+        "parameterTypeNames": [
+          "uint"
+        ],
+        "returnTypeName": "float2",
+        "mapping": "Builtin"
+      },
+      "inputs": [
+        {
+          "type": "uint",
+          "words": [
+            "00000002"
+          ]
+        }
+      ],
+      "expected": {
+        "type": "float2",
+        "words": [
+          "38000080",
+          "00000000"
+        ]
+      },
+      "comparison": {
+        "name": "FloatBasic",
+        "absoluteTolerance": 1E-05,
+        "relativeTolerance": 1E-05,
+        "maxUlps": 4
       },
       "requiredCapabilities": [
         "vector"
@@ -43302,6 +43874,104 @@
       }
     },
     {
+      "id": "maths.packSnorm4x8(float4):uint::nominal-0",
+      "operation": {
+        "identity": "maths.packSnorm4x8(float4):uint",
+        "ownerTypeName": "maths",
+        "methodName": "packSnorm4x8",
+        "parameterTypeNames": [
+          "float4"
+        ],
+        "returnTypeName": "uint",
+        "mapping": "Builtin"
+      },
+      "inputs": [
+        {
+          "type": "float4",
+          "words": [
+            "3f400000",
+            "bf000000",
+            "3fa00000",
+            "40000000"
+          ]
+        }
+      ],
+      "expected": {
+        "type": "uint",
+        "words": [
+          "7f7fc05f"
+        ]
+      },
+      "comparison": {
+        "name": "Exact",
+        "absoluteTolerance": 0,
+        "relativeTolerance": 0,
+        "maxUlps": 0
+      },
+      "requiredCapabilities": [
+        "vector"
+      ],
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "disposition": {
+        "cpu": "ready",
+        "shader": "pending",
+        "render": "pending"
+      }
+    },
+    {
+      "id": "maths.packUnorm4x8(float4):uint::nominal-0",
+      "operation": {
+        "identity": "maths.packUnorm4x8(float4):uint",
+        "ownerTypeName": "maths",
+        "methodName": "packUnorm4x8",
+        "parameterTypeNames": [
+          "float4"
+        ],
+        "returnTypeName": "uint",
+        "mapping": "Builtin"
+      },
+      "inputs": [
+        {
+          "type": "float4",
+          "words": [
+            "3f400000",
+            "bf000000",
+            "3fa00000",
+            "40000000"
+          ]
+        }
+      ],
+      "expected": {
+        "type": "uint",
+        "words": [
+          "ffff00bf"
+        ]
+      },
+      "comparison": {
+        "name": "Exact",
+        "absoluteTolerance": 0,
+        "relativeTolerance": 0,
+        "maxUlps": 0
+      },
+      "requiredCapabilities": [
+        "vector"
+      ],
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "disposition": {
+        "cpu": "ready",
+        "shader": "pending",
+        "render": "pending"
+      }
+    },
+    {
       "id": "maths.pow(float4,float4):float4::nominal-0",
       "operation": {
         "identity": "maths.pow(float4,float4):float4",
@@ -44330,6 +45000,104 @@
         "absoluteTolerance": 1E-05,
         "relativeTolerance": 1E-05,
         "maxUlps": 2
+      },
+      "requiredCapabilities": [
+        "vector"
+      ],
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "disposition": {
+        "cpu": "ready",
+        "shader": "pending",
+        "render": "pending"
+      }
+    },
+    {
+      "id": "maths.unpackSnorm4x8(uint):float4::nominal-0",
+      "operation": {
+        "identity": "maths.unpackSnorm4x8(uint):float4",
+        "ownerTypeName": "maths",
+        "methodName": "unpackSnorm4x8",
+        "parameterTypeNames": [
+          "uint"
+        ],
+        "returnTypeName": "float4",
+        "mapping": "Builtin"
+      },
+      "inputs": [
+        {
+          "type": "uint",
+          "words": [
+            "00000002"
+          ]
+        }
+      ],
+      "expected": {
+        "type": "float4",
+        "words": [
+          "3c810204",
+          "00000000",
+          "00000000",
+          "00000000"
+        ]
+      },
+      "comparison": {
+        "name": "FloatBasic",
+        "absoluteTolerance": 1E-05,
+        "relativeTolerance": 1E-05,
+        "maxUlps": 4
+      },
+      "requiredCapabilities": [
+        "vector"
+      ],
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "disposition": {
+        "cpu": "ready",
+        "shader": "pending",
+        "render": "pending"
+      }
+    },
+    {
+      "id": "maths.unpackUnorm4x8(uint):float4::nominal-0",
+      "operation": {
+        "identity": "maths.unpackUnorm4x8(uint):float4",
+        "ownerTypeName": "maths",
+        "methodName": "unpackUnorm4x8",
+        "parameterTypeNames": [
+          "uint"
+        ],
+        "returnTypeName": "float4",
+        "mapping": "Builtin"
+      },
+      "inputs": [
+        {
+          "type": "uint",
+          "words": [
+            "00000002"
+          ]
+        }
+      ],
+      "expected": {
+        "type": "float4",
+        "words": [
+          "3c008081",
+          "00000000",
+          "00000000",
+          "00000000"
+        ]
+      },
+      "comparison": {
+        "name": "FloatBasic",
+        "absoluteTolerance": 1E-05,
+        "relativeTolerance": 1E-05,
+        "maxUlps": 4
       },
       "requiredCapabilities": [
         "vector"

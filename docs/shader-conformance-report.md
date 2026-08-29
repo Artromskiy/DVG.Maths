@@ -1,17 +1,18 @@
 # CPU conformance case bundle
 
-The bundle is generated from `src/DeltaMaths/Vectors/shader-contract.json` at checkpoint
-`ea92fad` under protocol `math-cpu-gpu-conformance-v0.1`. Each case invokes the
-exact CLR overload selected by the complete manifest identity; the input and
-result are stored as canonical hexadecimal words.
+The bundle is generated from `src/DeltaMaths/Vectors/shader-contract.json` under
+protocol `math-cpu-gpu-conformance-v0.1`. Its compatibility checkpoint is
+`ea92fad`. Each case invokes the exact CLR overload selected by the complete
+manifest identity; the input and result are stored as canonical hexadecimal
+words.
 
 | Manifest accounting | Count |
 |---|---:|
-| Manifest functions | 2101 |
-| Supported (`Builtin` or `Helper`) | 549 |
-| CPU cases | 549 |
+| Manifest functions | 2443 |
+| Supported (`Builtin` or `Helper`) | 893 |
+| CPU cases | 893 |
 | Explicitly excluded supported cases | 0 |
-| Unsupported manifest functions | 1552 |
+| Unsupported manifest functions | 1550 |
 
 Every supported manifest identity has one deterministic nominal case. The
 bundle records the operation identity, mapping, input/expected words, named
@@ -21,4 +22,4 @@ CPU/Shader/Render disposition. `cpu=ready` means exact CLR evaluation only;
 
 The checked-in bundle is validated during the normal Conformance run. Repeated
 generation is deterministic and currently produces SHA-256
-`e930094496588265d3ba4856408afd67ef122d76fd98b22de9ff70583a320306`.
+`7022b95ab4093776182fe493c34c67a17a3bce400d6aec327a8dfca45b782fd1`.

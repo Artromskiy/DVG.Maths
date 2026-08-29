@@ -129,6 +129,42 @@ namespace Delta.Maths
             return new(DeltaMaths.Mod(x.x, y), DeltaMaths.Mod(x.y, y), DeltaMaths.Mod(x.z, y), DeltaMaths.Mod(x.w, y));
         }
 
+        public static uint PackUnorm4x8(float4 value)
+        {
+            var x = (uint)DeltaMaths.RoundEven(DeltaMaths.Clamp(value.x, 0f, 1f) * 255f);
+            var y = (uint)DeltaMaths.RoundEven(DeltaMaths.Clamp(value.y, 0f, 1f) * 255f);
+            var z = (uint)DeltaMaths.RoundEven(DeltaMaths.Clamp(value.z, 0f, 1f) * 255f);
+            var w = (uint)DeltaMaths.RoundEven(DeltaMaths.Clamp(value.w, 0f, 1f) * 255f);
+            return x | (y << 8) | (z << 16) | (w << 24);
+        }
+
+        public static float4 UnpackUnorm4x8(uint value)
+        {
+            return new((value & 0xffu) / 255f, ((value >> 8) & 0xffu) / 255f, ((value >> 16) & 0xffu) / 255f, ((value >> 24) & 0xffu) / 255f);
+        }
+
+        public static uint PackSnorm4x8(float4 value)
+        {
+            var x = unchecked((uint)(byte)(sbyte)DeltaMaths.RoundEven(DeltaMaths.Clamp(value.x, -1f, 1f) * 127f));
+            var y = unchecked((uint)(byte)(sbyte)DeltaMaths.RoundEven(DeltaMaths.Clamp(value.y, -1f, 1f) * 127f));
+            var z = unchecked((uint)(byte)(sbyte)DeltaMaths.RoundEven(DeltaMaths.Clamp(value.z, -1f, 1f) * 127f));
+            var w = unchecked((uint)(byte)(sbyte)DeltaMaths.RoundEven(DeltaMaths.Clamp(value.w, -1f, 1f) * 127f));
+            return x | (y << 8) | (z << 16) | (w << 24);
+        }
+
+        public static float4 UnpackSnorm4x8(uint value)
+        {
+            var x = unchecked((sbyte)(value & 0xffu));
+            var y = unchecked((sbyte)(value >> 8));
+            var z = unchecked((sbyte)(value >> 16));
+            var w = unchecked((sbyte)(value >> 24));
+            return new(
+                DeltaMaths.Clamp(x / 127f, -1f, 1f),
+                DeltaMaths.Clamp(y / 127f, -1f, 1f),
+                DeltaMaths.Clamp(z / 127f, -1f, 1f),
+                DeltaMaths.Clamp(w / 127f, -1f, 1f));
+        }
+
         public static float4 Floor(float4 value)
         {
             return new(DeltaMaths.Floor(value.x), DeltaMaths.Floor(value.y), DeltaMaths.Floor(value.z), DeltaMaths.Floor(value.w));

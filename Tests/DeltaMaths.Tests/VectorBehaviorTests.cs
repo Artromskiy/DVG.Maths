@@ -147,6 +147,19 @@ namespace Delta.Maths.Tests
             AssertEx.True(!maths.all(new bool3(true, false, true)));
         }
 
+        public static void Packing()
+        {
+            AssertEx.Equal(0xffff0000u, float2.PackUnorm2x16(new float2(0f, 1f)));
+            AssertEx.Near(new float2(0f, 1f), float2.UnpackUnorm2x16(0xffff0000u));
+            AssertEx.Equal(0x7fff8001u, float2.PackSnorm2x16(new float2(-1f, 1f)));
+            AssertEx.Near(new float2(-1f, 1f), float2.UnpackSnorm2x16(0x7fff8001u));
+
+            AssertEx.Equal(0xffff8000u, float4.PackUnorm4x8(new float4(0f, 0.5f, 1f, 2f)));
+            AssertEx.Near(new float4(0f, 128f / 255f, 1f, 1f), float4.UnpackUnorm4x8(0xffff8000u));
+            AssertEx.Equal(0x7f20e081u, float4.PackSnorm4x8(new float4(-1f, -0.25f, 0.25f, 1f)));
+            AssertEx.Near(new float4(-1f, -32f / 127f, 32f / 127f, 1f), float4.UnpackSnorm4x8(0x7f20e081u));
+        }
+
         public static void FixedPoint()
         {
             var raw = new fix(65536);

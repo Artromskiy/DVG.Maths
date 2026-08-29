@@ -129,6 +129,34 @@ namespace Delta.Maths
             return new(DeltaMaths.Mod(x.x, y), DeltaMaths.Mod(x.y, y));
         }
 
+        public static uint PackUnorm2x16(float2 value)
+        {
+            var x = (uint)DeltaMaths.RoundEven(DeltaMaths.Clamp(value.x, 0f, 1f) * 65535f);
+            var y = (uint)DeltaMaths.RoundEven(DeltaMaths.Clamp(value.y, 0f, 1f) * 65535f);
+            return x | (y << 16);
+        }
+
+        public static float2 UnpackUnorm2x16(uint value)
+        {
+            return new((value & 0xffffu) / 65535f, ((value >> 16) & 0xffffu) / 65535f);
+        }
+
+        public static uint PackSnorm2x16(float2 value)
+        {
+            var x = unchecked((uint)(ushort)(short)DeltaMaths.RoundEven(DeltaMaths.Clamp(value.x, -1f, 1f) * 32767f));
+            var y = unchecked((uint)(ushort)(short)DeltaMaths.RoundEven(DeltaMaths.Clamp(value.y, -1f, 1f) * 32767f));
+            return x | (y << 16);
+        }
+
+        public static float2 UnpackSnorm2x16(uint value)
+        {
+            var x = unchecked((short)(value & 0xffffu));
+            var y = unchecked((short)(value >> 16));
+            return new(
+                DeltaMaths.Clamp(x / 32767f, -1f, 1f),
+                DeltaMaths.Clamp(y / 32767f, -1f, 1f));
+        }
+
         public static float2 Floor(float2 value)
         {
             return new(DeltaMaths.Floor(value.x), DeltaMaths.Floor(value.y));

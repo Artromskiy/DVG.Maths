@@ -19,6 +19,7 @@ namespace Delta.Maths.Tests
                 ("geometry matches established vector cases", VectorBehaviorTests.Geometry),
                 ("normalization handles zero and tiny inputs", VectorBehaviorTests.Normalization),
                 ("lowercase maths forwards scalar and vector APIs", VectorBehaviorTests.ShaderStyleFacade),
+                ("GLSL normalized packing round-trips deterministically", VectorBehaviorTests.Packing),
                 ("fixed-point vectors participate in maths", VectorBehaviorTests.FixedPoint),
                 ("scalar regressions stay fixed", VectorBehaviorTests.ScalarRegressions),
                 ("matrix and quaternion layout is stable", MatrixQuaternionTests.Layout),

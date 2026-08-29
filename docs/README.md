@@ -6,8 +6,10 @@ renderer or `System.Numerics` dependency.
 
 The API includes scalar utilities and deterministic 16.16 `fix`,
 `bool/int/uint/float/double/fix` vectors, geometry/interpolation/trigonometry,
-swizzles, generated GLSL-compatible single-precision matrices and `quaternion`, plus conventional `DeltaMaths.*`
-and shader-like lowercase `maths.*` entry points.
+swizzles, generated GLSL-compatible single-precision matrices and `quaternion`,
+plus normalized GLSL pack/unpack operations for `float2` and `float4`. It also
+provides conventional `DeltaMaths.*` and shader-like lowercase `maths.*` entry
+points.
 
 `fix` stores a signed 16.16 value. Its public `raw` field is intentionally
 retained as a narrow ABI and serialization escape hatch for existing

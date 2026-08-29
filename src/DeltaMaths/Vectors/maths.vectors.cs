@@ -843,6 +843,18 @@ namespace Delta.Maths
         public static float2 mod(float2 x, float y) => float2.Mod(x, y);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static uint packUnorm2x16(float2 value) => float2.PackUnorm2x16(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float2 unpackUnorm2x16(uint value) => float2.UnpackUnorm2x16(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static uint packSnorm2x16(float2 value) => float2.PackSnorm2x16(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float2 unpackSnorm2x16(uint value) => float2.UnpackSnorm2x16(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float2 floor(float2 value) => float2.Floor(value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -1432,6 +1444,18 @@ namespace Delta.Maths
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float4 mod(float4 x, float y) => float4.Mod(x, y);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static uint packUnorm4x8(float4 value) => float4.PackUnorm4x8(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float4 unpackUnorm4x8(uint value) => float4.UnpackUnorm4x8(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static uint packSnorm4x8(float4 value) => float4.PackSnorm4x8(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float4 unpackSnorm4x8(uint value) => float4.UnpackSnorm4x8(value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float4 floor(float4 value) => float4.Floor(value);

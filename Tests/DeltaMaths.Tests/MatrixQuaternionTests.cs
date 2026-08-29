@@ -463,6 +463,22 @@ namespace Delta.Maths.Tests
                     vectorName, vectorName, "bool" + vectorName[^1]);
             }
 
+            foreach (var vectorName in new[] { "float2", "float4" })
+            {
+                foreach (var functionName in new[]
+                {
+                    "PackUnorm2x16", "UnpackUnorm2x16", "PackSnorm2x16", "UnpackSnorm2x16",
+                    "PackUnorm4x8", "UnpackUnorm4x8", "PackSnorm4x8", "UnpackSnorm4x8",
+                })
+                {
+                    if (functionName.EndsWith(vectorName[^1] + "16", StringComparison.Ordinal)
+                        || functionName.EndsWith(vectorName[^1] + "8", StringComparison.Ordinal))
+                    {
+                        AssertPackingFunction(functions, vectorName, functionName);
+                    }
+                }
+            }
+
             foreach (var valueType in new[] { "float", "int", "uint" })
             {
                 foreach (var dimension in new[] { 2, 3, 4 })
@@ -508,6 +524,21 @@ namespace Delta.Maths.Tests
             var function = FindFunction(functions, typeName, clrName, parameterNames);
             AssertEx.Equal(glslName, function.GetProperty("glslName").GetString());
             AssertEx.Equal(mapping, function.GetProperty("mapping").GetString());
+        }
+
+        private static void AssertPackingFunction(JsonElement[] functions, string vectorName, string clrName)
+        {
+            var parameterType = clrName.StartsWith("Pack", StringComparison.Ordinal) ? vectorName : "uint";
+            var returnType = parameterType == "uint" ? vectorName : "uint";
+            var glslVector = "vec" + vectorName[^1];
+            var glslParameter = parameterType == "uint" ? "uint" : glslVector;
+            var glslReturn = returnType == "uint" ? "uint" : glslVector;
+            var mathsName = char.ToLowerInvariant(clrName[0]) + clrName[1..];
+
+            AssertFunction(functions, vectorName, clrName, mathsName, "Builtin", parameterType);
+            AssertShaderSignature(functions, vectorName, clrName, new[] { glslParameter }, glslReturn, parameterType);
+            AssertFunction(functions, "maths", mathsName, mathsName, "Builtin", parameterType);
+            AssertShaderSignature(functions, "maths", mathsName, new[] { glslParameter }, glslReturn, parameterType);
         }
 
         private static void AssertShaderSignature(JsonElement[] functions, string typeName, string clrName,
