@@ -28,7 +28,7 @@ dotnet build src/DeltaMaths/DeltaMaths.csproj -c Release -f netstandard2.0 \
   --disable-build-servers -m:1 /p:UseSharedCompilation=false
 dotnet build src/DeltaMaths/DeltaMaths.csproj -c Release -f netstandard2.1 \
   --disable-build-servers -m:1 /p:UseSharedCompilation=false
-dotnet run --project tests/DeltaMaths.Tests/DeltaMaths.Tests.csproj -c Release
+dotnet run --project Tests/DeltaMaths.Tests/DeltaMaths.Tests.csproj -c Release
 git diff --check
 ```
 

@@ -37,11 +37,11 @@ jobs:
       - name: Restore and build
         run: |
           dotnet restore src/DeltaMaths/DeltaMaths.csproj
-          dotnet restore tests/DeltaMaths.Tests/DeltaMaths.Tests.csproj
+          dotnet restore Tests/DeltaMaths.Tests/DeltaMaths.Tests.csproj
           dotnet build src/DeltaMaths/DeltaMaths.csproj -c Release --no-restore
-          dotnet build tests/DeltaMaths.Tests/DeltaMaths.Tests.csproj -c Release --no-restore
+          dotnet build Tests/DeltaMaths.Tests/DeltaMaths.Tests.csproj -c Release --no-restore
       - name: Run correctness executable
-        run: dotnet run --project tests/DeltaMaths.Tests/DeltaMaths.Tests.csproj -c Release --no-build --no-restore
+        run: dotnet run --project Tests/DeltaMaths.Tests/DeltaMaths.Tests.csproj -c Release --no-build --no-restore
       - name: Benchmark discovery smoke
         shell: bash
         run: |

@@ -83,7 +83,7 @@ jobs:
           dotnet restore src/DeltaMaths/DeltaMaths.csproj \
             --disable-parallel --disable-build-servers --ignore-failed-sources \
             -m:1 -p:NuGetAudit=false
-          dotnet restore tests/DeltaMaths.Tests/DeltaMaths.Tests.csproj \
+          dotnet restore Tests/DeltaMaths.Tests/DeltaMaths.Tests.csproj \
             --disable-parallel --disable-build-servers --ignore-failed-sources \
             -m:1 -p:NuGetAudit=false
           dotnet restore benchmarks/DeltaMaths.Benchmarks/DeltaMaths.Benchmarks.csproj \
@@ -93,11 +93,11 @@ jobs:
       - name: Build library, tests, and benchmarks
         run: |
           dotnet build src/DeltaMaths/DeltaMaths.csproj -c Release --no-restore
-          dotnet build tests/DeltaMaths.Tests/DeltaMaths.Tests.csproj -c Release --no-restore
+          dotnet build Tests/DeltaMaths.Tests/DeltaMaths.Tests.csproj -c Release --no-restore
           dotnet build benchmarks/DeltaMaths.Benchmarks/DeltaMaths.Benchmarks.csproj -c Release --no-restore
 
       - name: Run correctness executable
-        run: dotnet run --project tests/DeltaMaths.Tests/DeltaMaths.Tests.csproj -c Release --no-build --no-restore
+        run: dotnet run --project Tests/DeltaMaths.Tests/DeltaMaths.Tests.csproj -c Release --no-build --no-restore
 
       - name: Record runner
         env:
