@@ -1,4 +1,5 @@
 using System.Globalization;
+using System.Reflection;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
@@ -337,6 +338,11 @@ internal static class CanonicalValueEncoder
             return new CanonicalValue("uint", new[] { Hex((uint)value) });
         }
 
+        if (ContractCaseRunner.TryGetMatrixShape(type, out var columns, out var rows))
+        {
+            return EncodeMatrix(type, value, columns, rows);
+        }
+
         return type == typeof(bool2) ? EncodeBool2((bool2)value)
             : type == typeof(bool3) ? EncodeBool3((bool3)value)
             : type == typeof(bool4) ? EncodeBool4((bool4)value)
@@ -349,7 +355,6 @@ internal static class CanonicalValueEncoder
             : type == typeof(uint2) ? EncodeUInt2((uint2)value)
             : type == typeof(uint3) ? EncodeUInt3((uint3)value)
             : type == typeof(uint4) ? EncodeUInt4((uint4)value)
-            : type == typeof(float4x4) ? EncodeMatrix((float4x4)value)
             : type == typeof(quaternion) ? EncodeQuaternion((quaternion)value)
             : throw new InvalidOperationException($"No canonical encoder for CLR type '{type.FullName}'.");
     }
@@ -390,16 +395,44 @@ internal static class CanonicalValueEncoder
     private static CanonicalValue EncodeUInt4(uint4 value) =>
         new("uint4", new[] { UIntWord(value.x), UIntWord(value.y), UIntWord(value.z), UIntWord(value.w) });
 
-    private static CanonicalValue EncodeMatrix(float4x4 value) =>
-        new(
-            "float4x4",
-            new[]
+    private static CanonicalValue EncodeMatrix(Type type, object value, int columns, int rows)
+    {
+        var words = new string[columns * rows];
+        for (var column = 0; column < columns; column++)
+        {
+            var columnField = type.GetField($"c{column}", BindingFlags.Public | BindingFlags.Instance)
+                ?? throw new InvalidOperationException($"Matrix type '{type.FullName}' has no column {column}.");
+            var columnValue = columnField.GetValue(value)
+                ?? throw new InvalidOperationException($"Matrix type '{type.FullName}' has a null column {column}.");
+            for (var row = 0; row < rows; row++)
             {
-                FloatWord(value.c0.x), FloatWord(value.c0.y), FloatWord(value.c0.z), FloatWord(value.c0.w),
-                FloatWord(value.c1.x), FloatWord(value.c1.y), FloatWord(value.c1.z), FloatWord(value.c1.w),
-                FloatWord(value.c2.x), FloatWord(value.c2.y), FloatWord(value.c2.z), FloatWord(value.c2.w),
-                FloatWord(value.c3.x), FloatWord(value.c3.y), FloatWord(value.c3.z), FloatWord(value.c3.w),
-            });
+                var componentField = columnField.FieldType.GetField(
+                    ComponentName(row),
+                    BindingFlags.Public | BindingFlags.Instance)
+                    ?? throw new InvalidOperationException(
+                        $"Matrix type '{type.FullName}' column {column} has no row {row}.");
+                var componentValue = componentField.GetValue(columnValue);
+                if (componentValue is not float floatValue)
+                {
+                    throw new InvalidOperationException(
+                        $"Matrix type '{type.FullName}' column {column}, row {row} is not a float.");
+                }
+
+                words[(column * rows) + row] = FloatWord(floatValue);
+            }
+        }
+
+        return new CanonicalValue(type.Name, words);
+    }
+
+    private static string ComponentName(int row) => row switch
+    {
+        0 => "x",
+        1 => "y",
+        2 => "z",
+        3 => "w",
+        _ => throw new ArgumentOutOfRangeException(nameof(row)),
+    };
 
     private static CanonicalValue EncodeQuaternion(quaternion value) =>
         new("quaternion", new[] { FloatWord(value.x), FloatWord(value.y), FloatWord(value.z), FloatWord(value.w) });

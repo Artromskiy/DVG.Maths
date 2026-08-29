@@ -11,57 +11,54 @@ namespace Delta.Maths
 
         public static float4x4 Transpose(float4x4 value)
         {
-            return new float4x4(value.M11, value.M21, value.M31, value.M41, value.M12, value.M22, value.M32, value.M42, value.M13, value.M23, value.M33, value.M43, value.M14, value.M24, value.M34, value.M44);
+            return new float4x4(new float4(value.c0.x, value.c1.x, value.c2.x, value.c3.x), new float4(value.c0.y, value.c1.y, value.c2.y, value.c3.y), new float4(value.c0.z, value.c1.z, value.c2.z, value.c3.z), new float4(value.c0.w, value.c1.w, value.c2.w, value.c3.w));
+        }
+
+        public static float4x4 MatrixCompMult(float4x4 left, float4x4 right)
+        {
+            return new float4x4(left.c0 * right.c0, left.c1 * right.c1, left.c2 * right.c2, left.c3 * right.c3);
+        }
+
+        public static float4x4 OuterProduct(float4 c, float4 r)
+        {
+            return new float4x4(c * r.x, c * r.y, c * r.z, c * r.w);
         }
 
         public static float Determinant(float4x4 value)
         {
-            static float minor(float a11, float a12, float a13, float a21, float a22, float a23, float a31, float a32, float a33) =>
-                a11 * (a22 * a33 - a23 * a32) - a12 * (a21 * a33 - a23 * a31) + a13 * (a21 * a32 - a22 * a31);
-            return value.M11 * minor(value.M22, value.M23, value.M24, value.M32, value.M33, value.M34, value.M42, value.M43, value.M44)
-                - value.M12 * minor(value.M21, value.M23, value.M24, value.M31, value.M33, value.M34, value.M41, value.M43, value.M44)
-                + value.M13 * minor(value.M21, value.M22, value.M24, value.M31, value.M32, value.M34, value.M41, value.M42, value.M44)
-                - value.M14 * minor(value.M21, value.M22, value.M23, value.M31, value.M32, value.M33, value.M41, value.M42, value.M43);
+            static float minor(float a11, float a12, float a13, float a21, float a22, float a23, float a31, float a32, float a33) => a11 * (a22 * a33 - a23 * a32) - a12 * (a21 * a33 - a23 * a31) + a13 * (a21 * a32 - a22 * a31);
+            return value.M11 * minor(value.M22, value.M23, value.M24, value.M32, value.M33, value.M34, value.M42, value.M43, value.M44) - value.M12 * minor(value.M21, value.M23, value.M24, value.M31, value.M33, value.M34, value.M41, value.M43, value.M44) + value.M13 * minor(value.M21, value.M22, value.M24, value.M31, value.M32, value.M34, value.M41, value.M42, value.M44) - value.M14 * minor(value.M21, value.M22, value.M23, value.M31, value.M32, value.M33, value.M41, value.M42, value.M43);
         }
 
         public static bool TryInverse(float4x4 value, out float4x4 result)
         {
-            static float minor(float a11, float a12, float a13, float a21, float a22, float a23, float a31, float a32, float a33) =>
-                a11 * (a22 * a33 - a23 * a32) - a12 * (a21 * a33 - a23 * a31) + a13 * (a21 * a32 - a22 * a31);
-            var c11 = minor(value.M22, value.M23, value.M24, value.M32, value.M33, value.M34, value.M42, value.M43, value.M44);
-            var c12 = -minor(value.M21, value.M23, value.M24, value.M31, value.M33, value.M34, value.M41, value.M43, value.M44);
-            var c13 = minor(value.M21, value.M22, value.M24, value.M31, value.M32, value.M34, value.M41, value.M42, value.M44);
-            var c14 = -minor(value.M21, value.M22, value.M23, value.M31, value.M32, value.M33, value.M41, value.M42, value.M43);
-            var c21 = -minor(value.M12, value.M13, value.M14, value.M32, value.M33, value.M34, value.M42, value.M43, value.M44);
-            var c22 = minor(value.M11, value.M13, value.M14, value.M31, value.M33, value.M34, value.M41, value.M43, value.M44);
-            var c23 = -minor(value.M11, value.M12, value.M14, value.M31, value.M32, value.M34, value.M41, value.M42, value.M44);
-            var c24 = minor(value.M11, value.M12, value.M13, value.M31, value.M32, value.M33, value.M41, value.M42, value.M43);
-            var determinant = value.M11 * c11 + value.M12 * c12 + value.M13 * c13 + value.M14 * c14;
-            if (DeltaMaths.Abs(determinant) <= 1e-8f)
-            {
-                result = default;
-                return false;
-            }
-            var c31 = minor(value.M12, value.M13, value.M14, value.M22, value.M23, value.M24, value.M42, value.M43, value.M44);
-            var c32 = -minor(value.M11, value.M13, value.M14, value.M21, value.M23, value.M24, value.M41, value.M43, value.M44);
-            var c33 = minor(value.M11, value.M12, value.M14, value.M21, value.M22, value.M24, value.M41, value.M42, value.M44);
-            var c34 = -minor(value.M11, value.M12, value.M13, value.M21, value.M22, value.M23, value.M41, value.M42, value.M43);
-            var c41 = -minor(value.M12, value.M13, value.M14, value.M22, value.M23, value.M24, value.M32, value.M33, value.M34);
-            var c42 = minor(value.M11, value.M13, value.M14, value.M21, value.M23, value.M24, value.M31, value.M33, value.M34);
-            var c43 = -minor(value.M11, value.M12, value.M14, value.M21, value.M22, value.M24, value.M31, value.M32, value.M34);
-            var c44 = minor(value.M11, value.M12, value.M13, value.M21, value.M22, value.M23, value.M31, value.M32, value.M33);
+            var determinant = Determinant(value);
+            if (DeltaMaths.Abs(determinant) <= 1e-8f) { result = default; return false; }
             var inverse = 1f / determinant;
+            static float minor(float a11, float a12, float a13, float a21, float a22, float a23, float a31, float a32, float a33) => a11 * (a22 * a33 - a23 * a32) - a12 * (a21 * a33 - a23 * a31) + a13 * (a21 * a32 - a22 * a31);
             result = new float4x4(
-                c11 * inverse, c21 * inverse, c31 * inverse, c41 * inverse,
-                c12 * inverse, c22 * inverse, c32 * inverse, c42 * inverse,
-                c13 * inverse, c23 * inverse, c33 * inverse, c43 * inverse,
-                c14 * inverse, c24 * inverse, c34 * inverse, c44 * inverse);
+                minor(value.M22, value.M23, value.M24, value.M32, value.M33, value.M34, value.M42, value.M43, value.M44) * inverse,
+                -minor(value.M12, value.M13, value.M14, value.M32, value.M33, value.M34, value.M42, value.M43, value.M44) * inverse,
+                minor(value.M12, value.M13, value.M14, value.M22, value.M23, value.M24, value.M42, value.M43, value.M44) * inverse,
+                -minor(value.M12, value.M13, value.M14, value.M22, value.M23, value.M24, value.M32, value.M33, value.M34) * inverse,
+                -minor(value.M21, value.M23, value.M24, value.M31, value.M33, value.M34, value.M41, value.M43, value.M44) * inverse,
+                minor(value.M11, value.M13, value.M14, value.M31, value.M33, value.M34, value.M41, value.M43, value.M44) * inverse,
+                -minor(value.M11, value.M13, value.M14, value.M21, value.M23, value.M24, value.M41, value.M43, value.M44) * inverse,
+                minor(value.M11, value.M13, value.M14, value.M21, value.M23, value.M24, value.M31, value.M33, value.M34) * inverse,
+                minor(value.M21, value.M22, value.M24, value.M31, value.M32, value.M34, value.M41, value.M42, value.M44) * inverse,
+                -minor(value.M11, value.M12, value.M14, value.M31, value.M32, value.M34, value.M41, value.M42, value.M44) * inverse,
+                minor(value.M11, value.M12, value.M14, value.M21, value.M22, value.M24, value.M41, value.M42, value.M44) * inverse,
+                -minor(value.M11, value.M12, value.M14, value.M21, value.M22, value.M24, value.M31, value.M32, value.M34) * inverse,
+                -minor(value.M21, value.M22, value.M23, value.M31, value.M32, value.M33, value.M41, value.M42, value.M43) * inverse,
+                minor(value.M11, value.M12, value.M13, value.M31, value.M32, value.M33, value.M41, value.M42, value.M43) * inverse,
+                -minor(value.M11, value.M12, value.M13, value.M21, value.M22, value.M23, value.M41, value.M42, value.M43) * inverse,
+                minor(value.M11, value.M12, value.M13, value.M21, value.M22, value.M23, value.M31, value.M32, value.M33) * inverse);
             return true;
         }
 
         public static float4x4 Inverse(float4x4 value)
         {
-            return TryInverse(value, out var result) ? result : identity;
+            return TryInverse(value, out var result) ? result : float4x4.identity;
         }
     }
 }

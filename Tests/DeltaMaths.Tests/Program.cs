@@ -22,6 +22,7 @@ namespace Delta.Maths.Tests
                 ("fixed-point vectors participate in maths", VectorBehaviorTests.FixedPoint),
                 ("scalar regressions stay fixed", VectorBehaviorTests.ScalarRegressions),
                 ("matrix and quaternion layout is stable", MatrixQuaternionTests.Layout),
+                ("rectangular matrices follow GLSL dimensions and layout", MatrixQuaternionTests.RectangularMatrices),
                 ("matrix algebra and decomposition are safe", MatrixQuaternionTests.MatrixAlgebra),
                 ("matrix-vector and matrix composition semantics", MatrixQuaternionTests.MatrixVectorSemantics),
                 ("quaternion algebra and conversions are stable", MatrixQuaternionTests.QuaternionAlgebra),

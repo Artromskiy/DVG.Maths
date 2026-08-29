@@ -96,7 +96,7 @@ namespace Delta.Maths
             return x.Equals(other.x) && y.Equals(other.y) && z.Equals(other.z);
         }
 
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             return obj is float3 other && Equals(other);
         }

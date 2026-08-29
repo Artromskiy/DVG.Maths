@@ -71,7 +71,7 @@ namespace Delta.Maths
             return this == other;
         }
 
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             return obj is quaternion other && Equals(other);
         }

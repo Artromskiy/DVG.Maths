@@ -6,11 +6,11 @@ using System.Runtime.CompilerServices;
 
 namespace Delta.Maths
 {
-    /// <summary>A column-major 4x4 matrix represented by 4 float4 columns.</summary>
+    /// <summary>A column-major 3x4 matrix represented by 3 float4 columns.</summary>
     [Serializable]
     [StructLayout(LayoutKind.Sequential)]
     [System.Runtime.Serialization.DataContract]
-    public partial struct float4x4 : IEquatable<float4x4>
+    public partial struct float3x4 : IEquatable<float3x4>
     {
 
         /// <summary>Column 0.</summary>
@@ -22,135 +22,115 @@ namespace Delta.Maths
         /// <summary>Column 2.</summary>
         public float4 c2;
 
-        /// <summary>Column 3.</summary>
-        public float4 c3;
-
         /// <summary>A matrix whose components are all zero.</summary>
-        public static readonly float4x4 zero = new float4x4(float4.zero, float4.zero, float4.zero, float4.zero);
-
-        /// <summary>The identity matrix.</summary>
-        public static readonly float4x4 identity = new float4x4(1f);
+        public static readonly float3x4 zero = new float3x4(float4.zero, float4.zero, float4.zero);
 
         /// <summary>Creates a matrix from its columns in column-major order.</summary>
-        public float4x4(float4 c0, float4 c1, float4 c2, float4 c3)
+        public float3x4(float4 c0, float4 c1, float4 c2)
         {
             this.c0 = c0;
             this.c1 = c1;
             this.c2 = c2;
-            this.c3 = c3;
         }
 
         /// <summary>Creates a matrix with value on the diagonal and zero elsewhere.</summary>
-        public float4x4(float value)
+        public float3x4(float value)
         {
             c0 = new float4(value, 0f, 0f, 0f);
             c1 = new float4(0f, value, 0f, 0f);
             c2 = new float4(0f, 0f, value, 0f);
-            c3 = new float4(0f, 0f, 0f, value);
         }
 
         /// <summary>Creates a matrix from row-major named components in mathematical order.</summary>
-        public float4x4(float m11, float m12, float m13, float m14, float m21, float m22, float m23, float m24, float m31, float m32, float m33, float m34, float m41, float m42, float m43, float m44)
+        public float3x4(float m11, float m12, float m13, float m21, float m22, float m23, float m31, float m32, float m33, float m41, float m42, float m43)
         {
             c0 = new float4(m11, m21, m31, m41);
             c1 = new float4(m12, m22, m32, m42);
             c2 = new float4(m13, m23, m33, m43);
-            c3 = new float4(m14, m24, m34, m44);
         }
 
-        /// <summary>Creates a float4x4 from a float2x2 using GLSL matrix conversion rules.</summary>
-        public float4x4(float2x2 value)
+        /// <summary>Creates a float3x4 from a float2x2 using GLSL matrix conversion rules.</summary>
+        public float3x4(float2x2 value)
         {
             c0 = new float4(value.c0.x, value.c0.y, 0f, 0f);
             c1 = new float4(value.c1.x, value.c1.y, 0f, 0f);
             c2 = new float4(0f, 0f, 1f, 0f);
-            c3 = new float4(0f, 0f, 0f, 1f);
         }
 
-        /// <summary>Creates a float4x4 from a float2x3 using GLSL matrix conversion rules.</summary>
-        public float4x4(float2x3 value)
+        /// <summary>Creates a float3x4 from a float2x3 using GLSL matrix conversion rules.</summary>
+        public float3x4(float2x3 value)
         {
             c0 = new float4(value.c0.x, value.c0.y, value.c0.z, 0f);
             c1 = new float4(value.c1.x, value.c1.y, value.c1.z, 0f);
             c2 = new float4(0f, 0f, 1f, 0f);
-            c3 = new float4(0f, 0f, 0f, 1f);
         }
 
-        /// <summary>Creates a float4x4 from a float2x4 using GLSL matrix conversion rules.</summary>
-        public float4x4(float2x4 value)
+        /// <summary>Creates a float3x4 from a float2x4 using GLSL matrix conversion rules.</summary>
+        public float3x4(float2x4 value)
         {
             c0 = new float4(value.c0.x, value.c0.y, value.c0.z, value.c0.w);
             c1 = new float4(value.c1.x, value.c1.y, value.c1.z, value.c1.w);
             c2 = new float4(0f, 0f, 1f, 0f);
-            c3 = new float4(0f, 0f, 0f, 1f);
         }
 
-        /// <summary>Creates a float4x4 from a float3x2 using GLSL matrix conversion rules.</summary>
-        public float4x4(float3x2 value)
+        /// <summary>Creates a float3x4 from a float3x2 using GLSL matrix conversion rules.</summary>
+        public float3x4(float3x2 value)
         {
             c0 = new float4(value.c0.x, value.c0.y, 0f, 0f);
             c1 = new float4(value.c1.x, value.c1.y, 0f, 0f);
             c2 = new float4(value.c2.x, value.c2.y, 1f, 0f);
-            c3 = new float4(0f, 0f, 0f, 1f);
         }
 
-        /// <summary>Creates a float4x4 from a float3x3 using GLSL matrix conversion rules.</summary>
-        public float4x4(float3x3 value)
+        /// <summary>Creates a float3x4 from a float3x3 using GLSL matrix conversion rules.</summary>
+        public float3x4(float3x3 value)
         {
             c0 = new float4(value.c0.x, value.c0.y, value.c0.z, 0f);
             c1 = new float4(value.c1.x, value.c1.y, value.c1.z, 0f);
             c2 = new float4(value.c2.x, value.c2.y, value.c2.z, 0f);
-            c3 = new float4(0f, 0f, 0f, 1f);
         }
 
-        /// <summary>Creates a float4x4 from a float3x4 using GLSL matrix conversion rules.</summary>
-        public float4x4(float3x4 value)
+        /// <summary>Creates a float3x4 from a float3x4 using GLSL matrix conversion rules.</summary>
+        public float3x4(float3x4 value)
         {
             c0 = new float4(value.c0.x, value.c0.y, value.c0.z, value.c0.w);
             c1 = new float4(value.c1.x, value.c1.y, value.c1.z, value.c1.w);
             c2 = new float4(value.c2.x, value.c2.y, value.c2.z, value.c2.w);
-            c3 = new float4(0f, 0f, 0f, 1f);
         }
 
-        /// <summary>Creates a float4x4 from a float4x2 using GLSL matrix conversion rules.</summary>
-        public float4x4(float4x2 value)
+        /// <summary>Creates a float3x4 from a float4x2 using GLSL matrix conversion rules.</summary>
+        public float3x4(float4x2 value)
         {
             c0 = new float4(value.c0.x, value.c0.y, 0f, 0f);
             c1 = new float4(value.c1.x, value.c1.y, 0f, 0f);
             c2 = new float4(value.c2.x, value.c2.y, 1f, 0f);
-            c3 = new float4(value.c3.x, value.c3.y, 0f, 1f);
         }
 
-        /// <summary>Creates a float4x4 from a float4x3 using GLSL matrix conversion rules.</summary>
-        public float4x4(float4x3 value)
+        /// <summary>Creates a float3x4 from a float4x3 using GLSL matrix conversion rules.</summary>
+        public float3x4(float4x3 value)
         {
             c0 = new float4(value.c0.x, value.c0.y, value.c0.z, 0f);
             c1 = new float4(value.c1.x, value.c1.y, value.c1.z, 0f);
             c2 = new float4(value.c2.x, value.c2.y, value.c2.z, 0f);
-            c3 = new float4(value.c3.x, value.c3.y, value.c3.z, 1f);
         }
 
-        /// <summary>Creates a float4x4 from a float4x4 using GLSL matrix conversion rules.</summary>
-        public float4x4(float4x4 value)
+        /// <summary>Creates a float3x4 from a float4x4 using GLSL matrix conversion rules.</summary>
+        public float3x4(float4x4 value)
         {
             c0 = new float4(value.c0.x, value.c0.y, value.c0.z, value.c0.w);
             c1 = new float4(value.c1.x, value.c1.y, value.c1.z, value.c1.w);
             c2 = new float4(value.c2.x, value.c2.y, value.c2.z, value.c2.w);
-            c3 = new float4(value.c3.x, value.c3.y, value.c3.z, value.c3.w);
         }
-
-        public static float4x4 Identity => identity;
 
         /// <summary>Returns a column using zero-based indexing.</summary>
         public float4 GetColumn(int index)
         {
-            return index switch { 0 => c0, 1 => c1, 2 => c2, 3 => c3, _ => throw new ArgumentOutOfRangeException(nameof(index)) };
+            return index switch { 0 => c0, 1 => c1, 2 => c2, _ => throw new ArgumentOutOfRangeException(nameof(index)) };
         }
 
         /// <summary>Returns a row using zero-based indexing.</summary>
-        public float4 GetRow(int index)
+        public float3 GetRow(int index)
         {
-            return index switch { 0 => new float4(c0.x, c1.x, c2.x, c3.x), 1 => new float4(c0.y, c1.y, c2.y, c3.y), 2 => new float4(c0.z, c1.z, c2.z, c3.z), 3 => new float4(c0.w, c1.w, c2.w, c3.w), _ => throw new ArgumentOutOfRangeException(nameof(index)) };
+            return index switch { 0 => new float3(c0.x, c1.x, c2.x), 1 => new float3(c0.y, c1.y, c2.y), 2 => new float3(c0.z, c1.z, c2.z), 3 => new float3(c0.w, c1.w, c2.w), _ => throw new ArgumentOutOfRangeException(nameof(index)) };
         }
 
         public float GetElement(int column, int row)
@@ -160,10 +140,10 @@ namespace Delta.Maths
 
         public void SetElement(int column, int row, float value)
         {
-            if ((uint)column >= 4u || (uint)row >= 4u) throw new ArgumentOutOfRangeException();
+            if ((uint)column >= 3u || (uint)row >= 4u) throw new ArgumentOutOfRangeException();
             var columnValue = GetColumn(column);
             columnValue[row] = value;
-            switch (column) { case 0: c0 = columnValue; break; case 1: c1 = columnValue; break; case 2: c2 = columnValue; break; case 3: c3 = columnValue; break; }
+            switch (column) { case 0: c0 = columnValue; break; case 1: c1 = columnValue; break; case 2: c2 = columnValue; break; }
         }
 
         public float M11
@@ -184,12 +164,6 @@ namespace Delta.Maths
             set => c2.x = value;
         }
 
-        public float M14
-        {
-            get => c3.x;
-            set => c3.x = value;
-        }
-
         public float M21
         {
             get => c0.y;
@@ -206,12 +180,6 @@ namespace Delta.Maths
         {
             get => c2.y;
             set => c2.y = value;
-        }
-
-        public float M24
-        {
-            get => c3.y;
-            set => c3.y = value;
         }
 
         public float M31
@@ -232,12 +200,6 @@ namespace Delta.Maths
             set => c2.z = value;
         }
 
-        public float M34
-        {
-            get => c3.z;
-            set => c3.z = value;
-        }
-
         public float M41
         {
             get => c0.w;
@@ -256,30 +218,24 @@ namespace Delta.Maths
             set => c2.w = value;
         }
 
-        public float M44
+        public bool Equals(float3x4 other)
         {
-            get => c3.w;
-            set => c3.w = value;
-        }
-
-        public bool Equals(float4x4 other)
-        {
-            return c0 == other.c0 && c1 == other.c1 && c2 == other.c2 && c3 == other.c3;
+            return c0 == other.c0 && c1 == other.c1 && c2 == other.c2;
         }
 
         public override bool Equals(object? obj)
         {
-            return obj is float4x4 other && Equals(other);
+            return obj is float3x4 other && Equals(other);
         }
 
         public override int GetHashCode()
         {
-            unchecked { var hash = 17; hash = hash * 31 + c0.GetHashCode(); hash = hash * 31 + c1.GetHashCode(); hash = hash * 31 + c2.GetHashCode(); hash = hash * 31 + c3.GetHashCode(); return hash; }
+            unchecked { var hash = 17; hash = hash * 31 + c0.GetHashCode(); hash = hash * 31 + c1.GetHashCode(); hash = hash * 31 + c2.GetHashCode(); return hash; }
         }
 
         public override string ToString()
         {
-            return FormattableString.Invariant($"[{M11}, {M12}, {M13}, {M14}; {M21}, {M22}, {M23}, {M24}; {M31}, {M32}, {M33}, {M34}; {M41}, {M42}, {M43}, {M44}]");
+            return FormattableString.Invariant($"[{M11}, {M12}, {M13}; {M21}, {M22}, {M23}; {M31}, {M32}, {M33}; {M41}, {M42}, {M43}]");
         }
     }
 }

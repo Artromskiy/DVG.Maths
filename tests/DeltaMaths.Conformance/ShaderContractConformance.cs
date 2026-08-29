@@ -418,6 +418,11 @@ internal sealed class ContractCaseRunner
             return float4x4.identity;
         }
 
+        if (TryCreateMatrix(type, function, out var matrix))
+        {
+            return matrix;
+        }
+
         if (type == typeof(quaternion))
         {
             return quaternion.identity;
@@ -425,6 +430,52 @@ internal sealed class ContractCaseRunner
 
         throw new InvalidOperationException(
             $"No deterministic conformance value for CLR type '{type.FullName}' in '{function.Identity}'.");
+    }
+
+    private static bool TryCreateMatrix(Type type, ContractFunction function, out object matrix)
+    {
+        matrix = new object();
+        if (!TryGetMatrixShape(type, out var columns, out var rows))
+        {
+            return false;
+        }
+
+        var parameterTypes = new Type[columns * rows];
+        Array.Fill(parameterTypes, typeof(float));
+        var constructor = type.GetConstructor(parameterTypes)
+            ?? throw new InvalidOperationException(
+                $"Matrix type '{type.FullName}' has no scalar constructor for '{function.Identity}'.");
+        var values = new object[parameterTypes.Length];
+        for (var row = 0; row < rows; row++)
+        {
+            for (var column = 0; column < columns; column++)
+            {
+                var diagonal = row == column ? 1f + ((row + 1) * 0.25f) : 0f;
+                values[(row * columns) + column] = diagonal + ((row + 1) * (column + 1) * 0.03125f);
+            }
+        }
+
+        matrix = constructor.Invoke(values);
+        return true;
+    }
+
+    internal static bool TryGetMatrixShape(Type type, out int columns, out int rows)
+    {
+        var name = type.Name;
+        if (name.Length != 8
+            || !name.StartsWith("float", StringComparison.Ordinal)
+            || name[6] != 'x'
+            || name[5] is < '2' or > '4'
+            || name[7] is < '2' or > '4')
+        {
+            columns = 0;
+            rows = 0;
+            return false;
+        }
+
+        columns = name[5] - '0';
+        rows = name[7] - '0';
+        return true;
     }
 
     private static float ScalarFloat(ContractFunction function, int parameterIndex)

@@ -9,14 +9,44 @@ namespace Delta.Maths
     public partial struct float4x4
     {
 
-        public static float4x4 operator *(float4x4 left, float4x4 right)
+        public static float4x4 operator +(float4x4 left, float4x4 right)
+        {
+            return new float4x4(left.c0 + right.c0, left.c1 + right.c1, left.c2 + right.c2, left.c3 + right.c3);
+        }
+
+        public static float4x4 operator -(float4x4 left, float4x4 right)
+        {
+            return new float4x4(left.c0 - right.c0, left.c1 - right.c1, left.c2 - right.c2, left.c3 - right.c3);
+        }
+
+        public static float4x4 operator -(float4x4 value)
+        {
+            return new float4x4(-value.c0, -value.c1, -value.c2, -value.c3);
+        }
+
+        public static float4x4 operator *(float4x4 left, float right)
+        {
+            return new float4x4(left.c0 * right, left.c1 * right, left.c2 * right, left.c3 * right);
+        }
+
+        public static float4x4 operator *(float left, float4x4 right)
         {
             return new float4x4(left * right.c0, left * right.c1, left * right.c2, left * right.c3);
         }
 
+        public static float4x4 operator /(float4x4 left, float right)
+        {
+            return new float4x4(left.c0 / right, left.c1 / right, left.c2 / right, left.c3 / right);
+        }
+
         public static float4 operator *(float4x4 left, float4 right)
         {
-            return left.c0 * right.x + left.c1 * right.y + left.c2 * right.z + left.c3 * right.w;
+            return new float4(left.c0.x * right.x + left.c1.x * right.y + left.c2.x * right.z + left.c3.x * right.w, left.c0.y * right.x + left.c1.y * right.y + left.c2.y * right.z + left.c3.y * right.w, left.c0.z * right.x + left.c1.z * right.y + left.c2.z * right.z + left.c3.z * right.w, left.c0.w * right.x + left.c1.w * right.y + left.c2.w * right.z + left.c3.w * right.w);
+        }
+
+        public static float4 operator *(float4 left, float4x4 right)
+        {
+            return new float4(left.x * right.c0.x + left.y * right.c0.y + left.z * right.c0.z + left.w * right.c0.w, left.x * right.c1.x + left.y * right.c1.y + left.z * right.c1.z + left.w * right.c1.w, left.x * right.c2.x + left.y * right.c2.y + left.z * right.c2.z + left.w * right.c2.w, left.x * right.c3.x + left.y * right.c3.y + left.z * right.c3.z + left.w * right.c3.w);
         }
 
         public static bool operator ==(float4x4 left, float4x4 right)
@@ -27,6 +57,21 @@ namespace Delta.Maths
         public static bool operator !=(float4x4 left, float4x4 right)
         {
             return !(left == right);
+        }
+
+        public static float2x4 operator *(float4x4 left, float2x4 right)
+        {
+            return new float2x4(left * right.c0, left * right.c1);
+        }
+
+        public static float3x4 operator *(float4x4 left, float3x4 right)
+        {
+            return new float3x4(left * right.c0, left * right.c1, left * right.c2);
+        }
+
+        public static float4x4 operator *(float4x4 left, float4x4 right)
+        {
+            return new float4x4(left * right.c0, left * right.c1, left * right.c2, left * right.c3);
         }
     }
 }

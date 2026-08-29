@@ -21,7 +21,7 @@ namespace Delta.Maths
 
         public static float4x4 CreateScale(float scale)
         {
-            return CreateScale(new float3(scale));
+            return CreateScale(new float3(scale, scale, scale));
         }
 
         public static float4x4 CreateFromQuaternion(quaternion rotation)
@@ -35,14 +35,9 @@ namespace Delta.Maths
             var wx = rotation.w * rotation.x;
             var wy = rotation.w * rotation.y;
             var wz = rotation.w * rotation.z;
-            return new float4x4(
-                1f - 2f * (yy + zz), 2f * (xy - wz), 2f * (xz + wy), 0f,
-                2f * (xy + wz), 1f - 2f * (xx + zz), 2f * (yz - wx), 0f,
-                2f * (xz - wy), 2f * (yz + wx), 1f - 2f * (xx + yy), 0f,
-                0f, 0f, 0f, 1f);
+            return new float4x4(1f - 2f * (yy + zz), 2f * (xy - wz), 2f * (xz + wy), 0f, 2f * (xy + wz), 1f - 2f * (xx + zz), 2f * (yz - wx), 0f, 2f * (xz - wy), 2f * (yz + wx), 1f - 2f * (xx + yy), 0f, 0f, 0f, 0f, 1f);
         }
 
-        /// <summary>Creates a transform that applies scale, then rotation, then translation to a column vector.</summary>
         public static float4x4 CreateTRS(float3 translation, quaternion rotation, float3 scale)
         {
             return CreateTranslation(translation) * CreateFromQuaternion(rotation) * CreateScale(scale);
@@ -50,8 +45,8 @@ namespace Delta.Maths
 
         public static float3 TransformPoint(float4x4 matrix, float3 point)
         {
-            var value = matrix * new float4(point, 1f);
-            return value.w == 0f ? value.xyz : value.xyz / value.w;
+            var transformed = matrix * new float4(point, 1f);
+            return transformed.w == 0f ? transformed.xyz : transformed.xyz / transformed.w;
         }
 
         public static float3 TransformDirection(float4x4 matrix, float3 direction)
@@ -81,26 +76,14 @@ namespace Delta.Maths
             var x = new float3(value.M11, value.M21, value.M31);
             var y = new float3(value.M12, value.M22, value.M32);
             var z = new float3(value.M13, value.M23, value.M33);
-            var scaleX = float3.Length(x);
-            var scaleY = float3.Length(y);
-            var scaleZ = float3.Length(z);
-            if (scaleX <= 1e-20f || scaleY <= 1e-20f || scaleZ <= 1e-20f)
-            {
-                scale = default;
-                rotation = quaternion.identity;
-                return false;
-            }
-            if (float3.Dot(float3.Cross(x, y), z) < 0f)
-            {
-                scaleX = -scaleX;
-                x = -x;
-            }
-            scale = new float3(scaleX, scaleY, scaleZ);
-            x /= scaleX;
-            y /= scaleY;
-            z /= scaleZ;
+            scale = new float3(float3.Length(x), float3.Length(y), float3.Length(z));
+            if (scale.x <= 1e-20f || scale.y <= 1e-20f || scale.z <= 1e-20f) { rotation = quaternion.identity; return false; }
+            x /= scale.x;
+            y /= scale.y;
+            z /= scale.z;
+            if (float3.Dot(float3.Cross(x, y), z) < 0f) { scale.x = -scale.x; x = -x; }
             var rotationMatrix = new float4x4(x.x, y.x, z.x, 0f, x.y, y.y, z.y, 0f, x.z, y.z, z.z, 0f, 0f, 0f, 0f, 1f);
-            rotation = quaternion.CreateFromRotationMatrix(rotationMatrix);
+            rotation = quaternion.NormalizeSafe(quaternion.CreateFromRotationMatrix(rotationMatrix));
             return true;
         }
     }

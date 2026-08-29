@@ -20,6 +20,18 @@ namespace Delta.Maths.Tests
             AssertEx.Equal((IntPtr)16, Marshal.OffsetOf<float4x4>(nameof(float4x4.c1)));
             AssertEx.Equal((IntPtr)32, Marshal.OffsetOf<float4x4>(nameof(float4x4.c2)));
             AssertEx.Equal((IntPtr)48, Marshal.OffsetOf<float4x4>(nameof(float4x4.c3)));
+            AssertEx.Equal(16, Marshal.SizeOf<float2x2>());
+            AssertEx.Equal(32, Marshal.SizeOf<float2x3>());
+            AssertEx.Equal((IntPtr)16, Marshal.OffsetOf<float2x3>(nameof(float2x3.c1)));
+            AssertEx.Equal(32, Marshal.SizeOf<float2x4>());
+            AssertEx.Equal(24, Marshal.SizeOf<float3x2>());
+            AssertEx.Equal((IntPtr)8, Marshal.OffsetOf<float3x2>(nameof(float3x2.c1)));
+            AssertEx.Equal(48, Marshal.SizeOf<float3x3>());
+            AssertEx.Equal((IntPtr)16, Marshal.OffsetOf<float3x3>(nameof(float3x3.c1)));
+            AssertEx.Equal(48, Marshal.SizeOf<float3x4>());
+            AssertEx.Equal(32, Marshal.SizeOf<float4x2>());
+            AssertEx.Equal(64, Marshal.SizeOf<float4x3>());
+            AssertEx.Equal((IntPtr)16, Marshal.OffsetOf<float4x3>(nameof(float4x3.c1)));
             AssertEx.Equal((IntPtr)0, Marshal.OffsetOf<quaternion>(nameof(quaternion.x)));
             AssertEx.Equal((IntPtr)4, Marshal.OffsetOf<quaternion>(nameof(quaternion.y)));
             AssertEx.Equal((IntPtr)8, Marshal.OffsetOf<quaternion>(nameof(quaternion.z)));
@@ -62,6 +74,48 @@ namespace Delta.Maths.Tests
             AssertEx.Near(arbitraryScale, arbitraryDecomposedScale, 0.0002f);
             AssertEx.Near(new float3(-3.2f, 5.1f, 1.4f), arbitraryDecomposedTranslation, 0.0002f);
             AssertQuaternionEquivalent(arbitraryRotation, arbitraryDecomposedRotation, 0.0002f);
+        }
+
+        public static void RectangularMatrices()
+        {
+            var matrix = new float2x3(
+                new float3(1f, 2f, 3f),
+                new float3(4f, 5f, 6f));
+            AssertEx.Near(new float3(9f, 12f, 15f), matrix * new float2(1f, 2f));
+            var transpose = float2x3.Transpose(matrix);
+            AssertEx.Near(new float2(1f, 4f), transpose.GetColumn(0));
+            AssertEx.Near(new float2(2f, 5f), transpose.GetColumn(1));
+            AssertEx.Near(new float2(3f, 6f), transpose.GetColumn(2));
+            AssertEx.Equal(new float2x3(
+                new float3(1f, 4f, 9f),
+                new float3(16f, 25f, 36f)),
+                float2x3.MatrixCompMult(matrix, matrix));
+            AssertEx.Equal(new float2x3(
+                new float3(4f, 8f, 12f),
+                new float3(5f, 10f, 15f)),
+                float2x3.OuterProduct(new float3(1f, 2f, 3f), new float2(4f, 5f)));
+
+            var right = new float3x2(
+                new float2(1f, 2f),
+                new float2(3f, 4f),
+                new float2(5f, 6f));
+            var product = matrix * right;
+            AssertEx.Near(new float3(9f, 12f, 15f), product.GetColumn(0));
+            AssertEx.Near(new float3(19f, 26f, 33f), product.GetColumn(1));
+            AssertEx.Near(new float3(29f, 40f, 51f), product.GetColumn(2));
+
+            var rowMajor = new float2x3(1f, 2f, 3f, 4f, 5f, 6f);
+            AssertEx.Near(1f, rowMajor.M11);
+            AssertEx.Near(2f, rowMajor.M12);
+            AssertEx.Near(5f, rowMajor.M31);
+            AssertEx.Near(6f, rowMajor.M32);
+
+            var source = new float2x2(1f, 2f, 3f, 4f);
+            var converted = new float3x4(source);
+            AssertEx.Near(1f, converted.M11);
+            AssertEx.Near(2f, converted.M12);
+            AssertEx.Near(4f, converted.M22);
+            AssertEx.Near(1f, converted.M33);
         }
 
         public static void MatrixVectorSemantics()
@@ -165,7 +219,26 @@ namespace Delta.Maths.Tests
             AssertEx.True(matrixType.GetProperty("columnMajor").GetBoolean());
             AssertEx.Equal(16, matrixType.GetProperty("alignment").GetInt32());
             AssertEx.Equal(16, matrixType.GetProperty("matrixStride").GetInt32());
+            AssertEx.Equal(4, matrixType.GetProperty("matrixColumns").GetInt32());
+            AssertEx.Equal(4, matrixType.GetProperty("matrixRows").GetInt32());
+            AssertEx.Equal("float", matrixType.GetProperty("elementGlslType").GetString());
+            AssertEx.Equal(64, matrixType.GetProperty("size").GetInt32());
             AssertEx.Equal("std430", matrixType.GetProperty("requiredCapability").GetString());
+
+            AssertMatrixType(types, "float2x2", "mat2", 2, 2, 8, 8, 16);
+            AssertMatrixType(types, "float2x3", "mat2x3", 2, 3, 16, 16, 32);
+            AssertMatrixType(types, "float2x4", "mat2x4", 2, 4, 16, 16, 32);
+            AssertMatrixType(types, "float3x2", "mat3x2", 3, 2, 8, 8, 24);
+            AssertMatrixType(types, "float3x3", "mat3", 3, 3, 16, 16, 48);
+            AssertMatrixType(types, "float3x4", "mat3x4", 3, 4, 16, 16, 48);
+            AssertMatrixType(types, "float4x2", "mat4x2", 4, 2, 8, 8, 32);
+            AssertMatrixType(types, "float4x3", "mat4x3", 4, 3, 16, 16, 64);
+            foreach (var type in types.Where(type => type.GetProperty("clrName").GetString() is { } name
+                && name.StartsWith("float", StringComparison.Ordinal)
+                && name.Contains('x', StringComparison.Ordinal)))
+            {
+                AssertMatrixConstructors(type);
+            }
 
             var quaternionType = types.Single(type => type.GetProperty("clrName").GetString() == "quaternion");
             AssertEx.Equal("vec4", quaternionType.GetProperty("glslName").GetString());
@@ -214,6 +287,38 @@ namespace Delta.Maths.Tests
             AssertEx.True(xySwizzle.GetProperty("writable").GetBoolean());
 
             var functions = root.GetProperty("functions").EnumerateArray().ToArray();
+            AssertFunction(functions, "float2x3", "Transpose", "transpose", "Builtin", "float2x3");
+            AssertShaderSignature(functions, "float2x3", "Transpose", ["mat2x3"], "mat3x2", "float2x3");
+            AssertFunction(functions, "float2x3", "MatrixCompMult", "matrixCompMult", "Builtin", "float2x3", "float2x3");
+            AssertFunction(functions, "float2x3", "OuterProduct", "outerProduct", "Builtin", "float3", "float2");
+            AssertShaderSignature(functions, "float2x3", "OuterProduct", ["vec3", "vec2"], "mat2x3", "float3", "float2");
+            AssertFunction(functions, "maths", "matrixCompMult", "matrixCompMult", "Builtin", "float2x3", "float2x3");
+            AssertFunction(functions, "maths", "transpose", "transpose", "Builtin", "float2x3");
+            AssertFunction(functions, "maths", "outerProduct", "outerProduct", "Builtin", "float3", "float2");
+            for (var columns = 2; columns <= 4; columns++)
+            {
+                for (var rows = 2; rows <= 4; rows++)
+                {
+                    var matrixName = $"float{columns}x{rows}";
+                    var transposedName = $"float{rows}x{columns}";
+                    var transposeFunction = FindFunction(functions, matrixName, "Transpose", matrixName);
+                    AssertEx.Equal(transposedName, transposeFunction.GetProperty("returnClrName").GetString());
+                    AssertEx.Equal("transpose", transposeFunction.GetProperty("glslName").GetString());
+
+                    var vectorMultiply = FindFunction(functions, matrixName, "op_Multiply", matrixName, "float" + columns);
+                    AssertEx.Equal("float" + rows, vectorMultiply.GetProperty("returnClrName").GetString());
+                    var rowVectorMultiply = FindFunction(functions, matrixName, "op_Multiply", "float" + rows, matrixName);
+                    AssertEx.Equal("float" + columns, rowVectorMultiply.GetProperty("returnClrName").GetString());
+                    for (var rightColumns = 2; rightColumns <= 4; rightColumns++)
+                    {
+                        var rightName = $"float{rightColumns}x{columns}";
+                        var resultName = $"float{rightColumns}x{rows}";
+                        var rectangularMatrixMultiply = FindFunction(functions, matrixName, "op_Multiply", matrixName, rightName);
+                        AssertEx.Equal(resultName, rectangularMatrixMultiply.GetProperty("returnClrName").GetString());
+                        AssertEx.Equal("*", rectangularMatrixMultiply.GetProperty("glslName").GetString());
+                    }
+                }
+            }
             AssertEx.True(functions.All(function => !string.IsNullOrWhiteSpace(function.GetProperty("typeClrName").GetString())));
             AssertEx.True(functions.All(function => !string.IsNullOrWhiteSpace(function.GetProperty("clrName").GetString())));
             AssertEx.True(functions.All(function => !string.IsNullOrWhiteSpace(function.GetProperty("mathsName").GetString())));
@@ -444,6 +549,39 @@ namespace Delta.Maths.Tests
             AssertEx.Equal("Builtin", type.GetProperty("mapping").GetString());
             AssertEx.Equal(alignment, type.GetProperty("alignment").GetInt32());
             AssertEx.Equal("std430", type.GetProperty("requiredCapability").GetString());
+        }
+
+        private static void AssertMatrixType(JsonElement[] types, string clrName, string glslName,
+            int columns, int rows, int alignment, int stride, int size)
+        {
+            var type = types.Single(item => item.GetProperty("clrName").GetString() == clrName);
+            AssertEx.Equal(glslName, type.GetProperty("glslName").GetString());
+            AssertEx.Equal("Builtin", type.GetProperty("mapping").GetString());
+            AssertEx.True(type.GetProperty("columnMajor").GetBoolean());
+            AssertEx.Equal(columns, type.GetProperty("matrixColumns").GetInt32());
+            AssertEx.Equal(rows, type.GetProperty("matrixRows").GetInt32());
+            AssertEx.Equal("float", type.GetProperty("elementGlslType").GetString());
+            AssertEx.Equal(alignment, type.GetProperty("alignment").GetInt32());
+            AssertEx.Equal(stride, type.GetProperty("matrixStride").GetInt32());
+            AssertEx.Equal(size, type.GetProperty("size").GetInt32());
+            AssertEx.Equal("std430", type.GetProperty("requiredCapability").GetString());
+        }
+
+        private static void AssertMatrixConstructors(JsonElement type)
+        {
+            var constructors = type.GetProperty("constructors").EnumerateArray().ToArray();
+            AssertEx.Equal(12, constructors.Length, type.GetProperty("clrName").GetString());
+            for (var columns = 2; columns <= 4; columns++)
+            {
+                for (var rows = 2; rows <= 4; rows++)
+                {
+                    var glslName = columns == rows ? $"mat{columns}" : $"mat{columns}x{rows}";
+                    AssertEx.True(constructors.Any(constructor => constructor.GetProperty("parameterGlslTypes")
+                        .EnumerateArray()
+                        .Select(parameter => parameter.GetString())
+                        .SequenceEqual([glslName])));
+                }
+            }
         }
 
         public static void Glsl460Conformance()

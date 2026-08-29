@@ -138,7 +138,7 @@ namespace Delta.Maths
             return x.Equals(other.x) && y.Equals(other.y) && z.Equals(other.z) && w.Equals(other.w);
         }
 
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             return obj is int4 other && Equals(other);
         }

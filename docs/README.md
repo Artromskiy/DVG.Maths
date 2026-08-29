@@ -6,7 +6,7 @@ renderer or `System.Numerics` dependency.
 
 The API includes scalar utilities and deterministic 16.16 `fix`,
 `bool/int/uint/float/double/fix` vectors, geometry/interpolation/trigonometry,
-swizzles, generated `float4x4` and `quaternion`, plus conventional `DeltaMaths.*`
+swizzles, generated GLSL-compatible single-precision matrices and `quaternion`, plus conventional `DeltaMaths.*`
 and shader-like lowercase `maths.*` entry points.
 
 `fix` stores a signed 16.16 value. Its public `raw` field is intentionally
@@ -21,9 +21,27 @@ var direction = normalize(new float3(1f, 2f, 3f));
 var transform = float4x4.CreateTRS(position, rotation, scale);
 ```
 
+The nine single-precision matrix types are named `floatCxR`, matching GLSL's
+`matCxR`: C is the number of columns and R is the number of rows. Each matrix
+stores sequential column vectors (`c0`, `c1`, ...), so `M * v` uses column
+vectors and matches GLSL 4.60. In std430, a `float3` column has a 16-byte
+stride and the generated value contains explicit padding; the manifest records
+the column count, row count, alignment, stride and total size. Square matrices
+also provide `determinant`, `inverse` and a safe `TryInverse`; every matrix
+provides arithmetic, matrix/vector multiplication, `transpose`,
+`matrixCompMult` and `outerProduct`.
+
+Each matrix has constructors from its column vectors, a diagonal scalar, all
+row-major `Mij` scalar components, and every other generated float matrix. The
+matrix-to-matrix constructor follows GLSL conversion rules: overlapping
+columns and rows are copied, missing off-diagonal elements are zero, and a
+missing diagonal element is one. The `Mij` scalar constructor retains the CLR
+row-major parameter order for compatibility; use the column constructor when
+spelling a GLSL column-major scalar sequence explicitly.
+
 `float4x4` is column-major as four sequential `float4` columns. Translation is
-in `c3.xyz`; column vectors are used and `T * R * S` applies scale, rotation,
-then translation. CPU code, GLSL and std430 share this convention.
+in `c3.xyz`; `T * R * S` applies scale, rotation, then translation. CPU code,
+GLSL and std430 share this convention.
 
 [`src/DeltaMaths/Vectors/shader-contract.json`](../src/DeltaMaths/Vectors/shader-contract.json)
 is generated from the same declarations and is the committed generated

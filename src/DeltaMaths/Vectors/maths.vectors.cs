@@ -3150,7 +3150,103 @@ namespace Delta.Maths
         public static fix4 smoothDamp(fix4 source, fix4 target, ref fix4 velocity, fix smoothTime, fix deltaTime) => fix4.SmoothDamp(source, target, ref velocity, smoothTime, deltaTime);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float2x2 transpose(float2x2 value) => float2x2.Transpose(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float2x2 matrixCompMult(float2x2 left, float2x2 right) => float2x2.MatrixCompMult(left, right);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float2x2 outerProduct(float2 c, float2 r) => float2x2.OuterProduct(c, r);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float determinant(float2x2 value) => float2x2.Determinant(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool tryInverse(float2x2 value, out float2x2 result) => float2x2.TryInverse(value, out result);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float2x2 inverse(float2x2 value) => float2x2.Inverse(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float3x2 transpose(float2x3 value) => float2x3.Transpose(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float2x3 matrixCompMult(float2x3 left, float2x3 right) => float2x3.MatrixCompMult(left, right);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float2x3 outerProduct(float3 c, float2 r) => float2x3.OuterProduct(c, r);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float4x2 transpose(float2x4 value) => float2x4.Transpose(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float2x4 matrixCompMult(float2x4 left, float2x4 right) => float2x4.MatrixCompMult(left, right);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float2x4 outerProduct(float4 c, float2 r) => float2x4.OuterProduct(c, r);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float2x3 transpose(float3x2 value) => float3x2.Transpose(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float3x2 matrixCompMult(float3x2 left, float3x2 right) => float3x2.MatrixCompMult(left, right);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float3x2 outerProduct(float2 c, float3 r) => float3x2.OuterProduct(c, r);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float3x3 transpose(float3x3 value) => float3x3.Transpose(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float3x3 matrixCompMult(float3x3 left, float3x3 right) => float3x3.MatrixCompMult(left, right);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float3x3 outerProduct(float3 c, float3 r) => float3x3.OuterProduct(c, r);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float determinant(float3x3 value) => float3x3.Determinant(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool tryInverse(float3x3 value, out float3x3 result) => float3x3.TryInverse(value, out result);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float3x3 inverse(float3x3 value) => float3x3.Inverse(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float4x3 transpose(float3x4 value) => float3x4.Transpose(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float3x4 matrixCompMult(float3x4 left, float3x4 right) => float3x4.MatrixCompMult(left, right);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float3x4 outerProduct(float4 c, float3 r) => float3x4.OuterProduct(c, r);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float2x4 transpose(float4x2 value) => float4x2.Transpose(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float4x2 matrixCompMult(float4x2 left, float4x2 right) => float4x2.MatrixCompMult(left, right);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float4x2 outerProduct(float2 c, float4 r) => float4x2.OuterProduct(c, r);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float3x4 transpose(float4x3 value) => float4x3.Transpose(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float4x3 matrixCompMult(float4x3 left, float4x3 right) => float4x3.MatrixCompMult(left, right);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float4x3 outerProduct(float3 c, float4 r) => float4x3.OuterProduct(c, r);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float4x4 transpose(float4x4 value) => float4x4.Transpose(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float4x4 matrixCompMult(float4x4 left, float4x4 right) => float4x4.MatrixCompMult(left, right);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float4x4 outerProduct(float4 c, float4 r) => float4x4.OuterProduct(c, r);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float determinant(float4x4 value) => float4x4.Determinant(value);
