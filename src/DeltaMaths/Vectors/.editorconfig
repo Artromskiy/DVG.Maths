@@ -1,2 +1,4 @@
 [*.cs]
 generated_code = true
+dotnet_diagnostic.CA1051.severity = none
+dotnet_diagnostic.CA1815.severity = none
