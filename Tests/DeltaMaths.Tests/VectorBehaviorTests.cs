@@ -126,6 +126,104 @@ namespace Delta.Maths.Tests
                 maths.bitfieldInsert(new uint3(0u, 0u, 0u), new uint3(5u, 6u, 7u), 4, 4));
         }
 
+        public static void FloatingPointShaderOperations()
+        {
+            var fractional = DeltaMaths.Modf(-3.75f, out var integerPart);
+            AssertEx.Equal(-0.75f, fractional);
+            AssertEx.Equal(-3f, integerPart);
+
+            var vectorFractional = float3.Modf(new float3(-3.75f, 2.5f, -0.25f), out var vectorIntegerPart);
+            AssertEx.Equal(new float3(-0.75f, 0.5f, -0.25f), vectorFractional);
+            AssertEx.Equal(new float3(-3f, 2f, 0f), vectorIntegerPart);
+            AssertEx.Equal(new float3(-0.75f, 0.5f, -0.25f), maths.modf(
+                new float3(-3.75f, 2.5f, -0.25f), out var facadeIntegerPart));
+            AssertEx.Equal(vectorIntegerPart, facadeIntegerPart);
+
+            var mantissa = DeltaMaths.Frexp(6.5f, out var exponent);
+            AssertEx.Equal(0.8125f, mantissa);
+            AssertEx.Equal(3, exponent);
+            AssertEx.Equal(6.5f, DeltaMaths.Ldexp(mantissa, exponent));
+            var tinyMantissa = DeltaMaths.Frexp(float.Epsilon, out var tinyExponent);
+            AssertEx.Equal(0.5f, tinyMantissa);
+            AssertEx.Equal(-148, tinyExponent);
+
+            var bits = new float3(
+                DeltaMaths.IntBitsToFloat(0x3f800000),
+                DeltaMaths.IntBitsToFloat(unchecked((int)0x80000000u)),
+                DeltaMaths.IntBitsToFloat(0x7fc12345));
+            AssertEx.Equal(new int3(0x3f800000, unchecked((int)0x80000000u), 0x7fc12345), float3.FloatBitsToInt(bits));
+            AssertEx.Equal(new uint3(0x3f800000u, 0x80000000u, 0x7fc12345u), maths.floatBitsToUint(bits));
+            AssertEx.Equal(bits, float3.UintBitsToFloat(float3.FloatBitsToUint(bits)));
+
+            var packed = float2.PackHalf2x16(new float2(1f, -2f));
+            AssertEx.Equal(0xc0003c00u, packed);
+            AssertEx.Near(new float2(1f, -2f), float2.UnpackHalf2x16(packed));
+            var special = float2.UnpackHalf2x16(float2.PackHalf2x16(
+                new float2(float.PositiveInfinity, float.NaN)));
+            AssertEx.True(float.IsPositiveInfinity(special.x));
+            AssertEx.True(float.IsNaN(special.y));
+        }
+
+        public static void RelationalAndSelect()
+        {
+            var floatLeft = new float3(1f, 3f, 2f);
+            var floatRight = new float3(2f, 3f, 1f);
+            AssertEx.Equal(new bool3(true, false, false), float3.LessThan(floatLeft, floatRight));
+            AssertEx.Equal(new bool3(false, true, true), maths.greaterThanOrEqual(floatLeft, floatRight));
+            AssertEx.Equal(new bool3(false, true, false), bool3.Not(new bool3(true, false, true)));
+            AssertEx.Equal(new bool3(false, true, false), maths.not(new bool3(true, false, true)));
+            AssertEx.Equal(new int3(-1, 20, -3), maths.select(
+                new int3(-1, -2, -3), new int3(10, 20, 30), new bool3(false, true, false)));
+            AssertEx.Equal(new uint3(1u, 8u, 3u), maths.select(
+                new uint3(1u, 2u, 3u), new uint3(7u, 8u, 9u), new bool3(false, true, false)));
+        }
+
+        public static void Half()
+        {
+            AssertEx.Equal(2, System.Runtime.InteropServices.Marshal.SizeOf<half>());
+            AssertEx.Equal(4, System.Runtime.InteropServices.Marshal.SizeOf<half2>());
+            AssertEx.Equal(8, System.Runtime.InteropServices.Marshal.SizeOf<half3>());
+            AssertEx.Equal(8, System.Runtime.InteropServices.Marshal.SizeOf<half4>());
+            AssertEx.Equal((ushort)0x3c00, new half(1f).raw);
+            AssertEx.Equal(1f, new half((ushort)0x3c00).ToSingle());
+            AssertEx.Equal((ushort)0xc000, new half(-2f).raw);
+
+            foreach (var value in new[]
+            {
+                0f,
+                -0f,
+                1f,
+                -2f,
+                0.33325f,
+                65504f,
+                0.00006103515625f,
+                float.Epsilon,
+                float.PositiveInfinity,
+                float.NaN,
+            })
+            {
+                AssertEx.Equal(
+                    BitConverter.HalfToUInt16Bits((System.Half)value),
+                    new half(value).raw);
+            }
+
+            AssertEx.Equal(half.One, DeltaMaths.Abs(new half(-1f)));
+            AssertEx.Equal(new half(0.5f), DeltaMaths.Lerp(half.Zero, half.One, new half(0.5f)));
+            AssertEx.Equal(new half(0.25f), maths.fract(new half(1.25f)));
+            AssertEx.Equal(new half(0.5f), maths.inverseSqrt(new half(4f)));
+            AssertEx.Equal(new half(2f), maths.cbrt(new half(8f)));
+            AssertEx.Equal(new half(3f), maths.log(new half(8f), new half(2f)));
+            var halfValue = new half3(new half(1f), new half(-2f), new half(3f));
+            AssertEx.Equal(new half3(new half(2f), new half(-4f), new half(6f)), halfValue * new half(2f));
+            AssertEx.Equal(new half3(new half(3f), new half(-1f), new half(5f)), halfValue + new half3(2, 1, 2));
+            AssertEx.Equal(new half3(new half(1f), new half(3f), new half(3f)),
+                half3.Select(halfValue, new half3(3, 3, 3), new bool3(false, true, false)));
+            AssertEx.Equal(new half3(new half(1f), new half(-2f), new half(3f)), halfValue.xyz);
+            AssertEx.True(new half((ushort)0x7e00).IsNaN);
+            AssertEx.True(half.PositiveInfinity.IsInfinity);
+            AssertEx.True(half.MaxValue.IsFinite);
+        }
+
         public static void Geometry()
         {
             // Cases adapted from Unity.Mathematics' official TestMath suite.

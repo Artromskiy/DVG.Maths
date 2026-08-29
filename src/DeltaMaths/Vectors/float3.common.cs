@@ -129,6 +129,49 @@ namespace Delta.Maths
             return new(DeltaMaths.Mod(x.x, y), DeltaMaths.Mod(x.y, y), DeltaMaths.Mod(x.z, y));
         }
 
+        public static float3 Modf(float3 value, out float3 integerPart)
+        {
+            var fractionalx = DeltaMaths.Modf(value.x, out var integerx);
+            var fractionaly = DeltaMaths.Modf(value.y, out var integery);
+            var fractionalz = DeltaMaths.Modf(value.z, out var integerz);
+            integerPart = new(integerx, integery, integerz);
+            return new(fractionalx, fractionaly, fractionalz);
+        }
+
+        public static float3 Frexp(float3 value, out int3 exponent)
+        {
+            var mantissax = DeltaMaths.Frexp(value.x, out var exponentx);
+            var mantissay = DeltaMaths.Frexp(value.y, out var exponenty);
+            var mantissaz = DeltaMaths.Frexp(value.z, out var exponentz);
+            exponent = new(exponentx, exponenty, exponentz);
+            return new(mantissax, mantissay, mantissaz);
+        }
+
+        public static float3 Ldexp(float3 value, int3 exponent)
+        {
+            return new(DeltaMaths.Ldexp(value.x, exponent.x), DeltaMaths.Ldexp(value.y, exponent.y), DeltaMaths.Ldexp(value.z, exponent.z));
+        }
+
+        public static int3 FloatBitsToInt(float3 value)
+        {
+            return new(DeltaMaths.FloatBitsToInt(value.x), DeltaMaths.FloatBitsToInt(value.y), DeltaMaths.FloatBitsToInt(value.z));
+        }
+
+        public static uint3 FloatBitsToUint(float3 value)
+        {
+            return new(DeltaMaths.FloatBitsToUint(value.x), DeltaMaths.FloatBitsToUint(value.y), DeltaMaths.FloatBitsToUint(value.z));
+        }
+
+        public static float3 IntBitsToFloat(int3 value)
+        {
+            return new(DeltaMaths.IntBitsToFloat(value.x), DeltaMaths.IntBitsToFloat(value.y), DeltaMaths.IntBitsToFloat(value.z));
+        }
+
+        public static float3 UintBitsToFloat(uint3 value)
+        {
+            return new(DeltaMaths.UintBitsToFloat(value.x), DeltaMaths.UintBitsToFloat(value.y), DeltaMaths.UintBitsToFloat(value.z));
+        }
+
         public static float3 Floor(float3 value)
         {
             return new(DeltaMaths.Floor(value.x), DeltaMaths.Floor(value.y), DeltaMaths.Floor(value.z));

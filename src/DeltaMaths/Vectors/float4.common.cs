@@ -129,6 +129,31 @@ namespace Delta.Maths
             return new(DeltaMaths.Mod(x.x, y), DeltaMaths.Mod(x.y, y), DeltaMaths.Mod(x.z, y), DeltaMaths.Mod(x.w, y));
         }
 
+        public static float4 Modf(float4 value, out float4 integerPart)
+        {
+            var fractionalx = DeltaMaths.Modf(value.x, out var integerx);
+            var fractionaly = DeltaMaths.Modf(value.y, out var integery);
+            var fractionalz = DeltaMaths.Modf(value.z, out var integerz);
+            var fractionalw = DeltaMaths.Modf(value.w, out var integerw);
+            integerPart = new(integerx, integery, integerz, integerw);
+            return new(fractionalx, fractionaly, fractionalz, fractionalw);
+        }
+
+        public static float4 Frexp(float4 value, out int4 exponent)
+        {
+            var mantissax = DeltaMaths.Frexp(value.x, out var exponentx);
+            var mantissay = DeltaMaths.Frexp(value.y, out var exponenty);
+            var mantissaz = DeltaMaths.Frexp(value.z, out var exponentz);
+            var mantissaw = DeltaMaths.Frexp(value.w, out var exponentw);
+            exponent = new(exponentx, exponenty, exponentz, exponentw);
+            return new(mantissax, mantissay, mantissaz, mantissaw);
+        }
+
+        public static float4 Ldexp(float4 value, int4 exponent)
+        {
+            return new(DeltaMaths.Ldexp(value.x, exponent.x), DeltaMaths.Ldexp(value.y, exponent.y), DeltaMaths.Ldexp(value.z, exponent.z), DeltaMaths.Ldexp(value.w, exponent.w));
+        }
+
         public static uint PackUnorm4x8(float4 value)
         {
             var x = (uint)DeltaMaths.RoundEven(DeltaMaths.Clamp(value.x, 0f, 1f) * 255f);
@@ -163,6 +188,26 @@ namespace Delta.Maths
                 DeltaMaths.Clamp(y / 127f, -1f, 1f),
                 DeltaMaths.Clamp(z / 127f, -1f, 1f),
                 DeltaMaths.Clamp(w / 127f, -1f, 1f));
+        }
+
+        public static int4 FloatBitsToInt(float4 value)
+        {
+            return new(DeltaMaths.FloatBitsToInt(value.x), DeltaMaths.FloatBitsToInt(value.y), DeltaMaths.FloatBitsToInt(value.z), DeltaMaths.FloatBitsToInt(value.w));
+        }
+
+        public static uint4 FloatBitsToUint(float4 value)
+        {
+            return new(DeltaMaths.FloatBitsToUint(value.x), DeltaMaths.FloatBitsToUint(value.y), DeltaMaths.FloatBitsToUint(value.z), DeltaMaths.FloatBitsToUint(value.w));
+        }
+
+        public static float4 IntBitsToFloat(int4 value)
+        {
+            return new(DeltaMaths.IntBitsToFloat(value.x), DeltaMaths.IntBitsToFloat(value.y), DeltaMaths.IntBitsToFloat(value.z), DeltaMaths.IntBitsToFloat(value.w));
+        }
+
+        public static float4 UintBitsToFloat(uint4 value)
+        {
+            return new(DeltaMaths.UintBitsToFloat(value.x), DeltaMaths.UintBitsToFloat(value.y), DeltaMaths.UintBitsToFloat(value.z), DeltaMaths.UintBitsToFloat(value.w));
         }
 
         public static float4 Floor(float4 value)

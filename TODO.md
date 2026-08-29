@@ -7,7 +7,7 @@ contract that DeltaMaths or Shader recreates independently.
 
 The selected GLSL 4.60 contract backlog is maintained in
 [DeltaMathsGen/TODO.md](../DeltaMathsGen/TODO.md#glsl-460-contract-gaps): pure
-function metadata, integer operators, optional double precision, and the
+function metadata, integer operators, double precision, and the
 explicit boundary between Delta.Maths and stage/resource features owned by
 DeltaShader/DeltaRender. The public Delta spelling for boolean-mask selection
 is `select`; it must not be duplicated with a `mix` alias.

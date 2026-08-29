@@ -121,6 +121,78 @@ namespace Delta.Maths
             c2 = new float4(value.c2.x, value.c2.y, value.c2.z, value.c2.w);
         }
 
+        /// <summary>Creates a float3x4 from a double2x2 using GLSL matrix conversion rules.</summary>
+        public float3x4(double2x2 value)
+        {
+            c0 = new float4((float)value.c0.x, (float)value.c0.y, 0f, 0f);
+            c1 = new float4((float)value.c1.x, (float)value.c1.y, 0f, 0f);
+            c2 = new float4(0f, 0f, 1f, 0f);
+        }
+
+        /// <summary>Creates a float3x4 from a double2x3 using GLSL matrix conversion rules.</summary>
+        public float3x4(double2x3 value)
+        {
+            c0 = new float4((float)value.c0.x, (float)value.c0.y, (float)value.c0.z, 0f);
+            c1 = new float4((float)value.c1.x, (float)value.c1.y, (float)value.c1.z, 0f);
+            c2 = new float4(0f, 0f, 1f, 0f);
+        }
+
+        /// <summary>Creates a float3x4 from a double2x4 using GLSL matrix conversion rules.</summary>
+        public float3x4(double2x4 value)
+        {
+            c0 = new float4((float)value.c0.x, (float)value.c0.y, (float)value.c0.z, (float)value.c0.w);
+            c1 = new float4((float)value.c1.x, (float)value.c1.y, (float)value.c1.z, (float)value.c1.w);
+            c2 = new float4(0f, 0f, 1f, 0f);
+        }
+
+        /// <summary>Creates a float3x4 from a double3x2 using GLSL matrix conversion rules.</summary>
+        public float3x4(double3x2 value)
+        {
+            c0 = new float4((float)value.c0.x, (float)value.c0.y, 0f, 0f);
+            c1 = new float4((float)value.c1.x, (float)value.c1.y, 0f, 0f);
+            c2 = new float4((float)value.c2.x, (float)value.c2.y, 1f, 0f);
+        }
+
+        /// <summary>Creates a float3x4 from a double3x3 using GLSL matrix conversion rules.</summary>
+        public float3x4(double3x3 value)
+        {
+            c0 = new float4((float)value.c0.x, (float)value.c0.y, (float)value.c0.z, 0f);
+            c1 = new float4((float)value.c1.x, (float)value.c1.y, (float)value.c1.z, 0f);
+            c2 = new float4((float)value.c2.x, (float)value.c2.y, (float)value.c2.z, 0f);
+        }
+
+        /// <summary>Creates a float3x4 from a double3x4 using GLSL matrix conversion rules.</summary>
+        public float3x4(double3x4 value)
+        {
+            c0 = new float4((float)value.c0.x, (float)value.c0.y, (float)value.c0.z, (float)value.c0.w);
+            c1 = new float4((float)value.c1.x, (float)value.c1.y, (float)value.c1.z, (float)value.c1.w);
+            c2 = new float4((float)value.c2.x, (float)value.c2.y, (float)value.c2.z, (float)value.c2.w);
+        }
+
+        /// <summary>Creates a float3x4 from a double4x2 using GLSL matrix conversion rules.</summary>
+        public float3x4(double4x2 value)
+        {
+            c0 = new float4((float)value.c0.x, (float)value.c0.y, 0f, 0f);
+            c1 = new float4((float)value.c1.x, (float)value.c1.y, 0f, 0f);
+            c2 = new float4((float)value.c2.x, (float)value.c2.y, 1f, 0f);
+        }
+
+        /// <summary>Creates a float3x4 from a double4x3 using GLSL matrix conversion rules.</summary>
+        public float3x4(double4x3 value)
+        {
+            c0 = new float4((float)value.c0.x, (float)value.c0.y, (float)value.c0.z, 0f);
+            c1 = new float4((float)value.c1.x, (float)value.c1.y, (float)value.c1.z, 0f);
+            c2 = new float4((float)value.c2.x, (float)value.c2.y, (float)value.c2.z, 0f);
+        }
+
+        /// <summary>Creates a float3x4 from a double4x4 using GLSL matrix conversion rules.</summary>
+        public float3x4(double4x4 value)
+        {
+            c0 = new float4((float)value.c0.x, (float)value.c0.y, (float)value.c0.z, (float)value.c0.w);
+            c1 = new float4((float)value.c1.x, (float)value.c1.y, (float)value.c1.z, (float)value.c1.w);
+            c2 = new float4((float)value.c2.x, (float)value.c2.y, (float)value.c2.z, (float)value.c2.w);
+        }
+
         /// <summary>Returns a column using zero-based indexing.</summary>
         public float4 GetColumn(int index)
         {

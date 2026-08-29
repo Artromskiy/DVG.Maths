@@ -5,6 +5,8 @@
     <LangVersion>9.0</LangVersion>
     <Nullable>enable</Nullable>
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <!-- Lowercase names are intentional shader-facing API identifiers. -->
+    <NoWarn>$(NoWarn);CS8981</NoWarn>
     <AssemblyName>DeltaMaths</AssemblyName>
     <PackageId>DeltaMaths</PackageId>
     <RootNamespace>Delta.Maths</RootNamespace>

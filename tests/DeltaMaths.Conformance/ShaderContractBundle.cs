@@ -327,6 +327,11 @@ internal static class CanonicalValueEncoder
             return new CanonicalValue("float", new[] { Hex(unchecked((uint)BitConverter.SingleToInt32Bits((float)value))) });
         }
 
+        if (type == typeof(half))
+        {
+            return new CanonicalValue("half", new[] { HalfWord((half)value) });
+        }
+
         if (type == typeof(double))
         {
             var bits = unchecked((ulong)BitConverter.DoubleToInt64Bits((double)value));
@@ -354,6 +359,12 @@ internal static class CanonicalValueEncoder
             : type == typeof(float2) ? EncodeFloat2((float2)value)
             : type == typeof(float3) ? EncodeFloat3((float3)value)
             : type == typeof(float4) ? EncodeFloat4((float4)value)
+            : type == typeof(double2) ? EncodeDouble2((double2)value)
+            : type == typeof(double3) ? EncodeDouble3((double3)value)
+            : type == typeof(double4) ? EncodeDouble4((double4)value)
+            : type == typeof(half2) ? EncodeHalf2((half2)value)
+            : type == typeof(half3) ? EncodeHalf3((half3)value)
+            : type == typeof(half4) ? EncodeHalf4((half4)value)
             : type == typeof(int2) ? EncodeInt2((int2)value)
             : type == typeof(int3) ? EncodeInt3((int3)value)
             : type == typeof(int4) ? EncodeInt4((int4)value)
@@ -382,6 +393,24 @@ internal static class CanonicalValueEncoder
     private static CanonicalValue EncodeFloat4(float4 value) =>
         new("float4", new[] { FloatWord(value.x), FloatWord(value.y), FloatWord(value.z), FloatWord(value.w) });
 
+    private static CanonicalValue EncodeDouble2(double2 value) =>
+        new("double2", DoubleVectorWords(value.x, value.y));
+
+    private static CanonicalValue EncodeDouble3(double3 value) =>
+        new("double3", DoubleVectorWords(value.x, value.y, value.z));
+
+    private static CanonicalValue EncodeDouble4(double4 value) =>
+        new("double4", DoubleVectorWords(value.x, value.y, value.z, value.w));
+
+    private static CanonicalValue EncodeHalf2(half2 value) =>
+        new("half2", new[] { HalfWord(value.x), HalfWord(value.y) });
+
+    private static CanonicalValue EncodeHalf3(half3 value) =>
+        new("half3", new[] { HalfWord(value.x), HalfWord(value.y), HalfWord(value.z) });
+
+    private static CanonicalValue EncodeHalf4(half4 value) =>
+        new("half4", new[] { HalfWord(value.x), HalfWord(value.y), HalfWord(value.z), HalfWord(value.w) });
+
     private static CanonicalValue EncodeInt2(int2 value) =>
         new("int2", new[] { IntWord(value.x), IntWord(value.y) });
 
@@ -402,7 +431,8 @@ internal static class CanonicalValueEncoder
 
     private static CanonicalValue EncodeMatrix(Type type, object value, int columns, int rows)
     {
-        var words = new string[columns * rows];
+        var isDouble = type.Name.StartsWith("double", StringComparison.Ordinal);
+        var words = new string[columns * rows * (isDouble ? 2 : 1)];
         for (var column = 0; column < columns; column++)
         {
             var columnField = type.GetField($"c{column}", BindingFlags.Public | BindingFlags.Instance)
@@ -417,13 +447,23 @@ internal static class CanonicalValueEncoder
                     ?? throw new InvalidOperationException(
                         $"Matrix type '{type.FullName}' column {column} has no row {row}.");
                 var componentValue = componentField.GetValue(columnValue);
-                if (componentValue is not float floatValue)
+                if (componentValue is not float && componentValue is not double)
                 {
                     throw new InvalidOperationException(
-                        $"Matrix type '{type.FullName}' column {column}, row {row} is not a float.");
+                        $"Matrix type '{type.FullName}' column {column}, row {row} is not a supported floating-point value.");
                 }
 
-                words[(column * rows) + row] = FloatWord(floatValue);
+                var wordIndex = (column * rows + row) * (isDouble ? 2 : 1);
+                if (componentValue is float floatValue)
+                {
+                    words[wordIndex] = FloatWord(floatValue);
+                }
+                else
+                {
+                    var doubleWords = DoubleWords((double)componentValue);
+                    words[wordIndex] = doubleWords[0];
+                    words[wordIndex + 1] = doubleWords[1];
+                }
             }
         }
 
@@ -445,6 +485,27 @@ internal static class CanonicalValueEncoder
     private static string BoolWord(bool value) => value ? "00000001" : "00000000";
 
     private static string FloatWord(float value) => Hex(unchecked((uint)BitConverter.SingleToInt32Bits(value)));
+
+    private static string[] DoubleWords(double value)
+    {
+        var bits = unchecked((ulong)BitConverter.DoubleToInt64Bits(value));
+        return [Hex((uint)bits), Hex((uint)(bits >> 32))];
+    }
+
+    private static string[] DoubleVectorWords(params double[] values)
+    {
+        var words = new string[values.Length * 2];
+        for (var index = 0; index < values.Length; index++)
+        {
+            var doubleWords = DoubleWords(values[index]);
+            words[index * 2] = doubleWords[0];
+            words[(index * 2) + 1] = doubleWords[1];
+        }
+
+        return words;
+    }
+
+    private static string HalfWord(half value) => Hex(value.raw);
 
     private static string IntWord(int value) => Hex(unchecked((uint)value));
 
@@ -486,7 +547,8 @@ internal static class ComparisonProfile
     private static bool IsExact(string typeName) =>
         typeName.StartsWith("bool", StringComparison.Ordinal)
         || typeName.StartsWith("int", StringComparison.Ordinal)
-        || typeName.StartsWith("uint", StringComparison.Ordinal);
+        || typeName.StartsWith("uint", StringComparison.Ordinal)
+        || typeName.StartsWith("half", StringComparison.Ordinal);
 
     private static bool IsDiscrete(string methodName) =>
         ContainsAny(methodName, "Equal", "NotEqual", "Less", "Greater", "Floor", "Ceil", "Round", "Truncate", "Step");

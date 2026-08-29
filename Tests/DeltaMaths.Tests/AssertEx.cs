@@ -64,6 +64,20 @@ namespace Delta.Maths.Tests
             Near(expected.z, actual.z, tolerance);
         }
 
+        public static void Near(double2 expected, double2 actual, double tolerance = 0.0000001)
+        {
+            Near(expected.x, actual.x, tolerance);
+            Near(expected.y, actual.y, tolerance);
+        }
+
+        public static void Near(double4 expected, double4 actual, double tolerance = 0.0000001)
+        {
+            Near(expected.x, actual.x, tolerance);
+            Near(expected.y, actual.y, tolerance);
+            Near(expected.z, actual.z, tolerance);
+            Near(expected.w, actual.w, tolerance);
+        }
+
         public static void Throws<TException>(Action action) where TException : Exception
         {
             try

@@ -37,6 +37,22 @@ namespace Delta.Maths.Tests
             AssertEx.Equal((IntPtr)8, Marshal.OffsetOf<quaternion>(nameof(quaternion.z)));
             AssertEx.Equal((IntPtr)12, Marshal.OffsetOf<quaternion>(nameof(quaternion.w)));
 
+            AssertEx.Equal(32, Marshal.SizeOf<double3>());
+            AssertEx.Equal(32, Marshal.SizeOf<double4>());
+            AssertEx.Equal(32, Marshal.SizeOf<double2x2>());
+            AssertEx.Equal(64, Marshal.SizeOf<double2x3>());
+            AssertEx.Equal((IntPtr)32, Marshal.OffsetOf<double2x3>(nameof(double2x3.c1)));
+            AssertEx.Equal(64, Marshal.SizeOf<double2x4>());
+            AssertEx.Equal(48, Marshal.SizeOf<double3x2>());
+            AssertEx.Equal((IntPtr)16, Marshal.OffsetOf<double3x2>(nameof(double3x2.c1)));
+            AssertEx.Equal(96, Marshal.SizeOf<double3x3>());
+            AssertEx.Equal((IntPtr)32, Marshal.OffsetOf<double3x3>(nameof(double3x3.c1)));
+            AssertEx.Equal(96, Marshal.SizeOf<double3x4>());
+            AssertEx.Equal(64, Marshal.SizeOf<double4x2>());
+            AssertEx.Equal(128, Marshal.SizeOf<double4x3>());
+            AssertEx.Equal((IntPtr)32, Marshal.OffsetOf<double4x3>(nameof(double4x3.c1)));
+            AssertEx.Equal(128, Marshal.SizeOf<double4x4>());
+
             AssertEx.Equal(typeof(float4), typeof(float4x4).GetField(nameof(float4x4.c0))?.FieldType);
             AssertEx.True(typeof(float4x4).GetProperty(nameof(float4x4.M14))?.CanWrite == true);
             AssertEx.True(typeof(quaternion).GetProperty(nameof(quaternion.X))?.CanWrite == true);
@@ -212,6 +228,9 @@ namespace Delta.Maths.Tests
             AssertVectorType(types, "bool2", "bvec2", 8);
             AssertVectorType(types, "bool3", "bvec3", 16);
             AssertVectorType(types, "bool4", "bvec4", 16);
+            AssertDoubleVectorType(types, "double2", "dvec2", 16, 16);
+            AssertDoubleVectorType(types, "double3", "dvec3", 32, 32);
+            AssertDoubleVectorType(types, "double4", "dvec4", 32, 32);
 
             var matrixType = types.Single(type => type.GetProperty("clrName").GetString() == "float4x4");
             AssertEx.Equal("mat4", matrixType.GetProperty("glslName").GetString());
@@ -233,8 +252,18 @@ namespace Delta.Maths.Tests
             AssertMatrixType(types, "float3x4", "mat3x4", 3, 4, 16, 16, 48);
             AssertMatrixType(types, "float4x2", "mat4x2", 4, 2, 8, 8, 32);
             AssertMatrixType(types, "float4x3", "mat4x3", 4, 3, 16, 16, 64);
+            AssertMatrixType(types, "double2x2", "dmat2", 2, 2, 16, 16, 32, "double", "float64");
+            AssertMatrixType(types, "double2x3", "dmat2x3", 2, 3, 32, 32, 64, "double", "float64");
+            AssertMatrixType(types, "double2x4", "dmat2x4", 2, 4, 32, 32, 64, "double", "float64");
+            AssertMatrixType(types, "double3x2", "dmat3x2", 3, 2, 16, 16, 48, "double", "float64");
+            AssertMatrixType(types, "double3x3", "dmat3", 3, 3, 32, 32, 96, "double", "float64");
+            AssertMatrixType(types, "double3x4", "dmat3x4", 3, 4, 32, 32, 96, "double", "float64");
+            AssertMatrixType(types, "double4x2", "dmat4x2", 4, 2, 16, 16, 64, "double", "float64");
+            AssertMatrixType(types, "double4x3", "dmat4x3", 4, 3, 32, 32, 128, "double", "float64");
+            AssertMatrixType(types, "double4x4", "dmat4", 4, 4, 32, 32, 128, "double", "float64");
             foreach (var type in types.Where(type => type.GetProperty("clrName").GetString() is { } name
-                && name.StartsWith("float", StringComparison.Ordinal)
+                && (name.StartsWith("float", StringComparison.Ordinal)
+                    || name.StartsWith("double", StringComparison.Ordinal))
                 && name.Contains('x', StringComparison.Ordinal)))
             {
                 AssertMatrixConstructors(type);
@@ -251,7 +280,7 @@ namespace Delta.Maths.Tests
             AssertEx.True(types.Where(type => type.GetProperty("mapping").GetString() != "Unsupported").All(type =>
                 !string.IsNullOrWhiteSpace(type.GetProperty("shaderZone").GetString())
                 && !string.IsNullOrWhiteSpace(type.GetProperty("glslName").GetString())
-                && type.GetProperty("requiredCapability").GetString() == "std430"
+                && type.GetProperty("requiredCapability").GetString() is "std430" or "float16" or "float64"
                 && type.GetProperty("alignment").ValueKind == JsonValueKind.Number));
             var knownCapabilities = new HashSet<string>(StringComparer.Ordinal)
             {
@@ -260,6 +289,8 @@ namespace Delta.Maths.Tests
                 "matrix",
                 "quaternion",
                 "scalar",
+                "float16",
+                "float64",
             };
             AssertEx.True(types.All(type => type.GetProperty("requiredCapability").ValueKind == JsonValueKind.Null
                 || type.GetProperty("requiredCapability").GetString() is { } capability
@@ -276,6 +307,9 @@ namespace Delta.Maths.Tests
                 .GetProperty("alignment").GetInt32());
             AssertEx.Equal(16, types.Single(type => type.GetProperty("clrName").GetString() == "bool3")
                 .GetProperty("alignment").GetInt32());
+            AssertHalfVectorType(types, "half2", "f16vec2", 4, 4);
+            AssertHalfVectorType(types, "half3", "f16vec3", 8, 8);
+            AssertHalfVectorType(types, "half4", "f16vec4", 8, 8);
             var float3Type = types.Single(type => type.GetProperty("clrName").GetString() == "float3");
             var float3Constructors = float3Type.GetProperty("constructors").EnumerateArray().ToArray();
             AssertEx.True(float3Constructors.Any(constructor =>
@@ -316,6 +350,41 @@ namespace Delta.Maths.Tests
                         var rectangularMatrixMultiply = FindFunction(functions, matrixName, "op_Multiply", matrixName, rightName);
                         AssertEx.Equal(resultName, rectangularMatrixMultiply.GetProperty("returnClrName").GetString());
                         AssertEx.Equal("*", rectangularMatrixMultiply.GetProperty("glslName").GetString());
+                    }
+                }
+            }
+            for (var columns = 2; columns <= 4; columns++)
+            {
+                for (var rows = 2; rows <= 4; rows++)
+                {
+                    var matrixName = $"double{columns}x{rows}";
+                    var transposedName = $"double{rows}x{columns}";
+                    var transposeFunction = FindFunction(functions, matrixName, "Transpose", matrixName);
+                    AssertEx.Equal(transposedName, transposeFunction.GetProperty("returnClrName").GetString());
+                    AssertEx.Equal("transpose", transposeFunction.GetProperty("glslName").GetString());
+                    AssertEx.Equal("float64", transposeFunction.GetProperty("requiredCapability").GetString());
+                    AssertShaderSignature(functions, matrixName, "Transpose",
+                        [DoubleMatrixGlslName(columns, rows)], DoubleMatrixGlslName(rows, columns), matrixName);
+
+                    var vectorMultiply = FindFunction(functions, matrixName, "op_Multiply", matrixName, "double" + columns);
+                    AssertEx.Equal("double" + rows, vectorMultiply.GetProperty("returnClrName").GetString());
+                    AssertEx.Equal("float64", vectorMultiply.GetProperty("requiredCapability").GetString());
+                    AssertShaderSignature(functions, matrixName, "op_Multiply",
+                        [DoubleMatrixGlslName(columns, rows), $"dvec{columns}"], $"dvec{rows}", matrixName, "double" + columns);
+                    var rowVectorMultiply = FindFunction(functions, matrixName, "op_Multiply", "double" + rows, matrixName);
+                    AssertEx.Equal("double" + columns, rowVectorMultiply.GetProperty("returnClrName").GetString());
+                    AssertShaderSignature(functions, matrixName, "op_Multiply",
+                        [$"dvec{rows}", DoubleMatrixGlslName(columns, rows)], $"dvec{columns}", "double" + rows, matrixName);
+                    for (var rightColumns = 2; rightColumns <= 4; rightColumns++)
+                    {
+                        var rightName = $"double{rightColumns}x{columns}";
+                        var resultName = $"double{rightColumns}x{rows}";
+                        var rectangularMatrixMultiply = FindFunction(functions, matrixName, "op_Multiply", matrixName, rightName);
+                        AssertEx.Equal(resultName, rectangularMatrixMultiply.GetProperty("returnClrName").GetString());
+                        AssertEx.Equal("*", rectangularMatrixMultiply.GetProperty("glslName").GetString());
+                        AssertShaderSignature(functions, matrixName, "op_Multiply",
+                            [DoubleMatrixGlslName(columns, rows), DoubleMatrixGlslName(rightColumns, columns)],
+                            DoubleMatrixGlslName(rightColumns, rows), matrixName, rightName);
                     }
                 }
             }
@@ -416,6 +485,11 @@ namespace Delta.Maths.Tests
             AssertFunction(functions, "float3", "Length", "length", "Builtin", "float3");
             AssertFunction(functions, "float3", "Normalize", "normalize", "Builtin", "float3");
             AssertFunction(functions, "float3", "Select", "delta_select", "Helper", "float3", "float3", "bool3");
+            AssertFunction(functions, "float3", "LessThan", "lessThan", "Builtin", "float3", "float3");
+            AssertFunction(functions, "float3", "LessThanOrEqual", "lessThanEqual", "Builtin", "float3", "float3");
+            AssertFunction(functions, "float3", "GreaterThan", "greaterThan", "Builtin", "float3", "float3");
+            AssertFunction(functions, "float3", "GreaterThanOrEqual", "greaterThanEqual", "Builtin", "float3", "float3");
+            AssertFunction(functions, "bool3", "Not", "not", "Builtin", "bool3");
 
             AssertFunction(functions, "float3", "Fract", "fract", "Builtin", "float3");
             AssertFunction(functions, "float3", "InverseSqrt", "inversesqrt", "Builtin", "float3");
@@ -435,6 +509,19 @@ namespace Delta.Maths.Tests
             AssertFunction(functions, "float3", "Truncate", "trunc", "Builtin", "float3");
             AssertFunction(functions, "float3", "Round", "roundEven", "Builtin", "float3");
             AssertFunction(functions, "float3", "RoundEven", "roundEven", "Builtin", "float3");
+            AssertFunction(functions, "float3", "Modf", "modf", "Builtin", "float3", "float3");
+            AssertFunction(functions, "float3", "Frexp", "frexp", "Builtin", "float3", "int3");
+            AssertFunction(functions, "float3", "Ldexp", "ldexp", "Builtin", "float3", "int3");
+            AssertFunction(functions, "float3", "FloatBitsToInt", "floatBitsToInt", "Builtin", "float3");
+            AssertFunction(functions, "float3", "FloatBitsToUint", "floatBitsToUint", "Builtin", "float3");
+            AssertFunction(functions, "float3", "IntBitsToFloat", "intBitsToFloat", "Builtin", "int3");
+            AssertFunction(functions, "float3", "UintBitsToFloat", "uintBitsToFloat", "Builtin", "uint3");
+            AssertShaderSignature(functions, "float3", "Modf", ["vec3", "vec3"], "vec3", "float3", "float3");
+            AssertShaderSignature(functions, "float3", "Frexp", ["vec3", "ivec3"], "vec3", "float3", "int3");
+            AssertParameterModifiers(functions, "float3", "Modf", ["none", "out"], "float3", "float3");
+            AssertParameterModifiers(functions, "float3", "Frexp", ["none", "out"], "float3", "int3");
+            AssertFunction(functions, "float2", "PackHalf2x16", "packHalf2x16", "Builtin", "float2");
+            AssertFunction(functions, "float2", "UnpackHalf2x16", "unpackHalf2x16", "Builtin", "uint");
 
             AssertFunction(functions, "maths", "fract", "fract", "Builtin", "float");
             AssertFunction(functions, "maths", "sin", "sin", "Builtin", "float");
@@ -447,6 +534,23 @@ namespace Delta.Maths.Tests
             AssertFunction(functions, "maths", "round", "roundEven", "Builtin", "float");
             AssertFunction(functions, "maths", "roundEven", "roundEven", "Builtin", "float");
             AssertFunction(functions, "maths", "truncate", "trunc", "Builtin", "float");
+            AssertFunction(functions, "maths", "modf", "modf", "Builtin", "float", "float");
+            AssertFunction(functions, "maths", "frexp", "frexp", "Builtin", "float", "int");
+            AssertFunction(functions, "maths", "ldexp", "ldexp", "Builtin", "float", "int");
+            AssertFunction(functions, "maths", "floatBitsToInt", "floatBitsToInt", "Builtin", "float");
+            AssertFunction(functions, "maths", "floatBitsToUint", "floatBitsToUint", "Builtin", "float");
+            AssertFunction(functions, "maths", "intBitsToFloat", "intBitsToFloat", "Builtin", "int");
+            AssertFunction(functions, "maths", "uintBitsToFloat", "uintBitsToFloat", "Builtin", "uint");
+            AssertParameterModifiers(functions, "maths", "modf", ["none", "out"], "float", "float");
+            AssertParameterModifiers(functions, "maths", "frexp", ["none", "out"], "float", "int");
+
+            AssertFunction(functions, "maths", "sin", "sin", "Builtin", "double");
+            AssertFunction(functions, "maths", "sqrt", "sqrt", "Builtin", "double");
+            AssertFunction(functions, "maths", "atan2", "atan", "Builtin", "double", "double");
+            AssertFunction(functions, "maths", "round", "roundEven", "Builtin", "double");
+            AssertFunction(functions, "maths", "mod", "mod", "Builtin", "double", "double");
+            AssertShaderSignature(functions, "maths", "sin", ["double"], "double", "double");
+            AssertShaderSignature(functions, "maths", "atan2", ["double", "double"], "double", "double", "double");
 
             foreach (var vectorName in new[] { "float2", "float3", "float4" })
             {
@@ -466,11 +570,50 @@ namespace Delta.Maths.Tests
                     vectorName, vectorName, "bool" + vectorName[^1]);
             }
 
+            foreach (var vectorName in new[] { "double2", "double3", "double4" })
+            {
+                AssertFunction(functions, vectorName, "Sin", "sin", "Builtin", vectorName);
+                AssertFunction(functions, vectorName, "Normalize", "normalize", "Builtin", vectorName);
+                AssertFunction(functions, "maths", "sin", "sin", "Builtin", vectorName);
+                AssertFunction(functions, "maths", "select", "delta_select", "Helper",
+                    vectorName, vectorName, "bool" + vectorName[^1]);
+                var glslVector = "dvec" + vectorName[^1];
+                AssertShaderSignature(functions, "maths", "sin", [glslVector], glslVector, vectorName);
+                AssertShaderSignature(functions, "maths", "select",
+                    new[] { glslVector, glslVector, "bvec" + vectorName[^1] }, glslVector,
+                    vectorName, vectorName, "bool" + vectorName[^1]);
+                AssertEx.Equal("float64", FindFunction(functions, vectorName, "Sin", vectorName)
+                    .GetProperty("requiredCapability").GetString());
+            }
+
+            foreach (var dimension in new[] { 2, 3, 4 })
+            {
+                var vectorName = "half" + dimension;
+                var glslVector = "f16vec" + dimension;
+                AssertFunction(functions, vectorName, "Sin", "sin", "Builtin", vectorName);
+                AssertFunction(functions, vectorName, "Normalize", "normalize", "Builtin", vectorName);
+                AssertFunction(functions, "maths", "sin", "sin", "Builtin", vectorName);
+                AssertFunction(functions, "maths", "select", "delta_select", "Helper",
+                    vectorName, vectorName, "bool" + dimension);
+                AssertShaderSignature(functions, "maths", "sin", new[] { glslVector }, glslVector, vectorName);
+                AssertShaderSignature(functions, "maths", "select",
+                    new[] { glslVector, glslVector, "bvec" + dimension }, glslVector,
+                    vectorName, vectorName, "bool" + dimension);
+                AssertEx.Equal("float16", FindFunction(functions, vectorName, "Sin", vectorName)
+                    .GetProperty("requiredCapability").GetString());
+            }
+
+            AssertFunction(functions, "maths", "sin", "sin", "Builtin", "half");
+            AssertShaderSignature(functions, "maths", "sin", ["float16_t"], "float16_t", "half");
+            AssertFunction(functions, "maths", "atan2", "atan", "Builtin", "half", "half");
+            AssertShaderSignature(functions, "maths", "atan2", ["float16_t", "float16_t"], "float16_t", "half", "half");
+
             foreach (var vectorName in new[] { "float2", "float4" })
             {
                 foreach (var functionName in new[]
                 {
                     "PackUnorm2x16", "UnpackUnorm2x16", "PackSnorm2x16", "UnpackSnorm2x16",
+                    "PackHalf2x16", "UnpackHalf2x16",
                     "PackUnorm4x8", "UnpackUnorm4x8", "PackSnorm4x8", "UnpackSnorm4x8",
                 })
                 {
@@ -482,7 +625,7 @@ namespace Delta.Maths.Tests
                 }
             }
 
-            foreach (var valueType in new[] { "float", "int", "uint" })
+            foreach (var valueType in new[] { "float", "int", "uint", "half", "double" })
             {
                 foreach (var dimension in new[] { 2, 3, 4 })
                 {
@@ -492,6 +635,33 @@ namespace Delta.Maths.Tests
                         vectorName, vectorName, maskName);
                     AssertFunction(functions, "maths", "select", "delta_select", "Helper",
                         vectorName, vectorName, maskName);
+                }
+            }
+
+            foreach (var valueType in new[] { "float", "int", "uint", "double" })
+            {
+                foreach (var dimension in new[] { 2, 3, 4 })
+                {
+                    var vectorName = valueType + dimension;
+                    var glslVector = valueType == "float"
+                        ? "vec" + dimension
+                        : valueType == "double"
+                            ? "dvec" + dimension
+                            : (valueType == "int" ? "ivec" : "uvec") + dimension;
+                    foreach (var relation in new[] { "LessThan", "LessThanOrEqual", "GreaterThan", "GreaterThanOrEqual" })
+                    {
+                        var glslName = relation switch
+                        {
+                            "LessThanOrEqual" => "lessThanEqual",
+                            "GreaterThanOrEqual" => "greaterThanEqual",
+                            _ => char.ToLowerInvariant(relation[0]) + relation[1..],
+                        };
+                        AssertFunction(functions, vectorName, relation, glslName, "Builtin", vectorName, vectorName);
+                        AssertShaderSignature(functions, vectorName, relation,
+                            new[] { glslVector, glslVector }, "bvec" + dimension, vectorName, vectorName);
+                        AssertFunction(functions, "maths", char.ToLowerInvariant(relation[0]) + relation[1..],
+                            glslName, "Builtin", vectorName, vectorName);
+                    }
                 }
             }
 
@@ -533,17 +703,18 @@ namespace Delta.Maths.Tests
                 }
             }
 
-            foreach (var vectorName in new[] { "float2", "float3", "float4" })
+            foreach (var vectorName in new[] { "float2", "float3", "float4", "double2", "double3", "double4" })
             {
                 AssertFunction(functions, vectorName, "Mod", "mod", "Builtin", vectorName, vectorName);
-                AssertFunction(functions, vectorName, "Mod", "mod", "Builtin", vectorName, "float");
+                var scalarName = vectorName.StartsWith("double", StringComparison.Ordinal) ? "double" : "float";
+                AssertFunction(functions, vectorName, "Mod", "mod", "Builtin", vectorName, scalarName);
                 AssertFunction(functions, "maths", "mod", "mod", "Builtin", vectorName, vectorName);
-                AssertFunction(functions, "maths", "mod", "mod", "Builtin", vectorName, "float");
+                AssertFunction(functions, "maths", "mod", "mod", "Builtin", vectorName, scalarName);
                 foreach (var parameters in new[]
                 {
                     new[] { vectorName, vectorName },
-                    new[] { vectorName, "float" },
-                    new[] { "float", vectorName },
+                    new[] { vectorName, scalarName },
+                    new[] { scalarName, vectorName },
                 })
                 {
                     var scalarLeftModulus = FindFunction(functions, vectorName, "op_Modulus", parameters);
@@ -597,6 +768,15 @@ namespace Delta.Maths.Tests
             AssertEx.Equal(returnType, function.GetProperty("returnGlslType").GetString());
         }
 
+        private static void AssertParameterModifiers(JsonElement[] functions, string typeName, string clrName,
+            string[] modifiers, params string[] parameterNames)
+        {
+            var function = FindFunction(functions, typeName, clrName, parameterNames);
+            AssertEx.True(function.GetProperty("parameterModifiers").EnumerateArray()
+                .Select(parameter => parameter.GetString())
+                .SequenceEqual(modifiers));
+        }
+
         private static void AssertUnsupportedFunction(JsonElement[] functions, string typeName, string clrName,
             params string[] parameterNames)
         {
@@ -628,8 +808,31 @@ namespace Delta.Maths.Tests
             AssertEx.Equal("std430", type.GetProperty("requiredCapability").GetString());
         }
 
+        private static void AssertHalfVectorType(JsonElement[] types, string clrName, string glslName, int alignment, int size)
+        {
+            var type = types.Single(item => item.GetProperty("clrName").GetString() == clrName);
+            AssertEx.Equal(glslName, type.GetProperty("glslName").GetString());
+            AssertEx.Equal("Builtin", type.GetProperty("mapping").GetString());
+            AssertEx.Equal(alignment, type.GetProperty("alignment").GetInt32());
+            AssertEx.Equal(size, type.GetProperty("size").GetInt32());
+            AssertEx.Equal("float16_t", type.GetProperty("elementGlslType").GetString());
+            AssertEx.Equal("float16", type.GetProperty("requiredCapability").GetString());
+        }
+
+        private static void AssertDoubleVectorType(JsonElement[] types, string clrName, string glslName, int alignment, int size)
+        {
+            var type = types.Single(item => item.GetProperty("clrName").GetString() == clrName);
+            AssertEx.Equal(glslName, type.GetProperty("glslName").GetString());
+            AssertEx.Equal("Builtin", type.GetProperty("mapping").GetString());
+            AssertEx.Equal(alignment, type.GetProperty("alignment").GetInt32());
+            AssertEx.Equal(size, type.GetProperty("size").GetInt32());
+            AssertEx.Equal("double", type.GetProperty("elementGlslType").GetString());
+            AssertEx.Equal("float64", type.GetProperty("requiredCapability").GetString());
+        }
+
         private static void AssertMatrixType(JsonElement[] types, string clrName, string glslName,
-            int columns, int rows, int alignment, int stride, int size)
+            int columns, int rows, int alignment, int stride, int size,
+            string elementGlslType = "float", string requiredCapability = "std430")
         {
             var type = types.Single(item => item.GetProperty("clrName").GetString() == clrName);
             AssertEx.Equal(glslName, type.GetProperty("glslName").GetString());
@@ -637,29 +840,36 @@ namespace Delta.Maths.Tests
             AssertEx.True(type.GetProperty("columnMajor").GetBoolean());
             AssertEx.Equal(columns, type.GetProperty("matrixColumns").GetInt32());
             AssertEx.Equal(rows, type.GetProperty("matrixRows").GetInt32());
-            AssertEx.Equal("float", type.GetProperty("elementGlslType").GetString());
+            AssertEx.Equal(elementGlslType, type.GetProperty("elementGlslType").GetString());
             AssertEx.Equal(alignment, type.GetProperty("alignment").GetInt32());
             AssertEx.Equal(stride, type.GetProperty("matrixStride").GetInt32());
             AssertEx.Equal(size, type.GetProperty("size").GetInt32());
-            AssertEx.Equal("std430", type.GetProperty("requiredCapability").GetString());
+            AssertEx.Equal(requiredCapability, type.GetProperty("requiredCapability").GetString());
         }
 
         private static void AssertMatrixConstructors(JsonElement type)
         {
             var constructors = type.GetProperty("constructors").EnumerateArray().ToArray();
-            AssertEx.Equal(12, constructors.Length, type.GetProperty("clrName").GetString());
+            AssertEx.Equal(21, constructors.Length, type.GetProperty("clrName").GetString());
             for (var columns = 2; columns <= 4; columns++)
             {
                 for (var rows = 2; rows <= 4; rows++)
                 {
-                    var glslName = columns == rows ? $"mat{columns}" : $"mat{columns}x{rows}";
-                    AssertEx.True(constructors.Any(constructor => constructor.GetProperty("parameterGlslTypes")
-                        .EnumerateArray()
-                        .Select(parameter => parameter.GetString())
-                        .SequenceEqual([glslName])));
+                    foreach (var scalar in new[] { "mat", "dmat" })
+                    {
+                        var glslName = columns == rows ? $"{scalar}{columns}" : $"{scalar}{columns}x{rows}";
+                        AssertEx.True(constructors.Any(constructor => constructor.GetProperty("parameterGlslTypes")
+                            .EnumerateArray()
+                            .Select(parameter => parameter.GetString())
+                            .SequenceEqual([glslName])));
+                    }
                 }
             }
         }
+
+        private static string DoubleMatrixGlslName(int columns, int rows) => columns == rows
+            ? $"dmat{columns}"
+            : $"dmat{columns}x{rows}";
 
         public static void Glsl460Conformance()
         {
@@ -679,6 +889,14 @@ namespace Delta.Maths.Tests
             var translation = float4x4.CreateTranslation(new float3(4f, -2f, 7f));
             AssertEx.Near(new float4(5f, 0f, 10f, 1f), translation * new float4(1f, 2f, 3f, 1f));
             AssertEx.Near(new float4(2f, 4f, 6f, 0f), translation * new float4(2f, 4f, 6f, 0f));
+
+            var doubleMatrix = new double2x2(
+                new double2(1d, 2d),
+                new double2(3d, 4d));
+            AssertEx.Near(new double2(23d, 34d), doubleMatrix * new double2(5d, 6d));
+            var doubleProduct = doubleMatrix * doubleMatrix;
+            AssertEx.Near(new double2(7d, 10d), doubleProduct.c0);
+            AssertEx.Near(new double2(15d, 22d), doubleProduct.c1);
         }
 
         private static string FindShaderContractManifestPath()

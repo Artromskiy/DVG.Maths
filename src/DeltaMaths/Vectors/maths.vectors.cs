@@ -42,6 +42,9 @@ namespace Delta.Maths
         public static bool2 notEqual(bool a, bool2 b) => bool2.NotEqual(a, b);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool2 not(bool2 value) => bool2.Not(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool any(bool3 value) => bool3.Any(value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -75,6 +78,9 @@ namespace Delta.Maths
         public static bool3 notEqual(bool a, bool3 b) => bool3.NotEqual(a, b);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool3 not(bool3 value) => bool3.Not(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool any(bool4 value) => bool4.Any(value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -106,6 +112,9 @@ namespace Delta.Maths
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool4 notEqual(bool a, bool4 b) => bool4.NotEqual(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool4 not(bool4 value) => bool4.Not(value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static int2 select(int2 falseValue, int2 trueValue, bool2 mask) => int2.Select(falseValue, trueValue, mask);
@@ -987,16 +996,43 @@ namespace Delta.Maths
         public static float2 mod(float2 x, float y) => float2.Mod(x, y);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float2 modf(float2 value, out float2 integerPart) => float2.Modf(value, out integerPart);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float2 frexp(float2 value, out int2 exponent) => float2.Frexp(value, out exponent);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float2 ldexp(float2 value, int2 exponent) => float2.Ldexp(value, exponent);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint packUnorm2x16(float2 value) => float2.PackUnorm2x16(value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float2 unpackUnorm2x16(uint value) => float2.UnpackUnorm2x16(value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static uint packHalf2x16(float2 value) => float2.PackHalf2x16(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float2 unpackHalf2x16(uint value) => float2.UnpackHalf2x16(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint packSnorm2x16(float2 value) => float2.PackSnorm2x16(value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float2 unpackSnorm2x16(uint value) => float2.UnpackSnorm2x16(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static int2 floatBitsToInt(float2 value) => float2.FloatBitsToInt(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static uint2 floatBitsToUint(float2 value) => float2.FloatBitsToUint(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float2 intBitsToFloat(int2 value) => float2.IntBitsToFloat(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float2 uintBitsToFloat(uint2 value) => float2.UintBitsToFloat(value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float2 floor(float2 value) => float2.Floor(value);
@@ -1291,6 +1327,27 @@ namespace Delta.Maths
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float3 mod(float3 x, float y) => float3.Mod(x, y);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float3 modf(float3 value, out float3 integerPart) => float3.Modf(value, out integerPart);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float3 frexp(float3 value, out int3 exponent) => float3.Frexp(value, out exponent);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float3 ldexp(float3 value, int3 exponent) => float3.Ldexp(value, exponent);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static int3 floatBitsToInt(float3 value) => float3.FloatBitsToInt(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static uint3 floatBitsToUint(float3 value) => float3.FloatBitsToUint(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float3 intBitsToFloat(int3 value) => float3.IntBitsToFloat(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float3 uintBitsToFloat(uint3 value) => float3.UintBitsToFloat(value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float3 floor(float3 value) => float3.Floor(value);
@@ -1590,6 +1647,15 @@ namespace Delta.Maths
         public static float4 mod(float4 x, float y) => float4.Mod(x, y);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float4 modf(float4 value, out float4 integerPart) => float4.Modf(value, out integerPart);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float4 frexp(float4 value, out int4 exponent) => float4.Frexp(value, out exponent);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float4 ldexp(float4 value, int4 exponent) => float4.Ldexp(value, exponent);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint packUnorm4x8(float4 value) => float4.PackUnorm4x8(value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -1600,6 +1666,18 @@ namespace Delta.Maths
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float4 unpackSnorm4x8(uint value) => float4.UnpackSnorm4x8(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static int4 floatBitsToInt(float4 value) => float4.FloatBitsToInt(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static uint4 floatBitsToUint(float4 value) => float4.FloatBitsToUint(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float4 intBitsToFloat(int4 value) => float4.IntBitsToFloat(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float4 uintBitsToFloat(uint4 value) => float4.UintBitsToFloat(value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float4 floor(float4 value) => float4.Floor(value);
@@ -1890,6 +1968,12 @@ namespace Delta.Maths
         public static double2 remap(double2 value, double2 sourceFrom, double2 sourceTo, double2 targetFrom, double2 targetTo) => double2.Remap(value, sourceFrom, sourceTo, targetFrom, targetTo);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double2 mod(double2 x, double2 y) => double2.Mod(x, y);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double2 mod(double2 x, double y) => double2.Mod(x, y);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double2 floor(double2 value) => double2.Floor(value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -2176,6 +2260,12 @@ namespace Delta.Maths
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double3 remap(double3 value, double3 sourceFrom, double3 sourceTo, double3 targetFrom, double3 targetTo) => double3.Remap(value, sourceFrom, sourceTo, targetFrom, targetTo);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double3 mod(double3 x, double3 y) => double3.Mod(x, y);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double3 mod(double3 x, double y) => double3.Mod(x, y);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double3 floor(double3 value) => double3.Floor(value);
@@ -2467,6 +2557,12 @@ namespace Delta.Maths
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double4 remap(double4 value, double4 sourceFrom, double4 sourceTo, double4 targetFrom, double4 targetTo) => double4.Remap(value, sourceFrom, sourceTo, targetFrom, targetTo);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double4 mod(double4 x, double4 y) => double4.Mod(x, y);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double4 mod(double4 x, double y) => double4.Mod(x, y);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double4 floor(double4 value) => double4.Floor(value);
@@ -3318,6 +3414,918 @@ namespace Delta.Maths
         public static fix4 smoothDamp(fix4 source, fix4 target, ref fix4 velocity, fix smoothTime, fix deltaTime) => fix4.SmoothDamp(source, target, ref velocity, smoothTime, deltaTime);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half2 select(half2 falseValue, half2 trueValue, bool2 mask) => half2.Select(falseValue, trueValue, mask);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half2 select(half2 falseValue, half2 trueValue, bool mask) => half2.Select(falseValue, trueValue, mask);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half2 select(half falseValue, half trueValue, bool2 mask) => half2.Select(falseValue, trueValue, mask);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool2 equal(half2 a, half2 b) => half2.Equal(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool2 equal(half2 a, half b) => half2.Equal(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool2 equal(half a, half2 b) => half2.Equal(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool2 notEqual(half2 a, half2 b) => half2.NotEqual(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool2 notEqual(half2 a, half b) => half2.NotEqual(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool2 notEqual(half a, half2 b) => half2.NotEqual(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half2 min(half2 a, half2 b) => half2.Min(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half2 min(half2 a, half b) => half2.Min(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half2 min(half a, half2 b) => half2.Min(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half2 max(half2 a, half2 b) => half2.Max(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half2 max(half2 a, half b) => half2.Max(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half2 max(half a, half2 b) => half2.Max(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half2 clamp(half2 value, half min, half max) => half2.Clamp(value, min, max);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half2 clamp(half2 value, half2 min, half2 max) => half2.Clamp(value, min, max);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool2 lessThan(half2 a, half2 b) => half2.LessThan(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool2 lessThan(half2 a, half b) => half2.LessThan(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool2 lessThan(half a, half2 b) => half2.LessThan(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool2 lessThanOrEqual(half2 a, half2 b) => half2.LessThanOrEqual(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool2 lessThanOrEqual(half2 a, half b) => half2.LessThanOrEqual(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool2 lessThanOrEqual(half a, half2 b) => half2.LessThanOrEqual(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool2 greaterThan(half2 a, half2 b) => half2.GreaterThan(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool2 greaterThan(half2 a, half b) => half2.GreaterThan(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool2 greaterThan(half a, half2 b) => half2.GreaterThan(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool2 greaterThanOrEqual(half2 a, half2 b) => half2.GreaterThanOrEqual(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool2 greaterThanOrEqual(half2 a, half b) => half2.GreaterThanOrEqual(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool2 greaterThanOrEqual(half a, half2 b) => half2.GreaterThanOrEqual(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half2 abs(half2 value) => half2.Abs(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half2 sign(half2 value) => half2.Sign(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half dot(half2 a, half2 b) => half2.Dot(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half sqrLength(half2 value) => half2.SqrLength(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half sum(half2 value) => half2.Sum(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half2 lerp(half2 a, half2 b, half t) => half2.Lerp(a, b, t);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half2 lerp(half2 a, half2 b, half2 t) => half2.Lerp(a, b, t);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half2 invLerp(half2 edge0, half2 edge1, half2 value) => half2.InvLerp(edge0, edge1, value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half2 invLerp(half2 edge0, half2 edge1, half value) => half2.InvLerp(edge0, edge1, value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half2 smoothstep(half2 edge0, half2 edge1, half2 value) => half2.Smoothstep(edge0, edge1, value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half2 smoothstep(half edge0, half edge1, half2 value) => half2.Smoothstep(edge0, edge1, value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half2 step(half2 edge, half2 value) => half2.Step(edge, value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half2 step(half edge, half2 value) => half2.Step(edge, value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half2 saturate(half2 value) => half2.Saturate(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half2 fma(half2 a, half2 b, half2 c) => half2.Fma(a, b, c);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half2 remap(half2 value, half2 sourceFrom, half2 sourceTo, half2 targetFrom, half2 targetTo) => half2.Remap(value, sourceFrom, sourceTo, targetFrom, targetTo);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half2 mod(half2 x, half2 y) => half2.Mod(x, y);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half2 mod(half2 x, half y) => half2.Mod(x, y);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half2 modf(half2 value, out half2 integerPart) => half2.Modf(value, out integerPart);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half2 frexp(half2 value, out int2 exponent) => half2.Frexp(value, out exponent);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half2 ldexp(half2 value, int2 exponent) => half2.Ldexp(value, exponent);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half2 floor(half2 value) => half2.Floor(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half2 ceil(half2 value) => half2.Ceil(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half2 round(half2 value) => half2.Round(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half2 roundEven(half2 value) => half2.RoundEven(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half2 truncate(half2 value) => half2.Truncate(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half2 fract(half2 value) => half2.Fract(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half2 radians(half2 value) => half2.Radians(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half2 degrees(half2 value) => half2.Degrees(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half2 sin(half2 value) => half2.Sin(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half2 cos(half2 value) => half2.Cos(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half2 tan(half2 value) => half2.Tan(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half2 asin(half2 value) => half2.Asin(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half2 acos(half2 value) => half2.Acos(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half2 atan(half2 value) => half2.Atan(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half2 atan2(half2 y, half2 x) => half2.Atan2(y, x);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half2 atan2(half2 y, half x) => half2.Atan2(y, x);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half2 atan2(half y, half2 x) => half2.Atan2(y, x);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half2 sinh(half2 value) => half2.Sinh(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half2 cosh(half2 value) => half2.Cosh(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half2 tanh(half2 value) => half2.Tanh(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half2 asinh(half2 value) => half2.Asinh(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half2 acosh(half2 value) => half2.Acosh(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half2 atanh(half2 value) => half2.Atanh(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half2 exp(half2 value) => half2.Exp(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half2 exp2(half2 value) => half2.Exp2(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half2 log(half2 value) => half2.Log(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half2 log2(half2 value) => half2.Log2(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half2 log10(half2 value) => half2.Log10(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half2 sqrt(half2 value) => half2.Sqrt(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half2 inverseSqrt(half2 value) => half2.InverseSqrt(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half2 cbrt(half2 value) => half2.Cbrt(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half2 pow(half2 a, half2 b) => half2.Pow(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half2 pow(half2 a, half b) => half2.Pow(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half2 pow(half a, half2 b) => half2.Pow(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool2 isNaN(half2 value) => half2.IsNaN(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool2 isInfinity(half2 value) => half2.IsInfinity(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool2 isFinite(half2 value) => half2.IsFinite(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half length(half2 value) => half2.Length(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half distance(half2 a, half2 b) => half2.Distance(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half sqrDistance(half2 a, half2 b) => half2.SqrDistance(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half2 normalize(half2 value) => half2.Normalize(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half2 normalizeSafe(half2 value) => half2.NormalizeSafe(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half2 normalizeSafe(half2 value, half2 fallback) => half2.NormalizeSafe(value, fallback);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half2 faceForward(half2 N, half2 I, half2 Nref) => half2.FaceForward(N, I, Nref);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half2 reflect(half2 I, half2 N) => half2.Reflect(I, N);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half2 refract(half2 I, half2 N, half eta) => half2.Refract(I, N, eta);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half2 project(half2 value, half2 onto) => half2.Project(value, onto);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half2 projectSafe(half2 value, half2 onto) => half2.ProjectSafe(value, onto);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half2 clampLength(half2 value, half maxLength) => half2.ClampLength(value, maxLength);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half2 moveTowards(half2 current, half2 target, half maxDelta) => half2.MoveTowards(current, target, maxDelta);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half2 smoothDamp(half2 source, half2 target, ref half2 velocity, half smoothTime, half deltaTime) => half2.SmoothDamp(source, target, ref velocity, smoothTime, deltaTime);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half3 select(half3 falseValue, half3 trueValue, bool3 mask) => half3.Select(falseValue, trueValue, mask);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half3 select(half3 falseValue, half3 trueValue, bool mask) => half3.Select(falseValue, trueValue, mask);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half3 select(half falseValue, half trueValue, bool3 mask) => half3.Select(falseValue, trueValue, mask);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool3 equal(half3 a, half3 b) => half3.Equal(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool3 equal(half3 a, half b) => half3.Equal(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool3 equal(half a, half3 b) => half3.Equal(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool3 notEqual(half3 a, half3 b) => half3.NotEqual(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool3 notEqual(half3 a, half b) => half3.NotEqual(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool3 notEqual(half a, half3 b) => half3.NotEqual(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half3 min(half3 a, half3 b) => half3.Min(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half3 min(half3 a, half b) => half3.Min(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half3 min(half a, half3 b) => half3.Min(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half3 max(half3 a, half3 b) => half3.Max(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half3 max(half3 a, half b) => half3.Max(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half3 max(half a, half3 b) => half3.Max(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half3 clamp(half3 value, half min, half max) => half3.Clamp(value, min, max);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half3 clamp(half3 value, half3 min, half3 max) => half3.Clamp(value, min, max);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool3 lessThan(half3 a, half3 b) => half3.LessThan(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool3 lessThan(half3 a, half b) => half3.LessThan(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool3 lessThan(half a, half3 b) => half3.LessThan(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool3 lessThanOrEqual(half3 a, half3 b) => half3.LessThanOrEqual(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool3 lessThanOrEqual(half3 a, half b) => half3.LessThanOrEqual(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool3 lessThanOrEqual(half a, half3 b) => half3.LessThanOrEqual(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool3 greaterThan(half3 a, half3 b) => half3.GreaterThan(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool3 greaterThan(half3 a, half b) => half3.GreaterThan(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool3 greaterThan(half a, half3 b) => half3.GreaterThan(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool3 greaterThanOrEqual(half3 a, half3 b) => half3.GreaterThanOrEqual(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool3 greaterThanOrEqual(half3 a, half b) => half3.GreaterThanOrEqual(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool3 greaterThanOrEqual(half a, half3 b) => half3.GreaterThanOrEqual(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half3 abs(half3 value) => half3.Abs(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half3 sign(half3 value) => half3.Sign(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half dot(half3 a, half3 b) => half3.Dot(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half sqrLength(half3 value) => half3.SqrLength(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half sum(half3 value) => half3.Sum(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half3 lerp(half3 a, half3 b, half t) => half3.Lerp(a, b, t);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half3 lerp(half3 a, half3 b, half3 t) => half3.Lerp(a, b, t);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half3 invLerp(half3 edge0, half3 edge1, half3 value) => half3.InvLerp(edge0, edge1, value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half3 invLerp(half3 edge0, half3 edge1, half value) => half3.InvLerp(edge0, edge1, value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half3 smoothstep(half3 edge0, half3 edge1, half3 value) => half3.Smoothstep(edge0, edge1, value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half3 smoothstep(half edge0, half edge1, half3 value) => half3.Smoothstep(edge0, edge1, value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half3 step(half3 edge, half3 value) => half3.Step(edge, value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half3 step(half edge, half3 value) => half3.Step(edge, value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half3 saturate(half3 value) => half3.Saturate(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half3 fma(half3 a, half3 b, half3 c) => half3.Fma(a, b, c);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half3 remap(half3 value, half3 sourceFrom, half3 sourceTo, half3 targetFrom, half3 targetTo) => half3.Remap(value, sourceFrom, sourceTo, targetFrom, targetTo);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half3 mod(half3 x, half3 y) => half3.Mod(x, y);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half3 mod(half3 x, half y) => half3.Mod(x, y);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half3 modf(half3 value, out half3 integerPart) => half3.Modf(value, out integerPart);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half3 frexp(half3 value, out int3 exponent) => half3.Frexp(value, out exponent);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half3 ldexp(half3 value, int3 exponent) => half3.Ldexp(value, exponent);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half3 floor(half3 value) => half3.Floor(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half3 ceil(half3 value) => half3.Ceil(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half3 round(half3 value) => half3.Round(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half3 roundEven(half3 value) => half3.RoundEven(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half3 truncate(half3 value) => half3.Truncate(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half3 fract(half3 value) => half3.Fract(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half3 radians(half3 value) => half3.Radians(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half3 degrees(half3 value) => half3.Degrees(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half3 sin(half3 value) => half3.Sin(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half3 cos(half3 value) => half3.Cos(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half3 tan(half3 value) => half3.Tan(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half3 asin(half3 value) => half3.Asin(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half3 acos(half3 value) => half3.Acos(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half3 atan(half3 value) => half3.Atan(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half3 atan2(half3 y, half3 x) => half3.Atan2(y, x);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half3 atan2(half3 y, half x) => half3.Atan2(y, x);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half3 atan2(half y, half3 x) => half3.Atan2(y, x);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half3 sinh(half3 value) => half3.Sinh(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half3 cosh(half3 value) => half3.Cosh(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half3 tanh(half3 value) => half3.Tanh(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half3 asinh(half3 value) => half3.Asinh(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half3 acosh(half3 value) => half3.Acosh(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half3 atanh(half3 value) => half3.Atanh(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half3 exp(half3 value) => half3.Exp(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half3 exp2(half3 value) => half3.Exp2(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half3 log(half3 value) => half3.Log(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half3 log2(half3 value) => half3.Log2(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half3 log10(half3 value) => half3.Log10(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half3 sqrt(half3 value) => half3.Sqrt(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half3 inverseSqrt(half3 value) => half3.InverseSqrt(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half3 cbrt(half3 value) => half3.Cbrt(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half3 pow(half3 a, half3 b) => half3.Pow(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half3 pow(half3 a, half b) => half3.Pow(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half3 pow(half a, half3 b) => half3.Pow(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool3 isNaN(half3 value) => half3.IsNaN(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool3 isInfinity(half3 value) => half3.IsInfinity(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool3 isFinite(half3 value) => half3.IsFinite(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half length(half3 value) => half3.Length(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half distance(half3 a, half3 b) => half3.Distance(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half sqrDistance(half3 a, half3 b) => half3.SqrDistance(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half3 normalize(half3 value) => half3.Normalize(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half3 normalizeSafe(half3 value) => half3.NormalizeSafe(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half3 normalizeSafe(half3 value, half3 fallback) => half3.NormalizeSafe(value, fallback);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half3 faceForward(half3 N, half3 I, half3 Nref) => half3.FaceForward(N, I, Nref);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half3 reflect(half3 I, half3 N) => half3.Reflect(I, N);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half3 refract(half3 I, half3 N, half eta) => half3.Refract(I, N, eta);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half3 project(half3 value, half3 onto) => half3.Project(value, onto);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half3 projectSafe(half3 value, half3 onto) => half3.ProjectSafe(value, onto);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half3 clampLength(half3 value, half maxLength) => half3.ClampLength(value, maxLength);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half3 moveTowards(half3 current, half3 target, half maxDelta) => half3.MoveTowards(current, target, maxDelta);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half3 smoothDamp(half3 source, half3 target, ref half3 velocity, half smoothTime, half deltaTime) => half3.SmoothDamp(source, target, ref velocity, smoothTime, deltaTime);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half3 cross(half3 a, half3 b) => half3.Cross(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half4 select(half4 falseValue, half4 trueValue, bool4 mask) => half4.Select(falseValue, trueValue, mask);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half4 select(half4 falseValue, half4 trueValue, bool mask) => half4.Select(falseValue, trueValue, mask);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half4 select(half falseValue, half trueValue, bool4 mask) => half4.Select(falseValue, trueValue, mask);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool4 equal(half4 a, half4 b) => half4.Equal(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool4 equal(half4 a, half b) => half4.Equal(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool4 equal(half a, half4 b) => half4.Equal(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool4 notEqual(half4 a, half4 b) => half4.NotEqual(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool4 notEqual(half4 a, half b) => half4.NotEqual(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool4 notEqual(half a, half4 b) => half4.NotEqual(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half4 min(half4 a, half4 b) => half4.Min(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half4 min(half4 a, half b) => half4.Min(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half4 min(half a, half4 b) => half4.Min(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half4 max(half4 a, half4 b) => half4.Max(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half4 max(half4 a, half b) => half4.Max(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half4 max(half a, half4 b) => half4.Max(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half4 clamp(half4 value, half min, half max) => half4.Clamp(value, min, max);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half4 clamp(half4 value, half4 min, half4 max) => half4.Clamp(value, min, max);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool4 lessThan(half4 a, half4 b) => half4.LessThan(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool4 lessThan(half4 a, half b) => half4.LessThan(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool4 lessThan(half a, half4 b) => half4.LessThan(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool4 lessThanOrEqual(half4 a, half4 b) => half4.LessThanOrEqual(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool4 lessThanOrEqual(half4 a, half b) => half4.LessThanOrEqual(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool4 lessThanOrEqual(half a, half4 b) => half4.LessThanOrEqual(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool4 greaterThan(half4 a, half4 b) => half4.GreaterThan(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool4 greaterThan(half4 a, half b) => half4.GreaterThan(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool4 greaterThan(half a, half4 b) => half4.GreaterThan(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool4 greaterThanOrEqual(half4 a, half4 b) => half4.GreaterThanOrEqual(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool4 greaterThanOrEqual(half4 a, half b) => half4.GreaterThanOrEqual(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool4 greaterThanOrEqual(half a, half4 b) => half4.GreaterThanOrEqual(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half4 abs(half4 value) => half4.Abs(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half4 sign(half4 value) => half4.Sign(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half dot(half4 a, half4 b) => half4.Dot(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half sqrLength(half4 value) => half4.SqrLength(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half sum(half4 value) => half4.Sum(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half4 lerp(half4 a, half4 b, half t) => half4.Lerp(a, b, t);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half4 lerp(half4 a, half4 b, half4 t) => half4.Lerp(a, b, t);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half4 invLerp(half4 edge0, half4 edge1, half4 value) => half4.InvLerp(edge0, edge1, value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half4 invLerp(half4 edge0, half4 edge1, half value) => half4.InvLerp(edge0, edge1, value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half4 smoothstep(half4 edge0, half4 edge1, half4 value) => half4.Smoothstep(edge0, edge1, value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half4 smoothstep(half edge0, half edge1, half4 value) => half4.Smoothstep(edge0, edge1, value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half4 step(half4 edge, half4 value) => half4.Step(edge, value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half4 step(half edge, half4 value) => half4.Step(edge, value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half4 saturate(half4 value) => half4.Saturate(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half4 fma(half4 a, half4 b, half4 c) => half4.Fma(a, b, c);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half4 remap(half4 value, half4 sourceFrom, half4 sourceTo, half4 targetFrom, half4 targetTo) => half4.Remap(value, sourceFrom, sourceTo, targetFrom, targetTo);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half4 mod(half4 x, half4 y) => half4.Mod(x, y);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half4 mod(half4 x, half y) => half4.Mod(x, y);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half4 modf(half4 value, out half4 integerPart) => half4.Modf(value, out integerPart);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half4 frexp(half4 value, out int4 exponent) => half4.Frexp(value, out exponent);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half4 ldexp(half4 value, int4 exponent) => half4.Ldexp(value, exponent);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half4 floor(half4 value) => half4.Floor(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half4 ceil(half4 value) => half4.Ceil(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half4 round(half4 value) => half4.Round(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half4 roundEven(half4 value) => half4.RoundEven(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half4 truncate(half4 value) => half4.Truncate(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half4 fract(half4 value) => half4.Fract(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half4 radians(half4 value) => half4.Radians(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half4 degrees(half4 value) => half4.Degrees(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half4 sin(half4 value) => half4.Sin(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half4 cos(half4 value) => half4.Cos(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half4 tan(half4 value) => half4.Tan(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half4 asin(half4 value) => half4.Asin(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half4 acos(half4 value) => half4.Acos(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half4 atan(half4 value) => half4.Atan(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half4 atan2(half4 y, half4 x) => half4.Atan2(y, x);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half4 atan2(half4 y, half x) => half4.Atan2(y, x);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half4 atan2(half y, half4 x) => half4.Atan2(y, x);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half4 sinh(half4 value) => half4.Sinh(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half4 cosh(half4 value) => half4.Cosh(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half4 tanh(half4 value) => half4.Tanh(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half4 asinh(half4 value) => half4.Asinh(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half4 acosh(half4 value) => half4.Acosh(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half4 atanh(half4 value) => half4.Atanh(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half4 exp(half4 value) => half4.Exp(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half4 exp2(half4 value) => half4.Exp2(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half4 log(half4 value) => half4.Log(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half4 log2(half4 value) => half4.Log2(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half4 log10(half4 value) => half4.Log10(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half4 sqrt(half4 value) => half4.Sqrt(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half4 inverseSqrt(half4 value) => half4.InverseSqrt(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half4 cbrt(half4 value) => half4.Cbrt(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half4 pow(half4 a, half4 b) => half4.Pow(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half4 pow(half4 a, half b) => half4.Pow(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half4 pow(half a, half4 b) => half4.Pow(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool4 isNaN(half4 value) => half4.IsNaN(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool4 isInfinity(half4 value) => half4.IsInfinity(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool4 isFinite(half4 value) => half4.IsFinite(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half length(half4 value) => half4.Length(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half distance(half4 a, half4 b) => half4.Distance(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half sqrDistance(half4 a, half4 b) => half4.SqrDistance(a, b);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half4 normalize(half4 value) => half4.Normalize(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half4 normalizeSafe(half4 value) => half4.NormalizeSafe(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half4 normalizeSafe(half4 value, half4 fallback) => half4.NormalizeSafe(value, fallback);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half4 faceForward(half4 N, half4 I, half4 Nref) => half4.FaceForward(N, I, Nref);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half4 reflect(half4 I, half4 N) => half4.Reflect(I, N);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half4 refract(half4 I, half4 N, half eta) => half4.Refract(I, N, eta);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half4 project(half4 value, half4 onto) => half4.Project(value, onto);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half4 projectSafe(half4 value, half4 onto) => half4.ProjectSafe(value, onto);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half4 clampLength(half4 value, half maxLength) => half4.ClampLength(value, maxLength);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half4 moveTowards(half4 current, half4 target, half maxDelta) => half4.MoveTowards(current, target, maxDelta);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static half4 smoothDamp(half4 source, half4 target, ref half4 velocity, half smoothTime, half deltaTime) => half4.SmoothDamp(source, target, ref velocity, smoothTime, deltaTime);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float2x2 transpose(float2x2 value) => float2x2.Transpose(value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -3454,6 +4462,114 @@ namespace Delta.Maths
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool decompose(float4x4 value, out float3 scale, out quaternion rotation, out float3 translation) => float4x4.Decompose(value, out scale, out rotation, out translation);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double2x2 transpose(double2x2 value) => double2x2.Transpose(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double2x2 matrixCompMult(double2x2 left, double2x2 right) => double2x2.MatrixCompMult(left, right);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double2x2 outerProduct(double2 c, double2 r) => double2x2.OuterProduct(c, r);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double determinant(double2x2 value) => double2x2.Determinant(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool tryInverse(double2x2 value, out double2x2 result) => double2x2.TryInverse(value, out result);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double2x2 inverse(double2x2 value) => double2x2.Inverse(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double3x2 transpose(double2x3 value) => double2x3.Transpose(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double2x3 matrixCompMult(double2x3 left, double2x3 right) => double2x3.MatrixCompMult(left, right);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double2x3 outerProduct(double3 c, double2 r) => double2x3.OuterProduct(c, r);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double4x2 transpose(double2x4 value) => double2x4.Transpose(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double2x4 matrixCompMult(double2x4 left, double2x4 right) => double2x4.MatrixCompMult(left, right);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double2x4 outerProduct(double4 c, double2 r) => double2x4.OuterProduct(c, r);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double2x3 transpose(double3x2 value) => double3x2.Transpose(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double3x2 matrixCompMult(double3x2 left, double3x2 right) => double3x2.MatrixCompMult(left, right);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double3x2 outerProduct(double2 c, double3 r) => double3x2.OuterProduct(c, r);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double3x3 transpose(double3x3 value) => double3x3.Transpose(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double3x3 matrixCompMult(double3x3 left, double3x3 right) => double3x3.MatrixCompMult(left, right);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double3x3 outerProduct(double3 c, double3 r) => double3x3.OuterProduct(c, r);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double determinant(double3x3 value) => double3x3.Determinant(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool tryInverse(double3x3 value, out double3x3 result) => double3x3.TryInverse(value, out result);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double3x3 inverse(double3x3 value) => double3x3.Inverse(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double4x3 transpose(double3x4 value) => double3x4.Transpose(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double3x4 matrixCompMult(double3x4 left, double3x4 right) => double3x4.MatrixCompMult(left, right);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double3x4 outerProduct(double4 c, double3 r) => double3x4.OuterProduct(c, r);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double2x4 transpose(double4x2 value) => double4x2.Transpose(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double4x2 matrixCompMult(double4x2 left, double4x2 right) => double4x2.MatrixCompMult(left, right);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double4x2 outerProduct(double2 c, double4 r) => double4x2.OuterProduct(c, r);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double3x4 transpose(double4x3 value) => double4x3.Transpose(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double4x3 matrixCompMult(double4x3 left, double4x3 right) => double4x3.MatrixCompMult(left, right);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double4x3 outerProduct(double3 c, double4 r) => double4x3.OuterProduct(c, r);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double4x4 transpose(double4x4 value) => double4x4.Transpose(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double4x4 matrixCompMult(double4x4 left, double4x4 right) => double4x4.MatrixCompMult(left, right);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double4x4 outerProduct(double4 c, double4 r) => double4x4.OuterProduct(c, r);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double determinant(double4x4 value) => double4x4.Determinant(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool tryInverse(double4x4 value, out double4x4 result) => double4x4.TryInverse(value, out result);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double4x4 inverse(double4x4 value) => double4x4.Inverse(value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float dot(quaternion left, quaternion right) => quaternion.Dot(left, right);

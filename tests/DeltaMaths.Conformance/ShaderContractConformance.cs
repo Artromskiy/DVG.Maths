@@ -310,6 +310,11 @@ internal sealed class ContractCaseRunner
             return "float";
         }
 
+        if (type == typeof(half))
+        {
+            return "half";
+        }
+
         if (type == typeof(double))
         {
             return "double";
@@ -358,6 +363,11 @@ internal sealed class ContractCaseRunner
             return ScalarFloat(function, parameterIndex);
         }
 
+        if (type == typeof(half))
+        {
+            return new half(ScalarFloat(function, parameterIndex));
+        }
+
         if (type == typeof(double))
         {
             return ScalarDouble(function, parameterIndex);
@@ -365,12 +375,16 @@ internal sealed class ContractCaseRunner
 
         if (type == typeof(int))
         {
-            return 2;
+            return function.MethodName.Contains("IntBitsToFloat", StringComparison.OrdinalIgnoreCase)
+                ? 0x3f800000
+                : 2;
         }
 
         if (type == typeof(uint))
         {
-            return 2u;
+            return function.MethodName.Contains("UintBitsToFloat", StringComparison.OrdinalIgnoreCase)
+                ? 0x3f800000u
+                : 2u;
         }
 
         if (type == typeof(bool2))
@@ -403,34 +417,82 @@ internal sealed class ContractCaseRunner
             return CreateFloat4(function);
         }
 
+        if (type == typeof(double2))
+        {
+            var value = CreateFloat2(function);
+            return new double2(value.x, value.y);
+        }
+
+        if (type == typeof(double3))
+        {
+            var value = CreateFloat3(function, parameterIndex);
+            return new double3(value.x, value.y, value.z);
+        }
+
+        if (type == typeof(double4))
+        {
+            var value = CreateFloat4(function);
+            return new double4(value.x, value.y, value.z, value.w);
+        }
+
+        if (type == typeof(half2))
+        {
+            var value = CreateFloat2(function);
+            return new half2(new half(value.x), new half(value.y));
+        }
+
+        if (type == typeof(half3))
+        {
+            var value = CreateFloat3(function, parameterIndex);
+            return new half3(new half(value.x), new half(value.y), new half(value.z));
+        }
+
+        if (type == typeof(half4))
+        {
+            var value = CreateFloat4(function);
+            return new half4(new half(value.x), new half(value.y), new half(value.z), new half(value.w));
+        }
+
         if (type == typeof(int2))
         {
-            return new int2(2, -3);
+            return function.MethodName.Contains("IntBitsToFloat", StringComparison.OrdinalIgnoreCase)
+                ? new int2(0x3f800000, 0x40000000)
+                : new int2(2, -3);
         }
 
         if (type == typeof(int3))
         {
-            return new int3(2, -3, 4);
+            return function.MethodName.Contains("IntBitsToFloat", StringComparison.OrdinalIgnoreCase)
+                ? new int3(0x3f800000, 0x40000000, 0x40400000)
+                : new int3(2, -3, 4);
         }
 
         if (type == typeof(int4))
         {
-            return new int4(2, -3, 4, -5);
+            return function.MethodName.Contains("IntBitsToFloat", StringComparison.OrdinalIgnoreCase)
+                ? new int4(0x3f800000, 0x40000000, 0x40400000, 0x40800000)
+                : new int4(2, -3, 4, -5);
         }
 
         if (type == typeof(uint2))
         {
-            return new uint2(2u, 3u);
+            return function.MethodName.Contains("UintBitsToFloat", StringComparison.OrdinalIgnoreCase)
+                ? new uint2(0x3f800000u, 0x40000000u)
+                : new uint2(2u, 3u);
         }
 
         if (type == typeof(uint3))
         {
-            return new uint3(2u, 3u, 4u);
+            return function.MethodName.Contains("UintBitsToFloat", StringComparison.OrdinalIgnoreCase)
+                ? new uint3(0x3f800000u, 0x40000000u, 0x40400000u)
+                : new uint3(2u, 3u, 4u);
         }
 
         if (type == typeof(uint4))
         {
-            return new uint4(2u, 3u, 4u, 5u);
+            return function.MethodName.Contains("UintBitsToFloat", StringComparison.OrdinalIgnoreCase)
+                ? new uint4(0x3f800000u, 0x40000000u, 0x40400000u, 0x40800000u)
+                : new uint4(2u, 3u, 4u, 5u);
         }
 
         if (type == typeof(float4x4))
@@ -460,18 +522,23 @@ internal sealed class ContractCaseRunner
             return false;
         }
 
+        var scalarType = type.Name.StartsWith("double", StringComparison.Ordinal)
+            ? typeof(double)
+            : typeof(float);
         var parameterTypes = new Type[columns * rows];
-        Array.Fill(parameterTypes, typeof(float));
+        Array.Fill(parameterTypes, scalarType);
         var constructor = type.GetConstructor(parameterTypes)
             ?? throw new InvalidOperationException(
                 $"Matrix type '{type.FullName}' has no scalar constructor for '{function.Identity}'.");
         var values = new object[parameterTypes.Length];
+        var isDouble = scalarType == typeof(double);
         for (var row = 0; row < rows; row++)
         {
             for (var column = 0; column < columns; column++)
             {
-                var diagonal = row == column ? 1f + ((row + 1) * 0.25f) : 0f;
-                values[(row * columns) + column] = diagonal + ((row + 1) * (column + 1) * 0.03125f);
+                var diagonal = row == column ? 1.0 + ((row + 1) * 0.25) : 0.0;
+                var value = diagonal + ((row + 1) * (column + 1) * 0.03125);
+                values[(row * columns) + column] = isDouble ? (object)value : (object)(float)value;
             }
         }
 
@@ -482,19 +549,22 @@ internal sealed class ContractCaseRunner
     internal static bool TryGetMatrixShape(Type type, out int columns, out int rows)
     {
         var name = type.Name;
-        if (name.Length != 8
-            || !name.StartsWith("float", StringComparison.Ordinal)
-            || name[6] != 'x'
-            || name[5] is < '2' or > '4'
-            || name[7] is < '2' or > '4')
+        var prefixLength = name.StartsWith("float", StringComparison.Ordinal)
+            ? 5
+            : name.StartsWith("double", StringComparison.Ordinal) ? 6 : 0;
+        if (prefixLength == 0
+            || name.Length != prefixLength + 3
+            || name[prefixLength] is < '2' or > '4'
+            || name[prefixLength + 1] != 'x'
+            || name[prefixLength + 2] is < '2' or > '4')
         {
             columns = 0;
             rows = 0;
             return false;
         }
 
-        columns = name[5] - '0';
-        rows = name[7] - '0';
+        columns = name[prefixLength] - '0';
+        rows = name[prefixLength + 2] - '0';
         return true;
     }
 
@@ -678,6 +748,16 @@ internal sealed class ContractCaseRunner
             if (float.IsNaN(number) || float.IsInfinity(number))
             {
                 throw new InvalidOperationException($"Contract case '{identity}' returned non-finite float.");
+            }
+
+            return;
+        }
+
+        if (type == typeof(half))
+        {
+            if (!((half)value).IsFinite)
+            {
+                throw new InvalidOperationException($"Contract case '{identity}' returned non-finite half.");
             }
 
             return;

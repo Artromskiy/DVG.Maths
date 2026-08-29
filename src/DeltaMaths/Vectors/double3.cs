@@ -22,6 +22,8 @@ namespace Delta.Maths
         [System.Runtime.Serialization.DataMember(Order = 2)]
         public double z;
 
+        private double _padding;
+
         public static readonly double3 zero = new double3(0.0, 0.0, 0.0);
 
         public double3(double x, double y, double z)
@@ -29,6 +31,7 @@ namespace Delta.Maths
             this.x = x;
             this.y = y;
             this.z = z;
+            _padding = 0.0;
         }
 
         public double3(double value)
@@ -36,6 +39,7 @@ namespace Delta.Maths
             x = value;
             y = value;
             z = value;
+            _padding = 0.0;
         }
 
         public double3(double2 value)
@@ -43,6 +47,7 @@ namespace Delta.Maths
             x = value.x;
             y = value.y;
             z = 0.0;
+            _padding = 0.0;
         }
 
         public double3(double3 value)
@@ -50,6 +55,7 @@ namespace Delta.Maths
             x = value.x;
             y = value.y;
             z = value.z;
+            _padding = 0.0;
         }
 
         public double3(double4 value)
@@ -57,6 +63,7 @@ namespace Delta.Maths
             x = value.x;
             y = value.y;
             z = value.z;
+            _padding = 0.0;
         }
 
         public double3(double x, double2 yz)
@@ -64,6 +71,7 @@ namespace Delta.Maths
             this.x = x;
             this.y = yz.x;
             this.z = yz.y;
+            _padding = 0.0;
         }
 
         public double3(double2 xy, double z)
@@ -71,6 +79,7 @@ namespace Delta.Maths
             this.x = xy.x;
             this.y = xy.y;
             this.z = z;
+            _padding = 0.0;
         }
 
         public double this[int index]

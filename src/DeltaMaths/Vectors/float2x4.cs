@@ -106,6 +106,69 @@ namespace Delta.Maths
             c1 = new float4(value.c1.x, value.c1.y, value.c1.z, value.c1.w);
         }
 
+        /// <summary>Creates a float2x4 from a double2x2 using GLSL matrix conversion rules.</summary>
+        public float2x4(double2x2 value)
+        {
+            c0 = new float4((float)value.c0.x, (float)value.c0.y, 0f, 0f);
+            c1 = new float4((float)value.c1.x, (float)value.c1.y, 0f, 0f);
+        }
+
+        /// <summary>Creates a float2x4 from a double2x3 using GLSL matrix conversion rules.</summary>
+        public float2x4(double2x3 value)
+        {
+            c0 = new float4((float)value.c0.x, (float)value.c0.y, (float)value.c0.z, 0f);
+            c1 = new float4((float)value.c1.x, (float)value.c1.y, (float)value.c1.z, 0f);
+        }
+
+        /// <summary>Creates a float2x4 from a double2x4 using GLSL matrix conversion rules.</summary>
+        public float2x4(double2x4 value)
+        {
+            c0 = new float4((float)value.c0.x, (float)value.c0.y, (float)value.c0.z, (float)value.c0.w);
+            c1 = new float4((float)value.c1.x, (float)value.c1.y, (float)value.c1.z, (float)value.c1.w);
+        }
+
+        /// <summary>Creates a float2x4 from a double3x2 using GLSL matrix conversion rules.</summary>
+        public float2x4(double3x2 value)
+        {
+            c0 = new float4((float)value.c0.x, (float)value.c0.y, 0f, 0f);
+            c1 = new float4((float)value.c1.x, (float)value.c1.y, 0f, 0f);
+        }
+
+        /// <summary>Creates a float2x4 from a double3x3 using GLSL matrix conversion rules.</summary>
+        public float2x4(double3x3 value)
+        {
+            c0 = new float4((float)value.c0.x, (float)value.c0.y, (float)value.c0.z, 0f);
+            c1 = new float4((float)value.c1.x, (float)value.c1.y, (float)value.c1.z, 0f);
+        }
+
+        /// <summary>Creates a float2x4 from a double3x4 using GLSL matrix conversion rules.</summary>
+        public float2x4(double3x4 value)
+        {
+            c0 = new float4((float)value.c0.x, (float)value.c0.y, (float)value.c0.z, (float)value.c0.w);
+            c1 = new float4((float)value.c1.x, (float)value.c1.y, (float)value.c1.z, (float)value.c1.w);
+        }
+
+        /// <summary>Creates a float2x4 from a double4x2 using GLSL matrix conversion rules.</summary>
+        public float2x4(double4x2 value)
+        {
+            c0 = new float4((float)value.c0.x, (float)value.c0.y, 0f, 0f);
+            c1 = new float4((float)value.c1.x, (float)value.c1.y, 0f, 0f);
+        }
+
+        /// <summary>Creates a float2x4 from a double4x3 using GLSL matrix conversion rules.</summary>
+        public float2x4(double4x3 value)
+        {
+            c0 = new float4((float)value.c0.x, (float)value.c0.y, (float)value.c0.z, 0f);
+            c1 = new float4((float)value.c1.x, (float)value.c1.y, (float)value.c1.z, 0f);
+        }
+
+        /// <summary>Creates a float2x4 from a double4x4 using GLSL matrix conversion rules.</summary>
+        public float2x4(double4x4 value)
+        {
+            c0 = new float4((float)value.c0.x, (float)value.c0.y, (float)value.c0.z, (float)value.c0.w);
+            c1 = new float4((float)value.c1.x, (float)value.c1.y, (float)value.c1.z, (float)value.c1.w);
+        }
+
         /// <summary>Returns a column using zero-based indexing.</summary>
         public float4 GetColumn(int index)
         {

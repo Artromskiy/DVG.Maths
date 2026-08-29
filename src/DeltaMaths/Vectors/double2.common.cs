@@ -119,6 +119,16 @@ namespace Delta.Maths
             return new(DeltaMaths.Remap(value.x, sourceFrom.x, sourceTo.x, targetFrom.x, targetTo.x), DeltaMaths.Remap(value.y, sourceFrom.y, sourceTo.y, targetFrom.y, targetTo.y));
         }
 
+        public static double2 Mod(double2 x, double2 y)
+        {
+            return new(DeltaMaths.Mod(x.x, y.x), DeltaMaths.Mod(x.y, y.y));
+        }
+
+        public static double2 Mod(double2 x, double y)
+        {
+            return new(DeltaMaths.Mod(x.x, y), DeltaMaths.Mod(x.y, y));
+        }
+
         public static double2 Floor(double2 value)
         {
             return new(DeltaMaths.Floor(value.x), DeltaMaths.Floor(value.y));

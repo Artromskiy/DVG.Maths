@@ -63,5 +63,10 @@ namespace Delta.Maths
         {
             return new(a != b.x, a != b.y);
         }
+
+        public static bool2 Not(bool2 value)
+        {
+            return new(!value.x, !value.y);
+        }
     }
 }
