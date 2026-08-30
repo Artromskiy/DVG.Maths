@@ -154,6 +154,8 @@ namespace Delta.Maths
         public static uint floatBitsToUint(float value) => DeltaMaths.FloatBitsToUint(value);
         public static float intBitsToFloat(int value) => DeltaMaths.IntBitsToFloat(value);
         public static float uintBitsToFloat(uint value) => DeltaMaths.UintBitsToFloat(value);
+        public static double packDouble2x32(uint2 value) => DeltaMaths.PackDouble2x32(value);
+        public static uint2 unpackDouble2x32(double value) => DeltaMaths.UnpackDouble2x32(value);
         public static fix smoothDamp(fix current, fix target, ref fix velocity, fix smoothTime, fix deltaTime) => DeltaMaths.SmoothDamp(current, target, ref velocity, smoothTime, deltaTime);
         public static fix invLerp(fix edge0, fix edge1, fix value) => DeltaMaths.InvLerp(edge0, edge1, value);
         public static fix remap(fix source, fix sourceFrom, fix sourceTo, fix targetFrom, fix targetTo) => DeltaMaths.Remap(source, sourceFrom, sourceTo, targetFrom, targetTo);

@@ -544,6 +544,11 @@ namespace Delta.Maths.Tests
             AssertParameterModifiers(functions, "maths", "modf", ["none", "out"], "float", "float");
             AssertParameterModifiers(functions, "maths", "frexp", ["none", "out"], "float", "int");
 
+            AssertFunction(functions, "maths", "packDouble2x32", "packDouble2x32", "Builtin", "uint2");
+            AssertShaderSignature(functions, "maths", "packDouble2x32", ["uvec2"], "double", "uint2");
+            AssertFunction(functions, "maths", "unpackDouble2x32", "unpackDouble2x32", "Builtin", "double");
+            AssertShaderSignature(functions, "maths", "unpackDouble2x32", ["double"], "uvec2", "double");
+
             AssertFunction(functions, "maths", "sin", "sin", "Builtin", "double");
             AssertFunction(functions, "maths", "sqrt", "sqrt", "Builtin", "double");
             AssertFunction(functions, "maths", "atan2", "atan", "Builtin", "double", "double");

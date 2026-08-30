@@ -299,6 +299,13 @@ namespace Delta.Maths.Tests
             AssertEx.Near(new float4(0f, 128f / 255f, 1f, 1f), float4.UnpackUnorm4x8(0xffff8000u));
             AssertEx.Equal(0x7f20e081u, float4.PackSnorm4x8(new float4(-1f, -0.25f, 0.25f, 1f)));
             AssertEx.Near(new float4(-1f, -32f / 127f, 32f / 127f, 1f), float4.UnpackSnorm4x8(0x7f20e081u));
+
+            var doubleWords = new uint2(0x89abcdefu, 0x01234567u);
+            var packedDouble = DeltaMaths.PackDouble2x32(doubleWords);
+            AssertEx.Equal(0x0123456789abcdefL, BitConverter.DoubleToInt64Bits(packedDouble));
+            AssertEx.Equal(doubleWords, DeltaMaths.UnpackDouble2x32(packedDouble));
+            AssertEx.Equal(packedDouble, maths.packDouble2x32(doubleWords));
+            AssertEx.Equal(doubleWords, maths.unpackDouble2x32(packedDouble));
         }
 
         public static void FixedPoint()

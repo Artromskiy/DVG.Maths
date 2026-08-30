@@ -91,6 +91,22 @@ namespace Delta.Maths
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float UintBitsToFloat(uint value) => IntBitsToFloat(unchecked((int)value));
 
+        /// <summary>Combines the low and high 32-bit words into an IEEE-754 double.</summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double PackDouble2x32(uint2 value)
+        {
+            var bits = ((ulong)value.y << 32) | value.x;
+            return BitConverter.Int64BitsToDouble(unchecked((long)bits));
+        }
+
+        /// <summary>Splits an IEEE-754 double into its low and high 32-bit words.</summary>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static uint2 UnpackDouble2x32(double value)
+        {
+            var bits = unchecked((ulong)BitConverter.DoubleToInt64Bits(value));
+            return new((uint)bits, (uint)(bits >> 32));
+        }
+
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static float PowerOfTwo(int exponent) =>
             IntBitsToFloat((exponent + 127) << 23);

@@ -167452,6 +167452,58 @@
       "requiredCapability": "scalar"
     },
     {
+      "identity": "maths.packDouble2x32(uint2):double",
+      "typeClrName": "maths",
+      "clrName": "packDouble2x32",
+      "mathsName": "packDouble2x32",
+      "parameterClrNames": [
+        "uint2"
+      ],
+      "parameterGlslTypes": [
+        "uvec2"
+      ],
+      "parameterModifiers": [
+        "none"
+      ],
+      "returnClrName": "double",
+      "returnGlslType": "double",
+      "glslName": "packDouble2x32",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "float64"
+    },
+    {
+      "identity": "maths.unpackDouble2x32(double):uint2",
+      "typeClrName": "maths",
+      "clrName": "unpackDouble2x32",
+      "mathsName": "unpackDouble2x32",
+      "parameterClrNames": [
+        "double"
+      ],
+      "parameterGlslTypes": [
+        "double"
+      ],
+      "parameterModifiers": [
+        "none"
+      ],
+      "returnClrName": "uint2",
+      "returnGlslType": "uvec2",
+      "glslName": "unpackDouble2x32",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "float64"
+    },
+    {
       "identity": "maths.uaddCarry(uint,uint,uint):uint",
       "typeClrName": "maths",
       "clrName": "uaddCarry",
