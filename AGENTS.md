@@ -12,8 +12,8 @@ symbol/layout contract.
 - [../DeltaMathsGen/AGENTS.md](../DeltaMathsGen/AGENTS.md) — required for generated API
   changes; [../DeltaShader/AGENTS.md](../DeltaShader/AGENTS.md) — required when
   shader-visible identities or layouts change.
-- [../HIGH_PRIORITY_TODO.md](../HIGH_PRIORITY_TODO.md) — deterministic
-  generation/ABI lane.
+- [../CONTRACTS.md](../CONTRACTS.md) — deterministic cross-project
+  generation/ABI ownership.
 
 Generated files are never edited directly. Preserve `netstandard2.0/2.1`,
 std430 compatibility and the shared CPU/GLSL column-vector convention.
