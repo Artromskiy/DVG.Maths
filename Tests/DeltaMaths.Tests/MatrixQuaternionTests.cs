@@ -524,6 +524,8 @@ namespace Delta.Maths.Tests
             AssertFunction(functions, "float2", "UnpackHalf2x16", "unpackHalf2x16", "Builtin", "uint");
 
             AssertFunction(functions, "maths", "fract", "fract", "Builtin", "float");
+            AssertFunction(functions, "maths", "abs", "abs", "Builtin", "float");
+            AssertShaderSignature(functions, "maths", "abs", ["float"], "float", "float");
             AssertFunction(functions, "maths", "sin", "sin", "Builtin", "float");
             AssertFunction(functions, "maths", "cos", "cos", "Builtin", "float");
             AssertFunction(functions, "maths", "sqrt", "sqrt", "Builtin", "float");

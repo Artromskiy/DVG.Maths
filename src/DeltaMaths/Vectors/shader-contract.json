@@ -165977,6 +165977,32 @@
       "requiredCapability": "float64"
     },
     {
+      "identity": "maths.abs(float):float",
+      "typeClrName": "maths",
+      "clrName": "abs",
+      "mathsName": "abs",
+      "parameterClrNames": [
+        "float"
+      ],
+      "parameterGlslTypes": [
+        "float"
+      ],
+      "parameterModifiers": [
+        "none"
+      ],
+      "returnClrName": "float",
+      "returnGlslType": "float",
+      "glslName": "abs",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "scalar"
+    },
+    {
       "identity": "maths.acos(float):float",
       "typeClrName": "maths",
       "clrName": "acos",
@@ -166617,6 +166643,32 @@
         "compute"
       ],
       "requiredCapability": "scalar"
+    },
+    {
+      "identity": "maths.abs(double):double",
+      "typeClrName": "maths",
+      "clrName": "abs",
+      "mathsName": "abs",
+      "parameterClrNames": [
+        "double"
+      ],
+      "parameterGlslTypes": [
+        "double"
+      ],
+      "parameterModifiers": [
+        "none"
+      ],
+      "returnClrName": "double",
+      "returnGlslType": "double",
+      "glslName": "abs",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "float64"
     },
     {
       "identity": "maths.acos(double):double",
@@ -167978,6 +168030,32 @@
         "compute"
       ],
       "requiredCapability": "scalar"
+    },
+    {
+      "identity": "maths.abs(half):half",
+      "typeClrName": "maths",
+      "clrName": "abs",
+      "mathsName": "abs",
+      "parameterClrNames": [
+        "half"
+      ],
+      "parameterGlslTypes": [
+        "float16_t"
+      ],
+      "parameterModifiers": [
+        "none"
+      ],
+      "returnClrName": "half",
+      "returnGlslType": "float16_t",
+      "glslName": "abs",
+      "mapping": "Builtin",
+      "shaderZone": "DeltaMaths",
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "requiredCapability": "float16"
     },
     {
       "identity": "maths.acos(half):half",

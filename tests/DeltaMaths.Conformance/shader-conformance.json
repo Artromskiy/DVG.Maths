@@ -5,9 +5,9 @@
   "manifestSchemaVersion": "1.1.0",
   "shaderContract": "src/DeltaMaths/Vectors/shader-contract.json",
   "coverage": {
-    "manifestFunctionCount": 3805,
-    "supportedCount": 2340,
-    "caseCount": 2340,
+    "manifestFunctionCount": 3808,
+    "supportedCount": 2343,
+    "caseCount": 2343,
     "excludedCount": 0,
     "unsupportedManifestCount": 1465
   },
@@ -137251,6 +137251,52 @@
       }
     },
     {
+      "id": "maths.abs(float):float::nominal-0",
+      "operation": {
+        "identity": "maths.abs(float):float",
+        "ownerTypeName": "maths",
+        "methodName": "abs",
+        "parameterTypeNames": [
+          "float"
+        ],
+        "returnTypeName": "float",
+        "mapping": "Builtin"
+      },
+      "inputs": [
+        {
+          "type": "float",
+          "words": [
+            "3f400000"
+          ]
+        }
+      ],
+      "expected": {
+        "type": "float",
+        "words": [
+          "3f400000"
+        ]
+      },
+      "comparison": {
+        "name": "FloatBasic",
+        "absoluteTolerance": 1E-05,
+        "relativeTolerance": 1E-05,
+        "maxUlps": 4
+      },
+      "requiredCapabilities": [
+        "scalar"
+      ],
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "disposition": {
+        "cpu": "ready",
+        "shader": "pending",
+        "render": "pending"
+      }
+    },
+    {
       "id": "maths.acos(float):float::nominal-0",
       "operation": {
         "identity": "maths.acos(float):float",
@@ -138384,6 +138430,54 @@
       },
       "requiredCapabilities": [
         "scalar"
+      ],
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "disposition": {
+        "cpu": "ready",
+        "shader": "pending",
+        "render": "pending"
+      }
+    },
+    {
+      "id": "maths.abs(double):double::nominal-0",
+      "operation": {
+        "identity": "maths.abs(double):double",
+        "ownerTypeName": "maths",
+        "methodName": "abs",
+        "parameterTypeNames": [
+          "double"
+        ],
+        "returnTypeName": "double",
+        "mapping": "Builtin"
+      },
+      "inputs": [
+        {
+          "type": "double",
+          "words": [
+            "00000000",
+            "3fe80000"
+          ]
+        }
+      ],
+      "expected": {
+        "type": "double",
+        "words": [
+          "00000000",
+          "3fe80000"
+        ]
+      },
+      "comparison": {
+        "name": "FloatBasic",
+        "absoluteTolerance": 1E-05,
+        "relativeTolerance": 1E-05,
+        "maxUlps": 4
+      },
+      "requiredCapabilities": [
+        "float64"
       ],
       "stages": [
         "vertex",
@@ -140955,6 +141049,52 @@
       },
       "requiredCapabilities": [
         "scalar"
+      ],
+      "stages": [
+        "vertex",
+        "fragment",
+        "compute"
+      ],
+      "disposition": {
+        "cpu": "ready",
+        "shader": "pending",
+        "render": "pending"
+      }
+    },
+    {
+      "id": "maths.abs(half):half::nominal-0",
+      "operation": {
+        "identity": "maths.abs(half):half",
+        "ownerTypeName": "maths",
+        "methodName": "abs",
+        "parameterTypeNames": [
+          "half"
+        ],
+        "returnTypeName": "half",
+        "mapping": "Builtin"
+      },
+      "inputs": [
+        {
+          "type": "half",
+          "words": [
+            "00003a00"
+          ]
+        }
+      ],
+      "expected": {
+        "type": "half",
+        "words": [
+          "00003a00"
+        ]
+      },
+      "comparison": {
+        "name": "Exact",
+        "absoluteTolerance": 0,
+        "relativeTolerance": 0,
+        "maxUlps": 0
+      },
+      "requiredCapabilities": [
+        "float16"
       ],
       "stages": [
         "vertex",
