@@ -36,6 +36,12 @@ The second generation must produce no additional diff. Inspect
 `.delta-generated-files` and `src/DeltaMaths/Vectors/shader-contract.json` for ABI/layout
 changes before consumer verification.
 
+DeltaMaths owns shader-visible types and contract metadata only. It does not
+publish compiled shader outputs. All generated `.spv`, `.glsl` and shader
+manifest files belong to the single DeltaShader catalog at
+`../DeltaShader/src/DeltaShader/CompiledShaders`; do not create a Maths-local
+compiled-shader directory or mix lock files into that catalog.
+
 Do not run version benchmarks during ordinary review. Use the manual workflow
 only when the user asks for a version comparison.
 
