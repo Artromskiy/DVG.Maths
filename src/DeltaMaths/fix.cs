@@ -192,7 +192,7 @@ namespace Delta.Maths
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public override readonly int GetHashCode() => raw;
 
-        public static fix Parse(string value) => (fix)decimal.Parse(value);
+        public static fix Parse(string value) => (fix)decimal.Parse(value, CultureInfo.InvariantCulture);
         public static fix Parse(string value, IFormatProvider formatProvider) => (fix)decimal.Parse(value, formatProvider);
 
         // Using Decimal.ToString() instead of float or double because decimal is 

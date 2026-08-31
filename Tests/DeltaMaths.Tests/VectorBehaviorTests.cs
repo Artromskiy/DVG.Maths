@@ -313,6 +313,7 @@ namespace Delta.Maths.Tests
             var raw = new fix(65536);
             AssertEx.Equal(65536, raw.raw);
             AssertEx.True(raw.Equals((object)new fix(65536)));
+            AssertEx.Equal((fix)1.5f, fix.Parse("1.5", CultureInfo.InvariantCulture));
             var value = new fix3((fix)1.5f, (fix)(-2.25f), (fix)3.5f);
             var absolute = fix3.Abs(value);
             AssertEx.Near(1.5f, (float)absolute.x, 0.0001f);
