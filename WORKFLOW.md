@@ -37,13 +37,36 @@ The second generation must produce no additional diff. Inspect
 changes before consumer verification.
 
 DeltaMaths owns shader-visible types and contract metadata only. It does not
-publish compiled shader outputs. All generated `.spv`, `.glsl` and shader
-manifest files belong to the single DeltaShader catalog at
-`../DeltaShader/src/DeltaShader/CompiledShaders`; do not create a Maths-local
-compiled-shader directory or mix lock files into that catalog.
+publish compiled shader outputs or maintain a persistent shader catalog. When
+running CPU/GPU producer checks, invoke the DeltaShader tool into a fresh
+temporary directory:
+
+```bash
+out_dir="$(mktemp -d)"
+trap 'rm -rf "$out_dir"' EXIT
+dotnet run --project ../DeltaShader/src/DeltaShader.Tool/DeltaShader.Tool.csproj \
+  -c Release -- maths-conformance "$PWD" \
+  --profile vulkan1.2 --spirv 1.5 --glsl 460 \
+  --optimize performance --out "$out_dir"
+```
+
+Do not create a Maths-local compiled-shader directory or mix lock files into
+the temporary output.
 
 Do not run version benchmarks during ordinary review. Use the manual workflow
 only when the user asks for a version comparison.
+
+## Contract versioning
+
+Any change to the public API or the cross-project shader/runtime contract
+requires a new release version by default. Before merging such a change,
+increment the package version in `src/DeltaMaths/DeltaMaths.csproj` and create
+an annotated Git tag with the same numeric version using the `vMAJOR.MINOR.PATCH`
+form. For example, package version `0.0.8` is released as tag `v0.0.8`.
+The tag and package version may differ only when the user explicitly requests
+an exception. Documentation-only, test-only and internal implementation
+changes do not require a version increment unless they alter the shipped
+package or contract metadata.
 
 ## Code metrics
 
