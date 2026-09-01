@@ -42,7 +42,7 @@ The work was stopped and checkpointed before this protocol was written.
 |---|---|---|---|
 | DeltaMaths | `main` | `ea92fad` | CPU conformance scaffold; 551 supported manifest overloads are reflected and invoked once |
 | DeltaShader | `main` | `3aa80b1` | unified shader body translator and context authoring checkpoint; no complete maths artifact bundle |
-| DeltaShaderPlayground | `main` | `bd94711` | nested playground checkpoint referenced by DeltaShader |
+| DeltaShader (`samples/DeltaShader.Playground`) | `main` | `3aa80b1` | playground is a sample project nested in the DeltaShader repository |
 | DeltaRender | `main` | `53f4bff` | canonical compute artifact import, storage upload, dispatch and readback exist; no generic maths parity runner |
 
 The existing `551/551` CPU result proves manifest coverage and CLR

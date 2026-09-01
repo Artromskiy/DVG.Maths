@@ -8,11 +8,11 @@ words.
 
 | Manifest accounting | Count |
 |---|---:|
-| Manifest functions | 2443 |
-| Supported (`Builtin` or `Helper`) | 893 |
-| CPU cases | 893 |
+| Manifest functions | 3808 |
+| Supported (`Builtin` or `Helper`) | 2343 |
+| CPU cases | 2343 |
 | Explicitly excluded supported cases | 0 |
-| Unsupported manifest functions | 1550 |
+| Unsupported manifest functions | 1465 |
 
 Every supported manifest identity has one deterministic nominal case. The
 bundle records the operation identity, mapping, input/expected words, named
@@ -22,4 +22,4 @@ CPU/Shader/Render disposition. `cpu=ready` means exact CLR evaluation only;
 
 The checked-in bundle is validated during the normal Conformance run. Repeated
 generation is deterministic and currently produces SHA-256
-`7022b95ab4093776182fe493c34c67a17a3bce400d6aec327a8dfca45b782fd1`.
+`bffa2925ce4a6491ce70cfd4492b7cc9eebbcd6b1d9815000c359a92f6bdf0b9`.
