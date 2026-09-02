@@ -110,3 +110,41 @@ For local application run `./eng/format.sh`; for a non-mutating check use
 --folder` to avoid the MSBuild/Roslyn workspace load that can hang on macOS
 with .NET 10. It checks/applies whitespace only; analyzer/style diagnostics
 remain covered by the build and SARIF metrics workflow.
+
+## Package release
+
+`DeltaMaths` is the publishable runtime package. The checked-in project version
+is `0.0.7`, and its matching release tag is `v0.0.7`. From this repository
+root, use a clean working tree and run the bounded release checks before
+packing:
+
+```bash
+./eng/check-layout.sh
+dotnet restore src/DeltaMaths/DeltaMaths.csproj
+dotnet build src/DeltaMaths/DeltaMaths.csproj -c Release --no-restore
+dotnet pack src/DeltaMaths/DeltaMaths.csproj -c Release --no-build \
+  --no-restore -o artifacts/package
+```
+
+Inspect the generated nuspec and package contents before publishing. GitHub
+Packages requires an authenticated feed; do not put a token in the command
+line or commit it. Export a short-lived token in the environment, then push
+the exact package produced above:
+
+```bash
+export GITHUB_TOKEN='***'
+dotnet nuget push artifacts/package/DeltaMaths.0.0.7.nupkg \
+  --source https://nuget.pkg.github.com/Artromskiy/index.json \
+  --api-key "$GITHUB_TOKEN" --skip-duplicate
+unset GITHUB_TOKEN
+```
+
+The package version, project version, and release tag must match. A public API
+or shader-contract change requires incrementing the package version and adding
+the corresponding annotated `vMAJOR.MINOR.PATCH` tag before publishing. This
+workflow does not create or move tags.
+
+`DeltaMathsGen` is intentionally not a publishable NuGet package. It is a
+`net8.0` executable used to regenerate DeltaMaths sources and the shader
+contract from its sibling checkout. Build and invoke it using the generation
+commands above; do not pack or publish a `DeltaMathsGen` package.
