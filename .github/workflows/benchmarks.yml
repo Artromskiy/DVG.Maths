@@ -65,10 +65,12 @@ jobs:
       - name: Checkout selected revision
         uses: actions/checkout@v7
 
-      - name: Install .NET 8
+      - name: Install .NET 8 and 10
         uses: actions/setup-dotnet@v6
         with:
-          dotnet-version: 8.0.x
+          dotnet-version: |
+            8.0.x
+            10.0.x
 
       - name: Cache NuGet packages
         uses: actions/cache@v6
@@ -259,10 +261,12 @@ jobs:
           path: candidate
           fetch-depth: 1
 
-      - name: Install .NET 8
+      - name: Install .NET 8 and 10
         uses: actions/setup-dotnet@v6
         with:
-          dotnet-version: 8.0.x
+          dotnet-version: |
+            8.0.x
+            10.0.x
 
       - name: Cache NuGet packages
         uses: actions/cache@v6
