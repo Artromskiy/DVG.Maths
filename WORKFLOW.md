@@ -127,16 +127,20 @@ dotnet pack src/DeltaMaths/DeltaMaths.csproj -c Release --no-build \
 ```
 
 Inspect the generated nuspec and package contents before publishing. GitHub
-Packages requires an authenticated feed; do not put a token in the command
-line or commit it. Export a short-lived token in the environment, then push
-the exact package produced above:
+GitHub Packages requires an authenticated feed; do not put a token in the command
+ line or commit it. Enter it interactively, or reuse a variable that was
+ already exported by the calling environment, then push the exact package
+ produced above:
 
 ```bash
-export GITHUB_TOKEN='***'
+if [[ -z "${NUGET_API_KEY:-}" ]]; then
+  read -r -s 'NUGET_API_KEY?NuGet API key: '
+  echo
+fi
 dotnet nuget push artifacts/package/DeltaMaths.0.0.7.nupkg \
-  --source https://nuget.pkg.github.com/Artromskiy/index.json \
-  --api-key "$GITHUB_TOKEN" --skip-duplicate
-unset GITHUB_TOKEN
+  --source https://api.nuget.org/v3/index.json \
+  --api-key "$NUGET_API_KEY" --skip-duplicate
+unset NUGET_API_KEY
 ```
 
 The package version, project version, and release tag must match. A public API
