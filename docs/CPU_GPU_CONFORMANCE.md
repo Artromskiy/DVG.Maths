@@ -229,10 +229,12 @@ For each artifact:
 7. read the output buffer once;
 8. compare each result and emit one disposition per case.
 
-Buffer and pipeline lifetime stay inside DeltaRender. The test must use
-`IComputeDevice.CreateComputePipeline(IShaderArtifact)` rather than a second
-Render-owned shader metadata model. Existing raw SPIR-V overloads are not the
-normal parity path.
+Buffer and pipeline lifetime stay inside DeltaRender. The test hands the
+validated `DeltaShader.Contract.ShaderArtifact` (final SPIR-V plus `ShaderAbi`)
+to the renderer-owned headless `RenderGraph`, which creates the compute pass
+and its resources through the current DeltaRender Vulkan contract. DeltaMaths
+does not define or consume an `IComputeDevice` API and does not maintain a
+second shader metadata model.
 
 ## Comparison profiles
 
