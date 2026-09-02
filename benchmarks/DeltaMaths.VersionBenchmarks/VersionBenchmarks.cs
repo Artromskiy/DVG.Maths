@@ -42,9 +42,8 @@ public class VersionBenchmarkSmokeBenchmarks : VersionBenchmarkBase
 [MemoryDiagnoser]
 public class VectorArithmeticVersionBenchmarks : VersionBenchmarkBase
 {
-    [Params(256, 4096, 65536)] public int Count { get; set; }
-    [Params(DeltaMathsWorkload.Float2Add, DeltaMathsWorkload.Float3Add, DeltaMathsWorkload.Float4Add)]
-    public DeltaMathsWorkload Workload { get; set; }
+    public int Count { get; set; } = BenchmarkSettings.Count;
+    public DeltaMathsWorkload Workload { get; set; } = BenchmarkSettings.Workload ?? DeltaMathsWorkload.Float2Add;
 
     [GlobalSetup] public void Setup() => Initialize(Count, Workload);
     [Benchmark(Baseline = true)] public float BaselineVersion() => Baseline.Run(Workload);
@@ -54,9 +53,8 @@ public class VectorArithmeticVersionBenchmarks : VersionBenchmarkBase
 [MemoryDiagnoser]
 public class VectorGeometryVersionBenchmarks : VersionBenchmarkBase
 {
-    [Params(256, 4096, 65536)] public int Count { get; set; }
-    [Params(DeltaMathsWorkload.Float3Dot, DeltaMathsWorkload.Float3Cross, DeltaMathsWorkload.Float3Normalize)]
-    public DeltaMathsWorkload Workload { get; set; }
+    public int Count { get; set; } = BenchmarkSettings.Count;
+    public DeltaMathsWorkload Workload { get; set; } = BenchmarkSettings.Workload ?? DeltaMathsWorkload.Float3Dot;
 
     [GlobalSetup] public void Setup() => Initialize(Count, Workload);
     [Benchmark(Baseline = true)] public float BaselineVersion() => Baseline.Run(Workload);
@@ -66,9 +64,8 @@ public class VectorGeometryVersionBenchmarks : VersionBenchmarkBase
 [MemoryDiagnoser]
 public class QuaternionVersionBenchmarks : VersionBenchmarkBase
 {
-    [Params(256, 4096, 65536)] public int Count { get; set; }
-    [Params(DeltaMathsWorkload.QuaternionMultiply, DeltaMathsWorkload.QuaternionRotate, DeltaMathsWorkload.QuaternionNormalize)]
-    public DeltaMathsWorkload Workload { get; set; }
+    public int Count { get; set; } = BenchmarkSettings.Count;
+    public DeltaMathsWorkload Workload { get; set; } = BenchmarkSettings.Workload ?? DeltaMathsWorkload.QuaternionMultiply;
 
     [GlobalSetup] public void Setup() => Initialize(Count, Workload);
     [Benchmark(Baseline = true)] public float BaselineVersion() => Baseline.Run(Workload);
@@ -78,13 +75,8 @@ public class QuaternionVersionBenchmarks : VersionBenchmarkBase
 [MemoryDiagnoser]
 public class MatrixVersionBenchmarks : VersionBenchmarkBase
 {
-    [Params(256, 4096, 65536)] public int Count { get; set; }
-    [Params(
-        DeltaMathsWorkload.MatrixMultiply,
-        DeltaMathsWorkload.MatrixVector,
-        DeltaMathsWorkload.MatrixCreateTRS,
-        DeltaMathsWorkload.MatrixTransformPoint)]
-    public DeltaMathsWorkload Workload { get; set; }
+    public int Count { get; set; } = BenchmarkSettings.Count;
+    public DeltaMathsWorkload Workload { get; set; } = BenchmarkSettings.Workload ?? DeltaMathsWorkload.MatrixMultiply;
 
     [GlobalSetup] public void Setup() => Initialize(Count, Workload);
     [Benchmark(Baseline = true)] public float BaselineVersion() => Baseline.Run(Workload);
@@ -94,16 +86,8 @@ public class MatrixVersionBenchmarks : VersionBenchmarkBase
 [MemoryDiagnoser]
 public class ScalarVersionBenchmarks : VersionBenchmarkBase
 {
-    [Params(256, 4096, 65536)] public int Count { get; set; }
-    [Params(
-        DeltaMathsWorkload.ScalarSin,
-        DeltaMathsWorkload.ScalarCos,
-        DeltaMathsWorkload.ScalarSqrt,
-        DeltaMathsWorkload.ScalarInverseSqrt,
-        DeltaMathsWorkload.ScalarLerp,
-        DeltaMathsWorkload.ScalarClamp,
-        DeltaMathsWorkload.ScalarAtan2)]
-    public DeltaMathsWorkload Workload { get; set; }
+    public int Count { get; set; } = BenchmarkSettings.Count;
+    public DeltaMathsWorkload Workload { get; set; } = BenchmarkSettings.Workload ?? DeltaMathsWorkload.ScalarSin;
 
     [GlobalSetup] public void Setup() => Initialize(Count, Workload);
     [Benchmark(Baseline = true)] public float BaselineVersion() => Baseline.Run(Workload);
@@ -113,15 +97,8 @@ public class ScalarVersionBenchmarks : VersionBenchmarkBase
 [MemoryDiagnoser]
 public class LayoutVersionBenchmarks : VersionBenchmarkBase
 {
-    [Params(256, 4096, 65536)] public int Count { get; set; }
-    [Params(
-        DeltaMathsWorkload.LayoutReadFloat3,
-        DeltaMathsWorkload.LayoutWriteFloat3,
-        DeltaMathsWorkload.LayoutReadFloat4,
-        DeltaMathsWorkload.LayoutWriteFloat4,
-        DeltaMathsWorkload.LayoutReadFloat4x4,
-        DeltaMathsWorkload.LayoutWriteFloat4x4)]
-    public DeltaMathsWorkload Workload { get; set; }
+    public int Count { get; set; } = BenchmarkSettings.Count;
+    public DeltaMathsWorkload Workload { get; set; } = BenchmarkSettings.Workload ?? DeltaMathsWorkload.LayoutReadFloat3;
 
     [GlobalSetup] public void Setup() => Initialize(Count, Workload);
     [Benchmark(Baseline = true)] public float BaselineVersion() => Baseline.Run(Workload);

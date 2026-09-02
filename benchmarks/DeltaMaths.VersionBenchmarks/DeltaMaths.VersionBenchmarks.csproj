@@ -25,6 +25,7 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="VersionBenchmarks.cs" />
+    <Compile Include="BenchmarkSettings.cs" />
     <ProjectReference Include="Shared/DeltaMaths.VersionBenchmarks.Shared.csproj" />
     <ProjectReference Include="adapters/Baseline/DeltaMaths.VersionAdapter.Baseline.csproj"
                       Aliases="baselineAdapter"

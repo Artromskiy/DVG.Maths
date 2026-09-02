@@ -5,8 +5,7 @@ namespace Delta.Maths.Benchmarks;
 [MemoryDiagnoser]
 public class LayoutBenchmarks
 {
-    [Params(256, 4096, 65536)]
-    public int Count { get; set; }
+    public int Count { get; set; } = BenchmarkSettings.Count;
 
     private float3[] _float3Values = [];
     private float3[] _float3Destination = [];

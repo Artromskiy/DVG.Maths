@@ -12,6 +12,12 @@ switches such as `--filter` and `--job` separate from workload input. Existing
 parameter attributes are migration debt: do not add new uses and replace them
 when that benchmark is next modified.
 
+The first-party benchmark runners accept workload configuration explicitly:
+`--count 256`, `--count 4096`, or `--count 65536`. The version-comparison
+runner also accepts `--workload <DeltaMathsWorkload>`; its default is the first
+workload in each benchmark family. These options are removed before
+BenchmarkDotNet discovery, so they do not become BDN parameter attributes.
+
 
 ## Repository layout gate
 

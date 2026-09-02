@@ -16,6 +16,7 @@ public static class Program
 {
     public static void Main(string[] args)
     {
+        args = BenchmarkSettings.Configure(args);
         var baselineRoot = ResolveVersionRoot("BASELINE_ROOT", "DeltaMaths.BaselineRoot");
         var candidateRoot = ResolveVersionRoot("CANDIDATE_ROOT", "DeltaMaths.CandidateRoot");
 

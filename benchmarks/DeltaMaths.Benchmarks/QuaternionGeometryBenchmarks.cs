@@ -5,8 +5,7 @@ namespace Delta.Maths.Benchmarks;
 [MemoryDiagnoser]
 public class QuaternionGeometryBenchmarks
 {
-    [Params(256, 4096, 65536)]
-    public int Count { get; set; }
+    public int Count { get; set; } = BenchmarkSettings.Count;
 
     private quaternion[] _quaternions = [];
     private quaternion[] _otherQuaternions = [];

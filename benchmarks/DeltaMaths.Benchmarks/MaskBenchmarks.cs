@@ -5,8 +5,7 @@ namespace Delta.Maths.Benchmarks;
 [MemoryDiagnoser]
 public class MaskBenchmarks
 {
-    [Params(256, 4096, 65536)]
-    public int Count { get; set; }
+    public int Count { get; set; } = BenchmarkSettings.Count;
 
     private bool3[] _bool3A = [];
     private bool3[] _bool3B = [];
