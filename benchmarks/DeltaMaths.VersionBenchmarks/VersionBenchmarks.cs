@@ -43,7 +43,9 @@ public class VersionBenchmarkSmokeBenchmarks : VersionBenchmarkBase
 public class VectorArithmeticVersionBenchmarks : VersionBenchmarkBase
 {
     public int Count { get; set; } = BenchmarkSettings.Count;
-    public DeltaMathsWorkload Workload { get; set; } = BenchmarkSettings.Workload ?? DeltaMathsWorkload.Float2Add;
+    public DeltaMathsWorkload Workload { get; set; } = BenchmarkSettings.ForFamily(
+        DeltaMathsWorkload.Float2Add,
+        DeltaMathsWorkload.Float2Add, DeltaMathsWorkload.Float3Add, DeltaMathsWorkload.Float4Add);
 
     [GlobalSetup] public void Setup() => Initialize(Count, Workload);
     [Benchmark(Baseline = true)] public float BaselineVersion() => Baseline.Run(Workload);
@@ -54,7 +56,9 @@ public class VectorArithmeticVersionBenchmarks : VersionBenchmarkBase
 public class VectorGeometryVersionBenchmarks : VersionBenchmarkBase
 {
     public int Count { get; set; } = BenchmarkSettings.Count;
-    public DeltaMathsWorkload Workload { get; set; } = BenchmarkSettings.Workload ?? DeltaMathsWorkload.Float3Dot;
+    public DeltaMathsWorkload Workload { get; set; } = BenchmarkSettings.ForFamily(
+        DeltaMathsWorkload.Float3Dot,
+        DeltaMathsWorkload.Float3Dot, DeltaMathsWorkload.Float3Cross, DeltaMathsWorkload.Float3Normalize);
 
     [GlobalSetup] public void Setup() => Initialize(Count, Workload);
     [Benchmark(Baseline = true)] public float BaselineVersion() => Baseline.Run(Workload);
@@ -65,7 +69,9 @@ public class VectorGeometryVersionBenchmarks : VersionBenchmarkBase
 public class QuaternionVersionBenchmarks : VersionBenchmarkBase
 {
     public int Count { get; set; } = BenchmarkSettings.Count;
-    public DeltaMathsWorkload Workload { get; set; } = BenchmarkSettings.Workload ?? DeltaMathsWorkload.QuaternionMultiply;
+    public DeltaMathsWorkload Workload { get; set; } = BenchmarkSettings.ForFamily(
+        DeltaMathsWorkload.QuaternionMultiply,
+        DeltaMathsWorkload.QuaternionMultiply, DeltaMathsWorkload.QuaternionRotate, DeltaMathsWorkload.QuaternionNormalize);
 
     [GlobalSetup] public void Setup() => Initialize(Count, Workload);
     [Benchmark(Baseline = true)] public float BaselineVersion() => Baseline.Run(Workload);
@@ -76,7 +82,10 @@ public class QuaternionVersionBenchmarks : VersionBenchmarkBase
 public class MatrixVersionBenchmarks : VersionBenchmarkBase
 {
     public int Count { get; set; } = BenchmarkSettings.Count;
-    public DeltaMathsWorkload Workload { get; set; } = BenchmarkSettings.Workload ?? DeltaMathsWorkload.MatrixMultiply;
+    public DeltaMathsWorkload Workload { get; set; } = BenchmarkSettings.ForFamily(
+        DeltaMathsWorkload.MatrixMultiply,
+        DeltaMathsWorkload.MatrixMultiply, DeltaMathsWorkload.MatrixVector,
+        DeltaMathsWorkload.MatrixCreateTRS, DeltaMathsWorkload.MatrixTransformPoint);
 
     [GlobalSetup] public void Setup() => Initialize(Count, Workload);
     [Benchmark(Baseline = true)] public float BaselineVersion() => Baseline.Run(Workload);
@@ -87,7 +96,11 @@ public class MatrixVersionBenchmarks : VersionBenchmarkBase
 public class ScalarVersionBenchmarks : VersionBenchmarkBase
 {
     public int Count { get; set; } = BenchmarkSettings.Count;
-    public DeltaMathsWorkload Workload { get; set; } = BenchmarkSettings.Workload ?? DeltaMathsWorkload.ScalarSin;
+    public DeltaMathsWorkload Workload { get; set; } = BenchmarkSettings.ForFamily(
+        DeltaMathsWorkload.ScalarSin,
+        DeltaMathsWorkload.ScalarSin, DeltaMathsWorkload.ScalarCos, DeltaMathsWorkload.ScalarSqrt,
+        DeltaMathsWorkload.ScalarInverseSqrt, DeltaMathsWorkload.ScalarLerp,
+        DeltaMathsWorkload.ScalarClamp, DeltaMathsWorkload.ScalarAtan2);
 
     [GlobalSetup] public void Setup() => Initialize(Count, Workload);
     [Benchmark(Baseline = true)] public float BaselineVersion() => Baseline.Run(Workload);
@@ -98,7 +111,11 @@ public class ScalarVersionBenchmarks : VersionBenchmarkBase
 public class LayoutVersionBenchmarks : VersionBenchmarkBase
 {
     public int Count { get; set; } = BenchmarkSettings.Count;
-    public DeltaMathsWorkload Workload { get; set; } = BenchmarkSettings.Workload ?? DeltaMathsWorkload.LayoutReadFloat3;
+    public DeltaMathsWorkload Workload { get; set; } = BenchmarkSettings.ForFamily(
+        DeltaMathsWorkload.LayoutReadFloat3,
+        DeltaMathsWorkload.LayoutReadFloat3, DeltaMathsWorkload.LayoutWriteFloat3,
+        DeltaMathsWorkload.LayoutReadFloat4, DeltaMathsWorkload.LayoutWriteFloat4,
+        DeltaMathsWorkload.LayoutReadFloat4x4, DeltaMathsWorkload.LayoutWriteFloat4x4);
 
     [GlobalSetup] public void Setup() => Initialize(Count, Workload);
     [Benchmark(Baseline = true)] public float BaselineVersion() => Baseline.Run(Workload);

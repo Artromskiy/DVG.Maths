@@ -10,6 +10,19 @@ internal static class BenchmarkSettings
 
     public static DeltaMathsWorkload? Workload { get; private set; }
 
+    public static DeltaMathsWorkload ForFamily(DeltaMathsWorkload defaultWorkload, params DeltaMathsWorkload[] supported)
+    {
+        if (Workload is not { } selected)
+            return defaultWorkload;
+
+        if (Array.IndexOf(supported, selected) >= 0)
+            return selected;
+
+        throw new ArgumentException(
+            $"Workload '{selected}' is not supported by this benchmark family. " +
+            $"Supported values: {string.Join(", ", supported)}.");
+    }
+
     public static string[] Configure(string[] args)
     {
         var remaining = new List<string>(args.Length);
