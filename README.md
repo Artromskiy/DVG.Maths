@@ -3,6 +3,11 @@
 DeltaMaths is a portable .NET mathematics library for game, rendering and
 shader-support code.
 
+## What it provides
+
+DeltaMaths provides value-based scalar, vector, matrix and quaternion
+operations with predictable CPU and shader-facing semantics.
+
 ## Quick start
 
 ```xml
@@ -17,6 +22,12 @@ float3 direction = normalize(new float3(1f, 2f, 3f));
 float4 transformed = new float4x4(1f) * new float4(direction, 1f);
 ```
 
+## Core concepts
+
+Vectors are value types with component-wise operations. Matrices use column
+vectors and column-major storage, so matrix multiplication and layout match the
+published shader contract.
+
 ## Capabilities and limits
 
 - Scalar functions, interpolation, geometry and quaternion operations.
@@ -29,6 +40,12 @@ float4 transformed = new float4x4(1f) * new float4(direction, 1f);
 Fixed-point values are CPU-oriented. Device and compiler support for shader
 types is decided by the shader consumer; GPU-only intrinsics are outside this
 package.
+
+## Packages and examples
+
+Install `DeltaMaths` for runtime use. The generated contract is consumed by
+shader tooling; the [DeltaMathsGen](../DeltaMathsGen/README.md) page explains
+the separate source generator.
 
 ## Further reading
 
