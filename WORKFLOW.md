@@ -127,8 +127,8 @@ dotnet pack src/DeltaMaths/DeltaMaths.csproj -c Release --no-build \
 ```
 
 Inspect the generated nuspec and package contents before publishing. GitHub
-GitHub Packages requires an authenticated feed; do not put a token in the command
- line or commit it. Enter it interactively, or reuse a variable that was
+NuGet.org requires an authenticated feed; do not put a token in the command
+line or commit it. Enter it interactively, or reuse a variable that was
  already exported by the calling environment, then push the exact package
  produced above:
 
