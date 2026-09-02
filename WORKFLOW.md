@@ -134,7 +134,7 @@ line or commit it. Enter it interactively, or reuse a variable that was
 
 ```bash
 if [[ -z "${NUGET_API_KEY:-}" ]]; then
-  read -r -s 'NUGET_API_KEY?NuGet API key: '
+  read -r -s -p "NuGet API key: " NUGET_API_KEY
   echo
 fi
 dotnet nuget push artifacts/package/DeltaMaths.0.0.7.nupkg \
