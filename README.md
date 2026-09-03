@@ -11,7 +11,7 @@ operations with predictable CPU and shader-facing semantics.
 ## Quick start
 
 ```xml
-<PackageReference Include="DeltaMaths" Version="0.0.7" />
+<PackageReference Include="DeltaMaths" Version="0.0.9" />
 ```
 
 ```csharp

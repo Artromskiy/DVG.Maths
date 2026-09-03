@@ -288,6 +288,22 @@ namespace Delta.Maths.Tests
             AssertEx.True(!maths.all(new bool3(true, false, true)));
         }
 
+        public static void CanonicalMathsFacade()
+        {
+            AssertEx.Equal(3f, Maths.Abs(-3f));
+            AssertEx.Equal(3.0, Maths.Abs(-3.0));
+            AssertEx.Equal(3, Maths.Abs(-3));
+            AssertEx.Equal(2f, Maths.Min(2f, 4f));
+            AssertEx.Equal(4.0, Maths.Max(2.0, 4.0));
+            AssertEx.Equal(10, Maths.Clamp(12, 0, 10));
+            AssertEx.Equal(-2f, Maths.Floor(-1.25f));
+            AssertEx.Equal(2.0, Maths.Ceil(1.25));
+            AssertEx.Equal(2f, Maths.Sqrt(4f));
+            AssertEx.Near(0.5f, Maths.Sin(Maths.Radians(30f)), 0.000001f);
+            AssertEx.Equal(2f, Maths.RoundEven(1.5f));
+            AssertEx.Equal(0f, Maths.Smoothstep(0f, 1f, 0f));
+        }
+
         public static void Packing()
         {
             AssertEx.Equal(0xffff0000u, float2.PackUnorm2x16(new float2(0f, 1f)));

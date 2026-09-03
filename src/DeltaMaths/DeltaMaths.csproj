@@ -6,10 +6,13 @@
     <Nullable>enable</Nullable>
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
     <!-- Lowercase names are intentional shader-facing API identifiers. -->
-    <NoWarn>$(NoWarn);CS8981</NoWarn>
+    <!-- Maths and maths are distinct managed/shader facades and must coexist.
+         CA1708/CA1724 are suppressed only for this intentional case-only split. -->
+    <!-- Public API documentation is maintained separately from generated symbols. -->
+    <NoWarn>$(NoWarn);CS8981;CA1708;CA1724;EnableGenerateDocumentationFile</NoWarn>
     <AssemblyName>DeltaMaths</AssemblyName>
     <PackageId>DeltaMaths</PackageId>
-    <Version>0.0.8</Version>
+    <Version>0.0.9</Version>
     <Authors>Artromskiy</Authors>
     <Description>Portable engine-independent mathematics and GLSL-compatible types for .NET.</Description>
     <PackageTags>mathematics;vectors;matrices;quaternion;glsl;game-development</PackageTags>

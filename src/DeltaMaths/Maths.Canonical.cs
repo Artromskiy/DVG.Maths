@@ -19,6 +19,12 @@ namespace Delta.Maths
         public static int Abs(int value) => DeltaMaths.Abs(value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float Asin(float value) => DeltaMaths.Asin(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double Asin(double value) => DeltaMaths.Asin(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float Min(float left, float right) => DeltaMaths.Min(left, right);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -85,15 +91,63 @@ namespace Delta.Maths
         public static double Sin(double value) => DeltaMaths.Sin(value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float Atan2(float y, float x) => DeltaMaths.Atan2(y, x);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double Atan2(double y, double x) => DeltaMaths.Atan2(y, x);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float Cos(float value) => DeltaMaths.Cos(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double Cos(double value) => DeltaMaths.Cos(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float Tan(float value) => DeltaMaths.Tan(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double Tan(double value) => DeltaMaths.Tan(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float Radians(float value) => DeltaMaths.Radians(value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double Radians(double value) => DeltaMaths.Radians(value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float Fma(float a, float b, float c) => DeltaMaths.Fma(a, b, c);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double Fma(double a, double b, double c) => DeltaMaths.Fma(a, b, c);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static int Sign(float value) => DeltaMaths.Sign(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static int Sign(double value) => DeltaMaths.Sign(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static int Sign(int value) => DeltaMaths.Sign(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static long Sign(long value) => DeltaMaths.Sign(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float Round(float value) => DeltaMaths.Round(value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static double Round(double value) => DeltaMaths.Round(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float RoundEven(float value) => DeltaMaths.RoundEven(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double RoundEven(double value) => DeltaMaths.RoundEven(value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float Smoothstep(float edge0, float edge1, float value) => DeltaMaths.Smoothstep(edge0, edge1, value);
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static double Smoothstep(double edge0, double edge1, double value) => DeltaMaths.Smoothstep(edge0, edge1, value);
     }
 }
