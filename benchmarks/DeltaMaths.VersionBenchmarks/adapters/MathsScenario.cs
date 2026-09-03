@@ -1,7 +1,7 @@
 extern alias mathsRuntime;
 
 using Delta.VersionBenchmarks.Shared;
-using RuntimeMaths = mathsRuntime::Delta.Maths;
+using RuntimeMaths = mathsRuntime::Delta;
 
 namespace Delta.VersionAdapter;
 

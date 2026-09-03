@@ -23,7 +23,7 @@ lines = [
     "#nullable enable",
     "using System;",
     "",
-    "namespace Delta.Maths.Conformance;",
+    "namespace Delta.Conformance;",
     "",
     "internal static class GeneratedShaderContractCases",
     "{",
