@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text.Json;
 using System.Runtime.InteropServices;
 
-namespace Delta.Maths.Tests
+namespace Delta.Tests
 {
     internal static class MatrixQuaternionTests
     {
@@ -213,7 +213,7 @@ namespace Delta.Maths.Tests
             using var document = JsonDocument.Parse(File.ReadAllText(FindShaderContractManifestPath()));
             var root = document.RootElement;
             AssertEx.Equal("1.1.0", root.GetProperty("schemaVersion").GetString());
-            AssertEx.Equal("Delta.Maths", root.GetProperty("namespace").GetString());
+            AssertEx.Equal("Delta", root.GetProperty("namespace").GetString());
 
             var types = root.GetProperty("types").EnumerateArray().ToArray();
             AssertVectorType(types, "float2", "vec2", 8);

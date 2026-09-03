@@ -1,6 +1,6 @@
 using System;
 
-namespace Delta.Maths.Tests
+namespace Delta.Tests
 {
     internal static class AssertEx
     {

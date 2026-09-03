@@ -2,7 +2,7 @@ using System;
 using System.IO;
 using System.Text.Json;
 
-namespace Delta.Maths.Tests
+namespace Delta.Tests
 {
     internal static class Program
     {

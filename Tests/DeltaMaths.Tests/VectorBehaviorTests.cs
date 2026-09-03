@@ -2,7 +2,7 @@ using System;
 using System.Globalization;
 using System.Threading;
 
-namespace Delta.Maths.Tests
+namespace Delta.Tests
 {
     internal static class VectorBehaviorTests
     {
