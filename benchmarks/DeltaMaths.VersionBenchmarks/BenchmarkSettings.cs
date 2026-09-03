@@ -1,6 +1,6 @@
-using Delta.Maths.VersionBenchmarks.Shared;
+using Delta.VersionBenchmarks.Shared;
 
-namespace Delta.Maths.VersionBenchmarks;
+namespace Delta.VersionBenchmarks;
 
 internal static class BenchmarkSettings
 {

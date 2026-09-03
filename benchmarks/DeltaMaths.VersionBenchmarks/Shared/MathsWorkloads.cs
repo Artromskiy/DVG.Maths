@@ -1,4 +1,4 @@
-namespace Delta.Maths.VersionBenchmarks.Shared;
+namespace Delta.VersionBenchmarks.Shared;
 
 public enum DeltaMathsWorkload
 {

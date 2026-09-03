@@ -1,4 +1,4 @@
-namespace Delta.Maths.Benchmarks;
+namespace Delta.Benchmarks;
 
 internal static class BenchmarkSettings
 {

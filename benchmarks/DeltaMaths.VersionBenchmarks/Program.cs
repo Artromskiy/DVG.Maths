@@ -5,12 +5,12 @@ using System.Reflection;
 using BenchmarkDotNet.Configs;
 using BenchmarkDotNet.Jobs;
 using BenchmarkDotNet.Running;
-using Delta.Maths.VersionBenchmarks.Shared;
+using Delta.VersionBenchmarks.Shared;
 
-using BaselineDeltaMathsScenario = baselineAdapter::Delta.Maths.VersionAdapter.DeltaMathsScenario;
-using CandidateDeltaMathsScenario = candidateAdapter::Delta.Maths.VersionAdapter.DeltaMathsScenario;
+using BaselineDeltaMathsScenario = baselineAdapter::Delta.VersionAdapter.DeltaMathsScenario;
+using CandidateDeltaMathsScenario = candidateAdapter::Delta.VersionAdapter.DeltaMathsScenario;
 
-namespace Delta.Maths.VersionBenchmarks;
+namespace Delta.VersionBenchmarks;
 
 public static class Program
 {

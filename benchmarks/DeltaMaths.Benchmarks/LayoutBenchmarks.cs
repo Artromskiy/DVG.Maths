@@ -1,6 +1,6 @@
 using BenchmarkDotNet.Attributes;
 
-namespace Delta.Maths.Benchmarks;
+namespace Delta.Benchmarks;
 
 [MemoryDiagnoser]
 public class LayoutBenchmarks

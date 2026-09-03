@@ -1,9 +1,9 @@
 extern alias mathsRuntime;
 
-using Delta.Maths.VersionBenchmarks.Shared;
+using Delta.VersionBenchmarks.Shared;
 using RuntimeMaths = mathsRuntime::Delta.Maths;
 
-namespace Delta.Maths.VersionAdapter;
+namespace Delta.VersionAdapter;
 
 public sealed class DeltaMathsScenario : IDeltaMathsScenario
 {

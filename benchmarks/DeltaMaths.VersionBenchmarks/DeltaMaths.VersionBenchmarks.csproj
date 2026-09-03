@@ -3,7 +3,7 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net8.0</TargetFramework>
-    <RootNamespace>Delta.Maths.VersionBenchmarks</RootNamespace>
+    <RootNamespace>Delta.VersionBenchmarks</RootNamespace>
     <AssemblyName>DeltaMaths.VersionBenchmarks</AssemblyName>
     <LangVersion>latest</LangVersion>
     <ImplicitUsings>enable</ImplicitUsings>
