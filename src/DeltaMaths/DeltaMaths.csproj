@@ -9,7 +9,7 @@
     <NoWarn>$(NoWarn);CS8981</NoWarn>
     <AssemblyName>DeltaMaths</AssemblyName>
     <PackageId>DeltaMaths</PackageId>
-    <Version>0.0.7</Version>
+    <Version>0.0.8</Version>
     <Authors>Artromskiy</Authors>
     <Description>Portable engine-independent mathematics and GLSL-compatible types for .NET.</Description>
     <PackageTags>mathematics;vectors;matrices;quaternion;glsl;game-development</PackageTags>
