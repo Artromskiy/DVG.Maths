@@ -102,7 +102,7 @@ Any change to the public API or the cross-project shader/runtime contract
 requires a new release version by default. Before merging such a change,
 increment the package version in `src/DeltaMaths/DeltaMaths.csproj` and create
 an annotated Git tag with the same numeric version using the `vMAJOR.MINOR.PATCH`
-form. For example, package version `0.0.9` is released as tag `v0.0.9`.
+form. For example, package version `0.0.10` is released as tag `v0.0.10`.
 The tag and package version may differ only when the user explicitly requests
 an exception. Documentation-only, test-only and internal implementation
 changes do not require a version increment unless they alter the shipped
@@ -141,7 +141,7 @@ remain covered by the build and SARIF metrics workflow.
 ## Package release
 
 `DeltaMaths` is the publishable runtime package. The checked-in project version
-is `0.0.9`, and its matching release tag is `v0.0.9`. From this repository
+is `0.0.10`, and its matching release tag is `v0.0.10`. From this repository
 root, use a clean working tree and run the bounded release checks before
 packing:
 
@@ -164,7 +164,7 @@ if [[ -z "${NUGET_API_KEY:-}" ]]; then
   read -r -s -p "NuGet API key: " NUGET_API_KEY
   echo
 fi
-dotnet nuget push artifacts/package/DeltaMaths.0.0.9.nupkg \
+dotnet nuget push artifacts/package/DeltaMaths.0.0.10.nupkg \
   --source https://api.nuget.org/v3/index.json \
   --api-key "$NUGET_API_KEY" --skip-duplicate
 unset NUGET_API_KEY

@@ -12,7 +12,7 @@
     <NoWarn>$(NoWarn);CS8981;CA1708;CA1724;EnableGenerateDocumentationFile</NoWarn>
     <AssemblyName>DeltaMaths</AssemblyName>
     <PackageId>DeltaMaths</PackageId>
-    <Version>0.0.9</Version>
+    <Version>0.0.10</Version>
     <Authors>Artromskiy</Authors>
     <Description>Portable engine-independent mathematics and GLSL-compatible types for .NET.</Description>
     <PackageTags>mathematics;vectors;matrices;quaternion;glsl;game-development</PackageTags>
