@@ -1,6 +1,6 @@
 using System.Runtime.CompilerServices;
 
-namespace Delta.Maths
+namespace Delta
 {
     /// <summary>Canonical managed spelling for the scalar maths facade.</summary>
     /// <remarks>

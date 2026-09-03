@@ -119,7 +119,7 @@ Illustrative shape:
   "cases": [
     {
       "id": "float3.dot.nominal-0",
-      "operation": "Delta.Maths.float3.Dot(float3,float3)",
+      "operation": "Delta.float3.Dot(float3,float3)",
       "inputs": [
         { "type": "float3", "words": ["3f800000", "40000000", "40400000"] },
         { "type": "float3", "words": ["40800000", "40a00000", "40c00000"] }

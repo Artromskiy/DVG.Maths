@@ -1,6 +1,6 @@
 using System.Runtime.CompilerServices;
 
-namespace Delta.Maths
+namespace Delta
 {
     public partial class DeltaMaths
     {

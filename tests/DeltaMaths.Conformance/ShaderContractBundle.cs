@@ -3,7 +3,7 @@ using System.Reflection;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace Delta.Maths.Conformance;
+namespace Delta.Conformance;
 
 internal static class ShaderContractBundle
 {

@@ -5,7 +5,7 @@ using System.Globalization;
 using System.Runtime.CompilerServices;
 using System.Runtime.Serialization;
 
-namespace Delta.Maths
+namespace Delta
 {
     /// <summary>A signed 16.16 fixed-point value.</summary>
     /// <remarks>

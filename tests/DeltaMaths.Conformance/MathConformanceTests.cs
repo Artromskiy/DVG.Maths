@@ -1,4 +1,4 @@
-namespace Delta.Maths.Conformance;
+namespace Delta.Conformance;
 
 internal static class MathConformanceTests
 {

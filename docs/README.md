@@ -20,8 +20,8 @@ shader-support code.
 ```
 
 ```csharp
-using Delta.Maths;
-using static Delta.Maths.maths;
+using Delta;
+using static Delta.maths;
 
 float3 direction = normalize(new float3(1f, 2f, 3f));
 float4 transformed = new float4x4(1f) * new float4(direction, 1f);

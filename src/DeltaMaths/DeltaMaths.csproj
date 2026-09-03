@@ -25,7 +25,7 @@
     <IsAotCompatible>true</IsAotCompatible>
     <EnableTrimAnalyzer Condition="'$(TargetFramework)' == 'net8.0' Or '$(TargetFramework)' == 'net10.0'">true</EnableTrimAnalyzer>
     <EnableAotAnalyzer Condition="'$(TargetFramework)' == 'net8.0' Or '$(TargetFramework)' == 'net10.0'">true</EnableAotAnalyzer>
-    <RootNamespace>Delta.Maths</RootNamespace>
+    <RootNamespace>Delta</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

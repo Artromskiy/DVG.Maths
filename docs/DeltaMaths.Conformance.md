@@ -1,6 +1,6 @@
 # DeltaMaths.Conformance
 
-CPU-only deterministic conformance checks for the public Delta.Maths API.
+CPU-only deterministic conformance checks for the public Delta API.
 This project does not reference DeltaShader or DeltaRender. It is the CPU
 oracle for later shader lowering and GPU readback tests.
 

@@ -3,7 +3,7 @@
 #nullable enable
 using System.Runtime.CompilerServices;
 
-namespace Delta.Maths
+namespace Delta
 {
     public static partial class maths
     {

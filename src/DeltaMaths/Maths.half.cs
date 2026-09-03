@@ -5,7 +5,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
 
-namespace Delta.Maths
+namespace Delta
 {
     /// <summary>
     /// A binary16 value with the same IEEE-754 representation as <see cref="System.Half"/>.

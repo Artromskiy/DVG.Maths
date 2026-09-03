@@ -81,12 +81,12 @@ Consumer projects should use the canonical managed facade with an explicit
 namespace import:
 
 ```csharp
-using Delta.Maths;
+using Delta;
 
 var length = Maths.Sqrt(value);
 ```
 
-The lowercase `maths.*` facade and `using static Delta.Maths.maths` are reserved
+The lowercase `maths.*` facade and `using static Delta.maths` are reserved
 for shader-authoring code. The provider intentionally keeps the case-only
 `Maths`/`maths` pair; this is the scoped reason for its CA1708/CA1724
 suppression. `DeltaMaths` is the provider's established

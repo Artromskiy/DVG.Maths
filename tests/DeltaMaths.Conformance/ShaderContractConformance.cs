@@ -1,7 +1,7 @@
 using System.Reflection;
 using System.Text.Json;
 
-namespace Delta.Maths.Conformance;
+namespace Delta.Conformance;
 
 internal static class ShaderContractConformance
 {
@@ -234,7 +234,7 @@ internal sealed class ContractCaseRunner
 
     internal MethodInfo ResolveMethod(ContractFunction function)
     {
-        var owner = _mathAssembly.GetType($"Delta.Maths.{function.OwnerTypeName}")
+        var owner = _mathAssembly.GetType($"Delta.{function.OwnerTypeName}")
             ?? throw new InvalidOperationException(
                 $"Contract owner type '{function.OwnerTypeName}' for '{function.Identity}' was not found.");
 
